@@ -1,82 +1,77 @@
-gdjs.Base_32TemplateCode = {};
-gdjs.Base_32TemplateCode.localVariables = [];
-gdjs.Base_32TemplateCode.idToCallbackMap = new Map();
-gdjs.Base_32TemplateCode.GDBackgroundObjects1= [];
-gdjs.Base_32TemplateCode.GDBackgroundObjects2= [];
-gdjs.Base_32TemplateCode.GDTransitionObjectObjects1= [];
-gdjs.Base_32TemplateCode.GDTransitionObjectObjects2= [];
+gdjs.Main_32MenuCode = {};
+gdjs.Main_32MenuCode.localVariables = [];
+gdjs.Main_32MenuCode.idToCallbackMap = new Map();
+gdjs.Main_32MenuCode.GDYellowButtonObjects1= [];
+gdjs.Main_32MenuCode.GDYellowButtonObjects2= [];
+gdjs.Main_32MenuCode.GDTitleObjects1= [];
+gdjs.Main_32MenuCode.GDTitleObjects2= [];
+gdjs.Main_32MenuCode.GDBackgroundObjects1= [];
+gdjs.Main_32MenuCode.GDBackgroundObjects2= [];
+gdjs.Main_32MenuCode.GDTransitionObjectObjects1= [];
+gdjs.Main_32MenuCode.GDTransitionObjectObjects2= [];
+gdjs.Main_32MenuCode.GDInspectObjectObjects1= [];
+gdjs.Main_32MenuCode.GDInspectObjectObjects2= [];
+gdjs.Main_32MenuCode.GDExitInspectObjects1= [];
+gdjs.Main_32MenuCode.GDExitInspectObjects2= [];
 
 
-gdjs.Base_32TemplateCode.mapOfGDgdjs_9546Base_959532TemplateCode_9546GDTransitionObjectObjects1Objects = Hashtable.newFrom({"TransitionObject": gdjs.Base_32TemplateCode.GDTransitionObjectObjects1});
-gdjs.Base_32TemplateCode.eventsList0 = function(runtimeScene) {
+gdjs.Main_32MenuCode.mapOfGDgdjs_9546Main_959532MenuCode_9546GDYellowButtonObjects1Objects = Hashtable.newFrom({"YellowButton": gdjs.Main_32MenuCode.GDYellowButtonObjects1});
+gdjs.Main_32MenuCode.eventsList0 = function(runtimeScene) {
 
 {
 
-gdjs.copyArray(runtimeScene.getObjects("TransitionObject"), gdjs.Base_32TemplateCode.GDTransitionObjectObjects1);
+gdjs.copyArray(runtimeScene.getObjects("YellowButton"), gdjs.Main_32MenuCode.GDYellowButtonObjects1);
 
 let isConditionTrue_0 = false;
 isConditionTrue_0 = false;
-isConditionTrue_0 = gdjs.evtTools.input.cursorOnObject(gdjs.Base_32TemplateCode.mapOfGDgdjs_9546Base_959532TemplateCode_9546GDTransitionObjectObjects1Objects, runtimeScene, true, false);
+isConditionTrue_0 = gdjs.evtTools.input.cursorOnObject(gdjs.Main_32MenuCode.mapOfGDgdjs_9546Main_959532MenuCode_9546GDYellowButtonObjects1Objects, runtimeScene, true, false);
 if (isConditionTrue_0) {
 isConditionTrue_0 = false;
 isConditionTrue_0 = gdjs.evtTools.input.isMouseButtonReleased(runtimeScene, "Left");
-if (isConditionTrue_0) {
-isConditionTrue_0 = false;
-{isConditionTrue_0 = runtimeScene.getOnceTriggers().triggerOnce(9571460);
-}
-}
 }
 if (isConditionTrue_0) {
-/* Reuse gdjs.Base_32TemplateCode.GDTransitionObjectObjects1 */
-{gdjs.evtTools.runtimeScene.replaceScene(runtimeScene, ((gdjs.Base_32TemplateCode.GDTransitionObjectObjects1.length === 0 ) ? gdjs.VariablesContainer.badVariablesContainer : gdjs.Base_32TemplateCode.GDTransitionObjectObjects1[0].getVariables()).getFromIndex(0).getAsString(), false);
+{gdjs.evtTools.runtimeScene.replaceScene(runtimeScene, "FDS North", false);
 }
 }
 
-}
-
-
-};gdjs.Base_32TemplateCode.eventsList1 = function(runtimeScene) {
-
-{
-
-
-
-}
-
-
-{
-
-
-
-}
-
-
-{
-
-
-gdjs.Base_32TemplateCode.eventsList0(runtimeScene);
 }
 
 
 };
 
-gdjs.Base_32TemplateCode.func = function(runtimeScene) {
+gdjs.Main_32MenuCode.func = function(runtimeScene) {
 runtimeScene.getOnceTriggers().startNewFrame();
 
-gdjs.Base_32TemplateCode.GDBackgroundObjects1.length = 0;
-gdjs.Base_32TemplateCode.GDBackgroundObjects2.length = 0;
-gdjs.Base_32TemplateCode.GDTransitionObjectObjects1.length = 0;
-gdjs.Base_32TemplateCode.GDTransitionObjectObjects2.length = 0;
+gdjs.Main_32MenuCode.GDYellowButtonObjects1.length = 0;
+gdjs.Main_32MenuCode.GDYellowButtonObjects2.length = 0;
+gdjs.Main_32MenuCode.GDTitleObjects1.length = 0;
+gdjs.Main_32MenuCode.GDTitleObjects2.length = 0;
+gdjs.Main_32MenuCode.GDBackgroundObjects1.length = 0;
+gdjs.Main_32MenuCode.GDBackgroundObjects2.length = 0;
+gdjs.Main_32MenuCode.GDTransitionObjectObjects1.length = 0;
+gdjs.Main_32MenuCode.GDTransitionObjectObjects2.length = 0;
+gdjs.Main_32MenuCode.GDInspectObjectObjects1.length = 0;
+gdjs.Main_32MenuCode.GDInspectObjectObjects2.length = 0;
+gdjs.Main_32MenuCode.GDExitInspectObjects1.length = 0;
+gdjs.Main_32MenuCode.GDExitInspectObjects2.length = 0;
 
-gdjs.Base_32TemplateCode.eventsList1(runtimeScene);
-gdjs.Base_32TemplateCode.GDBackgroundObjects1.length = 0;
-gdjs.Base_32TemplateCode.GDBackgroundObjects2.length = 0;
-gdjs.Base_32TemplateCode.GDTransitionObjectObjects1.length = 0;
-gdjs.Base_32TemplateCode.GDTransitionObjectObjects2.length = 0;
+gdjs.Main_32MenuCode.eventsList0(runtimeScene);
+gdjs.Main_32MenuCode.GDYellowButtonObjects1.length = 0;
+gdjs.Main_32MenuCode.GDYellowButtonObjects2.length = 0;
+gdjs.Main_32MenuCode.GDTitleObjects1.length = 0;
+gdjs.Main_32MenuCode.GDTitleObjects2.length = 0;
+gdjs.Main_32MenuCode.GDBackgroundObjects1.length = 0;
+gdjs.Main_32MenuCode.GDBackgroundObjects2.length = 0;
+gdjs.Main_32MenuCode.GDTransitionObjectObjects1.length = 0;
+gdjs.Main_32MenuCode.GDTransitionObjectObjects2.length = 0;
+gdjs.Main_32MenuCode.GDInspectObjectObjects1.length = 0;
+gdjs.Main_32MenuCode.GDInspectObjectObjects2.length = 0;
+gdjs.Main_32MenuCode.GDExitInspectObjects1.length = 0;
+gdjs.Main_32MenuCode.GDExitInspectObjects2.length = 0;
 
 
 return;
 
 }
 
-gdjs['Base_32TemplateCode'] = gdjs.Base_32TemplateCode;
+gdjs['Main_32MenuCode'] = gdjs.Main_32MenuCode;
