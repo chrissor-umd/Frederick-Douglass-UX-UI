@@ -1085,7 +1085,7 @@
       "isLocked": false,
       "name": "PauseMenu",
       "renderingType": "2d",
-      "visibility": true,
+      "visibility": false,
       "cameras": [],
       "effects": [
         {
