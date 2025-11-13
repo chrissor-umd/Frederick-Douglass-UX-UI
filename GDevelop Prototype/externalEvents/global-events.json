@@ -102,6 +102,17 @@
           ],
           "events": [
             {
+              "colorB": 228,
+              "colorG": 176,
+              "colorR": 74,
+              "creationTime": 0,
+              "name": "Game Paused",
+              "source": "",
+              "type": "BuiltinCommonInstructions::Group",
+              "events": [],
+              "parameters": []
+            },
+            {
               "type": "BuiltinCommonInstructions::Standard",
               "conditions": [
                 {
@@ -128,18 +139,6 @@
               ]
             }
           ]
-        },
-        {
-          "type": "BuiltinCommonInstructions::Comment",
-          "color": {
-            "b": 109,
-            "g": 230,
-            "r": 255,
-            "textB": 0,
-            "textG": 0,
-            "textR": 0
-          },
-          "comment": "These events will only run if the game is not paused"
         },
         {
           "type": "BuiltinCommonInstructions::Standard",
@@ -177,7 +176,7 @@
                 "textG": 0,
                 "textR": 0
               },
-              "comment": "These events only run when not in inspection mode"
+              "comment": "These events will only run if the game is not paused"
             },
             {
               "type": "BuiltinCommonInstructions::Standard",
@@ -195,6 +194,18 @@
               ],
               "actions": [],
               "events": [
+                {
+                  "type": "BuiltinCommonInstructions::Comment",
+                  "color": {
+                    "b": 109,
+                    "g": 230,
+                    "r": 255,
+                    "textB": 0,
+                    "textG": 0,
+                    "textR": 0
+                  },
+                  "comment": "These events only run when not in inspection mode"
+                },
                 {
                   "type": "BuiltinCommonInstructions::Standard",
                   "conditions": [
@@ -428,6 +439,7 @@
               ]
             },
             {
+              "folded": true,
               "type": "BuiltinCommonInstructions::Standard",
               "conditions": [
                 {
@@ -640,6 +652,7 @@
       "colorG": 176,
       "colorR": 74,
       "creationTime": 0,
+      "folded": true,
       "name": "Darken effect for pausing and inspecting",
       "source": "",
       "type": "BuiltinCommonInstructions::Group",

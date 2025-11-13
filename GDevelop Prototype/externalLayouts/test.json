@@ -1,6 +1,6 @@
 {
   "associatedLayout": "Game",
-  "name": "FDS East",
+  "name": "Test",
   "instances": [
     {
       "angle": 0,
@@ -20,7 +20,7 @@
         {
           "name": "targetLayout",
           "type": "string",
-          "value": "FDS South"
+          "value": "FDS East"
         }
       ]
     },
@@ -42,7 +42,7 @@
         {
           "name": "targetLayout",
           "type": "string",
-          "value": "FDS North"
+          "value": "FDS West"
         }
       ]
     },
@@ -61,7 +61,7 @@
       "numberProperties": [
         {
           "name": "animation",
-          "value": 1
+          "value": 4
         }
       ],
       "stringProperties": [],
@@ -72,29 +72,51 @@
       "customSize": false,
       "height": 0,
       "keepRatio": true,
-      "layer": "SceneObjects",
-      "name": "StatueCollectible",
-      "persistentUuid": "20ded766-9b8b-4eae-9282-d294a837c19f",
+      "layer": "",
+      "name": "TransitionObject",
+      "persistentUuid": "e1d993cb-820e-4569-bd07-05676acf918a",
       "width": 0,
-      "x": 448,
-      "y": 576,
+      "x": 694,
+      "y": 336,
       "zOrder": 4,
       "numberProperties": [],
       "stringProperties": [],
       "initialVariables": []
+    },
+    {
+      "angle": 0,
+      "customSize": false,
+      "height": 0,
+      "keepRatio": true,
+      "layer": "SceneObjects",
+      "name": "TransitionObject",
+      "persistentUuid": "99b49ca3-17cf-44dd-a18d-b3b25475ee8d",
+      "width": 0,
+      "x": 486,
+      "y": 130,
+      "zOrder": 5,
+      "numberProperties": [],
+      "stringProperties": [],
+      "initialVariables": [
+        {
+          "name": "targetLayout",
+          "type": "string",
+          "value": "FDS North"
+        }
+      ]
     }
   ],
   "editionSettings": {
-    "grid": true,
+    "grid": false,
     "gridType": "rectangular",
-    "gridWidth": 16,
-    "gridHeight": 16,
+    "gridWidth": 32,
+    "gridHeight": 32,
     "gridOffsetX": 0,
     "gridOffsetY": 0,
     "gridColor": 10401023,
-    "gridAlpha": 0.4,
-    "snap": true,
-    "zoomFactor": 0.4950840073748888,
+    "gridAlpha": 0.8,
+    "snap": false,
+    "zoomFactor": 0.5290357402156838,
     "windowMask": false,
     "selectedLayer": "SceneObjects"
   }

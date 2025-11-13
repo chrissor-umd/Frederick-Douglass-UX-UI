@@ -304,6 +304,22 @@
         "name": "Black Square",
         "smoothed": true,
         "userAdded": false
+      },
+      {
+        "file": "assets/StatueCollectiblePlaceholder.png",
+        "kind": "image",
+        "metadata": "{\"extension\":\".png\"}",
+        "name": "StatueCollectiblePlaceholder",
+        "smoothed": true,
+        "userAdded": false
+      },
+      {
+        "file": "images/FDS Statue.JPG",
+        "kind": "image",
+        "metadata": "",
+        "name": "images/FDS Statue.JPG",
+        "smoothed": true,
+        "userAdded": false
       }
     ],
     "resourceFolders": []
@@ -485,6 +501,54 @@
                 {
                   "hasCustomCollisionMask": true,
                   "image": "images/FDS West.JPG",
+                  "points": [],
+                  "originPoint": {
+                    "name": "origine",
+                    "x": 0,
+                    "y": 0
+                  },
+                  "centerPoint": {
+                    "automatic": true,
+                    "name": "centre",
+                    "x": 0,
+                    "y": 0
+                  },
+                  "customCollisionMask": [
+                    [
+                      {
+                        "x": 0,
+                        "y": 0
+                      },
+                      {
+                        "x": 1280,
+                        "y": 0
+                      },
+                      {
+                        "x": 1280,
+                        "y": 960
+                      },
+                      {
+                        "x": 0,
+                        "y": 960
+                      }
+                    ]
+                  ]
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "name": "Test",
+          "useMultipleDirections": false,
+          "directions": [
+            {
+              "looping": false,
+              "timeBetweenFrames": 0.08,
+              "sprites": [
+                {
+                  "hasCustomCollisionMask": true,
+                  "image": "images/FDS Statue.JPG",
                   "points": [],
                   "originPoint": {
                     "name": "origine",
@@ -1080,6 +1144,73 @@
           ]
         }
       ]
+    },
+    {
+      "adaptCollisionMaskAutomatically": true,
+      "assetStoreId": "",
+      "name": "StatueCollectible",
+      "type": "Sprite",
+      "updateIfNotVisible": false,
+      "variables": [],
+      "effects": [],
+      "behaviors": [
+        {
+          "name": "CursorHover",
+          "type": "CursorType::CursorHover",
+          "CursorType": "pointer"
+        }
+      ],
+      "animations": [
+        {
+          "name": "StatueCollectiblePlaceholder",
+          "useMultipleDirections": false,
+          "directions": [
+            {
+              "looping": false,
+              "metadata": "{\"pskl\":{}}",
+              "timeBetweenFrames": 0.08,
+              "sprites": [
+                {
+                  "hasCustomCollisionMask": true,
+                  "image": "StatueCollectiblePlaceholder",
+                  "points": [],
+                  "originPoint": {
+                    "name": "origine",
+                    "x": 0,
+                    "y": 0
+                  },
+                  "centerPoint": {
+                    "automatic": true,
+                    "name": "centre",
+                    "x": 0,
+                    "y": 0
+                  },
+                  "customCollisionMask": [
+                    [
+                      {
+                        "x": 17,
+                        "y": 12
+                      },
+                      {
+                        "x": 46,
+                        "y": 12
+                      },
+                      {
+                        "x": 46,
+                        "y": 61
+                      },
+                      {
+                        "x": 17,
+                        "y": 61
+                      }
+                    ]
+                  ]
+                }
+              ]
+            }
+          ]
+        }
+      ]
     }
   ],
   "objectsFolderStructure": {
@@ -1114,6 +1245,9 @@
         "folderName": "Clickable",
         "children": [
           {
+            "objectName": "StatueCollectible"
+          },
+          {
             "objectName": "TransitionObject"
           },
           {
@@ -1135,6 +1269,17 @@
         },
         {
           "name": "InspectObject"
+        },
+        {
+          "name": "StatueCollectible"
+        }
+      ]
+    },
+    {
+      "name": "CollectibleObjects",
+      "objects": [
+        {
+          "name": "StatueCollectible"
         }
       ]
     }
@@ -1152,7 +1297,7 @@
         {
           "name": "CurrentLayout",
           "type": "string",
-          "value": "FDS North"
+          "value": "Test"
         },
         {
           "name": "DarkEffect",
@@ -1218,6 +1363,10 @@
     {
       "__REFERENCE_TO_SPLIT_OBJECT": true,
       "referenceTo": "/externalLayouts/fds-north"
+    },
+    {
+      "__REFERENCE_TO_SPLIT_OBJECT": true,
+      "referenceTo": "/externalLayouts/test"
     },
     {
       "__REFERENCE_TO_SPLIT_OBJECT": true,
