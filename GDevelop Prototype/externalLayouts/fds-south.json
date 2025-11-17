@@ -33,7 +33,7 @@
       "name": "TransitionObject",
       "persistentUuid": "4f456e68-4ab5-49c8-b8ac-452c192d43a2",
       "width": 0,
-      "x": 96,
+      "x": 80,
       "y": 368,
       "zOrder": 3,
       "numberProperties": [],
@@ -69,16 +69,16 @@
     }
   ],
   "editionSettings": {
-    "grid": false,
+    "grid": true,
     "gridType": "rectangular",
-    "gridWidth": 32,
-    "gridHeight": 32,
+    "gridWidth": 16,
+    "gridHeight": 16,
     "gridOffsetX": 0,
     "gridOffsetY": 0,
     "gridColor": 10401023,
     "gridAlpha": 0.8,
-    "snap": false,
-    "zoomFactor": 0.546875,
+    "snap": true,
+    "zoomFactor": 0.814188120370991,
     "windowMask": false,
     "selectedLayer": ""
   }

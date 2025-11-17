@@ -18,11 +18,26 @@
     "gridColor": 10401023,
     "gridAlpha": 0.4,
     "snap": true,
-    "zoomFactor": 0.4789341884535248,
+    "zoomFactor": 0.4481978045410367,
     "windowMask": false,
-    "selectedLayer": "Inspect"
+    "selectedLayer": "SceneObjects"
   },
-  "objectsGroups": [],
+  "objectsGroups": [
+    {
+      "name": "Inspect",
+      "objects": [
+        {
+          "name": "InspectImage"
+        },
+        {
+          "name": "InspectBackground"
+        },
+        {
+          "name": "InspectText"
+        }
+      ]
+    }
+  ],
   "variables": [],
   "instances": [],
   "objects": [],
@@ -132,7 +147,34 @@
       "followBaseLayerCamera": false,
       "isLightingLayer": false,
       "isLocked": false,
-      "name": "Inspect",
+      "name": "UI",
+      "renderingType": "2d",
+      "visibility": true,
+      "cameras": [],
+      "effects": [
+        {
+          "effectType": "Brightness",
+          "name": "Darken",
+          "doubleParameters": {
+            "brightness": 0.5
+          },
+          "stringParameters": {},
+          "booleanParameters": {}
+        }
+      ]
+    },
+    {
+      "ambientLightColorB": 200,
+      "ambientLightColorG": 200,
+      "ambientLightColorR": 200,
+      "camera3DFarPlaneDistance": 10000,
+      "camera3DFieldOfView": 45,
+      "camera3DNearPlaneDistance": 3,
+      "cameraType": "",
+      "followBaseLayerCamera": false,
+      "isLightingLayer": false,
+      "isLocked": false,
+      "name": "InspectObjects",
       "renderingType": "2d",
       "visibility": true,
       "cameras": [],
@@ -159,21 +201,11 @@
       "followBaseLayerCamera": false,
       "isLightingLayer": false,
       "isLocked": false,
-      "name": "UI",
+      "name": "InspectUI",
       "renderingType": "2d",
       "visibility": true,
       "cameras": [],
-      "effects": [
-        {
-          "effectType": "Brightness",
-          "name": "Darken",
-          "doubleParameters": {
-            "brightness": 0.5
-          },
-          "stringParameters": {},
-          "booleanParameters": {}
-        }
-      ]
+      "effects": []
     }
   ],
   "behaviorsSharedData": [
@@ -184,10 +216,6 @@
     {
       "name": "Animation",
       "type": "AnimatableCapability::AnimatableBehavior"
-    },
-    {
-      "name": "CursorHover",
-      "type": "CursorType::CursorHover"
     },
     {
       "name": "Effect",

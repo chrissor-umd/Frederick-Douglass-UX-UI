@@ -33,7 +33,7 @@
       "name": "TransitionObject",
       "persistentUuid": "4f456e68-4ab5-49c8-b8ac-452c192d43a2",
       "width": 0,
-      "x": 96,
+      "x": 80,
       "y": 368,
       "zOrder": 3,
       "numberProperties": [],
@@ -100,8 +100,8 @@
     "gridColor": 10401023,
     "gridAlpha": 0.4,
     "snap": true,
-    "zoomFactor": 0.4950840073748888,
+    "zoomFactor": 0.4194339782759061,
     "windowMask": false,
-    "selectedLayer": "PauseMenu"
+    "selectedLayer": "Inspect"
   }
 }

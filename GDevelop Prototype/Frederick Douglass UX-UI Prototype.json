@@ -320,6 +320,22 @@
         "name": "images/FDS Statue.JPG",
         "smoothed": true,
         "userAdded": false
+      },
+      {
+        "file": "images/FDS Statue Zoom.JPG",
+        "kind": "image",
+        "metadata": "",
+        "name": "images\\FDS Statue Zoom.JPG",
+        "smoothed": true,
+        "userAdded": false
+      },
+      {
+        "file": "images/FDS Sky Inspect.JPG",
+        "kind": "image",
+        "metadata": "",
+        "name": "images\\FDS Sky Inspect.JPG",
+        "smoothed": true,
+        "userAdded": false
       }
     ],
     "resourceFolders": []
@@ -912,60 +928,23 @@
       ]
     },
     {
-      "assetStoreId": "",
-      "bold": true,
-      "italic": false,
-      "name": "PauseText",
-      "smoothed": true,
-      "type": "TextObject::Text",
-      "underlined": false,
-      "variables": [],
-      "effects": [],
-      "behaviors": [],
-      "string": "Game Paused",
-      "font": "assets/BilkoOpti-Regular.otf",
-      "textAlignment": "left",
-      "characterSize": 71,
-      "color": {
-        "b": 255,
-        "g": 255,
-        "r": 255
-      },
-      "content": {
-        "bold": true,
-        "isOutlineEnabled": false,
-        "isShadowEnabled": false,
-        "italic": false,
-        "outlineColor": "255;255;255",
-        "outlineThickness": 2,
-        "shadowAngle": 90,
-        "shadowBlurRadius": 2,
-        "shadowColor": "0;0;0",
-        "shadowDistance": 4,
-        "shadowOpacity": 127,
-        "smoothed": true,
-        "underlined": false,
-        "text": "Game Paused",
-        "font": "assets/BilkoOpti-Regular.otf",
-        "textAlignment": "left",
-        "verticalTextAlignment": "top",
-        "characterSize": 71,
-        "lineHeight": 0,
-        "color": "255;255;255"
-      }
-    },
-    {
       "adaptCollisionMaskAutomatically": true,
       "assetStoreId": "",
       "name": "InspectImage",
       "type": "Sprite",
       "updateIfNotVisible": false,
-      "variables": [],
+      "variables": [
+        {
+          "name": "inspectName",
+          "type": "string",
+          "value": ""
+        }
+      ],
       "effects": [],
       "behaviors": [],
       "animations": [
         {
-          "name": "FDS West FDStatueInspect",
+          "name": "FDS West StatueInspect",
           "useMultipleDirections": false,
           "directions": [
             {
@@ -974,7 +953,7 @@
               "sprites": [
                 {
                   "hasCustomCollisionMask": true,
-                  "image": "images/FD StatueInspect.png",
+                  "image": "images\\FDS Statue Zoom.JPG",
                   "points": [],
                   "originPoint": {
                     "name": "origine",
@@ -994,11 +973,11 @@
                         "y": 0
                       },
                       {
-                        "x": 834,
+                        "x": 397,
                         "y": 0
                       },
                       {
-                        "x": 834,
+                        "x": 397,
                         "y": 540
                       },
                       {
@@ -1022,7 +1001,7 @@
               "sprites": [
                 {
                   "hasCustomCollisionMask": true,
-                  "image": "images/FDS West SkyInspect.png",
+                  "image": "images\\FDS Sky Inspect.JPG",
                   "points": [],
                   "originPoint": {
                     "name": "origine",
@@ -1042,11 +1021,11 @@
                         "y": 0
                       },
                       {
-                        "x": 834,
+                        "x": 397,
                         "y": 0
                       },
                       {
-                        "x": 834,
+                        "x": 397,
                         "y": 540
                       },
                       {
@@ -1068,7 +1047,13 @@
       "name": "InspectBackground",
       "type": "Sprite",
       "updateIfNotVisible": false,
-      "variables": [],
+      "variables": [
+        {
+          "name": "inspectName",
+          "type": "string",
+          "value": ""
+        }
+      ],
       "effects": [],
       "behaviors": [],
       "animations": [
@@ -1183,6 +1168,60 @@
           ]
         }
       ]
+    },
+    {
+      "assetStoreId": "",
+      "bold": true,
+      "italic": false,
+      "name": "InspectText",
+      "smoothed": true,
+      "type": "TextObject::Text",
+      "underlined": false,
+      "variables": [
+        {
+          "name": "innerText",
+          "type": "string",
+          "value": "Insert Text Here"
+        },
+        {
+          "name": "inspectName",
+          "type": "string",
+          "value": ""
+        }
+      ],
+      "effects": [],
+      "behaviors": [],
+      "string": "Insert Text Here",
+      "font": "assets/BilkoOpti-Regular.otf",
+      "textAlignment": "center",
+      "characterSize": 40,
+      "color": {
+        "b": 255,
+        "g": 255,
+        "r": 255
+      },
+      "content": {
+        "bold": true,
+        "isOutlineEnabled": false,
+        "isShadowEnabled": false,
+        "italic": false,
+        "outlineColor": "255;255;255",
+        "outlineThickness": 2,
+        "shadowAngle": 90,
+        "shadowBlurRadius": 2,
+        "shadowColor": "0;0;0",
+        "shadowDistance": 4,
+        "shadowOpacity": 127,
+        "smoothed": true,
+        "underlined": false,
+        "text": "Insert Text Here",
+        "font": "assets/BilkoOpti-Regular.otf",
+        "textAlignment": "center",
+        "verticalTextAlignment": "center",
+        "characterSize": 40,
+        "lineHeight": 0,
+        "color": "255;255;255"
+      }
     }
   ],
   "objectsFolderStructure": {
@@ -1195,6 +1234,9 @@
             "folderName": "Inspect",
             "children": [
               {
+                "objectName": "InspectText"
+              },
+              {
                 "objectName": "InspectImage"
               },
               {
@@ -1204,9 +1246,6 @@
                 "objectName": "ExitInspect"
               }
             ]
-          },
-          {
-            "objectName": "PauseText"
           },
           {
             "objectName": "PauseButton"
@@ -1232,30 +1271,7 @@
       }
     ]
   },
-  "objectsGroups": [
-    {
-      "name": "Clickable",
-      "objects": [
-        {
-          "name": "TransitionObject"
-        },
-        {
-          "name": "InspectObject"
-        },
-        {
-          "name": "StatueCollectible"
-        }
-      ]
-    },
-    {
-      "name": "CollectibleObjects",
-      "objects": [
-        {
-          "name": "StatueCollectible"
-        }
-      ]
-    }
-  ],
+  "objectsGroups": [],
   "variables": [
     {
       "name": "DataInitialized",
@@ -1286,25 +1302,13 @@
   "eventsFunctionsExtensions": [
     {
       "__REFERENCE_TO_SPLIT_OBJECT": true,
-      "referenceTo": "/eventsFunctionsExtensions/cursortype"
-    },
-    {
-      "__REFERENCE_TO_SPLIT_OBJECT": true,
       "referenceTo": "/eventsFunctionsExtensions/panelspritebutton"
-    },
-    {
-      "__REFERENCE_TO_SPLIT_OBJECT": true,
-      "referenceTo": "/eventsFunctionsExtensions/alignobject"
     }
   ],
   "externalLayouts": [
     {
       "__REFERENCE_TO_SPLIT_OBJECT": true,
       "referenceTo": "/externalLayouts/ui"
-    },
-    {
-      "__REFERENCE_TO_SPLIT_OBJECT": true,
-      "referenceTo": "/externalLayouts/inspectui"
     },
     {
       "__REFERENCE_TO_SPLIT_OBJECT": true,

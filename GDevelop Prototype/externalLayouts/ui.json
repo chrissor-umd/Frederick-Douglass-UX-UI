@@ -17,6 +17,22 @@
       "numberProperties": [],
       "stringProperties": [],
       "initialVariables": []
+    },
+    {
+      "angle": 0,
+      "customSize": false,
+      "height": 0,
+      "keepRatio": true,
+      "layer": "InspectUI",
+      "name": "ExitInspect",
+      "persistentUuid": "23fe53b5-6157-4f25-88ff-cd9c989af0b8",
+      "width": 0,
+      "x": 28,
+      "y": 32,
+      "zOrder": 2,
+      "numberProperties": [],
+      "stringProperties": [],
+      "initialVariables": []
     }
   ],
   "editionSettings": {
@@ -29,8 +45,8 @@
     "gridColor": 10401023,
     "gridAlpha": 0.8,
     "snap": true,
-    "zoomFactor": 0.546875,
+    "zoomFactor": 0.5653158055126308,
     "windowMask": false,
-    "selectedLayer": "Inspect"
+    "selectedLayer": "InspectUI"
   }
 }

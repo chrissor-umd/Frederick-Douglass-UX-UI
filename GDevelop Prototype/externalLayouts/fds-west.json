@@ -33,7 +33,7 @@
       "name": "TransitionObject",
       "persistentUuid": "4f456e68-4ab5-49c8-b8ac-452c192d43a2",
       "width": 0,
-      "x": 96,
+      "x": 80,
       "y": 368,
       "zOrder": 3,
       "numberProperties": [],
@@ -86,7 +86,7 @@
           "name": "targetInspect",
           "persistentUuid": "fea88182-55ae-40e8-8695-c7cefc4b54c5",
           "type": "string",
-          "value": "FDStatueInspect"
+          "value": "StatueInspect"
         }
       ]
     },
@@ -111,6 +111,161 @@
           "value": "SkyInspect"
         }
       ]
+    },
+    {
+      "angle": 0,
+      "customSize": false,
+      "height": 0,
+      "keepRatio": true,
+      "layer": "InspectObjects",
+      "name": "InspectBackground",
+      "persistentUuid": "95ec803f-994a-485e-8027-a66877bbc1e4",
+      "width": 0,
+      "x": 1568,
+      "y": -28,
+      "zOrder": 6,
+      "numberProperties": [],
+      "stringProperties": [],
+      "initialVariables": [
+        {
+          "name": "inspectName",
+          "type": "string",
+          "value": "StatueInspect"
+        }
+      ]
+    },
+    {
+      "angle": 0,
+      "customSize": false,
+      "height": 0,
+      "keepRatio": true,
+      "layer": "InspectObjects",
+      "name": "InspectImage",
+      "persistentUuid": "93ccdc51-ec0d-4154-bd31-f767dc30cebc",
+      "width": 0,
+      "x": 1568,
+      "y": -28,
+      "zOrder": 7,
+      "numberProperties": [
+        {
+          "name": "animation",
+          "value": 0
+        }
+      ],
+      "stringProperties": [],
+      "initialVariables": [
+        {
+          "name": "inspectName",
+          "type": "string",
+          "value": "StatueInspect"
+        }
+      ]
+    },
+    {
+      "angle": 0,
+      "customSize": true,
+      "depth": 1,
+      "height": 46,
+      "keepRatio": true,
+      "layer": "InspectObjects",
+      "name": "InspectText",
+      "persistentUuid": "220befcf-9eeb-4c8b-9a0d-be1d5fbf189a",
+      "width": 464,
+      "x": 2016,
+      "y": 223,
+      "zOrder": 8,
+      "numberProperties": [],
+      "stringProperties": [],
+      "initialVariables": [
+        {
+          "name": "innerText",
+          "type": "string",
+          "value": "A large statue of Frederick Douglass"
+        },
+        {
+          "name": "inspectName",
+          "type": "string",
+          "value": "StatueInspect"
+        }
+      ]
+    },
+    {
+      "angle": 0,
+      "customSize": false,
+      "height": 0,
+      "keepRatio": true,
+      "layer": "InspectObjects",
+      "name": "InspectBackground",
+      "persistentUuid": "32d145c1-010d-454f-869b-ea7fbbbcf30f",
+      "width": 0,
+      "x": 1568,
+      "y": 544,
+      "zOrder": 9,
+      "numberProperties": [],
+      "stringProperties": [],
+      "initialVariables": [
+        {
+          "name": "inspectName",
+          "type": "string",
+          "value": "SkyInspect"
+        }
+      ]
+    },
+    {
+      "angle": 0,
+      "customSize": true,
+      "depth": 1,
+      "height": 393,
+      "keepRatio": true,
+      "layer": "InspectObjects",
+      "name": "InspectImage",
+      "persistentUuid": "7600dbb5-e037-4f36-97d5-c9c86260feda",
+      "width": 960,
+      "x": 1568,
+      "y": 544,
+      "zOrder": 10,
+      "numberProperties": [
+        {
+          "name": "animation",
+          "value": 1
+        }
+      ],
+      "stringProperties": [],
+      "initialVariables": [
+        {
+          "name": "inspectName",
+          "type": "string",
+          "value": "SkyInspect"
+        }
+      ]
+    },
+    {
+      "angle": 0,
+      "customSize": true,
+      "depth": 1,
+      "height": 47,
+      "keepRatio": true,
+      "layer": "InspectObjects",
+      "name": "InspectText",
+      "persistentUuid": "dfc59eac-56cb-4c18-b57d-16cdaac15b88",
+      "width": 864,
+      "x": 1616,
+      "y": 1001,
+      "zOrder": 11,
+      "numberProperties": [],
+      "stringProperties": [],
+      "initialVariables": [
+        {
+          "name": "inspectName",
+          "type": "string",
+          "value": "SkyInspect"
+        },
+        {
+          "name": "innerText",
+          "type": "string",
+          "value": "The sky is clear today"
+        }
+      ]
     }
   ],
   "editionSettings": {
@@ -123,8 +278,8 @@
     "gridColor": 10401023,
     "gridAlpha": 0.4,
     "snap": true,
-    "zoomFactor": 0.43357743047023733,
+    "zoomFactor": 0.34375202416123213,
     "windowMask": false,
-    "selectedLayer": "Inspect"
+    "selectedLayer": "InspectObjects"
   }
 }
