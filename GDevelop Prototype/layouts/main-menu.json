@@ -95,7 +95,7 @@
       "effects": [],
       "behaviors": [],
       "string": "Frederick Douglass UX/UI Prototype",
-      "font": "assets/BilkoOpti-Regular.otf",
+      "font": "assets/fonts/BilkoOpti-Regular.otf",
       "textAlignment": "left",
       "characterSize": 60,
       "color": {
@@ -118,7 +118,7 @@
         "smoothed": true,
         "underlined": false,
         "text": "Frederick Douglass UX/UI Prototype",
-        "font": "assets/BilkoOpti-Regular.otf",
+        "font": "assets/fonts/BilkoOpti-Regular.otf",
         "textAlignment": "left",
         "verticalTextAlignment": "top",
         "characterSize": 60,

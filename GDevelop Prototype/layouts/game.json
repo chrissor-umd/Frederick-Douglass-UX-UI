@@ -188,7 +188,7 @@
       "isLocked": false,
       "name": "InspectUI",
       "renderingType": "2d",
-      "visibility": true,
+      "visibility": false,
       "cameras": [],
       "effects": []
     }

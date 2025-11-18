@@ -33,6 +33,23 @@
       "numberProperties": [],
       "stringProperties": [],
       "initialVariables": []
+    },
+    {
+      "angle": 0,
+      "customSize": true,
+      "depth": 1,
+      "height": 64,
+      "keepRatio": true,
+      "layer": "UI",
+      "name": "StatuesCollectedCounter",
+      "persistentUuid": "822ea452-17c5-480a-a331-1dc0287406ff",
+      "width": 352,
+      "x": 32,
+      "y": 32,
+      "zOrder": 3,
+      "numberProperties": [],
+      "stringProperties": [],
+      "initialVariables": []
     }
   ],
   "editionSettings": {
@@ -47,6 +64,6 @@
     "snap": true,
     "zoomFactor": 0.5653158055126308,
     "windowMask": false,
-    "selectedLayer": "InspectUI"
+    "selectedLayer": "UI"
   }
 }

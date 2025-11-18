@@ -187,13 +187,6 @@
         }
       },
       {
-        "file": "assets/BilkoOpti-Regular.otf",
-        "kind": "font",
-        "metadata": "",
-        "name": "assets/BilkoOpti-Regular.otf",
-        "userAdded": false
-      },
-      {
         "file": "assets/Pause button.png",
         "kind": "image",
         "metadata": "",
@@ -1145,6 +1138,55 @@
         "lineHeight": 0,
         "color": "255;255;255"
       }
+    },
+    {
+      "assetStoreId": "",
+      "bold": true,
+      "italic": false,
+      "name": "StatuesCollectedCounter",
+      "smoothed": true,
+      "type": "TextObject::Text",
+      "underlined": false,
+      "variables": [
+        {
+          "name": "value",
+          "type": "number",
+          "value": 0
+        }
+      ],
+      "effects": [],
+      "behaviors": [],
+      "string": "Statues Collected: 0",
+      "font": "assets/fonts/BilkoOpti-Regular.otf",
+      "textAlignment": "left",
+      "characterSize": 39,
+      "color": {
+        "b": 255,
+        "g": 255,
+        "r": 255
+      },
+      "content": {
+        "bold": true,
+        "isOutlineEnabled": false,
+        "isShadowEnabled": false,
+        "italic": false,
+        "outlineColor": "255;255;255",
+        "outlineThickness": 2,
+        "shadowAngle": 90,
+        "shadowBlurRadius": 2,
+        "shadowColor": "0;0;0",
+        "shadowDistance": 4,
+        "shadowOpacity": 127,
+        "smoothed": true,
+        "underlined": false,
+        "text": "Statues Collected: 0",
+        "font": "assets/fonts/BilkoOpti-Regular.otf",
+        "textAlignment": "left",
+        "verticalTextAlignment": "top",
+        "characterSize": 39,
+        "lineHeight": 0,
+        "color": "255;255;255"
+      }
     }
   ],
   "objectsFolderStructure": {
@@ -1153,6 +1195,9 @@
       {
         "folderName": "UI",
         "children": [
+          {
+            "objectName": "StatuesCollectedCounter"
+          },
           {
             "objectName": "PauseButton"
           }
