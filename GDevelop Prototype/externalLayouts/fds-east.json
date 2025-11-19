@@ -1,5 +1,5 @@
 {
-  "associatedLayout": "Game",
+  "associatedLayout": "Exploration",
   "name": "FDS East",
   "instances": [
     {
@@ -100,7 +100,7 @@
     "gridColor": 10401023,
     "gridAlpha": 0.4,
     "snap": true,
-    "zoomFactor": 0.4194339782759061,
+    "zoomFactor": 0.3216911764705888,
     "windowMask": false,
     "selectedLayer": "Inspect"
   }

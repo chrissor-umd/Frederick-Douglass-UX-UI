@@ -1,5 +1,5 @@
 {
-  "associatedLayout": "Game",
+  "associatedLayout": "Exploration",
   "name": "FDS West",
   "instances": [
     {
@@ -100,8 +100,8 @@
       "name": "InspectObject",
       "persistentUuid": "9204e1ff-0ed1-477f-a735-205786452eac",
       "width": 0,
-      "x": 320,
-      "y": 48,
+      "x": 544,
+      "y": 112,
       "zOrder": 5,
       "numberProperties": [],
       "stringProperties": [],
@@ -279,7 +279,7 @@
     "gridColor": 10401023,
     "gridAlpha": 0.4,
     "snap": true,
-    "zoomFactor": 0.34375202416123213,
+    "zoomFactor": 0.28172599320795666,
     "windowMask": false,
     "selectedLayer": "InspectObjects"
   }
