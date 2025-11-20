@@ -260,6 +260,14 @@
         "name": "assets/Black Square.png",
         "smoothed": true,
         "userAdded": false
+      },
+      {
+        "file": "assets/keys/Arrow Key_Right.png",
+        "kind": "image",
+        "metadata": "",
+        "name": "assets\\keys\\Arrow Key_Right.png",
+        "smoothed": true,
+        "userAdded": false
       }
     ],
     "resourceFolders": []
@@ -280,7 +288,7 @@
             "epsilon": 0.4
           },
           "stringParameters": {
-            "newColor": "53;53;53",
+            "newColor": "226;24;51",
             "originalColor": "0;0;0"
           },
           "booleanParameters": {}
@@ -446,6 +454,66 @@
           ]
         }
       ]
+    },
+    {
+      "adaptCollisionMaskAutomatically": true,
+      "assetStoreId": "",
+      "name": "CycleInventory",
+      "type": "Sprite",
+      "updateIfNotVisible": false,
+      "variables": [],
+      "effects": [],
+      "behaviors": [],
+      "animations": [
+        {
+          "name": "",
+          "useMultipleDirections": false,
+          "directions": [
+            {
+              "looping": false,
+              "timeBetweenFrames": 0.08,
+              "sprites": [
+                {
+                  "hasCustomCollisionMask": true,
+                  "image": "assets\\keys\\Arrow Key_Right.png",
+                  "points": [],
+                  "originPoint": {
+                    "name": "origine",
+                    "x": 0,
+                    "y": 0
+                  },
+                  "centerPoint": {
+                    "automatic": true,
+                    "name": "centre",
+                    "x": 0,
+                    "y": 0
+                  },
+                  "customCollisionMask": [
+                    [
+                      {
+                        "x": 13,
+                        "y": 14
+                      },
+                      {
+                        "x": 87,
+                        "y": 14
+                      },
+                      {
+                        "x": 87,
+                        "y": 86
+                      },
+                      {
+                        "x": 13,
+                        "y": 86
+                      }
+                    ]
+                  ]
+                }
+              ]
+            }
+          ]
+        }
+      ]
     }
   ],
   "objectsFolderStructure": {
@@ -454,6 +522,9 @@
       {
         "folderName": "UI",
         "children": [
+          {
+            "objectName": "CycleInventory"
+          },
           {
             "objectName": "StatuesCollectedCounter"
           },

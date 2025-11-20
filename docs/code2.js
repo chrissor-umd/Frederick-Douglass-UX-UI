@@ -1,0 +1,753 @@
+gdjs.ExplorationCode = {};
+gdjs.ExplorationCode.localVariables = [];
+gdjs.ExplorationCode.idToCallbackMap = new Map();
+gdjs.ExplorationCode.GDBackgroundObjects1= [];
+gdjs.ExplorationCode.GDBackgroundObjects2= [];
+gdjs.ExplorationCode.GDBackgroundObjects3= [];
+gdjs.ExplorationCode.GDTransitionObjectObjects1= [];
+gdjs.ExplorationCode.GDTransitionObjectObjects2= [];
+gdjs.ExplorationCode.GDTransitionObjectObjects3= [];
+gdjs.ExplorationCode.GDInspectObjectObjects1= [];
+gdjs.ExplorationCode.GDInspectObjectObjects2= [];
+gdjs.ExplorationCode.GDInspectObjectObjects3= [];
+gdjs.ExplorationCode.GDExitInspectObjects1= [];
+gdjs.ExplorationCode.GDExitInspectObjects2= [];
+gdjs.ExplorationCode.GDExitInspectObjects3= [];
+gdjs.ExplorationCode.GDInspectImageObjects1= [];
+gdjs.ExplorationCode.GDInspectImageObjects2= [];
+gdjs.ExplorationCode.GDInspectImageObjects3= [];
+gdjs.ExplorationCode.GDInspectBackgroundObjects1= [];
+gdjs.ExplorationCode.GDInspectBackgroundObjects2= [];
+gdjs.ExplorationCode.GDInspectBackgroundObjects3= [];
+gdjs.ExplorationCode.GDStatueCollectibleObjects1= [];
+gdjs.ExplorationCode.GDStatueCollectibleObjects2= [];
+gdjs.ExplorationCode.GDStatueCollectibleObjects3= [];
+gdjs.ExplorationCode.GDInspectTextObjects1= [];
+gdjs.ExplorationCode.GDInspectTextObjects2= [];
+gdjs.ExplorationCode.GDInspectTextObjects3= [];
+gdjs.ExplorationCode.GDUIBackgroundObjects1= [];
+gdjs.ExplorationCode.GDUIBackgroundObjects2= [];
+gdjs.ExplorationCode.GDUIBackgroundObjects3= [];
+gdjs.ExplorationCode.GDStatuesCollectedCounterObjects1= [];
+gdjs.ExplorationCode.GDStatuesCollectedCounterObjects2= [];
+gdjs.ExplorationCode.GDStatuesCollectedCounterObjects3= [];
+gdjs.ExplorationCode.GDPauseButtonObjects1= [];
+gdjs.ExplorationCode.GDPauseButtonObjects2= [];
+gdjs.ExplorationCode.GDPauseButtonObjects3= [];
+gdjs.ExplorationCode.GDCycleInventoryObjects1= [];
+gdjs.ExplorationCode.GDCycleInventoryObjects2= [];
+gdjs.ExplorationCode.GDCycleInventoryObjects3= [];
+
+
+gdjs.ExplorationCode.userFunc0x906258 = function GDJSInlineCode(runtimeScene) {
+"use strict";
+if (!runtimeScene.getGame().getVariables().get("DataInitialized").getAsBoolean()) { // All persistent data is attached to gdjs so that it isn't reset on scene change
+    gdjs.FDGameData = {};
+    const FDSG = gdjs.FDGameData; // This way data can be accessed through a simpler variable name (FDSG = Frederick-Douglass Square Game)
+
+    /// PUT ALL PERSISTENT DATA (FUNCTION DEFINITIONS AND VARIABLES AND STUFF) HERE! MAKE SURE TO PREFIX WITH 'FDSG.'!
+
+    FDSG.GameVars = { // This holds variables that are important for tracking/managing the current game variables
+        DEBUG: true, // Set to false to disable debug messages
+        startLayout: "FDS North", // The starting layout
+        _currentLayout: "", // This is used to load the corrent layout on transitions
+        _currentInspect: [], // Used to track which Inspects are currently loaded
+        runtimeScene: runtimeScene,
+            // Used for accessing the current RuntimeScene object, since otherwise the definitions here will try and access the old object
+        collectibles: {}, /* This is used to track which collectibles have been collected. Each collectible has a uniqueID,
+                          and is either true (collected) or false (not collected) */
+        statuesCollected: 0, // The number of statues Collected
+
+        // Flags
+        _isInspecting: false,
+        
+        // Getters and Setters
+        // currentLayout
+            get currentLayout() {
+                return this._currentLayout;
+            },
+            set currentLayout(newLayout) {
+                this._currentLayout = newLayout;
+                gdjs.evtTools.runtimeScene.replaceScene(GameVars.runtimeScene, gdjs.evtTools.runtimeScene.getSceneName(GameVars.runtimeScene));
+            },
+        // isInspecting
+            get isInspecting() {
+                return this._isInspecting;
+            },
+            set isInspecting(value) {
+                FDSG.darkEffect(value, true); // Activate/Deactivate the dark screen effect
+                const inspectLayer = GameVars.runtimeScene.getLayer("InspectObjects"); // Get the InspectObjects layer
+                const inspectUILayer = GameVars.runtimeScene.getLayer("InspectUI");
+                inspectLayer.show(value); // Show/Hide the layer
+                inspectUILayer.show(value);
+                FDSG.ClickableLayers["InspectObjects"] = value; // Enable/Disable the relevant layers clicks
+                FDSG.ClickableLayers["InspectUI"] = value;
+                FDSG.ClickableLayers["UI"] = !value;
+                FDSG.ClickableLayers["SceneObjects"] = !value;
+                if (!value) {
+                    FDSG.removeInspectFromView("all");
+                } 
+            }
+    }
+    const GameVars = FDSG.GameVars; // Simpler reference variable
+    GameVars._currentLayout = GameVars.startLayout // Load the starting layout as default
+    const Game = GameVars.runtimeScene.getGame();
+
+    FDSG._ClickableObjects = {}; // Stores registered actions to run when objects are clicked
+
+    FDSG.ClickableLayers = { // Similar but for disabling layers instead of individual objects
+        "UI": true,
+        "SceneObjects": true,
+        "InspectObjects": false,
+        "InspectUI": false
+    }
+
+    FDSG._LayoutData = {}; // Used for tracking layout specific data
+
+    FDSG.PlayerInventory = []; // Used to track the player inventory
+
+    // OBJECT GROUPS ###################################################################################################################################
+    // Since object groups aren't really easy to access in JS (or in general imo), we can define object groups by object name here
+    FDSG.ObjectGroups = {
+        "Collectibles": [
+            "StatueCollectible" 
+        ]
+    }
+}
+};
+gdjs.ExplorationCode.eventsList0 = function(runtimeScene) {
+
+{
+
+
+gdjs.ExplorationCode.userFunc0x906258(runtimeScene);
+
+}
+
+
+};gdjs.ExplorationCode.userFunc0x8fcfa8 = function GDJSInlineCode(runtimeScene) {
+"use strict";
+const FDSG = gdjs.FDGameData;
+const GameVars = FDSG.GameVars;
+const Game = GameVars.runtimeScene.getGame();
+
+if (!runtimeScene.getGame().getVariables().get("DataInitialized").getAsBoolean()) {
+    
+    // FUNCTIONS #######################################################################################################################################
+
+    /**
+     * Returns all object names in the current game
+     * @returns {string[]}
+    */
+    FDSG.getAllObjects = function() {
+        // Gets all object types in the game
+        const objects = GameVars.runtimeScene._objects.items;
+        const objectList = [];
+        for (const object in objects) {
+            objectList.push(object);
+        }
+        return objectList;
+    }
+
+    /**
+     * Returns all instances of any object in the current scene
+     * @param {gdjs.RuntimeScene} runtimeScene the target runtimeScene
+     * @param {string} layer? Only retrieve objects from this layer. Defaults to all layers
+     * @returns {gdjs.RuntimeObject[]} All instances in the current scene
+     */
+    FDSG.getAllSceneInstances = function(runtimeScene, layer = "all") {
+        const instances = runtimeScene._instances.items;
+        const layerInstances = [];
+        for (const object in instances) {
+            for (const instance of instances[object]) {
+                if (instance.getLayer() == layer || layer == "all") {
+                    layerInstances.push(instance);                    
+                }
+            }            
+        }
+        return layerInstances;
+    }        
+    
+    /**
+     * Loads proper layouts for the scene and handles layout elements
+     */
+    FDSG.initScene = function() {
+        // Loads proper layouts and initializes necessary values
+        //FDSG.debugPrint`initializing ${FDSG.GameVars.currentLayout}`);
+        gdjs.evtTools.runtimeScene.createObjectsFromExternalLayout(GameVars.runtimeScene, "UI", 0, 0, false); // Load the UI
+        gdjs.evtTools.runtimeScene.createObjectsFromExternalLayout(GameVars.runtimeScene, GameVars.currentLayout, 0, 0, false);
+                // Load the layout for the current screen
+            
+        // Disable the darkening effects
+        const backgroundLayer = GameVars.runtimeScene.getLayer("Background");
+        const objectsLayer = GameVars.runtimeScene.getLayer("SceneObjects");
+        const uiLayer = GameVars.runtimeScene.getLayer("UI");
+        const inspectUILayer = GameVars.runtimeScene.getLayer("InspectUI");
+        for (const layer of [backgroundLayer, objectsLayer, uiLayer]) {
+            layer.enableEffect("Darken", false);
+        }
+
+        // COLLECTIBLES HANDLING
+        for (const collectibleType of FDSG.ObjectGroups.Collectibles) { // Check all instances of collectible objects to see if they've been collected already
+            const collectibleObjects = GameVars.runtimeScene.getObjects(collectibleType);
+            for (const collectible of collectibleObjects) {
+                const uniqueID = `${collectible.name}-${GameVars.currentLayout}-${collectible.getX()}-${collectible.getY()}`;
+                    /* Each collectible instance is assigned to a unique ID that consists of the type of object, the name of the layout they're in,
+                    and their x and y coordinates. This way we can track which objects have been collected or not */
+                if (uniqueID in GameVars.collectibles) { // Check if this instance has been registered before
+                    if (GameVars.collectibles[uniqueID] == true) { // Check if this item has been collected already
+                        collectible.deleteFromScene(GameVars.runtimeScene); // Remove the object from the scene
+                    }
+                } else { // Collectible has not been registered before
+                    GameVars.collectibles[uniqueID] = false; // register the object as not collected yet
+                }
+            }
+        }
+        FDSG.updateStatueCounter(); // Update the StatuesCollectedCounter to the proper value
+
+        // INSPECTS HANDLING
+        /* All we really do here is check the different "inspectName" values in the layout, and then get a map tying each object to its associated inspect.
+        Then we just get their initial x and y positions in the layout so we can move them into the camera when they activate
+        and move them back when they exit */
+        FDSG._LayoutData[GameVars.currentLayout] = { // Initialize the LayoutData
+            inspects: {}
+        }
+        const layoutInspects = FDSG._LayoutData[GameVars.currentLayout].inspects; // Simpler reference variable
+        const cameraWidth = gdjs.evtTools.camera.getCameraWidth(GameVars.runtimeScene, "", 0);
+        const cameraHeight = gdjs.evtTools.camera.getCameraHeight(GameVars.runtimeScene, "", 0);
+        const cameraHeightOffset = 96; // This is to vertically offset the camera to make room for the UI
+        const allInstances = FDSG.getAllSceneInstances(GameVars.runtimeScene, "InspectObjects");
+        for (const inspectObject of allInstances) {
+            // Get all the objects on the InspectObjects layer and register their positions
+            if (!inspectObject.getVariables().has("inspectName")) {
+                continue;
+            } 
+            const inspect = inspectObject.getVariables().get("inspectName").getAsString();
+            if (!(inspect in layoutInspects)) {
+                layoutInspects[inspect] = { // Register this inspect
+                    baseX: inspectObject.getX(), // The initial X and y positions so that we can determine the relative positioning of objects in this inspect
+                    baseY: inspectObject.getY(),
+                    inspectWidth: 0, // The width of the full inspect (we use this to make sure the inspect is brought to the center of the screen)
+                    inspectHeight: 0, // The height of the fll inspect
+                    highestX: null, // These will help determine the width and height
+                    highestY: null,
+                    activeX: null, // Where to move the inspect objects when the inspect activates
+                    activeY: null, 
+                    instances: [] // The instances in this inspect
+                }
+            }
+            const layoutInspect = layoutInspects[inspect];
+            const inspectInstance = {
+                object: inspectObject, // The RuntimeObject itself
+                initialX: inspectObject.getX(), // The initial x position
+                initialY: inspectObject.getY() // The initial y position
+            }
+            if (inspectInstance.x < layoutInspect.baseX) {layoutInspect.baseX = inspectInstance.x;}
+                // We want the leftmost x position so we can determine the relative positioning of all objects in this inspect
+            if (inspectInstance.y < layoutInspect.baseY) {layoutInspect.baseY = inspectInstance.y;}
+                // We want the topmost y position so we can determine the relative positioning of all objects in this inspect
+            if (inspectInstance.initialX + inspectObject.getWidth() > layoutInspect.highestX || layoutInspect.highestX == null) {
+                layoutInspect.highestX = inspectInstance.initialX + inspectObject.getWidth();}
+            if (inspectInstance.initialY + inspectObject.getHeight() > layoutInspect.highestY || layoutInspect.highestY == null) {
+                layoutInspect.highestY = inspectInstance.initialY + inspectObject.getHeight();}
+            layoutInspect.instances.push(inspectInstance);
+                // Store this object so we can move it when we load this inspect
+        }
+        for (const inspect in layoutInspects) {
+            /* Now that we have all the objects registered, we can calculate the width, height, and active position for the inspect
+            This probably wont be necessary since I imagine all of our inspects will be the same width and height,
+            but I figured I'd include this for flexibility */
+            layoutInspects[inspect].inspectWidth = layoutInspects[inspect].highestX - layoutInspects[inspect].baseX;
+            layoutInspects[inspect].inspectHeight = layoutInspects[inspect].highestY - layoutInspects[inspect].baseY;
+            layoutInspects[inspect].activeX = (cameraWidth - layoutInspects[inspect].inspectWidth)/2;
+            layoutInspects[inspect].activeY = (cameraHeight + cameraHeightOffset - layoutInspects[inspect].inspectHeight)/2;
+        }
+        GameVars._currentInspect = [];
+        GameVars._isInspecting = false;
+    }
+
+    /**
+     * Removes a collectible object from the scene and marks it as collected.
+     * @param {gdjs.RuntimeObject} collectible the collectibleObject that's being collected
+     * @returns {boolean} If the object was successfully collected
+     */
+    FDSG.collectObject = function(collectible) {
+        if (!FDSG.ObjectGroups.Collectibles.includes(String(collectible.getName()))) {
+            FDSG.debugPrint("Object is not a collectible");
+            return false;
+        }
+        const uniqueID = `${collectible.name}-${GameVars.currentLayout}-${collectible.getX()}-${collectible.getY()}`;
+            // The objects uniqueID to distinguish it from others
+        GameVars.collectibles[uniqueID] = true; // Mark as collected
+        collectible.deleteFromScene(GameVars.runtimeScene);
+        FDSG.debugPrint(`Collected ${uniqueID}`);
+        return true;
+    }
+
+    /**
+     * Darkens the appropriate layers for pausing and inspection
+     * @param {boolean} enable Whether to enable or disable the effect
+     * @param {boolean} darkenUI Whether to darken the UI layer (for inspects) 
+     */
+    FDSG.darkEffect = function(enable, darkenUI = false) {
+        const backgroundLayer = GameVars.runtimeScene.getLayer("Background");
+        const objectsLayer = GameVars.runtimeScene.getLayer("SceneObjects");
+        const uiLayer = GameVars.runtimeScene.getLayer("UI");
+        const layers = [backgroundLayer, objectsLayer];
+        if (darkenUI) {
+            layers.push(uiLayer);
+        }
+        for (const layer of layers) {
+            layer.enableEffect("Darken", enable);
+        }
+    }
+
+    /**
+     * Registers a function to run when an object is clicked.
+     * @param {Object} clickConfig The object that holds the listed parameters
+     * @param {string|string[]} clickConfig.object The object type or array of object types to register
+     * @param {string|string[]} clickConfig.button The mouse button or array of mouse buttons (Left, Right, Middle)
+     * @param {"pressed"|"released"|string[]} clickConfig.duration When the callback should fire
+     * @param {(obj: gdjs.RuntimeObject) => void} clickConfig.clickFunction The function that runs when clicked
+     * @param {string} [clickConfig.cursor] Optional cursor to show on hover
+     */
+    FDSG.registerClickableObject = function(clickConfig) {
+        var objects = clickConfig.object;
+        var clickButtons = clickConfig.button;
+        var clickDurations = clickConfig.duration;
+        var cursor = (typeof clickConfig.cursor === 'undefined') ? "pointer" : clickConfig.cursor; // Cursor defaults to "pointer"
+        // We put the following parameters in arrays if they're not already.
+        /* This is probably overkill since it's unlikely more than one object will be tied to a function, but this only runs once at startup
+        so it's not gonna affect performance or anything */
+        if (!Array.isArray(objects)) {
+            objects = [clickConfig.object];
+        }
+        if (!Array.isArray(clickButtons)) {
+            clickButtons = [clickConfig.button];
+        }
+        if (!Array.isArray(clickDurations)) {
+            clickDurations = [clickConfig.duration];
+        }
+        for (const object of objects) {
+            if (!(object in FDSG._ClickableObjects)) {
+                FDSG._ClickableObjects[object] = { // Register the object as clickable and store the necessary properties
+                    clickActions: {}, // Stores functions and their triggers
+                    cursor: cursor, // What the cursor should turn into when hovering over
+                    enabled: true // Useful for disabling interactivity on this object
+                }
+            }
+            let clickObject = FDSG._ClickableObjects[object]; // Easier reference variable
+            for (const clickButton of clickButtons) {
+                if (!(clickButton in clickObject.clickActions)) { // Register the button
+                    clickObject.clickActions[clickButton] = {};
+                }
+                for (const clickDuration of clickDurations) {
+                    if (!(clickDuration in clickObject.clickActions[clickButton])) { // Register the duration
+                        clickObject.clickActions[clickButton][clickDuration] = {};
+                    }
+                    clickObject.clickActions[clickButton][clickDuration] = clickConfig.clickFunction; // Register the clickFunction
+                }
+            }
+        }
+    }
+   
+    /**
+     * Checks clicked objects and runs the appropriate functions
+     */
+    FDSG.handleClickableObjects = function() {
+        let isHovering = false; // Whether the mouse is hovering over a clickable object
+        let highestZOrder = -1; // We change the mouse cursor to the one determined by the object closest to the camera
+        let cursor = "default"; // Default cursor type
+        for (const object in FDSG._ClickableObjects) { // Check each object
+            const clickObject = FDSG._ClickableObjects[object]; // Easer reference variable
+            if (clickObject.enabled) { // Check if the object is disabled
+                const objects = GameVars.runtimeScene.getObjects(object);
+                for (const instance of objects) { // Check each instance of the object
+                    const instanceLayer = instance.getLayer();
+                    if (instance.cursorOnObject() && (instanceLayer in FDSG.ClickableLayers) && (FDSG.ClickableLayers[instanceLayer])) {
+                        // Check if the cursor is on the object and if its layer is not disabled
+                        let zOrder = instance.getZOrder(); // This determines which objects are shown in front of/behind other objects
+                        if (zOrder > highestZOrder) { // Only set cursor for the object with the highest Z order
+                            cursor = clickObject.cursor;
+                        }
+                        for (const clickButton in clickObject.clickActions) { // Check each button
+                            if (clickButton == "hover") { // Run functions registered for when the mouse is hovering over the object
+                                clickObject.clickActions.hover(instance); // Run the hover function
+                                continue;
+                            }
+                            let clickPressed = gdjs.evtTools.input.isMouseButtonPressed(GameVars.runtimeScene, clickButton);
+                            let clickReleased = gdjs.evtTools.input.isMouseButtonReleased(GameVars.runtimeScene, clickButton);
+                            for (const clickDuration in clickObject.clickActions[clickButton]) {
+                                if ((clickDuration == "pressed" && clickPressed) || (clickDuration == "released" && clickReleased)) {
+                                    clickObject.clickActions[clickButton][clickDuration](instance);
+                                        // Run the registered function, passing this instance as an arg
+                                }
+                            }
+                        }
+                    }   
+                }
+            }
+        }
+        Game.getRenderer().getCanvas().style.cursor = cursor; // Change the cursor
+    }
+
+    /**
+     * Enables/Disables the click callback function of a given object. Useful for pausing functionality under specific circumstances
+     * @param {string} object The type of object
+     * @param {boolean} enable Set to true to enable the object, set to false to disable the object
+     */
+    FDSG.enableObjectClick = function(object, enable) {
+        if (!(object in FDSG._ClickableObjects)) {
+            FDSG.debugPrint(`Warning: ${object} not registered as clickable!`);
+            return
+        }
+        FDSG._ClickableObjects[object].enable = enable;
+    }
+
+    /**
+     * Enables/Disables the click callback function of all objects on a given layer. Useful for pausing functionality under specific circumstances
+     * @param {string} layer The target layer
+     * @param {boolean} enable Set to true to enable the layer, set to false to disable the layer
+     */
+    FDSG.enableLayerClick = function(layer, enable) {
+        if (!(layer in FDSG.ClickableLayers)) {
+            FDSG.debugPrint(`Warning: ${layer} not registered as clickable!`);
+            return
+        }
+        FDSG.ClickableLayers[layer] = enable;
+    }
+
+    /**
+     * Adds an Inspect to currentInspect array and brings all associated objects into the camera view
+     * @param {string|string[]} inspectNames The specific inspect or array of inspects to take objects from
+     */
+    FDSG.bringInspectIntoView = function(...inspectNames) {
+        for (const inspectName of inspectNames) {
+            if (!(inspectName in FDSG._LayoutData[GameVars.currentLayout].inspects)) { // Check if the inspect is registered
+                FDSG.debugPrint(`inspect ${inspectName} not registered, skipping`);
+                continue;
+            }
+            if (GameVars._currentInspect.includes(inspectName)) { // Check if the inspect is already loaded
+                FDSG.debugPrint(`inspect ${inspectName} already loaded, skipping`);
+                continue;
+            }
+            const layoutInspect = FDSG._LayoutData[GameVars.currentLayout].inspects[inspectName];
+            for (const inspectInstance of layoutInspect.instances) { // Bring the objects into view, maintaining relative positions
+                let object = inspectInstance.object;
+                if (object.name == "InspectText") {
+                    const innerText = object.getVariables().get("innerText").getAsString();
+                    object.setText(innerText);
+                }
+                let relX = (inspectInstance.initialX - layoutInspect.baseX) + layoutInspect.activeX;
+                let relY = (inspectInstance.initialY - layoutInspect.baseY) + layoutInspect.activeY;
+                object.setX(relX); // Move the object to the center of the camera, offset by it's relative position in the inspect
+                object.setY(relY);
+            }
+            GameVars._currentInspect.push(inspectName);
+        }
+    }
+
+    /**
+     * Removes the latest inspect or all inspects from current inspects and moves their objects back to their initial positions
+     * @param {string|string[]|"all"} inspectNames? The inspects to unload. Defaults to the most recently loaded. Set to "all" to unload all of them
+     */
+    FDSG.removeInspectFromView = function(...inspectNames) {
+        if (inspectNames.length == 0) {
+            inspectNames = [GameVars._currentInspect.at(-1)];
+        }
+        else if (inspectNames[0] == "all") {
+                inspectNames = GameVars._currentInspect.slice();
+        }
+        for (const inspectName of inspectNames) {
+            FDSG.debugPrint(`unloading inspect: ${inspectName}`);
+            if (!GameVars._currentInspect.includes(inspectName)) { // Don't unload inspects that aren't loaded
+                FDSG.debugPrint(`inspect ${inspectName} is not loaded, skipping`);
+                continue;
+            }
+            const inspectData = FDSG._LayoutData[GameVars.currentLayout].inspects[inspectName];
+            for (const inspectInstance of inspectData.instances) { // Restore initial position of objects
+                let object = inspectInstance.object;
+                object.setX(inspectInstance.initialX);
+                object.setY(inspectInstance.initialY);
+            }
+            const i = GameVars._currentInspect.indexOf(inspectName);
+            GameVars._currentInspect.splice(i, 1); // Remove the inspect from the array
+        }
+    }
+
+    /**
+     * Sets the value of the StatuesCollectedCounter
+     */
+    FDSG.updateStatueCounter = function() {
+        const statueCounter = GameVars.runtimeScene.getObjects("StatuesCollectedCounter")[0];
+        statueCounter.getVariables().get("value").setNumber(GameVars.statuesCollected);
+        statueCounter.setText(`Statues Collected: ${GameVars.statuesCollected}`);
+    }
+
+
+    /**
+     * Prints a message to the console only if debugMode is set to true
+     * @param {...any} arg The values to log 
+     */
+    FDSG.debugPrint = function(...args) {
+        if (GameVars.DEBUG) {
+            console.log(...args);   
+        }
+    }
+}
+};
+gdjs.ExplorationCode.eventsList1 = function(runtimeScene) {
+
+{
+
+
+gdjs.ExplorationCode.userFunc0x8fcfa8(runtimeScene);
+
+}
+
+
+};gdjs.ExplorationCode.userFunc0x8fd078 = function GDJSInlineCode(runtimeScene) {
+"use strict";
+if (!runtimeScene.getGame().getVariables().get("DataInitialized").getAsBoolean()) {
+    const FDSG = gdjs.FDGameData;
+    const GameVars = FDSG.GameVars;
+    const Game = GameVars.runtimeScene.getGame();
+    
+    // CLICKABLE OBJECT REGISTRATIONS ##########################################################################################################################
+    /*
+    This is where you can easily assign objects to specific functions when clicked.
+    Just call the FDSG.registerClickableObject() function, passing a clickConfig object with the following properties:
+        clickConfig = {
+            object|object[]: The type of scene object you're registering
+            button|button[]: The mouse button that triggers this function. You can also put "hover" if you want the function to run when hovering over
+            duration|duration[]: Whether the function should run as long as the mouse button is held down or just when released
+            clickFunction: The function that should run when this object is clicked, with a parameter 'obj' for the instance being clicked.
+                It's best to pass an anonymous function of this form: (obj) => {<insert code here>}
+            cursor?: If you want the mouse cursor to change when hovering over this object, put it here as a string (defaults to "pointer")
+        }
+    */
+
+    FDSG.registerClickableObject({
+        object: "TransitionObject",
+        button:"Left",
+        duration: "released",
+        clickFunction: (obj) => {
+            GameVars.currentLayout = obj.getVariables().get("targetLayout").getAsString();
+                // Changes the currentLayout to the layout associated with the TransitionObject and reloads the scene
+        }
+    });
+
+    FDSG.registerClickableObject({
+        object: "InspectObject",
+        button: "Left",
+        duration: "released",
+        clickFunction: (obj) => {
+            const targetInspect = obj.getVariables().get("targetInspect").getAsString();
+            FDSG.bringInspectIntoView(targetInspect);
+            GameVars.isInspecting = true;
+        },
+        cursor: "help"
+    });
+
+    FDSG.registerClickableObject({
+        object: "ExitInspect",
+        button: "Left",
+        duration: "released",
+        clickFunction: (obj) => {
+            FDSG.removeInspectFromView("all");
+            GameVars.isInspecting = false;
+        }
+    });
+
+    FDSG.registerClickableObject({
+        object: "PauseButton",
+        button: "Left",
+        duration: "released",
+        clickFunction: (obj) => {
+            gdjs.evtTools.runtimeScene.pushScene(GameVars.runtimeScene, "Pause Screen"); // Pauses the current scene and loads the "Pause Screen" Scene
+        }
+    });
+
+    FDSG.registerClickableObject({
+        object: "StatueCollectible",
+        button: "Left",
+        duration: "released",
+        clickFunction: (obj) => {
+            if (FDSG.collectObject(obj)) { // Try and collect the statue
+                GameVars.statuesCollected += 1;
+                FDSG.updateStatueCounter();
+            }
+        }
+    });
+
+    Game.getVariables().get("DataInitialized").setBoolean(true); // Sets the DataInitialized variable to true so that definitions are only made once
+    FDSG.debugPrint("initialized custom game data");
+}
+
+};
+gdjs.ExplorationCode.eventsList2 = function(runtimeScene) {
+
+{
+
+
+gdjs.ExplorationCode.userFunc0x8fd078(runtimeScene);
+
+}
+
+
+};gdjs.ExplorationCode.eventsList3 = function(runtimeScene) {
+
+{
+
+
+gdjs.ExplorationCode.eventsList0(runtimeScene);
+}
+
+
+{
+
+
+gdjs.ExplorationCode.eventsList1(runtimeScene);
+}
+
+
+{
+
+
+gdjs.ExplorationCode.eventsList2(runtimeScene);
+}
+
+
+};gdjs.ExplorationCode.userFunc0x973fc0 = function GDJSInlineCode(runtimeScene) {
+"use strict";
+const FDSG = gdjs.FDGameData; // Simpler variables to use as reference
+const GameVars = FDSG.GameVars;
+
+if (gdjs.evtTools.runtimeScene.sceneJustBegins(runtimeScene)) { // Runs only at the beginning of the scene
+    GameVars.runtimeScene = runtimeScene; // Update the current RuntimeScene object
+    FDSG.initScene(runtimeScene);
+    console.log("Initialized scene");
+    GameVars.isInspecting = false;
+}
+
+FDSG.handleClickableObjects(); // Handle all registered functions associated with clicking objects
+};
+gdjs.ExplorationCode.eventsList4 = function(runtimeScene) {
+
+{
+
+
+gdjs.ExplorationCode.userFunc0x973fc0(runtimeScene);
+
+}
+
+
+};gdjs.ExplorationCode.eventsList5 = function(runtimeScene) {
+
+{
+
+
+
+}
+
+
+{
+
+
+gdjs.ExplorationCode.eventsList3(runtimeScene);
+}
+
+
+{
+
+
+gdjs.ExplorationCode.eventsList4(runtimeScene);
+}
+
+
+};
+
+gdjs.ExplorationCode.func = function(runtimeScene) {
+runtimeScene.getOnceTriggers().startNewFrame();
+
+gdjs.ExplorationCode.GDBackgroundObjects1.length = 0;
+gdjs.ExplorationCode.GDBackgroundObjects2.length = 0;
+gdjs.ExplorationCode.GDBackgroundObjects3.length = 0;
+gdjs.ExplorationCode.GDTransitionObjectObjects1.length = 0;
+gdjs.ExplorationCode.GDTransitionObjectObjects2.length = 0;
+gdjs.ExplorationCode.GDTransitionObjectObjects3.length = 0;
+gdjs.ExplorationCode.GDInspectObjectObjects1.length = 0;
+gdjs.ExplorationCode.GDInspectObjectObjects2.length = 0;
+gdjs.ExplorationCode.GDInspectObjectObjects3.length = 0;
+gdjs.ExplorationCode.GDExitInspectObjects1.length = 0;
+gdjs.ExplorationCode.GDExitInspectObjects2.length = 0;
+gdjs.ExplorationCode.GDExitInspectObjects3.length = 0;
+gdjs.ExplorationCode.GDInspectImageObjects1.length = 0;
+gdjs.ExplorationCode.GDInspectImageObjects2.length = 0;
+gdjs.ExplorationCode.GDInspectImageObjects3.length = 0;
+gdjs.ExplorationCode.GDInspectBackgroundObjects1.length = 0;
+gdjs.ExplorationCode.GDInspectBackgroundObjects2.length = 0;
+gdjs.ExplorationCode.GDInspectBackgroundObjects3.length = 0;
+gdjs.ExplorationCode.GDStatueCollectibleObjects1.length = 0;
+gdjs.ExplorationCode.GDStatueCollectibleObjects2.length = 0;
+gdjs.ExplorationCode.GDStatueCollectibleObjects3.length = 0;
+gdjs.ExplorationCode.GDInspectTextObjects1.length = 0;
+gdjs.ExplorationCode.GDInspectTextObjects2.length = 0;
+gdjs.ExplorationCode.GDInspectTextObjects3.length = 0;
+gdjs.ExplorationCode.GDUIBackgroundObjects1.length = 0;
+gdjs.ExplorationCode.GDUIBackgroundObjects2.length = 0;
+gdjs.ExplorationCode.GDUIBackgroundObjects3.length = 0;
+gdjs.ExplorationCode.GDStatuesCollectedCounterObjects1.length = 0;
+gdjs.ExplorationCode.GDStatuesCollectedCounterObjects2.length = 0;
+gdjs.ExplorationCode.GDStatuesCollectedCounterObjects3.length = 0;
+gdjs.ExplorationCode.GDPauseButtonObjects1.length = 0;
+gdjs.ExplorationCode.GDPauseButtonObjects2.length = 0;
+gdjs.ExplorationCode.GDPauseButtonObjects3.length = 0;
+gdjs.ExplorationCode.GDCycleInventoryObjects1.length = 0;
+gdjs.ExplorationCode.GDCycleInventoryObjects2.length = 0;
+gdjs.ExplorationCode.GDCycleInventoryObjects3.length = 0;
+
+gdjs.ExplorationCode.eventsList5(runtimeScene);
+gdjs.ExplorationCode.GDBackgroundObjects1.length = 0;
+gdjs.ExplorationCode.GDBackgroundObjects2.length = 0;
+gdjs.ExplorationCode.GDBackgroundObjects3.length = 0;
+gdjs.ExplorationCode.GDTransitionObjectObjects1.length = 0;
+gdjs.ExplorationCode.GDTransitionObjectObjects2.length = 0;
+gdjs.ExplorationCode.GDTransitionObjectObjects3.length = 0;
+gdjs.ExplorationCode.GDInspectObjectObjects1.length = 0;
+gdjs.ExplorationCode.GDInspectObjectObjects2.length = 0;
+gdjs.ExplorationCode.GDInspectObjectObjects3.length = 0;
+gdjs.ExplorationCode.GDExitInspectObjects1.length = 0;
+gdjs.ExplorationCode.GDExitInspectObjects2.length = 0;
+gdjs.ExplorationCode.GDExitInspectObjects3.length = 0;
+gdjs.ExplorationCode.GDInspectImageObjects1.length = 0;
+gdjs.ExplorationCode.GDInspectImageObjects2.length = 0;
+gdjs.ExplorationCode.GDInspectImageObjects3.length = 0;
+gdjs.ExplorationCode.GDInspectBackgroundObjects1.length = 0;
+gdjs.ExplorationCode.GDInspectBackgroundObjects2.length = 0;
+gdjs.ExplorationCode.GDInspectBackgroundObjects3.length = 0;
+gdjs.ExplorationCode.GDStatueCollectibleObjects1.length = 0;
+gdjs.ExplorationCode.GDStatueCollectibleObjects2.length = 0;
+gdjs.ExplorationCode.GDStatueCollectibleObjects3.length = 0;
+gdjs.ExplorationCode.GDInspectTextObjects1.length = 0;
+gdjs.ExplorationCode.GDInspectTextObjects2.length = 0;
+gdjs.ExplorationCode.GDInspectTextObjects3.length = 0;
+gdjs.ExplorationCode.GDUIBackgroundObjects1.length = 0;
+gdjs.ExplorationCode.GDUIBackgroundObjects2.length = 0;
+gdjs.ExplorationCode.GDUIBackgroundObjects3.length = 0;
+gdjs.ExplorationCode.GDStatuesCollectedCounterObjects1.length = 0;
+gdjs.ExplorationCode.GDStatuesCollectedCounterObjects2.length = 0;
+gdjs.ExplorationCode.GDStatuesCollectedCounterObjects3.length = 0;
+gdjs.ExplorationCode.GDPauseButtonObjects1.length = 0;
+gdjs.ExplorationCode.GDPauseButtonObjects2.length = 0;
+gdjs.ExplorationCode.GDPauseButtonObjects3.length = 0;
+gdjs.ExplorationCode.GDCycleInventoryObjects1.length = 0;
+gdjs.ExplorationCode.GDCycleInventoryObjects2.length = 0;
+gdjs.ExplorationCode.GDCycleInventoryObjects3.length = 0;
+
+
+return;
+
+}
+
+gdjs['ExplorationCode'] = gdjs.ExplorationCode;
