@@ -367,11 +367,6 @@
       "updateIfNotVisible": false,
       "variables": [
         {
-          "name": "instanceID",
-          "type": "string",
-          "value": ""
-        },
-        {
           "name": "interactionName",
           "type": "string",
           "value": ""

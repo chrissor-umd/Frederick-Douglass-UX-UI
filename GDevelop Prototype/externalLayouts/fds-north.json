@@ -103,12 +103,12 @@
       "stringProperties": [],
       "initialVariables": [
         {
-          "name": "interactionName",
+          "name": "instanceID",
           "type": "string",
           "value": "FDS North Chest"
         },
         {
-          "name": "instanceID",
+          "name": "interactionName",
           "type": "string",
           "value": "FDS North Chest"
         },
