@@ -95,7 +95,7 @@ gdjs.ExplorationCode.GDSelectedItemBorderObjects3= [];
 gdjs.ExplorationCode.GDSelectedItemBorderObjects4= [];
 
 
-gdjs.ExplorationCode.userFunc0x7e2640 = function GDJSInlineCode(runtimeScene) {
+gdjs.ExplorationCode.userFunc0x9e2e20 = function GDJSInlineCode(runtimeScene) {
 "use strict";
 gdjs.FDGameData = {}; // All persistent data is attached to gdjs so that it isn't reset on scene change
 const FDSG = gdjs.FDGameData; // This way data can be accessed through a simpler variable name (FDSG = Frederick-Douglass Square Game)
@@ -126,12 +126,12 @@ gdjs.ExplorationCode.eventsList0 = function(runtimeScene) {
 {
 
 
-gdjs.ExplorationCode.userFunc0x7e2640(runtimeScene);
+gdjs.ExplorationCode.userFunc0x9e2e20(runtimeScene);
 
 }
 
 
-};gdjs.ExplorationCode.userFunc0x7e1838 = function GDJSInlineCode(runtimeScene) {
+};gdjs.ExplorationCode.userFunc0x7e2000 = function GDJSInlineCode(runtimeScene) {
 "use strict";
 const FDSG = gdjs.FDGameData;
 const GameVars = FDSG.GameVars;
@@ -344,12 +344,12 @@ gdjs.ExplorationCode.eventsList1 = function(runtimeScene) {
 {
 
 
-gdjs.ExplorationCode.userFunc0x7e1838(runtimeScene);
+gdjs.ExplorationCode.userFunc0x7e2000(runtimeScene);
 
 }
 
 
-};gdjs.ExplorationCode.userFunc0x9e2f70 = function GDJSInlineCode(runtimeScene) {
+};gdjs.ExplorationCode.userFunc0x9d6430 = function GDJSInlineCode(runtimeScene) {
 "use strict";
 const FDSG = gdjs.FDGameData;
 const GameVars = FDSG.GameVars;
@@ -556,12 +556,12 @@ gdjs.ExplorationCode.eventsList2 = function(runtimeScene) {
 {
 
 
-gdjs.ExplorationCode.userFunc0x9e2f70(runtimeScene);
+gdjs.ExplorationCode.userFunc0x9d6430(runtimeScene);
 
 }
 
 
-};gdjs.ExplorationCode.userFunc0x86f628 = function GDJSInlineCode(runtimeScene) {
+};gdjs.ExplorationCode.userFunc0x9d65d8 = function GDJSInlineCode(runtimeScene) {
 "use strict";
 const FDSG = gdjs.FDGameData;
 const GameVars = FDSG.GameVars;
@@ -577,7 +577,8 @@ FDSG.Input = { // Stores objects and variables for handling player input
                                 in the case of a UI element appearing underneath the cursor while clicking */
     _currentTouchID: null,
     _lastTouchX: null,
-    _lastTouchY: null
+    _lastTouchY: null,
+    _currentInputMethod: "Mouse" // This is for knowing whether or not we're using the touchscreen
 }
 
 FDSG.Input.ClickableObjects = {}; // Stores registered actions to run when objects are clicked
@@ -690,10 +691,14 @@ FDSG.handlePlayerInput = function() {
     let currentTouchID = FDSG.Input._currentTouchID;
     let isPressed = gdjs.evtTools.input.isMouseButtonPressed(GameVars.runtimeScene, "Left");
     let isReleased = gdjs.evtTools.input.isMouseButtonPressed(GameVars.runtimeScene, "Left");
+    if (isPressed || isReleased) {
+        FDSG.Input._currentInputMethod = "Mouse";
+    }
     let touchJustStarted = false;
     let touchJustEnded = false;
     
     if (touchIDs.length > 0) { // Gets the status of the touchscreen to determine input
+        FDSG.Input._currentInputMethod = "Touch";
         if (currentTouchID == null) {
             let newTouchID = touchJustStartedIDs[0];
             FDSG.Input._currentTouchID = newTouchID;
@@ -757,12 +762,17 @@ FDSG.handlePlayerInput = function() {
 
     Game.getRenderer().getCanvas().style.cursor = cursor; // Change the cursor
 
-    if (selectedItemIndex != null && !GameVars.isMobile) {
+    if (selectedItemIndex != null) {
         var itemCursor = FDSG.getAllSceneInstances("MouseCursor");
         if (itemCursor.length > 0) {
             var itemCursor = itemCursor[0];
-            itemCursor.setX(gdjs.evtTools.input.getCursorX(GameVars.runtimeScene) + ITEM_CURSOR_X_OFFSET); // Make the itemCursor follow the mouse;
-            itemCursor.setY(gdjs.evtTools.input.getCursorY(GameVars.runtimeScene) + ITEM_CURSOR_Y_OFFSET); // Make the itemCursor follow the mouse;
+            if (FDSG.Input._currentInputMethod == "Mouse") {
+                itemCursor.setX(gdjs.evtTools.input.getCursorX(GameVars.runtimeScene) + ITEM_CURSOR_X_OFFSET); // Make the itemCursor follow the mouse;
+                itemCursor.setY(gdjs.evtTools.input.getCursorY(GameVars.runtimeScene) + ITEM_CURSOR_Y_OFFSET); // Make the itemCursor follow the mouse;
+            } else {
+                itemCursor.setX(-50); // Hide the cursor in touchscreen
+                itemCursor.setY(-50);
+            }
         }
     }
 
@@ -798,13 +808,11 @@ FDSG.handlePlayerInput = function() {
         FDSG.PlayerInventory.selectedItemIndex = null; // Clear selected item on click
     }
 
-
     if (touchJustEnded) {
         FDSG.Input._currentTouchID = null;
         FDSG.Input._lastTouchX = null;
         FDSG.Input._lastTouchY = null;
     }
-
 
 
     // KEYBOARD INPUT
@@ -873,12 +881,12 @@ gdjs.ExplorationCode.eventsList3 = function(runtimeScene) {
 {
 
 
-gdjs.ExplorationCode.userFunc0x86f628(runtimeScene);
+gdjs.ExplorationCode.userFunc0x9d65d8(runtimeScene);
 
 }
 
 
-};gdjs.ExplorationCode.userFunc0x9fd048 = function GDJSInlineCode(runtimeScene) {
+};gdjs.ExplorationCode.userFunc0x9e3180 = function GDJSInlineCode(runtimeScene) {
 "use strict";
 const FDSG = gdjs.FDGameData;
 const GameVars = FDSG.GameVars;
@@ -1043,12 +1051,12 @@ gdjs.ExplorationCode.eventsList4 = function(runtimeScene) {
 {
 
 
-gdjs.ExplorationCode.userFunc0x9fd048(runtimeScene);
+gdjs.ExplorationCode.userFunc0x9e3180(runtimeScene);
 
 }
 
 
-};gdjs.ExplorationCode.userFunc0x9e28a0 = function GDJSInlineCode(runtimeScene) {
+};gdjs.ExplorationCode.userFunc0x9e32f8 = function GDJSInlineCode(runtimeScene) {
 "use strict";
 const FDSG = gdjs.FDGameData;
 const GameVars = FDSG.GameVars;
@@ -1116,12 +1124,12 @@ gdjs.ExplorationCode.eventsList5 = function(runtimeScene) {
 {
 
 
-gdjs.ExplorationCode.userFunc0x9e28a0(runtimeScene);
+gdjs.ExplorationCode.userFunc0x9e32f8(runtimeScene);
 
 }
 
 
-};gdjs.ExplorationCode.userFunc0x7e2440 = function GDJSInlineCode(runtimeScene) {
+};gdjs.ExplorationCode.userFunc0x7e2aa0 = function GDJSInlineCode(runtimeScene) {
 "use strict";
 const FDSG = gdjs.FDGameData;
 const GameVars = FDSG.GameVars;
@@ -1375,10 +1383,15 @@ FDSG.selectInventoryItem = function(inventoryIndex) {
     itemCursor.setLayer("MouseCursor");
     itemCursor.getVariables().get("isCursor").setBoolean(true);
     itemCursor.setAnimationIndex(inventoryItemObject.getAnimationIndex());
-    itemCursor.setX(gdjs.evtTools.input.getCursorX(GameVars.runtimeScene) + 16); // Make the itemCursor follow the mouse;
-    itemCursor.setY(gdjs.evtTools.input.getCursorY(GameVars.runtimeScene) + 16); // Make the itemCursor follow the mouse;
     itemCursor.setWidth(inventoryItemObject.getWidth()/1.5);
     itemCursor.setHeight(inventoryItemObject.getHeight()/1.5);
+    if (FDSG.Input._currentInputMethod == "Mouse") {
+        itemCursor.setX(gdjs.evtTools.input.getCursorX(GameVars.runtimeScene) + 16); // Make the itemCursor follow the mouse;
+        itemCursor.setY(gdjs.evtTools.input.getCursorY(GameVars.runtimeScene) + 16); // Make the itemCursor follow the mouse;
+    } else {
+        itemCursor.setX(-50); // Hide the cursor for touchscreens
+        itemCursor.setY(-50);
+    }
 
     FDSG.PlayerInventory._selectedItem = inventoryItemObject.getVariables().get("itemName").getAsString();
 }
@@ -1390,7 +1403,7 @@ gdjs.ExplorationCode.eventsList6 = function(runtimeScene) {
 {
 
 
-gdjs.ExplorationCode.userFunc0x7e2440(runtimeScene);
+gdjs.ExplorationCode.userFunc0x7e2aa0(runtimeScene);
 
 }
 
@@ -1439,7 +1452,7 @@ gdjs.ExplorationCode.eventsList6(runtimeScene);
 }
 
 
-};gdjs.ExplorationCode.userFunc0x7e2568 = function GDJSInlineCode(runtimeScene) {
+};gdjs.ExplorationCode.userFunc0x8f4d80 = function GDJSInlineCode(runtimeScene) {
 "use strict";
 const FDSG = gdjs.FDGameData;
 const GameVars = FDSG.GameVars;
@@ -1609,12 +1622,12 @@ gdjs.ExplorationCode.eventsList8 = function(runtimeScene) {
 {
 
 
-gdjs.ExplorationCode.userFunc0x7e2568(runtimeScene);
+gdjs.ExplorationCode.userFunc0x8f4d80(runtimeScene);
 
 }
 
 
-};gdjs.ExplorationCode.userFunc0x9e3278 = function GDJSInlineCode(runtimeScene) {
+};gdjs.ExplorationCode.userFunc0x8f4f38 = function GDJSInlineCode(runtimeScene) {
 "use strict";
 const FDSG = gdjs.FDGameData;
 const GameVars = FDSG.GameVars;
@@ -1677,12 +1690,12 @@ gdjs.ExplorationCode.eventsList9 = function(runtimeScene) {
 {
 
 
-gdjs.ExplorationCode.userFunc0x9e3278(runtimeScene);
+gdjs.ExplorationCode.userFunc0x8f4f38(runtimeScene);
 
 }
 
 
-};gdjs.ExplorationCode.userFunc0x906bd8 = function GDJSInlineCode(runtimeScene) {
+};gdjs.ExplorationCode.userFunc0xa44868 = function GDJSInlineCode(runtimeScene) {
 "use strict";
 const FDSG = gdjs.FDGameData;
 const GameVars = FDSG.GameVars;
@@ -1712,7 +1725,7 @@ FDSG.registerKeyPressFunction({
 });
 
 };
-gdjs.ExplorationCode.userFunc0x9fd150 = function GDJSInlineCode(runtimeScene) {
+gdjs.ExplorationCode.userFunc0x7e2488 = function GDJSInlineCode(runtimeScene) {
 "use strict";
 gdjs.FDGameData.PlayerInventory.selectedItem = null;
 
@@ -1722,7 +1735,7 @@ gdjs.ExplorationCode.eventsList10 = function(runtimeScene) {
 {
 
 
-gdjs.ExplorationCode.userFunc0x9fd150(runtimeScene);
+gdjs.ExplorationCode.userFunc0x7e2488(runtimeScene);
 
 }
 
@@ -1732,7 +1745,7 @@ gdjs.ExplorationCode.userFunc0x9fd150(runtimeScene);
 {
 
 
-gdjs.ExplorationCode.userFunc0x906bd8(runtimeScene);
+gdjs.ExplorationCode.userFunc0xa44868(runtimeScene);
 
 }
 
@@ -1839,7 +1852,7 @@ gdjs.ExplorationCode.eventsList13(runtimeScene);} //End of subevents
 }
 
 
-};gdjs.ExplorationCode.userFunc0x86f028 = function GDJSInlineCode(runtimeScene) {
+};gdjs.ExplorationCode.userFunc0x93ee58 = function GDJSInlineCode(runtimeScene) {
 "use strict";
 const FDSG = gdjs.FDGameData; // Simpler variables to use as reference
 const GameVars = FDSG.GameVars;
@@ -1858,7 +1871,7 @@ gdjs.ExplorationCode.eventsList15 = function(runtimeScene) {
 {
 
 
-gdjs.ExplorationCode.userFunc0x86f028(runtimeScene);
+gdjs.ExplorationCode.userFunc0x93ee58(runtimeScene);
 
 }
 

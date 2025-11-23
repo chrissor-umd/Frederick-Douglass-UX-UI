@@ -246,7 +246,7 @@
       ]
     },
     {
-      "adaptCollisionMaskAutomatically": true,
+      "adaptCollisionMaskAutomatically": false,
       "assetStoreId": "70a79ee3bb3889cebee1db9fdf99b121d8380daa35b88ff615ad5faf3d938d96",
       "name": "TransitionObject",
       "type": "Sprite",
@@ -287,68 +287,20 @@
                   "customCollisionMask": [
                     [
                       {
-                        "x": 18,
-                        "y": 26
+                        "x": 0,
+                        "y": 96
                       },
                       {
-                        "x": 450,
-                        "y": 26
+                        "x": 0,
+                        "y": 0
                       },
                       {
-                        "x": 450,
-                        "y": 459
+                        "x": 96,
+                        "y": 0
                       },
                       {
-                        "x": 18,
-                        "y": 459
-                      }
-                    ]
-                  ]
-                }
-              ]
-            }
-          ]
-        },
-        {
-          "name": "Target",
-          "useMultipleDirections": false,
-          "directions": [
-            {
-              "looping": false,
-              "timeBetweenFrames": 0.08,
-              "sprites": [
-                {
-                  "hasCustomCollisionMask": true,
-                  "image": "assets\\ui\\Inspect.png",
-                  "points": [],
-                  "originPoint": {
-                    "name": "origine",
-                    "x": 0,
-                    "y": 0
-                  },
-                  "centerPoint": {
-                    "automatic": true,
-                    "name": "centre",
-                    "x": 0,
-                    "y": 0
-                  },
-                  "customCollisionMask": [
-                    [
-                      {
-                        "x": 18,
-                        "y": 26
-                      },
-                      {
-                        "x": 450,
-                        "y": 26
-                      },
-                      {
-                        "x": 450,
-                        "y": 459
-                      },
-                      {
-                        "x": 18,
-                        "y": 459
+                        "x": 96,
+                        "y": 96
                       }
                     ]
                   ]
@@ -1007,7 +959,7 @@
       ]
     },
     {
-      "adaptCollisionMaskAutomatically": true,
+      "adaptCollisionMaskAutomatically": false,
       "assetStoreId": "",
       "name": "InspectionObject",
       "type": "Sprite",
@@ -1031,7 +983,7 @@
               "timeBetweenFrames": 0.08,
               "sprites": [
                 {
-                  "hasCustomCollisionMask": true,
+                  "hasCustomCollisionMask": false,
                   "image": "assets\\ui\\Inspect.png",
                   "points": [],
                   "originPoint": {
@@ -1045,26 +997,7 @@
                     "x": 0,
                     "y": 0
                   },
-                  "customCollisionMask": [
-                    [
-                      {
-                        "x": 7,
-                        "y": 3
-                      },
-                      {
-                        "x": 60,
-                        "y": 3
-                      },
-                      {
-                        "x": 60,
-                        "y": 56
-                      },
-                      {
-                        "x": 7,
-                        "y": 56
-                      }
-                    ]
-                  ]
+                  "customCollisionMask": []
                 }
               ]
             }
