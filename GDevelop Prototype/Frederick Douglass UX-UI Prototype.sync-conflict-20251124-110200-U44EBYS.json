@@ -99,6 +99,14 @@
         "userAdded": false
       },
       {
+        "file": "assets/objects/StatueCollectiblePlaceholder.png",
+        "kind": "image",
+        "metadata": "",
+        "name": "assets\\objects\\StatueCollectiblePlaceholder.png",
+        "smoothed": true,
+        "userAdded": false
+      },
+      {
         "file": "assets/images/FDS North.JPG",
         "kind": "image",
         "metadata": "",
@@ -290,74 +298,62 @@
         "userAdded": false
       },
       {
-        "file": "assets/ui/inventory_select.png",
+        "file": "assets/ui/InspectionBackground.png",
         "kind": "image",
         "metadata": "",
-        "name": "assets\\ui\\inventory_select.png",
+        "name": "assets/ui/InspectionBackground.png",
         "smoothed": true,
         "userAdded": false
       },
       {
-        "file": "assets/objects/Chest_Closed.png",
+        "file": "assets/Yellow Button_Hovered.png",
         "kind": "image",
         "metadata": "",
-        "name": "assets\\objects\\Chest_Closed.png",
+        "name": "Yellow Button_Hovered.png",
+        "smoothed": true,
+        "userAdded": false,
+        "origin": {
+          "identifier": "https://asset-resources.gdevelop.io/public-resources/Menu buttons/c1e14acb64b9963341656c997853154dc4c86cd1c46fb12bfbe012d99712ef61_Yellow Button_Hovered.png",
+          "name": "Yellow Button_Hovered.png"
+        }
+      },
+      {
+        "file": "assets/Yellow Button_Idle.png",
+        "kind": "image",
+        "metadata": "",
+        "name": "Yellow Button_Idle.png",
+        "smoothed": true,
+        "userAdded": false,
+        "origin": {
+          "identifier": "https://asset-resources.gdevelop.io/public-resources/Menu buttons/1cacfd123a1eb708837337c27982f6871f5127c5890dbf0775e0f411958fcbf1_Yellow Button_Idle.png",
+          "name": "Yellow Button_Idle.png"
+        }
+      },
+      {
+        "file": "assets/Yellow Button_Pressed.png",
+        "kind": "image",
+        "metadata": "",
+        "name": "Yellow Button_Pressed.png",
+        "smoothed": true,
+        "userAdded": false,
+        "origin": {
+          "identifier": "https://asset-resources.gdevelop.io/public-resources/Menu buttons/928c3ea4db1da835c9f8cc5b7089a47228350209d2ff489e1484c31e5ce41b3d_Yellow Button_Pressed.png",
+          "name": "Yellow Button_Pressed.png"
+        }
+      },
+      {
+        "file": "assets/ui/keys/Letter Key_Y.png",
+        "kind": "image",
+        "metadata": "",
+        "name": "assets/ui/keys/Letter Key_Y.png",
         "smoothed": true,
         "userAdded": false
       },
       {
-        "file": "assets/objects/Chest_Open_2.png",
+        "file": "assets/objects/Yellow Button_Idle.png",
         "kind": "image",
         "metadata": "",
-        "name": "assets\\objects\\Chest_Open_2.png",
-        "smoothed": true,
-        "userAdded": false
-      },
-      {
-        "file": "assets/objects/Trophy_Idle.png",
-        "kind": "image",
-        "metadata": "",
-        "name": "assets\\objects\\Trophy_Idle.png",
-        "smoothed": true,
-        "userAdded": false
-      },
-      {
-        "file": "assets/objects/StatueCollectiblePlaceholder.png",
-        "kind": "image",
-        "metadata": "",
-        "name": "assets\\objects\\StatueCollectiblePlaceholder.png",
-        "smoothed": true,
-        "userAdded": false
-      },
-      {
-        "file": "assets/ui/ui_background_template.png",
-        "kind": "image",
-        "metadata": "",
-        "name": "assets\\ui\\ui_background_template.png",
-        "smoothed": true,
-        "userAdded": false
-      },
-      {
-        "file": "assets/ui/camera_border_horizontal.png",
-        "kind": "image",
-        "metadata": "",
-        "name": "assets\\ui\\camera_border_horizontal.png",
-        "smoothed": true,
-        "userAdded": false
-      },
-      {
-        "file": "assets/ui/camera_border_vertical.png",
-        "kind": "image",
-        "metadata": "",
-        "name": "assets\\ui\\camera_border_vertical.png",
-        "smoothed": true,
-        "userAdded": false
-      },
-      {
-        "file": "assets/ui/InspectionBackgroundFlat.png",
-        "kind": "image",
-        "metadata": "",
-        "name": "assets\\ui\\InspectionBackgroundFlat.png",
+        "name": "assets/objects/Yellow Button_Idle.png",
         "smoothed": true,
         "userAdded": false
       }
@@ -488,9 +484,9 @@
       ]
     },
     {
-      "adaptCollisionMaskAutomatically": false,
+      "adaptCollisionMaskAutomatically": true,
       "assetStoreId": "",
-      "name": "CycleInventoryNext",
+      "name": "CycleInventoryRight",
       "type": "Sprite",
       "updateIfNotVisible": false,
       "variables": [],
@@ -540,20 +536,20 @@
                   "customCollisionMask": [
                     [
                       {
-                        "x": 0,
-                        "y": 0
+                        "x": 2,
+                        "y": 3
                       },
                       {
-                        "x": 64,
-                        "y": 0
+                        "x": 60,
+                        "y": 3
                       },
                       {
-                        "x": 64,
-                        "y": 64
+                        "x": 60,
+                        "y": 61
                       },
                       {
-                        "x": 0,
-                        "y": 64
+                        "x": 2,
+                        "y": 61
                       }
                     ]
                   ]
@@ -581,7 +577,7 @@
       "behaviors": []
     },
     {
-      "adaptCollisionMaskAutomatically": false,
+      "adaptCollisionMaskAutomatically": true,
       "assetStoreId": "",
       "name": "InventoryItem",
       "type": "Sprite",
@@ -591,23 +587,13 @@
           "name": "itemName",
           "type": "string",
           "value": ""
-        },
-        {
-          "name": "inventoryIndex",
-          "type": "number",
-          "value": -1
-        },
-        {
-          "name": "isCursor",
-          "type": "boolean",
-          "value": false
         }
       ],
       "effects": [],
       "behaviors": [],
       "animations": [
         {
-          "name": "Key",
+          "name": "Placeholder",
           "useMultipleDirections": false,
           "directions": [
             {
@@ -632,20 +618,20 @@
                   "customCollisionMask": [
                     [
                       {
-                        "x": 0,
-                        "y": 0
+                        "x": 7,
+                        "y": 8
                       },
                       {
-                        "x": 64,
-                        "y": 0
+                        "x": 57,
+                        "y": 8
                       },
                       {
-                        "x": 64,
-                        "y": 64
+                        "x": 57,
+                        "y": 55
                       },
                       {
-                        "x": 0,
-                        "y": 64
+                        "x": 7,
+                        "y": 55
                       }
                     ]
                   ]
@@ -680,20 +666,20 @@
                   "customCollisionMask": [
                     [
                       {
-                        "x": 0,
-                        "y": 0
+                        "x": 7,
+                        "y": 8
                       },
                       {
-                        "x": 64,
-                        "y": 0
+                        "x": 57,
+                        "y": 8
                       },
                       {
-                        "x": 64,
-                        "y": 64
+                        "x": 57,
+                        "y": 55
                       },
                       {
-                        "x": 0,
-                        "y": 64
+                        "x": 7,
+                        "y": 55
                       }
                     ]
                   ]
@@ -728,20 +714,20 @@
                   "customCollisionMask": [
                     [
                       {
-                        "x": 0,
-                        "y": 0
+                        "x": 7,
+                        "y": 8
                       },
                       {
-                        "x": 64,
-                        "y": 0
+                        "x": 57,
+                        "y": 8
                       },
                       {
-                        "x": 64,
-                        "y": 64
+                        "x": 57,
+                        "y": 55
                       },
                       {
-                        "x": 0,
-                        "y": 64
+                        "x": 7,
+                        "y": 55
                       }
                     ]
                   ]
@@ -776,20 +762,20 @@
                   "customCollisionMask": [
                     [
                       {
-                        "x": 0,
-                        "y": 0
+                        "x": 7,
+                        "y": 8
                       },
                       {
-                        "x": 64,
-                        "y": 0
+                        "x": 57,
+                        "y": 8
                       },
                       {
-                        "x": 64,
-                        "y": 64
+                        "x": 57,
+                        "y": 55
                       },
                       {
-                        "x": 0,
-                        "y": 64
+                        "x": 7,
+                        "y": 55
                       }
                     ]
                   ]
@@ -824,20 +810,20 @@
                   "customCollisionMask": [
                     [
                       {
-                        "x": 0,
-                        "y": 0
+                        "x": 7,
+                        "y": 8
                       },
                       {
-                        "x": 64,
-                        "y": 0
+                        "x": 57,
+                        "y": 8
                       },
                       {
-                        "x": 64,
-                        "y": 64
+                        "x": 57,
+                        "y": 55
                       },
                       {
-                        "x": 0,
-                        "y": 64
+                        "x": 7,
+                        "y": 55
                       }
                     ]
                   ]
@@ -872,20 +858,20 @@
                   "customCollisionMask": [
                     [
                       {
-                        "x": 0,
-                        "y": 0
+                        "x": 7,
+                        "y": 8
                       },
                       {
-                        "x": 64,
-                        "y": 0
+                        "x": 57,
+                        "y": 8
                       },
                       {
-                        "x": 64,
-                        "y": 64
+                        "x": 57,
+                        "y": 55
                       },
                       {
-                        "x": 0,
-                        "y": 64
+                        "x": 7,
+                        "y": 55
                       }
                     ]
                   ]
@@ -920,20 +906,20 @@
                   "customCollisionMask": [
                     [
                       {
-                        "x": 0,
-                        "y": 0
+                        "x": 7,
+                        "y": 8
                       },
                       {
-                        "x": 64,
-                        "y": 0
+                        "x": 57,
+                        "y": 8
                       },
                       {
-                        "x": 64,
-                        "y": 64
+                        "x": 57,
+                        "y": 55
                       },
                       {
-                        "x": 0,
-                        "y": 64
+                        "x": 7,
+                        "y": 55
                       }
                     ]
                   ]
@@ -968,20 +954,20 @@
                   "customCollisionMask": [
                     [
                       {
-                        "x": 0,
-                        "y": 0
+                        "x": 7,
+                        "y": 8
                       },
                       {
-                        "x": 64,
-                        "y": 0
+                        "x": 57,
+                        "y": 8
                       },
                       {
-                        "x": 64,
-                        "y": 64
+                        "x": 57,
+                        "y": 55
                       },
                       {
-                        "x": 0,
-                        "y": 64
+                        "x": 7,
+                        "y": 55
                       }
                     ]
                   ]
@@ -1016,20 +1002,20 @@
                   "customCollisionMask": [
                     [
                       {
-                        "x": 0,
-                        "y": 0
+                        "x": 7,
+                        "y": 8
                       },
                       {
-                        "x": 64,
-                        "y": 0
+                        "x": 57,
+                        "y": 8
                       },
                       {
-                        "x": 64,
-                        "y": 64
+                        "x": 57,
+                        "y": 55
                       },
                       {
-                        "x": 0,
-                        "y": 64
+                        "x": 7,
+                        "y": 55
                       }
                     ]
                   ]
@@ -1039,7 +1025,7 @@
           ]
         },
         {
-          "name": "Empty",
+          "name": "9",
           "useMultipleDirections": false,
           "directions": [
             {
@@ -1121,61 +1107,13 @@
               ]
             }
           ]
-        },
-        {
-          "name": "TemplatePrompt",
-          "useMultipleDirections": false,
-          "directions": [
-            {
-              "looping": false,
-              "timeBetweenFrames": 0.08,
-              "sprites": [
-                {
-                  "hasCustomCollisionMask": true,
-                  "image": "assets\\ui\\ui_background_template.png",
-                  "points": [],
-                  "originPoint": {
-                    "name": "origine",
-                    "x": 0,
-                    "y": 0
-                  },
-                  "centerPoint": {
-                    "automatic": true,
-                    "name": "centre",
-                    "x": 0,
-                    "y": 0
-                  },
-                  "customCollisionMask": [
-                    [
-                      {
-                        "x": 0,
-                        "y": 0
-                      },
-                      {
-                        "x": 960,
-                        "y": 0
-                      },
-                      {
-                        "x": 960,
-                        "y": 540
-                      },
-                      {
-                        "x": 0,
-                        "y": 540
-                      }
-                    ]
-                  ]
-                }
-              ]
-            }
-          ]
         }
       ]
     },
     {
-      "adaptCollisionMaskAutomatically": false,
+      "adaptCollisionMaskAutomatically": true,
       "assetStoreId": "",
-      "name": "CycleInventoryPrevious",
+      "name": "CycleInventoryLeft",
       "type": "Sprite",
       "updateIfNotVisible": false,
       "variables": [],
@@ -1226,20 +1164,20 @@
                   "customCollisionMask": [
                     [
                       {
-                        "x": 0,
-                        "y": 0
+                        "x": 3,
+                        "y": 3
                       },
                       {
-                        "x": 64,
-                        "y": 0
+                        "x": 61,
+                        "y": 3
                       },
                       {
-                        "x": 64,
-                        "y": 64
+                        "x": 61,
+                        "y": 61
                       },
                       {
-                        "x": 0,
-                        "y": 64
+                        "x": 3,
+                        "y": 61
                       }
                     ]
                   ]
@@ -1249,109 +1187,6 @@
           ]
         }
       ]
-    },
-    {
-      "adaptCollisionMaskAutomatically": true,
-      "assetStoreId": "",
-      "name": "SelectedItemBorder",
-      "type": "Sprite",
-      "updateIfNotVisible": false,
-      "variables": [],
-      "effects": [],
-      "behaviors": [],
-      "animations": [
-        {
-          "name": "",
-          "useMultipleDirections": false,
-          "directions": [
-            {
-              "looping": false,
-              "timeBetweenFrames": 0.08,
-              "sprites": [
-                {
-                  "hasCustomCollisionMask": true,
-                  "image": "assets\\ui\\inventory_select.png",
-                  "points": [],
-                  "originPoint": {
-                    "name": "origine",
-                    "x": 0,
-                    "y": 0
-                  },
-                  "centerPoint": {
-                    "automatic": true,
-                    "name": "centre",
-                    "x": 0,
-                    "y": 0
-                  },
-                  "customCollisionMask": [
-                    [
-                      {
-                        "x": 0,
-                        "y": 0
-                      },
-                      {
-                        "x": 128,
-                        "y": 0
-                      },
-                      {
-                        "x": 128,
-                        "y": 128
-                      },
-                      {
-                        "x": 0,
-                        "y": 128
-                      }
-                    ]
-                  ]
-                }
-              ]
-            }
-          ]
-        }
-      ]
-    },
-    {
-      "assetStoreId": "",
-      "bold": false,
-      "italic": true,
-      "name": "HoverTooltip",
-      "smoothed": true,
-      "type": "TextObject::Text",
-      "underlined": false,
-      "variables": [],
-      "effects": [],
-      "behaviors": [],
-      "string": "",
-      "font": "",
-      "textAlignment": "left",
-      "characterSize": 25,
-      "color": {
-        "b": 255,
-        "g": 255,
-        "r": 255
-      },
-      "content": {
-        "bold": false,
-        "isOutlineEnabled": false,
-        "isShadowEnabled": false,
-        "italic": true,
-        "outlineColor": "255;255;255",
-        "outlineThickness": 2,
-        "shadowAngle": 90,
-        "shadowBlurRadius": 2,
-        "shadowColor": "0;0;0",
-        "shadowDistance": 4,
-        "shadowOpacity": 127,
-        "smoothed": true,
-        "underlined": false,
-        "text": "",
-        "font": "",
-        "textAlignment": "left",
-        "verticalTextAlignment": "top",
-        "characterSize": 25,
-        "lineHeight": 0,
-        "color": "255;255;255"
-      }
     }
   ],
   "objectsFolderStructure": {
@@ -1364,13 +1199,10 @@
             "folderName": "Inventory",
             "children": [
               {
-                "objectName": "SelectedItemBorder"
+                "objectName": "CycleInventoryRight"
               },
               {
-                "objectName": "CycleInventoryNext"
-              },
-              {
-                "objectName": "CycleInventoryPrevious"
+                "objectName": "CycleInventoryLeft"
               },
               {
                 "objectName": "InventoryItem"
@@ -1381,16 +1213,13 @@
             ]
           },
           {
-            "objectName": "HoverTooltip"
+            "objectName": "UIBackground"
           },
           {
             "objectName": "StatuesCollectedCounter"
           },
           {
             "objectName": "PauseButton"
-          },
-          {
-            "objectName": "UIBackground"
           }
         ]
       }
@@ -1402,16 +1231,6 @@
       "name": "DataInitialized",
       "type": "boolean",
       "value": false
-    },
-    {
-      "name": "FirstSceneInitialized",
-      "type": "boolean",
-      "value": false
-    },
-    {
-      "name": "DEBUG",
-      "type": "boolean",
-      "value": true
     }
   ],
   "layouts": [
@@ -1438,10 +1257,6 @@
     {
       "__REFERENCE_TO_SPLIT_OBJECT": true,
       "referenceTo": "/eventsFunctionsExtensions/panelspritebutton"
-    },
-    {
-      "__REFERENCE_TO_SPLIT_OBJECT": true,
-      "referenceTo": "/eventsFunctionsExtensions/linktools"
     }
   ],
   "externalLayouts": [

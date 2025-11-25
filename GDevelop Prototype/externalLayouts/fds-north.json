@@ -21,6 +21,27 @@
           "name": "targetLayout",
           "type": "string",
           "value": "FDS East"
+        },
+        {
+          "name": "hoverTooltip",
+          "type": "structure",
+          "children": [
+            {
+              "name": "text",
+              "type": "string",
+              "value": "To FDS East"
+            },
+            {
+              "name": "x",
+              "type": "number",
+              "value": 0
+            },
+            {
+              "name": "y",
+              "type": "number",
+              "value": -32
+            }
+          ]
         }
       ]
     },
@@ -44,6 +65,27 @@
           "name": "targetLayout",
           "type": "string",
           "value": "FDS West"
+        },
+        {
+          "name": "hoverTooltip",
+          "type": "structure",
+          "children": [
+            {
+              "name": "text",
+              "type": "string",
+              "value": "To FDS West"
+            },
+            {
+              "name": "x",
+              "type": "number",
+              "value": 0
+            },
+            {
+              "name": "y",
+              "type": "number",
+              "value": -32
+            }
+          ]
         }
       ]
     },

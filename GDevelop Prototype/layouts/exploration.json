@@ -256,6 +256,37 @@
           "name": "targetLayout",
           "type": "string",
           "value": ""
+        },
+        {
+          "name": "hoverTooltip",
+          "type": "structure",
+          "children": [
+            {
+              "name": "font",
+              "type": "string",
+              "value": ""
+            },
+            {
+              "name": "fontSize",
+              "type": "number",
+              "value": 25
+            },
+            {
+              "name": "text",
+              "type": "string",
+              "value": "null"
+            },
+            {
+              "name": "x",
+              "type": "number",
+              "value": 0
+            },
+            {
+              "name": "y",
+              "type": "number",
+              "value": -32
+            }
+          ]
         }
       ],
       "effects": [],
@@ -1164,6 +1195,94 @@
         "HoveredFadeOutDuration": 0.25,
         "LabelText": "Leave"
       }
+    },
+    {
+      "adaptCollisionMaskAutomatically": true,
+      "assetStoreId": "",
+      "name": "FadeScreen",
+      "type": "Sprite",
+      "updateIfNotVisible": false,
+      "variables": [
+        {
+          "name": "Opacity",
+          "type": "number",
+          "value": 1
+        },
+        {
+          "name": "FadeDuration",
+          "type": "number",
+          "value": 1
+        }
+      ],
+      "effects": [
+        {
+          "effectType": "Adjustment",
+          "name": "Opacity",
+          "doubleParameters": {
+            "alpha": 0,
+            "blue": 1,
+            "brightness": 1,
+            "contrast": 1,
+            "gamma": 1,
+            "green": 1,
+            "red": 1,
+            "saturation": 1
+          },
+          "stringParameters": {},
+          "booleanParameters": {}
+        }
+      ],
+      "behaviors": [],
+      "animations": [
+        {
+          "name": "",
+          "useMultipleDirections": false,
+          "directions": [
+            {
+              "looping": false,
+              "timeBetweenFrames": 0.08,
+              "sprites": [
+                {
+                  "hasCustomCollisionMask": true,
+                  "image": "assets\\ui\\InspectionBackgroundFlat.png",
+                  "points": [],
+                  "originPoint": {
+                    "name": "origine",
+                    "x": 0,
+                    "y": 0
+                  },
+                  "centerPoint": {
+                    "automatic": true,
+                    "name": "centre",
+                    "x": 0,
+                    "y": 0
+                  },
+                  "customCollisionMask": [
+                    [
+                      {
+                        "x": 0,
+                        "y": 0
+                      },
+                      {
+                        "x": 128,
+                        "y": 0
+                      },
+                      {
+                        "x": 128,
+                        "y": 128
+                      },
+                      {
+                        "x": 0,
+                        "y": 128
+                      }
+                    ]
+                  ]
+                }
+              ]
+            }
+          ]
+        }
+      ]
     }
   ],
   "objectsFolderStructure": {
@@ -1228,6 +1347,9 @@
       },
       {
         "objectName": "Background"
+      },
+      {
+        "objectName": "FadeScreen"
       }
     ]
   },
