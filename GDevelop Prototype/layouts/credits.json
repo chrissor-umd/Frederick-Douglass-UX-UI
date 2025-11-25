@@ -18,7 +18,7 @@
     "gridColor": 10401023,
     "gridAlpha": 0.8,
     "snap": true,
-    "zoomFactor": 0.49508400737488867,
+    "zoomFactor": 0.6455105703311478,
     "windowMask": false,
     "selectedLayer": ""
   },
@@ -88,7 +88,7 @@
       "variables": [],
       "effects": [],
       "behaviors": [],
-      "string": "Project Manager & Lead Programmer: Christian Sorensen\n\nSecondary Programmer: Kyle Tu\n\nArt and Client Communications: Michelle Starcher\n\nHistorical Research, Images, and Minigame Design:\nSamnorp Deung, Marcello Soriano\n",
+      "string": "Project Manager & Lead Programmer: Christian Sorensen\nSecondary Programmer: Kyle Tu\nArt and Client Communications: Michelle Starcher\nHistorical Research, Images, and Minigame Design:\nSamnorp Deung, Marcello Soriano\n",
       "font": "assets\\fonts\\BilkoOpti-Regular.otf",
       "textAlignment": "center",
       "characterSize": 34,
@@ -111,12 +111,12 @@
         "shadowOpacity": 127,
         "smoothed": true,
         "underlined": false,
-        "text": "Project Manager & Lead Programmer: Christian Sorensen\n\nSecondary Programmer: Kyle Tu\n\nArt and Client Communications: Michelle Starcher\n\nHistorical Research, Images, and Minigame Design:\nSamnorp Deung, Marcello Soriano\n",
+        "text": "Project Manager & Lead Programmer: Christian Sorensen\nSecondary Programmer: Kyle Tu\nArt and Client Communications: Michelle Starcher\nHistorical Research, Images, and Minigame Design:\nSamnorp Deung, Marcello Soriano\n",
         "font": "assets\\fonts\\BilkoOpti-Regular.otf",
         "textAlignment": "center",
         "verticalTextAlignment": "center",
         "characterSize": 34,
-        "lineHeight": 0,
+        "lineHeight": 50,
         "color": "255;255;255"
       }
     },
