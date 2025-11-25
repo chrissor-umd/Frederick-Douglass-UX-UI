@@ -61,6 +61,10 @@ gdjs.ExplorationCode.GDItemPopupExitButtonObjects1= [];
 gdjs.ExplorationCode.GDItemPopupExitButtonObjects2= [];
 gdjs.ExplorationCode.GDItemPopupExitButtonObjects3= [];
 gdjs.ExplorationCode.GDItemPopupExitButtonObjects4= [];
+gdjs.ExplorationCode.GDFadeScreenObjects1= [];
+gdjs.ExplorationCode.GDFadeScreenObjects2= [];
+gdjs.ExplorationCode.GDFadeScreenObjects3= [];
+gdjs.ExplorationCode.GDFadeScreenObjects4= [];
 gdjs.ExplorationCode.GDStatuesCollectedCounterObjects1= [];
 gdjs.ExplorationCode.GDStatuesCollectedCounterObjects2= [];
 gdjs.ExplorationCode.GDStatuesCollectedCounterObjects3= [];
@@ -93,9 +97,13 @@ gdjs.ExplorationCode.GDSelectedItemBorderObjects1= [];
 gdjs.ExplorationCode.GDSelectedItemBorderObjects2= [];
 gdjs.ExplorationCode.GDSelectedItemBorderObjects3= [];
 gdjs.ExplorationCode.GDSelectedItemBorderObjects4= [];
+gdjs.ExplorationCode.GDHoverTooltipObjects1= [];
+gdjs.ExplorationCode.GDHoverTooltipObjects2= [];
+gdjs.ExplorationCode.GDHoverTooltipObjects3= [];
+gdjs.ExplorationCode.GDHoverTooltipObjects4= [];
 
 
-gdjs.ExplorationCode.userFunc0x9e2e20 = function GDJSInlineCode(runtimeScene) {
+gdjs.ExplorationCode.userFunc0x995048 = function GDJSInlineCode(runtimeScene) {
 "use strict";
 gdjs.FDGameData = {}; // All persistent data is attached to gdjs so that it isn't reset on scene change
 const FDSG = gdjs.FDGameData; // This way data can be accessed through a simpler variable name (FDSG = Frederick-Douglass Square Game)
@@ -109,6 +117,8 @@ FDSG.GameVars = { // This holds variables that are important for tracking/managi
 }
 const GameVars = FDSG.GameVars; // Simpler reference variable
 const Game = GameVars.runtimeScene.getGame();
+
+GameVars.Constants = {} // Stores constant values to avoid magic numbers
 
 
 // OBJECT GROUPS ###################################################################################################################################
@@ -126,12 +136,12 @@ gdjs.ExplorationCode.eventsList0 = function(runtimeScene) {
 {
 
 
-gdjs.ExplorationCode.userFunc0x9e2e20(runtimeScene);
+gdjs.ExplorationCode.userFunc0x995048(runtimeScene);
 
 }
 
 
-};gdjs.ExplorationCode.userFunc0x7e2000 = function GDJSInlineCode(runtimeScene) {
+};gdjs.ExplorationCode.userFunc0x9952d8 = function GDJSInlineCode(runtimeScene) {
 "use strict";
 const FDSG = gdjs.FDGameData;
 const GameVars = FDSG.GameVars;
@@ -344,31 +354,35 @@ gdjs.ExplorationCode.eventsList1 = function(runtimeScene) {
 {
 
 
-gdjs.ExplorationCode.userFunc0x7e2000(runtimeScene);
+gdjs.ExplorationCode.userFunc0x9952d8(runtimeScene);
 
 }
 
 
-};gdjs.ExplorationCode.userFunc0x9d6430 = function GDJSInlineCode(runtimeScene) {
+};gdjs.ExplorationCode.userFunc0x9954c0 = function GDJSInlineCode(runtimeScene) {
 "use strict";
 const FDSG = gdjs.FDGameData;
 const GameVars = FDSG.GameVars;
 const Game = GameVars.runtimeScene.getGame();
 
-const STARTING_LAYOUT = "FDS North"; // First layout to load
-
+Object.assign(GameVars.Constants, {
+    STARTING_LAYOUT: "FDS North", // First layout to load
+    FIRST_TRANSITION_FADE_DURATION: 1000, // The duration of the fade from the Main Menu
+    TRANSITION_FADE_DURATION: 150
+});
 
 Object.assign(GameVars, {
-    startLayout: STARTING_LAYOUT, // The starting layout
-    _currentLayout: STARTING_LAYOUT, // This is used to load the corrent layout on transitions
+    startLayout: GameVars.Constants.STARTING_LAYOUT, // The starting layout
+    _currentLayout: GameVars.Constants.STARTING_LAYOUT, // This is used to load the corrent layout on transitions
+    _isFading: false, // Used to halt input while fading in or out
 });
 
 Object.defineProperty(GameVars, 'currentLayout', {
-    get() {return this._currentLayout;},
+    get() { return this._currentLayout },
     set(newLayout) {
         FDSG.saveLayoutInstanceData();
+        FDSG.initFade(GameVars.Constants.TRANSITION_FADE_DURATION, false);
         this._currentLayout = newLayout;
-        gdjs.evtTools.runtimeScene.replaceScene(GameVars.runtimeScene, GameVars.runtimeScene.getName());
     }
 });
 
@@ -550,26 +564,47 @@ FDSG.getInstanceFromID = function(id) {
     }
 }
 
+
+FDSG.initFade = function(duration, fadeIn) {
+    const cameraWidth = gdjs.evtTools.camera.getCameraWidth(GameVars.runtimeScene, "", 0); 
+    const cameraHeight = gdjs.evtTools.camera.getCameraHeight(GameVars.runtimeScene, "", 0);
+    const fadeScreen = GameVars.runtimeScene.createObject("FadeScreen");
+    fadeScreen.setLayer("SceneObjects");
+    fadeScreen.setZOrder(99);
+    fadeScreen.setWidth(cameraWidth); // Make the fadeScreen cover the screen
+    fadeScreen.setHeight(cameraHeight);
+    if (fadeIn) {
+        fadeScreen.getVariables().get("Opacity").setNumber(1);
+        fadeScreen.getVariables().get("FadeDuration").setNumber(duration);
+    } else {
+        fadeScreen.getVariables().get("Opacity").setNumber(0);
+        fadeScreen.getVariables().get("FadeDuration").setNumber(-duration);
+    }
+    GameVars._isFading = true;
+}
+
 };
 gdjs.ExplorationCode.eventsList2 = function(runtimeScene) {
 
 {
 
 
-gdjs.ExplorationCode.userFunc0x9d6430(runtimeScene);
+gdjs.ExplorationCode.userFunc0x9954c0(runtimeScene);
 
 }
 
 
-};gdjs.ExplorationCode.userFunc0x9d65d8 = function GDJSInlineCode(runtimeScene) {
+};gdjs.ExplorationCode.userFunc0x9956a0 = function GDJSInlineCode(runtimeScene) {
 "use strict";
 const FDSG = gdjs.FDGameData;
 const GameVars = FDSG.GameVars;
-const Game = GameVars.runtimeScene.getGame();
 
+GameVars.runtimeScene.getGame().getInputManager().touchSimulateMouse(false);
 
-const ITEM_CURSOR_X_OFFSET = 16;
-const ITEM_CURSOR_Y_OFFSET = 16;
+Object.assign(GameVars.Constants, {
+    ITEM_CURSOR_X_OFFSET: 16, // How far displaced the selected item is from the cursor
+    ITEM_CURSOR_Y_OFFSET: 16
+});
 
 FDSG.Input = { // Stores objects and variables for handling player input
     _lastObjectPressed: null, /* This stores the last object that was clicked. We use this to ensure that in order to click an object,
@@ -578,7 +613,8 @@ FDSG.Input = { // Stores objects and variables for handling player input
     _currentTouchID: null,
     _lastTouchX: null,
     _lastTouchY: null,
-    _currentInputMethod: "Mouse" // This is for knowing whether or not we're using the touchscreen
+    _currentInputMethod: "Mouse", // This is for knowing whether or not we're using the touchscreen
+    linksManager: null // For handling object links
 }
 
 FDSG.Input.ClickableObjects = {}; // Stores registered actions to run when objects are clicked
@@ -594,6 +630,8 @@ FDSG.Input.ClickableLayers = { // Similar but for disabling layers instead of in
 
 FDSG.Input.KeyPressFunctions = {}; // Stores keyboard inputs and their registered functions
 
+FDSG.Input.HoverTooltips = {}; // Stores text that displays when the mouse is hovering over an object
+
 
 const input = GameVars.runtimeScene.getGame().getInputManager();
 
@@ -603,16 +641,22 @@ const input = GameVars.runtimeScene.getGame().getInputManager();
  *      @param {Object} clickConfig The object that holds the listed parameters
  *      @param {string|string[]} clickConfig.object The object type or array of object types to register
  *      @param {string|string[]} clickConfig.button The mouse button or array of mouse buttons (Left, Right, Middle) that will trigger the function.
- *                                                  Set as "hover" if you want to trigger while hovering over the object
  *      @param {"pressed"|"released"} clickConfig.duration Whether to trigger while clicking or just release
  *      @param {(obj: gdjs.RuntimeObject) => void} clickConfig.clickFunction The function that runs when clicked
  *      @param {string} clickConfig.cursor? Optional cursor to show on hover. Defaults to pointer
+ *      @param {(obj: gdjs.RuntimeObject) => void} hoverFunction Optional function to run when hovering over object
+ *      @param {effectData} clickConfig.hoverEffect? Optional effect to play on highlight.
+ *      @param {string} clickConfig.hoverTooltip? Optional text to display when hovering over object
+ *              
  */
 FDSG.registerClickableObject = function(clickConfig) {
     let objects = clickConfig.object;
     let clickButtons = clickConfig.button;
     let clickDuration = clickConfig.duration;
     let cursor = (typeof clickConfig.cursor === 'undefined') ? "pointer" : clickConfig.cursor; // Cursor defaults to "pointer"
+    let hoverFunction = (typeof clickConfig.hoverFunction === 'undefined') ? null : clickConfig.hoverFunction;
+    let hoverEffect = (typeof clickConfig.hoverEffect === 'undefined') ? null : clickConfig.hoverEffect;
+    let hoverTooltip = (typeof clickConfig.hoverTooltip === 'undefined') ? null : clickConfig.hoverTooltip;
     /* We put the following parameters in arrays if they're not already.
         This is probably overkill since it's unlikely more than one object will be tied to a function, but this only runs once at startup
         so it's not gonna affect performance or anything */
@@ -625,7 +669,9 @@ FDSG.registerClickableObject = function(clickConfig) {
     for (const object of objects) {
         if (!(object in FDSG.Input.ClickableObjects)) {
             FDSG.Input.ClickableObjects[object] = { // Register the object as clickable and store the necessary properties
-                clickActions: {}, // Stores functions and their triggers
+                clickActions: {
+                    hover: [] // Functions that run on hover
+                }, // Stores functions and their triggers
                 cursor: cursor, // What the cursor should turn into when hovering over
                 enabled: true // Useful for disabling interactivity on this object
             }
@@ -639,6 +685,18 @@ FDSG.registerClickableObject = function(clickConfig) {
                 clickObject.clickActions[clickButton][clickDuration] = {};
             }
             clickObject.clickActions[clickButton][clickDuration] = clickConfig.clickFunction; // Register the clickFunction
+        }
+        if (hoverFunction != null) {
+             clickObject.clickActions.hover.push(hoverFunction);
+        } 
+        if (hoverEffect != null) {
+            clickObject.clickActions.hover.push((obj) => {
+                hoverEffect.name = "hoverEffect";
+                obj.addEffect(hoverEffect);
+            });
+        }
+        if (hoverTooltip != null) {
+            FDSG.Input.HoverTooltips[object] = hoverTooltip;
         }
     }
 }
@@ -686,14 +744,13 @@ FDSG.handlePlayerInput = function() {
     let enableClickFunctions = true;
     let hoveredInstance = null;
     let selectedItemIndex = FDSG.PlayerInventory.selectedItemIndex;
-    let touchIDs = Game.getInputManager().getAllTouchIdentifiers();
-    let touchJustStartedIDs = Game.getInputManager().getStartedTouchIdentifiers();
+    let touchIDs = GameVars.runtimeScene.getGame().getInputManager().getAllTouchIdentifiers();
+    let touchJustStartedIDs = GameVars.runtimeScene.getGame().getInputManager().getStartedTouchIdentifiers();
     let currentTouchID = FDSG.Input._currentTouchID;
     let isPressed = gdjs.evtTools.input.isMouseButtonPressed(GameVars.runtimeScene, "Left");
-    let isReleased = gdjs.evtTools.input.isMouseButtonPressed(GameVars.runtimeScene, "Left");
-    if (isPressed || isReleased) {
-        FDSG.Input._currentInputMethod = "Mouse";
-    }
+    let isReleased = gdjs.evtTools.input.isMouseButtonReleased(GameVars.runtimeScene, "Left");
+    let touchPressed = false;
+    let touchReleased = false;
     let touchJustStarted = false;
     let touchJustEnded = false;
     
@@ -705,50 +762,61 @@ FDSG.handlePlayerInput = function() {
             currentTouchID = newTouchID;
             touchJustStarted = true;
             isPressed = true;
-        } else if (Game.getInputManager().hasTouchEnded(currentTouchID)) {
+            touchPressed = true;
+        } else if (GameVars.runtimeScene.getGame().getInputManager().hasTouchEnded(currentTouchID)) {
             isReleased = true;
+            touchReleased = true;
             touchJustEnded = true;
         } else if (touchIDs.includes(currentTouchID)) {
             FDSG.Input._lastTouchX = input.getTouchX(currentTouchID);
             FDSG.Input._lastTouchY = input.getTouchY(currentTouchID);
             isPressed = true;
+            touchPressed = true;
         }
     } else {
         FDSG.Input._currentTouchID = null;
         FDSG.Input._lastTouchX = null,
         FDSG.Input._lastTouchY = null
     }
+
+    if (gdjs.evtTools.input.isMouseButtonPressed(GameVars.runtimeScene, "Left")
+        || gdjs.evtTools.input.isMouseButtonReleased(GameVars.runtimeScene, "Left")) {
+            FDSG.Input._currentInputMethod = "Mouse";
+    }
     
-    for (const object in FDSG.Input.ClickableObjects) { // Check each object to determine which object the mouse is hovering over (if any)
-        const clickObject = FDSG.Input.ClickableObjects[object]; // Simpler reference variable
-        const instances = GameVars.runtimeScene.getInstancesOf(object);
-        if (!clickObject.enabled) { continue } // Check if the object is disabled
-        for (const instance of instances) { // Check each instance of the object
-            if (selectedItemIndex != null && !instance.getVariables().has("targetInteraction")) { continue } // We only want to check clicks on interaction objects as long as an item is selected
-            if (instance.getVariables().has("enabled") && !instance.getVariables().get("enabled").getAsBoolean()) { continue } // Skip if instance is disabled
-            let instanceLayer = instance.getLayer();
-            if (!FDSG.Input.ClickableLayers[instanceLayer]) { continue }
-            let touchX = null;
-            let touchY = null;
-            let lastTouchX = FDSG.Input._lastTouchX;
-            let lastTouchY = FDSG.Input._lastTouchY;
-            if (currentTouchID) {
-                touchX = input.getTouchX(currentTouchID);
-                touchY = input.getTouchY(currentTouchID);
-            }
-            if (instance.cursorOnObject()
-            || (touchX != null && instance.isCollidingWithPoint(touchX, touchY))
-            || (touchX == null && instance.isCollidingWithPoint(lastTouchX, lastTouchY))) {
-                // Check if the cursor is on the object and if its layer is not disabled
-                let zOrder = instance.getZOrder(); // This determines which objects are shown in front of/behind other objects
-                if (zOrder > highestZOrder) { // Only set cursor for the object with the highest Z order
-                    cursor = clickObject.cursor;
-                    hoveredInstance = instance;
+    if (!GameVars._isFading) {
+        for (const object in FDSG.Input.ClickableObjects) { // Check each object to determine which object the mouse is hovering over (if any)
+            const clickObject = FDSG.Input.ClickableObjects[object]; // Simpler reference variable
+            const instances = GameVars.runtimeScene.getInstancesOf(object);
+            for (const instance of instances) { // Check each instance of the object
+                instance.removeEffect("hoverEffect");
+                if (!clickObject.enabled) { continue } // Check if the object is disabled
+                if (selectedItemIndex != null && !instance.getVariables().has("targetInteraction")) { continue } // We only want to check clicks on interaction objects as long as an item is selected
+                if (instance.getVariables().has("enabled") && !instance.getVariables().get("enabled").getAsBoolean()) { continue } // Skip if instance is disabled
+                let instanceLayer = instance.getLayer();
+                if (!FDSG.Input.ClickableLayers[instanceLayer]) { continue }
+                let touchX = null;
+                let touchY = null;
+                let lastTouchX = FDSG.Input._lastTouchX;
+                let lastTouchY = FDSG.Input._lastTouchY;
+                if (currentTouchID) {
+                    touchX = input.getTouchX(currentTouchID);
+                    touchY = input.getTouchY(currentTouchID);
+                }
+                if ((FDSG.Input._currentInputMethod == "Mouse" && instance.cursorOnObject())
+                || (touchX != null && instance.isCollidingWithPoint(touchX, touchY))
+                || (touchX == null && instance.isCollidingWithPoint(lastTouchX, lastTouchY))) {
+                    // Check if the cursor is on the object and if its layer is not disabled
+                    let zOrder = instance.getZOrder(); // This determines which objects are shown in front of/behind other objects
+                    if (zOrder > highestZOrder) { // Only set cursor for the object with the highest Z order
+                        cursor = clickObject.cursor;
+                        hoveredInstance = instance;
+                    }
                 }
             }
         }
     }
-
+    
     // This is all so that you don't accidentally release on an object you didn't click
     if ((!isPressed && !isReleased) || (touchJustStarted)) {
         FDSG.Input._lastObjectPressed = hoveredInstance;
@@ -760,15 +828,15 @@ FDSG.handlePlayerInput = function() {
         FDSG.Input._lastObjectPressed = null;
     }
 
-    Game.getRenderer().getCanvas().style.cursor = cursor; // Change the cursor
+    GameVars.runtimeScene.getGame().getRenderer().getCanvas().style.cursor = cursor; // Change the cursor
 
     if (selectedItemIndex != null) {
         var itemCursor = FDSG.getAllSceneInstances("MouseCursor");
         if (itemCursor.length > 0) {
             var itemCursor = itemCursor[0];
             if (FDSG.Input._currentInputMethod == "Mouse") {
-                itemCursor.setX(gdjs.evtTools.input.getCursorX(GameVars.runtimeScene) + ITEM_CURSOR_X_OFFSET); // Make the itemCursor follow the mouse;
-                itemCursor.setY(gdjs.evtTools.input.getCursorY(GameVars.runtimeScene) + ITEM_CURSOR_Y_OFFSET); // Make the itemCursor follow the mouse;
+                itemCursor.setX(gdjs.evtTools.input.getCursorX(GameVars.runtimeScene) + GameVars.Constants.ITEM_CURSOR_X_OFFSET); // Make the itemCursor follow the mouse;
+                itemCursor.setY(gdjs.evtTools.input.getCursorY(GameVars.runtimeScene) + GameVars.Constants.ITEM_CURSOR_Y_OFFSET); // Make the itemCursor follow the mouse;
             } else {
                 itemCursor.setX(-50); // Hide the cursor in touchscreen
                 itemCursor.setY(-50);
@@ -776,20 +844,73 @@ FDSG.handlePlayerInput = function() {
         }
     }
 
-    // CLICK FUNCTIONS
-    if (hoveredInstance != null) {
-        if ("hover" in FDSG.Input.ClickableObjects[hoveredInstance.getName()].clickActions) { // If the hovered object has a hover function
-            FDSG.Input.ClickableObjects[hoveredInstance.getName()].clickActions.hover(hoveredInstance);
+    // Clear hoverTooltips
+    const linksManager = gdjs.LinksManager.getManager(GameVars.runtimeScene);
+    for (const hoverTooltip of GameVars.runtimeScene.getInstancesOf("HoverTooltip")) {
+        const linkedObjects = linksManager.getObjectsLinkedWith(hoverTooltip);
+        if (!linkedObjects.length > 0 || !linkedObjects.includes(hoveredInstance)) {
+            hoverTooltip.deleteFromScene(); // Delete all hoverTooltips not tied to the hoveredInstance
         }
+    }
+
+    // CLICK & HOVER FUNCTIONS
+    if (hoveredInstance != null) {
+        const instanceVars = hoveredInstance.getVariables();
+
+        // HOVER TOOLTIP (This is just for hovering text so you can freely ignore this part)
+        var hoverTooltip = null; // Text to display when hovering over object
+        const linkedTooltip = linksManager.getObjectsLinkedWithAndNamed(hoveredInstance, "HoverTooltip");
+        if (linkedTooltip.length > 0) {
+            hoverTooltip = null; // Don't bother doing anything if the tooltip already exists
+        } else if (instanceVars.has("hoverTooltip")) { // If the instance or object has been given hoverTooltip
+            var hoverTooltipData = instanceVars.get("hoverTooltip");
+            var text = hoverTooltipData.getChild("text").getAsString()
+            if (text != "null" && text != null) {
+                var font = hoverTooltipData.getChild("font").getAsString();
+                var fontSize = hoverTooltipData.getChild("fontSize").getAsNumber();
+                if (font == "0") { font = null } // Leave as default if unset
+                if (fontSize == 0) { fontSize = null }
+                hoverTooltip = {
+                    text: text,
+                    x: hoverTooltipData.getChild("x").getAsNumber(),
+                    y: hoverTooltipData.getChild("y").getAsNumber(),
+                    font: font,
+                    fontSize: fontSize
+                }
+            }
+        } else if (hoveredInstance.getName() in FDSG.Input.HoverTooltips) {
+            hoverTooltip = FDSG.Input.HoverTooltips[hoveredInstance.getName()];
+        }
+        if (hoverTooltip != null) {
+            const hoverTooltipObj = GameVars.runtimeScene.createObject("HoverTooltip");
+            hoverTooltipObj.setLayer("SceneObjects");
+            hoverTooltipObj.setZOrder(99);
+            hoverTooltipObj.setX(hoveredInstance.getX() + hoverTooltip.x);
+            hoverTooltipObj.setY(hoveredInstance.getY() + hoverTooltip.y);
+            hoverTooltipObj.setText(hoverTooltip.text);
+            if (hoverTooltip.font != null) { hoverTooltipObj.setFontName(hoverTooltip.font) }
+            if (hoverTooltip.fontSize != null) { hoverTooltipObj.setCharacterSize(hoverTooltip.fontSize) }
+            
+            linksManager.linkObjects(hoveredInstance, hoverTooltipObj); // Link the objects so they're easier to find later
+        }
+
+        // HOVER FUNCTIONS
+        if ("hover" in FDSG.Input.ClickableObjects[hoveredInstance.getName()].clickActions) { // If the hovered object has a hover function
+            for (const func of FDSG.Input.ClickableObjects[hoveredInstance.getName()].clickActions.hover) {
+                func(hoveredInstance);
+            }
+        }
+
+        // CLICK FUNCTIONS
         if (enableClickFunctions) {
             const clickObject = FDSG.Input.ClickableObjects[hoveredInstance.getName()]; // Simpler reference variable
             if (FDSG.PlayerInventory.selectedItem == null || hoveredInstance.getVariables().has("targetInteraction")) {
                 // We only check interaction objects while an item is selected
                 for (const clickButton in clickObject.clickActions) { // Check each button
-                    let clickPressed = gdjs.evtTools.input.isMouseButtonPressed(GameVars.runtimeScene, clickButton);
+                    let clickPressed = (gdjs.evtTools.input.isMouseButtonPressed(GameVars.runtimeScene, clickButton));
                     let clickReleased = gdjs.evtTools.input.isMouseButtonReleased(GameVars.runtimeScene, clickButton);
                     for (const clickDuration in clickObject.clickActions[clickButton]) {
-                        if ((clickDuration == "pressed" && clickPressed) || (clickDuration == "released" && clickReleased)) {
+                        if ((clickDuration == "pressed" && (clickPressed || touchPressed)) || (clickDuration == "released" && (clickReleased || touchReleased))) {
                             if (hoveredInstance.getName() != "InteractionObject" && hoveredInstance.getVariables().has("targetInteraction")) {
                                 // Run interactions tied to the object. We skip interaction objects to avoid running them twice
                                 const interactionData = FDSG.Interactions[hoveredInstance.getVariables().get("targetInteraction").getAsString()];
@@ -813,7 +934,6 @@ FDSG.handlePlayerInput = function() {
         FDSG.Input._lastTouchX = null;
         FDSG.Input._lastTouchY = null;
     }
-
 
     // KEYBOARD INPUT
     for (const key in FDSG.Input.KeyPressFunctions) {
@@ -881,12 +1001,12 @@ gdjs.ExplorationCode.eventsList3 = function(runtimeScene) {
 {
 
 
-gdjs.ExplorationCode.userFunc0x9d65d8(runtimeScene);
+gdjs.ExplorationCode.userFunc0x9956a0(runtimeScene);
 
 }
 
 
-};gdjs.ExplorationCode.userFunc0x9e3180 = function GDJSInlineCode(runtimeScene) {
+};gdjs.ExplorationCode.userFunc0x995870 = function GDJSInlineCode(runtimeScene) {
 "use strict";
 const FDSG = gdjs.FDGameData;
 const GameVars = FDSG.GameVars;
@@ -1051,12 +1171,12 @@ gdjs.ExplorationCode.eventsList4 = function(runtimeScene) {
 {
 
 
-gdjs.ExplorationCode.userFunc0x9e3180(runtimeScene);
+gdjs.ExplorationCode.userFunc0x995870(runtimeScene);
 
 }
 
 
-};gdjs.ExplorationCode.userFunc0x9e32f8 = function GDJSInlineCode(runtimeScene) {
+};gdjs.ExplorationCode.userFunc0x995a20 = function GDJSInlineCode(runtimeScene) {
 "use strict";
 const FDSG = gdjs.FDGameData;
 const GameVars = FDSG.GameVars;
@@ -1124,12 +1244,12 @@ gdjs.ExplorationCode.eventsList5 = function(runtimeScene) {
 {
 
 
-gdjs.ExplorationCode.userFunc0x9e32f8(runtimeScene);
+gdjs.ExplorationCode.userFunc0x995a20(runtimeScene);
 
 }
 
 
-};gdjs.ExplorationCode.userFunc0x7e2aa0 = function GDJSInlineCode(runtimeScene) {
+};gdjs.ExplorationCode.userFunc0x9967d8 = function GDJSInlineCode(runtimeScene) {
 "use strict";
 const FDSG = gdjs.FDGameData;
 const GameVars = FDSG.GameVars;
@@ -1143,6 +1263,13 @@ Object.assign(GameVars, {
         itemName: null, // The RuntimeObject for the name text
         itemDescription: null, // The RuntimeObject for the description text
     }
+});
+
+
+Object.assign(GameVars.Constants, {
+    ITEM_OFFSET: 8, // These change how the inventory is displayed
+    ITEM_GAP: 16,
+    ITEM_POPUP_SIZE: 224 // How large the item in the item popup should be
 });
 
 
@@ -1173,12 +1300,6 @@ FDSG.PlayerInventory = {
         },
 }
 
-
-// CONSTANTS
-const ITEM_OFFSET = 8; // These change how the inventory is displayed
-const ITEM_GAP = 16;
-const ITEM_POPUP_SIZE = 224; // How large the item in the item popup should be
-
 /**
  * Redraws the inventory to show current items
  */
@@ -1195,19 +1316,19 @@ FDSG.redrawInventory = function() {
     const itemZOrder = inventoryObject.getZOrder() + 1;
     const inventoryShortSide = Math.min(inventoryObject.getWidth(), inventoryObject.getHeight());
     const inventoryLongSide = Math.max(inventoryObject.getWidth(), inventoryObject.getHeight());
-    var itemSize = inventoryShortSide - 2*ITEM_OFFSET; // The size to render item sprites
-    const maxVisibleItems = Math.floor((inventoryLongSide-ITEM_GAP)/(itemSize + ITEM_GAP));
-    const itemStartPosition = ITEM_GAP + ((inventoryLongSide-ITEM_GAP)%(itemSize + ITEM_GAP))/2;
+    var itemSize = inventoryShortSide - 2*GameVars.Constants.ITEM_OFFSET; // The size to render item sprites
+    const maxVisibleItems = Math.floor((inventoryLongSide-GameVars.Constants.ITEM_GAP)/(itemSize + GameVars.Constants.ITEM_GAP));
+    const itemStartPosition = GameVars.Constants.ITEM_GAP + ((inventoryLongSide-GameVars.Constants.ITEM_GAP)%(itemSize + GameVars.Constants.ITEM_GAP))/2;
     if (inventoryObject.getWidth() > inventoryObject.getHeight()) {
         var itemPosX = inventoryObject.getX() + itemStartPosition;
-        var itemXModifier = itemSize + ITEM_GAP;
-        var itemPosY = inventoryObject.getY() + ITEM_OFFSET;
+        var itemXModifier = itemSize + GameVars.Constants.ITEM_GAP;
+        var itemPosY = inventoryObject.getY() + GameVars.Constants.ITEM_OFFSET;
         var itemYModifier = 0;
     } else {
-        var itemPosX = inventoryObject.getX() + ITEM_OFFSET;
+        var itemPosX = inventoryObject.getX() + GameVars.Constants.ITEM_OFFSET;
         var itemXModifier = 0;
         var itemPosY = inventoryObject.getY() + itemStartPosition;
-        var itemYModifier = itemSize + ITEM_GAP;
+        var itemYModifier = itemSize + GameVars.Constants.ITEM_GAP;
     }
     if (inventory.items.length < maxVisibleItems) {
         inventory._scrollIndex = Math.min(inventory._scrollIndex, maxVisibleItems-inventory.items.length);
@@ -1221,7 +1342,7 @@ FDSG.redrawInventory = function() {
         itemObject.getVariables().get("inventoryIndex").setNumber(i);
         const itemInitialHeight = itemObject.getHeight();
         const itemInitialWidth = itemObject.getWidth();
-        const itemScale = (inventoryShortSide - 2*ITEM_OFFSET)/itemInitialHeight;
+        const itemScale = (inventoryShortSide - 2*GameVars.Constants.ITEM_OFFSET)/itemInitialHeight;
         itemObject.setHeight(itemInitialHeight*itemScale);
         itemObject.setWidth(itemInitialWidth*itemScale);
         itemObject.setX(itemPosX);
@@ -1290,8 +1411,8 @@ FDSG.showItemPopup = function(itemName, itemDescription) {
     //const activeX = (cameraWidth - itemPopupData.positionData.width)/2;
     //const activeY = (cameraHeight + cameraHeightOffset - itemPopupData.positionData.height)/2;
     itemSprite.setAnimationName(itemName); // Set the sprite
-    itemSprite.setWidth(ITEM_POPUP_SIZE); // Resize the sprite to fit the popup
-    itemSprite.setHeight(ITEM_POPUP_SIZE);
+    itemSprite.setWidth(GameVars.Constants.ITEM_POPUP_SIZE); // Resize the sprite to fit the popup
+    itemSprite.setHeight(GameVars.Constants.ITEM_POPUP_SIZE);
     itemPopupData.itemNameText.setText(itemName); // Set the text to the item name
     itemPopupData.itemDescriptionText.setText(itemDescription);
     //FDSG.moveRelativeInstanceGroup(itemPopupData.positionData, activeX, activeY);   
@@ -1335,7 +1456,7 @@ FDSG.addItemToInventory = function(itemName) {
  */
 FDSG.removeItemFromInventory = function(inventoryIndex) {
     const inventory = FDSG.PlayerInventory;
-    FDSG.debugPrint(`Removing ${inventory.items[inventoryIndex]} to inventory`);
+    FDSG.debugPrint(`Removing ${inventory.items[inventoryIndex]} from inventory`);
     inventory.items.splice(inventoryIndex, 1);
     if (inventory._scrollIndex >= inventory.items.length) {
         inventory._scrollIndex -= 1;
@@ -1403,7 +1524,7 @@ gdjs.ExplorationCode.eventsList6 = function(runtimeScene) {
 {
 
 
-gdjs.ExplorationCode.userFunc0x7e2aa0(runtimeScene);
+gdjs.ExplorationCode.userFunc0x9967d8(runtimeScene);
 
 }
 
@@ -1452,7 +1573,7 @@ gdjs.ExplorationCode.eventsList6(runtimeScene);
 }
 
 
-};gdjs.ExplorationCode.userFunc0x8f4d80 = function GDJSInlineCode(runtimeScene) {
+};gdjs.ExplorationCode.userFunc0x9969d0 = function GDJSInlineCode(runtimeScene) {
 "use strict";
 const FDSG = gdjs.FDGameData;
 const GameVars = FDSG.GameVars;
@@ -1462,16 +1583,39 @@ const Game = GameVars.runtimeScene.getGame();
 // CLICKABLE OBJECT REGISTRATIONS ##########################################################################################################################
 /*
 This is where you can easily assign objects to specific functions when clicked.
+There are a lot of optional parameters you can pass, so don't be overwhelmed by the amount of text
 Just call the FDSG.registerClickableObject() function, passing a clickConfig object with the following properties:
     clickConfig = {
         object|object[]: The type of scene object you're registering
-        button|button[]: The mouse button that triggers this function. You can also put "hover" if you want the function to run when hovering over
+        button|button[]: The mouse button that triggers this function.
         duration|duration[]: Whether the function should run as long as the mouse button is held down or just when released
         clickFunction: The function that should run when this object is clicked, with a parameter 'obj' for the instance being clicked.
             It's best to pass an anonymous function of this form: (obj) => {<insert code here>}
         cursor?: If you want the mouse cursor to change when hovering over this object, put it here as a string (defaults to "pointer")
+        hoverFunction?: If you want a function to run when hovering over the object, put it here with (obj) as a parameter for the hovered instance
+        hoverEffect?: Optional effect to play on the object when hovering over with the mouse.
+                If you don't know what to put here, create the desired effect in the editor
+                and then use the "copy effects" button. If you paste as text,
+                the object you want will be the "serialized effect" object.
+        hoverTooltip: If you want text to display when hovering over the object, put it in an object with the following structure:
+            hoverTooltip = {
+                x: Which x coordinate to display the object (relative to the parent object)
+                y: Which y coordinate to display the object (relative to the parent object),
+                font: What font to use
+                fontSize: how large the text should be
+                text: The text you want to display
+            }
+            You can also just give a specific instance a "hoverTooltip" structure variable with the same properties
     }
 */
+
+const outlineHoverEffect = { // This is a commonly used effect so its easier to define it here and use copies
+        effectType:"Outline",
+        name:"hoverEffect",
+        doubleParameters: { padding: 0, thickness: 4 },
+        stringParameters: { color: "255;255;255" }
+    }
+
 
 FDSG.registerClickableObject({
     object: "TransitionObject",
@@ -1480,7 +1624,13 @@ FDSG.registerClickableObject({
     clickFunction: (obj) => {
         GameVars.currentLayout = obj.getVariables().get("targetLayout").getAsString();
             // Changes the currentLayout to the layout associated with the TransitionObject and reloads the scene
-    }
+    },
+    hoverTooltip: {
+        x: 0,
+        y: -32,
+        text: "To location"
+    },
+    hoverEffect: structuredClone(outlineHoverEffect)
 });
 
 FDSG.registerClickableObject({
@@ -1495,7 +1645,8 @@ FDSG.registerClickableObject({
             FDSG.debugPrint(`Warning, interaction ${targetInteraction} not registered`);
         }
     },
-    cursor: "help"
+    cursor: "help",
+    hoverEffect: structuredClone(outlineHoverEffect)
 });
 
 FDSG.registerClickableObject({ // Similar to InteractionObject, but only for inspections
@@ -1507,7 +1658,8 @@ FDSG.registerClickableObject({ // Similar to InteractionObject, but only for ins
         FDSG.bringInspectionIntoView(targetInspection);
         GameVars.isInspecting = true;
     },
-    cursor: "help"
+    cursor: "help",
+    hoverEffect: structuredClone(outlineHoverEffect)
 });
 
 FDSG.registerClickableObject({
@@ -1516,7 +1668,8 @@ FDSG.registerClickableObject({
     duration: "released",
     clickFunction: (obj) => {
         GameVars.isInspecting = false;
-    }
+    },
+    hoverEffect: structuredClone(outlineHoverEffect)
 });
 
 FDSG.registerClickableObject({
@@ -1525,7 +1678,8 @@ FDSG.registerClickableObject({
     duration: "released",
     clickFunction: (obj) => {
         gdjs.evtTools.runtimeScene.pushScene(GameVars.runtimeScene, "Pause Screen"); // Pauses the current scene and loads the "Pause Screen" Scene
-    }
+    },
+    hoverEffect: structuredClone(outlineHoverEffect)
 });
 
 FDSG.registerClickableObject({
@@ -1537,7 +1691,8 @@ FDSG.registerClickableObject({
             GameVars.statuesCollected += 1;
             FDSG.updateStatueCounter();
         }
-    }
+    },
+    hoverEffect: structuredClone(outlineHoverEffect)
 });
 
 FDSG.registerClickableObject({
@@ -1559,7 +1714,8 @@ FDSG.registerClickableObject({
                 FDSG.collectObject(obj);
             }
         }
-    }
+    },
+    hoverEffect: structuredClone(outlineHoverEffect)
 });
 
 FDSG.registerClickableObject({
@@ -1569,7 +1725,8 @@ FDSG.registerClickableObject({
     clickFunction: (obj) => {
         const itemInventoryIndex = obj.getVariables().get("inventoryIndex").getAsNumber();
         FDSG.PlayerInventory.selectedItemIndex = itemInventoryIndex;
-    }
+    },
+    hoverEffect: structuredClone(outlineHoverEffect)
 });
 
 FDSG.registerClickableObject({
@@ -1579,7 +1736,8 @@ FDSG.registerClickableObject({
     clickFunction: (obj) => {
         FDSG.PlayerInventory._scrollIndex += 1;
         FDSG.redrawInventory();
-    }
+    },
+    hoverEffect: structuredClone(outlineHoverEffect)
 });
 
 FDSG.registerClickableObject({
@@ -1589,7 +1747,8 @@ FDSG.registerClickableObject({
     clickFunction: (obj) => {
         FDSG.PlayerInventory._scrollIndex -= 1;
         FDSG.redrawInventory();
-    }
+    },
+    hoverEffect: structuredClone(outlineHoverEffect)
 });
 
 FDSG.registerClickableObject({
@@ -1604,7 +1763,8 @@ FDSG.registerClickableObject({
         const itemName = itemPopupData.itemObject.getVariables().get("itemName").getAsString();
         FDSG.addItemToInventory(itemName);
         FDSG.hideItemPopup();
-    }
+    },
+    hoverEffect: structuredClone(outlineHoverEffect)
 });
 
 FDSG.registerClickableObject({
@@ -1613,7 +1773,8 @@ FDSG.registerClickableObject({
     duration: "released",
     clickFunction: (obj) => {
         FDSG.hideItemPopup();
-    }
+    },
+    hoverEffect: structuredClone(outlineHoverEffect)
 });
 
 };
@@ -1622,12 +1783,12 @@ gdjs.ExplorationCode.eventsList8 = function(runtimeScene) {
 {
 
 
-gdjs.ExplorationCode.userFunc0x8f4d80(runtimeScene);
+gdjs.ExplorationCode.userFunc0x9969d0(runtimeScene);
 
 }
 
 
-};gdjs.ExplorationCode.userFunc0x8f4f38 = function GDJSInlineCode(runtimeScene) {
+};gdjs.ExplorationCode.userFunc0x996bb0 = function GDJSInlineCode(runtimeScene) {
 "use strict";
 const FDSG = gdjs.FDGameData;
 const GameVars = FDSG.GameVars;
@@ -1690,12 +1851,12 @@ gdjs.ExplorationCode.eventsList9 = function(runtimeScene) {
 {
 
 
-gdjs.ExplorationCode.userFunc0x8f4f38(runtimeScene);
+gdjs.ExplorationCode.userFunc0x996bb0(runtimeScene);
 
 }
 
 
-};gdjs.ExplorationCode.userFunc0xa44868 = function GDJSInlineCode(runtimeScene) {
+};gdjs.ExplorationCode.userFunc0xab42a8 = function GDJSInlineCode(runtimeScene) {
 "use strict";
 const FDSG = gdjs.FDGameData;
 const GameVars = FDSG.GameVars;
@@ -1725,7 +1886,7 @@ FDSG.registerKeyPressFunction({
 });
 
 };
-gdjs.ExplorationCode.userFunc0x7e2488 = function GDJSInlineCode(runtimeScene) {
+gdjs.ExplorationCode.userFunc0x949668 = function GDJSInlineCode(runtimeScene) {
 "use strict";
 gdjs.FDGameData.PlayerInventory.selectedItem = null;
 
@@ -1735,7 +1896,7 @@ gdjs.ExplorationCode.eventsList10 = function(runtimeScene) {
 {
 
 
-gdjs.ExplorationCode.userFunc0x7e2488(runtimeScene);
+gdjs.ExplorationCode.userFunc0x949668(runtimeScene);
 
 }
 
@@ -1745,7 +1906,7 @@ gdjs.ExplorationCode.userFunc0x7e2488(runtimeScene);
 {
 
 
-gdjs.ExplorationCode.userFunc0xa44868(runtimeScene);
+gdjs.ExplorationCode.userFunc0xab42a8(runtimeScene);
 
 }
 
@@ -1772,7 +1933,7 @@ gdjs.ExplorationCode.eventsList10(runtimeScene);} //End of subevents
 
 let isConditionTrue_0 = false;
 isConditionTrue_0 = false;
-{isConditionTrue_0 = runtimeScene.getGame().getVariables().getFromIndex(1).getAsBoolean();
+{isConditionTrue_0 = runtimeScene.getGame().getVariables().getFromIndex(2).getAsBoolean();
 }
 if (isConditionTrue_0) {
 
@@ -1852,26 +2013,53 @@ gdjs.ExplorationCode.eventsList13(runtimeScene);} //End of subevents
 }
 
 
-};gdjs.ExplorationCode.userFunc0x93ee58 = function GDJSInlineCode(runtimeScene) {
+};gdjs.ExplorationCode.userFunc0x9ed1c8 = function GDJSInlineCode(runtimeScene) {
 "use strict";
 const FDSG = gdjs.FDGameData; // Simpler variables to use as reference
 const GameVars = FDSG.GameVars;
+const Game = runtimeScene.getGame();
+
 
 if (gdjs.evtTools.runtimeScene.sceneJustBegins(runtimeScene)) { // Runs only at the beginning of the scene
     GameVars.runtimeScene = runtimeScene; // Update the current RuntimeScene object
     FDSG.initScene();
     FDSG.debugPrint("Scene initialized");
     GameVars.isInspecting = false;
+    var fadeDuration = GameVars.Constants.TRANSITION_FADE_DURATION;
+    if (!Game.getVariables().get("FirstSceneInitialized").getAsBoolean()) { // Fade into the game should be nice and long
+        fadeDuration = GameVars.Constants.FIRST_TRANSITION_FADE_DURATION;
+        Game.getVariables().get("FirstSceneInitialized").setBoolean(true);
+    }
+    FDSG.initFade(fadeDuration, true);
 }
 
+var thisLayout = GameVars.currentLayout; // Store the layout to see if it changes with player input
+
 FDSG.handlePlayerInput(); // Handle all registered functions associated with clicking objects and pressing keys
+if (GameVars._isFading) {
+    var fadeEffect = runtimeScene.getInstancesOf("FadeScreen")[0];
+    const fadeDuration = fadeEffect.getVariables().get("FadeDuration").getAsNumber();
+    const fadeOpacity = fadeEffect.getVariables().get("Opacity").getAsNumber();
+    if (fadeDuration < 0 && fadeOpacity >= 1) {
+        GameVars._isFading = false;
+        gdjs.evtTools.runtimeScene.replaceScene(runtimeScene, runtimeScene.getName());
+    } else if (fadeDuration > 0 && fadeOpacity <= 0) {
+        GameVars._isFading = false;
+        fadeEffect.deleteFromScene();
+    } else {
+        const deltaTime = fadeEffect.getElapsedTime(runtimeScene);
+        let newOpacity = fadeOpacity - (1/fadeDuration)*deltaTime;
+        fadeEffect.setEffectDoubleParameter("Opacity", "alpha", newOpacity);
+        fadeEffect.getVariables().get("Opacity").setNumber(newOpacity);
+    }
+}
 };
 gdjs.ExplorationCode.eventsList15 = function(runtimeScene) {
 
 {
 
 
-gdjs.ExplorationCode.userFunc0x93ee58(runtimeScene);
+gdjs.ExplorationCode.userFunc0x9ed1c8(runtimeScene);
 
 }
 
@@ -1964,6 +2152,10 @@ gdjs.ExplorationCode.GDItemPopupExitButtonObjects1.length = 0;
 gdjs.ExplorationCode.GDItemPopupExitButtonObjects2.length = 0;
 gdjs.ExplorationCode.GDItemPopupExitButtonObjects3.length = 0;
 gdjs.ExplorationCode.GDItemPopupExitButtonObjects4.length = 0;
+gdjs.ExplorationCode.GDFadeScreenObjects1.length = 0;
+gdjs.ExplorationCode.GDFadeScreenObjects2.length = 0;
+gdjs.ExplorationCode.GDFadeScreenObjects3.length = 0;
+gdjs.ExplorationCode.GDFadeScreenObjects4.length = 0;
 gdjs.ExplorationCode.GDStatuesCollectedCounterObjects1.length = 0;
 gdjs.ExplorationCode.GDStatuesCollectedCounterObjects2.length = 0;
 gdjs.ExplorationCode.GDStatuesCollectedCounterObjects3.length = 0;
@@ -1996,6 +2188,10 @@ gdjs.ExplorationCode.GDSelectedItemBorderObjects1.length = 0;
 gdjs.ExplorationCode.GDSelectedItemBorderObjects2.length = 0;
 gdjs.ExplorationCode.GDSelectedItemBorderObjects3.length = 0;
 gdjs.ExplorationCode.GDSelectedItemBorderObjects4.length = 0;
+gdjs.ExplorationCode.GDHoverTooltipObjects1.length = 0;
+gdjs.ExplorationCode.GDHoverTooltipObjects2.length = 0;
+gdjs.ExplorationCode.GDHoverTooltipObjects3.length = 0;
+gdjs.ExplorationCode.GDHoverTooltipObjects4.length = 0;
 
 gdjs.ExplorationCode.eventsList16(runtimeScene);
 gdjs.ExplorationCode.GDBackgroundObjects1.length = 0;
@@ -2058,6 +2254,10 @@ gdjs.ExplorationCode.GDItemPopupExitButtonObjects1.length = 0;
 gdjs.ExplorationCode.GDItemPopupExitButtonObjects2.length = 0;
 gdjs.ExplorationCode.GDItemPopupExitButtonObjects3.length = 0;
 gdjs.ExplorationCode.GDItemPopupExitButtonObjects4.length = 0;
+gdjs.ExplorationCode.GDFadeScreenObjects1.length = 0;
+gdjs.ExplorationCode.GDFadeScreenObjects2.length = 0;
+gdjs.ExplorationCode.GDFadeScreenObjects3.length = 0;
+gdjs.ExplorationCode.GDFadeScreenObjects4.length = 0;
 gdjs.ExplorationCode.GDStatuesCollectedCounterObjects1.length = 0;
 gdjs.ExplorationCode.GDStatuesCollectedCounterObjects2.length = 0;
 gdjs.ExplorationCode.GDStatuesCollectedCounterObjects3.length = 0;
@@ -2090,6 +2290,10 @@ gdjs.ExplorationCode.GDSelectedItemBorderObjects1.length = 0;
 gdjs.ExplorationCode.GDSelectedItemBorderObjects2.length = 0;
 gdjs.ExplorationCode.GDSelectedItemBorderObjects3.length = 0;
 gdjs.ExplorationCode.GDSelectedItemBorderObjects4.length = 0;
+gdjs.ExplorationCode.GDHoverTooltipObjects1.length = 0;
+gdjs.ExplorationCode.GDHoverTooltipObjects2.length = 0;
+gdjs.ExplorationCode.GDHoverTooltipObjects3.length = 0;
+gdjs.ExplorationCode.GDHoverTooltipObjects4.length = 0;
 
 
 return;

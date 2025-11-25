@@ -1,8 +1,8 @@
 {
   "b": 51,
   "disableInputWhenNotFocused": true,
-  "mangledName": "Main_32Menu",
-  "name": "Main Menu",
+  "mangledName": "Credits",
+  "name": "Credits",
   "r": 226,
   "standardSortMethod": true,
   "stopSoundsOnStartup": true,
@@ -18,9 +18,9 @@
     "gridColor": 10401023,
     "gridAlpha": 0.8,
     "snap": true,
-    "zoomFactor": 0.47893418845352503,
+    "zoomFactor": 0.49508400737488867,
     "windowMask": false,
-    "selectedLayer": "Main Menu"
+    "selectedLayer": ""
   },
   "objectsGroups": [],
   "variables": [],
@@ -28,49 +28,16 @@
     {
       "angle": 0,
       "customSize": true,
-      "depth": 1,
-      "height": 70,
+      "depth": 0.9992193598750976,
+      "height": 662.4824355971897,
       "keepRatio": true,
-      "layer": "Main Menu",
-      "name": "Title",
-      "persistentUuid": "f1797e56-d524-4c49-89ba-549da8c91b32",
-      "width": 1088,
-      "x": 96,
-      "y": 221,
-      "zOrder": 3,
-      "numberProperties": [],
-      "stringProperties": [],
-      "initialVariables": []
-    },
-    {
-      "angle": 0,
-      "customSize": true,
-      "depth": 96,
-      "height": 96,
-      "keepRatio": true,
-      "layer": "Main Menu",
-      "name": "StartButton",
-      "persistentUuid": "5aebedf3-0c2f-4cec-9d78-822c10de13bd",
-      "width": 384,
-      "x": 448,
-      "y": 384,
-      "zOrder": 4,
-      "numberProperties": [],
-      "stringProperties": [],
-      "initialVariables": []
-    },
-    {
-      "angle": 0,
-      "customSize": true,
-      "depth": 3,
-      "height": 1753,
-      "layer": "Background",
-      "name": "Main_Menu_Background",
-      "persistentUuid": "ba6b1fc4-fb94-40d4-a68c-e8e29e9d1239",
-      "width": 1290,
-      "x": -5,
-      "y": -5,
-      "zOrder": 5,
+      "layer": "Credits",
+      "name": "Credits_Text",
+      "persistentUuid": "9866c5fd-552d-434b-8987-8bfeeb382c40",
+      "width": 1280,
+      "x": -3,
+      "y": 330,
+      "zOrder": 1,
       "numberProperties": [],
       "stringProperties": [],
       "initialVariables": []
@@ -80,13 +47,30 @@
       "customSize": false,
       "height": 0,
       "keepRatio": true,
-      "layer": "Main Menu",
-      "name": "CreditsButton",
-      "persistentUuid": "2cd0cac2-b637-47e5-af9d-0537a5dabaf4",
+      "layer": "Credits",
+      "name": "BackButton",
+      "persistentUuid": "a459a4d6-a11e-4625-b4f3-2450f06e1fb8",
       "width": 0,
       "x": 512,
       "y": 544,
-      "zOrder": 6,
+      "zOrder": 2,
+      "numberProperties": [],
+      "stringProperties": [],
+      "initialVariables": []
+    },
+    {
+      "angle": 0,
+      "customSize": true,
+      "depth": 2.879464285714286,
+      "height": 1754.553571428572,
+      "keepRatio": true,
+      "layer": "Background",
+      "name": "Background",
+      "persistentUuid": "24ff9b93-1546-4118-9252-ae15eb98ffe4",
+      "width": 1290,
+      "x": -5,
+      "y": -5,
+      "zOrder": 3,
       "numberProperties": [],
       "stringProperties": [],
       "initialVariables": []
@@ -97,17 +81,17 @@
       "assetStoreId": "",
       "bold": true,
       "italic": false,
-      "name": "Title",
+      "name": "Credits_Text",
       "smoothed": true,
       "type": "TextObject::Text",
       "underlined": false,
       "variables": [],
       "effects": [],
       "behaviors": [],
-      "string": "The Frederick Douglass Square\nAdventure",
-      "font": "assets/fonts/BilkoOpti-Regular.otf",
+      "string": "Project Manager & Lead Programmer: Christian Sorensen\n\nSecondary Programmer: Kyle Tu\n\nArt and Client Communications: Michelle Starcher\n\nHistorical Research, Images, and Minigame Design:\nSamnorp Deung, Marcello Soriano\n",
+      "font": "assets\\fonts\\BilkoOpti-Regular.otf",
       "textAlignment": "center",
-      "characterSize": 65,
+      "characterSize": 34,
       "color": {
         "b": 255,
         "g": 255,
@@ -119,7 +103,7 @@
         "isShadowEnabled": true,
         "italic": false,
         "outlineColor": "0;0;0",
-        "outlineThickness": 8,
+        "outlineThickness": 6,
         "shadowAngle": 90,
         "shadowBlurRadius": 2,
         "shadowColor": "0;0;0",
@@ -127,18 +111,18 @@
         "shadowOpacity": 127,
         "smoothed": true,
         "underlined": false,
-        "text": "The Frederick Douglass Square\nAdventure",
-        "font": "assets/fonts/BilkoOpti-Regular.otf",
+        "text": "Project Manager & Lead Programmer: Christian Sorensen\n\nSecondary Programmer: Kyle Tu\n\nArt and Client Communications: Michelle Starcher\n\nHistorical Research, Images, and Minigame Design:\nSamnorp Deung, Marcello Soriano\n",
+        "font": "assets\\fonts\\BilkoOpti-Regular.otf",
         "textAlignment": "center",
         "verticalTextAlignment": "center",
-        "characterSize": 65,
+        "characterSize": 34,
         "lineHeight": 0,
         "color": "255;255;255"
       }
     },
     {
       "assetStoreId": "615de0316452630b9f4f6a39decc82e2449b82c1afd1ff24d6470dad2922177b",
-      "name": "StartButton",
+      "name": "BackButton",
       "type": "PanelSpriteButton::PanelSpriteButton",
       "variant": "StartButton",
       "variables": [],
@@ -151,13 +135,13 @@
         "BottomPadding": 32,
         "TopPadding": 16,
         "HoveredFadeOutDuration": 0.25,
-        "LabelText": "Start"
+        "LabelText": "Back"
       }
     },
     {
       "adaptCollisionMaskAutomatically": true,
       "assetStoreId": "",
-      "name": "Main_Menu_Background",
+      "name": "Background",
       "type": "Sprite",
       "updateIfNotVisible": false,
       "variables": [],
@@ -227,40 +211,19 @@
           ]
         }
       ]
-    },
-    {
-      "assetStoreId": "615de0316452630b9f4f6a39decc82e2449b82c1afd1ff24d6470dad2922177b",
-      "name": "CreditsButton",
-      "type": "PanelSpriteButton::PanelSpriteButton",
-      "variant": "StartButton",
-      "variables": [],
-      "effects": [],
-      "behaviors": [],
-      "content": {
-        "LeftPadding": 16,
-        "RightPadding": 16,
-        "PressedLabelOffsetY": 10,
-        "BottomPadding": 32,
-        "TopPadding": 16,
-        "HoveredFadeOutDuration": 0.25,
-        "LabelText": "Credits"
-      }
     }
   ],
   "objectsFolderStructure": {
     "folderName": "__ROOT",
     "children": [
       {
-        "objectName": "Title"
+        "objectName": "Credits_Text"
       },
       {
-        "objectName": "StartButton"
+        "objectName": "BackButton"
       },
       {
-        "objectName": "CreditsButton"
-      },
-      {
-        "objectName": "Main_Menu_Background"
+        "objectName": "Background"
       }
     ]
   },
@@ -273,7 +236,7 @@
             "value": "PanelSpriteButton::PanelSpriteButton::IsPressed"
           },
           "parameters": [
-            "StartButton",
+            "BackButton",
             ""
           ]
         }
@@ -285,33 +248,7 @@
           },
           "parameters": [
             "",
-            "\"Exploration\"",
-            ""
-          ]
-        }
-      ]
-    },
-    {
-      "type": "BuiltinCommonInstructions::Standard",
-      "conditions": [
-        {
-          "type": {
-            "value": "PanelSpriteButton::PanelSpriteButton::IsPressed"
-          },
-          "parameters": [
-            "CreditsButton",
-            "="
-          ]
-        }
-      ],
-      "actions": [
-        {
-          "type": {
-            "value": "Scene"
-          },
-          "parameters": [
-            "",
-            "\"Credits\"",
+            "\"Main Menu\"",
             ""
           ]
         }
@@ -345,43 +282,7 @@
           "width": 0
         }
       ],
-      "effects": [
-        {
-          "effectType": "Scene3D::HemisphereLight",
-          "name": "3D Ambient Hemisphere Light",
-          "doubleParameters": {
-            "elevation": 40,
-            "intensity": 0.33,
-            "rotation": 300
-          },
-          "stringParameters": {
-            "groundColor": "127;127;127",
-            "skyColor": "255;255;255",
-            "top": "Z+"
-          },
-          "booleanParameters": {}
-        },
-        {
-          "effectType": "Scene3D::DirectionalLight",
-          "name": "3D Sun Light",
-          "doubleParameters": {
-            "distanceFromCamera": 1500,
-            "elevation": 40,
-            "frustumSize": 4000,
-            "intensity": 0.75,
-            "minimumShadowBias": 0,
-            "rotation": 300
-          },
-          "stringParameters": {
-            "color": "255;255;255",
-            "shadowQuality": "medium",
-            "top": "Z+"
-          },
-          "booleanParameters": {
-            "isCastingShadow": true
-          }
-        }
-      ]
+      "effects": []
     },
     {
       "ambientLightColorB": 200,
@@ -395,46 +296,10 @@
       "isLightingLayer": false,
       "isLocked": false,
       "name": "Background",
-      "renderingType": "",
+      "renderingType": "2d",
       "visibility": true,
       "cameras": [],
-      "effects": [
-        {
-          "effectType": "Scene3D::HemisphereLight",
-          "name": "3D Ambient Hemisphere Light",
-          "doubleParameters": {
-            "elevation": 40,
-            "intensity": 0.33,
-            "rotation": 300
-          },
-          "stringParameters": {
-            "groundColor": "127;127;127",
-            "skyColor": "255;255;255",
-            "top": "Z+"
-          },
-          "booleanParameters": {}
-        },
-        {
-          "effectType": "Scene3D::DirectionalLight",
-          "name": "3D Sun Light",
-          "doubleParameters": {
-            "distanceFromCamera": 1500,
-            "elevation": 40,
-            "frustumSize": 4000,
-            "intensity": 0.75,
-            "minimumShadowBias": 0,
-            "rotation": 300
-          },
-          "stringParameters": {
-            "color": "255;255;255",
-            "shadowQuality": "medium",
-            "top": "Z+"
-          },
-          "booleanParameters": {
-            "isCastingShadow": true
-          }
-        }
-      ]
+      "effects": []
     },
     {
       "ambientLightColorB": 200,
@@ -447,47 +312,11 @@
       "followBaseLayerCamera": false,
       "isLightingLayer": false,
       "isLocked": false,
-      "name": "Main Menu",
-      "renderingType": "",
+      "name": "Credits",
+      "renderingType": "2d",
       "visibility": true,
       "cameras": [],
-      "effects": [
-        {
-          "effectType": "Scene3D::HemisphereLight",
-          "name": "3D Ambient Hemisphere Light",
-          "doubleParameters": {
-            "elevation": 40,
-            "intensity": 0.33,
-            "rotation": 300
-          },
-          "stringParameters": {
-            "groundColor": "127;127;127",
-            "skyColor": "255;255;255",
-            "top": "Z+"
-          },
-          "booleanParameters": {}
-        },
-        {
-          "effectType": "Scene3D::DirectionalLight",
-          "name": "3D Sun Light",
-          "doubleParameters": {
-            "distanceFromCamera": 1500,
-            "elevation": 40,
-            "frustumSize": 4000,
-            "intensity": 0.75,
-            "minimumShadowBias": 0,
-            "rotation": 300
-          },
-          "stringParameters": {
-            "color": "255;255;255",
-            "shadowQuality": "medium",
-            "top": "Z+"
-          },
-          "booleanParameters": {
-            "isCastingShadow": true
-          }
-        }
-      ]
+      "effects": []
     }
   ],
   "behaviorsSharedData": [

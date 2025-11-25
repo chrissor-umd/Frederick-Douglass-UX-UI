@@ -822,7 +822,6 @@
                         "",
                         "    // CLICK & HOVER FUNCTIONS",
                         "    if (hoveredInstance != null) {",
-                        "        console.log(hoveredInstance);",
                         "        const instanceVars = hoveredInstance.getVariables();",
                         "",
                         "        // HOVER TOOLTIP (This is just for hovering text so you can freely ignore this part)",

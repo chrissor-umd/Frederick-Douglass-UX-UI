@@ -19,10 +19,12 @@ gdjs.Pause_32ScreenCode.GDCycleInventoryPreviousObjects1= [];
 gdjs.Pause_32ScreenCode.GDCycleInventoryPreviousObjects2= [];
 gdjs.Pause_32ScreenCode.GDSelectedItemBorderObjects1= [];
 gdjs.Pause_32ScreenCode.GDSelectedItemBorderObjects2= [];
+gdjs.Pause_32ScreenCode.GDHoverTooltipObjects1= [];
+gdjs.Pause_32ScreenCode.GDHoverTooltipObjects2= [];
 
 
 gdjs.Pause_32ScreenCode.mapOfGDgdjs_9546Pause_959532ScreenCode_9546GDPauseButtonObjects1Objects = Hashtable.newFrom({"PauseButton": gdjs.Pause_32ScreenCode.GDPauseButtonObjects1});
-gdjs.Pause_32ScreenCode.userFunc0x7e1d78 = function GDJSInlineCode(runtimeScene) {
+gdjs.Pause_32ScreenCode.userFunc0x992078 = function GDJSInlineCode(runtimeScene) {
 "use strict";
 runtimeScene.getGame().getRenderer().getCanvas().style.cursor = "pointer";
 
@@ -32,7 +34,7 @@ gdjs.Pause_32ScreenCode.eventsList0 = function(runtimeScene) {
 {
 
 
-gdjs.Pause_32ScreenCode.userFunc0x7e1d78(runtimeScene);
+gdjs.Pause_32ScreenCode.userFunc0x992078(runtimeScene);
 
 }
 
@@ -52,7 +54,7 @@ if (isConditionTrue_0) {
 
 
 };gdjs.Pause_32ScreenCode.mapOfGDgdjs_9546Pause_959532ScreenCode_9546GDPauseButtonObjects1Objects = Hashtable.newFrom({"PauseButton": gdjs.Pause_32ScreenCode.GDPauseButtonObjects1});
-gdjs.Pause_32ScreenCode.userFunc0x9d6488 = function GDJSInlineCode(runtimeScene) {
+gdjs.Pause_32ScreenCode.userFunc0x9951b0 = function GDJSInlineCode(runtimeScene) {
 "use strict";
 runtimeScene.getGame().getRenderer().getCanvas().style.cursor = "default";
 
@@ -62,7 +64,7 @@ gdjs.Pause_32ScreenCode.eventsList1 = function(runtimeScene) {
 {
 
 
-gdjs.Pause_32ScreenCode.userFunc0x9d6488(runtimeScene);
+gdjs.Pause_32ScreenCode.userFunc0x9951b0(runtimeScene);
 
 }
 
@@ -124,6 +126,8 @@ gdjs.Pause_32ScreenCode.GDCycleInventoryPreviousObjects1.length = 0;
 gdjs.Pause_32ScreenCode.GDCycleInventoryPreviousObjects2.length = 0;
 gdjs.Pause_32ScreenCode.GDSelectedItemBorderObjects1.length = 0;
 gdjs.Pause_32ScreenCode.GDSelectedItemBorderObjects2.length = 0;
+gdjs.Pause_32ScreenCode.GDHoverTooltipObjects1.length = 0;
+gdjs.Pause_32ScreenCode.GDHoverTooltipObjects2.length = 0;
 
 gdjs.Pause_32ScreenCode.eventsList2(runtimeScene);
 gdjs.Pause_32ScreenCode.GDPauseTextObjects1.length = 0;
@@ -144,6 +148,8 @@ gdjs.Pause_32ScreenCode.GDCycleInventoryPreviousObjects1.length = 0;
 gdjs.Pause_32ScreenCode.GDCycleInventoryPreviousObjects2.length = 0;
 gdjs.Pause_32ScreenCode.GDSelectedItemBorderObjects1.length = 0;
 gdjs.Pause_32ScreenCode.GDSelectedItemBorderObjects2.length = 0;
+gdjs.Pause_32ScreenCode.GDHoverTooltipObjects1.length = 0;
+gdjs.Pause_32ScreenCode.GDHoverTooltipObjects2.length = 0;
 
 
 return;

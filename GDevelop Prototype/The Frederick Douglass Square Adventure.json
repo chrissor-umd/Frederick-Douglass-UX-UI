@@ -19,7 +19,7 @@
     "sizeOnStartupMode": "",
     "templateSlug": "",
     "version": "1.0.0",
-    "name": "Frederick Douglass UX-UI Prototype",
+    "name": "The Frederick Douglass Square Adventure",
     "description": "",
     "author": "",
     "windowWidth": 1280,
@@ -334,22 +334,6 @@
         "kind": "image",
         "metadata": "",
         "name": "assets\\ui\\ui_background_template.png",
-        "smoothed": true,
-        "userAdded": false
-      },
-      {
-        "file": "assets/ui/camera_border_horizontal.png",
-        "kind": "image",
-        "metadata": "",
-        "name": "assets\\ui\\camera_border_horizontal.png",
-        "smoothed": true,
-        "userAdded": false
-      },
-      {
-        "file": "assets/ui/camera_border_vertical.png",
-        "kind": "image",
-        "metadata": "",
-        "name": "assets\\ui\\camera_border_vertical.png",
         "smoothed": true,
         "userAdded": false
       },
@@ -1426,6 +1410,10 @@
     {
       "__REFERENCE_TO_SPLIT_OBJECT": true,
       "referenceTo": "/layouts/exploration"
+    },
+    {
+      "__REFERENCE_TO_SPLIT_OBJECT": true,
+      "referenceTo": "/layouts/credits"
     }
   ],
   "externalEvents": [

@@ -7,22 +7,6 @@
       "customSize": false,
       "height": 0,
       "keepRatio": true,
-      "layer": "UI",
-      "name": "PauseButton",
-      "persistentUuid": "b90aab14-b306-45f5-92e4-208c70a7a59f",
-      "width": 0,
-      "x": 1184,
-      "y": 16,
-      "zOrder": 1,
-      "numberProperties": [],
-      "stringProperties": [],
-      "initialVariables": []
-    },
-    {
-      "angle": 0,
-      "customSize": false,
-      "height": 0,
-      "keepRatio": true,
       "layer": "InspectionUI",
       "name": "ExitInspection",
       "persistentUuid": "23fe53b5-6157-4f25-88ff-cd9c989af0b8",
@@ -231,7 +215,7 @@
     "gridColor": 10401023,
     "gridAlpha": 0.8,
     "snap": true,
-    "zoomFactor": 0.5843784410740984,
+    "zoomFactor": 1.0269425874981175,
     "windowMask": false,
     "selectedLayer": "UI"
   }

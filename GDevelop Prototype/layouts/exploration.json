@@ -258,6 +258,7 @@
           "value": ""
         },
         {
+          "folded": true,
           "name": "hoverTooltip",
           "type": "structure",
           "children": [

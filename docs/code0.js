@@ -3,8 +3,12 @@ gdjs.Main_32MenuCode.localVariables = [];
 gdjs.Main_32MenuCode.idToCallbackMap = new Map();
 gdjs.Main_32MenuCode.GDTitleObjects1= [];
 gdjs.Main_32MenuCode.GDTitleObjects2= [];
-gdjs.Main_32MenuCode.GDYellowButtonObjects1= [];
-gdjs.Main_32MenuCode.GDYellowButtonObjects2= [];
+gdjs.Main_32MenuCode.GDStartButtonObjects1= [];
+gdjs.Main_32MenuCode.GDStartButtonObjects2= [];
+gdjs.Main_32MenuCode.GDMain_9595Menu_9595BackgroundObjects1= [];
+gdjs.Main_32MenuCode.GDMain_9595Menu_9595BackgroundObjects2= [];
+gdjs.Main_32MenuCode.GDCreditsButtonObjects1= [];
+gdjs.Main_32MenuCode.GDCreditsButtonObjects2= [];
 gdjs.Main_32MenuCode.GDStatuesCollectedCounterObjects1= [];
 gdjs.Main_32MenuCode.GDStatuesCollectedCounterObjects2= [];
 gdjs.Main_32MenuCode.GDPauseButtonObjects1= [];
@@ -21,24 +25,50 @@ gdjs.Main_32MenuCode.GDCycleInventoryPreviousObjects1= [];
 gdjs.Main_32MenuCode.GDCycleInventoryPreviousObjects2= [];
 gdjs.Main_32MenuCode.GDSelectedItemBorderObjects1= [];
 gdjs.Main_32MenuCode.GDSelectedItemBorderObjects2= [];
+gdjs.Main_32MenuCode.GDHoverTooltipObjects1= [];
+gdjs.Main_32MenuCode.GDHoverTooltipObjects2= [];
 
 
-gdjs.Main_32MenuCode.mapOfGDgdjs_9546Main_959532MenuCode_9546GDYellowButtonObjects1Objects = Hashtable.newFrom({"YellowButton": gdjs.Main_32MenuCode.GDYellowButtonObjects1});
 gdjs.Main_32MenuCode.eventsList0 = function(runtimeScene) {
 
 {
 
-gdjs.copyArray(runtimeScene.getObjects("YellowButton"), gdjs.Main_32MenuCode.GDYellowButtonObjects1);
+gdjs.copyArray(runtimeScene.getObjects("StartButton"), gdjs.Main_32MenuCode.GDStartButtonObjects1);
 
 let isConditionTrue_0 = false;
 isConditionTrue_0 = false;
-isConditionTrue_0 = gdjs.evtTools.input.cursorOnObject(gdjs.Main_32MenuCode.mapOfGDgdjs_9546Main_959532MenuCode_9546GDYellowButtonObjects1Objects, runtimeScene, true, false);
-if (isConditionTrue_0) {
-isConditionTrue_0 = false;
-isConditionTrue_0 = gdjs.evtTools.input.isMouseButtonReleased(runtimeScene, "Left");
+for (var i = 0, k = 0, l = gdjs.Main_32MenuCode.GDStartButtonObjects1.length;i<l;++i) {
+    if ( gdjs.Main_32MenuCode.GDStartButtonObjects1[i].IsPressed(null) ) {
+        isConditionTrue_0 = true;
+        gdjs.Main_32MenuCode.GDStartButtonObjects1[k] = gdjs.Main_32MenuCode.GDStartButtonObjects1[i];
+        ++k;
+    }
 }
+gdjs.Main_32MenuCode.GDStartButtonObjects1.length = k;
 if (isConditionTrue_0) {
 {gdjs.evtTools.runtimeScene.replaceScene(runtimeScene, "Exploration", false);
+}
+}
+
+}
+
+
+{
+
+gdjs.copyArray(runtimeScene.getObjects("CreditsButton"), gdjs.Main_32MenuCode.GDCreditsButtonObjects1);
+
+let isConditionTrue_0 = false;
+isConditionTrue_0 = false;
+for (var i = 0, k = 0, l = gdjs.Main_32MenuCode.GDCreditsButtonObjects1.length;i<l;++i) {
+    if ( gdjs.Main_32MenuCode.GDCreditsButtonObjects1[i].IsPressed(null) ) {
+        isConditionTrue_0 = true;
+        gdjs.Main_32MenuCode.GDCreditsButtonObjects1[k] = gdjs.Main_32MenuCode.GDCreditsButtonObjects1[i];
+        ++k;
+    }
+}
+gdjs.Main_32MenuCode.GDCreditsButtonObjects1.length = k;
+if (isConditionTrue_0) {
+{gdjs.evtTools.runtimeScene.replaceScene(runtimeScene, "Credits", false);
 }
 }
 
@@ -52,8 +82,12 @@ runtimeScene.getOnceTriggers().startNewFrame();
 
 gdjs.Main_32MenuCode.GDTitleObjects1.length = 0;
 gdjs.Main_32MenuCode.GDTitleObjects2.length = 0;
-gdjs.Main_32MenuCode.GDYellowButtonObjects1.length = 0;
-gdjs.Main_32MenuCode.GDYellowButtonObjects2.length = 0;
+gdjs.Main_32MenuCode.GDStartButtonObjects1.length = 0;
+gdjs.Main_32MenuCode.GDStartButtonObjects2.length = 0;
+gdjs.Main_32MenuCode.GDMain_9595Menu_9595BackgroundObjects1.length = 0;
+gdjs.Main_32MenuCode.GDMain_9595Menu_9595BackgroundObjects2.length = 0;
+gdjs.Main_32MenuCode.GDCreditsButtonObjects1.length = 0;
+gdjs.Main_32MenuCode.GDCreditsButtonObjects2.length = 0;
 gdjs.Main_32MenuCode.GDStatuesCollectedCounterObjects1.length = 0;
 gdjs.Main_32MenuCode.GDStatuesCollectedCounterObjects2.length = 0;
 gdjs.Main_32MenuCode.GDPauseButtonObjects1.length = 0;
@@ -70,12 +104,18 @@ gdjs.Main_32MenuCode.GDCycleInventoryPreviousObjects1.length = 0;
 gdjs.Main_32MenuCode.GDCycleInventoryPreviousObjects2.length = 0;
 gdjs.Main_32MenuCode.GDSelectedItemBorderObjects1.length = 0;
 gdjs.Main_32MenuCode.GDSelectedItemBorderObjects2.length = 0;
+gdjs.Main_32MenuCode.GDHoverTooltipObjects1.length = 0;
+gdjs.Main_32MenuCode.GDHoverTooltipObjects2.length = 0;
 
 gdjs.Main_32MenuCode.eventsList0(runtimeScene);
 gdjs.Main_32MenuCode.GDTitleObjects1.length = 0;
 gdjs.Main_32MenuCode.GDTitleObjects2.length = 0;
-gdjs.Main_32MenuCode.GDYellowButtonObjects1.length = 0;
-gdjs.Main_32MenuCode.GDYellowButtonObjects2.length = 0;
+gdjs.Main_32MenuCode.GDStartButtonObjects1.length = 0;
+gdjs.Main_32MenuCode.GDStartButtonObjects2.length = 0;
+gdjs.Main_32MenuCode.GDMain_9595Menu_9595BackgroundObjects1.length = 0;
+gdjs.Main_32MenuCode.GDMain_9595Menu_9595BackgroundObjects2.length = 0;
+gdjs.Main_32MenuCode.GDCreditsButtonObjects1.length = 0;
+gdjs.Main_32MenuCode.GDCreditsButtonObjects2.length = 0;
 gdjs.Main_32MenuCode.GDStatuesCollectedCounterObjects1.length = 0;
 gdjs.Main_32MenuCode.GDStatuesCollectedCounterObjects2.length = 0;
 gdjs.Main_32MenuCode.GDPauseButtonObjects1.length = 0;
@@ -92,6 +132,8 @@ gdjs.Main_32MenuCode.GDCycleInventoryPreviousObjects1.length = 0;
 gdjs.Main_32MenuCode.GDCycleInventoryPreviousObjects2.length = 0;
 gdjs.Main_32MenuCode.GDSelectedItemBorderObjects1.length = 0;
 gdjs.Main_32MenuCode.GDSelectedItemBorderObjects2.length = 0;
+gdjs.Main_32MenuCode.GDHoverTooltipObjects1.length = 0;
+gdjs.Main_32MenuCode.GDHoverTooltipObjects2.length = 0;
 
 
 return;
