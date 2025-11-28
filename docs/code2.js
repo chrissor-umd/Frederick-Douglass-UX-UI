@@ -123,7 +123,7 @@ gdjs.ExplorationCode.GDInspectInventoryItemObjects3= [];
 gdjs.ExplorationCode.GDInspectInventoryItemObjects4= [];
 
 
-gdjs.ExplorationCode.userFunc0xb52348 = function GDJSInlineCode(runtimeScene) {
+gdjs.ExplorationCode.userFunc0x935b10 = function GDJSInlineCode(runtimeScene) {
 "use strict";
 gdjs.FDGameData = {}; // All persistent data is attached to gdjs so that it isn't reset on scene change
 const FDSG = gdjs.FDGameData; // This way data can be accessed through a simpler variable name (FDSG = Frederick-Douglass Square Game)
@@ -155,12 +155,12 @@ gdjs.ExplorationCode.eventsList0 = function(runtimeScene) {
 {
 
 
-gdjs.ExplorationCode.userFunc0xb52348(runtimeScene);
+gdjs.ExplorationCode.userFunc0x935b10(runtimeScene);
 
 }
 
 
-};gdjs.ExplorationCode.userFunc0x9493f0 = function GDJSInlineCode(runtimeScene) {
+};gdjs.ExplorationCode.userFunc0x870080 = function GDJSInlineCode(runtimeScene) {
 "use strict";
 const FDSG = gdjs.FDGameData;
 const GameVars = FDSG.GameVars;
@@ -373,12 +373,12 @@ gdjs.ExplorationCode.eventsList1 = function(runtimeScene) {
 {
 
 
-gdjs.ExplorationCode.userFunc0x9493f0(runtimeScene);
+gdjs.ExplorationCode.userFunc0x870080(runtimeScene);
 
 }
 
 
-};gdjs.ExplorationCode.userFunc0xd8e820 = function GDJSInlineCode(runtimeScene) {
+};gdjs.ExplorationCode.userFunc0xd8e8e0 = function GDJSInlineCode(runtimeScene) {
 "use strict";
 const FDSG = gdjs.FDGameData;
 const GameVars = FDSG.GameVars;
@@ -441,17 +441,6 @@ FDSG.initScene = function() {
         }
     }
 
-    // Set instance specific innerText on text objects
-    for (const instance of FDSG.getAllSceneInstances()) { // Check for text objects and replace their text with the instance specific text
-        if (instance.getVariables().has("innerText")) {
-            const iVars = instance.getVariables();
-            instance.setText(iVars.get("innerText").getAsString()); // Replace the text
-            if (iVars.has("fontSize")) { instance.setCharacterSize(iVars.get("fontSize").getAsNumber()) }
-            if (iVars.has("outlineThickness")) { instance.setOutlineThickness(iVars.get("outlineThickness").getAsNumber()) }
-            if (iVars.has("outlineColor")) {instance.setOutlineColor(iVars.get("outlineColor").getAsString()) }
-        }
-    }
-
     // Run layout specific functions
     if (!(GameVars.currentLayout in FDSG._LayoutData)) {
         FDSG._LayoutData[GameVars.currentLayout] = {};
@@ -471,6 +460,18 @@ FDSG.initScene = function() {
     FDSG._LayoutInspections = FDSG.getLayoutInspections(); // Registers all inspections and their objects for the current layout
     GameVars._loadedInspection = null; // No inspections are loaded on scene init
     GameVars._isInspecting = false; // Reset flag
+
+    // Set instance specific innerText on text objects
+    // (this has to be done after InstanceGroups are created since changing text changes the size of text objects)
+    for (const instance of FDSG.getAllSceneInstances()) { // Check for text objects and replace their text with the instance specific text
+        if (instance.getVariables().has("innerText")) {
+            const iVars = instance.getVariables();
+            instance.setText(iVars.get("innerText").getAsString()); // Replace the text
+            if (iVars.has("fontSize")) { instance.setCharacterSize(iVars.get("fontSize").getAsNumber()) }
+            if (iVars.has("outlineThickness")) { instance.setOutlineThickness(iVars.get("outlineThickness").getAsNumber()) }
+            if (iVars.has("outlineColor")) {instance.setOutlineColor(iVars.get("outlineColor").getAsString()) }
+        }
+    }
 
     // INVENTORY AND ITEM POPUPS
     
@@ -659,12 +660,12 @@ gdjs.ExplorationCode.eventsList2 = function(runtimeScene) {
 {
 
 
-gdjs.ExplorationCode.userFunc0xd8e820(runtimeScene);
+gdjs.ExplorationCode.userFunc0xd8e8e0(runtimeScene);
 
 }
 
 
-};gdjs.ExplorationCode.userFunc0x934928 = function GDJSInlineCode(runtimeScene) {
+};gdjs.ExplorationCode.userFunc0xe04808 = function GDJSInlineCode(runtimeScene) {
 "use strict";
 const FDSG = gdjs.FDGameData;
 const GameVars = FDSG.GameVars;
@@ -1080,12 +1081,12 @@ gdjs.ExplorationCode.eventsList3 = function(runtimeScene) {
 {
 
 
-gdjs.ExplorationCode.userFunc0x934928(runtimeScene);
+gdjs.ExplorationCode.userFunc0xe04808(runtimeScene);
 
 }
 
 
-};gdjs.ExplorationCode.userFunc0xd8e8f0 = function GDJSInlineCode(runtimeScene) {
+};gdjs.ExplorationCode.userFunc0xe048f0 = function GDJSInlineCode(runtimeScene) {
 "use strict";
 const FDSG = gdjs.FDGameData;
 const GameVars = FDSG.GameVars;
@@ -1159,7 +1160,7 @@ FDSG.getLayoutInspections = function() {
         layoutInspections[inspection] = { // Store the data for this inspection
             instanceGroup: inspectionGroup, // The InstanceGroup containing the object instances
             initialX: inspectionGroup.x, // Store intitial position so we can restore it later
-            intialY: inspectionGroup.y
+            initialY: inspectionGroup.y
         }
     }
     return layoutInspections;
@@ -1250,12 +1251,12 @@ gdjs.ExplorationCode.eventsList4 = function(runtimeScene) {
 {
 
 
-gdjs.ExplorationCode.userFunc0xd8e8f0(runtimeScene);
+gdjs.ExplorationCode.userFunc0xe048f0(runtimeScene);
 
 }
 
 
-};gdjs.ExplorationCode.userFunc0xd20288 = function GDJSInlineCode(runtimeScene) {
+};gdjs.ExplorationCode.userFunc0xdb4cf0 = function GDJSInlineCode(runtimeScene) {
 "use strict";
 const FDSG = gdjs.FDGameData;
 const GameVars = FDSG.GameVars;
@@ -1323,12 +1324,12 @@ gdjs.ExplorationCode.eventsList5 = function(runtimeScene) {
 {
 
 
-gdjs.ExplorationCode.userFunc0xd20288(runtimeScene);
+gdjs.ExplorationCode.userFunc0xdb4cf0(runtimeScene);
 
 }
 
 
-};gdjs.ExplorationCode.userFunc0xdb4cc8 = function GDJSInlineCode(runtimeScene) {
+};gdjs.ExplorationCode.userFunc0xd20150 = function GDJSInlineCode(runtimeScene) {
 "use strict";
 const FDSG = gdjs.FDGameData;
 const GameVars = FDSG.GameVars;
@@ -1638,12 +1639,12 @@ gdjs.ExplorationCode.eventsList6 = function(runtimeScene) {
 {
 
 
-gdjs.ExplorationCode.userFunc0xdb4cc8(runtimeScene);
+gdjs.ExplorationCode.userFunc0xd20150(runtimeScene);
 
 }
 
 
-};gdjs.ExplorationCode.userFunc0xcbf8e8 = function GDJSInlineCode(runtimeScene) {
+};gdjs.ExplorationCode.userFunc0xd202c8 = function GDJSInlineCode(runtimeScene) {
 "use strict";
 const FDSG = gdjs.FDGameData;
 const GameVars = FDSG.GameVars;
@@ -1663,7 +1664,7 @@ gdjs.ExplorationCode.eventsList7 = function(runtimeScene) {
 {
 
 
-gdjs.ExplorationCode.userFunc0xcbf8e8(runtimeScene);
+gdjs.ExplorationCode.userFunc0xd202c8(runtimeScene);
 
 }
 
@@ -1719,7 +1720,7 @@ gdjs.ExplorationCode.eventsList7(runtimeScene);
 }
 
 
-};gdjs.ExplorationCode.userFunc0x946998 = function GDJSInlineCode(runtimeScene) {
+};gdjs.ExplorationCode.userFunc0xe23628 = function GDJSInlineCode(runtimeScene) {
 "use strict";
 const FDSG = gdjs.FDGameData;
 const GameVars = FDSG.GameVars;
@@ -1940,12 +1941,12 @@ gdjs.ExplorationCode.eventsList9 = function(runtimeScene) {
 {
 
 
-gdjs.ExplorationCode.userFunc0x946998(runtimeScene);
+gdjs.ExplorationCode.userFunc0xe23628(runtimeScene);
 
 }
 
 
-};gdjs.ExplorationCode.userFunc0xc97ac8 = function GDJSInlineCode(runtimeScene) {
+};gdjs.ExplorationCode.userFunc0xbec798 = function GDJSInlineCode(runtimeScene) {
 "use strict";
 const FDSG = gdjs.FDGameData;
 const GameVars = FDSG.GameVars;
@@ -2028,12 +2029,12 @@ gdjs.ExplorationCode.eventsList10 = function(runtimeScene) {
 {
 
 
-gdjs.ExplorationCode.userFunc0xc97ac8(runtimeScene);
+gdjs.ExplorationCode.userFunc0xbec798(runtimeScene);
 
 }
 
 
-};gdjs.ExplorationCode.userFunc0xc972a0 = function GDJSInlineCode(runtimeScene) {
+};gdjs.ExplorationCode.userFunc0xbec900 = function GDJSInlineCode(runtimeScene) {
 "use strict";
 const FDSG = gdjs.FDGameData;
 const GameVars = FDSG.GameVars;
@@ -2057,12 +2058,12 @@ gdjs.ExplorationCode.eventsList11 = function(runtimeScene) {
 {
 
 
-gdjs.ExplorationCode.userFunc0xc972a0(runtimeScene);
+gdjs.ExplorationCode.userFunc0xbec900(runtimeScene);
 
 }
 
 
-};gdjs.ExplorationCode.userFunc0xc976f0 = function GDJSInlineCode(runtimeScene) {
+};gdjs.ExplorationCode.userFunc0xbecee0 = function GDJSInlineCode(runtimeScene) {
 "use strict";
 const FDSG = gdjs.FDGameData;
 const GameVars = FDSG.GameVars;
@@ -2104,7 +2105,7 @@ gdjs.ExplorationCode.eventsList12 = function(runtimeScene) {
 {
 
 
-gdjs.ExplorationCode.userFunc0xc976f0(runtimeScene);
+gdjs.ExplorationCode.userFunc0xbecee0(runtimeScene);
 
 }
 
@@ -2203,7 +2204,7 @@ gdjs.ExplorationCode.eventsList14(runtimeScene);} //End of subevents
 }
 
 
-};gdjs.ExplorationCode.userFunc0xb65860 = function GDJSInlineCode(runtimeScene) {
+};gdjs.ExplorationCode.userFunc0x8c2c00 = function GDJSInlineCode(runtimeScene) {
 "use strict";
 const FDSG = gdjs.FDGameData; // Simpler variables to use as reference
 const GameVars = FDSG.GameVars;
@@ -2259,7 +2260,7 @@ gdjs.ExplorationCode.eventsList16 = function(runtimeScene) {
 {
 
 
-gdjs.ExplorationCode.userFunc0xb65860(runtimeScene);
+gdjs.ExplorationCode.userFunc0x8c2c00(runtimeScene);
 
 }
 
