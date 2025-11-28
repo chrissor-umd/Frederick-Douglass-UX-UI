@@ -27,6 +27,8 @@ gdjs.Main_32MenuCode.GDSelectedItemBorderObjects1= [];
 gdjs.Main_32MenuCode.GDSelectedItemBorderObjects2= [];
 gdjs.Main_32MenuCode.GDHoverTooltipObjects1= [];
 gdjs.Main_32MenuCode.GDHoverTooltipObjects2= [];
+gdjs.Main_32MenuCode.GDInspectInventoryItemObjects1= [];
+gdjs.Main_32MenuCode.GDInspectInventoryItemObjects2= [];
 
 
 gdjs.Main_32MenuCode.eventsList0 = function(runtimeScene) {
@@ -106,6 +108,8 @@ gdjs.Main_32MenuCode.GDSelectedItemBorderObjects1.length = 0;
 gdjs.Main_32MenuCode.GDSelectedItemBorderObjects2.length = 0;
 gdjs.Main_32MenuCode.GDHoverTooltipObjects1.length = 0;
 gdjs.Main_32MenuCode.GDHoverTooltipObjects2.length = 0;
+gdjs.Main_32MenuCode.GDInspectInventoryItemObjects1.length = 0;
+gdjs.Main_32MenuCode.GDInspectInventoryItemObjects2.length = 0;
 
 gdjs.Main_32MenuCode.eventsList0(runtimeScene);
 gdjs.Main_32MenuCode.GDTitleObjects1.length = 0;
@@ -134,6 +138,8 @@ gdjs.Main_32MenuCode.GDSelectedItemBorderObjects1.length = 0;
 gdjs.Main_32MenuCode.GDSelectedItemBorderObjects2.length = 0;
 gdjs.Main_32MenuCode.GDHoverTooltipObjects1.length = 0;
 gdjs.Main_32MenuCode.GDHoverTooltipObjects2.length = 0;
+gdjs.Main_32MenuCode.GDInspectInventoryItemObjects1.length = 0;
+gdjs.Main_32MenuCode.GDInspectInventoryItemObjects2.length = 0;
 
 
 return;
