@@ -89,6 +89,175 @@
           "value": "FDS East 1"
         }
       ]
+    },
+    {
+      "angle": 0,
+      "customSize": true,
+      "depth": 1,
+      "height": 336,
+      "keepRatio": true,
+      "layer": "SceneObjects",
+      "name": "InteractionObject",
+      "persistentUuid": "d6022950-2ee5-4f99-a2fc-42a4c608acd9",
+      "width": 199,
+      "x": 649,
+      "y": 336,
+      "zOrder": 5,
+      "numberProperties": [
+        {
+          "name": "animation",
+          "value": 2
+        }
+      ],
+      "stringProperties": [],
+      "initialVariables": [
+        {
+          "name": "targetInteraction",
+          "type": "string",
+          "value": "quoteMinigame"
+        },
+        {
+          "name": "instanceID",
+          "type": "string",
+          "value": "librarian"
+        }
+      ]
+    },
+    {
+      "angle": 0,
+      "customSize": false,
+      "height": 0,
+      "keepRatio": true,
+      "layer": "InspectionObjects",
+      "name": "InspectionBackground",
+      "persistentUuid": "909e7249-03a0-4f8f-bd35-f7493d5622e4",
+      "width": 0,
+      "x": 1424,
+      "y": 0,
+      "zOrder": 6,
+      "numberProperties": [],
+      "stringProperties": [],
+      "initialVariables": [
+        {
+          "name": "targetInspection",
+          "type": "string",
+          "value": "librarian"
+        }
+      ]
+    },
+    {
+      "angle": 0,
+      "customSize": true,
+      "depth": 1,
+      "height": 320,
+      "keepRatio": true,
+      "layer": "InspectionObjects",
+      "name": "InspectionText",
+      "persistentUuid": "1b47b99c-afc3-409e-a129-ff9b6c4fb1a2",
+      "width": 768,
+      "x": 1520,
+      "y": 240,
+      "zOrder": 7,
+      "numberProperties": [],
+      "stringProperties": [],
+      "initialVariables": [
+        {
+          "name": "targetInspection",
+          "type": "string",
+          "value": "librarian"
+        },
+        {
+          "name": "innerText",
+          "type": "string",
+          "value": "\"Hello, can you help me with something? It looks like some of our documents got messed up and need fixing. Can you lend a hand?\""
+        }
+      ]
+    },
+    {
+      "angle": 0,
+      "customSize": false,
+      "height": 0,
+      "keepRatio": true,
+      "layer": "InspectionObjects",
+      "name": "InteractionButton",
+      "persistentUuid": "187db148-fc54-4009-ab2a-be66c5851487",
+      "width": 0,
+      "x": 1776,
+      "y": 441,
+      "zOrder": 8,
+      "numberProperties": [],
+      "stringProperties": [],
+      "initialVariables": [
+        {
+          "name": "targetInteraction",
+          "type": "string",
+          "value": "quoteMinigame"
+        },
+        {
+          "name": "labelText",
+          "type": "string",
+          "value": "\"Sure!\""
+        },
+        {
+          "name": "targetInspection",
+          "type": "string",
+          "value": "librarian"
+        },
+        {
+          "name": "instanceID",
+          "type": "string",
+          "value": "quoteButton"
+        }
+      ]
+    },
+    {
+      "angle": 0,
+      "customSize": false,
+      "height": 0,
+      "keepRatio": true,
+      "layer": "InspectionObjects",
+      "name": "InspectionBackground",
+      "persistentUuid": "0c0e4f7c-2de1-43b8-a9a6-ef4ff03d1b2c",
+      "width": 0,
+      "x": 1424,
+      "y": 576,
+      "zOrder": 9,
+      "numberProperties": [],
+      "stringProperties": [],
+      "initialVariables": [
+        {
+          "name": "targetInspection",
+          "type": "string",
+          "value": "loseQuoteMinigame"
+        }
+      ]
+    },
+    {
+      "angle": 0,
+      "customSize": true,
+      "depth": 1,
+      "height": 392,
+      "layer": "InspectionObjects",
+      "name": "InspectionText",
+      "persistentUuid": "6fedc044-936b-4c88-81f0-19520877daf1",
+      "width": 832,
+      "x": 1488,
+      "y": 844,
+      "zOrder": 10,
+      "numberProperties": [],
+      "stringProperties": [],
+      "initialVariables": [
+        {
+          "name": "targetInspection",
+          "type": "string",
+          "value": "loseQuoteMinigame"
+        },
+        {
+          "name": "innerText",
+          "type": "string",
+          "value": "\"Heading out? Feel free to come back anytime to give it another shot. Here's a tip, try looking around the Frederick Douglass Statue.\""
+        }
+      ]
     }
   ],
   "editionSettings": {
@@ -96,13 +265,15 @@
     "gridType": "rectangular",
     "gridWidth": 16,
     "gridHeight": 16,
+    "gridDepth": 32,
     "gridOffsetX": 0,
     "gridOffsetY": 0,
+    "gridOffsetZ": 0,
     "gridColor": 10401023,
     "gridAlpha": 0.4,
     "snap": true,
-    "zoomFactor": 0.3437520241612316,
+    "zoomFactor": 0.28172599320795644,
     "windowMask": false,
-    "selectedLayer": "Inspect"
+    "selectedLayer": "InspectionObjects"
   }
 }

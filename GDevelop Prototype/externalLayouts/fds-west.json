@@ -101,14 +101,14 @@
       "angle": 0,
       "customSize": true,
       "depth": 1,
-      "height": 46,
+      "height": 456,
       "keepRatio": true,
       "layer": "InspectionObjects",
       "name": "InspectionText",
       "persistentUuid": "220befcf-9eeb-4c8b-9a0d-be1d5fbf189a",
       "width": 464,
       "x": 2016,
-      "y": 223,
+      "y": 260,
       "zOrder": 8,
       "numberProperties": [],
       "stringProperties": [],
@@ -121,63 +121,7 @@
         {
           "name": "innerText",
           "type": "string",
-          "value": "A large statue of Frederick Douglass"
-        }
-      ]
-    },
-    {
-      "angle": 0,
-      "customSize": true,
-      "depth": 1,
-      "height": 380,
-      "keepRatio": true,
-      "layer": "InspectionObjects",
-      "name": "InspectionImage",
-      "persistentUuid": "7600dbb5-e037-4f36-97d5-c9c86260feda",
-      "width": 928,
-      "x": 1584,
-      "y": 560,
-      "zOrder": 10,
-      "numberProperties": [
-        {
-          "name": "animation",
-          "value": 1
-        }
-      ],
-      "stringProperties": [],
-      "initialVariables": [
-        {
-          "name": "targetInspection",
-          "type": "string",
-          "value": "SkyInspection"
-        }
-      ]
-    },
-    {
-      "angle": 0,
-      "customSize": true,
-      "depth": 1,
-      "height": 47,
-      "keepRatio": true,
-      "layer": "InspectionObjects",
-      "name": "InspectionText",
-      "persistentUuid": "dfc59eac-56cb-4c18-b57d-16cdaac15b88",
-      "width": 864,
-      "x": 1616,
-      "y": 1001,
-      "zOrder": 11,
-      "numberProperties": [],
-      "stringProperties": [],
-      "initialVariables": [
-        {
-          "name": "targetInspection",
-          "type": "string",
-          "value": "SkyInspection"
-        },
-        {
-          "name": "innerText",
-          "type": "string",
-          "value": "The sky is clear today"
+          "value": "A large statue of Frederick Douglass. Several of his quotes are etched into the stone floor."
         }
       ]
     },
@@ -212,8 +156,8 @@
       "name": "InspectionObject",
       "persistentUuid": "d8dcd0d3-c516-48b7-9b3a-fc69147559ef",
       "width": 0,
-      "x": 560,
-      "y": 176,
+      "x": 584,
+      "y": 640,
       "zOrder": 13,
       "numberProperties": [],
       "stringProperties": [],
@@ -221,7 +165,7 @@
         {
           "name": "targetInspection",
           "type": "string",
-          "value": "SkyInspection"
+          "value": "QuoteInspect2"
         }
       ]
     },
@@ -265,7 +209,352 @@
         {
           "name": "targetInspection",
           "type": "string",
-          "value": "SkyInspection"
+          "value": "QuoteInspect1"
+        }
+      ]
+    },
+    {
+      "angle": 0,
+      "customSize": true,
+      "depth": 2,
+      "height": 248,
+      "keepRatio": true,
+      "layer": "InspectionObjects",
+      "name": "InspectionImage",
+      "persistentUuid": "55c1c185-1a1b-4086-955c-44430164083e",
+      "width": 868,
+      "x": 1608,
+      "y": 584,
+      "zOrder": 14,
+      "numberProperties": [
+        {
+          "name": "animation",
+          "value": 3
+        }
+      ],
+      "stringProperties": [],
+      "initialVariables": [
+        {
+          "name": "targetInspection",
+          "type": "string",
+          "value": "QuoteInspect1"
+        }
+      ]
+    },
+    {
+      "angle": 0,
+      "customSize": true,
+      "depth": 1,
+      "height": 176,
+      "keepRatio": true,
+      "layer": "InspectionObjects",
+      "name": "InspectionImage",
+      "persistentUuid": "dcb8de09-212a-4b40-bc72-c64d6b0e75c8",
+      "width": 897,
+      "x": 2584,
+      "y": 584,
+      "zOrder": 15,
+      "numberProperties": [
+        {
+          "name": "animation",
+          "value": 4
+        }
+      ],
+      "stringProperties": [],
+      "initialVariables": [
+        {
+          "name": "targetInspection",
+          "type": "string",
+          "value": "QuoteInspect2"
+        }
+      ]
+    },
+    {
+      "angle": 0,
+      "customSize": true,
+      "depth": 1,
+      "height": 268,
+      "keepRatio": true,
+      "layer": "InspectionObjects",
+      "name": "InspectionImage",
+      "persistentUuid": "7b959c7c-2361-4dfe-9d8d-fde352e4e335",
+      "width": 624,
+      "x": 3696,
+      "y": 572,
+      "zOrder": 16,
+      "numberProperties": [
+        {
+          "name": "animation",
+          "value": 5
+        }
+      ],
+      "stringProperties": [],
+      "initialVariables": [
+        {
+          "name": "targetInspection",
+          "type": "string",
+          "value": "QuoteInspect3"
+        }
+      ]
+    },
+    {
+      "angle": 0,
+      "customSize": true,
+      "depth": 1,
+      "height": 208,
+      "keepRatio": true,
+      "layer": "InspectionObjects",
+      "name": "InspectionText",
+      "persistentUuid": "a1c77d38-0a82-49d5-a57f-0f84d76a45d9",
+      "width": 296,
+      "x": 1608,
+      "y": 952,
+      "zOrder": 17,
+      "numberProperties": [],
+      "stringProperties": [],
+      "initialVariables": [
+        {
+          "name": "innerText",
+          "type": "string",
+          "value": "Written in the stone is a quote from Frederick Douglass:"
+        },
+        {
+          "name": "targetInspection",
+          "type": "string",
+          "value": "QuoteInspect1"
+        }
+      ]
+    },
+    {
+      "angle": 0,
+      "customSize": false,
+      "height": 0,
+      "keepRatio": true,
+      "layer": "InspectionObjects",
+      "name": "InspectionBackground",
+      "persistentUuid": "86f26fb6-fdfe-402b-b6d9-b66dce2f2403",
+      "width": 0,
+      "x": 2552,
+      "y": 543,
+      "zOrder": 5,
+      "numberProperties": [],
+      "stringProperties": [],
+      "initialVariables": [
+        {
+          "name": "targetInspection",
+          "type": "string",
+          "value": "QuoteInspect2"
+        }
+      ]
+    },
+    {
+      "angle": 0,
+      "customSize": false,
+      "height": 0,
+      "keepRatio": true,
+      "layer": "InspectionObjects",
+      "name": "InspectionBackground",
+      "persistentUuid": "e1c864f3-bf85-4155-9076-3ce8cb782404",
+      "width": 0,
+      "x": 3536,
+      "y": 543,
+      "zOrder": 5,
+      "numberProperties": [],
+      "stringProperties": [],
+      "initialVariables": [
+        {
+          "name": "targetInspection",
+          "type": "string",
+          "value": "QuoteInspect3"
+        }
+      ]
+    },
+    {
+      "angle": 0,
+      "customSize": true,
+      "depth": 1,
+      "height": 208,
+      "keepRatio": true,
+      "layer": "InspectionObjects",
+      "name": "InspectionText",
+      "persistentUuid": "0673b716-ade8-4671-af87-a2689918cd53",
+      "width": 432,
+      "x": 2032,
+      "y": 960,
+      "zOrder": 17,
+      "numberProperties": [],
+      "stringProperties": [],
+      "initialVariables": [
+        {
+          "name": "innerText",
+          "type": "string",
+          "value": "\"Once you learn to read, you will forever be free.\""
+        },
+        {
+          "name": "targetInspection",
+          "type": "string",
+          "value": "QuoteInspect1"
+        }
+      ]
+    },
+    {
+      "angle": 0,
+      "customSize": true,
+      "depth": 1,
+      "height": 208,
+      "keepRatio": true,
+      "layer": "InspectionObjects",
+      "name": "InspectionText",
+      "persistentUuid": "949f5496-fb1d-42b8-a185-75f0f3443bde",
+      "width": 296,
+      "x": 2592,
+      "y": 912,
+      "zOrder": 17,
+      "numberProperties": [],
+      "stringProperties": [],
+      "initialVariables": [
+        {
+          "name": "innerText",
+          "type": "string",
+          "value": "Written in the stone is a quote from Frederick Douglass:"
+        },
+        {
+          "name": "targetInspection",
+          "type": "string",
+          "value": "QuoteInspect2"
+        }
+      ]
+    },
+    {
+      "angle": 0,
+      "customSize": true,
+      "depth": 1,
+      "height": 208,
+      "keepRatio": true,
+      "layer": "InspectionObjects",
+      "name": "InspectionText",
+      "persistentUuid": "29337f9b-57b1-4364-83f0-b3868855f840",
+      "width": 432,
+      "x": 3008,
+      "y": 912,
+      "zOrder": 17,
+      "numberProperties": [],
+      "stringProperties": [],
+      "initialVariables": [
+        {
+          "name": "innerText",
+          "type": "string",
+          "value": "\"I was born in Tuckahoe, near Hillsborough, and about twelve miles from Easton, in Talbot County, Maryland.\""
+        },
+        {
+          "name": "targetInspection",
+          "type": "string",
+          "value": "QuoteInspect2"
+        }
+      ]
+    },
+    {
+      "angle": 0,
+      "customSize": true,
+      "depth": 1,
+      "height": 200,
+      "keepRatio": true,
+      "layer": "InspectionObjects",
+      "name": "InspectionText",
+      "persistentUuid": "196a2738-9ded-4b6a-bb21-1daf3346d6b3",
+      "width": 296,
+      "x": 3592,
+      "y": 956,
+      "zOrder": 17,
+      "numberProperties": [],
+      "stringProperties": [],
+      "initialVariables": [
+        {
+          "name": "innerText",
+          "type": "string",
+          "value": "Written in the stone is a quote from Frederick Douglass:"
+        },
+        {
+          "name": "targetInspection",
+          "type": "string",
+          "value": "QuoteInspect3"
+        }
+      ]
+    },
+    {
+      "angle": 0,
+      "customSize": true,
+      "depth": 1,
+      "height": 200,
+      "keepRatio": true,
+      "layer": "InspectionObjects",
+      "name": "InspectionText",
+      "persistentUuid": "a74f092b-d7e9-44e6-9369-f4d16ee80993",
+      "width": 432,
+      "x": 3976,
+      "y": 956,
+      "zOrder": 17,
+      "numberProperties": [],
+      "stringProperties": [],
+      "initialVariables": [
+        {
+          "name": "innerText",
+          "type": "string",
+          "value": "\"Until it shall be safe to leave the lamb in the hold of the lion, the laborer in the power of the capitalist, the poor in the hands of the rich, it will not be safe to leave a newly emancipated people completely in the power of their former masters, especially when such masters have not ceased to be such from enlightened moral convictions but by irresistible force..\""
+        },
+        {
+          "name": "fontSize",
+          "type": "number",
+          "value": 20
+        },
+        {
+          "name": "targetInspection",
+          "type": "string",
+          "value": "QuoteInspect3"
+        }
+      ]
+    },
+    {
+      "angle": 0,
+      "customSize": false,
+      "height": 0,
+      "keepRatio": true,
+      "layer": "SceneObjects",
+      "name": "InspectionObject",
+      "persistentUuid": "d0cd26a6-abcf-4934-8cca-a6ca177439bb",
+      "width": 0,
+      "x": 472,
+      "y": 640,
+      "zOrder": 13,
+      "numberProperties": [],
+      "stringProperties": [],
+      "initialVariables": [
+        {
+          "name": "targetInspection",
+          "type": "string",
+          "value": "QuoteInspect1"
+        }
+      ]
+    },
+    {
+      "angle": 0,
+      "customSize": false,
+      "height": 0,
+      "keepRatio": true,
+      "layer": "SceneObjects",
+      "name": "InspectionObject",
+      "persistentUuid": "874ccb2d-21c1-4fce-8aeb-eb3c16e78a08",
+      "width": 0,
+      "x": 696,
+      "y": 640,
+      "zOrder": 13,
+      "numberProperties": [],
+      "stringProperties": [],
+      "initialVariables": [
+        {
+          "name": "targetInspection",
+          "type": "string",
+          "value": "QuoteInspect3"
         }
       ]
     }
@@ -275,13 +564,15 @@
     "gridType": "rectangular",
     "gridWidth": 8,
     "gridHeight": 8,
+    "gridDepth": 32,
     "gridOffsetX": 0,
     "gridOffsetY": 0,
+    "gridOffsetZ": 0,
     "gridColor": 10401023,
     "gridAlpha": 0.4,
     "snap": true,
-    "zoomFactor": 0.433577430470242,
+    "zoomFactor": 0.5290357402156919,
     "windowMask": false,
-    "selectedLayer": "SceneObjects"
+    "selectedLayer": "InspectionObjects"
   }
 }

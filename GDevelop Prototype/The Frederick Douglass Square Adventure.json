@@ -1,7 +1,7 @@
 {
   "firstLayout": "Main Menu",
   "gdVersion": {
-    "build": 245,
+    "build": 246,
     "major": 5,
     "minor": 5,
     "revision": 0
@@ -80,7 +80,10 @@
     "authorIds": [],
     "authorUsernames": [],
     "categories": [],
-    "playableDevices": [],
+    "playableDevices": [
+      "mobile",
+      "mobile"
+    ],
     "extensionProperties": [],
     "platforms": [
       {
@@ -344,9 +347,108 @@
         "name": "assets\\ui\\InspectionBackgroundFlat.png",
         "smoothed": true,
         "userAdded": false
+      },
+      {
+        "file": "assets/ui/X.png",
+        "kind": "image",
+        "metadata": "",
+        "name": "assets/ui/X.png",
+        "smoothed": true,
+        "userAdded": false
+      },
+      {
+        "file": "assets/Yellow Button_Hovered.png",
+        "kind": "image",
+        "metadata": "",
+        "name": "Yellow Button_Hovered.png",
+        "smoothed": true,
+        "userAdded": false,
+        "origin": {
+          "identifier": "https://asset-resources.gdevelop.io/public-resources/Menu buttons/c1e14acb64b9963341656c997853154dc4c86cd1c46fb12bfbe012d99712ef61_Yellow Button_Hovered.png",
+          "name": "Yellow Button_Hovered.png"
+        }
+      },
+      {
+        "file": "assets/Yellow Button_Idle.png",
+        "kind": "image",
+        "metadata": "",
+        "name": "Yellow Button_Idle.png",
+        "smoothed": true,
+        "userAdded": false,
+        "origin": {
+          "identifier": "https://asset-resources.gdevelop.io/public-resources/Menu buttons/1cacfd123a1eb708837337c27982f6871f5127c5890dbf0775e0f411958fcbf1_Yellow Button_Idle.png",
+          "name": "Yellow Button_Idle.png"
+        }
+      },
+      {
+        "file": "assets/Yellow Button_Pressed.png",
+        "kind": "image",
+        "metadata": "",
+        "name": "Yellow Button_Pressed.png",
+        "smoothed": true,
+        "userAdded": false,
+        "origin": {
+          "identifier": "https://asset-resources.gdevelop.io/public-resources/Menu buttons/928c3ea4db1da835c9f8cc5b7089a47228350209d2ff489e1484c31e5ce41b3d_Yellow Button_Pressed.png",
+          "name": "Yellow Button_Pressed.png"
+        }
+      },
+      {
+        "file": "assets/ui/InspectionBackground.png",
+        "kind": "image",
+        "metadata": "",
+        "name": "assets/ui/InspectionBackground.png",
+        "smoothed": true,
+        "userAdded": false
+      },
+      {
+        "file": "assets/objects/stickman.png",
+        "kind": "image",
+        "metadata": "",
+        "name": "assets/objects/stickman.png",
+        "smoothed": true,
+        "userAdded": false
+      },
+      {
+        "file": "assets/ui/Inspect.png",
+        "kind": "image",
+        "metadata": "",
+        "name": "assets/ui/Inspect.png",
+        "smoothed": true,
+        "userAdded": false
+      },
+      {
+        "file": "assets/images/FDS North.JPG",
+        "kind": "image",
+        "metadata": "",
+        "name": "assets/images/FDS North.JPG",
+        "smoothed": true,
+        "userAdded": false
+      },
+      {
+        "file": "assets/images/FDS Quote1.JPG",
+        "kind": "image",
+        "metadata": "",
+        "name": "assets/images/FDS Quote1.JPG",
+        "smoothed": true,
+        "userAdded": false
+      },
+      {
+        "file": "assets/images/FDS Quote2.JPG",
+        "kind": "image",
+        "metadata": "",
+        "name": "assets/images/FDS Quote2.JPG",
+        "smoothed": true,
+        "userAdded": false
+      },
+      {
+        "file": "assets/images/FDS Quote3.JPG",
+        "kind": "image",
+        "metadata": "",
+        "name": "assets/images/FDS Quote3.JPG",
+        "smoothed": true,
+        "userAdded": false
       }
-    ],
-    "resourceFolders": []
+    ]
   },
   "objects": [
     {
@@ -1166,6 +1268,7 @@
       "effects": [
         {
           "effectType": "Adjustment",
+          "folded": true,
           "name": "Disable",
           "doubleParameters": {
             "alpha": 1,
@@ -1336,13 +1439,97 @@
         "lineHeight": 0,
         "color": "255;255;255"
       }
+    },
+    {
+      "adaptCollisionMaskAutomatically": true,
+      "assetStoreId": "",
+      "name": "InspectInventoryItem",
+      "type": "Sprite",
+      "updateIfNotVisible": false,
+      "variables": [
+        {
+          "name": "enabled",
+          "type": "boolean",
+          "value": false
+        }
+      ],
+      "effects": [
+        {
+          "effectType": "Adjustment",
+          "folded": true,
+          "name": "Disable",
+          "doubleParameters": {
+            "alpha": 1,
+            "blue": 1,
+            "brightness": 0.2,
+            "contrast": 1,
+            "gamma": 1,
+            "green": 1,
+            "red": 1,
+            "saturation": 1
+          },
+          "stringParameters": {},
+          "booleanParameters": {}
+        }
+      ],
+      "behaviors": [],
+      "animations": [
+        {
+          "name": "",
+          "useMultipleDirections": false,
+          "directions": [
+            {
+              "looping": false,
+              "timeBetweenFrames": 0.08,
+              "sprites": [
+                {
+                  "hasCustomCollisionMask": true,
+                  "image": "assets/ui/Inspect.png",
+                  "points": [],
+                  "originPoint": {
+                    "name": "origine",
+                    "x": 0,
+                    "y": 0
+                  },
+                  "centerPoint": {
+                    "automatic": true,
+                    "name": "centre",
+                    "x": 0,
+                    "y": 0
+                  },
+                  "customCollisionMask": [
+                    [
+                      {
+                        "x": 7,
+                        "y": 3
+                      },
+                      {
+                        "x": 60,
+                        "y": 3
+                      },
+                      {
+                        "x": 60,
+                        "y": 56
+                      },
+                      {
+                        "x": 7,
+                        "y": 56
+                      }
+                    ]
+                  ]
+                }
+              ]
+            }
+          ]
+        }
+      ]
     }
   ],
   "objectsFolderStructure": {
     "folderName": "__ROOT",
     "children": [
       {
-        "folderName": "UI",
+        "folderName": "GlobalUI",
         "children": [
           {
             "folderName": "Inventory",
@@ -1355,6 +1542,9 @@
               },
               {
                 "objectName": "CycleInventoryPrevious"
+              },
+              {
+                "objectName": "InspectInventoryItem"
               },
               {
                 "objectName": "InventoryItem"
@@ -1396,6 +1586,17 @@
       "name": "DEBUG",
       "type": "boolean",
       "value": true
+    },
+    {
+      "name": "MinigameFlags",
+      "type": "structure",
+      "children": [
+        {
+          "name": "Fill In The Quote",
+          "type": "boolean",
+          "value": false
+        }
+      ]
     }
   ],
   "layouts": [
@@ -1414,6 +1615,10 @@
     {
       "__REFERENCE_TO_SPLIT_OBJECT": true,
       "referenceTo": "/layouts/credits"
+    },
+    {
+      "__REFERENCE_TO_SPLIT_OBJECT": true,
+      "referenceTo": "/layouts/fill-in-the-quote"
     }
   ],
   "externalEvents": [
@@ -1430,6 +1635,18 @@
     {
       "__REFERENCE_TO_SPLIT_OBJECT": true,
       "referenceTo": "/eventsFunctionsExtensions/linktools"
+    },
+    {
+      "__REFERENCE_TO_SPLIT_OBJECT": true,
+      "referenceTo": "/eventsFunctionsExtensions/arraytools"
+    },
+    {
+      "__REFERENCE_TO_SPLIT_OBJECT": true,
+      "referenceTo": "/eventsFunctionsExtensions/cursortype"
+    },
+    {
+      "__REFERENCE_TO_SPLIT_OBJECT": true,
+      "referenceTo": "/eventsFunctionsExtensions/objectpickingtools"
     }
   ],
   "externalLayouts": [

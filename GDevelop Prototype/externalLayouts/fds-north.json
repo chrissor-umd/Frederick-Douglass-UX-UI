@@ -103,6 +103,11 @@
       "stringProperties": [],
       "initialVariables": [
         {
+          "name": "canUseItems",
+          "type": "boolean",
+          "value": true
+        },
+        {
           "name": "instanceID",
           "type": "string",
           "value": "FDS North Chest"
@@ -489,16 +494,18 @@
     }
   ],
   "editionSettings": {
-    "grid": true,
+    "grid": false,
     "gridType": "rectangular",
     "gridWidth": 16,
     "gridHeight": 16,
+    "gridDepth": 32,
     "gridOffsetX": 0,
     "gridOffsetY": 0,
+    "gridOffsetZ": 0,
     "gridColor": 10401023,
     "gridAlpha": 0.8,
-    "snap": true,
-    "zoomFactor": 0.5843784410740942,
+    "snap": false,
+    "zoomFactor": 0.39251611754882326,
     "windowMask": false,
     "selectedLayer": "InspectionObjects"
   }
