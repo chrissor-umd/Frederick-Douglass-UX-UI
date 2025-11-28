@@ -25,6 +25,8 @@ gdjs.CreditsCode.GDSelectedItemBorderObjects1= [];
 gdjs.CreditsCode.GDSelectedItemBorderObjects2= [];
 gdjs.CreditsCode.GDHoverTooltipObjects1= [];
 gdjs.CreditsCode.GDHoverTooltipObjects2= [];
+gdjs.CreditsCode.GDInspectInventoryItemObjects1= [];
+gdjs.CreditsCode.GDInspectInventoryItemObjects2= [];
 
 
 gdjs.CreditsCode.eventsList0 = function(runtimeScene) {
@@ -80,6 +82,8 @@ gdjs.CreditsCode.GDSelectedItemBorderObjects1.length = 0;
 gdjs.CreditsCode.GDSelectedItemBorderObjects2.length = 0;
 gdjs.CreditsCode.GDHoverTooltipObjects1.length = 0;
 gdjs.CreditsCode.GDHoverTooltipObjects2.length = 0;
+gdjs.CreditsCode.GDInspectInventoryItemObjects1.length = 0;
+gdjs.CreditsCode.GDInspectInventoryItemObjects2.length = 0;
 
 gdjs.CreditsCode.eventsList0(runtimeScene);
 gdjs.CreditsCode.GDCredits_9595TextObjects1.length = 0;
@@ -106,6 +110,8 @@ gdjs.CreditsCode.GDSelectedItemBorderObjects1.length = 0;
 gdjs.CreditsCode.GDSelectedItemBorderObjects2.length = 0;
 gdjs.CreditsCode.GDHoverTooltipObjects1.length = 0;
 gdjs.CreditsCode.GDHoverTooltipObjects2.length = 0;
+gdjs.CreditsCode.GDInspectInventoryItemObjects1.length = 0;
+gdjs.CreditsCode.GDInspectInventoryItemObjects2.length = 0;
 
 
 return;
