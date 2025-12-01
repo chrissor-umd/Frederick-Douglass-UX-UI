@@ -72,15 +72,15 @@
     {
       "angle": 0,
       "customSize": true,
-      "depth": 0,
-      "height": 508,
+      "depth": 1,
+      "height": 424,
       "keepRatio": true,
       "layer": "InspectionObjects",
       "name": "InspectionImage",
       "persistentUuid": "93ccdc51-ec0d-4154-bd31-f767dc30cebc",
-      "width": 373.47407407407417,
-      "x": 1584,
-      "y": 16,
+      "width": 312,
+      "x": 1616,
+      "y": 48,
       "zOrder": 7,
       "numberProperties": [
         {
@@ -674,7 +674,7 @@
     "gridColor": 10401023,
     "gridAlpha": 0.4,
     "snap": true,
-    "zoomFactor": 0.6455105703311592,
+    "zoomFactor": 0.4481978045410436,
     "windowMask": false,
     "selectedLayer": "InspectionObjects"
   }

@@ -731,7 +731,7 @@
       "leftMargin": 16,
       "name": "PopupBackground",
       "rightMargin": 16,
-      "texture": "assets/ui/InspectionBackground.png",
+      "texture": "assets/ui/ui_background_border.png",
       "tiled": false,
       "topMargin": 16,
       "type": "PanelSpriteObject::PanelSprite",

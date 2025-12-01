@@ -142,7 +142,7 @@
               "sprites": [
                 {
                   "hasCustomCollisionMask": true,
-                  "image": "assets\\ui\\Arrow_Right_White.png",
+                  "image": "assets/ui/arrow_right_white.png",
                   "points": [],
                   "originPoint": {
                     "name": "origine",
@@ -189,7 +189,7 @@
       "leftMargin": 20,
       "name": "InventoryBackground",
       "rightMargin": 20,
-      "texture": "assets\\ui\\InventoryUI.png",
+      "texture": "assets/ui/ui_inventory.png",
       "tiled": false,
       "topMargin": 50,
       "type": "PanelSpriteObject::PanelSprite",
@@ -273,390 +273,6 @@
           ]
         },
         {
-          "name": "1",
-          "useMultipleDirections": false,
-          "directions": [
-            {
-              "looping": false,
-              "timeBetweenFrames": 0.08,
-              "sprites": [
-                {
-                  "hasCustomCollisionMask": true,
-                  "image": "assets\\ui\\Pause button.png",
-                  "points": [],
-                  "originPoint": {
-                    "name": "origine",
-                    "x": 0,
-                    "y": 0
-                  },
-                  "centerPoint": {
-                    "automatic": true,
-                    "name": "centre",
-                    "x": 0,
-                    "y": 0
-                  },
-                  "customCollisionMask": [
-                    [
-                      {
-                        "x": 0,
-                        "y": 0
-                      },
-                      {
-                        "x": 64,
-                        "y": 0
-                      },
-                      {
-                        "x": 64,
-                        "y": 64
-                      },
-                      {
-                        "x": 0,
-                        "y": 64
-                      }
-                    ]
-                  ]
-                }
-              ]
-            }
-          ]
-        },
-        {
-          "name": "2",
-          "useMultipleDirections": false,
-          "directions": [
-            {
-              "looping": false,
-              "timeBetweenFrames": 0.08,
-              "sprites": [
-                {
-                  "hasCustomCollisionMask": true,
-                  "image": "assets\\ui\\Arrow_Right.png",
-                  "points": [],
-                  "originPoint": {
-                    "name": "origine",
-                    "x": 0,
-                    "y": 0
-                  },
-                  "centerPoint": {
-                    "automatic": true,
-                    "name": "centre",
-                    "x": 0,
-                    "y": 0
-                  },
-                  "customCollisionMask": [
-                    [
-                      {
-                        "x": 0,
-                        "y": 0
-                      },
-                      {
-                        "x": 64,
-                        "y": 0
-                      },
-                      {
-                        "x": 64,
-                        "y": 64
-                      },
-                      {
-                        "x": 0,
-                        "y": 64
-                      }
-                    ]
-                  ]
-                }
-              ]
-            }
-          ]
-        },
-        {
-          "name": "3",
-          "useMultipleDirections": false,
-          "directions": [
-            {
-              "looping": false,
-              "timeBetweenFrames": 0.08,
-              "sprites": [
-                {
-                  "hasCustomCollisionMask": true,
-                  "image": "assets\\ui\\Right arrow round button.png",
-                  "points": [],
-                  "originPoint": {
-                    "name": "origine",
-                    "x": 0,
-                    "y": 0
-                  },
-                  "centerPoint": {
-                    "automatic": true,
-                    "name": "centre",
-                    "x": 0,
-                    "y": 0
-                  },
-                  "customCollisionMask": [
-                    [
-                      {
-                        "x": 0,
-                        "y": 0
-                      },
-                      {
-                        "x": 64,
-                        "y": 0
-                      },
-                      {
-                        "x": 64,
-                        "y": 64
-                      },
-                      {
-                        "x": 0,
-                        "y": 64
-                      }
-                    ]
-                  ]
-                }
-              ]
-            }
-          ]
-        },
-        {
-          "name": "4",
-          "useMultipleDirections": false,
-          "directions": [
-            {
-              "looping": false,
-              "timeBetweenFrames": 0.08,
-              "sprites": [
-                {
-                  "hasCustomCollisionMask": true,
-                  "image": "assets\\ui\\Arrow_Up.png",
-                  "points": [],
-                  "originPoint": {
-                    "name": "origine",
-                    "x": 0,
-                    "y": 0
-                  },
-                  "centerPoint": {
-                    "automatic": true,
-                    "name": "centre",
-                    "x": 0,
-                    "y": 0
-                  },
-                  "customCollisionMask": [
-                    [
-                      {
-                        "x": 0,
-                        "y": 0
-                      },
-                      {
-                        "x": 64,
-                        "y": 0
-                      },
-                      {
-                        "x": 64,
-                        "y": 64
-                      },
-                      {
-                        "x": 0,
-                        "y": 64
-                      }
-                    ]
-                  ]
-                }
-              ]
-            }
-          ]
-        },
-        {
-          "name": "5",
-          "useMultipleDirections": false,
-          "directions": [
-            {
-              "looping": false,
-              "timeBetweenFrames": 0.08,
-              "sprites": [
-                {
-                  "hasCustomCollisionMask": true,
-                  "image": "assets\\ui\\InventoryUI.png",
-                  "points": [],
-                  "originPoint": {
-                    "name": "origine",
-                    "x": 0,
-                    "y": 0
-                  },
-                  "centerPoint": {
-                    "automatic": true,
-                    "name": "centre",
-                    "x": 0,
-                    "y": 0
-                  },
-                  "customCollisionMask": [
-                    [
-                      {
-                        "x": 0,
-                        "y": 0
-                      },
-                      {
-                        "x": 64,
-                        "y": 0
-                      },
-                      {
-                        "x": 64,
-                        "y": 64
-                      },
-                      {
-                        "x": 0,
-                        "y": 64
-                      }
-                    ]
-                  ]
-                }
-              ]
-            }
-          ]
-        },
-        {
-          "name": "6",
-          "useMultipleDirections": false,
-          "directions": [
-            {
-              "looping": false,
-              "timeBetweenFrames": 0.08,
-              "sprites": [
-                {
-                  "hasCustomCollisionMask": true,
-                  "image": "assets\\ui\\Inspect.png",
-                  "points": [],
-                  "originPoint": {
-                    "name": "origine",
-                    "x": 0,
-                    "y": 0
-                  },
-                  "centerPoint": {
-                    "automatic": true,
-                    "name": "centre",
-                    "x": 0,
-                    "y": 0
-                  },
-                  "customCollisionMask": [
-                    [
-                      {
-                        "x": 0,
-                        "y": 0
-                      },
-                      {
-                        "x": 64,
-                        "y": 0
-                      },
-                      {
-                        "x": 64,
-                        "y": 64
-                      },
-                      {
-                        "x": 0,
-                        "y": 64
-                      }
-                    ]
-                  ]
-                }
-              ]
-            }
-          ]
-        },
-        {
-          "name": "7",
-          "useMultipleDirections": false,
-          "directions": [
-            {
-              "looping": false,
-              "timeBetweenFrames": 0.08,
-              "sprites": [
-                {
-                  "hasCustomCollisionMask": true,
-                  "image": "assets\\ui\\Right arrow round button.png",
-                  "points": [],
-                  "originPoint": {
-                    "name": "origine",
-                    "x": 0,
-                    "y": 0
-                  },
-                  "centerPoint": {
-                    "automatic": true,
-                    "name": "centre",
-                    "x": 0,
-                    "y": 0
-                  },
-                  "customCollisionMask": [
-                    [
-                      {
-                        "x": 0,
-                        "y": 0
-                      },
-                      {
-                        "x": 64,
-                        "y": 0
-                      },
-                      {
-                        "x": 64,
-                        "y": 64
-                      },
-                      {
-                        "x": 0,
-                        "y": 64
-                      }
-                    ]
-                  ]
-                }
-              ]
-            }
-          ]
-        },
-        {
-          "name": "8",
-          "useMultipleDirections": false,
-          "directions": [
-            {
-              "looping": false,
-              "timeBetweenFrames": 0.08,
-              "sprites": [
-                {
-                  "hasCustomCollisionMask": true,
-                  "image": "assets\\ui\\Arrow_Left.png",
-                  "points": [],
-                  "originPoint": {
-                    "name": "origine",
-                    "x": 0,
-                    "y": 0
-                  },
-                  "centerPoint": {
-                    "automatic": true,
-                    "name": "centre",
-                    "x": 0,
-                    "y": 0
-                  },
-                  "customCollisionMask": [
-                    [
-                      {
-                        "x": 0,
-                        "y": 0
-                      },
-                      {
-                        "x": 64,
-                        "y": 0
-                      },
-                      {
-                        "x": 64,
-                        "y": 64
-                      },
-                      {
-                        "x": 0,
-                        "y": 64
-                      }
-                    ]
-                  ]
-                }
-              ]
-            }
-          ]
-        },
-        {
           "name": "Empty",
           "useMultipleDirections": false,
           "directions": [
@@ -702,7 +318,7 @@
               "sprites": [
                 {
                   "hasCustomCollisionMask": true,
-                  "image": "assets\\objects\\Black Square.png",
+                  "image": "assets/ui/ui_background_bar.png",
                   "points": [],
                   "originPoint": {
                     "name": "origine",
@@ -722,16 +338,16 @@
                         "y": 0
                       },
                       {
-                        "x": 960,
+                        "x": 128,
                         "y": 0
                       },
                       {
-                        "x": 960,
-                        "y": 540
+                        "x": 128,
+                        "y": 128
                       },
                       {
                         "x": 0,
-                        "y": 540
+                        "y": 128
                       }
                     ]
                   ]
@@ -770,16 +386,16 @@
                         "y": 0
                       },
                       {
-                        "x": 960,
+                        "x": 128,
                         "y": 0
                       },
                       {
-                        "x": 960,
-                        "y": 540
+                        "x": 128,
+                        "y": 128
                       },
                       {
                         "x": 0,
-                        "y": 540
+                        "y": 128
                       }
                     ]
                   ]
@@ -829,7 +445,7 @@
               "sprites": [
                 {
                   "hasCustomCollisionMask": true,
-                  "image": "assets/ui/Arrow_Left_White.png",
+                  "image": "assets/ui/arrow_left_white.png",
                   "points": [],
                   "originPoint": {
                     "name": "origine",
@@ -889,7 +505,7 @@
               "sprites": [
                 {
                   "hasCustomCollisionMask": true,
-                  "image": "assets\\ui\\inventory_select.png",
+                  "image": "assets/ui/ui_inventory_select.png",
                   "points": [],
                   "originPoint": {
                     "name": "origine",
@@ -1016,7 +632,7 @@
               "sprites": [
                 {
                   "hasCustomCollisionMask": true,
-                  "image": "assets/ui/Inspect.png",
+                  "image": "assets/ui/inspection_object.png",
                   "points": [],
                   "originPoint": {
                     "name": "origine",
@@ -1318,7 +934,7 @@
               "sprites": [
                 {
                   "hasCustomCollisionMask": true,
-                  "image": "assets\\ui\\Arrow_Right.png",
+                  "image": "assets/ui/arrow_right.png",
                   "points": [],
                   "originPoint": {
                     "name": "origine",
@@ -1394,7 +1010,7 @@
               "sprites": [
                 {
                   "hasCustomCollisionMask": false,
-                  "image": "assets\\objects\\Chest_Closed.png",
+                  "image": "assets/objects/chest_closed.png",
                   "points": [],
                   "originPoint": {
                     "name": "origine",
@@ -1423,7 +1039,7 @@
               "sprites": [
                 {
                   "hasCustomCollisionMask": false,
-                  "image": "assets\\objects\\Chest_Open_2.png",
+                  "image": "assets/objects/chest_open.png",
                   "points": [],
                   "originPoint": {
                     "name": "origine",
@@ -1494,7 +1110,7 @@
               "sprites": [
                 {
                   "hasCustomCollisionMask": true,
-                  "image": "assets\\ui\\X.png",
+                  "image": "assets/ui/x.png",
                   "points": [],
                   "originPoint": {
                     "name": "origine",
@@ -1545,6 +1161,11 @@
           "name": "inspectionName",
           "type": "string",
           "value": ""
+        },
+        {
+          "name": "showBorder",
+          "type": "boolean",
+          "value": true
         }
       ],
       "effects": [
@@ -1873,55 +1494,7 @@
               "sprites": [
                 {
                   "hasCustomCollisionMask": true,
-                  "image": "assets\\objects\\Trophy_Idle.png",
-                  "points": [],
-                  "originPoint": {
-                    "name": "origine",
-                    "x": 0,
-                    "y": 0
-                  },
-                  "centerPoint": {
-                    "automatic": true,
-                    "name": "centre",
-                    "x": 0,
-                    "y": 0
-                  },
-                  "customCollisionMask": [
-                    [
-                      {
-                        "x": 9,
-                        "y": 20
-                      },
-                      {
-                        "x": 55,
-                        "y": 20
-                      },
-                      {
-                        "x": 55,
-                        "y": 64
-                      },
-                      {
-                        "x": 9,
-                        "y": 64
-                      }
-                    ]
-                  ]
-                }
-              ]
-            }
-          ]
-        },
-        {
-          "name": "StatueCollectiblePlaceholder",
-          "useMultipleDirections": false,
-          "directions": [
-            {
-              "looping": false,
-              "timeBetweenFrames": 0.025,
-              "sprites": [
-                {
-                  "hasCustomCollisionMask": true,
-                  "image": "assets\\objects\\StatueCollectiblePlaceholder.png",
+                  "image": "assets/objects/statue_placeholder.png",
                   "points": [],
                   "originPoint": {
                     "name": "origine",
@@ -2123,7 +1696,7 @@
               "sprites": [
                 {
                   "hasCustomCollisionMask": false,
-                  "image": "assets\\ui\\Inspect.png",
+                  "image": "assets/ui/inspection_object.png",
                   "points": [],
                   "originPoint": {
                     "name": "origine",
@@ -2152,7 +1725,7 @@
               "sprites": [
                 {
                   "hasCustomCollisionMask": false,
-                  "image": "assets/ui/Arrow_Left.png",
+                  "image": "assets/ui/arrow_left.png",
                   "points": [],
                   "originPoint": {
                     "name": "origine",
@@ -2175,14 +1748,14 @@
     },
     {
       "assetStoreId": "",
-      "bottomMargin": 20,
+      "bottomMargin": 32,
       "height": 540,
-      "leftMargin": 20,
+      "leftMargin": 32,
       "name": "InspectionBackground",
-      "rightMargin": 20,
-      "texture": "assets/ui/InspectionBackgroundFlat.png",
+      "rightMargin": 32,
+      "texture": "assets/ui/black_background_round.png",
       "tiled": false,
-      "topMargin": 20,
+      "topMargin": 32,
       "type": "PanelSpriteObject::PanelSprite",
       "width": 960,
       "variables": [
@@ -2202,7 +1775,7 @@
       "leftMargin": 20,
       "name": "ItemPopupBackground",
       "rightMargin": 20,
-      "texture": "assets\\ui\\InventoryUI.png",
+      "texture": "assets/ui/ui_background_border.png",
       "tiled": false,
       "topMargin": 20,
       "type": "PanelSpriteObject::PanelSprite",
@@ -2301,7 +1874,7 @@
       "assetStoreId": "615de0316452630b9f4f6a39decc82e2449b82c1afd1ff24d6470dad2922177b",
       "name": "ItemPopupPickupButton",
       "type": "PanelSpriteButton::PanelSpriteButton",
-      "variant": "StartButton",
+      "variant": "UMDButton",
       "variables": [
         {
           "name": "enabled",
@@ -2325,7 +1898,7 @@
       "assetStoreId": "615de0316452630b9f4f6a39decc82e2449b82c1afd1ff24d6470dad2922177b",
       "name": "ItemPopupExitButton",
       "type": "PanelSpriteButton::PanelSpriteButton",
-      "variant": "StartButton",
+      "variant": "UMDButton",
       "variables": [
         {
           "name": "enabled",
@@ -2393,7 +1966,7 @@
               "sprites": [
                 {
                   "hasCustomCollisionMask": true,
-                  "image": "assets\\ui\\InspectionBackgroundFlat.png",
+                  "image": "assets/objects/black_square.png",
                   "points": [],
                   "originPoint": {
                     "name": "origine",
@@ -2413,16 +1986,16 @@
                         "y": 0
                       },
                       {
-                        "x": 128,
+                        "x": 960,
                         "y": 0
                       },
                       {
-                        "x": 128,
-                        "y": 128
+                        "x": 960,
+                        "y": 540
                       },
                       {
                         "x": 0,
-                        "y": 128
+                        "y": 540
                       }
                     ]
                   ]
@@ -2437,7 +2010,7 @@
       "assetStoreId": "615de0316452630b9f4f6a39decc82e2449b82c1afd1ff24d6470dad2922177b",
       "name": "InteractionButton",
       "type": "PanelSpriteButton::PanelSpriteButton",
-      "variant": "StartButton",
+      "variant": "UMDButton",
       "variables": [
         {
           "name": "labelText",
@@ -2526,6 +2099,58 @@
         "lineHeight": 0,
         "color": "255;255;255"
       }
+    },
+    {
+      "assetStoreId": "",
+      "bottomMargin": 32,
+      "height": 32,
+      "leftMargin": 32,
+      "name": "InspectionImageBorder",
+      "rightMargin": 32,
+      "texture": "assets/ui/black_rounded_cornerns.png",
+      "tiled": false,
+      "topMargin": 32,
+      "type": "PanelSpriteObject::PanelSprite",
+      "width": 64,
+      "variables": [
+        {
+          "name": "inspectionName",
+          "type": "string",
+          "value": ""
+        }
+      ],
+      "effects": [],
+      "behaviors": []
+    },
+    {
+      "adaptCollisionMaskAutomatically": true,
+      "assetStoreId": "",
+      "name": "InspectionProp",
+      "type": "Sprite",
+      "updateIfNotVisible": false,
+      "variables": [
+        {
+          "name": "inspectionName",
+          "type": "string",
+          "value": ""
+        }
+      ],
+      "effects": [
+        {
+          "effectType": "Outline",
+          "name": "Effect",
+          "doubleParameters": {
+            "padding": 0,
+            "thickness": 4
+          },
+          "stringParameters": {
+            "color": "3;3;3"
+          },
+          "booleanParameters": {}
+        }
+      ],
+      "behaviors": [],
+      "animations": []
     }
   ],
   "objectsFolderStructure": {
@@ -2628,6 +2253,12 @@
           },
           {
             "objectName": "InspectionImage"
+          },
+          {
+            "objectName": "InspectionImageBorder"
+          },
+          {
+            "objectName": "InspectionProp"
           },
           {
             "objectName": "InspectionBackground"
