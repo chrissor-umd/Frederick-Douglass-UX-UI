@@ -91,7 +91,7 @@
       "stringProperties": [],
       "initialVariables": [
         {
-          "name": "targetInspection",
+          "name": "inspectionName",
           "type": "string",
           "value": "StatueInspection"
         }
@@ -114,7 +114,7 @@
       "stringProperties": [],
       "initialVariables": [
         {
-          "name": "targetInspection",
+          "name": "inspectionName",
           "type": "string",
           "value": "StatueInspection"
         },
@@ -165,7 +165,7 @@
         {
           "name": "targetInspection",
           "type": "string",
-          "value": "QuoteInspect2"
+          "value": "QuoteInspect"
         }
       ]
     },
@@ -185,7 +185,7 @@
       "stringProperties": [],
       "initialVariables": [
         {
-          "name": "targetInspection",
+          "name": "inspectionName",
           "type": "string",
           "value": "StatueInspection"
         }
@@ -207,22 +207,22 @@
       "stringProperties": [],
       "initialVariables": [
         {
-          "name": "targetInspection",
+          "name": "inspectionName",
           "type": "string",
-          "value": "QuoteInspect1"
+          "value": "QuoteInspect"
         }
       ]
     },
     {
       "angle": 0,
       "customSize": true,
-      "depth": 2,
-      "height": 248,
+      "depth": 1,
+      "height": 151,
       "keepRatio": true,
       "layer": "InspectionObjects",
       "name": "InspectionImage",
       "persistentUuid": "55c1c185-1a1b-4086-955c-44430164083e",
-      "width": 868,
+      "width": 528,
       "x": 1608,
       "y": 584,
       "zOrder": 14,
@@ -235,9 +235,9 @@
       "stringProperties": [],
       "initialVariables": [
         {
-          "name": "targetInspection",
+          "name": "inspectionName",
           "type": "string",
-          "value": "QuoteInspect1"
+          "value": "QuoteInspect"
         }
       ]
     },
@@ -245,14 +245,14 @@
       "angle": 0,
       "customSize": true,
       "depth": 1,
-      "height": 176,
+      "height": 104,
       "keepRatio": true,
       "layer": "InspectionObjects",
       "name": "InspectionImage",
       "persistentUuid": "dcb8de09-212a-4b40-bc72-c64d6b0e75c8",
-      "width": 897,
-      "x": 2584,
-      "y": 584,
+      "width": 528,
+      "x": 1608,
+      "y": 760,
       "zOrder": 15,
       "numberProperties": [
         {
@@ -263,9 +263,9 @@
       "stringProperties": [],
       "initialVariables": [
         {
-          "name": "targetInspection",
+          "name": "inspectionName",
           "type": "string",
-          "value": "QuoteInspect2"
+          "value": "QuoteInspect"
         }
       ]
     },
@@ -273,14 +273,14 @@
       "angle": 0,
       "customSize": true,
       "depth": 1,
-      "height": 268,
+      "height": 175,
       "keepRatio": true,
       "layer": "InspectionObjects",
       "name": "InspectionImage",
       "persistentUuid": "7b959c7c-2361-4dfe-9d8d-fde352e4e335",
-      "width": 624,
-      "x": 3696,
-      "y": 572,
+      "width": 408,
+      "x": 1608,
+      "y": 884,
       "zOrder": 16,
       "numberProperties": [
         {
@@ -291,9 +291,9 @@
       "stringProperties": [],
       "initialVariables": [
         {
-          "name": "targetInspection",
+          "name": "inspectionName",
           "type": "string",
-          "value": "QuoteInspect3"
+          "value": "QuoteInspect"
         }
       ]
     },
@@ -301,14 +301,14 @@
       "angle": 0,
       "customSize": true,
       "depth": 1,
-      "height": 208,
+      "height": 416,
       "keepRatio": true,
       "layer": "InspectionObjects",
       "name": "InspectionText",
       "persistentUuid": "a1c77d38-0a82-49d5-a57f-0f84d76a45d9",
       "width": 296,
-      "x": 1608,
-      "y": 952,
+      "x": 2176,
+      "y": 832,
       "zOrder": 17,
       "numberProperties": [],
       "stringProperties": [],
@@ -316,12 +316,12 @@
         {
           "name": "innerText",
           "type": "string",
-          "value": "Written in the stone is a quote from Frederick Douglass:"
+          "value": "Written in the stone are several quotes by Frederick Douglass:"
         },
         {
-          "name": "targetInspection",
+          "name": "inspectionName",
           "type": "string",
-          "value": "QuoteInspect1"
+          "value": "QuoteInspect"
         }
       ]
     },
@@ -334,14 +334,14 @@
       "name": "InspectionBackground",
       "persistentUuid": "86f26fb6-fdfe-402b-b6d9-b66dce2f2403",
       "width": 0,
-      "x": 2552,
-      "y": 543,
+      "x": 2544,
+      "y": 1112,
       "zOrder": 5,
       "numberProperties": [],
       "stringProperties": [],
       "initialVariables": [
         {
-          "name": "targetInspection",
+          "name": "inspectionName",
           "type": "string",
           "value": "QuoteInspect2"
         }
@@ -356,14 +356,14 @@
       "name": "InspectionBackground",
       "persistentUuid": "e1c864f3-bf85-4155-9076-3ce8cb782404",
       "width": 0,
-      "x": 3536,
-      "y": 543,
+      "x": 3528,
+      "y": 1112,
       "zOrder": 5,
       "numberProperties": [],
       "stringProperties": [],
       "initialVariables": [
         {
-          "name": "targetInspection",
+          "name": "inspectionName",
           "type": "string",
           "value": "QuoteInspect3"
         }
@@ -373,14 +373,14 @@
       "angle": 0,
       "customSize": true,
       "depth": 1,
-      "height": 208,
+      "height": 424,
       "keepRatio": true,
       "layer": "InspectionObjects",
       "name": "InspectionText",
       "persistentUuid": "0673b716-ade8-4671-af87-a2689918cd53",
-      "width": 432,
-      "x": 2032,
-      "y": 960,
+      "width": 840,
+      "x": 1624,
+      "y": 1380,
       "zOrder": 17,
       "numberProperties": [],
       "stringProperties": [],
@@ -391,7 +391,7 @@
           "value": "\"Once you learn to read, you will forever be free.\""
         },
         {
-          "name": "targetInspection",
+          "name": "inspectionName",
           "type": "string",
           "value": "QuoteInspect1"
         }
@@ -401,42 +401,14 @@
       "angle": 0,
       "customSize": true,
       "depth": 1,
-      "height": 208,
-      "keepRatio": true,
-      "layer": "InspectionObjects",
-      "name": "InspectionText",
-      "persistentUuid": "949f5496-fb1d-42b8-a185-75f0f3443bde",
-      "width": 296,
-      "x": 2592,
-      "y": 912,
-      "zOrder": 17,
-      "numberProperties": [],
-      "stringProperties": [],
-      "initialVariables": [
-        {
-          "name": "innerText",
-          "type": "string",
-          "value": "Written in the stone is a quote from Frederick Douglass:"
-        },
-        {
-          "name": "targetInspection",
-          "type": "string",
-          "value": "QuoteInspect2"
-        }
-      ]
-    },
-    {
-      "angle": 0,
-      "customSize": true,
-      "depth": 1,
-      "height": 208,
+      "height": 440,
       "keepRatio": true,
       "layer": "InspectionObjects",
       "name": "InspectionText",
       "persistentUuid": "29337f9b-57b1-4364-83f0-b3868855f840",
-      "width": 432,
-      "x": 3008,
-      "y": 912,
+      "width": 872,
+      "x": 2584,
+      "y": 1373,
       "zOrder": 17,
       "numberProperties": [],
       "stringProperties": [],
@@ -447,7 +419,7 @@
           "value": "\"I was born in Tuckahoe, near Hillsborough, and about twelve miles from Easton, in Talbot County, Maryland.\""
         },
         {
-          "name": "targetInspection",
+          "name": "inspectionName",
           "type": "string",
           "value": "QuoteInspect2"
         }
@@ -457,42 +429,14 @@
       "angle": 0,
       "customSize": true,
       "depth": 1,
-      "height": 200,
-      "keepRatio": true,
-      "layer": "InspectionObjects",
-      "name": "InspectionText",
-      "persistentUuid": "196a2738-9ded-4b6a-bb21-1daf3346d6b3",
-      "width": 296,
-      "x": 3592,
-      "y": 956,
-      "zOrder": 17,
-      "numberProperties": [],
-      "stringProperties": [],
-      "initialVariables": [
-        {
-          "name": "innerText",
-          "type": "string",
-          "value": "Written in the stone is a quote from Frederick Douglass:"
-        },
-        {
-          "name": "targetInspection",
-          "type": "string",
-          "value": "QuoteInspect3"
-        }
-      ]
-    },
-    {
-      "angle": 0,
-      "customSize": true,
-      "depth": 1,
-      "height": 200,
+      "height": 496,
       "keepRatio": true,
       "layer": "InspectionObjects",
       "name": "InspectionText",
       "persistentUuid": "a74f092b-d7e9-44e6-9369-f4d16ee80993",
-      "width": 432,
-      "x": 3976,
-      "y": 956,
+      "width": 800,
+      "x": 3600,
+      "y": 1377,
       "zOrder": 17,
       "numberProperties": [],
       "stringProperties": [],
@@ -500,17 +444,17 @@
         {
           "name": "innerText",
           "type": "string",
-          "value": "\"Until it shall be safe to leave the lamb in the hold of the lion, the laborer in the power of the capitalist, the poor in the hands of the rich, it will not be safe to leave a newly emancipated people completely in the power of their former masters, especially when such masters have not ceased to be such from enlightened moral convictions but by irresistible force..\""
+          "value": "\"Until it shall be safe to leave the lamb in the hold of the lion, the laborer in the power of the capitalist, the poor in the hands of the rich, it will not be safe to leave a newly emancipated people completely in the power of their former masters, especially when such masters have not ceased to be such from enlightened moral convictions but by irresistible force.\""
+        },
+        {
+          "name": "inspectionName",
+          "type": "string",
+          "value": "QuoteInspect3"
         },
         {
           "name": "fontSize",
           "type": "number",
-          "value": 20
-        },
-        {
-          "name": "targetInspection",
-          "type": "string",
-          "value": "QuoteInspect3"
+          "value": 25
         }
       ]
     },
@@ -519,18 +463,18 @@
       "customSize": false,
       "height": 0,
       "keepRatio": true,
-      "layer": "SceneObjects",
-      "name": "InspectionObject",
-      "persistentUuid": "d0cd26a6-abcf-4934-8cca-a6ca177439bb",
+      "layer": "InspectionObjects",
+      "name": "InspectionBackground",
+      "persistentUuid": "a4be565f-135c-4d6b-9431-e4e73516087c",
       "width": 0,
-      "x": 472,
-      "y": 640,
-      "zOrder": 13,
+      "x": 1568,
+      "y": 1112,
+      "zOrder": 5,
       "numberProperties": [],
       "stringProperties": [],
       "initialVariables": [
         {
-          "name": "targetInspection",
+          "name": "inspectionName",
           "type": "string",
           "value": "QuoteInspect1"
         }
@@ -541,18 +485,177 @@
       "customSize": false,
       "height": 0,
       "keepRatio": true,
-      "layer": "SceneObjects",
+      "layer": "InspectionObjects",
       "name": "InspectionObject",
-      "persistentUuid": "874ccb2d-21c1-4fce-8aeb-eb3c16e78a08",
+      "persistentUuid": "718d5e6a-f9b7-4a22-b7d9-fec3e7210b0b",
       "width": 0,
-      "x": 696,
-      "y": 640,
-      "zOrder": 13,
+      "x": 1952,
+      "y": 995,
+      "zOrder": 18,
       "numberProperties": [],
       "stringProperties": [],
       "initialVariables": [
         {
           "name": "targetInspection",
+          "type": "string",
+          "value": "QuoteInspect3"
+        },
+        {
+          "name": "inspectionName",
+          "type": "string",
+          "value": "QuoteInspect"
+        }
+      ]
+    },
+    {
+      "angle": 0,
+      "customSize": false,
+      "height": 0,
+      "keepRatio": true,
+      "layer": "InspectionObjects",
+      "name": "InspectionObject",
+      "persistentUuid": "aaefbc83-03c1-4d58-b159-554aad03276d",
+      "width": 0,
+      "x": 2072,
+      "y": 800,
+      "zOrder": 18,
+      "numberProperties": [],
+      "stringProperties": [],
+      "initialVariables": [
+        {
+          "name": "targetInspection",
+          "type": "string",
+          "value": "QuoteInspect2"
+        },
+        {
+          "name": "inspectionName",
+          "type": "string",
+          "value": "QuoteInspect"
+        }
+      ]
+    },
+    {
+      "angle": 0,
+      "customSize": false,
+      "height": 0,
+      "keepRatio": true,
+      "layer": "InspectionObjects",
+      "name": "InspectionObject",
+      "persistentUuid": "fd46782c-6e34-473a-9823-478dd761a6c3",
+      "width": 0,
+      "x": 2072,
+      "y": 672,
+      "zOrder": 18,
+      "numberProperties": [],
+      "stringProperties": [],
+      "initialVariables": [
+        {
+          "name": "targetInspection",
+          "type": "string",
+          "value": "QuoteInspect1"
+        },
+        {
+          "name": "inspectionName",
+          "persistentUuid": "40d28276-d49d-404a-b50a-0562e059347d",
+          "type": "string",
+          "value": "QuoteInspect"
+        }
+      ]
+    },
+    {
+      "angle": 0,
+      "customSize": true,
+      "depth": 1,
+      "height": 64,
+      "keepRatio": true,
+      "layer": "InspectionObjects",
+      "name": "InspectionObject",
+      "persistentUuid": "2256f3e0-6ef8-4da2-a0b1-77c13ecbe713",
+      "width": 64,
+      "x": 1600,
+      "y": 1144,
+      "zOrder": 19,
+      "numberProperties": [
+        {
+          "name": "animation",
+          "value": 1
+        }
+      ],
+      "stringProperties": [],
+      "initialVariables": [
+        {
+          "name": "targetInspection",
+          "type": "string",
+          "value": "QuoteInspect"
+        },
+        {
+          "name": "inspectionName",
+          "type": "string",
+          "value": "QuoteInspect1"
+        }
+      ]
+    },
+    {
+      "angle": 0,
+      "customSize": true,
+      "depth": 1,
+      "height": 64,
+      "keepRatio": true,
+      "layer": "InspectionObjects",
+      "name": "InspectionObject",
+      "persistentUuid": "0bec56ef-1fbd-45b6-aebd-8e2d36de7faf",
+      "width": 64,
+      "x": 2576,
+      "y": 1144,
+      "zOrder": 19,
+      "numberProperties": [
+        {
+          "name": "animation",
+          "value": 1
+        }
+      ],
+      "stringProperties": [],
+      "initialVariables": [
+        {
+          "name": "targetInspection",
+          "type": "string",
+          "value": "QuoteInspect"
+        },
+        {
+          "name": "inspectionName",
+          "type": "string",
+          "value": "QuoteInspect2"
+        }
+      ]
+    },
+    {
+      "angle": 0,
+      "customSize": true,
+      "depth": 1,
+      "height": 64,
+      "keepRatio": true,
+      "layer": "InspectionObjects",
+      "name": "InspectionObject",
+      "persistentUuid": "348cdd7f-6bc7-4710-b624-6d67235e2a18",
+      "width": 64,
+      "x": 3560,
+      "y": 1144,
+      "zOrder": 19,
+      "numberProperties": [
+        {
+          "name": "animation",
+          "value": 1
+        }
+      ],
+      "stringProperties": [],
+      "initialVariables": [
+        {
+          "name": "targetInspection",
+          "type": "string",
+          "value": "QuoteInspect"
+        },
+        {
+          "name": "inspectionName",
           "type": "string",
           "value": "QuoteInspect3"
         }
@@ -571,7 +674,7 @@
     "gridColor": 10401023,
     "gridAlpha": 0.4,
     "snap": true,
-    "zoomFactor": 0.379712100194799,
+    "zoomFactor": 0.6455105703311592,
     "windowMask": false,
     "selectedLayer": "InspectionObjects"
   }

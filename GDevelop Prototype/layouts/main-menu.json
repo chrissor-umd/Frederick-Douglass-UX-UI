@@ -31,14 +31,14 @@
       "angle": 0,
       "customSize": true,
       "depth": 1,
-      "height": 70,
+      "height": 224,
       "keepRatio": true,
       "layer": "Main Menu",
       "name": "Title",
       "persistentUuid": "f1797e56-d524-4c49-89ba-549da8c91b32",
       "width": 1088,
       "x": 96,
-      "y": 221,
+      "y": 208,
       "zOrder": 3,
       "numberProperties": [],
       "stringProperties": [],
@@ -272,6 +272,40 @@
       "conditions": [
         {
           "type": {
+            "value": "DepartScene"
+          },
+          "parameters": [
+            ""
+          ]
+        }
+      ],
+      "actions": [
+        {
+          "type": {
+            "value": "TextObject::Text::SetLineHeight"
+          },
+          "parameters": [
+            "Title",
+            "=",
+            "Title.FontSize()*1.5"
+          ]
+        },
+        {
+          "type": {
+            "value": "TouchSimulateMouse"
+          },
+          "parameters": [
+            "",
+            "no"
+          ]
+        }
+      ]
+    },
+    {
+      "type": "BuiltinCommonInstructions::Standard",
+      "conditions": [
+        {
+          "type": {
             "value": "PanelSpriteButton::PanelSpriteButton::IsPressed"
           },
           "parameters": [
@@ -427,6 +461,10 @@
     {
       "name": "Animation",
       "type": "AnimatableCapability::AnimatableBehavior"
+    },
+    {
+      "name": "CursorHover",
+      "type": "CursorType::CursorHover"
     },
     {
       "name": "Effect",

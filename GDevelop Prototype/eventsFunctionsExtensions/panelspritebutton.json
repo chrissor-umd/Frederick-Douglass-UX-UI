@@ -2718,7 +2718,7 @@
           "areaMinX": 0,
           "areaMinY": 0,
           "areaMinZ": 0,
-          "name": "StartButton",
+          "name": "UMDButton",
           "objects": [
             {
               "assetStoreId": "",
@@ -2742,10 +2742,10 @@
                   "useLegacyBottomAndRightAnchors": false
                 }
               ],
-              "string": "Start",
+              "string": "Text",
               "font": "assets\\fonts\\BilkoOpti-Regular.otf",
               "textAlignment": "center",
-              "characterSize": 40,
+              "characterSize": 30,
               "color": {
                 "b": 0,
                 "g": 0,
@@ -2765,11 +2765,11 @@
                 "shadowOpacity": 127,
                 "smoothed": true,
                 "underlined": false,
-                "text": "Start",
+                "text": "Text",
                 "font": "assets\\fonts\\BilkoOpti-Regular.otf",
                 "textAlignment": "center",
                 "verticalTextAlignment": "center",
-                "characterSize": 40,
+                "characterSize": 30,
                 "lineHeight": 0,
                 "color": "0;0;0"
               }
@@ -2890,7 +2890,7 @@
                 }
               ],
               "content": {
-                "text": "Start",
+                "text": "Text",
                 "opacity": 255,
                 "scale": 1,
                 "fontSize": 20,
@@ -3019,12 +3019,14 @@
             "gridType": "rectangular",
             "gridWidth": 32,
             "gridHeight": 32,
+            "gridDepth": 32,
             "gridOffsetX": 0,
             "gridOffsetY": 0,
+            "gridOffsetZ": 0,
             "gridColor": 10401023,
             "gridAlpha": 0.8,
             "snap": false,
-            "zoomFactor": 2.3165559122569874,
+            "zoomFactor": 2.734375,
             "windowMask": false,
             "selectedLayer": ""
           }

@@ -151,7 +151,7 @@
       "stringProperties": [],
       "initialVariables": [
         {
-          "name": "targetInspection",
+          "name": "inspectionName",
           "type": "string",
           "value": "closedChest"
         }
@@ -179,7 +179,7 @@
       "stringProperties": [],
       "initialVariables": [
         {
-          "name": "targetInspection",
+          "name": "inspectionName",
           "type": "string",
           "value": "closedChest"
         }
@@ -201,7 +201,7 @@
       "stringProperties": [],
       "initialVariables": [
         {
-          "name": "targetInspection",
+          "name": "inspectionName",
           "type": "string",
           "value": "closedChest"
         },
@@ -229,14 +229,14 @@
       "stringProperties": [],
       "initialVariables": [
         {
+          "name": "inspectionName",
+          "type": "string",
+          "value": "closedChest"
+        },
+        {
           "name": "innerText",
           "type": "string",
           "value": "The chest is locked"
-        },
-        {
-          "name": "targetInspection",
-          "type": "string",
-          "value": "closedChest"
         }
       ]
     },
@@ -256,7 +256,7 @@
       "stringProperties": [],
       "initialVariables": [
         {
-          "name": "targetInspection",
+          "name": "inspectionName",
           "type": "string",
           "value": "openChest"
         }
@@ -284,7 +284,7 @@
       "stringProperties": [],
       "initialVariables": [
         {
-          "name": "targetInspection",
+          "name": "inspectionName",
           "type": "string",
           "value": "openChest"
         }
@@ -311,7 +311,7 @@
       "stringProperties": [],
       "initialVariables": [
         {
-          "name": "targetInspection",
+          "name": "inspectionName",
           "type": "string",
           "value": "openChest"
         },
@@ -339,14 +339,14 @@
       "stringProperties": [],
       "initialVariables": [
         {
+          "name": "inspectionName",
+          "type": "string",
+          "value": "openChest"
+        },
+        {
           "name": "innerText",
           "type": "string",
           "value": "You opened the chest. There was a statue inside!"
-        },
-        {
-          "name": "targetInspection",
-          "type": "string",
-          "value": "openChest"
         }
       ]
     },
@@ -366,7 +366,7 @@
       "stringProperties": [],
       "initialVariables": [
         {
-          "name": "targetInspection",
+          "name": "inspectionName",
           "type": "string",
           "value": "emptyChest"
         }
@@ -394,7 +394,7 @@
       "stringProperties": [],
       "initialVariables": [
         {
-          "name": "targetInspection",
+          "name": "inspectionName",
           "type": "string",
           "value": "emptyChest"
         }
@@ -421,7 +421,7 @@
       "stringProperties": [],
       "initialVariables": [
         {
-          "name": "targetInspection",
+          "name": "inspectionName",
           "type": "string",
           "value": "emptyChest"
         },
@@ -449,14 +449,14 @@
       "stringProperties": [],
       "initialVariables": [
         {
+          "name": "inspectionName",
+          "type": "string",
+          "value": "emptyChest"
+        },
+        {
           "name": "innerText",
           "type": "string",
           "value": "The chest is empty"
-        },
-        {
-          "name": "targetInspection",
-          "type": "string",
-          "value": "emptyChest"
         }
       ]
     },
@@ -486,7 +486,7 @@
           "value": "FDS North Chest"
         },
         {
-          "name": "targetInspection",
+          "name": "inspectionName",
           "type": "string",
           "value": "openChest"
         }
@@ -494,7 +494,7 @@
     }
   ],
   "editionSettings": {
-    "grid": false,
+    "grid": true,
     "gridType": "rectangular",
     "gridWidth": 16,
     "gridHeight": 16,
@@ -504,9 +504,9 @@
     "gridOffsetZ": 0,
     "gridColor": 10401023,
     "gridAlpha": 0.8,
-    "snap": false,
-    "zoomFactor": 0.39251611754882326,
+    "snap": true,
+    "zoomFactor": 0.47893418845352626,
     "windowMask": false,
-    "selectedLayer": "InspectionObjects"
+    "selectedLayer": "SceneObjects"
   }
 }

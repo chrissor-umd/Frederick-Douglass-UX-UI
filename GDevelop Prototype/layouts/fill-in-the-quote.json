@@ -20,7 +20,7 @@
     "gridColor": 10401023,
     "gridAlpha": 0.8,
     "snap": true,
-    "zoomFactor": 0.4581717914438548,
+    "zoomFactor": 0.5408086571969217,
     "windowMask": false,
     "selectedLayer": ""
   },
@@ -160,7 +160,7 @@
       "height": 0,
       "keepRatio": true,
       "layer": "UI",
-      "name": "ExitScene",
+      "name": "ExitMinigameButton",
       "persistentUuid": "5d6e25e6-13ac-44a8-9863-b33a7bbea215",
       "width": 0,
       "x": 32,
@@ -601,91 +601,6 @@
       }
     },
     {
-      "adaptCollisionMaskAutomatically": true,
-      "assetStoreId": "",
-      "name": "ExitScene",
-      "type": "Sprite",
-      "updateIfNotVisible": false,
-      "variables": [
-        {
-          "name": "enabled",
-          "type": "boolean",
-          "value": true
-        }
-      ],
-      "effects": [
-        {
-          "effectType": "Outline",
-          "name": "Highlight",
-          "doubleParameters": {
-            "padding": 0,
-            "thickness": 4
-          },
-          "stringParameters": {
-            "color": "255;255;255"
-          },
-          "booleanParameters": {}
-        }
-      ],
-      "behaviors": [
-        {
-          "name": "CursorHover",
-          "type": "CursorType::CursorHover",
-          "CursorType": "pointer"
-        }
-      ],
-      "animations": [
-        {
-          "name": "",
-          "useMultipleDirections": false,
-          "directions": [
-            {
-              "looping": false,
-              "timeBetweenFrames": 0.08,
-              "sprites": [
-                {
-                  "hasCustomCollisionMask": true,
-                  "image": "assets/ui/X.png",
-                  "points": [],
-                  "originPoint": {
-                    "name": "origine",
-                    "x": 0,
-                    "y": 0
-                  },
-                  "centerPoint": {
-                    "automatic": true,
-                    "name": "centre",
-                    "x": 0,
-                    "y": 0
-                  },
-                  "customCollisionMask": [
-                    [
-                      {
-                        "x": 1,
-                        "y": 2
-                      },
-                      {
-                        "x": 63,
-                        "y": 2
-                      },
-                      {
-                        "x": 63,
-                        "y": 62
-                      },
-                      {
-                        "x": 1,
-                        "y": 62
-                      }
-                    ]
-                  ]
-                }
-              ]
-            }
-          ]
-        }
-      ]
-    },
-    {
       "assetStoreId": "",
       "bold": false,
       "italic": false,
@@ -789,7 +704,7 @@
       "assetStoreId": "615de0316452630b9f4f6a39decc82e2449b82c1afd1ff24d6470dad2922177b",
       "name": "SubmitButton",
       "type": "PanelSpriteButton::PanelSpriteButton",
-      "variant": "StartButton",
+      "variant": "UMDButton",
       "variables": [
         {
           "name": "enabled",
@@ -842,7 +757,7 @@
       "assetStoreId": "615de0316452630b9f4f6a39decc82e2449b82c1afd1ff24d6470dad2922177b",
       "name": "RetryButton",
       "type": "PanelSpriteButton::PanelSpriteButton",
-      "variant": "StartButton",
+      "variant": "UMDButton",
       "variables": [],
       "effects": [],
       "behaviors": [],
@@ -860,7 +775,7 @@
       "assetStoreId": "615de0316452630b9f4f6a39decc82e2449b82c1afd1ff24d6470dad2922177b",
       "name": "NextButton",
       "type": "PanelSpriteButton::PanelSpriteButton",
-      "variant": "StartButton",
+      "variant": "UMDButton",
       "variables": [],
       "effects": [],
       "behaviors": [],
@@ -1007,7 +922,7 @@
       "assetStoreId": "615de0316452630b9f4f6a39decc82e2449b82c1afd1ff24d6470dad2922177b",
       "name": "StartButton",
       "type": "PanelSpriteButton::PanelSpriteButton",
-      "variant": "StartButton",
+      "variant": "UMDButton",
       "variables": [
         {
           "name": "enabled",
@@ -1024,7 +939,7 @@
         "BottomPadding": 32,
         "TopPadding": 16,
         "HoveredFadeOutDuration": 0.25,
-        "LabelText": "Submit"
+        "LabelText": "Start"
       }
     }
   ],
@@ -1081,9 +996,6 @@
       },
       {
         "objectName": "QuoteInput"
-      },
-      {
-        "objectName": "ExitScene"
       }
     ]
   },
@@ -1093,7 +1005,6 @@
       "colorG": 176,
       "colorR": 74,
       "creationTime": 0,
-      "folded": true,
       "name": "Exit Button",
       "source": "",
       "type": "BuiltinCommonInstructions::Group",
@@ -1117,7 +1028,7 @@
                 "value": "SourisSurObjet"
               },
               "parameters": [
-                "ExitScene",
+                "ExitMinigameButton",
                 "",
                 "no",
                 ""
@@ -1130,7 +1041,7 @@
                 "value": "EffectCapability::EffectBehavior::EnableEffect"
               },
               "parameters": [
-                "ExitScene",
+                "ExitMinigameButton",
                 "Effect",
                 "\"Highlight\"",
                 "yes"
@@ -1143,11 +1054,28 @@
               "conditions": [
                 {
                   "type": {
-                    "value": "MouseButtonFromTextReleased"
+                    "value": "BuiltinCommonInstructions::Or"
                   },
-                  "parameters": [
-                    "",
-                    "\"Left\""
+                  "parameters": [],
+                  "subInstructions": [
+                    {
+                      "type": {
+                        "value": "MouseButtonFromTextReleased"
+                      },
+                      "parameters": [
+                        "",
+                        "\"Left\""
+                      ]
+                    },
+                    {
+                      "type": {
+                        "value": "HasTouchEnded"
+                      },
+                      "parameters": [
+                        "",
+                        "2"
+                      ]
+                    }
                   ]
                 }
               ],
@@ -1173,7 +1101,7 @@
                 "value": "SourisSurObjet"
               },
               "parameters": [
-                "ExitScene",
+                "ExitMinigameButton",
                 "",
                 "no",
                 ""
@@ -1186,7 +1114,7 @@
                 "value": "EffectCapability::EffectBehavior::EnableEffect"
               },
               "parameters": [
-                "ExitScene",
+                "ExitMinigameButton",
                 "Effect",
                 "\"Highlight\"",
                 "no"
@@ -1202,7 +1130,6 @@
       "colorG": 176,
       "colorR": 74,
       "creationTime": 0,
-      "folded": true,
       "name": "Init QuoteText and QuoteInputs",
       "source": "",
       "type": "BuiltinCommonInstructions::Group",
@@ -1307,14 +1234,45 @@
                 "",
                 "\"QuoteText\""
               ]
+            },
+            {
+              "type": {
+                "value": "Cache"
+              },
+              "parameters": [
+                "ExitMinigameButton"
+              ]
             }
           ],
           "events": [
             {
+              "type": "BuiltinCommonInstructions::Comment",
+              "color": {
+                "b": 109,
+                "g": 230,
+                "r": 255,
+                "textB": 0,
+                "textG": 0,
+                "textR": 0
+              },
+              "comment": "We have to manually set the line height since it'll automatically change on different devices"
+            },
+            {
               "type": "BuiltinCommonInstructions::ForEach",
               "object": "QuoteText",
               "conditions": [],
-              "actions": [],
+              "actions": [
+                {
+                  "type": {
+                    "value": "TextObject::Text::SetLineHeight"
+                  },
+                  "parameters": [
+                    "QuoteText",
+                    "=",
+                    "QuoteText.FontSize()*1.15"
+                  ]
+                }
+              ],
               "events": [
                 {
                   "type": "BuiltinCommonInstructions::Comment",
@@ -1438,7 +1396,6 @@
       "colorG": 176,
       "colorR": 74,
       "creationTime": 0,
-      "folded": true,
       "name": "Tutorial Popup",
       "source": "",
       "type": "BuiltinCommonInstructions::Group",
@@ -1525,6 +1482,15 @@
               "parameters": [
                 "",
                 "\"QuoteText\""
+              ]
+            },
+            {
+              "type": {
+                "value": "Montre"
+              },
+              "parameters": [
+                "ExitMinigameButton",
+                ""
               ]
             }
           ]
@@ -1845,6 +1811,18 @@
                         "QuoteInput",
                         "yes"
                       ]
+                    },
+                    {
+                      "type": {
+                        "value": "PlaySound"
+                      },
+                      "parameters": [
+                        "",
+                        "assets\\sfx\\win.wav",
+                        "",
+                        "",
+                        ""
+                      ]
                     }
                   ],
                   "events": [
@@ -1983,6 +1961,18 @@
                         "QuoteInput",
                         "yes"
                       ]
+                    },
+                    {
+                      "type": {
+                        "value": "PlaySound"
+                      },
+                      "parameters": [
+                        "",
+                        "assets\\sfx\\lose.wav",
+                        "",
+                        "",
+                        ""
+                      ]
                     }
                   ]
                 }
@@ -2118,13 +2108,21 @@
                     "True",
                     ""
                   ]
-                },
+                }
+              ],
+              "events": [
                 {
-                  "type": {
-                    "value": "PopScene"
-                  },
-                  "parameters": [
-                    ""
+                  "type": "BuiltinCommonInstructions::Standard",
+                  "conditions": [],
+                  "actions": [
+                    {
+                      "type": {
+                        "value": "PopScene"
+                      },
+                      "parameters": [
+                        ""
+                      ]
+                    }
                   ]
                 }
               ]
@@ -2429,7 +2427,7 @@
       "isLocked": true,
       "name": "IncorrectPopup",
       "renderingType": "2d",
-      "visibility": true,
+      "visibility": false,
       "cameras": [],
       "effects": []
     },
@@ -2447,7 +2445,7 @@
       "isLocked": false,
       "name": "CorrectPopup",
       "renderingType": "2d",
-      "visibility": true,
+      "visibility": false,
       "cameras": [],
       "effects": []
     },
@@ -2465,7 +2463,7 @@
       "isLocked": false,
       "name": "TutorialPopup",
       "renderingType": "2d",
-      "visibility": false,
+      "visibility": true,
       "cameras": [],
       "effects": []
     }

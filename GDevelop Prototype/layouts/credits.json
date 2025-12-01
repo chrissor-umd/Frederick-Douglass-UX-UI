@@ -328,6 +328,10 @@
       "type": "AnimatableCapability::AnimatableBehavior"
     },
     {
+      "name": "CursorHover",
+      "type": "CursorType::CursorHover"
+    },
+    {
       "name": "Effect",
       "type": "EffectCapability::EffectBehavior"
     },
