@@ -139,7 +139,7 @@
       "stringProperties": [],
       "initialVariables": [
         {
-          "name": "targetInspection",
+          "name": "inspectionName",
           "type": "string",
           "value": "librarian"
         }
@@ -162,7 +162,7 @@
       "stringProperties": [],
       "initialVariables": [
         {
-          "name": "targetInspection",
+          "name": "inspectionName",
           "type": "string",
           "value": "librarian"
         },
@@ -199,7 +199,7 @@
           "value": "\"Sure!\""
         },
         {
-          "name": "targetInspection",
+          "name": "inspectionName",
           "type": "string",
           "value": "librarian"
         },
@@ -226,7 +226,7 @@
       "stringProperties": [],
       "initialVariables": [
         {
-          "name": "targetInspection",
+          "name": "inspectionName",
           "type": "string",
           "value": "loseQuoteMinigame"
         }
@@ -248,7 +248,7 @@
       "stringProperties": [],
       "initialVariables": [
         {
-          "name": "targetInspection",
+          "name": "inspectionName",
           "type": "string",
           "value": "loseQuoteMinigame"
         },
@@ -256,6 +256,88 @@
           "name": "innerText",
           "type": "string",
           "value": "\"Heading out? Feel free to come back anytime to give it another shot. Here's a tip, try looking around the Frederick Douglass Statue.\""
+        }
+      ]
+    },
+    {
+      "angle": 0,
+      "customSize": false,
+      "height": 0,
+      "keepRatio": true,
+      "layer": "InspectionObjects",
+      "name": "InspectionBackground",
+      "persistentUuid": "dcace135-b3d8-481b-a639-c4a26ebaafe3",
+      "width": 0,
+      "x": 2400,
+      "y": 576,
+      "zOrder": 9,
+      "numberProperties": [],
+      "stringProperties": [],
+      "initialVariables": [
+        {
+          "name": "inspectionName",
+          "type": "string",
+          "value": "winQuoteMinigame"
+        }
+      ]
+    },
+    {
+      "angle": 0,
+      "customSize": true,
+      "depth": 1,
+      "height": 248,
+      "layer": "InspectionObjects",
+      "name": "InspectionText",
+      "persistentUuid": "20d3545f-02c8-4d66-9bbf-0587e6287e86",
+      "width": 832,
+      "x": 2464,
+      "y": 772,
+      "zOrder": 10,
+      "numberProperties": [],
+      "stringProperties": [],
+      "initialVariables": [
+        {
+          "name": "inspectionName",
+          "type": "string",
+          "value": "winQuoteMinigame"
+        },
+        {
+          "name": "innerText",
+          "type": "string",
+          "value": "\"Thanks so much for all your help! By the way, I found this while you were busy. Just a token of my appreciation!\""
+        }
+      ]
+    },
+    {
+      "angle": 0,
+      "customSize": true,
+      "depth": 2,
+      "height": 96,
+      "keepRatio": true,
+      "layer": "InspectionObjects",
+      "name": "StatueCollectible",
+      "persistentUuid": "fb71d0f6-9d0a-48c5-acc1-253c1f07a33f",
+      "width": 96,
+      "x": 2822,
+      "y": 905,
+      "zOrder": 11,
+      "numberProperties": [],
+      "stringProperties": [],
+      "initialVariables": [
+        {
+          "name": "targetInteraction",
+          "type": "string",
+          "value": "quoteMinigame"
+        },
+        {
+          "name": "inspectionName",
+          "type": "string",
+          "value": "winQuoteMinigame"
+        },
+        {
+          "name": "instanceID",
+          "type": "string",
+          "value": "quoteStatue"
         }
       ]
     }
@@ -272,7 +354,7 @@
     "gridColor": 10401023,
     "gridAlpha": 0.4,
     "snap": true,
-    "zoomFactor": 0.28172599320795644,
+    "zoomFactor": 0.36732575450588323,
     "windowMask": false,
     "selectedLayer": "InspectionObjects"
   }

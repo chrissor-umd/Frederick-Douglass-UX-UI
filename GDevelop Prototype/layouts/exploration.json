@@ -20,7 +20,7 @@
     "gridColor": 10401023,
     "gridAlpha": 0.4,
     "snap": true,
-    "zoomFactor": 0.5843784410740945,
+    "zoomFactor": 0.4789341884535259,
     "windowMask": false,
     "selectedLayer": ""
   },
@@ -32,10 +32,10 @@
           "name": "InspectionImage"
         },
         {
-          "name": "InspectionText"
+          "name": "InspectionBackground"
         },
         {
-          "name": "InspectionBackground"
+          "name": "InspectionText"
         }
       ]
     }
@@ -43,6 +43,635 @@
   "variables": [],
   "instances": [],
   "objects": [
+    {
+      "assetStoreId": "",
+      "bold": true,
+      "italic": false,
+      "name": "StatuesCollectedCounter",
+      "smoothed": true,
+      "type": "TextObject::Text",
+      "underlined": false,
+      "variables": [
+        {
+          "name": "value",
+          "type": "number",
+          "value": 0
+        }
+      ],
+      "effects": [
+        {
+          "effectType": "Outline",
+          "name": "Effect",
+          "doubleParameters": {
+            "padding": 0,
+            "thickness": 2
+          },
+          "stringParameters": {
+            "color": "0;0;0"
+          },
+          "booleanParameters": {}
+        }
+      ],
+      "behaviors": [],
+      "string": "Statues Collected: 0",
+      "font": "assets/fonts/BilkoOpti-Regular.otf",
+      "textAlignment": "left",
+      "characterSize": 30,
+      "color": {
+        "b": 255,
+        "g": 255,
+        "r": 255
+      },
+      "content": {
+        "bold": true,
+        "isOutlineEnabled": false,
+        "isShadowEnabled": false,
+        "italic": false,
+        "outlineColor": "255;255;255",
+        "outlineThickness": 2,
+        "shadowAngle": 90,
+        "shadowBlurRadius": 2,
+        "shadowColor": "0;0;0",
+        "shadowDistance": 4,
+        "shadowOpacity": 127,
+        "smoothed": true,
+        "underlined": false,
+        "text": "Statues Collected: 0",
+        "font": "assets/fonts/BilkoOpti-Regular.otf",
+        "textAlignment": "left",
+        "verticalTextAlignment": "center",
+        "characterSize": 30,
+        "lineHeight": 0,
+        "color": "255;255;255"
+      }
+    },
+    {
+      "adaptCollisionMaskAutomatically": false,
+      "assetStoreId": "",
+      "name": "CycleInventoryNext",
+      "type": "Sprite",
+      "updateIfNotVisible": false,
+      "variables": [],
+      "effects": [
+        {
+          "effectType": "Adjustment",
+          "name": "Disable",
+          "doubleParameters": {
+            "alpha": 1,
+            "blue": 1,
+            "brightness": 0.2,
+            "contrast": 1,
+            "gamma": 1,
+            "green": 1,
+            "red": 1,
+            "saturation": 1
+          },
+          "stringParameters": {},
+          "booleanParameters": {}
+        }
+      ],
+      "behaviors": [],
+      "animations": [
+        {
+          "name": "",
+          "useMultipleDirections": false,
+          "directions": [
+            {
+              "looping": false,
+              "timeBetweenFrames": 0.08,
+              "sprites": [
+                {
+                  "hasCustomCollisionMask": true,
+                  "image": "assets/ui/arrow_right_white.png",
+                  "points": [],
+                  "originPoint": {
+                    "name": "origine",
+                    "x": 0,
+                    "y": 0
+                  },
+                  "centerPoint": {
+                    "automatic": true,
+                    "name": "centre",
+                    "x": 0,
+                    "y": 0
+                  },
+                  "customCollisionMask": [
+                    [
+                      {
+                        "x": 0,
+                        "y": 0
+                      },
+                      {
+                        "x": 64,
+                        "y": 0
+                      },
+                      {
+                        "x": 64,
+                        "y": 64
+                      },
+                      {
+                        "x": 0,
+                        "y": 64
+                      }
+                    ]
+                  ]
+                }
+              ]
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "assetStoreId": "",
+      "bottomMargin": 50,
+      "height": 129,
+      "leftMargin": 20,
+      "name": "InventoryBackground",
+      "rightMargin": 20,
+      "texture": "assets/ui/ui_inventory.png",
+      "tiled": false,
+      "topMargin": 50,
+      "type": "PanelSpriteObject::PanelSprite",
+      "width": 960,
+      "variables": [],
+      "effects": [],
+      "behaviors": []
+    },
+    {
+      "adaptCollisionMaskAutomatically": false,
+      "assetStoreId": "",
+      "name": "InventoryItem",
+      "type": "Sprite",
+      "updateIfNotVisible": false,
+      "variables": [
+        {
+          "name": "itemName",
+          "type": "string",
+          "value": ""
+        },
+        {
+          "name": "inventoryIndex",
+          "type": "number",
+          "value": -1
+        },
+        {
+          "name": "isCursor",
+          "type": "boolean",
+          "value": false
+        }
+      ],
+      "effects": [],
+      "behaviors": [],
+      "animations": [
+        {
+          "name": "Key",
+          "useMultipleDirections": false,
+          "directions": [
+            {
+              "looping": false,
+              "timeBetweenFrames": 0.08,
+              "sprites": [
+                {
+                  "hasCustomCollisionMask": true,
+                  "image": "assets/objects/ItemObjectPlaceholder.png",
+                  "points": [],
+                  "originPoint": {
+                    "name": "origine",
+                    "x": 0,
+                    "y": 0
+                  },
+                  "centerPoint": {
+                    "automatic": true,
+                    "name": "centre",
+                    "x": 0,
+                    "y": 0
+                  },
+                  "customCollisionMask": [
+                    [
+                      {
+                        "x": 0,
+                        "y": 0
+                      },
+                      {
+                        "x": 64,
+                        "y": 0
+                      },
+                      {
+                        "x": 64,
+                        "y": 64
+                      },
+                      {
+                        "x": 0,
+                        "y": 64
+                      }
+                    ]
+                  ]
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "name": "Empty",
+          "useMultipleDirections": false,
+          "directions": [
+            {
+              "looping": false,
+              "timeBetweenFrames": 0.08,
+              "sprites": []
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "adaptCollisionMaskAutomatically": true,
+      "assetStoreId": "",
+      "name": "UIBackground",
+      "type": "Sprite",
+      "updateIfNotVisible": false,
+      "variables": [],
+      "effects": [
+        {
+          "effectType": "ColorReplace",
+          "name": "Effect",
+          "doubleParameters": {
+            "epsilon": 0.4
+          },
+          "stringParameters": {
+            "newColor": "0;0;0",
+            "originalColor": "0;0;0"
+          },
+          "booleanParameters": {}
+        }
+      ],
+      "behaviors": [],
+      "animations": [
+        {
+          "name": "default",
+          "useMultipleDirections": false,
+          "directions": [
+            {
+              "looping": false,
+              "timeBetweenFrames": 0.08,
+              "sprites": [
+                {
+                  "hasCustomCollisionMask": true,
+                  "image": "assets/ui/ui_background_bar.png",
+                  "points": [],
+                  "originPoint": {
+                    "name": "origine",
+                    "x": 0,
+                    "y": 0
+                  },
+                  "centerPoint": {
+                    "automatic": true,
+                    "name": "centre",
+                    "x": 0,
+                    "y": 0
+                  },
+                  "customCollisionMask": [
+                    [
+                      {
+                        "x": 0,
+                        "y": 0
+                      },
+                      {
+                        "x": 128,
+                        "y": 0
+                      },
+                      {
+                        "x": 128,
+                        "y": 128
+                      },
+                      {
+                        "x": 0,
+                        "y": 128
+                      }
+                    ]
+                  ]
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "name": "TemplatePrompt",
+          "useMultipleDirections": false,
+          "directions": [
+            {
+              "looping": false,
+              "timeBetweenFrames": 0.08,
+              "sprites": [
+                {
+                  "hasCustomCollisionMask": true,
+                  "image": "assets\\ui\\ui_background_template.png",
+                  "points": [],
+                  "originPoint": {
+                    "name": "origine",
+                    "x": 0,
+                    "y": 0
+                  },
+                  "centerPoint": {
+                    "automatic": true,
+                    "name": "centre",
+                    "x": 0,
+                    "y": 0
+                  },
+                  "customCollisionMask": [
+                    [
+                      {
+                        "x": 0,
+                        "y": 0
+                      },
+                      {
+                        "x": 128,
+                        "y": 0
+                      },
+                      {
+                        "x": 128,
+                        "y": 128
+                      },
+                      {
+                        "x": 0,
+                        "y": 128
+                      }
+                    ]
+                  ]
+                }
+              ]
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "adaptCollisionMaskAutomatically": false,
+      "assetStoreId": "",
+      "name": "CycleInventoryPrevious",
+      "type": "Sprite",
+      "updateIfNotVisible": false,
+      "variables": [],
+      "effects": [
+        {
+          "effectType": "Adjustment",
+          "folded": true,
+          "name": "Disable",
+          "doubleParameters": {
+            "alpha": 1,
+            "blue": 1,
+            "brightness": 0.2,
+            "contrast": 1,
+            "gamma": 1,
+            "green": 1,
+            "red": 1,
+            "saturation": 1
+          },
+          "stringParameters": {},
+          "booleanParameters": {}
+        }
+      ],
+      "behaviors": [],
+      "animations": [
+        {
+          "name": "0",
+          "useMultipleDirections": false,
+          "directions": [
+            {
+              "looping": false,
+              "metadata": "{\"pskl\":{}}",
+              "timeBetweenFrames": 0.08,
+              "sprites": [
+                {
+                  "hasCustomCollisionMask": true,
+                  "image": "assets/ui/arrow_left_white.png",
+                  "points": [],
+                  "originPoint": {
+                    "name": "origine",
+                    "x": 0,
+                    "y": 0
+                  },
+                  "centerPoint": {
+                    "automatic": true,
+                    "name": "centre",
+                    "x": 0,
+                    "y": 0
+                  },
+                  "customCollisionMask": [
+                    [
+                      {
+                        "x": 0,
+                        "y": 0
+                      },
+                      {
+                        "x": 64,
+                        "y": 0
+                      },
+                      {
+                        "x": 64,
+                        "y": 64
+                      },
+                      {
+                        "x": 0,
+                        "y": 64
+                      }
+                    ]
+                  ]
+                }
+              ]
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "adaptCollisionMaskAutomatically": true,
+      "assetStoreId": "",
+      "name": "SelectedItemBorder",
+      "type": "Sprite",
+      "updateIfNotVisible": false,
+      "variables": [],
+      "effects": [],
+      "behaviors": [],
+      "animations": [
+        {
+          "name": "",
+          "useMultipleDirections": false,
+          "directions": [
+            {
+              "looping": false,
+              "timeBetweenFrames": 0.08,
+              "sprites": [
+                {
+                  "hasCustomCollisionMask": true,
+                  "image": "assets/ui/ui_inventory_select.png",
+                  "points": [],
+                  "originPoint": {
+                    "name": "origine",
+                    "x": 0,
+                    "y": 0
+                  },
+                  "centerPoint": {
+                    "automatic": true,
+                    "name": "centre",
+                    "x": 0,
+                    "y": 0
+                  },
+                  "customCollisionMask": [
+                    [
+                      {
+                        "x": 0,
+                        "y": 0
+                      },
+                      {
+                        "x": 128,
+                        "y": 0
+                      },
+                      {
+                        "x": 128,
+                        "y": 128
+                      },
+                      {
+                        "x": 0,
+                        "y": 128
+                      }
+                    ]
+                  ]
+                }
+              ]
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "assetStoreId": "",
+      "bold": false,
+      "italic": true,
+      "name": "HoverTooltip",
+      "smoothed": true,
+      "type": "TextObject::Text",
+      "underlined": false,
+      "variables": [],
+      "effects": [],
+      "behaviors": [],
+      "string": "",
+      "font": "",
+      "textAlignment": "left",
+      "characterSize": 25,
+      "color": {
+        "b": 255,
+        "g": 255,
+        "r": 255
+      },
+      "content": {
+        "bold": false,
+        "isOutlineEnabled": false,
+        "isShadowEnabled": false,
+        "italic": true,
+        "outlineColor": "255;255;255",
+        "outlineThickness": 2,
+        "shadowAngle": 90,
+        "shadowBlurRadius": 2,
+        "shadowColor": "0;0;0",
+        "shadowDistance": 4,
+        "shadowOpacity": 127,
+        "smoothed": true,
+        "underlined": false,
+        "text": "",
+        "font": "",
+        "textAlignment": "left",
+        "verticalTextAlignment": "top",
+        "characterSize": 25,
+        "lineHeight": 0,
+        "color": "255;255;255"
+      }
+    },
+    {
+      "adaptCollisionMaskAutomatically": true,
+      "assetStoreId": "",
+      "name": "InspectInventoryItem",
+      "type": "Sprite",
+      "updateIfNotVisible": false,
+      "variables": [
+        {
+          "name": "enabled",
+          "type": "boolean",
+          "value": false
+        }
+      ],
+      "effects": [
+        {
+          "effectType": "Adjustment",
+          "folded": true,
+          "name": "Disable",
+          "doubleParameters": {
+            "alpha": 1,
+            "blue": 1,
+            "brightness": 0.2,
+            "contrast": 1,
+            "gamma": 1,
+            "green": 1,
+            "red": 1,
+            "saturation": 1
+          },
+          "stringParameters": {},
+          "booleanParameters": {}
+        }
+      ],
+      "behaviors": [],
+      "animations": [
+        {
+          "name": "",
+          "useMultipleDirections": false,
+          "directions": [
+            {
+              "looping": false,
+              "timeBetweenFrames": 0.08,
+              "sprites": [
+                {
+                  "hasCustomCollisionMask": true,
+                  "image": "assets/ui/inspection_object.png",
+                  "points": [],
+                  "originPoint": {
+                    "name": "origine",
+                    "x": 0,
+                    "y": 0
+                  },
+                  "centerPoint": {
+                    "automatic": true,
+                    "name": "centre",
+                    "x": 0,
+                    "y": 0
+                  },
+                  "customCollisionMask": [
+                    [
+                      {
+                        "x": 7,
+                        "y": 3
+                      },
+                      {
+                        "x": 60,
+                        "y": 3
+                      },
+                      {
+                        "x": 60,
+                        "y": 56
+                      },
+                      {
+                        "x": 7,
+                        "y": 56
+                      }
+                    ]
+                  ]
+                }
+              ]
+            }
+          ]
+        }
+      ]
+    },
     {
       "adaptCollisionMaskAutomatically": true,
       "assetStoreId": "",
@@ -305,7 +934,7 @@
               "sprites": [
                 {
                   "hasCustomCollisionMask": true,
-                  "image": "assets\\ui\\Arrow_Right.png",
+                  "image": "assets/ui/arrow_right.png",
                   "points": [],
                   "originPoint": {
                     "name": "origine",
@@ -346,7 +975,7 @@
       ]
     },
     {
-      "adaptCollisionMaskAutomatically": true,
+      "adaptCollisionMaskAutomatically": false,
       "assetStoreId": "",
       "name": "InteractionObject",
       "type": "Sprite",
@@ -380,8 +1009,8 @@
               "timeBetweenFrames": 0.08,
               "sprites": [
                 {
-                  "hasCustomCollisionMask": true,
-                  "image": "assets\\objects\\Chest_Closed.png",
+                  "hasCustomCollisionMask": false,
+                  "image": "assets/objects/chest_closed.png",
                   "points": [],
                   "originPoint": {
                     "name": "origine",
@@ -394,26 +1023,7 @@
                     "x": 0,
                     "y": 0
                   },
-                  "customCollisionMask": [
-                    [
-                      {
-                        "x": 0,
-                        "y": 45
-                      },
-                      {
-                        "x": 128,
-                        "y": 45
-                      },
-                      {
-                        "x": 128,
-                        "y": 128
-                      },
-                      {
-                        "x": 0,
-                        "y": 128
-                      }
-                    ]
-                  ]
+                  "customCollisionMask": []
                 }
               ]
             }
@@ -428,8 +1038,8 @@
               "timeBetweenFrames": 0.08,
               "sprites": [
                 {
-                  "hasCustomCollisionMask": true,
-                  "image": "assets\\objects\\Chest_Open_2.png",
+                  "hasCustomCollisionMask": false,
+                  "image": "assets/objects/chest_open.png",
                   "points": [],
                   "originPoint": {
                     "name": "origine",
@@ -442,26 +1052,7 @@
                     "x": 0,
                     "y": 0
                   },
-                  "customCollisionMask": [
-                    [
-                      {
-                        "x": 0,
-                        "y": 45
-                      },
-                      {
-                        "x": 128,
-                        "y": 45
-                      },
-                      {
-                        "x": 128,
-                        "y": 128
-                      },
-                      {
-                        "x": 0,
-                        "y": 128
-                      }
-                    ]
-                  ]
+                  "customCollisionMask": []
                 }
               ]
             }
@@ -476,7 +1067,7 @@
               "timeBetweenFrames": 0.08,
               "sprites": [
                 {
-                  "hasCustomCollisionMask": true,
+                  "hasCustomCollisionMask": false,
                   "image": "assets/objects/stickman.png",
                   "points": [],
                   "originPoint": {
@@ -490,26 +1081,7 @@
                     "x": 0,
                     "y": 0
                   },
-                  "customCollisionMask": [
-                    [
-                      {
-                        "x": 0,
-                        "y": 45
-                      },
-                      {
-                        "x": 128,
-                        "y": 45
-                      },
-                      {
-                        "x": 128,
-                        "y": 128
-                      },
-                      {
-                        "x": 0,
-                        "y": 128
-                      }
-                    ]
-                  ]
+                  "customCollisionMask": []
                 }
               ]
             }
@@ -538,7 +1110,7 @@
               "sprites": [
                 {
                   "hasCustomCollisionMask": true,
-                  "image": "assets\\ui\\X.png",
+                  "image": "assets/ui/x.png",
                   "points": [],
                   "originPoint": {
                     "name": "origine",
@@ -586,9 +1158,14 @@
       "updateIfNotVisible": false,
       "variables": [
         {
-          "name": "targetInspection",
+          "name": "inspectionName",
           "type": "string",
           "value": ""
+        },
+        {
+          "name": "showBorder",
+          "type": "boolean",
+          "value": true
         }
       ],
       "effects": [
@@ -917,55 +1494,7 @@
               "sprites": [
                 {
                   "hasCustomCollisionMask": true,
-                  "image": "assets\\objects\\Trophy_Idle.png",
-                  "points": [],
-                  "originPoint": {
-                    "name": "origine",
-                    "x": 0,
-                    "y": 0
-                  },
-                  "centerPoint": {
-                    "automatic": true,
-                    "name": "centre",
-                    "x": 0,
-                    "y": 0
-                  },
-                  "customCollisionMask": [
-                    [
-                      {
-                        "x": 9,
-                        "y": 20
-                      },
-                      {
-                        "x": 55,
-                        "y": 20
-                      },
-                      {
-                        "x": 55,
-                        "y": 64
-                      },
-                      {
-                        "x": 9,
-                        "y": 64
-                      }
-                    ]
-                  ]
-                }
-              ]
-            }
-          ]
-        },
-        {
-          "name": "StatueCollectiblePlaceholder",
-          "useMultipleDirections": false,
-          "directions": [
-            {
-              "looping": false,
-              "timeBetweenFrames": 0.025,
-              "sprites": [
-                {
-                  "hasCustomCollisionMask": true,
-                  "image": "assets\\objects\\StatueCollectiblePlaceholder.png",
+                  "image": "assets/objects/statue_placeholder.png",
                   "points": [],
                   "originPoint": {
                     "name": "origine",
@@ -1020,7 +1549,7 @@
           "value": "Insert Text Here"
         },
         {
-          "name": "targetInspection",
+          "name": "inspectionName",
           "type": "string",
           "value": ""
         }
@@ -1158,7 +1687,7 @@
       "behaviors": [],
       "animations": [
         {
-          "name": "Target",
+          "name": "Inspect",
           "useMultipleDirections": false,
           "directions": [
             {
@@ -1167,7 +1696,36 @@
               "sprites": [
                 {
                   "hasCustomCollisionMask": false,
-                  "image": "assets\\ui\\Inspect.png",
+                  "image": "assets/ui/inspection_object.png",
+                  "points": [],
+                  "originPoint": {
+                    "name": "origine",
+                    "x": 0,
+                    "y": 0
+                  },
+                  "centerPoint": {
+                    "automatic": true,
+                    "name": "centre",
+                    "x": 0,
+                    "y": 0
+                  },
+                  "customCollisionMask": []
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "name": "Return",
+          "useMultipleDirections": false,
+          "directions": [
+            {
+              "looping": false,
+              "timeBetweenFrames": 0.08,
+              "sprites": [
+                {
+                  "hasCustomCollisionMask": false,
+                  "image": "assets/ui/arrow_left.png",
                   "points": [],
                   "originPoint": {
                     "name": "origine",
@@ -1190,19 +1748,19 @@
     },
     {
       "assetStoreId": "",
-      "bottomMargin": 20,
+      "bottomMargin": 32,
       "height": 540,
-      "leftMargin": 20,
+      "leftMargin": 32,
       "name": "InspectionBackground",
-      "rightMargin": 20,
-      "texture": "assets/ui/InspectionBackgroundFlat.png",
+      "rightMargin": 32,
+      "texture": "assets/ui/black_background_round.png",
       "tiled": false,
-      "topMargin": 20,
+      "topMargin": 32,
       "type": "PanelSpriteObject::PanelSprite",
       "width": 960,
       "variables": [
         {
-          "name": "targetInspection",
+          "name": "inspectionName",
           "type": "string",
           "value": ""
         }
@@ -1217,7 +1775,7 @@
       "leftMargin": 20,
       "name": "ItemPopupBackground",
       "rightMargin": 20,
-      "texture": "assets\\ui\\InventoryUI.png",
+      "texture": "assets/ui/ui_background_border.png",
       "tiled": false,
       "topMargin": 20,
       "type": "PanelSpriteObject::PanelSprite",
@@ -1316,7 +1874,7 @@
       "assetStoreId": "615de0316452630b9f4f6a39decc82e2449b82c1afd1ff24d6470dad2922177b",
       "name": "ItemPopupPickupButton",
       "type": "PanelSpriteButton::PanelSpriteButton",
-      "variant": "StartButton",
+      "variant": "UMDButton",
       "variables": [
         {
           "name": "enabled",
@@ -1340,7 +1898,7 @@
       "assetStoreId": "615de0316452630b9f4f6a39decc82e2449b82c1afd1ff24d6470dad2922177b",
       "name": "ItemPopupExitButton",
       "type": "PanelSpriteButton::PanelSpriteButton",
-      "variant": "StartButton",
+      "variant": "UMDButton",
       "variables": [
         {
           "name": "enabled",
@@ -1408,7 +1966,7 @@
               "sprites": [
                 {
                   "hasCustomCollisionMask": true,
-                  "image": "assets\\ui\\InspectionBackgroundFlat.png",
+                  "image": "assets/objects/black_square.png",
                   "points": [],
                   "originPoint": {
                     "name": "origine",
@@ -1428,16 +1986,16 @@
                         "y": 0
                       },
                       {
-                        "x": 128,
+                        "x": 960,
                         "y": 0
                       },
                       {
-                        "x": 128,
-                        "y": 128
+                        "x": 960,
+                        "y": 540
                       },
                       {
                         "x": 0,
-                        "y": 128
+                        "y": 540
                       }
                     ]
                   ]
@@ -1452,7 +2010,7 @@
       "assetStoreId": "615de0316452630b9f4f6a39decc82e2449b82c1afd1ff24d6470dad2922177b",
       "name": "InteractionButton",
       "type": "PanelSpriteButton::PanelSpriteButton",
-      "variant": "StartButton",
+      "variant": "UMDButton",
       "variables": [
         {
           "name": "labelText",
@@ -1487,6 +2045,112 @@
       "effects": [],
       "behaviors": [],
       "animations": []
+    },
+    {
+      "assetStoreId": "",
+      "bold": true,
+      "italic": false,
+      "name": "DebugText",
+      "smoothed": true,
+      "type": "TextObject::Text",
+      "underlined": false,
+      "variables": [
+        {
+          "name": "instanceID",
+          "type": "string",
+          "value": "cursorPosition"
+        },
+        {
+          "name": "innerText",
+          "type": "string",
+          "value": ""
+        }
+      ],
+      "effects": [],
+      "behaviors": [],
+      "string": "Text",
+      "font": "assets\\fonts\\BilkoOpti-Regular.otf",
+      "textAlignment": "center",
+      "characterSize": 40,
+      "color": {
+        "b": 255,
+        "g": 255,
+        "r": 255
+      },
+      "content": {
+        "bold": true,
+        "isOutlineEnabled": true,
+        "isShadowEnabled": false,
+        "italic": false,
+        "outlineColor": "5;5;5",
+        "outlineThickness": 2,
+        "shadowAngle": 90,
+        "shadowBlurRadius": 2,
+        "shadowColor": "0;0;0",
+        "shadowDistance": 4,
+        "shadowOpacity": 127,
+        "smoothed": true,
+        "underlined": false,
+        "text": "Text",
+        "font": "assets\\fonts\\BilkoOpti-Regular.otf",
+        "textAlignment": "center",
+        "verticalTextAlignment": "center",
+        "characterSize": 40,
+        "lineHeight": 0,
+        "color": "255;255;255"
+      }
+    },
+    {
+      "assetStoreId": "",
+      "bottomMargin": 32,
+      "height": 32,
+      "leftMargin": 32,
+      "name": "InspectionImageBorder",
+      "rightMargin": 32,
+      "texture": "assets/ui/black_rounded_cornerns.png",
+      "tiled": false,
+      "topMargin": 32,
+      "type": "PanelSpriteObject::PanelSprite",
+      "width": 64,
+      "variables": [
+        {
+          "name": "inspectionName",
+          "type": "string",
+          "value": ""
+        }
+      ],
+      "effects": [],
+      "behaviors": []
+    },
+    {
+      "adaptCollisionMaskAutomatically": true,
+      "assetStoreId": "",
+      "name": "InspectionProp",
+      "type": "Sprite",
+      "updateIfNotVisible": false,
+      "variables": [
+        {
+          "name": "inspectionName",
+          "type": "string",
+          "value": ""
+        }
+      ],
+      "effects": [
+        {
+          "effectType": "Outline",
+          "name": "Effect",
+          "doubleParameters": {
+            "padding": 0,
+            "thickness": 4
+          },
+          "stringParameters": {
+            "color": "3;3;3"
+          },
+          "booleanParameters": {}
+        }
+      ],
+      "behaviors": [],
+      "animations": []
     }
   ],
   "objectsFolderStructure": {
@@ -1516,10 +2180,45 @@
             ]
           },
           {
-            "objectName": "FadeScreen"
+            "folderName": "Inventory",
+            "children": [
+              {
+                "objectName": "SelectedItemBorder"
+              },
+              {
+                "objectName": "InventoryItem"
+              },
+              {
+                "objectName": "InventoryBackground"
+              },
+              {
+                "objectName": "CycleInventoryNext"
+              },
+              {
+                "objectName": "CycleInventoryPrevious"
+              },
+              {
+                "objectName": "InspectInventoryItem"
+              }
+            ]
+          },
+          {
+            "objectName": "HoverTooltip"
+          },
+          {
+            "objectName": "StatuesCollectedCounter"
           },
           {
             "objectName": "Map"
+          },
+          {
+            "objectName": "DebugText"
+          },
+          {
+            "objectName": "UIBackground"
+          },
+          {
+            "objectName": "FadeScreen"
           }
         ]
       },
@@ -1554,6 +2253,12 @@
           },
           {
             "objectName": "InspectionImage"
+          },
+          {
+            "objectName": "InspectionImageBorder"
+          },
+          {
+            "objectName": "InspectionProp"
           },
           {
             "objectName": "InspectionBackground"
@@ -1796,6 +2501,10 @@
     {
       "name": "Animation",
       "type": "AnimatableCapability::AnimatableBehavior"
+    },
+    {
+      "name": "CursorHover",
+      "type": "CursorType::CursorHover"
     },
     {
       "name": "Effect",
