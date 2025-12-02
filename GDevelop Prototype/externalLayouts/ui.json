@@ -22,14 +22,14 @@
       "angle": 0,
       "customSize": true,
       "depth": 1,
-      "height": 48,
+      "height": 96,
       "keepRatio": true,
       "layer": "UI",
       "name": "StatuesCollectedCounter",
       "persistentUuid": "822ea452-17c5-480a-a331-1dc0287406ff",
-      "width": 352,
-      "x": 24,
-      "y": 48,
+      "width": 72,
+      "x": 96,
+      "y": 40,
       "zOrder": 3,
       "numberProperties": [],
       "stringProperties": [],
@@ -40,12 +40,12 @@
       "customSize": true,
       "depth": 1,
       "height": 80,
-      "layer": "UI",
+      "layer": "InventoryUI",
       "name": "InventoryBackground",
       "persistentUuid": "701ba808-cdbd-4b08-84c2-2652f9eabfc1",
-      "width": 632,
-      "x": 505,
-      "y": 8,
+      "width": 616,
+      "x": 296,
+      "y": -8,
       "zOrder": 4,
       "numberProperties": [],
       "stringProperties": [],
@@ -55,14 +55,14 @@
       "angle": 0,
       "customSize": true,
       "depth": 1,
-      "height": 96,
+      "height": 128,
       "keepRatio": true,
       "layer": "UI",
       "name": "UIBackground",
       "persistentUuid": "0ba08a8e-45c4-48c3-9b9d-6e36ce212180",
-      "width": 1280,
-      "x": 0,
-      "y": 0,
+      "width": 1296,
+      "x": -8,
+      "y": -32,
       "zOrder": 0,
       "numberProperties": [],
       "stringProperties": [],
@@ -73,32 +73,44 @@
       "customSize": false,
       "height": 0,
       "keepRatio": true,
-      "layer": "UI",
+      "layer": "InventoryUI",
       "name": "CycleInventoryNext",
       "persistentUuid": "9fcb7e05-6894-4cb3-bdd3-fc40ebcbe143",
       "width": 0,
-      "x": 1137,
-      "y": 16,
+      "x": 912,
+      "y": 0,
       "zOrder": 5,
       "numberProperties": [],
       "stringProperties": [],
-      "initialVariables": []
+      "initialVariables": [
+        {
+          "name": "enabled",
+          "type": "boolean",
+          "value": false
+        }
+      ]
     },
     {
       "angle": 0,
       "customSize": false,
       "height": 0,
       "keepRatio": true,
-      "layer": "UI",
+      "layer": "InventoryUI",
       "name": "CycleInventoryPrevious",
       "persistentUuid": "9a63b003-2817-4b87-826e-ce9586156a7d",
       "width": 0,
-      "x": 441,
-      "y": 16,
+      "x": 232,
+      "y": 0,
       "zOrder": 6,
       "numberProperties": [],
       "stringProperties": [],
-      "initialVariables": []
+      "initialVariables": [
+        {
+          "name": "enabled",
+          "type": "boolean",
+          "value": false
+        }
+      ]
     },
     {
       "angle": 0,
@@ -209,54 +221,89 @@
       "customSize": false,
       "height": 0,
       "keepRatio": true,
-      "layer": "UI",
+      "layer": "InventoryUI",
       "name": "InspectInventoryItem",
       "persistentUuid": "b061d272-724c-4c50-b75d-0da89d900488",
       "width": 0,
-      "x": 361,
-      "y": 16,
+      "x": 1000,
+      "y": 0,
       "zOrder": 16,
       "numberProperties": [],
       "stringProperties": [],
       "initialVariables": [
         {
           "name": "hoverTooltip",
-          "persistentUuid": "935f0040-2e16-47da-a1db-0b99130e12fa",
           "type": "structure",
           "children": [
             {
-              "name": "font",
-              "persistentUuid": "cff43327-5ac5-4f10-a73e-a23224a19e8d",
-              "type": "string",
-              "value": ""
-            },
-            {
-              "name": "fontSize",
-              "persistentUuid": "e2751bb3-d649-4b6d-b747-7517a10a658c",
-              "type": "number",
-              "value": 25
-            },
-            {
               "name": "text",
-              "persistentUuid": "bd4858d4-382d-4cd9-abf7-4557c6b59ec5",
               "type": "string",
-              "value": "Inspect item"
+              "value": "Examine item"
             },
             {
               "name": "x",
-              "persistentUuid": "91bbd0d6-1feb-4b16-8f52-5226a9ed7de4",
               "type": "number",
-              "value": -16
+              "value": -56
             },
             {
               "name": "y",
-              "persistentUuid": "a6526bc1-1397-43d9-a140-5e1a192c2145",
               "type": "number",
-              "value": 64
+              "value": 56
             }
           ]
         }
       ]
+    },
+    {
+      "angle": 0,
+      "customSize": true,
+      "depth": 1,
+      "height": 80,
+      "keepRatio": true,
+      "layer": "UI",
+      "name": "Backpack",
+      "persistentUuid": "6a459167-3ced-4551-a862-488388b47a7b",
+      "width": 80,
+      "x": 176,
+      "y": 8,
+      "zOrder": 17,
+      "numberProperties": [],
+      "stringProperties": [],
+      "initialVariables": []
+    },
+    {
+      "angle": 0,
+      "customSize": true,
+      "depth": 0.975206611570248,
+      "height": 109.22314049586778,
+      "keepRatio": true,
+      "layer": "InventoryUI",
+      "name": "InventoryUIBackground",
+      "persistentUuid": "6ae42145-774f-493e-abb2-2fa887861a59",
+      "width": 944,
+      "x": 168,
+      "y": -24,
+      "zOrder": 1,
+      "numberProperties": [],
+      "stringProperties": [],
+      "initialVariables": []
+    },
+    {
+      "angle": 0,
+      "customSize": true,
+      "depth": 1,
+      "height": 88,
+      "keepRatio": true,
+      "layer": "UI",
+      "name": "StatueIcon",
+      "persistentUuid": "1b5ab19a-f984-4b71-a619-127c51040a00",
+      "width": 88,
+      "x": 24,
+      "y": 0,
+      "zOrder": 18,
+      "numberProperties": [],
+      "stringProperties": [],
+      "initialVariables": []
     }
   ],
   "editionSettings": {
@@ -271,8 +318,8 @@
     "gridColor": 10401023,
     "gridAlpha": 0.8,
     "snap": true,
-    "zoomFactor": 0.47893418845353114,
+    "zoomFactor": 0.8993607583666821,
     "windowMask": false,
-    "selectedLayer": "MouseCursor"
+    "selectedLayer": "InventoryUI"
   }
 }

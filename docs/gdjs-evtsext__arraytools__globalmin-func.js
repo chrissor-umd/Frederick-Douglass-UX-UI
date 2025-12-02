@@ -9,7 +9,7 @@ gdjs.evtsExt__ArrayTools__GlobalMin = {};
 gdjs.evtsExt__ArrayTools__GlobalMin.idToCallbackMap = new Map();
 
 
-gdjs.evtsExt__ArrayTools__GlobalMin.userFunc0x88d0e8 = function GDJSInlineCode(runtimeScene, eventsFunctionContext) {
+gdjs.evtsExt__ArrayTools__GlobalMin.userFunc0x890a08 = function GDJSInlineCode(runtimeScene, eventsFunctionContext) {
 "use strict";
 /** @type {gdjs.Variable[]} */
 const internalArray = eventsFunctionContext.getArgument("Array").getAllChildrenArray();
@@ -40,7 +40,7 @@ gdjs.evtsExt__ArrayTools__GlobalMin.eventsList0 = function(runtimeScene, eventsF
 {
 
 
-gdjs.evtsExt__ArrayTools__GlobalMin.userFunc0x88d0e8(runtimeScene, eventsFunctionContext);
+gdjs.evtsExt__ArrayTools__GlobalMin.userFunc0x890a08(runtimeScene, eventsFunctionContext);
 
 }
 

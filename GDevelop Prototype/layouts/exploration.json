@@ -38,6 +38,56 @@
           "name": "InspectionText"
         }
       ]
+    },
+    {
+      "name": "CanBeDisabled",
+      "objects": [
+        {
+          "name": "CycleInventoryNext"
+        },
+        {
+          "name": "CycleInventoryPrevious"
+        },
+        {
+          "name": "InventoryItem"
+        },
+        {
+          "name": "InspectInventoryItem"
+        },
+        {
+          "name": "TransitionObject"
+        },
+        {
+          "name": "InteractionObject"
+        },
+        {
+          "name": "ExitInspection"
+        },
+        {
+          "name": "StatueCollectible"
+        },
+        {
+          "name": "ItemObject"
+        },
+        {
+          "name": "InspectionObject"
+        },
+        {
+          "name": "ItemPopupPickupButton"
+        },
+        {
+          "name": "ItemPopupExitButton"
+        },
+        {
+          "name": "InteractionButton"
+        },
+        {
+          "name": "Map"
+        },
+        {
+          "name": "Backpack"
+        }
+      ]
     }
   ],
   "variables": [],
@@ -73,7 +123,7 @@
         }
       ],
       "behaviors": [],
-      "string": "Statues Collected: 0",
+      "string": ": 0",
       "font": "assets/fonts/BilkoOpti-Regular.otf",
       "textAlignment": "left",
       "characterSize": 30,
@@ -96,7 +146,7 @@
         "shadowOpacity": 127,
         "smoothed": true,
         "underlined": false,
-        "text": "Statues Collected: 0",
+        "text": ": 0",
         "font": "assets/fonts/BilkoOpti-Regular.otf",
         "textAlignment": "left",
         "verticalTextAlignment": "center",
@@ -111,7 +161,13 @@
       "name": "CycleInventoryNext",
       "type": "Sprite",
       "updateIfNotVisible": false,
-      "variables": [],
+      "variables": [
+        {
+          "name": "enabled",
+          "type": "boolean",
+          "value": true
+        }
+      ],
       "effects": [
         {
           "effectType": "Adjustment",
@@ -130,7 +186,12 @@
           "booleanParameters": {}
         }
       ],
-      "behaviors": [],
+      "behaviors": [
+        {
+          "name": "Tween",
+          "type": "Tween::TweenBehavior"
+        }
+      ],
       "animations": [
         {
           "name": "",
@@ -189,14 +250,19 @@
       "leftMargin": 20,
       "name": "InventoryBackground",
       "rightMargin": 20,
-      "texture": "assets/ui/ui_inventory.png",
+      "texture": "assets/ui/ui_background_border.png",
       "tiled": false,
       "topMargin": 50,
       "type": "PanelSpriteObject::PanelSprite",
       "width": 960,
       "variables": [],
       "effects": [],
-      "behaviors": []
+      "behaviors": [
+        {
+          "name": "Tween",
+          "type": "Tween::TweenBehavior"
+        }
+      ]
     },
     {
       "adaptCollisionMaskAutomatically": false,
@@ -219,11 +285,50 @@
           "name": "isCursor",
           "type": "boolean",
           "value": false
+        },
+        {
+          "name": "enabled",
+          "type": "boolean",
+          "value": true
         }
       ],
       "effects": [],
-      "behaviors": [],
+      "behaviors": [
+        {
+          "name": "Tween",
+          "type": "Tween::TweenBehavior"
+        }
+      ],
       "animations": [
+        {
+          "name": "Frederick Douglass Figurine",
+          "useMultipleDirections": false,
+          "directions": [
+            {
+              "looping": false,
+              "timeBetweenFrames": 0.08,
+              "sprites": [
+                {
+                  "hasCustomCollisionMask": true,
+                  "image": "assets/objects/gold_frederick_douglass_statue.png",
+                  "points": [],
+                  "originPoint": {
+                    "name": "origine",
+                    "x": 0,
+                    "y": 0
+                  },
+                  "centerPoint": {
+                    "automatic": true,
+                    "name": "centre",
+                    "x": 0,
+                    "y": 0
+                  },
+                  "customCollisionMask": []
+                }
+              ]
+            }
+          ]
+        },
         {
           "name": "Key",
           "useMultipleDirections": false,
@@ -282,82 +387,9 @@
               "sprites": []
             }
           ]
-        }
-      ]
-    },
-    {
-      "adaptCollisionMaskAutomatically": true,
-      "assetStoreId": "",
-      "name": "UIBackground",
-      "type": "Sprite",
-      "updateIfNotVisible": false,
-      "variables": [],
-      "effects": [
-        {
-          "effectType": "ColorReplace",
-          "name": "Effect",
-          "doubleParameters": {
-            "epsilon": 0.4
-          },
-          "stringParameters": {
-            "newColor": "0;0;0",
-            "originalColor": "0;0;0"
-          },
-          "booleanParameters": {}
-        }
-      ],
-      "behaviors": [],
-      "animations": [
-        {
-          "name": "default",
-          "useMultipleDirections": false,
-          "directions": [
-            {
-              "looping": false,
-              "timeBetweenFrames": 0.08,
-              "sprites": [
-                {
-                  "hasCustomCollisionMask": true,
-                  "image": "assets/ui/ui_background_bar.png",
-                  "points": [],
-                  "originPoint": {
-                    "name": "origine",
-                    "x": 0,
-                    "y": 0
-                  },
-                  "centerPoint": {
-                    "automatic": true,
-                    "name": "centre",
-                    "x": 0,
-                    "y": 0
-                  },
-                  "customCollisionMask": [
-                    [
-                      {
-                        "x": 0,
-                        "y": 0
-                      },
-                      {
-                        "x": 128,
-                        "y": 0
-                      },
-                      {
-                        "x": 128,
-                        "y": 128
-                      },
-                      {
-                        "x": 0,
-                        "y": 128
-                      }
-                    ]
-                  ]
-                }
-              ]
-            }
-          ]
         },
         {
-          "name": "TemplatePrompt",
+          "name": "trophy",
           "useMultipleDirections": false,
           "directions": [
             {
@@ -366,7 +398,7 @@
               "sprites": [
                 {
                   "hasCustomCollisionMask": true,
-                  "image": "assets\\ui\\ui_background_template.png",
+                  "image": "assets/objects/statue_placeholder.png",
                   "points": [],
                   "originPoint": {
                     "name": "origine",
@@ -386,16 +418,16 @@
                         "y": 0
                       },
                       {
-                        "x": 128,
+                        "x": 64,
                         "y": 0
                       },
                       {
-                        "x": 128,
-                        "y": 128
+                        "x": 64,
+                        "y": 64
                       },
                       {
                         "x": 0,
-                        "y": 128
+                        "y": 64
                       }
                     ]
                   ]
@@ -412,7 +444,13 @@
       "name": "CycleInventoryPrevious",
       "type": "Sprite",
       "updateIfNotVisible": false,
-      "variables": [],
+      "variables": [
+        {
+          "name": "enabled",
+          "type": "boolean",
+          "value": true
+        }
+      ],
       "effects": [
         {
           "effectType": "Adjustment",
@@ -432,7 +470,12 @@
           "booleanParameters": {}
         }
       ],
-      "behaviors": [],
+      "behaviors": [
+        {
+          "name": "Tween",
+          "type": "Tween::TweenBehavior"
+        }
+      ],
       "animations": [
         {
           "name": "0",
@@ -620,7 +663,12 @@
           "booleanParameters": {}
         }
       ],
-      "behaviors": [],
+      "behaviors": [
+        {
+          "name": "Tween",
+          "type": "Tween::TweenBehavior"
+        }
+      ],
       "animations": [
         {
           "name": "",
@@ -919,6 +967,11 @@
               "value": -32
             }
           ]
+        },
+        {
+          "name": "enabled",
+          "type": "boolean",
+          "value": true
         }
       ],
       "effects": [],
@@ -995,6 +1048,11 @@
           "name": "canUseItems",
           "type": "boolean",
           "value": false
+        },
+        {
+          "name": "enabled",
+          "type": "boolean",
+          "value": true
         }
       ],
       "effects": [],
@@ -1095,7 +1153,13 @@
       "name": "ExitInspection",
       "type": "Sprite",
       "updateIfNotVisible": false,
-      "variables": [],
+      "variables": [
+        {
+          "name": "enabled",
+          "type": "boolean",
+          "value": true
+        }
+      ],
       "effects": [],
       "behaviors": [],
       "animations": [
@@ -1480,12 +1544,28 @@
       "name": "StatueCollectible",
       "type": "Sprite",
       "updateIfNotVisible": false,
-      "variables": [],
+      "variables": [
+        {
+          "name": "itemName",
+          "type": "string",
+          "value": "Frederick Douglass Figurine"
+        },
+        {
+          "name": "itemDescription",
+          "type": "string",
+          "value": "A small figurine of Frederick Douglass."
+        },
+        {
+          "name": "enabled",
+          "type": "boolean",
+          "value": true
+        }
+      ],
       "effects": [],
       "behaviors": [],
       "animations": [
         {
-          "name": "Idle",
+          "name": "Frederick Douglass Figurine",
           "useMultipleDirections": false,
           "directions": [
             {
@@ -1494,7 +1574,7 @@
               "sprites": [
                 {
                   "hasCustomCollisionMask": true,
-                  "image": "assets/objects/statue_placeholder.png",
+                  "image": "assets/objects/gold_frederick_douglass_statue.png",
                   "points": [],
                   "originPoint": {
                     "name": "origine",
@@ -1510,20 +1590,20 @@
                   "customCollisionMask": [
                     [
                       {
-                        "x": 9,
-                        "y": 20
+                        "x": 4,
+                        "y": 5
                       },
                       {
-                        "x": 55,
-                        "y": 20
+                        "x": 65,
+                        "y": 5
                       },
                       {
-                        "x": 55,
-                        "y": 64
+                        "x": 65,
+                        "y": 92
                       },
                       {
-                        "x": 9,
-                        "y": 64
+                        "x": 4,
+                        "y": 92
                       }
                     ]
                   ]
@@ -1614,6 +1694,11 @@
           "name": "showPickupPrompt",
           "type": "boolean",
           "value": true
+        },
+        {
+          "name": "enabled",
+          "type": "boolean",
+          "value": true
         }
       ],
       "effects": [],
@@ -1667,6 +1752,54 @@
               ]
             }
           ]
+        },
+        {
+          "name": "trophy",
+          "useMultipleDirections": false,
+          "directions": [
+            {
+              "looping": false,
+              "timeBetweenFrames": 0.08,
+              "sprites": [
+                {
+                  "hasCustomCollisionMask": true,
+                  "image": "assets/objects/statue_placeholder.png",
+                  "points": [],
+                  "originPoint": {
+                    "name": "origine",
+                    "x": 0,
+                    "y": 0
+                  },
+                  "centerPoint": {
+                    "automatic": true,
+                    "name": "centre",
+                    "x": 0,
+                    "y": 0
+                  },
+                  "customCollisionMask": [
+                    [
+                      {
+                        "x": 7,
+                        "y": 8
+                      },
+                      {
+                        "x": 57,
+                        "y": 8
+                      },
+                      {
+                        "x": 57,
+                        "y": 55
+                      },
+                      {
+                        "x": 7,
+                        "y": 55
+                      }
+                    ]
+                  ]
+                }
+              ]
+            }
+          ]
         }
       ]
     },
@@ -1681,6 +1814,11 @@
           "name": "targetInspection",
           "type": "string",
           "value": ""
+        },
+        {
+          "name": "enabled",
+          "type": "boolean",
+          "value": true
         }
       ],
       "effects": [],
@@ -2021,6 +2159,11 @@
           "name": "targetInteraction",
           "type": "string",
           "value": ""
+        },
+        {
+          "name": "enabled",
+          "type": "boolean",
+          "value": true
         }
       ],
       "effects": [],
@@ -2041,10 +2184,65 @@
       "name": "Map",
       "type": "Sprite",
       "updateIfNotVisible": false,
-      "variables": [],
+      "variables": [
+        {
+          "name": "enabled",
+          "type": "boolean",
+          "value": true
+        }
+      ],
       "effects": [],
       "behaviors": [],
-      "animations": []
+      "animations": [
+        {
+          "name": "",
+          "useMultipleDirections": false,
+          "directions": [
+            {
+              "looping": false,
+              "timeBetweenFrames": 0.08,
+              "sprites": [
+                {
+                  "hasCustomCollisionMask": true,
+                  "image": "assets/ui/map.png",
+                  "points": [],
+                  "originPoint": {
+                    "name": "origine",
+                    "x": 0,
+                    "y": 0
+                  },
+                  "centerPoint": {
+                    "automatic": true,
+                    "name": "centre",
+                    "x": 0,
+                    "y": 0
+                  },
+                  "customCollisionMask": [
+                    [
+                      {
+                        "x": 18,
+                        "y": 13
+                      },
+                      {
+                        "x": 89,
+                        "y": 13
+                      },
+                      {
+                        "x": 89,
+                        "y": 83
+                      },
+                      {
+                        "x": 18,
+                        "y": 83
+                      }
+                    ]
+                  ]
+                }
+              ]
+            }
+          ]
+        }
+      ]
     },
     {
       "assetStoreId": "",
@@ -2151,6 +2349,217 @@
       ],
       "behaviors": [],
       "animations": []
+    },
+    {
+      "adaptCollisionMaskAutomatically": true,
+      "assetStoreId": "",
+      "name": "Backpack",
+      "type": "Sprite",
+      "updateIfNotVisible": false,
+      "variables": [
+        {
+          "name": "enabled",
+          "type": "boolean",
+          "value": true
+        }
+      ],
+      "effects": [],
+      "behaviors": [],
+      "animations": [
+        {
+          "name": "Idle",
+          "useMultipleDirections": false,
+          "directions": [
+            {
+              "looping": false,
+              "timeBetweenFrames": 0.08,
+              "sprites": [
+                {
+                  "hasCustomCollisionMask": true,
+                  "image": "assets/ui/inventory_bag.png",
+                  "points": [],
+                  "originPoint": {
+                    "name": "origine",
+                    "x": 0,
+                    "y": 0
+                  },
+                  "centerPoint": {
+                    "automatic": true,
+                    "name": "centre",
+                    "x": 0,
+                    "y": 0
+                  },
+                  "customCollisionMask": [
+                    [
+                      {
+                        "x": 18,
+                        "y": 10
+                      },
+                      {
+                        "x": 78,
+                        "y": 10
+                      },
+                      {
+                        "x": 78,
+                        "y": 88
+                      },
+                      {
+                        "x": 18,
+                        "y": 88
+                      }
+                    ]
+                  ]
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "name": "Shake",
+          "useMultipleDirections": false,
+          "directions": [
+            {
+              "looping": false,
+              "timeBetweenFrames": 0.08,
+              "sprites": [
+                {
+                  "hasCustomCollisionMask": true,
+                  "image": "assets/ui/inventory_bag.png",
+                  "points": [],
+                  "originPoint": {
+                    "name": "origine",
+                    "x": 0,
+                    "y": 0
+                  },
+                  "centerPoint": {
+                    "automatic": true,
+                    "name": "centre",
+                    "x": 0,
+                    "y": 0
+                  },
+                  "customCollisionMask": [
+                    [
+                      {
+                        "x": 18,
+                        "y": 10
+                      },
+                      {
+                        "x": 78,
+                        "y": 10
+                      },
+                      {
+                        "x": 78,
+                        "y": 88
+                      },
+                      {
+                        "x": 18,
+                        "y": 88
+                      }
+                    ]
+                  ]
+                }
+              ]
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "assetStoreId": "",
+      "bottomMargin": 32,
+      "height": 664,
+      "leftMargin": 32,
+      "name": "InventoryUIBackground",
+      "rightMargin": 32,
+      "texture": "assets/ui/black_background_round.png",
+      "tiled": false,
+      "topMargin": 32,
+      "type": "PanelSpriteObject::PanelSprite",
+      "width": 96,
+      "variables": [],
+      "effects": [],
+      "behaviors": [
+        {
+          "name": "Tween",
+          "type": "Tween::TweenBehavior"
+        }
+      ]
+    },
+    {
+      "adaptCollisionMaskAutomatically": true,
+      "assetStoreId": "",
+      "name": "StatueIcon",
+      "type": "Sprite",
+      "updateIfNotVisible": false,
+      "variables": [],
+      "effects": [],
+      "behaviors": [],
+      "animations": [
+        {
+          "name": "",
+          "useMultipleDirections": false,
+          "directions": [
+            {
+              "looping": false,
+              "timeBetweenFrames": 0.08,
+              "sprites": [
+                {
+                  "hasCustomCollisionMask": true,
+                  "image": "assets/objects/gold_frederick_douglass_statue.png",
+                  "points": [],
+                  "originPoint": {
+                    "name": "origine",
+                    "x": 0,
+                    "y": 0
+                  },
+                  "centerPoint": {
+                    "automatic": true,
+                    "name": "centre",
+                    "x": 0,
+                    "y": 0
+                  },
+                  "customCollisionMask": [
+                    [
+                      {
+                        "x": 4,
+                        "y": 5
+                      },
+                      {
+                        "x": 65,
+                        "y": 5
+                      },
+                      {
+                        "x": 65,
+                        "y": 92
+                      },
+                      {
+                        "x": 4,
+                        "y": 92
+                      }
+                    ]
+                  ]
+                }
+              ]
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "assetStoreId": "",
+      "bottomMargin": 32,
+      "height": 32,
+      "leftMargin": 32,
+      "name": "UIBackground",
+      "rightMargin": 32,
+      "texture": "assets/ui/black_background_round.png",
+      "tiled": false,
+      "topMargin": 32,
+      "type": "PanelSpriteObject::PanelSprite",
+      "width": 32,
+      "variables": [],
+      "effects": [],
+      "behaviors": []
     }
   ],
   "objectsFolderStructure": {
@@ -2199,6 +2608,9 @@
               },
               {
                 "objectName": "InspectInventoryItem"
+              },
+              {
+                "objectName": "InventoryUIBackground"
               }
             ]
           },
@@ -2207,6 +2619,9 @@
           },
           {
             "objectName": "StatuesCollectedCounter"
+          },
+          {
+            "objectName": "Backpack"
           },
           {
             "objectName": "Map"
@@ -2219,6 +2634,9 @@
           },
           {
             "objectName": "FadeScreen"
+          },
+          {
+            "objectName": "StatueIcon"
           }
         ]
       },
@@ -2380,9 +2798,27 @@
       "followBaseLayerCamera": false,
       "isLightingLayer": false,
       "isLocked": false,
-      "name": "UI",
+      "name": "InventoryUI",
       "renderingType": "2d",
       "visibility": true,
+      "cameras": [],
+      "effects": []
+    },
+    {
+      "ambientLightColorB": 200,
+      "ambientLightColorG": 200,
+      "ambientLightColorR": 200,
+      "camera2DPlaneMaxDrawingDistance": 5000,
+      "camera3DFarPlaneDistance": 10000,
+      "camera3DFieldOfView": 45,
+      "camera3DNearPlaneDistance": 3,
+      "cameraType": "",
+      "followBaseLayerCamera": false,
+      "isLightingLayer": false,
+      "isLocked": false,
+      "name": "UI",
+      "renderingType": "2d",
+      "visibility": false,
       "cameras": [],
       "effects": [
         {
@@ -2529,6 +2965,10 @@
     {
       "name": "Text",
       "type": "TextContainerCapability::TextContainerBehavior"
+    },
+    {
+      "name": "Tween",
+      "type": "Tween::TweenBehavior"
     }
   ]
 }

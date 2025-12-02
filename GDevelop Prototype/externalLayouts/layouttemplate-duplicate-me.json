@@ -17,23 +17,6 @@
       "numberProperties": [],
       "stringProperties": [],
       "initialVariables": []
-    },
-    {
-      "angle": 0,
-      "customSize": true,
-      "depth": 1,
-      "height": 96,
-      "keepRatio": true,
-      "layer": "Background",
-      "name": "UIBackground",
-      "persistentUuid": "ea449ca4-091a-425f-954d-abab4f63379e",
-      "width": 1280,
-      "x": 0,
-      "y": 0,
-      "zOrder": 3,
-      "numberProperties": [],
-      "stringProperties": [],
-      "initialVariables": []
     }
   ],
   "editionSettings": {
@@ -48,7 +31,7 @@
     "gridColor": 10401023,
     "gridAlpha": 0.8,
     "snap": true,
-    "zoomFactor": 0.46331118245139974,
+    "zoomFactor": 0.41943397827590795,
     "windowMask": false,
     "selectedLayer": "Background"
   }

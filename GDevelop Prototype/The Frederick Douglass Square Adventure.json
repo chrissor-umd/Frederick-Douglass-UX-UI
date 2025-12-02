@@ -1,9 +1,9 @@
 {
   "firstLayout": "Main Menu",
   "gdVersion": {
-    "build": 248,
+    "build": 249,
     "major": 5,
-    "minor": 5,
+    "minor": 6,
     "revision": 0
   },
   "properties": {
@@ -501,6 +501,30 @@
         "kind": "image",
         "metadata": "",
         "name": "assets/ui/black_rounded_cornerns.png",
+        "smoothed": true,
+        "userAdded": false
+      },
+      {
+        "file": "assets/ui/inventory_bag.png",
+        "kind": "image",
+        "metadata": "",
+        "name": "assets/ui/inventory_bag.png",
+        "smoothed": true,
+        "userAdded": false
+      },
+      {
+        "file": "assets/objects/gold_frederick_douglass_statue.png",
+        "kind": "image",
+        "metadata": "",
+        "name": "assets/objects/gold_frederick_douglass_statue.png",
+        "smoothed": true,
+        "userAdded": false
+      },
+      {
+        "file": "assets/ui/map.png",
+        "kind": "image",
+        "metadata": "",
+        "name": "assets/ui/map.png",
         "smoothed": true,
         "userAdded": false
       }
