@@ -1,9 +1,9 @@
 {
   "firstLayout": "Main Menu",
   "gdVersion": {
-    "build": 249,
+    "build": 245,
     "major": 5,
-    "minor": 6,
+    "minor": 5,
     "revision": 0
   },
   "properties": {
@@ -81,7 +81,6 @@
     "authorUsernames": [],
     "categories": [],
     "playableDevices": [
-      "mobile",
       "mobile"
     ],
     "extensionProperties": [],
@@ -527,8 +526,209 @@
         "name": "assets/ui/map.png",
         "smoothed": true,
         "userAdded": false
+      },
+      {
+        "file": "piece1.png",
+        "kind": "image",
+        "metadata": "",
+        "name": "piece1.png",
+        "smoothed": true,
+        "userAdded": false
+      },
+      {
+        "file": "piece2.png",
+        "kind": "image",
+        "metadata": "",
+        "name": "piece2.png",
+        "smoothed": true,
+        "userAdded": false
+      },
+      {
+        "file": "piece3.png",
+        "kind": "image",
+        "metadata": "",
+        "name": "piece3.png",
+        "smoothed": true,
+        "userAdded": false
+      },
+      {
+        "file": "piece4.png",
+        "kind": "image",
+        "metadata": "",
+        "name": "piece4.png",
+        "smoothed": true,
+        "userAdded": false
+      },
+      {
+        "file": "piece5.png",
+        "kind": "image",
+        "metadata": "",
+        "name": "piece5.png",
+        "smoothed": true,
+        "userAdded": false
+      },
+      {
+        "file": "piece6.png",
+        "kind": "image",
+        "metadata": "",
+        "name": "piece6.png",
+        "smoothed": true,
+        "userAdded": false
+      },
+      {
+        "file": "piece7.png",
+        "kind": "image",
+        "metadata": "",
+        "name": "piece7.png",
+        "smoothed": true,
+        "userAdded": false
+      },
+      {
+        "file": "piece8.png",
+        "kind": "image",
+        "metadata": "",
+        "name": "piece8.png",
+        "smoothed": true,
+        "userAdded": false
+      },
+      {
+        "file": "piece9.png",
+        "kind": "image",
+        "metadata": "",
+        "name": "piece9.png",
+        "smoothed": true,
+        "userAdded": false
+      },
+      {
+        "file": "piece10.png",
+        "kind": "image",
+        "metadata": "",
+        "name": "piece10.png",
+        "smoothed": true,
+        "userAdded": false
+      },
+      {
+        "file": "piece11.png",
+        "kind": "image",
+        "metadata": "",
+        "name": "piece11.png",
+        "smoothed": true,
+        "userAdded": false
+      },
+      {
+        "file": "piece12.png",
+        "kind": "image",
+        "metadata": "",
+        "name": "piece12.png",
+        "smoothed": true,
+        "userAdded": false
+      },
+      {
+        "file": "piece13.png",
+        "kind": "image",
+        "metadata": "",
+        "name": "piece13.png",
+        "smoothed": true,
+        "userAdded": false
+      },
+      {
+        "file": "piece14.png",
+        "kind": "image",
+        "metadata": "",
+        "name": "piece14.png",
+        "smoothed": true,
+        "userAdded": false
+      },
+      {
+        "file": "piece15.png",
+        "kind": "image",
+        "metadata": "",
+        "name": "piece15.png",
+        "smoothed": true,
+        "userAdded": false
+      },
+      {
+        "file": "piece16.png",
+        "kind": "image",
+        "metadata": "",
+        "name": "piece16.png",
+        "smoothed": true,
+        "userAdded": false
+      },
+      {
+        "file": "piece17.png",
+        "kind": "image",
+        "metadata": "",
+        "name": "piece17.png",
+        "smoothed": true,
+        "userAdded": false
+      },
+      {
+        "file": "piece18.png",
+        "kind": "image",
+        "metadata": "",
+        "name": "piece18.png",
+        "smoothed": true,
+        "userAdded": false
+      },
+      {
+        "file": "piece19.png",
+        "kind": "image",
+        "metadata": "",
+        "name": "piece19.png",
+        "smoothed": true,
+        "userAdded": false
+      },
+      {
+        "file": "piece20.png",
+        "kind": "image",
+        "metadata": "",
+        "name": "piece20.png",
+        "smoothed": true,
+        "userAdded": false
+      },
+      {
+        "file": "piece21.png",
+        "kind": "image",
+        "metadata": "",
+        "name": "piece21.png",
+        "smoothed": true,
+        "userAdded": false
+      },
+      {
+        "file": "piece22.png",
+        "kind": "image",
+        "metadata": "",
+        "name": "piece22.png",
+        "smoothed": true,
+        "userAdded": false
+      },
+      {
+        "file": "piece23.png",
+        "kind": "image",
+        "metadata": "",
+        "name": "piece23.png",
+        "smoothed": true,
+        "userAdded": false
+      },
+      {
+        "file": "piece24.png",
+        "kind": "image",
+        "metadata": "",
+        "name": "piece24.png",
+        "smoothed": true,
+        "userAdded": false
+      },
+      {
+        "file": "piece25.png",
+        "kind": "image",
+        "metadata": "",
+        "name": "piece25.png",
+        "smoothed": true,
+        "userAdded": false
       }
-    ]
+    ],
+    "resourceFolders": []
   },
   "objects": [
     {
@@ -675,12 +875,20 @@
     {
       "__REFERENCE_TO_SPLIT_OBJECT": true,
       "referenceTo": "/layouts/marbles"
+    },
+    {
+      "__REFERENCE_TO_SPLIT_OBJECT": true,
+      "referenceTo": "/layouts/puzzle"
     }
   ],
   "externalEvents": [
     {
       "__REFERENCE_TO_SPLIT_OBJECT": true,
       "referenceTo": "/externalEvents/global-eventsjs"
+    },
+    {
+      "__REFERENCE_TO_SPLIT_OBJECT": true,
+      "referenceTo": "/externalEvents/puzzle-events"
     }
   ],
   "eventsFunctionsExtensions": [

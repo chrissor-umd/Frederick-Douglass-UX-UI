@@ -1,0 +1,63 @@
+{
+  "associatedLayout": "Puzzle",
+  "name": "Puzzle Events",
+  "events": [
+    {
+      "type": "BuiltinCommonInstructions::Standard",
+      "conditions": [],
+      "actions": []
+    },
+    {
+      "type": "BuiltinCommonInstructions::JsCode",
+      "inlineCode": [
+        "if (!runtimeScene.getVariables().get(\"hasSpawned\").getAsBoolean()) {",
+        "",
+        "    const objectName = \"PuzzlePiece\";",
+        "    const count = 3;",
+        "",
+        "    const minX = 100;",
+        "    const maxX = 700;",
+        "    const minY = 50;",
+        "    const maxY = 500;",
+        "",
+        "    //Spawn pieces randomly",
+        "    for (let i = 0; i < count; i++) {",
+        "        const randomX = minX + gdjs.random(maxX - minX);",
+        "        const randomY = minY + gdjs.random(maxY - minY);",
+        "",
+        "        const piece = runtimeScene.createObject(objectName);",
+        "        if (!piece) continue;",
+        "",
+        "        piece.setPosition(randomX, randomY);",
+        "        piece.setAnimation(1);",
+        "        piece.setAnimationFrame(i);",
+        "        piece.setScale(0.25);",
+        "        piece.pauseAnimation();",
+        "    }",
+        "",
+        "    runtimeScene.getVariables().get(\"hasSpawned\").setBoolean(true);",
+        "}",
+        "",
+        "const inputManager = runtimeScene.getGame().getInputManager();",
+        "",
+        "const puzzles = runtimeScene.getObjects(\"PuzzlePiece\");",
+        "",
+        "if (inputManager.isMouseButtonReleased(gdjs.InputManager.MOUSE_LEFT_BUTTON)) {",
+        "    //Get cursor position",
+        "    let mouseX = inputManager.getCursorX();",
+        "    let mouseY = inputManager.getCursorY();",
+        "    ",
+        "    //Check if cursor is over any instance",
+        "    for (let i = 0; i < 3; i++) {",
+        "        if (puzzles[i].insideObject(mouseX, mouseY)) {",
+        "            console.log(\"Puzzle released\")",
+        "        }",
+        "    }",
+        "}"
+      ],
+      "parameterObjects": "PuzzlePiece",
+      "useStrict": true,
+      "eventsSheetExpanded": false
+    }
+  ]
+}
