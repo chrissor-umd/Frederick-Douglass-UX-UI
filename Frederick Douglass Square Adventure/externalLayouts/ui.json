@@ -172,7 +172,7 @@
       "persistentUuid": "2f385921-6c06-46f9-953f-d6d4a122d4c0",
       "width": 224,
       "x": 528,
-      "y": 232,
+      "y": 248,
       "zOrder": 13,
       "numberProperties": [],
       "stringProperties": [],
@@ -304,6 +304,22 @@
       "numberProperties": [],
       "stringProperties": [],
       "initialVariables": []
+    },
+    {
+      "angle": 0,
+      "customSize": false,
+      "height": 0,
+      "keepRatio": true,
+      "layer": "UI",
+      "name": "VisibilityToggle",
+      "persistentUuid": "b345152d-4637-4c9a-91d5-55cdd4843809",
+      "width": 0,
+      "x": 992,
+      "y": 16,
+      "zOrder": 19,
+      "numberProperties": [],
+      "stringProperties": [],
+      "initialVariables": []
     }
   ],
   "editionSettings": {
@@ -318,8 +334,8 @@
     "gridColor": 10401023,
     "gridAlpha": 0.8,
     "snap": true,
-    "zoomFactor": 1.1343715797161211,
+    "zoomFactor": 1.0973679695629799,
     "windowMask": false,
-    "selectedLayer": "InventoryUI"
+    "selectedLayer": "UI"
   }
 }

@@ -1276,7 +1276,7 @@ isConditionTrue_0 = false;
 isConditionTrue_0 = gdjs.evtTools.runtimeScene.getTimerElapsedTimeInSecondsOrNaN(runtimeScene, "gameOver") >= 3.5;
 if (isConditionTrue_0) {
 isConditionTrue_0 = false;
-{isConditionTrue_0 = runtimeScene.getOnceTriggers().triggerOnce(13642308);
+{isConditionTrue_0 = runtimeScene.getOnceTriggers().triggerOnce(15135372);
 }
 }
 }

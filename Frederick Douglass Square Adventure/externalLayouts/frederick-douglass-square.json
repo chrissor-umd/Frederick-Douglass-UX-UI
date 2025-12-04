@@ -38,47 +38,6 @@
           "name": "targetLayout",
           "type": "string",
           "value": "Hornbake Entrance"
-        },
-        {
-          "name": "hoverTooltip",
-          "type": "structure",
-          "children": [
-            {
-              "name": "font",
-              "type": "string",
-              "value": ""
-            },
-            {
-              "name": "fontSize",
-              "type": "number",
-              "value": 25
-            },
-            {
-              "name": "outlineColor",
-              "type": "string",
-              "value": "0,0,0"
-            },
-            {
-              "name": "outlineThickness",
-              "type": "number",
-              "value": 4
-            },
-            {
-              "name": "text",
-              "type": "string",
-              "value": "Enter Hornbake"
-            },
-            {
-              "name": "x",
-              "type": "number",
-              "value": 0
-            },
-            {
-              "name": "y",
-              "type": "number",
-              "value": -32
-            }
-          ]
         }
       ]
     },
@@ -1249,7 +1208,7 @@
     "gridColor": 10401023,
     "gridAlpha": 0.8,
     "snap": true,
-    "zoomFactor": 0.23089183385225176,
+    "zoomFactor": 0.584378441074101,
     "windowMask": false,
     "selectedLayer": "InspectionObjects"
   }

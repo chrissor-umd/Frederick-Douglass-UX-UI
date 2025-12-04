@@ -771,6 +771,102 @@
         "preloadAsSound": false,
         "preloadInCache": false,
         "userAdded": false
+      },
+      {
+        "file": "assets/images/hornbake_entrance.jpg",
+        "kind": "image",
+        "metadata": "",
+        "name": "assets/images/hornbake_entrance.jpg",
+        "smoothed": true,
+        "userAdded": false
+      },
+      {
+        "file": "assets/images/hornbake_stairwell_floor1.jpg",
+        "kind": "image",
+        "metadata": "",
+        "name": "assets/images/hornbake_stairwell_floor1.jpg",
+        "smoothed": true,
+        "userAdded": false
+      },
+      {
+        "file": "assets/images/hornbake_entrance_wide.jpg",
+        "kind": "image",
+        "metadata": "",
+        "name": "assets/images/hornbake_entrance_wide.jpg",
+        "smoothed": true,
+        "userAdded": false
+      },
+      {
+        "file": "assets/ui/toggle_visibility.png",
+        "kind": "image",
+        "metadata": "",
+        "name": "assets/ui/toggle_visibility.png",
+        "smoothed": true,
+        "userAdded": false
+      },
+      {
+        "file": "assets/ui/eye.png",
+        "kind": "image",
+        "metadata": "",
+        "name": "assets/ui/eye.png",
+        "smoothed": true,
+        "userAdded": false
+      },
+      {
+        "file": "assets/ui/ui_background_border_bottom_gold.png",
+        "kind": "image",
+        "metadata": "",
+        "name": "assets/ui/ui_background_border_bottom_gold.png",
+        "smoothed": true,
+        "userAdded": false
+      },
+      {
+        "file": "assets/ui/eye_black.png",
+        "kind": "image",
+        "metadata": "",
+        "name": "assets/ui/eye_black.png",
+        "smoothed": true,
+        "userAdded": false
+      },
+      {
+        "file": "assets/ui/eye_grey.png",
+        "kind": "image",
+        "metadata": "",
+        "name": "assets/ui/eye_grey.png",
+        "smoothed": true,
+        "userAdded": false
+      },
+      {
+        "file": "assets/ui/ui_background_black_border_bottom_gold.png",
+        "kind": "image",
+        "metadata": "",
+        "name": "assets/ui/ui_background_black_border_bottom_gold.png",
+        "smoothed": true,
+        "userAdded": false
+      },
+      {
+        "file": "assets/ui/ui_background_black_border_gold.png",
+        "kind": "image",
+        "metadata": "",
+        "name": "assets/ui/ui_background_black_border_gold.png",
+        "smoothed": true,
+        "userAdded": false
+      },
+      {
+        "file": "assets/ui/ui_background_border_gold.png",
+        "kind": "image",
+        "metadata": "",
+        "name": "assets/ui/ui_background_border_gold.png",
+        "smoothed": true,
+        "userAdded": false
+      },
+      {
+        "file": "assets/ui/ui_background_border_bottom.png",
+        "kind": "image",
+        "metadata": "",
+        "name": "assets/ui/ui_background_border_bottom.png",
+        "smoothed": true,
+        "userAdded": false
       }
     ]
   },
@@ -978,6 +1074,10 @@
     {
       "__REFERENCE_TO_SPLIT_OBJECT": true,
       "referenceTo": "/externalLayouts/hornbake-entrance"
+    },
+    {
+      "__REFERENCE_TO_SPLIT_OBJECT": true,
+      "referenceTo": "/externalLayouts/hornbake-stairwell-main-floor"
     }
   ]
 }

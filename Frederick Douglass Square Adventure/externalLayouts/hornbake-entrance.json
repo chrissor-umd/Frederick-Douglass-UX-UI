@@ -12,11 +12,103 @@
       "persistentUuid": "f5d0205d-4ccd-4dde-9851-5867884be3e7",
       "width": 0,
       "x": 0,
-      "y": 96,
+      "y": 0,
       "zOrder": 2,
-      "numberProperties": [],
+      "numberProperties": [
+        {
+          "name": "animation",
+          "value": 1
+        }
+      ],
       "stringProperties": [],
       "initialVariables": []
+    },
+    {
+      "angle": 0,
+      "customSize": false,
+      "flippedX": true,
+      "height": 0,
+      "keepRatio": true,
+      "layer": "SceneObjects",
+      "name": "TransitionObject",
+      "persistentUuid": "f4a2d1d5-d8fd-44b3-9163-13353bc626b9",
+      "width": 0,
+      "x": 48,
+      "y": 416,
+      "zOrder": 3,
+      "numberProperties": [],
+      "stringProperties": [],
+      "initialVariables": [
+        {
+          "name": "targetLayout",
+          "type": "string",
+          "value": "Frederick Douglass Square"
+        },
+        {
+          "name": "hoverTooltip",
+          "type": "structure",
+          "children": [
+            {
+              "name": "font",
+              "type": "string",
+              "value": ""
+            },
+            {
+              "name": "fontSize",
+              "type": "number",
+              "value": 25
+            },
+            {
+              "name": "text",
+              "type": "string",
+              "value": "null"
+            },
+            {
+              "name": "textAlign",
+              "type": "string",
+              "value": "center"
+            },
+            {
+              "name": "x",
+              "type": "number",
+              "value": 64
+            },
+            {
+              "name": "y",
+              "type": "number",
+              "value": -86
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "angle": 54,
+      "customSize": false,
+      "flippedX": true,
+      "height": 0,
+      "keepRatio": true,
+      "layer": "SceneObjects",
+      "name": "TransitionObject",
+      "persistentUuid": "f9d1d9ef-460b-4f3d-8e2b-9fa43990c471",
+      "width": 0,
+      "x": 333,
+      "y": 349,
+      "zOrder": 4,
+      "numberProperties": [
+        {
+          "name": "animation",
+          "value": 0
+        }
+      ],
+      "stringProperties": [],
+      "initialVariables": [
+        {
+          "name": "targetLayout",
+          "type": "string",
+          "value": "Hornbake Stairwell Main Floor"
+        }
+      ]
     }
   ],
   "editionSettings": {
@@ -31,8 +123,8 @@
     "gridColor": 10401023,
     "gridAlpha": 0.8,
     "snap": true,
-    "zoomFactor": 0.546875000000003,
+    "zoomFactor": 0.49508400737489133,
     "windowMask": false,
-    "selectedLayer": "Background"
+    "selectedLayer": "SceneObjects"
   }
 }
