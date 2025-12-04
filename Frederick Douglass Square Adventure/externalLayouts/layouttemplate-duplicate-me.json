@@ -12,9 +12,14 @@
       "persistentUuid": "f5d0205d-4ccd-4dde-9851-5867884be3e7",
       "width": 0,
       "x": 0,
-      "y": 96,
+      "y": 0,
       "zOrder": 2,
-      "numberProperties": [],
+      "numberProperties": [
+        {
+          "name": "animation",
+          "value": 0
+        }
+      ],
       "stringProperties": [],
       "initialVariables": []
     }
@@ -33,6 +38,6 @@
     "snap": true,
     "zoomFactor": 0.41943397827590795,
     "windowMask": false,
-    "selectedLayer": "Background"
+    "selectedLayer": "SceneObjects"
   }
 }

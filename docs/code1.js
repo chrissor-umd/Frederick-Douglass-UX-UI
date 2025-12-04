@@ -141,13 +141,17 @@ gdjs.ExplorationCode.GDUIBackgroundObjects1= [];
 gdjs.ExplorationCode.GDUIBackgroundObjects2= [];
 gdjs.ExplorationCode.GDUIBackgroundObjects3= [];
 gdjs.ExplorationCode.GDUIBackgroundObjects4= [];
+gdjs.ExplorationCode.GDVisibilityToggleObjects1= [];
+gdjs.ExplorationCode.GDVisibilityToggleObjects2= [];
+gdjs.ExplorationCode.GDVisibilityToggleObjects3= [];
+gdjs.ExplorationCode.GDVisibilityToggleObjects4= [];
 gdjs.ExplorationCode.GDExitMinigameButtonObjects1= [];
 gdjs.ExplorationCode.GDExitMinigameButtonObjects2= [];
 gdjs.ExplorationCode.GDExitMinigameButtonObjects3= [];
 gdjs.ExplorationCode.GDExitMinigameButtonObjects4= [];
 
 
-gdjs.ExplorationCode.userFunc0x98b598 = function GDJSInlineCode(runtimeScene) {
+gdjs.ExplorationCode.userFunc0xd75e30 = function GDJSInlineCode(runtimeScene) {
 "use strict";
 gdjs.FDGameData = {}; // All persistent data is attached to gdjs so that it isn't reset on scene change
 const FDSG = gdjs.FDGameData; // This way data can be accessed through a simpler variable name (FDSG = Frederick-Douglass Square Game)
@@ -179,12 +183,12 @@ gdjs.ExplorationCode.eventsList0 = function(runtimeScene) {
 {
 
 
-gdjs.ExplorationCode.userFunc0x98b598(runtimeScene);
+gdjs.ExplorationCode.userFunc0xd75e30(runtimeScene);
 
 }
 
 
-};gdjs.ExplorationCode.userFunc0xc81478 = function GDJSInlineCode(runtimeScene) {
+};gdjs.ExplorationCode.userFunc0xd77c20 = function GDJSInlineCode(runtimeScene) {
 "use strict";
 const FDSG = gdjs.FDGameData;
 const GameVars = FDSG.GameVars;
@@ -424,12 +428,12 @@ gdjs.ExplorationCode.eventsList1 = function(runtimeScene) {
 {
 
 
-gdjs.ExplorationCode.userFunc0xc81478(runtimeScene);
+gdjs.ExplorationCode.userFunc0xd77c20(runtimeScene);
 
 }
 
 
-};gdjs.ExplorationCode.userFunc0xc5a778 = function GDJSInlineCode(runtimeScene) {
+};gdjs.ExplorationCode.userFunc0xd77d10 = function GDJSInlineCode(runtimeScene) {
 "use strict";
 const FDSG = gdjs.FDGameData;
 const GameVars = FDSG.GameVars;
@@ -527,6 +531,17 @@ FDSG.initScene = function() {
         }
     }
 
+    // Set the tooltip for TransitionObjects
+    for (const obj of GameVars.runtimeScene.getInstancesOf("TransitionObject")) {
+        const targetLayout = obj.getVariables().get("targetLayout").getAsString();
+        const hoverTooltip = obj.getVariables().get("hoverTooltip");
+        if (hoverTooltip.getChildNamed("text").getAsString() == "null") { // Don't overwrite custom settings
+            hoverTooltip.getChildNamed("text").setString(`To ${targetLayout}`);
+            hoverTooltip.getChildNamed("outlineColor").setString("0,0,0");
+            hoverTooltip.getChildNamed("outlineThickness").setNumber(4);
+        }
+    }
+
     // INVENTORY AND ITEM POPUPS
     if (FDSG.PlayerInventory._isInventoryShowing) {
         const inventoryUIBackground = GameVars.runtimeScene.getInstancesOf("InventoryUIBackground")[0];
@@ -550,6 +565,11 @@ FDSG.initScene = function() {
     FDSG.redrawInventory();
 
     FDSG.loadLayoutInstanceData();
+
+    // VISIBILITY EFFECT
+    if (GameVars.visibilityToggled) {
+        GameVars.visibilityToggled = true; // run the setter again
+    }
 }
 
 /**
@@ -736,12 +756,12 @@ gdjs.ExplorationCode.eventsList2 = function(runtimeScene) {
 {
 
 
-gdjs.ExplorationCode.userFunc0xc5a778(runtimeScene);
+gdjs.ExplorationCode.userFunc0xd77d10(runtimeScene);
 
 }
 
 
-};gdjs.ExplorationCode.userFunc0xa3ed58 = function GDJSInlineCode(runtimeScene) {
+};gdjs.ExplorationCode.userFunc0xd2dde8 = function GDJSInlineCode(runtimeScene) {
 "use strict";
 const FDSG = gdjs.FDGameData;
 const GameVars = FDSG.GameVars;
@@ -813,6 +833,7 @@ FDSG.registerClickableObject = function(clickConfig) {
             FDSG.Input.ClickableObjects[object] = { // Register the object as clickable and store the necessary properties
                 clickFunctions: {}, // Stores functions that run when left clicked or tapped
                 hoverFunctions: [], // Stores functions that run when hovering over object
+                hoverEffect: null, // The effect to play on hover
                 cursor: cursor, // What the cursor should turn into when hovering over
                 enabled: true // Useful for disabling interactivity on this object
             }
@@ -829,10 +850,10 @@ FDSG.registerClickableObject = function(clickConfig) {
         }
         // HoverEffect
         if (hoverEffect != null) { // We just use a simple function to add hoverEffects
-            clickObject.hoverFunctions.push((obj) => {
+            clickObject.hoverEffect = (obj) => { 
                 hoverEffect.name = "hoverEffect";
                 obj.addEffect(hoverEffect);
-            });
+            };
         }
         // HoverTooltip
         if (hoverTooltip != null) {
@@ -918,6 +939,7 @@ FDSG.handlePlayerInput = function() {
     // Determine currently hovered object
     if (!GameVars._isFading) { // Don't allow inputs during transition fade
         for (const object in FDSG.Input.ClickableObjects) { // Check each object to determine which object the mouse is hovering over (if any)
+                // First we check each object to see if it's eligible to be clicked
             const clickObject = FDSG.Input.ClickableObjects[object]; // Simpler reference variable
             const instances = GameVars.runtimeScene.getInstancesOf(object).slice();
             for (const instance of instances) { // Check each instance of the object
@@ -932,6 +954,15 @@ FDSG.handlePlayerInput = function() {
                     // We only want to check clicks on interaction objects as long as an item is selected
                 let instanceLayer = instance.getLayer();
                 if (!FDSG.Input.ClickableLayers[instanceLayer]) { continue } // Skip instances on disabled layers
+                if (GameVars.visibilityToggled && GameVars._visibilityLayers.includes(instance.getLayer())) {
+                    if (!instance.hasEffect("visibilityEffect")) { // Check visibilityToggle and effect
+                        instance.addEffect(structuredClone(GameVars._visibilityEffect));
+                    }
+                    FDSG.handleHoverTooltip(instance); // We show all hoverTooltips while visibility is toggled
+                } else if (instance.hasEffect("visibilityEffect")) {
+                    instance.removeEffect("visibilityEffect");
+                }
+                    // Now that we know this instance is clickable, we see if the instance is being hovered 
                 if (isTouchActive) { // If Touchscreen is being used
                     var touchX = input.getTouchX(2);
                     var touchY = input.getTouchY(2);
@@ -983,17 +1014,25 @@ FDSG.handlePlayerInput = function() {
     }
 
     // Manage HoverTooltips
-    FDSG.handleHoverTooltip(hoveredInstance);
+    if (!GameVars.visibilityToggled) { // We already do this for all instances if the visibility effect is toggled
+        FDSG.handleHoverTooltip(hoveredInstance);
 
+    }
     // CLICK & HOVER FUNCTIONS
     if (hoveredInstance != null) {
         FDSG.Input._currentHoveredInstance = hoveredInstance;
+        const hoverData = FDSG.Input.ClickableObjects[hoveredInstance.getName()];
         const instanceVars = hoveredInstance.getVariables();
 
         // HOVER FUNCTIONS
-        for (const func of FDSG.Input.ClickableObjects[hoveredInstance.getName()].hoverFunctions) {
+        for (const func of hoverData.hoverFunctions) {
             // FDSG.debugPrint("log", `running hover function for: ${hoveredInstance.getName()}`);
             func(hoveredInstance);
+        }
+
+        // HOVER EFFECT
+        if (hoverData.hoverEffect != null) {
+            hoverData.hoverEffect(hoveredInstance);
         }
 
         // CLICK FUNCTIONS
@@ -1111,7 +1150,7 @@ FDSG.handleHoverTooltip = function(hoveredInstance) {
     const linksManager = gdjs.LinksManager.getManager(GameVars.runtimeScene);
     for (const hoverTooltip of GameVars.runtimeScene.getInstancesOf("HoverTooltip")) {
         const linkedObjects = linksManager.getObjectsLinkedWith(hoverTooltip);
-        if (!linkedObjects.length > 0 || !linkedObjects.includes(hoveredInstance)) {
+        if (linkedObjects.length == 0 || (!(hoveredInstance in linkedObjects) && !GameVars.visibilityToggled)) {
             hoverTooltip.deleteFromScene(); // Delete all hoverTooltips not tied to the hoveredInstance
         }
     }
@@ -1128,6 +1167,11 @@ FDSG.handleHoverTooltip = function(hoveredInstance) {
             var bold = hoverTooltipData.getChildNamed("bold").getAsBoolean();
             var outlineThickness = hoverTooltipData.getChildNamed("outlineThickness").getAsNumber();
             var outlineColor = hoverTooltipData.getChildNamed("outlineColor").getAsString();
+            var textAlign = hoverTooltipData.getChildNamed("textAlign").getAsString();
+            if (textAlign != "left" && textAlign != "center" && textAlign != "right") {
+                if (textAlign != "0") { FDSG.debugPrint("warn", `invalid textAlign: ${textAlign}`) }
+                textAlign = 'left';
+            }
             var outlineEnabled = false;
             if (text != "null" && text != null) {
                 var font = hoverTooltipData.getChildNamed("font").getAsString();
@@ -1145,7 +1189,8 @@ FDSG.handleHoverTooltip = function(hoveredInstance) {
                     bold: bold,
                     outlineThickness: outlineThickness,
                     outlineColor: outlineColor,
-                    outlineEnabled: outlineEnabled
+                    outlineEnabled: outlineEnabled,
+                    textAlign: textAlign
                 }
             }
         } else if (hoveredInstance.getName() in FDSG.Input.HoverTooltips) {
@@ -1155,15 +1200,24 @@ FDSG.handleHoverTooltip = function(hoveredInstance) {
             const hoverTooltipObj = GameVars.runtimeScene.createObject("HoverTooltip");
             hoverTooltipObj.setLayer(hoveredInstance.getLayer());
             hoverTooltipObj.setZOrder(99);
-            hoverTooltipObj.setX(hoveredInstance.getX() + hoverTooltip.x);
-            hoverTooltipObj.setY(hoveredInstance.getY() + hoverTooltip.y);
+            let targetX = hoveredInstance.getX() + hoveredInstance.getCenterX() + hoverTooltip.x;
+            let targetY = hoveredInstance.getY() + hoveredInstance.getCenterY() + hoverTooltip.y;
             hoverTooltipObj.setText(hoverTooltip.text);
             hoverTooltipObj.setOutlineThickness(hoverTooltip.outlineThickness);
             hoverTooltipObj.setOutlineColor(`rgb(${hoverTooltip.outlineColor})`);
             hoverTooltipObj.setOutlineEnabled(hoverTooltip.outlineEnabled);
             if (hoverTooltip.font != null) { hoverTooltipObj.setFontName(hoverTooltip.font) }
             if (hoverTooltip.fontSize != null) { hoverTooltipObj.setCharacterSize(hoverTooltip.fontSize) }
-            
+            hoverTooltipObj.setLineHeight(hoverTooltipObj.getCharacterSize()*1.5);
+            hoverTooltipObj.update(); // Update so the width is accurate
+            let textAlign = hoverTooltip.textAlign;
+            if (textAlign == "center") {
+                targetX -= hoverTooltipObj.getWidth()/2
+            } else if (textAlign == "right") {
+                targetX -= hoverTooltipObj.getWidth();
+            }
+            hoverTooltipObj.setX(targetX);
+            hoverTooltipObj.setY(targetY);
             linksManager.linkObjects(hoveredInstance, hoverTooltipObj); // Link the objects so we don't create more than one
         }
     }
@@ -1174,12 +1228,12 @@ gdjs.ExplorationCode.eventsList3 = function(runtimeScene) {
 {
 
 
-gdjs.ExplorationCode.userFunc0xa3ed58(runtimeScene);
+gdjs.ExplorationCode.userFunc0xd2dde8(runtimeScene);
 
 }
 
 
-};gdjs.ExplorationCode.userFunc0xa3ef10 = function GDJSInlineCode(runtimeScene) {
+};gdjs.ExplorationCode.userFunc0xcd85a0 = function GDJSInlineCode(runtimeScene) {
 "use strict";
 const FDSG = gdjs.FDGameData;
 const GameVars = FDSG.GameVars;
@@ -1386,12 +1440,12 @@ gdjs.ExplorationCode.eventsList4 = function(runtimeScene) {
 {
 
 
-gdjs.ExplorationCode.userFunc0xa3ef10(runtimeScene);
+gdjs.ExplorationCode.userFunc0xcd85a0(runtimeScene);
 
 }
 
 
-};gdjs.ExplorationCode.userFunc0xc816a8 = function GDJSInlineCode(runtimeScene) {
+};gdjs.ExplorationCode.userFunc0xeaa860 = function GDJSInlineCode(runtimeScene) {
 "use strict";
 const FDSG = gdjs.FDGameData;
 const GameVars = FDSG.GameVars;
@@ -1459,12 +1513,12 @@ gdjs.ExplorationCode.eventsList5 = function(runtimeScene) {
 {
 
 
-gdjs.ExplorationCode.userFunc0xc816a8(runtimeScene);
+gdjs.ExplorationCode.userFunc0xeaa860(runtimeScene);
 
 }
 
 
-};gdjs.ExplorationCode.userFunc0xc80e58 = function GDJSInlineCode(runtimeScene) {
+};gdjs.ExplorationCode.userFunc0xeaa948 = function GDJSInlineCode(runtimeScene) {
 "use strict";
 const FDSG = gdjs.FDGameData;
 const GameVars = FDSG.GameVars;
@@ -1915,12 +1969,12 @@ gdjs.ExplorationCode.eventsList6 = function(runtimeScene) {
 {
 
 
-gdjs.ExplorationCode.userFunc0xc80e58(runtimeScene);
+gdjs.ExplorationCode.userFunc0xeaa948(runtimeScene);
 
 }
 
 
-};gdjs.ExplorationCode.userFunc0xc80fe8 = function GDJSInlineCode(runtimeScene) {
+};gdjs.ExplorationCode.userFunc0xd6bdb0 = function GDJSInlineCode(runtimeScene) {
 "use strict";
 const FDSG = gdjs.FDGameData;
 const GameVars = FDSG.GameVars;
@@ -1940,12 +1994,58 @@ gdjs.ExplorationCode.eventsList7 = function(runtimeScene) {
 {
 
 
-gdjs.ExplorationCode.userFunc0xc80fe8(runtimeScene);
+gdjs.ExplorationCode.userFunc0xd6bdb0(runtimeScene);
 
 }
 
 
-};gdjs.ExplorationCode.userFunc0xa3e220 = function GDJSInlineCode(runtimeScene) {
+};gdjs.ExplorationCode.userFunc0xcd8680 = function GDJSInlineCode(runtimeScene) {
+"use strict";
+const FDSG = gdjs.FDGameData;
+const GameVars = FDSG.GameVars;
+
+// This highlights objects that are clickable and shows all hoverTooltips when the visibilityToggled GameVar is active
+
+Object.assign(GameVars, {
+    _visibilityToggled: false,
+    _visibilityLayers: ["SceneObjects","InspectionObjects"], // Which layers are highlighted by visibilityEffect
+    _visibilityEffect: {
+        effectType:"Outline",
+        name:"visibilityEffect",
+        doubleParameters: { padding: 0, thickness: 4 },
+        stringParameters: { color: "255;255;255" }
+    }
+});
+
+Object.defineProperty(GameVars, "visibilityToggled", {
+    get () { return this._visibilityToggled },
+    set (toggle) {
+        const visibilityButton = GameVars.runtimeScene.getInstancesOf("VisibilityToggle")[0];
+        if (toggle && !visibilityButton.hasEffect("visibilityToggleEffect")) {
+            visibilityButton.addEffect({ // Show that the effect is toggled on the VisibilityToggle button
+                effectType:"Outline",
+                name:"visibilityToggleEffect",
+                doubleParameters: { padding: 0, thickness: 4 },
+                stringParameters: { color: "255;255;255" }
+            });
+        } else if (!toggle && visibilityButton.hasEffect("visibilityToggleEffect")) {
+            visibilityButton.removeEffect("visibilityToggleEffect");
+        }
+        this._visibilityToggled = toggle;
+    },
+})
+};
+gdjs.ExplorationCode.eventsList8 = function(runtimeScene) {
+
+{
+
+
+gdjs.ExplorationCode.userFunc0xcd8680(runtimeScene);
+
+}
+
+
+};gdjs.ExplorationCode.userFunc0xd283b8 = function GDJSInlineCode(runtimeScene) {
 "use strict";
 const FDSG = gdjs.FDGameData;
 const GameVars = FDSG.GameVars;
@@ -1955,17 +2055,17 @@ FDSG.LocationSounds = { // Here we put the sound effect to play for each layout.
     // "Frederick Douglass Square": 
 }
 };
-gdjs.ExplorationCode.eventsList8 = function(runtimeScene) {
+gdjs.ExplorationCode.eventsList9 = function(runtimeScene) {
 
 {
 
 
-gdjs.ExplorationCode.userFunc0xa3e220(runtimeScene);
+gdjs.ExplorationCode.userFunc0xd283b8(runtimeScene);
 
 }
 
 
-};gdjs.ExplorationCode.eventsList9 = function(runtimeScene) {
+};gdjs.ExplorationCode.eventsList10 = function(runtimeScene) {
 
 {
 
@@ -2023,7 +2123,14 @@ gdjs.ExplorationCode.eventsList8(runtimeScene);
 }
 
 
-};gdjs.ExplorationCode.userFunc0xc5ad28 = function GDJSInlineCode(runtimeScene) {
+{
+
+
+gdjs.ExplorationCode.eventsList9(runtimeScene);
+}
+
+
+};gdjs.ExplorationCode.userFunc0xc1df90 = function GDJSInlineCode(runtimeScene) {
 "use strict";
 const FDSG = gdjs.FDGameData;
 const GameVars = FDSG.GameVars;
@@ -2065,6 +2172,7 @@ const outlineHoverEffect = { // This is a commonly used effect so its easier to 
         stringParameters: { color: "255;255;255" }
     }
 
+// NAVIGATION
 
 FDSG.registerClickableObject({
     object: "TransitionObject",
@@ -2075,6 +2183,8 @@ FDSG.registerClickableObject({
     },
     hoverEffect: structuredClone(outlineHoverEffect)
 });
+
+// INSPECTIONS AND INTERACTIONS
 
 FDSG.registerClickableObject({
     object: "InteractionObject",
@@ -2089,6 +2199,21 @@ FDSG.registerClickableObject({
         }
     },
     cursor: "help",
+    hoverEffect: structuredClone(outlineHoverEffect)
+});
+
+FDSG.registerClickableObject({
+    object: "InteractionButton",
+    duration: "released",
+    clickFunction: (obj) => {
+        const targetInteraction = obj.getVariables().get("targetInteraction").getAsString();
+        if (targetInteraction in FDSG.Interactions) {
+            FDSG.debugPrint("log", `running interactionFunction ${targetInteraction} from ${obj.getName()}`);
+            FDSG.Interactions[targetInteraction].interactionFunction(obj); // Run the interaction
+        } else {
+            FDSG.debugPrint("warn",`interaction ${targetInteraction} not registered`);
+        }
+    },
     hoverEffect: structuredClone(outlineHoverEffect)
 });
 
@@ -2112,6 +2237,8 @@ FDSG.registerClickableObject({
     },
     hoverEffect: structuredClone(outlineHoverEffect)
 });
+
+// ITEMS AND COLLECTIBLES
 
 FDSG.registerClickableObject({
     object: "StatueCollectible",
@@ -2147,6 +2274,8 @@ FDSG.registerClickableObject({
     },
     hoverEffect: structuredClone(outlineHoverEffect)
 });
+
+// INVENTORY
 
 FDSG.registerClickableObject({
     object: "Backpack",
@@ -2240,33 +2369,30 @@ FDSG.registerClickableObject({
     hoverEffect: structuredClone(outlineHoverEffect)
 });
 
+// ADDITIONAL UI
+
 FDSG.registerClickableObject({
-    object: "InteractionButton",
+    object: "VisibilityToggle",
     duration: "released",
     clickFunction: (obj) => {
-        const targetInteraction = obj.getVariables().get("targetInteraction").getAsString();
-        if (targetInteraction in FDSG.Interactions) {
-            FDSG.debugPrint("log", `running interactionFunction ${targetInteraction} from ${obj.getName()}`);
-            FDSG.Interactions[targetInteraction].interactionFunction(obj); // Run the interaction
-        } else {
-            FDSG.debugPrint("warn",`interaction ${targetInteraction} not registered`);
-        }
+        const toggled = GameVars.visibilityToggled;
+        GameVars.visibilityToggled = !toggled;
     },
     hoverEffect: structuredClone(outlineHoverEffect)
 });
 
 };
-gdjs.ExplorationCode.eventsList10 = function(runtimeScene) {
+gdjs.ExplorationCode.eventsList11 = function(runtimeScene) {
 
 {
 
 
-gdjs.ExplorationCode.userFunc0xc5ad28(runtimeScene);
+gdjs.ExplorationCode.userFunc0xc1df90(runtimeScene);
 
 }
 
 
-};gdjs.ExplorationCode.userFunc0xc5afc8 = function GDJSInlineCode(runtimeScene) {
+};gdjs.ExplorationCode.userFunc0xd82138 = function GDJSInlineCode(runtimeScene) {
 "use strict";
 const FDSG = gdjs.FDGameData;
 const GameVars = FDSG.GameVars;
@@ -2347,41 +2473,34 @@ FDSG.registerInteraction("MarblesMinigame", (obj) => {
     }
 }, true);
 };
-gdjs.ExplorationCode.eventsList11 = function(runtimeScene) {
+gdjs.ExplorationCode.eventsList12 = function(runtimeScene) {
 
 {
 
 
-gdjs.ExplorationCode.userFunc0xc5afc8(runtimeScene);
+gdjs.ExplorationCode.userFunc0xd82138(runtimeScene);
 
 }
 
 
-};gdjs.ExplorationCode.userFunc0x97ba88 = function GDJSInlineCode(runtimeScene) {
+};gdjs.ExplorationCode.userFunc0xd82298 = function GDJSInlineCode(runtimeScene) {
 "use strict";
 const FDSG = gdjs.FDGameData;
 const GameVars = FDSG.GameVars;
 const Game = GameVars.runtimeScene.getGame();
 
 };
-gdjs.ExplorationCode.eventsList12 = function(runtimeScene) {
+gdjs.ExplorationCode.eventsList13 = function(runtimeScene) {
 
 {
 
 
-gdjs.ExplorationCode.userFunc0x97ba88(runtimeScene);
+gdjs.ExplorationCode.userFunc0xd82298(runtimeScene);
 
 }
 
 
-};gdjs.ExplorationCode.eventsList13 = function(runtimeScene) {
-
-{
-
-
-gdjs.ExplorationCode.eventsList11(runtimeScene);
-}
-
+};gdjs.ExplorationCode.eventsList14 = function(runtimeScene) {
 
 {
 
@@ -2390,7 +2509,14 @@ gdjs.ExplorationCode.eventsList12(runtimeScene);
 }
 
 
-};gdjs.ExplorationCode.userFunc0x953bb8 = function GDJSInlineCode(runtimeScene) {
+{
+
+
+gdjs.ExplorationCode.eventsList13(runtimeScene);
+}
+
+
+};gdjs.ExplorationCode.userFunc0xd67960 = function GDJSInlineCode(runtimeScene) {
 "use strict";
 const FDSG = gdjs.FDGameData;
 const GameVars = FDSG.GameVars;
@@ -2422,17 +2548,17 @@ FDSG.registerOnReturnFromMinigame("Marbles", () => {
     }
 });
 };
-gdjs.ExplorationCode.eventsList14 = function(runtimeScene) {
+gdjs.ExplorationCode.eventsList15 = function(runtimeScene) {
 
 {
 
 
-gdjs.ExplorationCode.userFunc0x953bb8(runtimeScene);
+gdjs.ExplorationCode.userFunc0xd67960(runtimeScene);
 
 }
 
 
-};gdjs.ExplorationCode.userFunc0xa3e198 = function GDJSInlineCode(runtimeScene) {
+};gdjs.ExplorationCode.userFunc0xd17858 = function GDJSInlineCode(runtimeScene) {
 "use strict";
 const FDSG = gdjs.FDGameData;
 const GameVars = FDSG.GameVars;
@@ -2469,17 +2595,17 @@ FDSG.registerKeyPressFunction({
     }
 });
 };
-gdjs.ExplorationCode.eventsList15 = function(runtimeScene) {
+gdjs.ExplorationCode.eventsList16 = function(runtimeScene) {
 
 {
 
 
-gdjs.ExplorationCode.userFunc0xa3e198(runtimeScene);
+gdjs.ExplorationCode.userFunc0xd17858(runtimeScene);
 
 }
 
 
-};gdjs.ExplorationCode.eventsList16 = function(runtimeScene) {
+};gdjs.ExplorationCode.eventsList17 = function(runtimeScene) {
 
 {
 
@@ -2491,25 +2617,18 @@ isConditionTrue_0 = false;
 if (isConditionTrue_0) {
 
 { //Subevents
-gdjs.ExplorationCode.eventsList15(runtimeScene);} //End of subevents
+gdjs.ExplorationCode.eventsList16(runtimeScene);} //End of subevents
 }
 
 }
 
 
-};gdjs.ExplorationCode.eventsList17 = function(runtimeScene) {
+};gdjs.ExplorationCode.eventsList18 = function(runtimeScene) {
 
 {
 
 
 gdjs.ExplorationCode.eventsList0(runtimeScene);
-}
-
-
-{
-
-
-gdjs.ExplorationCode.eventsList9(runtimeScene);
 }
 
 
@@ -2523,7 +2642,7 @@ gdjs.ExplorationCode.eventsList10(runtimeScene);
 {
 
 
-gdjs.ExplorationCode.eventsList13(runtimeScene);
+gdjs.ExplorationCode.eventsList11(runtimeScene);
 }
 
 
@@ -2537,7 +2656,14 @@ gdjs.ExplorationCode.eventsList14(runtimeScene);
 {
 
 
-gdjs.ExplorationCode.eventsList16(runtimeScene);
+gdjs.ExplorationCode.eventsList15(runtimeScene);
+}
+
+
+{
+
+
+gdjs.ExplorationCode.eventsList17(runtimeScene);
 }
 
 
@@ -2555,7 +2681,7 @@ let isConditionTrue_0 = false;
 }
 
 
-};gdjs.ExplorationCode.eventsList18 = function(runtimeScene) {
+};gdjs.ExplorationCode.eventsList19 = function(runtimeScene) {
 
 {
 
@@ -2567,13 +2693,13 @@ isConditionTrue_0 = false;
 if (isConditionTrue_0) {
 
 { //Subevents
-gdjs.ExplorationCode.eventsList17(runtimeScene);} //End of subevents
+gdjs.ExplorationCode.eventsList18(runtimeScene);} //End of subevents
 }
 
 }
 
 
-};gdjs.ExplorationCode.userFunc0xa5ce98 = function GDJSInlineCode(runtimeScene) {
+};gdjs.ExplorationCode.userFunc0xd6b748 = function GDJSInlineCode(runtimeScene) {
 "use strict";
 const FDSG = gdjs.FDGameData; // Simpler variables to use as reference
 const GameVars = FDSG.GameVars;
@@ -2625,14 +2751,14 @@ if (GameVars._isFading) {
     }
 }
 };
-gdjs.ExplorationCode.eventsList19 = function(runtimeScene) {
+gdjs.ExplorationCode.eventsList20 = function(runtimeScene) {
 
-};gdjs.ExplorationCode.eventsList20 = function(runtimeScene) {
+};gdjs.ExplorationCode.eventsList21 = function(runtimeScene) {
 
 {
 
 
-gdjs.ExplorationCode.userFunc0xa5ce98(runtimeScene);
+gdjs.ExplorationCode.userFunc0xd6b748(runtimeScene);
 
 }
 
@@ -2668,7 +2794,7 @@ if (isConditionTrue_0) {
 }
 
 
-};gdjs.ExplorationCode.eventsList21 = function(runtimeScene) {
+};gdjs.ExplorationCode.eventsList22 = function(runtimeScene) {
 
 {
 
@@ -2680,14 +2806,14 @@ if (isConditionTrue_0) {
 {
 
 
-gdjs.ExplorationCode.eventsList18(runtimeScene);
+gdjs.ExplorationCode.eventsList19(runtimeScene);
 }
 
 
 {
 
 
-gdjs.ExplorationCode.eventsList20(runtimeScene);
+gdjs.ExplorationCode.eventsList21(runtimeScene);
 }
 
 
@@ -2828,12 +2954,16 @@ gdjs.ExplorationCode.GDUIBackgroundObjects1.length = 0;
 gdjs.ExplorationCode.GDUIBackgroundObjects2.length = 0;
 gdjs.ExplorationCode.GDUIBackgroundObjects3.length = 0;
 gdjs.ExplorationCode.GDUIBackgroundObjects4.length = 0;
+gdjs.ExplorationCode.GDVisibilityToggleObjects1.length = 0;
+gdjs.ExplorationCode.GDVisibilityToggleObjects2.length = 0;
+gdjs.ExplorationCode.GDVisibilityToggleObjects3.length = 0;
+gdjs.ExplorationCode.GDVisibilityToggleObjects4.length = 0;
 gdjs.ExplorationCode.GDExitMinigameButtonObjects1.length = 0;
 gdjs.ExplorationCode.GDExitMinigameButtonObjects2.length = 0;
 gdjs.ExplorationCode.GDExitMinigameButtonObjects3.length = 0;
 gdjs.ExplorationCode.GDExitMinigameButtonObjects4.length = 0;
 
-gdjs.ExplorationCode.eventsList21(runtimeScene);
+gdjs.ExplorationCode.eventsList22(runtimeScene);
 gdjs.ExplorationCode.GDStatuesCollectedCounterObjects1.length = 0;
 gdjs.ExplorationCode.GDStatuesCollectedCounterObjects2.length = 0;
 gdjs.ExplorationCode.GDStatuesCollectedCounterObjects3.length = 0;
@@ -2966,6 +3096,10 @@ gdjs.ExplorationCode.GDUIBackgroundObjects1.length = 0;
 gdjs.ExplorationCode.GDUIBackgroundObjects2.length = 0;
 gdjs.ExplorationCode.GDUIBackgroundObjects3.length = 0;
 gdjs.ExplorationCode.GDUIBackgroundObjects4.length = 0;
+gdjs.ExplorationCode.GDVisibilityToggleObjects1.length = 0;
+gdjs.ExplorationCode.GDVisibilityToggleObjects2.length = 0;
+gdjs.ExplorationCode.GDVisibilityToggleObjects3.length = 0;
+gdjs.ExplorationCode.GDVisibilityToggleObjects4.length = 0;
 gdjs.ExplorationCode.GDExitMinigameButtonObjects1.length = 0;
 gdjs.ExplorationCode.GDExitMinigameButtonObjects2.length = 0;
 gdjs.ExplorationCode.GDExitMinigameButtonObjects3.length = 0;

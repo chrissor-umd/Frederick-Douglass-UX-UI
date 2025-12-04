@@ -20,7 +20,7 @@
     "gridColor": 10401023,
     "gridAlpha": 0.8,
     "snap": true,
-    "zoomFactor": 0.5408086571969217,
+    "zoomFactor": 0.33993887194579986,
     "windowMask": false,
     "selectedLayer": ""
   },
@@ -138,11 +138,6 @@
       "stringProperties": [],
       "initialVariables": [
         {
-          "name": "Answer",
-          "type": "string",
-          "value": "emancipated"
-        },
-        {
           "name": "relativeX",
           "type": "number",
           "value": 328
@@ -151,6 +146,20 @@
           "name": "relativeY",
           "type": "number",
           "value": 344
+        },
+        {
+          "name": "validAnswers",
+          "type": "array",
+          "children": [
+            {
+              "type": "string",
+              "value": "emancipated"
+            },
+            {
+              "type": "string",
+              "value": "Emancipated"
+            }
+          ]
         }
       ]
     },
@@ -187,11 +196,6 @@
       "stringProperties": [],
       "initialVariables": [
         {
-          "name": "Answer",
-          "type": "string",
-          "value": "lamb"
-        },
-        {
           "name": "relativeX",
           "type": "number",
           "value": 752
@@ -200,6 +204,20 @@
           "name": "relativeY",
           "type": "number",
           "value": 200
+        },
+        {
+          "name": "validAnswers",
+          "type": "array",
+          "children": [
+            {
+              "type": "string",
+              "value": "lamb"
+            },
+            {
+              "type": "string",
+              "value": "Lamb"
+            }
+          ]
         }
       ]
     },
@@ -219,9 +237,18 @@
       "stringProperties": [],
       "initialVariables": [
         {
-          "name": "Answer",
-          "type": "string",
-          "value": "masters"
+          "name": "validAnswers",
+          "type": "array",
+          "children": [
+            {
+              "type": "string",
+              "value": "masters"
+            },
+            {
+              "type": "string",
+              "value": "Masters"
+            }
+          ]
         }
       ]
     },
@@ -377,9 +404,18 @@
       "stringProperties": [],
       "initialVariables": [
         {
-          "name": "Answer",
-          "type": "string",
-          "value": "Tuckahoe"
+          "name": "validAnswers",
+          "type": "array",
+          "children": [
+            {
+              "type": "string",
+              "value": "Tuckahoe"
+            },
+            {
+              "type": "string",
+              "value": "tuckahoe"
+            }
+          ]
         }
       ]
     },
@@ -402,6 +438,24 @@
           "name": "Answer",
           "type": "string",
           "value": "twelve"
+        },
+        {
+          "name": "validAnswers",
+          "type": "array",
+          "children": [
+            {
+              "type": "string",
+              "value": "twelve"
+            },
+            {
+              "type": "string",
+              "value": "Twelve"
+            },
+            {
+              "type": "string",
+              "value": "12"
+            }
+          ]
         }
       ]
     },
@@ -444,9 +498,18 @@
       "stringProperties": [],
       "initialVariables": [
         {
-          "name": "Answer",
-          "type": "string",
-          "value": "read"
+          "name": "validAnswers",
+          "type": "array",
+          "children": [
+            {
+              "type": "string",
+              "value": "read"
+            },
+            {
+              "type": "string",
+              "value": "Read"
+            }
+          ]
         }
       ]
     },
@@ -557,9 +620,9 @@
       "type": "TextInput::TextInputObject",
       "variables": [
         {
-          "name": "Answer",
-          "type": "string",
-          "value": ""
+          "name": "validAnswers",
+          "type": "array",
+          "children": []
         },
         {
           "name": "relativeX",
@@ -1005,6 +1068,7 @@
       "colorG": 176,
       "colorR": 74,
       "creationTime": 0,
+      "folded": true,
       "name": "Exit Button",
       "source": "",
       "type": "BuiltinCommonInstructions::Group",
@@ -1130,6 +1194,7 @@
       "colorG": 176,
       "colorR": 74,
       "creationTime": 0,
+      "folded": true,
       "name": "Init QuoteText and QuoteInputs",
       "source": "",
       "type": "BuiltinCommonInstructions::Group",
@@ -1396,6 +1461,7 @@
       "colorG": 176,
       "colorR": 74,
       "creationTime": 0,
+      "folded": true,
       "name": "Tutorial Popup",
       "source": "",
       "type": "BuiltinCommonInstructions::Group",
@@ -1691,28 +1757,112 @@
                 {
                   "type": "BuiltinCommonInstructions::ForEach",
                   "object": "QuoteInput",
-                  "conditions": [
-                    {
-                      "type": {
-                        "value": "TextContainerCapability::TextContainerBehavior::Value"
-                      },
-                      "parameters": [
-                        "QuoteInput",
-                        "Text",
-                        "!=",
-                        "QuoteInput.Answer"
-                      ]
-                    }
-                  ],
+                  "conditions": [],
                   "actions": [
                     {
                       "type": {
                         "value": "SetBooleanVariable"
                       },
                       "parameters": [
-                        "areAllInputsCorrect",
+                        "hasValidAnswer",
                         "False",
                         ""
+                      ]
+                    },
+                    {
+                      "type": {
+                        "value": "SetNumberVariable"
+                      },
+                      "parameters": [
+                        "currentAnswerIndex",
+                        "=",
+                        "0"
+                      ]
+                    }
+                  ],
+                  "events": [
+                    {
+                      "type": "BuiltinCommonInstructions::Repeat",
+                      "repeatExpression": "QuoteInput.VariableChildCount(validAnswers)",
+                      "conditions": [],
+                      "actions": [
+                        {
+                          "type": {
+                            "value": "SetStringVariable"
+                          },
+                          "parameters": [
+                            "currentAnswer",
+                            "=",
+                            "QuoteInput.validAnswers[currentAnswerIndex]"
+                          ]
+                        },
+                        {
+                          "type": {
+                            "value": "SetNumberVariable"
+                          },
+                          "parameters": [
+                            "currentAnswerIndex",
+                            "+",
+                            "1"
+                          ]
+                        }
+                      ],
+                      "events": [
+                        {
+                          "type": "BuiltinCommonInstructions::Standard",
+                          "conditions": [
+                            {
+                              "type": {
+                                "value": "TextContainerCapability::TextContainerBehavior::Value"
+                              },
+                              "parameters": [
+                                "QuoteInput",
+                                "Text",
+                                "=",
+                                "currentAnswer"
+                              ]
+                            }
+                          ],
+                          "actions": [
+                            {
+                              "type": {
+                                "value": "SetBooleanVariable"
+                              },
+                              "parameters": [
+                                "hasValidAnswer",
+                                "True",
+                                ""
+                              ]
+                            }
+                          ]
+                        }
+                      ]
+                    },
+                    {
+                      "type": "BuiltinCommonInstructions::Standard",
+                      "conditions": [
+                        {
+                          "type": {
+                            "value": "BooleanVariable"
+                          },
+                          "parameters": [
+                            "hasValidAnswer",
+                            "False",
+                            ""
+                          ]
+                        }
+                      ],
+                      "actions": [
+                        {
+                          "type": {
+                            "value": "SetBooleanVariable"
+                          },
+                          "parameters": [
+                            "areAllInputsCorrect",
+                            "False",
+                            ""
+                          ]
+                        }
                       ]
                     }
                   ]
@@ -1982,6 +2132,21 @@
                   "name": "areAllInputsCorrect",
                   "type": "boolean",
                   "value": true
+                },
+                {
+                  "name": "currentAnswer",
+                  "type": "string",
+                  "value": ""
+                },
+                {
+                  "name": "hasValidAnswer",
+                  "type": "boolean",
+                  "value": false
+                },
+                {
+                  "name": "currentAnswerIndex",
+                  "type": "number",
+                  "value": 0
                 }
               ]
             }
@@ -2463,7 +2628,7 @@
       "isLocked": false,
       "name": "TutorialPopup",
       "renderingType": "2d",
-      "visibility": true,
+      "visibility": false,
       "cameras": [],
       "effects": []
     }

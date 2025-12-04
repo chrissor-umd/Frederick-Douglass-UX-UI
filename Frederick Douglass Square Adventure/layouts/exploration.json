@@ -20,7 +20,7 @@
     "gridColor": 10401023,
     "gridAlpha": 0.4,
     "snap": true,
-    "zoomFactor": 0.3925161175488235,
+    "zoomFactor": 0.3437520241612324,
     "windowMask": false,
     "selectedLayer": ""
   },
@@ -684,7 +684,7 @@
           ]
         },
         {
-          "name": "FDS East",
+          "name": "Hornbake Entrance",
           "useMultipleDirections": false,
           "directions": [
             {
@@ -693,7 +693,7 @@
               "sprites": [
                 {
                   "hasCustomCollisionMask": true,
-                  "image": "assets\\images\\FDS East.JPG",
+                  "image": "assets/images/hornbake_entrance_wide.jpg",
                   "points": [],
                   "originPoint": {
                     "name": "origine",
@@ -732,7 +732,7 @@
           ]
         },
         {
-          "name": "FDS South",
+          "name": "",
           "useMultipleDirections": false,
           "directions": [
             {
@@ -741,55 +741,7 @@
               "sprites": [
                 {
                   "hasCustomCollisionMask": true,
-                  "image": "assets\\images\\FDS South.JPG",
-                  "points": [],
-                  "originPoint": {
-                    "name": "origine",
-                    "x": 0,
-                    "y": 0
-                  },
-                  "centerPoint": {
-                    "automatic": true,
-                    "name": "centre",
-                    "x": 0,
-                    "y": 0
-                  },
-                  "customCollisionMask": [
-                    [
-                      {
-                        "x": 0,
-                        "y": 0
-                      },
-                      {
-                        "x": 1280,
-                        "y": 0
-                      },
-                      {
-                        "x": 1280,
-                        "y": 720
-                      },
-                      {
-                        "x": 0,
-                        "y": 720
-                      }
-                    ]
-                  ]
-                }
-              ]
-            }
-          ]
-        },
-        {
-          "name": "FDS West",
-          "useMultipleDirections": false,
-          "directions": [
-            {
-              "looping": false,
-              "timeBetweenFrames": 0.08,
-              "sprites": [
-                {
-                  "hasCustomCollisionMask": true,
-                  "image": "assets\\images\\FDS West.JPG",
+                  "image": "assets/images/hornbake_stairwell_floor1.jpg",
                   "points": [],
                   "originPoint": {
                     "name": "origine",
@@ -861,6 +813,11 @@
               "value": "null"
             },
             {
+              "name": "textAlign",
+              "type": "string",
+              "value": "center"
+            },
+            {
               "name": "x",
               "type": "number",
               "value": 0
@@ -868,7 +825,7 @@
             {
               "name": "y",
               "type": "number",
-              "value": -32
+              "value": -86
             }
           ]
         },
@@ -1743,7 +1700,7 @@
       "leftMargin": 32,
       "name": "InspectionBackground",
       "rightMargin": 32,
-      "texture": "assets/ui/black_background_round.png",
+      "texture": "assets/ui/ui_background_black_border_gold.png",
       "tiled": false,
       "topMargin": 32,
       "type": "PanelSpriteObject::PanelSprite",
@@ -1765,7 +1722,7 @@
       "leftMargin": 20,
       "name": "ItemPopupBackground",
       "rightMargin": 20,
-      "texture": "assets/ui/ui_background_border.png",
+      "texture": "assets/ui/ui_background_border_gold.png",
       "tiled": false,
       "topMargin": 20,
       "type": "PanelSpriteObject::PanelSprite",
@@ -2247,7 +2204,7 @@
       "leftMargin": 32,
       "name": "InventoryUIBackground",
       "rightMargin": 32,
-      "texture": "assets/ui/black_background_round.png",
+      "texture": "assets/ui/ui_background_black_border_bottom_gold.png",
       "tiled": false,
       "topMargin": 32,
       "type": "PanelSpriteObject::PanelSprite",
@@ -2333,7 +2290,7 @@
       "leftMargin": 32,
       "name": "UIBackground",
       "rightMargin": 32,
-      "texture": "assets/ui/black_background_round.png",
+      "texture": "assets/ui/ui_background_border_bottom_gold.png",
       "tiled": false,
       "topMargin": 32,
       "type": "PanelSpriteObject::PanelSprite",
@@ -2341,6 +2298,47 @@
       "variables": [],
       "effects": [],
       "behaviors": []
+    },
+    {
+      "adaptCollisionMaskAutomatically": false,
+      "assetStoreId": "",
+      "name": "VisibilityToggle",
+      "type": "Sprite",
+      "updateIfNotVisible": false,
+      "variables": [],
+      "effects": [],
+      "behaviors": [],
+      "animations": [
+        {
+          "name": "",
+          "useMultipleDirections": false,
+          "directions": [
+            {
+              "looping": false,
+              "timeBetweenFrames": 0.08,
+              "sprites": [
+                {
+                  "hasCustomCollisionMask": true,
+                  "image": "assets/ui/eye_grey.png",
+                  "points": [],
+                  "originPoint": {
+                    "name": "origine",
+                    "x": 0,
+                    "y": 0
+                  },
+                  "centerPoint": {
+                    "automatic": true,
+                    "name": "centre",
+                    "x": 0,
+                    "y": 0
+                  },
+                  "customCollisionMask": []
+                }
+              ]
+            }
+          ]
+        }
+      ]
     }
   ],
   "objectsFolderStructure": {
@@ -2406,6 +2404,9 @@
           },
           {
             "objectName": "Map"
+          },
+          {
+            "objectName": "VisibilityToggle"
           },
           {
             "objectName": "DebugText"
@@ -2578,10 +2579,10 @@
       "cameraType": "",
       "followBaseLayerCamera": false,
       "isLightingLayer": false,
-      "isLocked": false,
+      "isLocked": true,
       "name": "InventoryUI",
       "renderingType": "2d",
-      "visibility": true,
+      "visibility": false,
       "cameras": [],
       "effects": []
     },
@@ -2599,7 +2600,7 @@
       "isLocked": false,
       "name": "UI",
       "renderingType": "2d",
-      "visibility": false,
+      "visibility": true,
       "cameras": [],
       "effects": [
         {
@@ -2655,7 +2656,7 @@
       "isLocked": false,
       "name": "InspectionUI",
       "renderingType": "2d",
-      "visibility": true,
+      "visibility": false,
       "cameras": [],
       "effects": []
     },
