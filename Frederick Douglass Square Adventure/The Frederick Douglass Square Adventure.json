@@ -1123,6 +1123,22 @@
         "preloadAsSound": false,
         "preloadInCache": false,
         "userAdded": false
+      },
+      {
+        "file": "assets/objects/marblesNPC.png",
+        "kind": "image",
+        "metadata": "",
+        "name": "assets/objects/marblesNPC.png",
+        "smoothed": true,
+        "userAdded": false
+      },
+      {
+        "file": "assets/images/IMG_0895.jpg",
+        "kind": "image",
+        "metadata": "",
+        "name": "assets/images/IMG_0895.jpg",
+        "smoothed": true,
+        "userAdded": false
       }
     ]
   },
@@ -1258,6 +1274,11 @@
           "value": false
         }
       ]
+    },
+    {
+      "name": "GameOver",
+      "type": "boolean",
+      "value": false
     }
   ],
   "layouts": [

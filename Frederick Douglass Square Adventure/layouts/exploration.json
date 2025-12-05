@@ -20,7 +20,7 @@
     "gridColor": 10401023,
     "gridAlpha": 0.4,
     "snap": true,
-    "zoomFactor": 0.24672586957406328,
+    "zoomFactor": 0.21607397323875494,
     "windowMask": false,
     "selectedLayer": ""
   },
@@ -1053,7 +1053,7 @@
           ]
         },
         {
-          "name": "ChestOpen",
+          "name": "MarblesNPC",
           "useMultipleDirections": false,
           "directions": [
             {
@@ -1062,36 +1062,7 @@
               "sprites": [
                 {
                   "hasCustomCollisionMask": false,
-                  "image": "assets/objects/chest_open.png",
-                  "points": [],
-                  "originPoint": {
-                    "name": "origine",
-                    "x": 0,
-                    "y": 0
-                  },
-                  "centerPoint": {
-                    "automatic": true,
-                    "name": "centre",
-                    "x": 0,
-                    "y": 0
-                  },
-                  "customCollisionMask": []
-                }
-              ]
-            }
-          ]
-        },
-        {
-          "name": "",
-          "useMultipleDirections": false,
-          "directions": [
-            {
-              "looping": false,
-              "timeBetweenFrames": 0.08,
-              "sprites": [
-                {
-                  "hasCustomCollisionMask": false,
-                  "image": "assets/objects/stickman.png",
+                  "image": "assets/objects/marblesNPC.png",
                   "points": [],
                   "originPoint": {
                     "name": "origine",
@@ -1243,7 +1214,7 @@
           ]
         },
         {
-          "name": "FDS West SkyInspection",
+          "name": "FDS MarblesNPC",
           "useMultipleDirections": false,
           "directions": [
             {
@@ -1252,7 +1223,7 @@
               "sprites": [
                 {
                   "hasCustomCollisionMask": true,
-                  "image": "assets\\images\\FDS Sky Inspect.JPG",
+                  "image": "assets/images/IMG_0895.jpg",
                   "points": [],
                   "originPoint": {
                     "name": "origine",
@@ -1503,6 +1474,11 @@
         },
         {
           "name": "enabled",
+          "type": "boolean",
+          "value": true
+        },
+        {
+          "name": "showPopup",
           "type": "boolean",
           "value": true
         }
@@ -2352,22 +2328,58 @@
       "type": "Sprite",
       "updateIfNotVisible": false,
       "variables": [],
-      "effects": [
-        {
-          "effectType": "Outline",
-          "name": "Effect",
-          "doubleParameters": {
-            "padding": 0,
-            "thickness": 4
-          },
-          "stringParameters": {
-            "color": "3;3;3"
-          },
-          "booleanParameters": {}
-        }
-      ],
+      "effects": [],
       "behaviors": [],
-      "animations": []
+      "animations": [
+        {
+          "name": "",
+          "useMultipleDirections": false,
+          "directions": [
+            {
+              "looping": false,
+              "timeBetweenFrames": 0.08,
+              "sprites": [
+                {
+                  "hasCustomCollisionMask": true,
+                  "image": "assets/objects/gold_frederick_douglass_statue.png",
+                  "points": [],
+                  "originPoint": {
+                    "name": "origine",
+                    "x": 0,
+                    "y": 0
+                  },
+                  "centerPoint": {
+                    "automatic": true,
+                    "name": "centre",
+                    "x": 0,
+                    "y": 0
+                  },
+                  "customCollisionMask": [
+                    [
+                      {
+                        "x": 4,
+                        "y": 5
+                      },
+                      {
+                        "x": 65,
+                        "y": 5
+                      },
+                      {
+                        "x": 65,
+                        "y": 92
+                      },
+                      {
+                        "x": 4,
+                        "y": 92
+                      }
+                    ]
+                  ]
+                }
+              ]
+            }
+          ]
+        }
+      ]
     },
     {
       "adaptCollisionMaskAutomatically": false,

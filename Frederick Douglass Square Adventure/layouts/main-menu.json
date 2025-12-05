@@ -20,9 +20,9 @@
     "gridColor": 10401023,
     "gridAlpha": 0.8,
     "snap": true,
-    "zoomFactor": 0.5843784410740942,
+    "zoomFactor": 0.529035740215685,
     "windowMask": false,
-    "selectedLayer": "Credits"
+    "selectedLayer": "GameOver"
   },
   "objectsGroups": [],
   "variables": [],
@@ -97,7 +97,7 @@
       "angle": 0,
       "customSize": true,
       "depth": 1,
-      "height": 720,
+      "height": 448,
       "layer": "Credits",
       "name": "CreditsTextLeft",
       "persistentUuid": "9ab0c9e7-f287-4a2b-980a-beb21c5c8ff5",
@@ -113,7 +113,7 @@
       "angle": 0,
       "customSize": true,
       "depth": 1,
-      "height": 720,
+      "height": 448,
       "layer": "Credits",
       "name": "CreditsTextRight",
       "persistentUuid": "b5a57f12-8e1c-45a4-a5e2-7763ea65e45c",
@@ -137,6 +137,56 @@
       "x": 512,
       "y": 544,
       "zOrder": 9,
+      "numberProperties": [],
+      "stringProperties": [],
+      "initialVariables": []
+    },
+    {
+      "angle": 0,
+      "customSize": true,
+      "depth": 1,
+      "height": 289,
+      "keepRatio": true,
+      "layer": "GameOver",
+      "name": "GameOverTitle",
+      "persistentUuid": "9bddaac8-06dc-4a0b-876a-c42b9a1d4ea3",
+      "width": 1216,
+      "x": 32,
+      "y": 176,
+      "zOrder": 10,
+      "numberProperties": [],
+      "stringProperties": [],
+      "initialVariables": []
+    },
+    {
+      "angle": 0,
+      "customSize": false,
+      "height": 0,
+      "keepRatio": true,
+      "layer": "GameOver",
+      "name": "CreditsButton",
+      "persistentUuid": "eefa8ffd-f660-4dbe-b560-d4a074267470",
+      "width": 0,
+      "x": 512,
+      "y": 544,
+      "zOrder": 11,
+      "numberProperties": [],
+      "stringProperties": [],
+      "initialVariables": []
+    },
+    {
+      "angle": 0,
+      "customSize": true,
+      "depth": 1,
+      "height": 224,
+      "keepRatio": true,
+      "layer": "GameOver",
+      "name": "GameOverText",
+      "persistentUuid": "4434259c-a86f-4809-9e04-fe908bbe2507",
+      "width": 1024,
+      "x": 128,
+      "y": 256,
+      "zOrder": 12,
       "numberProperties": [],
       "stringProperties": [],
       "initialVariables": []
@@ -307,7 +357,7 @@
       "variables": [],
       "effects": [],
       "behaviors": [],
-      "string": "Project Manager & Lead Programmer:\n\nSound:\n\nWebpage Design:\n\nArt and Client Communications:\n\nHistorical Research and Image Assets:\n",
+      "string": "Project Manager & Programmer:\n\nSound:\n\nWebpage Design:\n\nArt Assets:\n\nClient Communications:\n\nHistorical Research and Image Assets:\n",
       "font": "assets\\fonts\\BilkoOpti-Regular.otf",
       "textAlignment": "left",
       "characterSize": 34,
@@ -330,12 +380,12 @@
         "shadowOpacity": 127,
         "smoothed": true,
         "underlined": false,
-        "text": "Project Manager & Lead Programmer:\n\nSound:\n\nWebpage Design:\n\nArt and Client Communications:\n\nHistorical Research and Image Assets:\n",
+        "text": "Project Manager & Programmer:\n\nSound:\n\nWebpage Design:\n\nArt Assets:\n\nClient Communications:\n\nHistorical Research and Image Assets:\n",
         "font": "assets\\fonts\\BilkoOpti-Regular.otf",
         "textAlignment": "left",
         "verticalTextAlignment": "top",
         "characterSize": 34,
-        "lineHeight": 40,
+        "lineHeight": 35,
         "color": "255;255;255"
       }
     },
@@ -350,7 +400,7 @@
       "variables": [],
       "effects": [],
       "behaviors": [],
-      "string": "Christian Sorensen\n\nChristian Sorensen\n\nKyle Tu\n\nMichelle Starcher\n\nSamnorp Deung,\nMarcello Soriano\n",
+      "string": "Christian Sorensen\n\nChristian Sorensen\n\nKyle Tu\n\nMichelle Starcher\n\nMichelle Starcher\n\nSamnorp Deung,\nMarcello Soriano\n",
       "font": "assets\\fonts\\BilkoOpti-Regular.otf",
       "textAlignment": "right",
       "characterSize": 34,
@@ -373,12 +423,98 @@
         "shadowOpacity": 127,
         "smoothed": true,
         "underlined": false,
-        "text": "Christian Sorensen\n\nChristian Sorensen\n\nKyle Tu\n\nMichelle Starcher\n\nSamnorp Deung,\nMarcello Soriano\n",
+        "text": "Christian Sorensen\n\nChristian Sorensen\n\nKyle Tu\n\nMichelle Starcher\n\nMichelle Starcher\n\nSamnorp Deung,\nMarcello Soriano\n",
         "font": "assets\\fonts\\BilkoOpti-Regular.otf",
         "textAlignment": "right",
         "verticalTextAlignment": "top",
         "characterSize": 34,
-        "lineHeight": 40,
+        "lineHeight": 35,
+        "color": "255;255;255"
+      }
+    },
+    {
+      "assetStoreId": "",
+      "bold": true,
+      "italic": false,
+      "name": "GameOverTitle",
+      "smoothed": true,
+      "type": "TextObject::Text",
+      "underlined": false,
+      "variables": [],
+      "effects": [],
+      "behaviors": [],
+      "string": "You won!",
+      "font": "assets/fonts/BilkoOpti-Regular.otf",
+      "textAlignment": "center",
+      "characterSize": 65,
+      "color": {
+        "b": 255,
+        "g": 255,
+        "r": 255
+      },
+      "content": {
+        "bold": true,
+        "isOutlineEnabled": true,
+        "isShadowEnabled": true,
+        "italic": false,
+        "outlineColor": "0;0;0",
+        "outlineThickness": 8,
+        "shadowAngle": 90,
+        "shadowBlurRadius": 2,
+        "shadowColor": "0;0;0",
+        "shadowDistance": 4,
+        "shadowOpacity": 127,
+        "smoothed": true,
+        "underlined": false,
+        "text": "You won!",
+        "font": "assets/fonts/BilkoOpti-Regular.otf",
+        "textAlignment": "center",
+        "verticalTextAlignment": "center",
+        "characterSize": 65,
+        "lineHeight": 0,
+        "color": "255;255;255"
+      }
+    },
+    {
+      "assetStoreId": "",
+      "bold": true,
+      "italic": false,
+      "name": "GameOverText",
+      "smoothed": true,
+      "type": "TextObject::Text",
+      "underlined": false,
+      "variables": [],
+      "effects": [],
+      "behaviors": [],
+      "string": "You successfully gathered all of the Frederick Douglass figurines, and restored the historical exhibits to their former glory!\n\nThanks for playing!",
+      "font": "assets\\fonts\\BilkoOpti-Regular.otf",
+      "textAlignment": "center",
+      "characterSize": 34,
+      "color": {
+        "b": 255,
+        "g": 255,
+        "r": 255
+      },
+      "content": {
+        "bold": true,
+        "isOutlineEnabled": true,
+        "isShadowEnabled": true,
+        "italic": false,
+        "outlineColor": "0;0;0",
+        "outlineThickness": 4,
+        "shadowAngle": 90,
+        "shadowBlurRadius": 2,
+        "shadowColor": "0;0;0",
+        "shadowDistance": 4,
+        "shadowOpacity": 127,
+        "smoothed": true,
+        "underlined": false,
+        "text": "You successfully gathered all of the Frederick Douglass figurines, and restored the historical exhibits to their former glory!\n\nThanks for playing!",
+        "font": "assets\\fonts\\BilkoOpti-Regular.otf",
+        "textAlignment": "center",
+        "verticalTextAlignment": "top",
+        "characterSize": 34,
+        "lineHeight": 57,
         "color": "255;255;255"
       }
     }
@@ -388,6 +524,12 @@
     "children": [
       {
         "objectName": "Title"
+      },
+      {
+        "objectName": "GameOverTitle"
+      },
+      {
+        "objectName": "GameOverText"
       },
       {
         "objectName": "StartButton"
@@ -441,20 +583,103 @@
         },
         {
           "type": {
-            "value": "ShowLayer"
-          },
-          "parameters": [
-            "",
-            "\"Main Menu\""
-          ]
-        },
-        {
-          "type": {
             "value": "HideLayer"
           },
           "parameters": [
             "",
             "\"Credits\""
+          ]
+        }
+      ],
+      "events": [
+        {
+          "type": "BuiltinCommonInstructions::Standard",
+          "conditions": [
+            {
+              "type": {
+                "value": "BooleanVariable"
+              },
+              "parameters": [
+                "GameOver",
+                "False",
+                ""
+              ]
+            }
+          ],
+          "actions": [
+            {
+              "type": {
+                "value": "ShowLayer"
+              },
+              "parameters": [
+                "",
+                "\"Main Menu\""
+              ]
+            },
+            {
+              "type": {
+                "value": "HideLayer"
+              },
+              "parameters": [
+                "",
+                "\"GameOver\""
+              ]
+            },
+            {
+              "type": {
+                "value": "PanelSpriteButton::PanelSpriteButton::Activate"
+              },
+              "parameters": [
+                "StartButton",
+                "yes",
+                ""
+              ]
+            }
+          ]
+        },
+        {
+          "type": "BuiltinCommonInstructions::Standard",
+          "conditions": [
+            {
+              "type": {
+                "value": "BooleanVariable"
+              },
+              "parameters": [
+                "GameOver",
+                "True",
+                ""
+              ]
+            }
+          ],
+          "actions": [
+            {
+              "type": {
+                "value": "ShowLayer"
+              },
+              "parameters": [
+                "",
+                "\"GameOver\""
+              ]
+            },
+            {
+              "type": {
+                "value": "HideLayer"
+              },
+              "parameters": [
+                "",
+                "\"Main Menu\""
+              ]
+            },
+            {
+              "type": {
+                "value": "PanelSpriteButton::PanelSpriteButton::Activate"
+              },
+              "parameters": [
+                "StartButton",
+                "no",
+                ""
+              ]
+            }
           ]
         }
       ]
@@ -625,25 +850,6 @@
             },
             {
               "type": {
-                "value": "ShowLayer"
-              },
-              "parameters": [
-                "",
-                "\"Main Menu\""
-              ]
-            },
-            {
-              "type": {
-                "value": "PanelSpriteButton::PanelSpriteButton::Activate"
-              },
-              "parameters": [
-                "StartButton",
-                "yes",
-                ""
-              ]
-            },
-            {
-              "type": {
                 "value": "PanelSpriteButton::PanelSpriteButton::SetLabelTextOp"
               },
               "parameters": [
@@ -651,6 +857,98 @@
                 "=",
                 "\"Credits\"",
                 ""
+              ]
+            }
+          ],
+          "events": [
+            {
+              "type": "BuiltinCommonInstructions::Standard",
+              "conditions": [
+                {
+                  "type": {
+                    "value": "BooleanVariable"
+                  },
+                  "parameters": [
+                    "GameOver",
+                    "False",
+                    ""
+                  ]
+                }
+              ],
+              "actions": [
+                {
+                  "type": {
+                    "value": "HideLayer"
+                  },
+                  "parameters": [
+                    "",
+                    "\"GameOver\""
+                  ]
+                },
+                {
+                  "type": {
+                    "value": "ShowLayer"
+                  },
+                  "parameters": [
+                    "",
+                    "\"Main Menu\""
+                  ]
+                },
+                {
+                  "type": {
+                    "value": "PanelSpriteButton::PanelSpriteButton::Activate"
+                  },
+                  "parameters": [
+                    "StartButton",
+                    "yes",
+                    ""
+                  ]
+                }
+              ]
+            },
+            {
+              "type": "BuiltinCommonInstructions::Standard",
+              "conditions": [
+                {
+                  "type": {
+                    "value": "BooleanVariable"
+                  },
+                  "parameters": [
+                    "GameOver",
+                    "True",
+                    ""
+                  ]
+                }
+              ],
+              "actions": [
+                {
+                  "type": {
+                    "value": "ShowLayer"
+                  },
+                  "parameters": [
+                    "",
+                    "\"GameOver\""
+                  ]
+                },
+                {
+                  "type": {
+                    "value": "HideLayer"
+                  },
+                  "parameters": [
+                    "",
+                    "\"Main Menu\""
+                  ]
+                },
+                {
+                  "type": {
+                    "value": "PanelSpriteButton::PanelSpriteButton::Activate"
+                  },
+                  "parameters": [
+                    "StartButton",
+                    "no",
+                    ""
+                  ]
+                }
               ]
             }
           ]
@@ -780,6 +1078,24 @@
       "isLightingLayer": false,
       "isLocked": false,
       "name": "Credits",
+      "renderingType": "2d",
+      "visibility": false,
+      "cameras": [],
+      "effects": []
+    },
+    {
+      "ambientLightColorB": 200,
+      "ambientLightColorG": 200,
+      "ambientLightColorR": 200,
+      "camera2DPlaneMaxDrawingDistance": 5000,
+      "camera3DFarPlaneDistance": 10000,
+      "camera3DFieldOfView": 45,
+      "camera3DNearPlaneDistance": 3,
+      "cameraType": "",
+      "followBaseLayerCamera": false,
+      "isLightingLayer": false,
+      "isLocked": false,
+      "name": "GameOver",
       "renderingType": "2d",
       "visibility": true,
       "cameras": [],
