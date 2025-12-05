@@ -2486,6 +2486,18 @@
               "actions": [
                 {
                   "type": {
+                    "value": "PlaySound"
+                  },
+                  "parameters": [
+                    "",
+                    "assets\\sfx\\ui_pop3.wav",
+                    "",
+                    "50",
+                    ""
+                  ]
+                },
+                {
+                  "type": {
                     "value": "SetBooleanVariable"
                   },
                   "parameters": [
@@ -2721,6 +2733,18 @@
               "actions": [
                 {
                   "type": {
+                    "value": "PlaySound"
+                  },
+                  "parameters": [
+                    "",
+                    "assets\\sfx\\ui_pop3.wav",
+                    "",
+                    "50",
+                    ""
+                  ]
+                },
+                {
+                  "type": {
                     "value": "PanelSpriteButton::PanelSpriteButton::Activate"
                   },
                   "parameters": [
@@ -2764,6 +2788,18 @@
                 }
               ],
               "actions": [
+                {
+                  "type": {
+                    "value": "PlaySound"
+                  },
+                  "parameters": [
+                    "",
+                    "assets\\sfx\\ui_pop3.wav",
+                    "",
+                    "50",
+                    ""
+                  ]
+                },
                 {
                   "type": {
                     "value": "PopScene"
@@ -3241,7 +3277,6 @@
       "colorG": 176,
       "colorR": 74,
       "creationTime": 0,
-      "folded": true,
       "name": "Game Over",
       "source": "",
       "type": "BuiltinCommonInstructions::Group",
@@ -3368,6 +3403,18 @@
                 }
               ],
               "actions": [
+                {
+                  "type": {
+                    "value": "PlaySound"
+                  },
+                  "parameters": [
+                    "",
+                    "assets\\sfx\\ui_pop3.wav",
+                    "",
+                    "50",
+                    ""
+                  ]
+                },
                 {
                   "type": {
                     "value": "PopScene"
