@@ -236,6 +236,16 @@
           "type": "structure",
           "children": [
             {
+              "name": "outlineColor",
+              "type": "string",
+              "value": "0,0,0"
+            },
+            {
+              "name": "outlineThickness",
+              "type": "number",
+              "value": 4
+            },
+            {
               "name": "text",
               "type": "string",
               "value": "Examine item"

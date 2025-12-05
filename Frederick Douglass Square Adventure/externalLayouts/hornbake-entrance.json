@@ -148,19 +148,31 @@
     },
     {
       "angle": 0,
-      "customSize": false,
-      "height": 0,
+      "customSize": true,
+      "depth": 0,
+      "height": 32,
       "keepRatio": true,
       "layer": "SceneObjects",
-      "name": "StatueCollectible",
-      "persistentUuid": "bab57653-1634-4d96-9388-52c1ff17c49e",
-      "width": 0,
-      "x": 995,
-      "y": 306,
+      "name": "ItemObject",
+      "persistentUuid": "c159502b-b986-47db-8a81-7c0f97fa7dd4",
+      "width": 32,
+      "x": 1001,
+      "y": 375,
       "zOrder": 5,
       "numberProperties": [],
       "stringProperties": [],
-      "initialVariables": []
+      "initialVariables": [
+        {
+          "name": "itemDescription",
+          "type": "string",
+          "value": "A bag of colorful marbles."
+        },
+        {
+          "name": "itemName",
+          "type": "string",
+          "value": "Marbles"
+        }
+      ]
     }
   ],
   "editionSettings": {
@@ -175,7 +187,7 @@
     "gridColor": 10401023,
     "gridAlpha": 0.8,
     "snap": true,
-    "zoomFactor": 1.3389693172845443,
+    "zoomFactor": 1.1343715797161011,
     "windowMask": false,
     "selectedLayer": "SceneObjects"
   }

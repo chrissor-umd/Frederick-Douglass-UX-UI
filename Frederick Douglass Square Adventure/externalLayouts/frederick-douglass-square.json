@@ -765,7 +765,7 @@
         {
           "name": "innerText",
           "type": "string",
-          "value": "\"You want this figurine? Tell you what, beat me in a game of marbles and it's all yours.\""
+          "value": "\"You want this figurine? Tell you what, beat me in a game of marbles, and it's all yours.\""
         },
         {
           "name": "inspectionName",
@@ -1041,34 +1041,6 @@
     },
     {
       "angle": 0,
-      "customSize": true,
-      "depth": 1,
-      "height": 48,
-      "keepRatio": true,
-      "layer": "SceneObjects",
-      "name": "ItemObject",
-      "persistentUuid": "2832a8eb-fb62-438f-a4f2-9c7e558e5b64",
-      "width": 48,
-      "x": 256,
-      "y": 496,
-      "zOrder": 33,
-      "numberProperties": [],
-      "stringProperties": [],
-      "initialVariables": [
-        {
-          "name": "itemDescription",
-          "type": "string",
-          "value": "A bag of colorful marbles"
-        },
-        {
-          "name": "itemName",
-          "type": "string",
-          "value": "Marbles"
-        }
-      ]
-    },
-    {
-      "angle": 0,
       "customSize": false,
       "height": 0,
       "keepRatio": true,
@@ -1208,7 +1180,7 @@
     "gridColor": 10401023,
     "gridAlpha": 0.8,
     "snap": true,
-    "zoomFactor": 0.584378441074101,
+    "zoomFactor": 0.463311182451404,
     "windowMask": false,
     "selectedLayer": "InspectionObjects"
   }
