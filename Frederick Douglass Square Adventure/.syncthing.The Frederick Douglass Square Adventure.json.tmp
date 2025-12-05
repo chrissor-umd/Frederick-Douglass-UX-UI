@@ -1,0 +1,1299 @@
+{
+  "firstLayout": "Main Menu",
+  "gdVersion": {
+    "build": 249,
+    "major": 5,
+    "minor": 6,
+    "revision": 0
+  },
+  "properties": {
+    "adaptGameResolutionAtRuntime": true,
+    "antialiasingMode": "MSAA",
+    "antialisingEnabledOnMobile": false,
+    "folderProject": true,
+    "orientation": "landscape",
+    "packageName": "com.example.gamename",
+    "pixelsRounding": false,
+    "projectUuid": "00ded32b-de2f-41bc-aa56-3806773e3ab4",
+    "scaleMode": "linear",
+    "sizeOnStartupMode": "",
+    "templateSlug": "",
+    "version": "1.0.0",
+    "name": "The Frederick Douglass Square Adventure",
+    "description": "",
+    "author": "",
+    "windowWidth": 1280,
+    "windowHeight": 720,
+    "latestCompilationDirectory": "/home/chrissor/Documents/Classwork/2025 Fall/INST 490/Frederick-Douglass-UX-UI/docs",
+    "maxFPS": 60,
+    "minFPS": 20,
+    "verticalSync": false,
+    "platformSpecificAssets": {
+      "android-icon-144": "",
+      "android-icon-192": "",
+      "android-icon-36": "",
+      "android-icon-48": "",
+      "android-icon-72": "",
+      "android-icon-96": "",
+      "android-windowSplashScreenAnimatedIcon": "",
+      "desktop-icon-512": "",
+      "ios-icon-100": "",
+      "ios-icon-1024": "",
+      "ios-icon-114": "",
+      "ios-icon-120": "",
+      "ios-icon-144": "",
+      "ios-icon-152": "",
+      "ios-icon-167": "",
+      "ios-icon-180": "",
+      "ios-icon-20": "",
+      "ios-icon-29": "",
+      "ios-icon-40": "",
+      "ios-icon-50": "",
+      "ios-icon-57": "",
+      "ios-icon-58": "",
+      "ios-icon-60": "",
+      "ios-icon-72": "",
+      "ios-icon-76": "",
+      "ios-icon-80": "",
+      "ios-icon-87": ""
+    },
+    "loadingScreen": {
+      "backgroundColor": 0,
+      "backgroundFadeInDuration": 0.2,
+      "backgroundImageResourceName": "",
+      "gdevelopLogoStyle": "light",
+      "logoAndProgressFadeInDuration": 0.2,
+      "logoAndProgressLogoFadeInDelay": 0,
+      "minDuration": 2,
+      "progressBarColor": 16777215,
+      "progressBarHeight": 20,
+      "progressBarMaxWidth": 200,
+      "progressBarMinWidth": 40,
+      "progressBarWidthPercent": 30,
+      "showGDevelopSplash": true,
+      "showProgressBar": true
+    },
+    "watermark": {
+      "placement": "bottom-left",
+      "showWatermark": false
+    },
+    "authorIds": [],
+    "authorUsernames": [],
+    "categories": [],
+    "playableDevices": [
+      "mobile",
+      "mobile"
+    ],
+    "extensionProperties": [],
+    "platforms": [
+      {
+        "name": "GDevelop JS platform"
+      }
+    ],
+    "currentPlatform": "GDevelop JS platform"
+  },
+  "resources": {
+    "resources": [
+      {
+        "file": "assets/fonts/BilkoOpti-Regular.otf",
+        "kind": "font",
+        "metadata": "",
+        "name": "assets/fonts/BilkoOpti-Regular.otf",
+        "userAdded": false
+      },
+      {
+        "file": "assets/images/FDS North.JPG",
+        "kind": "image",
+        "metadata": "",
+        "name": "assets\\images\\FDS North.JPG",
+        "smoothed": true,
+        "userAdded": false
+      },
+      {
+        "file": "assets/images/FDS East.JPG",
+        "kind": "image",
+        "metadata": "",
+        "name": "assets\\images\\FDS East.JPG",
+        "smoothed": true,
+        "userAdded": false
+      },
+      {
+        "file": "assets/images/FDS South.JPG",
+        "kind": "image",
+        "metadata": "",
+        "name": "assets\\images\\FDS South.JPG",
+        "smoothed": true,
+        "userAdded": false
+      },
+      {
+        "file": "assets/images/FDS West.JPG",
+        "kind": "image",
+        "metadata": "",
+        "name": "assets\\images\\FDS West.JPG",
+        "smoothed": true,
+        "userAdded": false
+      },
+      {
+        "file": "assets/fonts/BilkoOpti-Regular.otf",
+        "kind": "font",
+        "metadata": "",
+        "name": "assets\\fonts\\BilkoOpti-Regular.otf",
+        "userAdded": false
+      },
+      {
+        "file": "assets/images/FDS Statue Zoom.JPG",
+        "kind": "image",
+        "metadata": "",
+        "name": "assets\\images\\FDS Statue Zoom.JPG",
+        "smoothed": true,
+        "userAdded": false
+      },
+      {
+        "file": "assets/images/FDS Sky Inspect.JPG",
+        "kind": "image",
+        "metadata": "",
+        "name": "assets\\images\\FDS Sky Inspect.JPG",
+        "smoothed": true,
+        "userAdded": false
+      },
+      {
+        "file": "assets/objects/ItemObjectPlaceholder.png",
+        "kind": "image",
+        "metadata": "",
+        "name": "assets/objects/ItemObjectPlaceholder.png",
+        "smoothed": true,
+        "userAdded": false
+      },
+      {
+        "file": "assets/objects/stickman.png",
+        "kind": "image",
+        "metadata": "",
+        "name": "assets/objects/stickman.png",
+        "smoothed": true,
+        "userAdded": false
+      },
+      {
+        "file": "assets/images/FDS Quote2.JPG",
+        "kind": "image",
+        "metadata": "",
+        "name": "assets/images/FDS Quote2.JPG",
+        "smoothed": true,
+        "userAdded": false
+      },
+      {
+        "file": "assets/textures/stone_brick_floor_large.png",
+        "kind": "image",
+        "metadata": "",
+        "name": "assets/textures/stone_brick_floor_large.png",
+        "smoothed": true,
+        "userAdded": false
+      },
+      {
+        "file": "assets/objects/marbles/marble_purple.png",
+        "kind": "image",
+        "metadata": "",
+        "name": "assets/objects/marbles/marble_purple.png",
+        "smoothed": true,
+        "userAdded": false
+      },
+      {
+        "file": "assets/objects/marbles/marble_blue.png",
+        "kind": "image",
+        "metadata": "",
+        "name": "assets/objects/marbles/marble_blue.png",
+        "smoothed": true,
+        "userAdded": false
+      },
+      {
+        "file": "assets/objects/marbles/marble_green.png",
+        "kind": "image",
+        "metadata": "",
+        "name": "assets/objects/marbles/marble_green.png",
+        "smoothed": true,
+        "userAdded": false
+      },
+      {
+        "file": "assets/objects/marbles/marble_yellow.png",
+        "kind": "image",
+        "metadata": "",
+        "name": "assets/objects/marbles/marble_yellow.png",
+        "smoothed": true,
+        "userAdded": false
+      },
+      {
+        "file": "assets/objects/marbles/marble_orange.png",
+        "kind": "image",
+        "metadata": "",
+        "name": "assets/objects/marbles/marble_orange.png",
+        "smoothed": true,
+        "userAdded": false
+      },
+      {
+        "file": "assets/objects/marbles/marble_red.png",
+        "kind": "image",
+        "metadata": "",
+        "name": "assets/objects/marbles/marble_red.png",
+        "smoothed": true,
+        "userAdded": false
+      },
+      {
+        "file": "assets/textures/circle.png",
+        "kind": "image",
+        "metadata": "",
+        "name": "assets/textures/circle.png",
+        "smoothed": true,
+        "userAdded": false
+      },
+      {
+        "file": "assets/objects/arrow_head.png",
+        "kind": "image",
+        "metadata": "",
+        "name": "assets/objects/arrow_head.png",
+        "smoothed": true,
+        "userAdded": false
+      },
+      {
+        "file": "assets/objects/arrow_base.png",
+        "kind": "image",
+        "metadata": "",
+        "name": "assets/objects/arrow_base.png",
+        "smoothed": true,
+        "userAdded": false
+      },
+      {
+        "file": "assets/ui/plus_one.png",
+        "kind": "image",
+        "metadata": "",
+        "name": "assets\\ui\\plus_one.png",
+        "smoothed": true,
+        "userAdded": false
+      },
+      {
+        "file": "assets/sfx/marble_collide.wav",
+        "kind": "audio",
+        "metadata": "",
+        "name": "assets\\sfx\\marble_collide.wav",
+        "preloadAsMusic": false,
+        "preloadAsSound": false,
+        "preloadInCache": false,
+        "userAdded": false
+      },
+      {
+        "file": "assets/sfx/point_earned.wav",
+        "kind": "audio",
+        "metadata": "",
+        "name": "assets\\sfx\\point_earned.wav",
+        "preloadAsMusic": false,
+        "preloadAsSound": false,
+        "preloadInCache": false,
+        "userAdded": false
+      },
+      {
+        "file": "assets/sfx/shoot_marble.wav",
+        "kind": "audio",
+        "metadata": "",
+        "name": "assets\\sfx\\shoot_marble.wav",
+        "preloadAsMusic": false,
+        "preloadAsSound": false,
+        "preloadInCache": false,
+        "userAdded": false
+      },
+      {
+        "file": "assets/sfx/win.wav",
+        "kind": "audio",
+        "metadata": "",
+        "name": "assets\\sfx\\win.wav",
+        "preloadAsMusic": false,
+        "preloadAsSound": false,
+        "preloadInCache": false,
+        "userAdded": false
+      },
+      {
+        "file": "assets/sfx/lose.wav",
+        "kind": "audio",
+        "metadata": "",
+        "name": "assets\\sfx\\lose.wav",
+        "preloadAsMusic": false,
+        "preloadAsSound": false,
+        "preloadInCache": false,
+        "userAdded": false
+      },
+      {
+        "file": "assets/sfx/place_marble.wav",
+        "kind": "audio",
+        "metadata": "",
+        "name": "assets\\sfx\\place_marble.wav",
+        "preloadAsMusic": false,
+        "preloadAsSound": false,
+        "preloadInCache": false,
+        "userAdded": false
+      },
+      {
+        "file": "assets/ui/x.png",
+        "kind": "image",
+        "metadata": "",
+        "name": "assets/ui/x.png",
+        "smoothed": true,
+        "userAdded": false
+      },
+      {
+        "file": "assets/objects/umd_button_idle.png",
+        "kind": "image",
+        "metadata": "",
+        "name": "assets/objects/umd_button_idle.png",
+        "smoothed": true,
+        "userAdded": false
+      },
+      {
+        "file": "assets/objects/umd_button_hovered.png",
+        "kind": "image",
+        "metadata": "",
+        "name": "assets/objects/umd_button_hovered.png",
+        "smoothed": true,
+        "userAdded": false
+      },
+      {
+        "file": "assets/objects/umd_button_pressed.png",
+        "kind": "image",
+        "metadata": "",
+        "name": "assets/objects/umd_button_pressed.png",
+        "smoothed": true,
+        "userAdded": false
+      },
+      {
+        "file": "assets/ui/ui_background_border.png",
+        "kind": "image",
+        "metadata": "",
+        "name": "assets/ui/ui_background_border.png",
+        "smoothed": true,
+        "userAdded": false
+      },
+      {
+        "file": "assets/ui/ui_inventory_select.png",
+        "kind": "image",
+        "metadata": "",
+        "name": "assets/ui/ui_inventory_select.png",
+        "smoothed": true,
+        "userAdded": false
+      },
+      {
+        "file": "assets/ui/arrow_left_white.png",
+        "kind": "image",
+        "metadata": "",
+        "name": "assets/ui/arrow_left_white.png",
+        "smoothed": true,
+        "userAdded": false
+      },
+      {
+        "file": "assets/ui/arrow_right_white.png",
+        "kind": "image",
+        "metadata": "",
+        "name": "assets/ui/arrow_right_white.png",
+        "smoothed": true,
+        "userAdded": false
+      },
+      {
+        "file": "assets/ui/inspection_object.png",
+        "kind": "image",
+        "metadata": "",
+        "name": "assets/ui/inspection_object.png",
+        "smoothed": true,
+        "userAdded": false
+      },
+      {
+        "file": "assets/objects/black_square.png",
+        "kind": "image",
+        "metadata": "",
+        "name": "assets/objects/black_square.png",
+        "smoothed": true,
+        "userAdded": false
+      },
+      {
+        "file": "assets/ui/arrow_right.png",
+        "kind": "image",
+        "metadata": "",
+        "name": "assets/ui/arrow_right.png",
+        "smoothed": true,
+        "userAdded": false
+      },
+      {
+        "file": "assets/objects/chest_closed.png",
+        "kind": "image",
+        "metadata": "",
+        "name": "assets/objects/chest_closed.png",
+        "smoothed": true,
+        "userAdded": false
+      },
+      {
+        "file": "assets/objects/chest_open.png",
+        "kind": "image",
+        "metadata": "",
+        "name": "assets/objects/chest_open.png",
+        "smoothed": true,
+        "userAdded": false
+      },
+      {
+        "file": "assets/ui/black_background_round.png",
+        "kind": "image",
+        "metadata": "",
+        "name": "assets/ui/black_background_round.png",
+        "smoothed": true,
+        "userAdded": false
+      },
+      {
+        "file": "assets/ui/black_rounded_cornerns.png",
+        "kind": "image",
+        "metadata": "",
+        "name": "assets/ui/black_rounded_cornerns.png",
+        "smoothed": true,
+        "userAdded": false
+      },
+      {
+        "file": "assets/ui/inventory_bag.png",
+        "kind": "image",
+        "metadata": "",
+        "name": "assets/ui/inventory_bag.png",
+        "smoothed": true,
+        "userAdded": false
+      },
+      {
+        "file": "assets/objects/gold_frederick_douglass_statue.png",
+        "kind": "image",
+        "metadata": "",
+        "name": "assets/objects/gold_frederick_douglass_statue.png",
+        "smoothed": true,
+        "userAdded": false
+      },
+      {
+        "file": "assets/ui/map.png",
+        "kind": "image",
+        "metadata": "",
+        "name": "assets/ui/map.png",
+        "smoothed": true,
+        "userAdded": false
+      },
+      {
+        "file": "assets/objects/bag_of_marbles.png",
+        "kind": "image",
+        "metadata": "",
+        "name": "assets\\objects\\bag_of_marbles.png",
+        "smoothed": true,
+        "userAdded": false
+      },
+      {
+        "file": "assets/objects/ItemObjectPlaceholder.png",
+        "kind": "image",
+        "metadata": "",
+        "name": "assets\\objects\\ItemObjectPlaceholder.png",
+        "smoothed": true,
+        "userAdded": false
+      },
+      {
+        "file": "assets/images/fds_hornbake_close2.jpg",
+        "kind": "image",
+        "metadata": "",
+        "name": "assets/images/fds_hornbake_close2.jpg",
+        "smoothed": true,
+        "userAdded": false
+      },
+      {
+        "file": "assets/images/fds_quote3.jpg",
+        "kind": "image",
+        "metadata": "",
+        "name": "assets/images/fds_quote3.jpg",
+        "smoothed": true,
+        "userAdded": false
+      },
+      {
+        "file": "assets/images/fds_quote1.jpg",
+        "kind": "image",
+        "metadata": "",
+        "name": "assets/images/fds_quote1.jpg",
+        "smoothed": true,
+        "userAdded": false
+      },
+      {
+        "file": "assets/ui/arrow_left_small.png",
+        "kind": "image",
+        "metadata": "",
+        "name": "assets/ui/arrow_left_small.png",
+        "smoothed": true,
+        "userAdded": false
+      },
+      {
+        "file": "assets/ui/inventory_bag_open.png",
+        "kind": "image",
+        "metadata": "",
+        "name": "assets/ui/inventory_bag_open.png",
+        "smoothed": true,
+        "userAdded": false
+      },
+      {
+        "file": "assets/objects/painting_scraps/row-1-column-1.png",
+        "kind": "image",
+        "metadata": "",
+        "name": "assets\\objects\\painting_scraps\\row-1-column-1.png",
+        "smoothed": true,
+        "userAdded": false
+      },
+      {
+        "file": "assets/objects/painting_scraps/row-1-column-2.png",
+        "kind": "image",
+        "metadata": "",
+        "name": "assets\\objects\\painting_scraps\\row-1-column-2.png",
+        "smoothed": true,
+        "userAdded": false
+      },
+      {
+        "file": "assets/objects/painting_scraps/row-1-column-3.png",
+        "kind": "image",
+        "metadata": "",
+        "name": "assets\\objects\\painting_scraps\\row-1-column-3.png",
+        "smoothed": true,
+        "userAdded": false
+      },
+      {
+        "file": "assets/objects/painting_scraps/row-1-column-4.png",
+        "kind": "image",
+        "metadata": "",
+        "name": "assets\\objects\\painting_scraps\\row-1-column-4.png",
+        "smoothed": true,
+        "userAdded": false
+      },
+      {
+        "file": "assets/objects/painting_scraps/row-2-column-1.png",
+        "kind": "image",
+        "metadata": "",
+        "name": "assets\\objects\\painting_scraps\\row-2-column-1.png",
+        "smoothed": true,
+        "userAdded": false
+      },
+      {
+        "file": "assets/objects/painting_scraps/row-2-column-2.png",
+        "kind": "image",
+        "metadata": "",
+        "name": "assets\\objects\\painting_scraps\\row-2-column-2.png",
+        "smoothed": true,
+        "userAdded": false
+      },
+      {
+        "file": "assets/objects/painting_scraps/row-2-column-3.png",
+        "kind": "image",
+        "metadata": "",
+        "name": "assets\\objects\\painting_scraps\\row-2-column-3.png",
+        "smoothed": true,
+        "userAdded": false
+      },
+      {
+        "file": "assets/objects/painting_scraps/row-2-column-4.png",
+        "kind": "image",
+        "metadata": "",
+        "name": "assets\\objects\\painting_scraps\\row-2-column-4.png",
+        "smoothed": true,
+        "userAdded": false
+      },
+      {
+        "file": "assets/objects/painting_scraps/row-3-column-1.png",
+        "kind": "image",
+        "metadata": "",
+        "name": "assets\\objects\\painting_scraps\\row-3-column-1.png",
+        "smoothed": true,
+        "userAdded": false
+      },
+      {
+        "file": "assets/objects/painting_scraps/row-3-column-2.png",
+        "kind": "image",
+        "metadata": "",
+        "name": "assets\\objects\\painting_scraps\\row-3-column-2.png",
+        "smoothed": true,
+        "userAdded": false
+      },
+      {
+        "file": "assets/objects/painting_scraps/row-3-column-3.png",
+        "kind": "image",
+        "metadata": "",
+        "name": "assets\\objects\\painting_scraps\\row-3-column-3.png",
+        "smoothed": true,
+        "userAdded": false
+      },
+      {
+        "file": "assets/objects/painting_scraps/row-3-column-4.png",
+        "kind": "image",
+        "metadata": "",
+        "name": "assets\\objects\\painting_scraps\\row-3-column-4.png",
+        "smoothed": true,
+        "userAdded": false
+      },
+      {
+        "file": "assets/objects/painting_scraps/row-4-column-1.png",
+        "kind": "image",
+        "metadata": "",
+        "name": "assets\\objects\\painting_scraps\\row-4-column-1.png",
+        "smoothed": true,
+        "userAdded": false
+      },
+      {
+        "file": "assets/objects/painting_scraps/row-4-column-2.png",
+        "kind": "image",
+        "metadata": "",
+        "name": "assets\\objects\\painting_scraps\\row-4-column-2.png",
+        "smoothed": true,
+        "userAdded": false
+      },
+      {
+        "file": "assets/objects/painting_scraps/row-4-column-3.png",
+        "kind": "image",
+        "metadata": "",
+        "name": "assets\\objects\\painting_scraps\\row-4-column-3.png",
+        "smoothed": true,
+        "userAdded": false
+      },
+      {
+        "file": "assets/objects/painting_scraps/row-4-column-4.png",
+        "kind": "image",
+        "metadata": "",
+        "name": "assets\\objects\\painting_scraps\\row-4-column-4.png",
+        "smoothed": true,
+        "userAdded": false
+      },
+      {
+        "file": "assets/objects/painting_scraps/table_background.jpg",
+        "kind": "image",
+        "metadata": "",
+        "name": "assets\\objects\\painting_scraps\\table_background.jpg",
+        "smoothed": true,
+        "userAdded": false
+      },
+      {
+        "file": "assets/ui/ui_background_border.png",
+        "kind": "image",
+        "metadata": "",
+        "name": "assets\\ui\\ui_background_border.png",
+        "smoothed": true,
+        "userAdded": false
+      },
+      {
+        "file": "assets/sfx/swipe.wav",
+        "kind": "audio",
+        "metadata": "",
+        "name": "assets\\sfx\\swipe.wav",
+        "preloadAsMusic": false,
+        "preloadAsSound": false,
+        "preloadInCache": false,
+        "userAdded": false
+      },
+      {
+        "file": "assets/sfx/whoosh2.wav",
+        "kind": "audio",
+        "metadata": "",
+        "name": "assets\\sfx\\whoosh2.wav",
+        "preloadAsMusic": false,
+        "preloadAsSound": false,
+        "preloadInCache": false,
+        "userAdded": false
+      },
+      {
+        "file": "assets/sfx/footsteps.wav",
+        "kind": "audio",
+        "metadata": "",
+        "name": "assets\\sfx\\footsteps.wav",
+        "preloadAsMusic": false,
+        "preloadAsSound": false,
+        "preloadInCache": false,
+        "userAdded": false
+      },
+      {
+        "file": "assets/sfx/zip_closed.wav",
+        "kind": "audio",
+        "metadata": "",
+        "name": "assets\\sfx\\zip_closed.wav",
+        "preloadAsMusic": false,
+        "preloadAsSound": false,
+        "preloadInCache": false,
+        "userAdded": false
+      },
+      {
+        "file": "assets/sfx/whoosh3.wav",
+        "kind": "audio",
+        "metadata": "",
+        "name": "assets\\sfx\\whoosh3.wav",
+        "preloadAsMusic": false,
+        "preloadAsSound": false,
+        "preloadInCache": false,
+        "userAdded": false
+      },
+      {
+        "file": "assets/sfx/whoosh1.wav",
+        "kind": "audio",
+        "metadata": "",
+        "name": "assets\\sfx\\whoosh1.wav",
+        "preloadAsMusic": false,
+        "preloadAsSound": false,
+        "preloadInCache": false,
+        "userAdded": false
+      },
+      {
+        "file": "assets/sfx/muffled_voices_indoors.wav",
+        "kind": "audio",
+        "metadata": "",
+        "name": "assets\\sfx\\muffled_voices_indoors.wav",
+        "preloadAsMusic": false,
+        "preloadAsSound": false,
+        "preloadInCache": false,
+        "userAdded": false
+      },
+      {
+        "file": "assets/sfx/zip_open.wav",
+        "kind": "audio",
+        "metadata": "",
+        "name": "assets\\sfx\\zip_open.wav",
+        "preloadAsMusic": false,
+        "preloadAsSound": false,
+        "preloadInCache": false,
+        "userAdded": false
+      },
+      {
+        "file": "assets/sfx/whoosh4.wav",
+        "kind": "audio",
+        "metadata": "",
+        "name": "assets\\sfx\\whoosh4.wav",
+        "preloadAsMusic": false,
+        "preloadAsSound": false,
+        "preloadInCache": false,
+        "userAdded": false
+      },
+      {
+        "file": "assets/images/hornbake_entrance.jpg",
+        "kind": "image",
+        "metadata": "",
+        "name": "assets/images/hornbake_entrance.jpg",
+        "smoothed": true,
+        "userAdded": false
+      },
+      {
+        "file": "assets/images/hornbake_stairwell_floor1.jpg",
+        "kind": "image",
+        "metadata": "",
+        "name": "assets/images/hornbake_stairwell_floor1.jpg",
+        "smoothed": true,
+        "userAdded": false
+      },
+      {
+        "file": "assets/images/hornbake_entrance_wide.jpg",
+        "kind": "image",
+        "metadata": "",
+        "name": "assets/images/hornbake_entrance_wide.jpg",
+        "smoothed": true,
+        "userAdded": false
+      },
+      {
+        "file": "assets/ui/ui_background_border_bottom_gold.png",
+        "kind": "image",
+        "metadata": "",
+        "name": "assets/ui/ui_background_border_bottom_gold.png",
+        "smoothed": true,
+        "userAdded": false
+      },
+      {
+        "file": "assets/ui/eye_black.png",
+        "kind": "image",
+        "metadata": "",
+        "name": "assets/ui/eye_black.png",
+        "smoothed": true,
+        "userAdded": false
+      },
+      {
+        "file": "assets/ui/eye_grey.png",
+        "kind": "image",
+        "metadata": "",
+        "name": "assets/ui/eye_grey.png",
+        "smoothed": true,
+        "userAdded": false
+      },
+      {
+        "file": "assets/ui/ui_background_black_border_bottom_gold.png",
+        "kind": "image",
+        "metadata": "",
+        "name": "assets/ui/ui_background_black_border_bottom_gold.png",
+        "smoothed": true,
+        "userAdded": false
+      },
+      {
+        "file": "assets/ui/ui_background_black_border_gold.png",
+        "kind": "image",
+        "metadata": "",
+        "name": "assets/ui/ui_background_black_border_gold.png",
+        "smoothed": true,
+        "userAdded": false
+      },
+      {
+        "file": "assets/ui/ui_background_border_gold.png",
+        "kind": "image",
+        "metadata": "",
+        "name": "assets/ui/ui_background_border_gold.png",
+        "smoothed": true,
+        "userAdded": false
+      },
+      {
+        "file": "assets/ui/ui_background_border_bottom.png",
+        "kind": "image",
+        "metadata": "",
+        "name": "assets/ui/ui_background_border_bottom.png",
+        "smoothed": true,
+        "userAdded": false
+      },
+      {
+        "file": "assets/ui/eye_black.png",
+        "kind": "image",
+        "metadata": "",
+        "name": "assets\\ui\\eye_black.png",
+        "smoothed": true,
+        "userAdded": false
+      },
+      {
+        "file": "assets/ui/eye_open.png",
+        "kind": "image",
+        "metadata": "",
+        "name": "assets\\ui\\eye_open.png",
+        "smoothed": true,
+        "userAdded": false
+      },
+      {
+        "file": "assets/sfx/fast_whoosh.wav",
+        "kind": "audio",
+        "metadata": "",
+        "name": "assets\\sfx\\fast_whoosh.wav",
+        "preloadAsMusic": false,
+        "preloadAsSound": false,
+        "preloadInCache": false,
+        "userAdded": false
+      },
+      {
+        "file": "assets/sfx/pickup.wav",
+        "kind": "audio",
+        "metadata": "",
+        "name": "assets\\sfx\\pickup.wav",
+        "preloadAsMusic": false,
+        "preloadAsSound": false,
+        "preloadInCache": false,
+        "userAdded": false
+      },
+      {
+        "file": "assets/sfx/ux_soft.wav",
+        "kind": "audio",
+        "metadata": "",
+        "name": "assets\\sfx\\ux_soft.wav",
+        "preloadAsMusic": false,
+        "preloadAsSound": false,
+        "preloadInCache": false,
+        "userAdded": false
+      },
+      {
+        "file": "assets/sfx/button.wav",
+        "kind": "audio",
+        "metadata": "",
+        "name": "assets\\sfx\\button.wav",
+        "preloadAsMusic": false,
+        "preloadAsSound": false,
+        "preloadInCache": false,
+        "userAdded": false
+      },
+      {
+        "file": "assets/sfx/close_menu.wav",
+        "kind": "audio",
+        "metadata": "",
+        "name": "assets\\sfx\\close_menu.wav",
+        "preloadAsMusic": false,
+        "preloadAsSound": false,
+        "preloadInCache": false,
+        "userAdded": false
+      },
+      {
+        "file": "assets/sfx/ui_pop10.wav",
+        "kind": "audio",
+        "metadata": "",
+        "name": "assets\\sfx\\ui_pop10.wav",
+        "preloadAsMusic": false,
+        "preloadAsSound": false,
+        "preloadInCache": false,
+        "userAdded": false
+      },
+      {
+        "file": "assets/sfx/ui_pop7.wav",
+        "kind": "audio",
+        "metadata": "",
+        "name": "assets\\sfx\\ui_pop7.wav",
+        "preloadAsMusic": false,
+        "preloadAsSound": false,
+        "preloadInCache": false,
+        "userAdded": false
+      },
+      {
+        "file": "assets/sfx/ui_pop5.wav",
+        "kind": "audio",
+        "metadata": "",
+        "name": "assets\\sfx\\ui_pop5.wav",
+        "preloadAsMusic": false,
+        "preloadAsSound": false,
+        "preloadInCache": false,
+        "userAdded": false
+      },
+      {
+        "file": "assets/sfx/ui_pop4.wav",
+        "kind": "audio",
+        "metadata": "",
+        "name": "assets\\sfx\\ui_pop4.wav",
+        "preloadAsMusic": false,
+        "preloadAsSound": false,
+        "preloadInCache": false,
+        "userAdded": false
+      },
+      {
+        "file": "assets/sfx/ui_pop3.wav",
+        "kind": "audio",
+        "metadata": "",
+        "name": "assets\\sfx\\ui_pop3.wav",
+        "preloadAsMusic": false,
+        "preloadAsSound": false,
+        "preloadInCache": false,
+        "userAdded": false
+      },
+      {
+        "file": "assets/sfx/ui_pop2.wav",
+        "kind": "audio",
+        "metadata": "",
+        "name": "assets\\sfx\\ui_pop2.wav",
+        "preloadAsMusic": false,
+        "preloadAsSound": false,
+        "preloadInCache": false,
+        "userAdded": false
+      },
+      {
+        "file": "assets/sfx/ui_pop1.wav",
+        "kind": "audio",
+        "metadata": "",
+        "name": "assets\\sfx\\ui_pop1.wav",
+        "preloadAsMusic": false,
+        "preloadAsSound": false,
+        "preloadInCache": false,
+        "userAdded": false
+      },
+      {
+        "file": "assets/sfx/ui_multipop2.mp3",
+        "kind": "audio",
+        "metadata": "",
+        "name": "assets\\sfx\\ui_multipop2.mp3",
+        "preloadAsMusic": false,
+        "preloadAsSound": false,
+        "preloadInCache": false,
+        "userAdded": false
+      },
+      {
+        "file": "assets/sfx/ui_multipop.wav",
+        "kind": "audio",
+        "metadata": "",
+        "name": "assets\\sfx\\ui_multipop.wav",
+        "preloadAsMusic": false,
+        "preloadAsSound": false,
+        "preloadInCache": false,
+        "userAdded": false
+      },
+      {
+        "file": "assets/images/FDS Statue.JPG",
+        "kind": "image",
+        "metadata": "",
+        "name": "assets\\images\\FDS Statue.JPG",
+        "smoothed": true,
+        "userAdded": false
+      },
+      {
+        "file": "assets/images/fds_hornbake_close2.jpg",
+        "kind": "image",
+        "metadata": "",
+        "name": "assets\\images\\fds_hornbake_close2.jpg",
+        "smoothed": true,
+        "userAdded": false
+      },
+      {
+        "file": "assets/ui/arrow_right.png",
+        "kind": "image",
+        "metadata": "",
+        "name": "assets\\ui\\arrow_right.png",
+        "smoothed": true,
+        "userAdded": false
+      },
+      {
+        "file": "assets/ui/arrow_left.png",
+        "kind": "image",
+        "metadata": "",
+        "name": "assets\\ui\\arrow_left.png",
+        "smoothed": true,
+        "userAdded": false
+      },
+      {
+        "file": "assets/ui/gray_rounded_cornerns.png",
+        "kind": "image",
+        "metadata": "",
+        "name": "assets\\ui\\gray_rounded_cornerns.png",
+        "smoothed": true,
+        "userAdded": false
+      },
+      {
+        "file": "assets/ui/map.png",
+        "kind": "image",
+        "metadata": "",
+        "name": "assets\\ui\\map.png",
+        "smoothed": true,
+        "userAdded": false
+      },
+      {
+        "file": "assets/sfx/close_map.wav",
+        "kind": "audio",
+        "metadata": "",
+        "name": "assets\\sfx\\close_map.wav",
+        "preloadAsMusic": false,
+        "preloadAsSound": false,
+        "preloadInCache": false,
+        "userAdded": false
+      },
+      {
+        "file": "assets/sfx/open_map.wav",
+        "kind": "audio",
+        "metadata": "",
+        "name": "assets\\sfx\\open_map.wav",
+        "preloadAsMusic": false,
+        "preloadAsSound": false,
+        "preloadInCache": false,
+        "userAdded": false
+      },
+      {
+        "file": "assets/images/hornbake_entrance_wide.jpg",
+        "kind": "image",
+        "metadata": "",
+        "name": "assets\\images\\hornbake_entrance_wide.jpg",
+        "smoothed": true,
+        "userAdded": false
+      },
+      {
+        "file": "assets/sfx/outdoor_ambience.wav",
+        "kind": "audio",
+        "metadata": "",
+        "name": "assets\\sfx\\outdoor_ambience.wav",
+        "preloadAsMusic": false,
+        "preloadAsSound": false,
+        "preloadInCache": false,
+        "userAdded": false
+      }
+    ]
+  },
+  "objects": [
+    {
+      "adaptCollisionMaskAutomatically": true,
+      "assetStoreId": "",
+      "name": "ExitMinigameButton",
+      "type": "Sprite",
+      "updateIfNotVisible": false,
+      "variables": [
+        {
+          "name": "enabled",
+          "type": "boolean",
+          "value": true
+        }
+      ],
+      "effects": [
+        {
+          "effectType": "Outline",
+          "name": "Highlight",
+          "doubleParameters": {
+            "padding": 0,
+            "thickness": 4
+          },
+          "stringParameters": {
+            "color": "255;255;255"
+          },
+          "booleanParameters": {}
+        }
+      ],
+      "behaviors": [
+        {
+          "name": "CursorHover",
+          "type": "CursorType::CursorHover",
+          "CursorType": "pointer"
+        }
+      ],
+      "animations": [
+        {
+          "name": "",
+          "useMultipleDirections": false,
+          "directions": [
+            {
+              "looping": false,
+              "timeBetweenFrames": 0.08,
+              "sprites": [
+                {
+                  "hasCustomCollisionMask": true,
+                  "image": "assets/ui/x.png",
+                  "points": [],
+                  "originPoint": {
+                    "name": "origine",
+                    "x": 0,
+                    "y": 0
+                  },
+                  "centerPoint": {
+                    "automatic": true,
+                    "name": "centre",
+                    "x": 0,
+                    "y": 0
+                  },
+                  "customCollisionMask": [
+                    [
+                      {
+                        "x": 1,
+                        "y": 2
+                      },
+                      {
+                        "x": 63,
+                        "y": 2
+                      },
+                      {
+                        "x": 63,
+                        "y": 62
+                      },
+                      {
+                        "x": 1,
+                        "y": 62
+                      }
+                    ]
+                  ]
+                }
+              ]
+            }
+          ]
+        }
+      ]
+    }
+  ],
+  "objectsFolderStructure": {
+    "folderName": "__ROOT",
+    "children": [
+      {
+        "objectName": "ExitMinigameButton"
+      }
+    ]
+  },
+  "objectsGroups": [],
+  "variables": [
+    {
+      "name": "DataInitialized",
+      "type": "boolean",
+      "value": false
+    },
+    {
+      "name": "FirstSceneInitialized",
+      "type": "boolean",
+      "value": false
+    },
+    {
+      "name": "DEBUG",
+      "type": "boolean",
+      "value": true
+    },
+    {
+      "name": "MinigameFlags",
+      "type": "structure",
+      "children": [
+        {
+          "name": "Fill In The Quote",
+          "type": "boolean",
+          "value": false
+        },
+        {
+          "name": "Marbles",
+          "type": "boolean",
+          "value": false
+        },
+        {
+          "name": "Painting Puzzle",
+          "type": "boolean",
+          "value": false
+        }
+      ]
+    }
+  ],
+  "layouts": [
+    {
+      "__REFERENCE_TO_SPLIT_OBJECT": true,
+      "referenceTo": "/layouts/main-menu"
+    },
+    {
+      "__REFERENCE_TO_SPLIT_OBJECT": true,
+      "referenceTo": "/layouts/exploration"
+    },
+    {
+      "__REFERENCE_TO_SPLIT_OBJECT": true,
+      "referenceTo": "/layouts/fill-in-the-quote"
+    },
+    {
+      "__REFERENCE_TO_SPLIT_OBJECT": true,
+      "referenceTo": "/layouts/marbles"
+    },
+    {
+      "__REFERENCE_TO_SPLIT_OBJECT": true,
+      "referenceTo": "/layouts/painting-puzzle"
+    }
+  ],
+  "externalEvents": [
+    {
+      "__REFERENCE_TO_SPLIT_OBJECT": true,
+      "referenceTo": "/externalEvents/global-eventsjs"
+    }
+  ],
+  "eventsFunctionsExtensions": [
+    {
+      "__REFERENCE_TO_SPLIT_OBJECT": true,
+      "referenceTo": "/eventsFunctionsExtensions/panelspritebutton"
+    },
+    {
+      "__REFERENCE_TO_SPLIT_OBJECT": true,
+      "referenceTo": "/eventsFunctionsExtensions/linktools"
+    },
+    {
+      "__REFERENCE_TO_SPLIT_OBJECT": true,
+      "referenceTo": "/eventsFunctionsExtensions/arraytools"
+    },
+    {
+      "__REFERENCE_TO_SPLIT_OBJECT": true,
+      "referenceTo": "/eventsFunctionsExtensions/cursortype"
+    },
+    {
+      "__REFERENCE_TO_SPLIT_OBJECT": true,
+      "referenceTo": "/eventsFunctionsExtensions/objectpickingtools"
+    },
+    {
+      "__REFERENCE_TO_SPLIT_OBJECT": true,
+      "referenceTo": "/eventsFunctionsExtensions/cursormovement"
+    }
+  ],
+  "externalLayouts": [
+    {
+      "__REFERENCE_TO_SPLIT_OBJECT": true,
+      "referenceTo": "/externalLayouts/ui"
+    },
+    {
+      "__REFERENCE_TO_SPLIT_OBJECT": true,
+      "referenceTo": "/externalLayouts/layouttemplate-duplicate-me"
+    },
+    {
+      "__REFERENCE_TO_SPLIT_OBJECT": true,
+      "referenceTo": "/externalLayouts/frederick-douglass-square"
+    },
+    {
+      "__REFERENCE_TO_SPLIT_OBJECT": true,
+      "referenceTo": "/externalLayouts/hornbake-entrance"
+    },
+    {
+      "__REFERENCE_TO_SPLIT_OBJECT": true,
+      "referenceTo": "/externalLayouts/hornbake-stairwell-main-floor"
+    }
+  ]
+}

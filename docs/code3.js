@@ -169,6 +169,8 @@ for (var i = 0, k = 0, l = gdjs.MarblesCode.GDExitButtonObjects4.length;i<l;++i)
 }
 gdjs.MarblesCode.GDExitButtonObjects4.length = k;
 if (isConditionTrue_0) {
+{gdjs.evtTools.sound.playSound(runtimeScene, "assets\\sfx\\ui_pop3.wav", false, 50, 1);
+}
 {gdjs.evtTools.runtimeScene.popScene(runtimeScene);
 }
 }
@@ -193,6 +195,8 @@ gdjs.MarblesCode.GDStayButtonObjects3.length = k;
 if (isConditionTrue_0) {
 /* Reuse gdjs.MarblesCode.GDExitButtonObjects3 */
 /* Reuse gdjs.MarblesCode.GDStayButtonObjects3 */
+{gdjs.evtTools.sound.playSound(runtimeScene, "assets\\sfx\\ui_pop3.wav", false, 50, 1);
+}
 {for(var i = 0, len = gdjs.MarblesCode.GDStayButtonObjects3.length ;i < len;++i) {
     gdjs.MarblesCode.GDStayButtonObjects3[i].Activate(false, null);
 }
@@ -254,6 +258,8 @@ for (var i = 0, k = 0, l = gdjs.MarblesCode.GDExitButtonObjects3.length;i<l;++i)
 }
 gdjs.MarblesCode.GDExitButtonObjects3.length = k;
 if (isConditionTrue_0) {
+{gdjs.evtTools.sound.playSound(runtimeScene, "assets\\sfx\\ui_pop3.wav", false, 50, 1);
+}
 {runtimeScene.getGame().getVariables().getFromIndex(3).getChild("Marbles").setBoolean(true);
 }
 {gdjs.evtTools.runtimeScene.popScene(runtimeScene);
@@ -297,6 +303,8 @@ for (var i = 0, k = 0, l = gdjs.MarblesCode.GDExitButtonObjects2.length;i<l;++i)
 }
 gdjs.MarblesCode.GDExitButtonObjects2.length = k;
 if (isConditionTrue_0) {
+{gdjs.evtTools.sound.playSound(runtimeScene, "assets\\sfx\\ui_pop3.wav", false, 50, 1);
+}
 {gdjs.evtTools.runtimeScene.popScene(runtimeScene);
 }
 }
@@ -373,6 +381,8 @@ if (isConditionTrue_0) {
 {runtimeScene.getScene().getVariables().getFromIndex(15).setBoolean(false);
 }
 {gdjs.evtTools.camera.showLayer(runtimeScene, "ExitPrompt");
+}
+{gdjs.evtTools.sound.playSound(runtimeScene, "assets\\sfx\\ui_pop3.wav", false, 50, 1);
 }
 }
 
@@ -2706,6 +2716,8 @@ if (isConditionTrue_0) {
 }
 }
 {gdjs.evtTools.camera.hideLayer(runtimeScene, "Tutorial");
+}
+{gdjs.evtTools.sound.playSound(runtimeScene, "assets\\sfx\\ui_pop3.wav", false, 50, 1);
 }
 }
 
