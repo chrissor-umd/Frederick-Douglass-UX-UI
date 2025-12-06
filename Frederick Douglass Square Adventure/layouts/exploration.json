@@ -789,7 +789,7 @@
               "sprites": [
                 {
                   "hasCustomCollisionMask": true,
-                  "image": "029.JPG",
+                  "image": "assets\\images\\STAMP Entrance.JPG",
                   "points": [],
                   "originPoint": {
                     "name": "origine",
@@ -837,7 +837,7 @@
               "sprites": [
                 {
                   "hasCustomCollisionMask": true,
-                  "image": "Stamp Testudo Statue.JPG",
+                  "image": "assets\\images\\STAMP Main Hallway.JPG",
                   "points": [],
                   "originPoint": {
                     "name": "origine",
@@ -885,7 +885,7 @@
               "sprites": [
                 {
                   "hasCustomCollisionMask": true,
-                  "image": "IMG_0959.jpg",
+                  "image": "assets\\images\\Hallway to STAMP Art Gallery.jpg",
                   "points": [],
                   "originPoint": {
                     "name": "origine",
@@ -933,7 +933,7 @@
               "sprites": [
                 {
                   "hasCustomCollisionMask": true,
-                  "image": "IMG_0988.jpg",
+                  "image": "assets\\images\\Entrance to STAMP Art Gallery.jpg",
                   "points": [],
                   "originPoint": {
                     "name": "origine",
@@ -981,7 +981,7 @@
               "sprites": [
                 {
                   "hasCustomCollisionMask": true,
-                  "image": "IMG_0899.jpg",
+                  "image": "assets\\images\\Inside Art Gallery1.jpg",
                   "points": [],
                   "originPoint": {
                     "name": "origine",
@@ -1029,7 +1029,7 @@
               "sprites": [
                 {
                   "hasCustomCollisionMask": true,
-                  "image": "IMG_0902.jpg",
+                  "image": "assets\\images\\Inside Art Gallery2.jpg",
                   "points": [],
                   "originPoint": {
                     "name": "origine",
@@ -1077,7 +1077,7 @@
               "sprites": [
                 {
                   "hasCustomCollisionMask": true,
-                  "image": "IMG_0954.jpg",
+                  "image": "assets\\images\\Hallway to MICA1.jpg",
                   "points": [],
                   "originPoint": {
                     "name": "origine",
@@ -1125,7 +1125,7 @@
               "sprites": [
                 {
                   "hasCustomCollisionMask": true,
-                  "image": "IMG_0987.jpg",
+                  "image": "assets\\images\\Hallway to MICA2.jpg",
                   "points": [],
                   "originPoint": {
                     "name": "origine",
@@ -1173,7 +1173,7 @@
               "sprites": [
                 {
                   "hasCustomCollisionMask": true,
-                  "image": "IMG_0979.jpg",
+                  "image": "assets\\images\\Hallway to MICA3.jpg",
                   "points": [],
                   "originPoint": {
                     "name": "origine",
@@ -1221,7 +1221,7 @@
               "sprites": [
                 {
                   "hasCustomCollisionMask": true,
-                  "image": "IMG_0980.jpg",
+                  "image": "assets\\images\\Entrance to MICA.jpg",
                   "points": [],
                   "originPoint": {
                     "name": "origine",
@@ -1269,7 +1269,7 @@
               "sprites": [
                 {
                   "hasCustomCollisionMask": true,
-                  "image": "IMG_0986.jpg",
+                  "image": "assets\\images\\Inside MICA1.jpg",
                   "points": [],
                   "originPoint": {
                     "name": "origine",
@@ -1317,7 +1317,7 @@
               "sprites": [
                 {
                   "hasCustomCollisionMask": true,
-                  "image": "IMG_0945.jpg",
+                  "image": "assets\\images\\Inside MICA2.jpg",
                   "points": [],
                   "originPoint": {
                     "name": "origine",

@@ -32,8 +32,8 @@
       "name": "TransitionObject",
       "persistentUuid": "830105ba-a01c-4795-890b-b1053e995f75",
       "width": 0,
-      "x": 788,
-      "y": 406,
+      "x": 785,
+      "y": 351,
       "zOrder": 3,
       "numberProperties": [
         {
@@ -60,7 +60,7 @@
       "persistentUuid": "ceb17a41-3cd7-4b4d-bd34-943dac2689bb",
       "width": 0,
       "x": 309,
-      "y": 406,
+      "y": 351,
       "zOrder": 3,
       "numberProperties": [
         {
@@ -86,8 +86,8 @@
       "name": "TransitionObject",
       "persistentUuid": "ccfb8d6c-1cd0-44c8-b049-52131fb2e618",
       "width": 0,
-      "x": 588,
-      "y": 555,
+      "x": 579,
+      "y": 565,
       "zOrder": 3,
       "numberProperties": [
         {

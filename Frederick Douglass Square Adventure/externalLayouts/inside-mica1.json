@@ -32,8 +32,8 @@
       "name": "TransitionObject",
       "persistentUuid": "cf71f9fe-8716-41a4-8593-fc7c5fef2eda",
       "width": 0,
-      "x": 614,
-      "y": 585,
+      "x": 616,
+      "y": 609,
       "zOrder": 2,
       "numberProperties": [
         {
@@ -51,7 +51,7 @@
       ]
     },
     {
-      "angle": -30,
+      "angle": -35,
       "customSize": false,
       "height": 0,
       "keepRatio": true,
@@ -59,7 +59,7 @@
       "name": "TransitionObject",
       "persistentUuid": "e9bcbbdd-c0fb-4b8f-a0d3-91dd5f8ef787",
       "width": 0,
-      "x": 857,
+      "x": 854,
       "y": 491,
       "zOrder": 3,
       "numberProperties": [

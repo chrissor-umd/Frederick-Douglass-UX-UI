@@ -33,7 +33,7 @@
       "persistentUuid": "3da0f64b-54c5-4caf-aaf9-32e517e6be1d",
       "width": 0,
       "x": 619,
-      "y": 458,
+      "y": 518,
       "zOrder": 4,
       "numberProperties": [
         {
@@ -59,8 +59,8 @@
       "name": "TransitionObject",
       "persistentUuid": "fe234d63-5b2a-437e-aaf3-c41949632943",
       "width": 0,
-      "x": 423,
-      "y": 584,
+      "x": 419,
+      "y": 610,
       "zOrder": 5,
       "numberProperties": [
         {
