@@ -45,6 +45,23 @@
           "value": "Hornbake Entrance"
         }
       ]
+    },
+    {
+      "angle": 0,
+      "customSize": true,
+      "depth": 1,
+      "height": 64,
+      "keepRatio": true,
+      "layer": "SceneObjects",
+      "name": "StatueCollectible",
+      "persistentUuid": "d14ba3f0-525c-4dff-94dd-95fa228a67dc",
+      "width": 64,
+      "x": 576,
+      "y": 368,
+      "zOrder": 4,
+      "numberProperties": [],
+      "stringProperties": [],
+      "initialVariables": []
     }
   ],
   "editionSettings": {
@@ -59,7 +76,7 @@
     "gridColor": 10401023,
     "gridAlpha": 0.8,
     "snap": true,
-    "zoomFactor": 0.41943397827590795,
+    "zoomFactor": 0.9934433498259619,
     "windowMask": false,
     "selectedLayer": "SceneObjects"
   }

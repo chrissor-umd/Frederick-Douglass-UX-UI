@@ -20,7 +20,7 @@
     "gridColor": 10401023,
     "gridAlpha": 0.8,
     "snap": true,
-    "zoomFactor": 0.604083874998888,
+    "zoomFactor": 0.5843784410740942,
     "windowMask": false,
     "selectedLayer": "Credits"
   },
@@ -307,7 +307,7 @@
       "variables": [],
       "effects": [],
       "behaviors": [],
-      "string": "Project Manager & Lead Programmer:\n\nSecondary Programmer:\n\nArt and Client Communications:\n\nHistorical Research, Images, and Minigame Design:\n",
+      "string": "Project Manager & Lead Programmer:\n\nSound:\n\nWebpage Design:\n\nArt and Client Communications:\n\nHistorical Research and Image Assets:\n",
       "font": "assets\\fonts\\BilkoOpti-Regular.otf",
       "textAlignment": "left",
       "characterSize": 34,
@@ -330,7 +330,7 @@
         "shadowOpacity": 127,
         "smoothed": true,
         "underlined": false,
-        "text": "Project Manager & Lead Programmer:\n\nSecondary Programmer:\n\nArt and Client Communications:\n\nHistorical Research, Images, and Minigame Design:\n",
+        "text": "Project Manager & Lead Programmer:\n\nSound:\n\nWebpage Design:\n\nArt and Client Communications:\n\nHistorical Research and Image Assets:\n",
         "font": "assets\\fonts\\BilkoOpti-Regular.otf",
         "textAlignment": "left",
         "verticalTextAlignment": "top",
@@ -350,7 +350,7 @@
       "variables": [],
       "effects": [],
       "behaviors": [],
-      "string": "Christian Sorensen\n\nKyle Tu\n\nMichelle Starcher\n\nSamnorp Deung,\nMarcello Soriano\n",
+      "string": "Christian Sorensen\n\nChristian Sorensen\n\nKyle Tu\n\nMichelle Starcher\n\nSamnorp Deung,\nMarcello Soriano\n",
       "font": "assets\\fonts\\BilkoOpti-Regular.otf",
       "textAlignment": "right",
       "characterSize": 34,
@@ -373,7 +373,7 @@
         "shadowOpacity": 127,
         "smoothed": true,
         "underlined": false,
-        "text": "Christian Sorensen\n\nKyle Tu\n\nMichelle Starcher\n\nSamnorp Deung,\nMarcello Soriano\n",
+        "text": "Christian Sorensen\n\nChristian Sorensen\n\nKyle Tu\n\nMichelle Starcher\n\nSamnorp Deung,\nMarcello Soriano\n",
         "font": "assets\\fonts\\BilkoOpti-Regular.otf",
         "textAlignment": "right",
         "verticalTextAlignment": "top",
@@ -475,6 +475,18 @@
       "actions": [
         {
           "type": {
+            "value": "PlaySound"
+          },
+          "parameters": [
+            "",
+            "assets\\sfx\\ui_pop3.wav",
+            "",
+            "50",
+            ""
+          ]
+        },
+        {
+          "type": {
             "value": "Scene"
           },
           "parameters": [
@@ -498,7 +510,20 @@
           ]
         }
       ],
-      "actions": [],
+      "actions": [
+        {
+          "type": {
+            "value": "PlaySound"
+          },
+          "parameters": [
+            "",
+            "assets\\sfx\\ui_pop3.wav",
+            "",
+            "50",
+            ""
+          ]
+        }
+      ],
       "events": [
         {
           "type": "BuiltinCommonInstructions::Standard",

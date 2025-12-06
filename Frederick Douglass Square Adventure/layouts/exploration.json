@@ -20,7 +20,7 @@
     "gridColor": 10401023,
     "gridAlpha": 0.4,
     "snap": true,
-    "zoomFactor": 0.3437520241612324,
+    "zoomFactor": 0.24672586957406328,
     "windowMask": false,
     "selectedLayer": ""
   },
@@ -40,7 +40,7 @@
       ]
     },
     {
-      "name": "CanBeDisabled",
+      "name": "Clickable",
       "objects": [
         {
           "name": "CycleInventoryNext"
@@ -86,6 +86,21 @@
         },
         {
           "name": "Backpack"
+        },
+        {
+          "name": "MapEnterButton"
+        },
+        {
+          "name": "CycleMapNext"
+        },
+        {
+          "name": "CycleMapPrevious"
+        },
+        {
+          "name": "ExitMinigameButton"
+        },
+        {
+          "name": "VisibilityToggle"
         }
       ]
     },
@@ -97,6 +112,49 @@
         },
         {
           "name": "InteractionButton"
+        }
+      ]
+    },
+    {
+      "name": "Buttons",
+      "objects": [
+        {
+          "name": "ItemPopupPickupButton"
+        },
+        {
+          "name": "ItemPopupExitButton"
+        },
+        {
+          "name": "InteractionButton"
+        },
+        {
+          "name": "MapEnterButton"
+        }
+      ]
+    },
+    {
+      "name": "DynamicText",
+      "objects": [
+        {
+          "name": "StatuesCollectedCounter"
+        },
+        {
+          "name": "HoverTooltip"
+        },
+        {
+          "name": "InspectionText"
+        },
+        {
+          "name": "ItemNameText"
+        },
+        {
+          "name": "ItemDescriptionText"
+        },
+        {
+          "name": "DebugText"
+        },
+        {
+          "name": "LocationNameText"
         }
       ]
     }
@@ -117,6 +175,36 @@
           "name": "value",
           "type": "number",
           "value": 0
+        },
+        {
+          "name": "innerText",
+          "type": "string",
+          "value": ""
+        },
+        {
+          "name": "fontSize",
+          "type": "number",
+          "value": 0
+        },
+        {
+          "name": "outlineThickness",
+          "type": "number",
+          "value": 0
+        },
+        {
+          "name": "outlineColor",
+          "type": "string",
+          "value": ""
+        },
+        {
+          "name": "font",
+          "type": "string",
+          "value": ""
+        },
+        {
+          "name": "textAlign",
+          "type": "string",
+          "value": ""
         }
       ],
       "effects": [
@@ -397,7 +485,6 @@
       "effects": [
         {
           "effectType": "Adjustment",
-          "folded": true,
           "name": "Disable",
           "doubleParameters": {
             "alpha": 1,
@@ -520,7 +607,38 @@
       "smoothed": true,
       "type": "TextObject::Text",
       "underlined": false,
-      "variables": [],
+      "variables": [
+        {
+          "name": "innerText",
+          "type": "string",
+          "value": ""
+        },
+        {
+          "name": "fontSize",
+          "type": "number",
+          "value": 0
+        },
+        {
+          "name": "outlineThickness",
+          "type": "number",
+          "value": 0
+        },
+        {
+          "name": "outlineColor",
+          "type": "string",
+          "value": ""
+        },
+        {
+          "name": "font",
+          "type": "string",
+          "value": ""
+        },
+        {
+          "name": "textAlign",
+          "type": "string",
+          "value": ""
+        }
+      ],
       "effects": [],
       "behaviors": [],
       "string": "",
@@ -742,582 +860,6 @@
                 {
                   "hasCustomCollisionMask": true,
                   "image": "assets/images/hornbake_stairwell_floor1.jpg",
-                  "points": [],
-                  "originPoint": {
-                    "name": "origine",
-                    "x": 0,
-                    "y": 0
-                  },
-                  "centerPoint": {
-                    "automatic": true,
-                    "name": "centre",
-                    "x": 0,
-                    "y": 0
-                  },
-                  "customCollisionMask": [
-                    [
-                      {
-                        "x": 0,
-                        "y": 0
-                      },
-                      {
-                        "x": 1280,
-                        "y": 0
-                      },
-                      {
-                        "x": 1280,
-                        "y": 720
-                      },
-                      {
-                        "x": 0,
-                        "y": 720
-                      }
-                    ]
-                  ]
-                }
-              ]
-            }
-          ]
-        },
-        {
-          "name": "STAMP Entrance",
-          "useMultipleDirections": false,
-          "directions": [
-            {
-              "looping": false,
-              "timeBetweenFrames": 0.08,
-              "sprites": [
-                {
-                  "hasCustomCollisionMask": true,
-                  "image": "029.JPG",
-                  "points": [],
-                  "originPoint": {
-                    "name": "origine",
-                    "x": 0,
-                    "y": 0
-                  },
-                  "centerPoint": {
-                    "automatic": true,
-                    "name": "centre",
-                    "x": 0,
-                    "y": 0
-                  },
-                  "customCollisionMask": [
-                    [
-                      {
-                        "x": 0,
-                        "y": 0
-                      },
-                      {
-                        "x": 1280,
-                        "y": 0
-                      },
-                      {
-                        "x": 1280,
-                        "y": 720
-                      },
-                      {
-                        "x": 0,
-                        "y": 720
-                      }
-                    ]
-                  ]
-                }
-              ]
-            }
-          ]
-        },
-        {
-          "name": "STAMP Main Hallway",
-          "useMultipleDirections": false,
-          "directions": [
-            {
-              "looping": false,
-              "timeBetweenFrames": 0.08,
-              "sprites": [
-                {
-                  "hasCustomCollisionMask": true,
-                  "image": "Stamp Testudo Statue.JPG",
-                  "points": [],
-                  "originPoint": {
-                    "name": "origine",
-                    "x": 0,
-                    "y": 0
-                  },
-                  "centerPoint": {
-                    "automatic": true,
-                    "name": "centre",
-                    "x": 0,
-                    "y": 0
-                  },
-                  "customCollisionMask": [
-                    [
-                      {
-                        "x": 0,
-                        "y": 0
-                      },
-                      {
-                        "x": 1280,
-                        "y": 0
-                      },
-                      {
-                        "x": 1280,
-                        "y": 720
-                      },
-                      {
-                        "x": 0,
-                        "y": 720
-                      }
-                    ]
-                  ]
-                }
-              ]
-            }
-          ]
-        },
-        {
-          "name": "Hallway to STAMP Art Gallery",
-          "useMultipleDirections": false,
-          "directions": [
-            {
-              "looping": false,
-              "timeBetweenFrames": 0.08,
-              "sprites": [
-                {
-                  "hasCustomCollisionMask": true,
-                  "image": "IMG_0959.jpg",
-                  "points": [],
-                  "originPoint": {
-                    "name": "origine",
-                    "x": 0,
-                    "y": 0
-                  },
-                  "centerPoint": {
-                    "automatic": true,
-                    "name": "centre",
-                    "x": 0,
-                    "y": 0
-                  },
-                  "customCollisionMask": [
-                    [
-                      {
-                        "x": 0,
-                        "y": 0
-                      },
-                      {
-                        "x": 1280,
-                        "y": 0
-                      },
-                      {
-                        "x": 1280,
-                        "y": 720
-                      },
-                      {
-                        "x": 0,
-                        "y": 720
-                      }
-                    ]
-                  ]
-                }
-              ]
-            }
-          ]
-        },
-        {
-          "name": "Entrance to STAMP Art Gallery",
-          "useMultipleDirections": false,
-          "directions": [
-            {
-              "looping": false,
-              "timeBetweenFrames": 0.08,
-              "sprites": [
-                {
-                  "hasCustomCollisionMask": true,
-                  "image": "IMG_0988.jpg",
-                  "points": [],
-                  "originPoint": {
-                    "name": "origine",
-                    "x": 0,
-                    "y": 0
-                  },
-                  "centerPoint": {
-                    "automatic": true,
-                    "name": "centre",
-                    "x": 0,
-                    "y": 0
-                  },
-                  "customCollisionMask": [
-                    [
-                      {
-                        "x": 0,
-                        "y": 0
-                      },
-                      {
-                        "x": 1280,
-                        "y": 0
-                      },
-                      {
-                        "x": 1280,
-                        "y": 720
-                      },
-                      {
-                        "x": 0,
-                        "y": 720
-                      }
-                    ]
-                  ]
-                }
-              ]
-            }
-          ]
-        },
-        {
-          "name": "Inside Art Gallery1",
-          "useMultipleDirections": false,
-          "directions": [
-            {
-              "looping": false,
-              "timeBetweenFrames": 0.08,
-              "sprites": [
-                {
-                  "hasCustomCollisionMask": true,
-                  "image": "IMG_0899.jpg",
-                  "points": [],
-                  "originPoint": {
-                    "name": "origine",
-                    "x": 0,
-                    "y": 0
-                  },
-                  "centerPoint": {
-                    "automatic": true,
-                    "name": "centre",
-                    "x": 0,
-                    "y": 0
-                  },
-                  "customCollisionMask": [
-                    [
-                      {
-                        "x": 0,
-                        "y": 0
-                      },
-                      {
-                        "x": 1280,
-                        "y": 0
-                      },
-                      {
-                        "x": 1280,
-                        "y": 720
-                      },
-                      {
-                        "x": 0,
-                        "y": 720
-                      }
-                    ]
-                  ]
-                }
-              ]
-            }
-          ]
-        },
-        {
-          "name": "Inside Art Gallery2",
-          "useMultipleDirections": false,
-          "directions": [
-            {
-              "looping": false,
-              "timeBetweenFrames": 0.08,
-              "sprites": [
-                {
-                  "hasCustomCollisionMask": true,
-                  "image": "IMG_0902.jpg",
-                  "points": [],
-                  "originPoint": {
-                    "name": "origine",
-                    "x": 0,
-                    "y": 0
-                  },
-                  "centerPoint": {
-                    "automatic": true,
-                    "name": "centre",
-                    "x": 0,
-                    "y": 0
-                  },
-                  "customCollisionMask": [
-                    [
-                      {
-                        "x": 0,
-                        "y": 0
-                      },
-                      {
-                        "x": 1280,
-                        "y": 0
-                      },
-                      {
-                        "x": 1280,
-                        "y": 720
-                      },
-                      {
-                        "x": 0,
-                        "y": 720
-                      }
-                    ]
-                  ]
-                }
-              ]
-            }
-          ]
-        },
-        {
-          "name": "Hallway to MICA1",
-          "useMultipleDirections": false,
-          "directions": [
-            {
-              "looping": false,
-              "timeBetweenFrames": 0.08,
-              "sprites": [
-                {
-                  "hasCustomCollisionMask": true,
-                  "image": "IMG_0954.jpg",
-                  "points": [],
-                  "originPoint": {
-                    "name": "origine",
-                    "x": 0,
-                    "y": 0
-                  },
-                  "centerPoint": {
-                    "automatic": true,
-                    "name": "centre",
-                    "x": 0,
-                    "y": 0
-                  },
-                  "customCollisionMask": [
-                    [
-                      {
-                        "x": 0,
-                        "y": 0
-                      },
-                      {
-                        "x": 1280,
-                        "y": 0
-                      },
-                      {
-                        "x": 1280,
-                        "y": 720
-                      },
-                      {
-                        "x": 0,
-                        "y": 720
-                      }
-                    ]
-                  ]
-                }
-              ]
-            }
-          ]
-        },
-        {
-          "name": "Hallway to MICA2",
-          "useMultipleDirections": false,
-          "directions": [
-            {
-              "looping": false,
-              "timeBetweenFrames": 0.08,
-              "sprites": [
-                {
-                  "hasCustomCollisionMask": true,
-                  "image": "IMG_0987.jpg",
-                  "points": [],
-                  "originPoint": {
-                    "name": "origine",
-                    "x": 0,
-                    "y": 0
-                  },
-                  "centerPoint": {
-                    "automatic": true,
-                    "name": "centre",
-                    "x": 0,
-                    "y": 0
-                  },
-                  "customCollisionMask": [
-                    [
-                      {
-                        "x": 0,
-                        "y": 0
-                      },
-                      {
-                        "x": 1280,
-                        "y": 0
-                      },
-                      {
-                        "x": 1280,
-                        "y": 720
-                      },
-                      {
-                        "x": 0,
-                        "y": 720
-                      }
-                    ]
-                  ]
-                }
-              ]
-            }
-          ]
-        },
-        {
-          "name": "Hallway to MICA3",
-          "useMultipleDirections": false,
-          "directions": [
-            {
-              "looping": false,
-              "timeBetweenFrames": 0.08,
-              "sprites": [
-                {
-                  "hasCustomCollisionMask": true,
-                  "image": "IMG_0979.jpg",
-                  "points": [],
-                  "originPoint": {
-                    "name": "origine",
-                    "x": 0,
-                    "y": 0
-                  },
-                  "centerPoint": {
-                    "automatic": true,
-                    "name": "centre",
-                    "x": 0,
-                    "y": 0
-                  },
-                  "customCollisionMask": [
-                    [
-                      {
-                        "x": 0,
-                        "y": 0
-                      },
-                      {
-                        "x": 1280,
-                        "y": 0
-                      },
-                      {
-                        "x": 1280,
-                        "y": 720
-                      },
-                      {
-                        "x": 0,
-                        "y": 720
-                      }
-                    ]
-                  ]
-                }
-              ]
-            }
-          ]
-        },
-        {
-          "name": "Entrance to MICA",
-          "useMultipleDirections": false,
-          "directions": [
-            {
-              "looping": false,
-              "timeBetweenFrames": 0.08,
-              "sprites": [
-                {
-                  "hasCustomCollisionMask": true,
-                  "image": "IMG_0980.jpg",
-                  "points": [],
-                  "originPoint": {
-                    "name": "origine",
-                    "x": 0,
-                    "y": 0
-                  },
-                  "centerPoint": {
-                    "automatic": true,
-                    "name": "centre",
-                    "x": 0,
-                    "y": 0
-                  },
-                  "customCollisionMask": [
-                    [
-                      {
-                        "x": 0,
-                        "y": 0
-                      },
-                      {
-                        "x": 1280,
-                        "y": 0
-                      },
-                      {
-                        "x": 1280,
-                        "y": 720
-                      },
-                      {
-                        "x": 0,
-                        "y": 720
-                      }
-                    ]
-                  ]
-                }
-              ]
-            }
-          ]
-        },
-        {
-          "name": "Inside MICA1",
-          "useMultipleDirections": false,
-          "directions": [
-            {
-              "looping": false,
-              "timeBetweenFrames": 0.08,
-              "sprites": [
-                {
-                  "hasCustomCollisionMask": true,
-                  "image": "IMG_0986.jpg",
-                  "points": [],
-                  "originPoint": {
-                    "name": "origine",
-                    "x": 0,
-                    "y": 0
-                  },
-                  "centerPoint": {
-                    "automatic": true,
-                    "name": "centre",
-                    "x": 0,
-                    "y": 0
-                  },
-                  "customCollisionMask": [
-                    [
-                      {
-                        "x": 0,
-                        "y": 0
-                      },
-                      {
-                        "x": 1280,
-                        "y": 0
-                      },
-                      {
-                        "x": 1280,
-                        "y": 720
-                      },
-                      {
-                        "x": 0,
-                        "y": 720
-                      }
-                    ]
-                  ]
-                }
-              ]
-            }
-          ]
-        },
-        {
-          "name": "Inside MICA2",
-          "useMultipleDirections": false,
-          "directions": [
-            {
-              "looping": false,
-              "timeBetweenFrames": 0.08,
-              "sprites": [
-                {
-                  "hasCustomCollisionMask": true,
-                  "image": "IMG_0945.jpg",
                   "points": [],
                   "originPoint": {
                     "name": "origine",
@@ -2017,6 +1559,31 @@
           "name": "inspectionName",
           "type": "string",
           "value": ""
+        },
+        {
+          "name": "fontSize",
+          "type": "number",
+          "value": 0
+        },
+        {
+          "name": "outlineThickness",
+          "type": "number",
+          "value": 0
+        },
+        {
+          "name": "outlineColor",
+          "type": "string",
+          "value": ""
+        },
+        {
+          "name": "font",
+          "type": "string",
+          "value": ""
+        },
+        {
+          "name": "textAlign",
+          "type": "string",
+          "value": ""
         }
       ],
       "effects": [],
@@ -2315,7 +1882,38 @@
       "smoothed": true,
       "type": "TextObject::Text",
       "underlined": false,
-      "variables": [],
+      "variables": [
+        {
+          "name": "innerText",
+          "type": "string",
+          "value": ""
+        },
+        {
+          "name": "fontSize",
+          "type": "number",
+          "value": 0
+        },
+        {
+          "name": "outlineThickness",
+          "type": "number",
+          "value": 0
+        },
+        {
+          "name": "outlineColor",
+          "type": "string",
+          "value": ""
+        },
+        {
+          "name": "font",
+          "type": "string",
+          "value": ""
+        },
+        {
+          "name": "textAlign",
+          "type": "string",
+          "value": ""
+        }
+      ],
       "effects": [],
       "behaviors": [],
       "string": "ItemNameHere",
@@ -2358,7 +1956,38 @@
       "smoothed": true,
       "type": "TextObject::Text",
       "underlined": false,
-      "variables": [],
+      "variables": [
+        {
+          "name": "innerText",
+          "type": "string",
+          "value": ""
+        },
+        {
+          "name": "fontSize",
+          "type": "number",
+          "value": 0
+        },
+        {
+          "name": "outlineThickness",
+          "type": "number",
+          "value": 0
+        },
+        {
+          "name": "outlineColor",
+          "type": "string",
+          "value": ""
+        },
+        {
+          "name": "font",
+          "type": "string",
+          "value": ""
+        },
+        {
+          "name": "textAlign",
+          "type": "string",
+          "value": ""
+        }
+      ],
       "effects": [],
       "behaviors": [],
       "string": "Item Description Goes Here",
@@ -2403,6 +2032,11 @@
           "name": "enabled",
           "type": "boolean",
           "value": true
+        },
+        {
+          "name": "labelText",
+          "type": "string",
+          "value": "null"
         }
       ],
       "effects": [],
@@ -2427,6 +2061,11 @@
           "name": "enabled",
           "type": "boolean",
           "value": true
+        },
+        {
+          "name": "labelText",
+          "type": "string",
+          "value": "null"
         }
       ],
       "effects": [],
@@ -2558,7 +2197,20 @@
           "value": true
         }
       ],
-      "effects": [],
+      "effects": [
+        {
+          "effectType": "Outline",
+          "name": "mapToggled",
+          "doubleParameters": {
+            "padding": 0,
+            "thickness": 2
+          },
+          "stringParameters": {
+            "color": "255;255;255"
+          },
+          "booleanParameters": {}
+        }
+      ],
       "behaviors": [],
       "animations": [
         {
@@ -2608,6 +2260,31 @@
         },
         {
           "name": "innerText",
+          "type": "string",
+          "value": ""
+        },
+        {
+          "name": "fontSize",
+          "type": "number",
+          "value": 0
+        },
+        {
+          "name": "outlineThickness",
+          "type": "number",
+          "value": 0
+        },
+        {
+          "name": "outlineColor",
+          "type": "string",
+          "value": ""
+        },
+        {
+          "name": "font",
+          "type": "string",
+          "value": ""
+        },
+        {
+          "name": "textAlign",
           "type": "string",
           "value": ""
         }
@@ -2881,8 +2558,29 @@
       "name": "VisibilityToggle",
       "type": "Sprite",
       "updateIfNotVisible": false,
-      "variables": [],
-      "effects": [],
+      "variables": [
+        {
+          "hasMixedValues": true,
+          "name": "enabled",
+          "persistentUuid": "250185bb-081a-4805-9b8b-cb2361f0a9c1",
+          "type": "boolean",
+          "value": true
+        }
+      ],
+      "effects": [
+        {
+          "effectType": "Outline",
+          "name": "visibilityToggleEffect",
+          "doubleParameters": {
+            "padding": 0,
+            "thickness": 2
+          },
+          "stringParameters": {
+            "color": "255;255;255"
+          },
+          "booleanParameters": {}
+        }
+      ],
       "behaviors": [],
       "animations": [
         {
@@ -2894,8 +2592,8 @@
               "timeBetweenFrames": 0.08,
               "sprites": [
                 {
-                  "hasCustomCollisionMask": true,
-                  "image": "assets/ui/eye_grey.png",
+                  "hasCustomCollisionMask": false,
+                  "image": "assets\\ui\\eye_open.png",
                   "points": [],
                   "originPoint": {
                     "name": "origine",
@@ -2915,14 +2613,542 @@
           ]
         }
       ]
+    },
+    {
+      "assetStoreId": "",
+      "bottomMargin": 20,
+      "height": 540,
+      "leftMargin": 20,
+      "name": "MapPopupBackground",
+      "rightMargin": 20,
+      "texture": "assets/ui/ui_background_border_gold.png",
+      "tiled": false,
+      "topMargin": 20,
+      "type": "PanelSpriteObject::PanelSprite",
+      "width": 960,
+      "variables": [],
+      "effects": [],
+      "behaviors": []
+    },
+    {
+      "assetStoreId": "",
+      "bold": true,
+      "italic": false,
+      "name": "LocationNameText",
+      "smoothed": true,
+      "type": "TextObject::Text",
+      "underlined": false,
+      "variables": [
+        {
+          "name": "innerText",
+          "type": "string",
+          "value": ""
+        },
+        {
+          "name": "fontSize",
+          "type": "number",
+          "value": 0
+        },
+        {
+          "name": "outlineThickness",
+          "type": "number",
+          "value": 0
+        },
+        {
+          "name": "outlineColor",
+          "type": "string",
+          "value": ""
+        },
+        {
+          "name": "font",
+          "type": "string",
+          "value": ""
+        },
+        {
+          "name": "textAlign",
+          "type": "string",
+          "value": ""
+        }
+      ],
+      "effects": [],
+      "behaviors": [],
+      "string": "LocationNameHere",
+      "font": "assets/fonts/BilkoOpti-Regular.otf",
+      "textAlignment": "left",
+      "characterSize": 40,
+      "color": {
+        "b": 255,
+        "g": 255,
+        "r": 255
+      },
+      "content": {
+        "bold": true,
+        "isOutlineEnabled": false,
+        "isShadowEnabled": false,
+        "italic": false,
+        "outlineColor": "255;255;255",
+        "outlineThickness": 2,
+        "shadowAngle": 90,
+        "shadowBlurRadius": 2,
+        "shadowColor": "0;0;0",
+        "shadowDistance": 4,
+        "shadowOpacity": 127,
+        "smoothed": true,
+        "underlined": false,
+        "text": "LocationNameHere",
+        "font": "assets/fonts/BilkoOpti-Regular.otf",
+        "textAlignment": "left",
+        "verticalTextAlignment": "center",
+        "characterSize": 40,
+        "lineHeight": 0,
+        "color": "255;255;255"
+      }
+    },
+    {
+      "adaptCollisionMaskAutomatically": true,
+      "assetStoreId": "",
+      "name": "MapImage",
+      "type": "Sprite",
+      "updateIfNotVisible": false,
+      "variables": [],
+      "effects": [],
+      "behaviors": [],
+      "animations": [
+        {
+          "name": "FDS",
+          "useMultipleDirections": false,
+          "directions": [
+            {
+              "looping": false,
+              "timeBetweenFrames": 0.08,
+              "sprites": [
+                {
+                  "hasCustomCollisionMask": true,
+                  "image": "assets\\images\\fds_hornbake_close2.jpg",
+                  "points": [],
+                  "originPoint": {
+                    "name": "origine",
+                    "x": 0,
+                    "y": 0
+                  },
+                  "centerPoint": {
+                    "automatic": true,
+                    "name": "centre",
+                    "x": 0,
+                    "y": 0
+                  },
+                  "customCollisionMask": [
+                    [
+                      {
+                        "x": 0,
+                        "y": 0
+                      },
+                      {
+                        "x": 1280,
+                        "y": 0
+                      },
+                      {
+                        "x": 1280,
+                        "y": 720
+                      },
+                      {
+                        "x": 0,
+                        "y": 720
+                      }
+                    ]
+                  ]
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "name": "Hornbake",
+          "useMultipleDirections": false,
+          "directions": [
+            {
+              "looping": false,
+              "timeBetweenFrames": 0.08,
+              "sprites": [
+                {
+                  "hasCustomCollisionMask": true,
+                  "image": "assets\\images\\hornbake_entrance_wide.jpg",
+                  "points": [],
+                  "originPoint": {
+                    "name": "origine",
+                    "x": 0,
+                    "y": 0
+                  },
+                  "centerPoint": {
+                    "automatic": true,
+                    "name": "centre",
+                    "x": 0,
+                    "y": 0
+                  },
+                  "customCollisionMask": [
+                    [
+                      {
+                        "x": 0,
+                        "y": 0
+                      },
+                      {
+                        "x": 1280,
+                        "y": 0
+                      },
+                      {
+                        "x": 1280,
+                        "y": 720
+                      },
+                      {
+                        "x": 0,
+                        "y": 720
+                      }
+                    ]
+                  ]
+                }
+              ]
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "adaptCollisionMaskAutomatically": true,
+      "assetStoreId": "",
+      "name": "CycleMapNext",
+      "type": "Sprite",
+      "updateIfNotVisible": false,
+      "variables": [
+        {
+          "hasMixedValues": true,
+          "name": "enabled",
+          "persistentUuid": "250185bb-081a-4805-9b8b-cb2361f0a9c1",
+          "type": "boolean",
+          "value": true
+        }
+      ],
+      "effects": [
+        {
+          "effectType": "Adjustment",
+          "folded": true,
+          "name": "Disabled",
+          "doubleParameters": {
+            "alpha": 1,
+            "blue": 1,
+            "brightness": 0.2,
+            "contrast": 1,
+            "gamma": 1,
+            "green": 1,
+            "red": 1,
+            "saturation": 1
+          },
+          "stringParameters": {},
+          "booleanParameters": {}
+        }
+      ],
+      "behaviors": [],
+      "animations": [
+        {
+          "name": "",
+          "useMultipleDirections": false,
+          "directions": [
+            {
+              "looping": false,
+              "timeBetweenFrames": 0.08,
+              "sprites": [
+                {
+                  "hasCustomCollisionMask": true,
+                  "image": "assets\\ui\\arrow_right.png",
+                  "points": [],
+                  "originPoint": {
+                    "name": "origine",
+                    "x": 0,
+                    "y": 0
+                  },
+                  "centerPoint": {
+                    "automatic": true,
+                    "name": "centre",
+                    "x": 0,
+                    "y": 0
+                  },
+                  "customCollisionMask": [
+                    [
+                      {
+                        "x": 5,
+                        "y": 5
+                      },
+                      {
+                        "x": 91,
+                        "y": 5
+                      },
+                      {
+                        "x": 91,
+                        "y": 91
+                      },
+                      {
+                        "x": 5,
+                        "y": 91
+                      }
+                    ]
+                  ]
+                }
+              ]
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "adaptCollisionMaskAutomatically": true,
+      "assetStoreId": "",
+      "name": "CycleMapPrevious",
+      "type": "Sprite",
+      "updateIfNotVisible": false,
+      "variables": [
+        {
+          "hasMixedValues": true,
+          "name": "enabled",
+          "persistentUuid": "250185bb-081a-4805-9b8b-cb2361f0a9c1",
+          "type": "boolean",
+          "value": true
+        }
+      ],
+      "effects": [
+        {
+          "effectType": "Adjustment",
+          "name": "Disabled",
+          "doubleParameters": {
+            "alpha": 1,
+            "blue": 1,
+            "brightness": 0.2,
+            "contrast": 1,
+            "gamma": 1,
+            "green": 1,
+            "red": 1,
+            "saturation": 1
+          },
+          "stringParameters": {},
+          "booleanParameters": {}
+        }
+      ],
+      "behaviors": [],
+      "animations": [
+        {
+          "name": "",
+          "useMultipleDirections": false,
+          "directions": [
+            {
+              "looping": false,
+              "timeBetweenFrames": 0.08,
+              "sprites": [
+                {
+                  "hasCustomCollisionMask": true,
+                  "image": "assets\\ui\\arrow_left.png",
+                  "points": [],
+                  "originPoint": {
+                    "name": "origine",
+                    "x": 0,
+                    "y": 0
+                  },
+                  "centerPoint": {
+                    "automatic": true,
+                    "name": "centre",
+                    "x": 0,
+                    "y": 0
+                  },
+                  "customCollisionMask": [
+                    [
+                      {
+                        "x": 5,
+                        "y": 5
+                      },
+                      {
+                        "x": 91,
+                        "y": 5
+                      },
+                      {
+                        "x": 91,
+                        "y": 91
+                      },
+                      {
+                        "x": 5,
+                        "y": 91
+                      }
+                    ]
+                  ]
+                }
+              ]
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "adaptCollisionMaskAutomatically": false,
+      "assetStoreId": "",
+      "name": "ExitMap",
+      "type": "Sprite",
+      "updateIfNotVisible": false,
+      "variables": [
+        {
+          "name": "enabled",
+          "type": "boolean",
+          "value": true
+        }
+      ],
+      "effects": [
+        {
+          "effectType": "Outline",
+          "name": "Effect",
+          "doubleParameters": {
+            "padding": 0,
+            "thickness": 2
+          },
+          "stringParameters": {
+            "color": "255;255;255"
+          },
+          "booleanParameters": {}
+        }
+      ],
+      "behaviors": [],
+      "animations": [
+        {
+          "name": "",
+          "useMultipleDirections": false,
+          "directions": [
+            {
+              "looping": false,
+              "metadata": "{\"pskl\":{}}",
+              "timeBetweenFrames": 0.08,
+              "sprites": [
+                {
+                  "hasCustomCollisionMask": false,
+                  "image": "assets\\ui\\map.png",
+                  "points": [],
+                  "originPoint": {
+                    "name": "origine",
+                    "x": 0,
+                    "y": 0
+                  },
+                  "centerPoint": {
+                    "automatic": true,
+                    "name": "centre",
+                    "x": 0,
+                    "y": 0
+                  },
+                  "customCollisionMask": []
+                }
+              ]
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "assetStoreId": "",
+      "name": "MapEnterButton",
+      "type": "PanelSpriteButton::PanelSpriteButton",
+      "variant": "UMDButton",
+      "variables": [
+        {
+          "name": "enabled",
+          "type": "boolean",
+          "value": true
+        },
+        {
+          "name": "labelText",
+          "type": "string",
+          "value": "null"
+        }
+      ],
+      "effects": [
+        {
+          "effectType": "Brightness",
+          "name": "Disabled",
+          "doubleParameters": {
+            "brightness": 0.5
+          },
+          "stringParameters": {},
+          "booleanParameters": {}
+        }
+      ],
+      "behaviors": [],
+      "content": {
+        "LabelText": "Go To Location"
+      }
+    },
+    {
+      "assetStoreId": "",
+      "bottomMargin": 32,
+      "height": 32,
+      "leftMargin": 32,
+      "name": "MapImageBorder",
+      "rightMargin": 32,
+      "texture": "assets\\ui\\gray_rounded_cornerns.png",
+      "tiled": false,
+      "topMargin": 32,
+      "type": "PanelSpriteObject::PanelSprite",
+      "width": 64,
+      "variables": [],
+      "effects": [],
+      "behaviors": []
     }
   ],
   "objectsFolderStructure": {
     "folderName": "__ROOT",
     "children": [
       {
+        "folderName": "InspectionObjects",
+        "children": [
+          {
+            "objectName": "InspectionText"
+          },
+          {
+            "objectName": "InspectionImage"
+          },
+          {
+            "objectName": "InspectionImageBorder"
+          },
+          {
+            "objectName": "ExitInspection"
+          },
+          {
+            "objectName": "InspectionBackground"
+          }
+        ]
+      },
+      {
         "folderName": "UI",
         "children": [
+          {
+            "folderName": "MapPopup",
+            "children": [
+              {
+                "objectName": "ExitMap"
+              },
+              {
+                "objectName": "MapEnterButton"
+              },
+              {
+                "objectName": "MapImage"
+              },
+              {
+                "objectName": "MapImageBorder"
+              },
+              {
+                "objectName": "CycleMapNext"
+              },
+              {
+                "objectName": "CycleMapPrevious"
+              },
+              {
+                "objectName": "LocationNameText"
+              },
+              {
+                "objectName": "MapPopupBackground"
+              }
+            ]
+          },
           {
             "folderName": "ItemPopup",
             "children": [
@@ -2999,7 +3225,7 @@
         ]
       },
       {
-        "folderName": "Clickable",
+        "folderName": "SceneObjects",
         "children": [
           {
             "objectName": "InteractionButton"
@@ -3022,30 +3248,15 @@
         ]
       },
       {
-        "folderName": "Inspection",
+        "folderName": "StaticImages",
         "children": [
           {
-            "objectName": "InspectionText"
+            "objectName": "Background"
           },
           {
-            "objectName": "InspectionImage"
-          },
-          {
-            "objectName": "InspectionImageBorder"
-          },
-          {
-            "objectName": "InspectionBackground"
-          },
-          {
-            "objectName": "ExitInspection"
+            "objectName": "ImageProp"
           }
         ]
-      },
-      {
-        "objectName": "ImageProp"
-      },
-      {
-        "objectName": "Background"
       }
     ]
   },
@@ -3155,10 +3366,10 @@
       "cameraType": "",
       "followBaseLayerCamera": false,
       "isLightingLayer": false,
-      "isLocked": true,
+      "isLocked": false,
       "name": "InventoryUI",
       "renderingType": "2d",
-      "visibility": false,
+      "visibility": true,
       "cameras": [],
       "effects": []
     },
@@ -3176,7 +3387,7 @@
       "isLocked": false,
       "name": "UI",
       "renderingType": "2d",
-      "visibility": true,
+      "visibility": false,
       "cameras": [],
       "effects": [
         {
@@ -3184,6 +3395,34 @@
           "name": "Darken",
           "doubleParameters": {
             "brightness": 0.5
+          },
+          "stringParameters": {},
+          "booleanParameters": {}
+        }
+      ]
+    },
+    {
+      "ambientLightColorB": 200,
+      "ambientLightColorG": 200,
+      "ambientLightColorR": 200,
+      "camera2DPlaneMaxDrawingDistance": 5000,
+      "camera3DFarPlaneDistance": 10000,
+      "camera3DFieldOfView": 45,
+      "camera3DNearPlaneDistance": 3,
+      "cameraType": "",
+      "followBaseLayerCamera": false,
+      "isLightingLayer": false,
+      "isLocked": false,
+      "name": "ActiveDuringInspectionUI",
+      "renderingType": "2d",
+      "visibility": false,
+      "cameras": [],
+      "effects": [
+        {
+          "effectType": "Brightness",
+          "name": "Darken",
+          "doubleParameters": {
+            "brightness": 1
           },
           "stringParameters": {},
           "booleanParameters": {}
@@ -3289,60 +3528,6 @@
       "visibility": false,
       "cameras": [],
       "effects": []
-    },
-    {
-      "ambientLightColorB": 200,
-      "ambientLightColorG": 200,
-      "ambientLightColorR": 200,
-      "camera2DPlaneMaxDrawingDistance": 5000,
-      "camera3DFarPlaneDistance": 10000,
-      "camera3DFieldOfView": 45,
-      "camera3DNearPlaneDistance": 3,
-      "cameraType": "",
-      "followBaseLayerCamera": false,
-      "isLightingLayer": false,
-      "isLocked": false,
-      "name": "Layer",
-      "renderingType": "",
-      "visibility": true,
-      "cameras": [],
-      "effects": [
-        {
-          "effectType": "Scene3D::HemisphereLight",
-          "name": "3D Ambient Hemisphere Light",
-          "doubleParameters": {
-            "elevation": 40,
-            "intensity": 0.33,
-            "rotation": 300
-          },
-          "stringParameters": {
-            "groundColor": "127;127;127",
-            "skyColor": "255;255;255",
-            "top": "Z+"
-          },
-          "booleanParameters": {}
-        },
-        {
-          "effectType": "Scene3D::DirectionalLight",
-          "name": "3D Sun Light",
-          "doubleParameters": {
-            "distanceFromCamera": 1500,
-            "elevation": 40,
-            "frustumSize": 4000,
-            "intensity": 0.75,
-            "minimumShadowBias": 0,
-            "rotation": 300
-          },
-          "stringParameters": {
-            "color": "255;255;255",
-            "shadowQuality": "medium",
-            "top": "Z+"
-          },
-          "booleanParameters": {
-            "isCastingShadow": true
-          }
-        }
-      ]
     }
   ],
   "behaviorsSharedData": [

@@ -20,7 +20,7 @@
     "gridColor": 10401023,
     "gridAlpha": 0.8,
     "snap": true,
-    "zoomFactor": 0.8416428125373199,
+    "zoomFactor": 1.2530387740589986,
     "windowMask": false,
     "selectedLayer": "Lose"
   },
@@ -727,7 +727,7 @@
       "name": "StayButton",
       "persistentUuid": "1a02e885-4abc-4587-9592-1e6be426a672",
       "width": 240,
-      "x": 244,
+      "x": 796,
       "y": 556,
       "zOrder": 33,
       "numberProperties": [],
@@ -744,7 +744,7 @@
       "name": "ExitButton",
       "persistentUuid": "c0102f92-3d60-46b1-9a00-bef1fce018ff",
       "width": 240,
-      "x": 796,
+      "x": 244,
       "y": 556,
       "zOrder": 34,
       "numberProperties": [],
@@ -3064,6 +3064,7 @@
       "colorG": 176,
       "colorR": 74,
       "creationTime": 0,
+      "folded": true,
       "name": "Popups",
       "source": "",
       "type": "BuiltinCommonInstructions::Group",
@@ -3089,12 +3090,12 @@
               "colorG": 176,
               "colorR": 74,
               "creationTime": 0,
+              "folded": true,
               "name": "Exit Prompt",
               "source": "",
               "type": "BuiltinCommonInstructions::Group",
               "events": [
                 {
-                  "folded": true,
                   "type": "BuiltinCommonInstructions::Standard",
                   "conditions": [
                     {
@@ -3146,6 +3147,18 @@
                       "actions": [
                         {
                           "type": {
+                            "value": "PlaySound"
+                          },
+                          "parameters": [
+                            "",
+                            "assets\\sfx\\ui_pop3.wav",
+                            "",
+                            "50",
+                            ""
+                          ]
+                        },
+                        {
+                          "type": {
                             "value": "PopScene"
                           },
                           "parameters": [
@@ -3168,6 +3181,18 @@
                         }
                       ],
                       "actions": [
+                        {
+                          "type": {
+                            "value": "PlaySound"
+                          },
+                          "parameters": [
+                            "",
+                            "assets\\sfx\\ui_pop3.wav",
+                            "",
+                            "50",
+                            ""
+                          ]
+                        },
                         {
                           "type": {
                             "value": "PanelSpriteButton::PanelSpriteButton::Activate"
@@ -3255,6 +3280,18 @@
                       "actions": [
                         {
                           "type": {
+                            "value": "PlaySound"
+                          },
+                          "parameters": [
+                            "",
+                            "assets\\sfx\\ui_pop3.wav",
+                            "",
+                            "50",
+                            ""
+                          ]
+                        },
+                        {
+                          "type": {
                             "value": "SetBooleanVariable"
                           },
                           "parameters": [
@@ -3283,12 +3320,12 @@
               "colorG": 176,
               "colorR": 74,
               "creationTime": 0,
+              "folded": true,
               "name": "Lose Popup",
               "source": "",
               "type": "BuiltinCommonInstructions::Group",
               "events": [
                 {
-                  "folded": true,
                   "type": "BuiltinCommonInstructions::Standard",
                   "conditions": [
                     {
@@ -3317,6 +3354,18 @@
                         }
                       ],
                       "actions": [
+                        {
+                          "type": {
+                            "value": "PlaySound"
+                          },
+                          "parameters": [
+                            "",
+                            "assets\\sfx\\ui_pop3.wav",
+                            "",
+                            "50",
+                            ""
+                          ]
+                        },
                         {
                           "type": {
                             "value": "PopScene"
@@ -3438,6 +3487,18 @@
                       "parameters": [
                         "",
                         "\"ExitPrompt\""
+                      ]
+                    },
+                    {
+                      "type": {
+                        "value": "PlaySound"
+                      },
+                      "parameters": [
+                        "",
+                        "assets\\sfx\\ui_pop3.wav",
+                        "",
+                        "50",
+                        ""
                       ]
                     }
                   ]
@@ -6937,7 +6998,6 @@
       "colorG": 176,
       "colorR": 74,
       "creationTime": 0,
-      "folded": true,
       "name": "Tutorial",
       "source": "",
       "type": "BuiltinCommonInstructions::Group",
@@ -6999,6 +7059,18 @@
                   "parameters": [
                     "",
                     "\"Tutorial\""
+                  ]
+                },
+                {
+                  "type": {
+                    "value": "PlaySound"
+                  },
+                  "parameters": [
+                    "",
+                    "assets\\sfx\\ui_pop3.wav",
+                    "",
+                    "50",
+                    ""
                   ]
                 }
               ]
