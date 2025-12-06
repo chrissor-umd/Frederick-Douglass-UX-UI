@@ -10,7 +10,7 @@ gdjs.evtsExt__ArrayTools__ObjectMean.idToCallbackMap = new Map();
 gdjs.evtsExt__ArrayTools__ObjectMean.GDObjectObjects1= [];
 
 
-gdjs.evtsExt__ArrayTools__ObjectMean.userFunc0xcaf200 = function GDJSInlineCode(runtimeScene, eventsFunctionContext) {
+gdjs.evtsExt__ArrayTools__ObjectMean.userFunc0xbf8138 = function GDJSInlineCode(runtimeScene, eventsFunctionContext) {
 "use strict";
 /** @type {gdjs.Variable[]} */
 const internalArray = eventsFunctionContext.getArgument("Array").getAllChildrenArray();
@@ -26,7 +26,7 @@ gdjs.evtsExt__ArrayTools__ObjectMean.eventsList0 = function(runtimeScene, events
 {
 
 
-gdjs.evtsExt__ArrayTools__ObjectMean.userFunc0xcaf200(runtimeScene, eventsFunctionContext);
+gdjs.evtsExt__ArrayTools__ObjectMean.userFunc0xbf8138(runtimeScene, eventsFunctionContext);
 
 }
 

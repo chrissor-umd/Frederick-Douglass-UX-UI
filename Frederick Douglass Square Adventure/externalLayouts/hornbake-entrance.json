@@ -163,6 +163,11 @@
       "stringProperties": [],
       "initialVariables": [
         {
+          "name": "infoText",
+          "type": "string",
+          "value": " As a child, Frederick Douglass frequently played marble games with various white children he befriended. During these games, he would often bring books with him, and would persuade the children into teaching him how to read."
+        },
+        {
           "name": "itemDescription",
           "type": "string",
           "value": "A bag of colorful marbles."
@@ -187,7 +192,7 @@
     "gridColor": 10401023,
     "gridAlpha": 0.8,
     "snap": true,
-    "zoomFactor": 0.6672773998330014,
+    "zoomFactor": 0.7370816317994073,
     "windowMask": false,
     "selectedLayer": "SceneObjects"
   }

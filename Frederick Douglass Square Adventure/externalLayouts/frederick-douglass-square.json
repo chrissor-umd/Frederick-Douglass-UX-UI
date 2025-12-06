@@ -42,22 +42,22 @@
       ]
     },
     {
-      "angle": 0,
+      "angle": 358,
       "customSize": true,
-      "depth": 0,
-      "height": 216,
+      "depth": 1,
+      "height": 112,
       "keepRatio": true,
       "layer": "SceneObjects",
       "name": "InteractionObject",
       "persistentUuid": "142f4d95-7205-4398-8901-a41f95717096",
-      "width": 128,
+      "width": 96,
       "x": 688,
-      "y": 392,
+      "y": 480,
       "zOrder": 4,
       "numberProperties": [
         {
           "name": "animation",
-          "value": 2
+          "value": 1
         }
       ],
       "stringProperties": [],
@@ -195,8 +195,8 @@
       "name": "InspectionObject",
       "persistentUuid": "1d7473c9-131e-4d57-ab30-4668b489cff1",
       "width": 0,
-      "x": 480,
-      "y": 512,
+      "x": 144,
+      "y": 608,
       "zOrder": 9,
       "numberProperties": [],
       "stringProperties": [],
@@ -460,34 +460,6 @@
     },
     {
       "angle": 0,
-      "customSize": true,
-      "depth": 1,
-      "height": 64,
-      "keepRatio": true,
-      "layer": "InspectionObjects",
-      "name": "InspectionObject",
-      "persistentUuid": "93da81a5-4473-4d5c-9da8-50462c462856",
-      "width": 64,
-      "x": 2368,
-      "y": 592,
-      "zOrder": 20,
-      "numberProperties": [
-        {
-          "name": "animation",
-          "value": 1
-        }
-      ],
-      "stringProperties": [],
-      "initialVariables": [
-        {
-          "name": "targetInspection",
-          "type": "string",
-          "value": "QuotesInspect"
-        }
-      ]
-    },
-    {
-      "angle": 0,
       "customSize": false,
       "height": 0,
       "keepRatio": true,
@@ -505,34 +477,6 @@
           "name": "inspectionName",
           "type": "string",
           "value": "QuoteInspect2"
-        }
-      ]
-    },
-    {
-      "angle": 0,
-      "customSize": true,
-      "depth": 1,
-      "height": 64,
-      "keepRatio": true,
-      "layer": "InspectionObjects",
-      "name": "InspectionObject",
-      "persistentUuid": "c5808101-60af-444c-a53f-a02017daf154",
-      "width": 64,
-      "x": 3344,
-      "y": 592,
-      "zOrder": 20,
-      "numberProperties": [
-        {
-          "name": "animation",
-          "value": 1
-        }
-      ],
-      "stringProperties": [],
-      "initialVariables": [
-        {
-          "name": "targetInspection",
-          "type": "string",
-          "value": "QuotesInspect"
         }
       ]
     },
@@ -561,34 +505,6 @@
           "name": "inspectionName",
           "type": "string",
           "value": "QuoteInspect2"
-        }
-      ]
-    },
-    {
-      "angle": 0,
-      "customSize": true,
-      "depth": 1,
-      "height": 64,
-      "keepRatio": true,
-      "layer": "InspectionObjects",
-      "name": "InspectionObject",
-      "persistentUuid": "4237493e-c608-497c-9fae-9dd3dc30c878",
-      "width": 64,
-      "x": 4320,
-      "y": 592,
-      "zOrder": 20,
-      "numberProperties": [
-        {
-          "name": "animation",
-          "value": 1
-        }
-      ],
-      "stringProperties": [],
-      "initialVariables": [
-        {
-          "name": "targetInspection",
-          "type": "string",
-          "value": "QuotesInspect"
         }
       ]
     },
@@ -683,7 +599,7 @@
         {
           "name": "innerText",
           "type": "string",
-          "value": "You see a young man playing with a set of marbles. He appears to be holding a small figurine of Frederick Douglass."
+          "value": "You see a young programmer playing with a set of marbles. He appears to be holding a small figurine of Frederick Douglass."
         },
         {
           "name": "inspectionName",
@@ -755,8 +671,8 @@
       "layer": "InspectionObjects",
       "name": "InspectionText",
       "persistentUuid": "e310ccd0-7bd9-4348-8b4d-49ee8edc51f0",
-      "width": 896,
-      "x": 2384,
+      "width": 448,
+      "x": 2832,
       "y": 1384,
       "zOrder": 25,
       "numberProperties": [],
@@ -1070,9 +986,9 @@
       "layer": "InspectionObjects",
       "name": "InspectionText",
       "persistentUuid": "e6c63d9c-5eeb-4132-b4ea-632fde3bde04",
-      "width": 895,
-      "x": 3361,
-      "y": 1904,
+      "width": 432,
+      "x": 3840,
+      "y": 1952,
       "zOrder": 35,
       "numberProperties": [],
       "stringProperties": [],
@@ -1080,7 +996,7 @@
         {
           "name": "innerText",
           "type": "string",
-          "value": "\"Well, looks like you beat me fair and square. Here, you've earned it.\""
+          "value": "\"Well, looks like you beat me fair and square. Here, you've earned it. Did you know that Frederick Douglass learned how to read while playing games like this?\""
         },
         {
           "name": "inspectionName",
@@ -1092,21 +1008,26 @@
     {
       "angle": 0,
       "customSize": true,
-      "depth": 2,
-      "height": 176,
+      "depth": 1,
+      "height": 112,
       "keepRatio": true,
       "layer": "InspectionObjects",
       "name": "StatueCollectible",
       "persistentUuid": "e4375b52-e292-4003-bedf-dfe79b60cebe",
-      "width": 176,
-      "x": 3721,
-      "y": 2016,
+      "width": 112,
+      "x": 3392,
+      "y": 1968,
       "zOrder": 36,
       "numberProperties": [],
       "stringProperties": [],
       "initialVariables": [
         {
-          "name": "interactionName",
+          "name": "showPopup",
+          "type": "boolean",
+          "value": false
+        },
+        {
+          "name": "targetInteraction",
           "type": "string",
           "value": "MarblesMinigame"
         },
@@ -1166,6 +1087,128 @@
           "value": "MarblesMinigameLose"
         }
       ]
+    },
+    {
+      "angle": 0,
+      "customSize": true,
+      "depth": 0,
+      "height": 272,
+      "keepRatio": true,
+      "layer": "InspectionObjects",
+      "name": "InspectionImage",
+      "persistentUuid": "c741f64d-f1cd-452a-aae0-ec9f77fb1521",
+      "width": 353,
+      "x": 2431,
+      "y": 1248,
+      "zOrder": 39,
+      "numberProperties": [
+        {
+          "name": "animation",
+          "value": 1
+        }
+      ],
+      "stringProperties": [],
+      "initialVariables": [
+        {
+          "name": "inspectionName",
+          "type": "string",
+          "value": "MarblesNPC"
+        }
+      ]
+    },
+    {
+      "angle": 0,
+      "customSize": true,
+      "depth": 1,
+      "height": 80,
+      "keepRatio": true,
+      "layer": "InspectionObjects",
+      "name": "ImageProp",
+      "persistentUuid": "713a884e-22c5-4cc9-83cb-d92d663ebb8c",
+      "width": 80,
+      "x": 2448,
+      "y": 1392,
+      "zOrder": 40,
+      "numberProperties": [],
+      "stringProperties": [],
+      "initialVariables": []
+    },
+    {
+      "angle": 0,
+      "customSize": true,
+      "depth": 1,
+      "height": 346,
+      "keepRatio": true,
+      "layer": "InspectionObjects",
+      "name": "InspectionImage",
+      "persistentUuid": "1d9e5a15-2058-46a8-bf83-d7bf20b9b371",
+      "width": 449,
+      "x": 3375,
+      "y": 1792,
+      "zOrder": 34,
+      "numberProperties": [
+        {
+          "name": "animation",
+          "value": 1
+        }
+      ],
+      "stringProperties": [],
+      "initialVariables": [
+        {
+          "name": "inspectionName",
+          "type": "string",
+          "value": "MarblesMinigameWin"
+        }
+      ]
+    },
+    {
+      "angle": 0,
+      "customSize": false,
+      "height": 0,
+      "keepRatio": true,
+      "layer": "InspectionObjects",
+      "name": "PreviousInspection",
+      "persistentUuid": "91bf050f-fafd-4b51-805e-c363fb209119",
+      "width": 0,
+      "x": 2384,
+      "y": 608,
+      "zOrder": 41,
+      "numberProperties": [],
+      "stringProperties": [],
+      "initialVariables": []
+    },
+    {
+      "angle": 0,
+      "customSize": true,
+      "depth": 1,
+      "height": 64,
+      "keepRatio": true,
+      "layer": "InspectionObjects",
+      "name": "PreviousInspection",
+      "persistentUuid": "6331dad2-e212-47f3-b295-efbbf2548fca",
+      "width": 64,
+      "x": 3360,
+      "y": 608,
+      "zOrder": 42,
+      "numberProperties": [],
+      "stringProperties": [],
+      "initialVariables": []
+    },
+    {
+      "angle": 0,
+      "customSize": false,
+      "height": 0,
+      "keepRatio": true,
+      "layer": "InspectionObjects",
+      "name": "PreviousInspection",
+      "persistentUuid": "9b3b62d0-31cc-443b-8e0c-d9c8537a0dda",
+      "width": 0,
+      "x": 4336,
+      "y": 608,
+      "zOrder": 43,
+      "numberProperties": [],
+      "stringProperties": [],
+      "initialVariables": []
     }
   ],
   "editionSettings": {
@@ -1180,7 +1223,7 @@
     "gridColor": 10401023,
     "gridAlpha": 0.8,
     "snap": true,
-    "zoomFactor": 0.463311182451404,
+    "zoomFactor": 0.43357743047024444,
     "windowMask": false,
     "selectedLayer": "InspectionObjects"
   }

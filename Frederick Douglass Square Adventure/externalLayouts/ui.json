@@ -148,14 +148,14 @@
       "angle": 0,
       "customSize": true,
       "depth": 1,
-      "height": 92,
+      "height": 128,
       "keepRatio": true,
       "layer": "ItemPopup",
       "name": "ItemDescriptionText",
       "persistentUuid": "c0cda848-b110-4b62-aa81-2c677a1d35c3",
       "width": 896,
       "x": 192,
-      "y": 534,
+      "y": 512,
       "zOrder": 9,
       "numberProperties": [],
       "stringProperties": [],
@@ -172,7 +172,7 @@
       "persistentUuid": "2f385921-6c06-46f9-953f-d6d4a122d4c0",
       "width": 224,
       "x": 528,
-      "y": 248,
+      "y": 240,
       "zOrder": 13,
       "numberProperties": [],
       "stringProperties": [],
@@ -479,6 +479,133 @@
       "numberProperties": [],
       "stringProperties": [],
       "initialVariables": []
+    },
+    {
+      "angle": 0,
+      "customSize": true,
+      "depth": 1,
+      "height": 80,
+      "keepRatio": true,
+      "layer": "ItemPopup",
+      "name": "InspectionObject",
+      "persistentUuid": "c3cabee8-8152-462b-8ca4-486a97f50ff5",
+      "width": 80,
+      "x": 1024,
+      "y": 152,
+      "zOrder": 29,
+      "numberProperties": [
+        {
+          "name": "animation",
+          "value": 1
+        }
+      ],
+      "stringProperties": [],
+      "initialVariables": [
+        {
+          "name": "targetInspection",
+          "type": "string",
+          "value": "infoPopup"
+        },
+        {
+          "name": "instanceID",
+          "type": "string",
+          "value": "itemPopupInfo"
+        }
+      ]
+    },
+    {
+      "angle": 0,
+      "customSize": false,
+      "height": 0,
+      "keepRatio": true,
+      "layer": "InspectionObjects",
+      "name": "InspectionBackground",
+      "persistentUuid": "99550484-bf69-4562-af79-a37fc1d5e53f",
+      "width": 0,
+      "x": -1040,
+      "y": 136,
+      "zOrder": 30,
+      "numberProperties": [],
+      "stringProperties": [],
+      "initialVariables": [
+        {
+          "name": "inspectionName",
+          "type": "string",
+          "value": "infoPopup"
+        }
+      ]
+    },
+    {
+      "angle": 0,
+      "customSize": true,
+      "depth": 1,
+      "height": 512,
+      "keepRatio": true,
+      "layer": "InspectionObjects",
+      "name": "InspectionText",
+      "persistentUuid": "638413f1-15c8-4951-acae-296911574066",
+      "width": 800,
+      "x": -960,
+      "y": 408,
+      "zOrder": 31,
+      "numberProperties": [],
+      "stringProperties": [],
+      "initialVariables": [
+        {
+          "name": "inspectionName",
+          "type": "string",
+          "value": "infoPopup"
+        },
+        {
+          "name": "instanceID",
+          "type": "string",
+          "value": "infoPopupText"
+        }
+      ]
+    },
+    {
+      "angle": 0,
+      "customSize": false,
+      "height": 0,
+      "keepRatio": true,
+      "layer": "InspectionObjects",
+      "name": "PreviousInspection",
+      "persistentUuid": "db1c9b3e-882a-4e5d-bd8f-538f5d18940d",
+      "width": 0,
+      "x": -1024,
+      "y": 152,
+      "zOrder": 32,
+      "numberProperties": [],
+      "stringProperties": [],
+      "initialVariables": [
+        {
+          "name": "instanceID",
+          "type": "string",
+          "value": "infoPopupReturn"
+        },
+        {
+          "name": "inspectionName",
+          "type": "string",
+          "value": "infoPopup"
+        }
+      ]
+    },
+    {
+      "angle": 0,
+      "customSize": true,
+      "depth": 2,
+      "height": 104,
+      "keepRatio": true,
+      "layer": "ActiveDuringInspectionUI",
+      "name": "SoundToggle",
+      "persistentUuid": "5e5473c3-4771-4a32-a8a4-dfdf61c6a7fe",
+      "width": 104,
+      "x": 1144,
+      "y": -8,
+      "zOrder": 33,
+      "numberProperties": [],
+      "stringProperties": [],
+      "initialVariables": []
     }
   ],
   "editionSettings": {
@@ -493,8 +620,8 @@
     "gridColor": 10401023,
     "gridAlpha": 0.8,
     "snap": true,
-    "zoomFactor": 1.1343715797161331,
+    "zoomFactor": 0.713037763069065,
     "windowMask": false,
-    "selectedLayer": "MapPopup"
+    "selectedLayer": "ActiveDuringInspectionUI"
   }
 }

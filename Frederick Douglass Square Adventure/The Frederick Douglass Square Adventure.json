@@ -1123,6 +1123,94 @@
         "preloadAsSound": false,
         "preloadInCache": false,
         "userAdded": false
+      },
+      {
+        "file": "assets/objects/marblesNPC.png",
+        "kind": "image",
+        "metadata": "",
+        "name": "assets/objects/marblesNPC.png",
+        "smoothed": true,
+        "userAdded": false
+      },
+      {
+        "file": "assets/images/IMG_0895.jpg",
+        "kind": "image",
+        "metadata": "",
+        "name": "assets/images/IMG_0895.jpg",
+        "smoothed": true,
+        "userAdded": false
+      },
+      {
+        "file": "assets/textures/circle.png",
+        "kind": "image",
+        "metadata": "",
+        "name": "assets\\textures\\circle.png",
+        "smoothed": true,
+        "userAdded": false
+      },
+      {
+        "file": "assets/ui/questionmark.png",
+        "kind": "image",
+        "metadata": "",
+        "name": "assets\\ui\\questionmark.png",
+        "smoothed": true,
+        "userAdded": false
+      },
+      {
+        "file": "assets/ui/arrow_left_small.png",
+        "kind": "image",
+        "metadata": "",
+        "name": "assets\\ui\\arrow_left_small.png",
+        "smoothed": true,
+        "userAdded": false
+      },
+      {
+        "file": "assets/ui/ui_background_border_gold.png",
+        "kind": "image",
+        "metadata": "",
+        "name": "assets\\ui\\ui_background_border_gold.png",
+        "smoothed": true,
+        "userAdded": false
+      },
+      {
+        "file": "assets/ui/inspection.png",
+        "kind": "image",
+        "metadata": "",
+        "name": "assets\\ui\\inspection.png",
+        "smoothed": true,
+        "userAdded": false
+      },
+      {
+        "file": "assets/ui/inventory_bag.png",
+        "kind": "image",
+        "metadata": "",
+        "name": "assets\\ui\\inventory_bag.png",
+        "smoothed": true,
+        "userAdded": false
+      },
+      {
+        "file": "assets/objects/gold_frederick_douglass_statue.png",
+        "kind": "image",
+        "metadata": "",
+        "name": "assets\\objects\\gold_frederick_douglass_statue.png",
+        "smoothed": true,
+        "userAdded": false
+      },
+      {
+        "file": "assets/ui/sound_on.png",
+        "kind": "image",
+        "metadata": "",
+        "name": "assets\\ui\\sound_on.png",
+        "smoothed": true,
+        "userAdded": false
+      },
+      {
+        "file": "assets/ui/sound_off.png",
+        "kind": "image",
+        "metadata": "",
+        "name": "assets\\ui\\sound_off.png",
+        "smoothed": true,
+        "userAdded": false
       }
     ]
   },
@@ -1236,7 +1324,7 @@
     {
       "name": "DEBUG",
       "type": "boolean",
-      "value": true
+      "value": false
     },
     {
       "name": "MinigameFlags",
@@ -1258,12 +1346,21 @@
           "value": false
         }
       ]
+    },
+    {
+      "name": "GameOver",
+      "type": "boolean",
+      "value": false
     }
   ],
   "layouts": [
     {
       "__REFERENCE_TO_SPLIT_OBJECT": true,
       "referenceTo": "/layouts/main-menu"
+    },
+    {
+      "__REFERENCE_TO_SPLIT_OBJECT": true,
+      "referenceTo": "/layouts/tutorial"
     },
     {
       "__REFERENCE_TO_SPLIT_OBJECT": true,
