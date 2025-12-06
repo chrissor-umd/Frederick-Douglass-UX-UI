@@ -48,92 +48,66 @@ gdjs.Fill_32In_32The_32QuoteCode.GDQuoteText3Objects2= [];
 gdjs.Fill_32In_32The_32QuoteCode.GDQuoteText3Objects3= [];
 gdjs.Fill_32In_32The_32QuoteCode.GDQuoteText3Objects4= [];
 gdjs.Fill_32In_32The_32QuoteCode.GDQuoteText3Objects5= [];
-gdjs.Fill_32In_32The_32QuoteCode.GDQuoteText3Objects6= [];
-gdjs.Fill_32In_32The_32QuoteCode.GDQuoteText3Objects7= [];
 gdjs.Fill_32In_32The_32QuoteCode.GDQuoteInputObjects1= [];
 gdjs.Fill_32In_32The_32QuoteCode.GDQuoteInputObjects2= [];
 gdjs.Fill_32In_32The_32QuoteCode.GDQuoteInputObjects3= [];
 gdjs.Fill_32In_32The_32QuoteCode.GDQuoteInputObjects4= [];
 gdjs.Fill_32In_32The_32QuoteCode.GDQuoteInputObjects5= [];
-gdjs.Fill_32In_32The_32QuoteCode.GDQuoteInputObjects6= [];
-gdjs.Fill_32In_32The_32QuoteCode.GDQuoteInputObjects7= [];
 gdjs.Fill_32In_32The_32QuoteCode.GDQuoteText2Objects1= [];
 gdjs.Fill_32In_32The_32QuoteCode.GDQuoteText2Objects2= [];
 gdjs.Fill_32In_32The_32QuoteCode.GDQuoteText2Objects3= [];
 gdjs.Fill_32In_32The_32QuoteCode.GDQuoteText2Objects4= [];
 gdjs.Fill_32In_32The_32QuoteCode.GDQuoteText2Objects5= [];
-gdjs.Fill_32In_32The_32QuoteCode.GDQuoteText2Objects6= [];
-gdjs.Fill_32In_32The_32QuoteCode.GDQuoteText2Objects7= [];
 gdjs.Fill_32In_32The_32QuoteCode.GDQuoteText1Objects1= [];
 gdjs.Fill_32In_32The_32QuoteCode.GDQuoteText1Objects2= [];
 gdjs.Fill_32In_32The_32QuoteCode.GDQuoteText1Objects3= [];
 gdjs.Fill_32In_32The_32QuoteCode.GDQuoteText1Objects4= [];
 gdjs.Fill_32In_32The_32QuoteCode.GDQuoteText1Objects5= [];
-gdjs.Fill_32In_32The_32QuoteCode.GDQuoteText1Objects6= [];
-gdjs.Fill_32In_32The_32QuoteCode.GDQuoteText1Objects7= [];
 gdjs.Fill_32In_32The_32QuoteCode.GDSubmitButtonObjects1= [];
 gdjs.Fill_32In_32The_32QuoteCode.GDSubmitButtonObjects2= [];
 gdjs.Fill_32In_32The_32QuoteCode.GDSubmitButtonObjects3= [];
 gdjs.Fill_32In_32The_32QuoteCode.GDSubmitButtonObjects4= [];
 gdjs.Fill_32In_32The_32QuoteCode.GDSubmitButtonObjects5= [];
-gdjs.Fill_32In_32The_32QuoteCode.GDSubmitButtonObjects6= [];
-gdjs.Fill_32In_32The_32QuoteCode.GDSubmitButtonObjects7= [];
 gdjs.Fill_32In_32The_32QuoteCode.GDPopupBackgroundObjects1= [];
 gdjs.Fill_32In_32The_32QuoteCode.GDPopupBackgroundObjects2= [];
 gdjs.Fill_32In_32The_32QuoteCode.GDPopupBackgroundObjects3= [];
 gdjs.Fill_32In_32The_32QuoteCode.GDPopupBackgroundObjects4= [];
 gdjs.Fill_32In_32The_32QuoteCode.GDPopupBackgroundObjects5= [];
-gdjs.Fill_32In_32The_32QuoteCode.GDPopupBackgroundObjects6= [];
-gdjs.Fill_32In_32The_32QuoteCode.GDPopupBackgroundObjects7= [];
 gdjs.Fill_32In_32The_32QuoteCode.GDRetryButtonObjects1= [];
 gdjs.Fill_32In_32The_32QuoteCode.GDRetryButtonObjects2= [];
 gdjs.Fill_32In_32The_32QuoteCode.GDRetryButtonObjects3= [];
 gdjs.Fill_32In_32The_32QuoteCode.GDRetryButtonObjects4= [];
 gdjs.Fill_32In_32The_32QuoteCode.GDRetryButtonObjects5= [];
-gdjs.Fill_32In_32The_32QuoteCode.GDRetryButtonObjects6= [];
-gdjs.Fill_32In_32The_32QuoteCode.GDRetryButtonObjects7= [];
 gdjs.Fill_32In_32The_32QuoteCode.GDNextButtonObjects1= [];
 gdjs.Fill_32In_32The_32QuoteCode.GDNextButtonObjects2= [];
 gdjs.Fill_32In_32The_32QuoteCode.GDNextButtonObjects3= [];
 gdjs.Fill_32In_32The_32QuoteCode.GDNextButtonObjects4= [];
 gdjs.Fill_32In_32The_32QuoteCode.GDNextButtonObjects5= [];
-gdjs.Fill_32In_32The_32QuoteCode.GDNextButtonObjects6= [];
-gdjs.Fill_32In_32The_32QuoteCode.GDNextButtonObjects7= [];
 gdjs.Fill_32In_32The_32QuoteCode.GDIncorrectPopupTextObjects1= [];
 gdjs.Fill_32In_32The_32QuoteCode.GDIncorrectPopupTextObjects2= [];
 gdjs.Fill_32In_32The_32QuoteCode.GDIncorrectPopupTextObjects3= [];
 gdjs.Fill_32In_32The_32QuoteCode.GDIncorrectPopupTextObjects4= [];
 gdjs.Fill_32In_32The_32QuoteCode.GDIncorrectPopupTextObjects5= [];
-gdjs.Fill_32In_32The_32QuoteCode.GDIncorrectPopupTextObjects6= [];
-gdjs.Fill_32In_32The_32QuoteCode.GDIncorrectPopupTextObjects7= [];
 gdjs.Fill_32In_32The_32QuoteCode.GDCorrectPopupTextObjects1= [];
 gdjs.Fill_32In_32The_32QuoteCode.GDCorrectPopupTextObjects2= [];
 gdjs.Fill_32In_32The_32QuoteCode.GDCorrectPopupTextObjects3= [];
 gdjs.Fill_32In_32The_32QuoteCode.GDCorrectPopupTextObjects4= [];
 gdjs.Fill_32In_32The_32QuoteCode.GDCorrectPopupTextObjects5= [];
-gdjs.Fill_32In_32The_32QuoteCode.GDCorrectPopupTextObjects6= [];
-gdjs.Fill_32In_32The_32QuoteCode.GDCorrectPopupTextObjects7= [];
 gdjs.Fill_32In_32The_32QuoteCode.GDTutorialTextObjects1= [];
 gdjs.Fill_32In_32The_32QuoteCode.GDTutorialTextObjects2= [];
 gdjs.Fill_32In_32The_32QuoteCode.GDTutorialTextObjects3= [];
 gdjs.Fill_32In_32The_32QuoteCode.GDTutorialTextObjects4= [];
 gdjs.Fill_32In_32The_32QuoteCode.GDTutorialTextObjects5= [];
-gdjs.Fill_32In_32The_32QuoteCode.GDTutorialTextObjects6= [];
-gdjs.Fill_32In_32The_32QuoteCode.GDTutorialTextObjects7= [];
 gdjs.Fill_32In_32The_32QuoteCode.GDStartButtonObjects1= [];
 gdjs.Fill_32In_32The_32QuoteCode.GDStartButtonObjects2= [];
 gdjs.Fill_32In_32The_32QuoteCode.GDStartButtonObjects3= [];
 gdjs.Fill_32In_32The_32QuoteCode.GDStartButtonObjects4= [];
 gdjs.Fill_32In_32The_32QuoteCode.GDStartButtonObjects5= [];
-gdjs.Fill_32In_32The_32QuoteCode.GDStartButtonObjects6= [];
-gdjs.Fill_32In_32The_32QuoteCode.GDStartButtonObjects7= [];
 gdjs.Fill_32In_32The_32QuoteCode.GDExitMinigameButtonObjects1= [];
 gdjs.Fill_32In_32The_32QuoteCode.GDExitMinigameButtonObjects2= [];
 gdjs.Fill_32In_32The_32QuoteCode.GDExitMinigameButtonObjects3= [];
 gdjs.Fill_32In_32The_32QuoteCode.GDExitMinigameButtonObjects4= [];
 gdjs.Fill_32In_32The_32QuoteCode.GDExitMinigameButtonObjects5= [];
-gdjs.Fill_32In_32The_32QuoteCode.GDExitMinigameButtonObjects6= [];
-gdjs.Fill_32In_32The_32QuoteCode.GDExitMinigameButtonObjects7= [];
 
 
 gdjs.Fill_32In_32The_32QuoteCode.mapOfGDgdjs_9546Fill_959532In_959532The_959532QuoteCode_9546GDExitMinigameButtonObjects2Objects = Hashtable.newFrom({"ExitMinigameButton": gdjs.Fill_32In_32The_32QuoteCode.GDExitMinigameButtonObjects2});
@@ -443,6 +417,8 @@ if (isConditionTrue_0) {
 gdjs.copyArray(runtimeScene.getObjects("ExitMinigameButton"), gdjs.Fill_32In_32The_32QuoteCode.GDExitMinigameButtonObjects1);
 /* Reuse gdjs.Fill_32In_32The_32QuoteCode.GDStartButtonObjects1 */
 gdjs.copyArray(runtimeScene.getObjects("SubmitButton"), gdjs.Fill_32In_32The_32QuoteCode.GDSubmitButtonObjects1);
+{gdjs.evtTools.sound.playSound(runtimeScene, "assets\\sfx\\ui_pop3.wav", false, 50, 1);
+}
 {gdjs.evtTools.camera.hideLayer(runtimeScene, "TutorialPopup");
 }
 {for(var i = 0, len = gdjs.Fill_32In_32The_32QuoteCode.GDSubmitButtonObjects1.length ;i < len;++i) {
@@ -643,74 +619,8 @@ gdjs.Fill_32In_32The_32QuoteCode.eventsList9(runtimeScene);} //End of subevents
 };gdjs.Fill_32In_32The_32QuoteCode.mapOfGDgdjs_9546Fill_959532In_959532The_959532QuoteCode_9546GDQuoteInputObjects1Objects = Hashtable.newFrom({"QuoteInput": gdjs.Fill_32In_32The_32QuoteCode.GDQuoteInputObjects1});
 gdjs.Fill_32In_32The_32QuoteCode.eventsList11 = function(runtimeScene) {
 
-{
-
-gdjs.copyArray(gdjs.Fill_32In_32The_32QuoteCode.GDQuoteInputObjects5, gdjs.Fill_32In_32The_32QuoteCode.GDQuoteInputObjects6);
-
-
-let isConditionTrue_0 = false;
-isConditionTrue_0 = false;
-for (var i = 0, k = 0, l = gdjs.Fill_32In_32The_32QuoteCode.GDQuoteInputObjects6.length;i<l;++i) {
-    if ( gdjs.Fill_32In_32The_32QuoteCode.GDQuoteInputObjects6[i].getBehavior("Text").getText() == gdjs.Fill_32In_32The_32QuoteCode.localVariables[0].getFromIndex(1).getAsString() ) {
-        isConditionTrue_0 = true;
-        gdjs.Fill_32In_32The_32QuoteCode.GDQuoteInputObjects6[k] = gdjs.Fill_32In_32The_32QuoteCode.GDQuoteInputObjects6[i];
-        ++k;
-    }
-}
-gdjs.Fill_32In_32The_32QuoteCode.GDQuoteInputObjects6.length = k;
-if (isConditionTrue_0) {
-{gdjs.Fill_32In_32The_32QuoteCode.localVariables[0].getFromIndex(2).setBoolean(true);
-}
-}
-
-}
-
-
-};gdjs.Fill_32In_32The_32QuoteCode.eventsList12 = function(runtimeScene) {
-
-{
-
-gdjs.copyArray(gdjs.Fill_32In_32The_32QuoteCode.GDQuoteInputObjects3, gdjs.Fill_32In_32The_32QuoteCode.GDQuoteInputObjects4);
-
-
-const repeatCount5 = (gdjs.RuntimeObject.getVariableChildCount(((gdjs.Fill_32In_32The_32QuoteCode.GDQuoteInputObjects4.length === 0 ) ? gdjs.VariablesContainer.badVariablesContainer : gdjs.Fill_32In_32The_32QuoteCode.GDQuoteInputObjects4[0].getVariables()).getFromIndex(0)));
-for (let repeatIndex5 = 0;repeatIndex5 < repeatCount5;++repeatIndex5) {
-gdjs.copyArray(gdjs.Fill_32In_32The_32QuoteCode.GDQuoteInputObjects4, gdjs.Fill_32In_32The_32QuoteCode.GDQuoteInputObjects5);
-
-
-let isConditionTrue_0 = false;
-if (true)
-{
-{gdjs.Fill_32In_32The_32QuoteCode.localVariables[0].getFromIndex(1).setString(((gdjs.Fill_32In_32The_32QuoteCode.GDQuoteInputObjects5.length === 0 ) ? gdjs.VariablesContainer.badVariablesContainer : gdjs.Fill_32In_32The_32QuoteCode.GDQuoteInputObjects5[0].getVariables()).getFromIndex(0).getChild(gdjs.Fill_32In_32The_32QuoteCode.localVariables[0].getFromIndex(3).getAsNumber()).getAsString());
-}
-{gdjs.Fill_32In_32The_32QuoteCode.localVariables[0].getFromIndex(3).add(1);
-}
-
-{ //Subevents: 
-gdjs.Fill_32In_32The_32QuoteCode.eventsList11(runtimeScene);} //Subevents end.
-}
-}
-
-}
-
-
-{
-
-
-let isConditionTrue_0 = false;
-isConditionTrue_0 = false;
-{isConditionTrue_0 = !gdjs.Fill_32In_32The_32QuoteCode.localVariables[0].getFromIndex(2).getAsBoolean();
-}
-if (isConditionTrue_0) {
-{gdjs.Fill_32In_32The_32QuoteCode.localVariables[0].getFromIndex(0).setBoolean(false);
-}
-}
-
-}
-
-
 };gdjs.Fill_32In_32The_32QuoteCode.mapOfGDgdjs_9546Fill_959532In_959532The_959532QuoteCode_9546GDQuoteInputObjects2Objects = Hashtable.newFrom({"QuoteInput": gdjs.Fill_32In_32The_32QuoteCode.GDQuoteInputObjects2});
-gdjs.Fill_32In_32The_32QuoteCode.eventsList13 = function(runtimeScene) {
+gdjs.Fill_32In_32The_32QuoteCode.eventsList12 = function(runtimeScene) {
 
 {
 
@@ -736,7 +646,7 @@ gdjs.copyArray(runtimeScene.getObjects("CorrectPopupText"), gdjs.Fill_32In_32The
 
 
 };gdjs.Fill_32In_32The_32QuoteCode.mapOfGDgdjs_9546Fill_959532In_959532The_959532QuoteCode_9546GDQuoteInputObjects1Objects = Hashtable.newFrom({"QuoteInput": gdjs.Fill_32In_32The_32QuoteCode.GDQuoteInputObjects1});
-gdjs.Fill_32In_32The_32QuoteCode.eventsList14 = function(runtimeScene) {
+gdjs.Fill_32In_32The_32QuoteCode.eventsList13 = function(runtimeScene) {
 
 {
 
@@ -750,14 +660,18 @@ gdjs.Fill_32In_32The_32QuoteCode.GDQuoteInputObjects3.length = 0;
 gdjs.Fill_32In_32The_32QuoteCode.forEachTemporary3 = gdjs.Fill_32In_32The_32QuoteCode.GDQuoteInputObjects2[gdjs.Fill_32In_32The_32QuoteCode.forEachIndex3];
 gdjs.Fill_32In_32The_32QuoteCode.GDQuoteInputObjects3.push(gdjs.Fill_32In_32The_32QuoteCode.forEachTemporary3);
 let isConditionTrue_0 = false;
-if (true) {
-{gdjs.Fill_32In_32The_32QuoteCode.localVariables[0].getFromIndex(2).setBoolean(false);
+isConditionTrue_0 = false;
+for (var i = 0, k = 0, l = gdjs.Fill_32In_32The_32QuoteCode.GDQuoteInputObjects3.length;i<l;++i) {
+    if ( gdjs.Fill_32In_32The_32QuoteCode.GDQuoteInputObjects3[i].getBehavior("Text").getText() != gdjs.Fill_32In_32The_32QuoteCode.GDQuoteInputObjects3[i].getVariables().getFromIndex(0).getAsString() ) {
+        isConditionTrue_0 = true;
+        gdjs.Fill_32In_32The_32QuoteCode.GDQuoteInputObjects3[k] = gdjs.Fill_32In_32The_32QuoteCode.GDQuoteInputObjects3[i];
+        ++k;
+    }
 }
-{gdjs.Fill_32In_32The_32QuoteCode.localVariables[0].getFromIndex(3).setNumber(0);
+gdjs.Fill_32In_32The_32QuoteCode.GDQuoteInputObjects3.length = k;
+if (isConditionTrue_0) {
+{gdjs.Fill_32In_32The_32QuoteCode.localVariables[0].getFromIndex(0).setBoolean(false);
 }
-
-{ //Subevents: 
-gdjs.Fill_32In_32The_32QuoteCode.eventsList12(runtimeScene);} //Subevents end.
 }
 }
 
@@ -812,7 +726,7 @@ gdjs.copyArray(gdjs.Fill_32In_32The_32QuoteCode.GDSubmitButtonObjects1, gdjs.Fil
 }
 
 { //Subevents
-gdjs.Fill_32In_32The_32QuoteCode.eventsList13(runtimeScene);} //End of subevents
+gdjs.Fill_32In_32The_32QuoteCode.eventsList12(runtimeScene);} //End of subevents
 }
 
 }
@@ -864,7 +778,7 @@ gdjs.copyArray(runtimeScene.getObjects("RetryButton"), gdjs.Fill_32In_32The_32Qu
 }
 
 
-};gdjs.Fill_32In_32The_32QuoteCode.eventsList15 = function(runtimeScene) {
+};gdjs.Fill_32In_32The_32QuoteCode.eventsList14 = function(runtimeScene) {
 
 {
 
@@ -879,21 +793,6 @@ const variables = new gdjs.VariablesContainer();
 const variable = new gdjs.Variable();
 variable.setBoolean(true);
 variables._declare("areAllInputsCorrect", variable);
-}
-{
-const variable = new gdjs.Variable();
-variable.setString("");
-variables._declare("currentAnswer", variable);
-}
-{
-const variable = new gdjs.Variable();
-variable.setBoolean(false);
-variables._declare("hasValidAnswer", variable);
-}
-{
-const variable = new gdjs.Variable();
-variable.setNumber(0);
-variables._declare("currentAnswerIndex", variable);
 }
 gdjs.Fill_32In_32The_32QuoteCode.localVariables.push(variables);
 }
@@ -930,14 +829,14 @@ isConditionTrue_0 = gdjs.evtTools.linkedObjects.pickObjectsLinkedTo(runtimeScene
 if (isConditionTrue_0) {
 
 { //Subevents
-gdjs.Fill_32In_32The_32QuoteCode.eventsList14(runtimeScene);} //End of subevents
+gdjs.Fill_32In_32The_32QuoteCode.eventsList13(runtimeScene);} //End of subevents
 }
 gdjs.Fill_32In_32The_32QuoteCode.localVariables.pop();
 
 }
 
 
-};gdjs.Fill_32In_32The_32QuoteCode.eventsList16 = function(runtimeScene) {
+};gdjs.Fill_32In_32The_32QuoteCode.eventsList15 = function(runtimeScene) {
 
 {
 
@@ -956,13 +855,13 @@ gdjs.Fill_32In_32The_32QuoteCode.GDSubmitButtonObjects1.length = k;
 if (isConditionTrue_0) {
 
 { //Subevents
-gdjs.Fill_32In_32The_32QuoteCode.eventsList15(runtimeScene);} //End of subevents
+gdjs.Fill_32In_32The_32QuoteCode.eventsList14(runtimeScene);} //End of subevents
 }
 
 }
 
 
-};gdjs.Fill_32In_32The_32QuoteCode.eventsList17 = function(runtimeScene) {
+};gdjs.Fill_32In_32The_32QuoteCode.eventsList16 = function(runtimeScene) {
 
 {
 
@@ -977,7 +876,7 @@ let isConditionTrue_0 = false;
 
 
 };gdjs.Fill_32In_32The_32QuoteCode.mapOfGDgdjs_9546Fill_959532In_959532The_959532QuoteCode_9546GDQuoteInputObjects1Objects = Hashtable.newFrom({"QuoteInput": gdjs.Fill_32In_32The_32QuoteCode.GDQuoteInputObjects1});
-gdjs.Fill_32In_32The_32QuoteCode.eventsList18 = function(runtimeScene) {
+gdjs.Fill_32In_32The_32QuoteCode.eventsList17 = function(runtimeScene) {
 
 {
 
@@ -1044,7 +943,7 @@ for(var i = 0, len = gdjs.Fill_32In_32The_32QuoteCode.GDQuoteText1Objects1.lengt
 }
 
 
-};gdjs.Fill_32In_32The_32QuoteCode.eventsList19 = function(runtimeScene) {
+};gdjs.Fill_32In_32The_32QuoteCode.eventsList18 = function(runtimeScene) {
 
 {
 
@@ -1058,7 +957,7 @@ if (isConditionTrue_0) {
 }
 
 { //Subevents
-gdjs.Fill_32In_32The_32QuoteCode.eventsList17(runtimeScene);} //End of subevents
+gdjs.Fill_32In_32The_32QuoteCode.eventsList16(runtimeScene);} //End of subevents
 }
 
 }
@@ -1074,13 +973,13 @@ isConditionTrue_0 = false;
 if (isConditionTrue_0) {
 
 { //Subevents
-gdjs.Fill_32In_32The_32QuoteCode.eventsList18(runtimeScene);} //End of subevents
+gdjs.Fill_32In_32The_32QuoteCode.eventsList17(runtimeScene);} //End of subevents
 }
 
 }
 
 
-};gdjs.Fill_32In_32The_32QuoteCode.eventsList20 = function(runtimeScene) {
+};gdjs.Fill_32In_32The_32QuoteCode.eventsList19 = function(runtimeScene) {
 
 {
 
@@ -1100,6 +999,8 @@ if (isConditionTrue_0) {
 /* Reuse gdjs.Fill_32In_32The_32QuoteCode.GDNextButtonObjects1 */
 gdjs.copyArray(runtimeScene.getObjects("QuoteInput"), gdjs.Fill_32In_32The_32QuoteCode.GDQuoteInputObjects1);
 gdjs.copyArray(runtimeScene.getObjects("SubmitButton"), gdjs.Fill_32In_32The_32QuoteCode.GDSubmitButtonObjects1);
+{gdjs.evtTools.sound.playSound(runtimeScene, "assets\\sfx\\ui_pop3.wav", false, 50, 1);
+}
 {gdjs.evtTools.camera.hideLayer(runtimeScene, "CorrectPopup");
 }
 {gdjs.evtTools.camera.showLayer(runtimeScene, "QuoteText");
@@ -1122,13 +1023,13 @@ gdjs.copyArray(runtimeScene.getObjects("SubmitButton"), gdjs.Fill_32In_32The_32Q
 }
 
 { //Subevents
-gdjs.Fill_32In_32The_32QuoteCode.eventsList19(runtimeScene);} //End of subevents
+gdjs.Fill_32In_32The_32QuoteCode.eventsList18(runtimeScene);} //End of subevents
 }
 
 }
 
 
-};gdjs.Fill_32In_32The_32QuoteCode.eventsList21 = function(runtimeScene) {
+};gdjs.Fill_32In_32The_32QuoteCode.eventsList20 = function(runtimeScene) {
 
 {
 
@@ -1148,6 +1049,8 @@ if (isConditionTrue_0) {
 gdjs.copyArray(runtimeScene.getObjects("QuoteInput"), gdjs.Fill_32In_32The_32QuoteCode.GDQuoteInputObjects1);
 /* Reuse gdjs.Fill_32In_32The_32QuoteCode.GDRetryButtonObjects1 */
 gdjs.copyArray(runtimeScene.getObjects("SubmitButton"), gdjs.Fill_32In_32The_32QuoteCode.GDSubmitButtonObjects1);
+{gdjs.evtTools.sound.playSound(runtimeScene, "assets\\sfx\\ui_pop3.wav", false, 50, 1);
+}
 {gdjs.evtTools.camera.hideLayer(runtimeScene, "IncorrectPopup");
 }
 {gdjs.evtTools.camera.showLayer(runtimeScene, "QuoteText");
@@ -1177,7 +1080,7 @@ gdjs.copyArray(runtimeScene.getObjects("SubmitButton"), gdjs.Fill_32In_32The_32Q
 }
 
 
-};gdjs.Fill_32In_32The_32QuoteCode.eventsList22 = function(runtimeScene) {
+};gdjs.Fill_32In_32The_32QuoteCode.eventsList21 = function(runtimeScene) {
 
 {
 
@@ -1210,7 +1113,14 @@ gdjs.Fill_32In_32The_32QuoteCode.eventsList10(runtimeScene);
 {
 
 
-gdjs.Fill_32In_32The_32QuoteCode.eventsList16(runtimeScene);
+gdjs.Fill_32In_32The_32QuoteCode.eventsList15(runtimeScene);
+}
+
+
+{
+
+
+gdjs.Fill_32In_32The_32QuoteCode.eventsList19(runtimeScene);
 }
 
 
@@ -1218,13 +1128,6 @@ gdjs.Fill_32In_32The_32QuoteCode.eventsList16(runtimeScene);
 
 
 gdjs.Fill_32In_32The_32QuoteCode.eventsList20(runtimeScene);
-}
-
-
-{
-
-
-gdjs.Fill_32In_32The_32QuoteCode.eventsList21(runtimeScene);
 }
 
 
@@ -1238,185 +1141,133 @@ gdjs.Fill_32In_32The_32QuoteCode.GDQuoteText3Objects2.length = 0;
 gdjs.Fill_32In_32The_32QuoteCode.GDQuoteText3Objects3.length = 0;
 gdjs.Fill_32In_32The_32QuoteCode.GDQuoteText3Objects4.length = 0;
 gdjs.Fill_32In_32The_32QuoteCode.GDQuoteText3Objects5.length = 0;
-gdjs.Fill_32In_32The_32QuoteCode.GDQuoteText3Objects6.length = 0;
-gdjs.Fill_32In_32The_32QuoteCode.GDQuoteText3Objects7.length = 0;
 gdjs.Fill_32In_32The_32QuoteCode.GDQuoteInputObjects1.length = 0;
 gdjs.Fill_32In_32The_32QuoteCode.GDQuoteInputObjects2.length = 0;
 gdjs.Fill_32In_32The_32QuoteCode.GDQuoteInputObjects3.length = 0;
 gdjs.Fill_32In_32The_32QuoteCode.GDQuoteInputObjects4.length = 0;
 gdjs.Fill_32In_32The_32QuoteCode.GDQuoteInputObjects5.length = 0;
-gdjs.Fill_32In_32The_32QuoteCode.GDQuoteInputObjects6.length = 0;
-gdjs.Fill_32In_32The_32QuoteCode.GDQuoteInputObjects7.length = 0;
 gdjs.Fill_32In_32The_32QuoteCode.GDQuoteText2Objects1.length = 0;
 gdjs.Fill_32In_32The_32QuoteCode.GDQuoteText2Objects2.length = 0;
 gdjs.Fill_32In_32The_32QuoteCode.GDQuoteText2Objects3.length = 0;
 gdjs.Fill_32In_32The_32QuoteCode.GDQuoteText2Objects4.length = 0;
 gdjs.Fill_32In_32The_32QuoteCode.GDQuoteText2Objects5.length = 0;
-gdjs.Fill_32In_32The_32QuoteCode.GDQuoteText2Objects6.length = 0;
-gdjs.Fill_32In_32The_32QuoteCode.GDQuoteText2Objects7.length = 0;
 gdjs.Fill_32In_32The_32QuoteCode.GDQuoteText1Objects1.length = 0;
 gdjs.Fill_32In_32The_32QuoteCode.GDQuoteText1Objects2.length = 0;
 gdjs.Fill_32In_32The_32QuoteCode.GDQuoteText1Objects3.length = 0;
 gdjs.Fill_32In_32The_32QuoteCode.GDQuoteText1Objects4.length = 0;
 gdjs.Fill_32In_32The_32QuoteCode.GDQuoteText1Objects5.length = 0;
-gdjs.Fill_32In_32The_32QuoteCode.GDQuoteText1Objects6.length = 0;
-gdjs.Fill_32In_32The_32QuoteCode.GDQuoteText1Objects7.length = 0;
 gdjs.Fill_32In_32The_32QuoteCode.GDSubmitButtonObjects1.length = 0;
 gdjs.Fill_32In_32The_32QuoteCode.GDSubmitButtonObjects2.length = 0;
 gdjs.Fill_32In_32The_32QuoteCode.GDSubmitButtonObjects3.length = 0;
 gdjs.Fill_32In_32The_32QuoteCode.GDSubmitButtonObjects4.length = 0;
 gdjs.Fill_32In_32The_32QuoteCode.GDSubmitButtonObjects5.length = 0;
-gdjs.Fill_32In_32The_32QuoteCode.GDSubmitButtonObjects6.length = 0;
-gdjs.Fill_32In_32The_32QuoteCode.GDSubmitButtonObjects7.length = 0;
 gdjs.Fill_32In_32The_32QuoteCode.GDPopupBackgroundObjects1.length = 0;
 gdjs.Fill_32In_32The_32QuoteCode.GDPopupBackgroundObjects2.length = 0;
 gdjs.Fill_32In_32The_32QuoteCode.GDPopupBackgroundObjects3.length = 0;
 gdjs.Fill_32In_32The_32QuoteCode.GDPopupBackgroundObjects4.length = 0;
 gdjs.Fill_32In_32The_32QuoteCode.GDPopupBackgroundObjects5.length = 0;
-gdjs.Fill_32In_32The_32QuoteCode.GDPopupBackgroundObjects6.length = 0;
-gdjs.Fill_32In_32The_32QuoteCode.GDPopupBackgroundObjects7.length = 0;
 gdjs.Fill_32In_32The_32QuoteCode.GDRetryButtonObjects1.length = 0;
 gdjs.Fill_32In_32The_32QuoteCode.GDRetryButtonObjects2.length = 0;
 gdjs.Fill_32In_32The_32QuoteCode.GDRetryButtonObjects3.length = 0;
 gdjs.Fill_32In_32The_32QuoteCode.GDRetryButtonObjects4.length = 0;
 gdjs.Fill_32In_32The_32QuoteCode.GDRetryButtonObjects5.length = 0;
-gdjs.Fill_32In_32The_32QuoteCode.GDRetryButtonObjects6.length = 0;
-gdjs.Fill_32In_32The_32QuoteCode.GDRetryButtonObjects7.length = 0;
 gdjs.Fill_32In_32The_32QuoteCode.GDNextButtonObjects1.length = 0;
 gdjs.Fill_32In_32The_32QuoteCode.GDNextButtonObjects2.length = 0;
 gdjs.Fill_32In_32The_32QuoteCode.GDNextButtonObjects3.length = 0;
 gdjs.Fill_32In_32The_32QuoteCode.GDNextButtonObjects4.length = 0;
 gdjs.Fill_32In_32The_32QuoteCode.GDNextButtonObjects5.length = 0;
-gdjs.Fill_32In_32The_32QuoteCode.GDNextButtonObjects6.length = 0;
-gdjs.Fill_32In_32The_32QuoteCode.GDNextButtonObjects7.length = 0;
 gdjs.Fill_32In_32The_32QuoteCode.GDIncorrectPopupTextObjects1.length = 0;
 gdjs.Fill_32In_32The_32QuoteCode.GDIncorrectPopupTextObjects2.length = 0;
 gdjs.Fill_32In_32The_32QuoteCode.GDIncorrectPopupTextObjects3.length = 0;
 gdjs.Fill_32In_32The_32QuoteCode.GDIncorrectPopupTextObjects4.length = 0;
 gdjs.Fill_32In_32The_32QuoteCode.GDIncorrectPopupTextObjects5.length = 0;
-gdjs.Fill_32In_32The_32QuoteCode.GDIncorrectPopupTextObjects6.length = 0;
-gdjs.Fill_32In_32The_32QuoteCode.GDIncorrectPopupTextObjects7.length = 0;
 gdjs.Fill_32In_32The_32QuoteCode.GDCorrectPopupTextObjects1.length = 0;
 gdjs.Fill_32In_32The_32QuoteCode.GDCorrectPopupTextObjects2.length = 0;
 gdjs.Fill_32In_32The_32QuoteCode.GDCorrectPopupTextObjects3.length = 0;
 gdjs.Fill_32In_32The_32QuoteCode.GDCorrectPopupTextObjects4.length = 0;
 gdjs.Fill_32In_32The_32QuoteCode.GDCorrectPopupTextObjects5.length = 0;
-gdjs.Fill_32In_32The_32QuoteCode.GDCorrectPopupTextObjects6.length = 0;
-gdjs.Fill_32In_32The_32QuoteCode.GDCorrectPopupTextObjects7.length = 0;
 gdjs.Fill_32In_32The_32QuoteCode.GDTutorialTextObjects1.length = 0;
 gdjs.Fill_32In_32The_32QuoteCode.GDTutorialTextObjects2.length = 0;
 gdjs.Fill_32In_32The_32QuoteCode.GDTutorialTextObjects3.length = 0;
 gdjs.Fill_32In_32The_32QuoteCode.GDTutorialTextObjects4.length = 0;
 gdjs.Fill_32In_32The_32QuoteCode.GDTutorialTextObjects5.length = 0;
-gdjs.Fill_32In_32The_32QuoteCode.GDTutorialTextObjects6.length = 0;
-gdjs.Fill_32In_32The_32QuoteCode.GDTutorialTextObjects7.length = 0;
 gdjs.Fill_32In_32The_32QuoteCode.GDStartButtonObjects1.length = 0;
 gdjs.Fill_32In_32The_32QuoteCode.GDStartButtonObjects2.length = 0;
 gdjs.Fill_32In_32The_32QuoteCode.GDStartButtonObjects3.length = 0;
 gdjs.Fill_32In_32The_32QuoteCode.GDStartButtonObjects4.length = 0;
 gdjs.Fill_32In_32The_32QuoteCode.GDStartButtonObjects5.length = 0;
-gdjs.Fill_32In_32The_32QuoteCode.GDStartButtonObjects6.length = 0;
-gdjs.Fill_32In_32The_32QuoteCode.GDStartButtonObjects7.length = 0;
 gdjs.Fill_32In_32The_32QuoteCode.GDExitMinigameButtonObjects1.length = 0;
 gdjs.Fill_32In_32The_32QuoteCode.GDExitMinigameButtonObjects2.length = 0;
 gdjs.Fill_32In_32The_32QuoteCode.GDExitMinigameButtonObjects3.length = 0;
 gdjs.Fill_32In_32The_32QuoteCode.GDExitMinigameButtonObjects4.length = 0;
 gdjs.Fill_32In_32The_32QuoteCode.GDExitMinigameButtonObjects5.length = 0;
-gdjs.Fill_32In_32The_32QuoteCode.GDExitMinigameButtonObjects6.length = 0;
-gdjs.Fill_32In_32The_32QuoteCode.GDExitMinigameButtonObjects7.length = 0;
 
-gdjs.Fill_32In_32The_32QuoteCode.eventsList22(runtimeScene);
+gdjs.Fill_32In_32The_32QuoteCode.eventsList21(runtimeScene);
 gdjs.Fill_32In_32The_32QuoteCode.GDQuoteText3Objects1.length = 0;
 gdjs.Fill_32In_32The_32QuoteCode.GDQuoteText3Objects2.length = 0;
 gdjs.Fill_32In_32The_32QuoteCode.GDQuoteText3Objects3.length = 0;
 gdjs.Fill_32In_32The_32QuoteCode.GDQuoteText3Objects4.length = 0;
 gdjs.Fill_32In_32The_32QuoteCode.GDQuoteText3Objects5.length = 0;
-gdjs.Fill_32In_32The_32QuoteCode.GDQuoteText3Objects6.length = 0;
-gdjs.Fill_32In_32The_32QuoteCode.GDQuoteText3Objects7.length = 0;
 gdjs.Fill_32In_32The_32QuoteCode.GDQuoteInputObjects1.length = 0;
 gdjs.Fill_32In_32The_32QuoteCode.GDQuoteInputObjects2.length = 0;
 gdjs.Fill_32In_32The_32QuoteCode.GDQuoteInputObjects3.length = 0;
 gdjs.Fill_32In_32The_32QuoteCode.GDQuoteInputObjects4.length = 0;
 gdjs.Fill_32In_32The_32QuoteCode.GDQuoteInputObjects5.length = 0;
-gdjs.Fill_32In_32The_32QuoteCode.GDQuoteInputObjects6.length = 0;
-gdjs.Fill_32In_32The_32QuoteCode.GDQuoteInputObjects7.length = 0;
 gdjs.Fill_32In_32The_32QuoteCode.GDQuoteText2Objects1.length = 0;
 gdjs.Fill_32In_32The_32QuoteCode.GDQuoteText2Objects2.length = 0;
 gdjs.Fill_32In_32The_32QuoteCode.GDQuoteText2Objects3.length = 0;
 gdjs.Fill_32In_32The_32QuoteCode.GDQuoteText2Objects4.length = 0;
 gdjs.Fill_32In_32The_32QuoteCode.GDQuoteText2Objects5.length = 0;
-gdjs.Fill_32In_32The_32QuoteCode.GDQuoteText2Objects6.length = 0;
-gdjs.Fill_32In_32The_32QuoteCode.GDQuoteText2Objects7.length = 0;
 gdjs.Fill_32In_32The_32QuoteCode.GDQuoteText1Objects1.length = 0;
 gdjs.Fill_32In_32The_32QuoteCode.GDQuoteText1Objects2.length = 0;
 gdjs.Fill_32In_32The_32QuoteCode.GDQuoteText1Objects3.length = 0;
 gdjs.Fill_32In_32The_32QuoteCode.GDQuoteText1Objects4.length = 0;
 gdjs.Fill_32In_32The_32QuoteCode.GDQuoteText1Objects5.length = 0;
-gdjs.Fill_32In_32The_32QuoteCode.GDQuoteText1Objects6.length = 0;
-gdjs.Fill_32In_32The_32QuoteCode.GDQuoteText1Objects7.length = 0;
 gdjs.Fill_32In_32The_32QuoteCode.GDSubmitButtonObjects1.length = 0;
 gdjs.Fill_32In_32The_32QuoteCode.GDSubmitButtonObjects2.length = 0;
 gdjs.Fill_32In_32The_32QuoteCode.GDSubmitButtonObjects3.length = 0;
 gdjs.Fill_32In_32The_32QuoteCode.GDSubmitButtonObjects4.length = 0;
 gdjs.Fill_32In_32The_32QuoteCode.GDSubmitButtonObjects5.length = 0;
-gdjs.Fill_32In_32The_32QuoteCode.GDSubmitButtonObjects6.length = 0;
-gdjs.Fill_32In_32The_32QuoteCode.GDSubmitButtonObjects7.length = 0;
 gdjs.Fill_32In_32The_32QuoteCode.GDPopupBackgroundObjects1.length = 0;
 gdjs.Fill_32In_32The_32QuoteCode.GDPopupBackgroundObjects2.length = 0;
 gdjs.Fill_32In_32The_32QuoteCode.GDPopupBackgroundObjects3.length = 0;
 gdjs.Fill_32In_32The_32QuoteCode.GDPopupBackgroundObjects4.length = 0;
 gdjs.Fill_32In_32The_32QuoteCode.GDPopupBackgroundObjects5.length = 0;
-gdjs.Fill_32In_32The_32QuoteCode.GDPopupBackgroundObjects6.length = 0;
-gdjs.Fill_32In_32The_32QuoteCode.GDPopupBackgroundObjects7.length = 0;
 gdjs.Fill_32In_32The_32QuoteCode.GDRetryButtonObjects1.length = 0;
 gdjs.Fill_32In_32The_32QuoteCode.GDRetryButtonObjects2.length = 0;
 gdjs.Fill_32In_32The_32QuoteCode.GDRetryButtonObjects3.length = 0;
 gdjs.Fill_32In_32The_32QuoteCode.GDRetryButtonObjects4.length = 0;
 gdjs.Fill_32In_32The_32QuoteCode.GDRetryButtonObjects5.length = 0;
-gdjs.Fill_32In_32The_32QuoteCode.GDRetryButtonObjects6.length = 0;
-gdjs.Fill_32In_32The_32QuoteCode.GDRetryButtonObjects7.length = 0;
 gdjs.Fill_32In_32The_32QuoteCode.GDNextButtonObjects1.length = 0;
 gdjs.Fill_32In_32The_32QuoteCode.GDNextButtonObjects2.length = 0;
 gdjs.Fill_32In_32The_32QuoteCode.GDNextButtonObjects3.length = 0;
 gdjs.Fill_32In_32The_32QuoteCode.GDNextButtonObjects4.length = 0;
 gdjs.Fill_32In_32The_32QuoteCode.GDNextButtonObjects5.length = 0;
-gdjs.Fill_32In_32The_32QuoteCode.GDNextButtonObjects6.length = 0;
-gdjs.Fill_32In_32The_32QuoteCode.GDNextButtonObjects7.length = 0;
 gdjs.Fill_32In_32The_32QuoteCode.GDIncorrectPopupTextObjects1.length = 0;
 gdjs.Fill_32In_32The_32QuoteCode.GDIncorrectPopupTextObjects2.length = 0;
 gdjs.Fill_32In_32The_32QuoteCode.GDIncorrectPopupTextObjects3.length = 0;
 gdjs.Fill_32In_32The_32QuoteCode.GDIncorrectPopupTextObjects4.length = 0;
 gdjs.Fill_32In_32The_32QuoteCode.GDIncorrectPopupTextObjects5.length = 0;
-gdjs.Fill_32In_32The_32QuoteCode.GDIncorrectPopupTextObjects6.length = 0;
-gdjs.Fill_32In_32The_32QuoteCode.GDIncorrectPopupTextObjects7.length = 0;
 gdjs.Fill_32In_32The_32QuoteCode.GDCorrectPopupTextObjects1.length = 0;
 gdjs.Fill_32In_32The_32QuoteCode.GDCorrectPopupTextObjects2.length = 0;
 gdjs.Fill_32In_32The_32QuoteCode.GDCorrectPopupTextObjects3.length = 0;
 gdjs.Fill_32In_32The_32QuoteCode.GDCorrectPopupTextObjects4.length = 0;
 gdjs.Fill_32In_32The_32QuoteCode.GDCorrectPopupTextObjects5.length = 0;
-gdjs.Fill_32In_32The_32QuoteCode.GDCorrectPopupTextObjects6.length = 0;
-gdjs.Fill_32In_32The_32QuoteCode.GDCorrectPopupTextObjects7.length = 0;
 gdjs.Fill_32In_32The_32QuoteCode.GDTutorialTextObjects1.length = 0;
 gdjs.Fill_32In_32The_32QuoteCode.GDTutorialTextObjects2.length = 0;
 gdjs.Fill_32In_32The_32QuoteCode.GDTutorialTextObjects3.length = 0;
 gdjs.Fill_32In_32The_32QuoteCode.GDTutorialTextObjects4.length = 0;
 gdjs.Fill_32In_32The_32QuoteCode.GDTutorialTextObjects5.length = 0;
-gdjs.Fill_32In_32The_32QuoteCode.GDTutorialTextObjects6.length = 0;
-gdjs.Fill_32In_32The_32QuoteCode.GDTutorialTextObjects7.length = 0;
 gdjs.Fill_32In_32The_32QuoteCode.GDStartButtonObjects1.length = 0;
 gdjs.Fill_32In_32The_32QuoteCode.GDStartButtonObjects2.length = 0;
 gdjs.Fill_32In_32The_32QuoteCode.GDStartButtonObjects3.length = 0;
 gdjs.Fill_32In_32The_32QuoteCode.GDStartButtonObjects4.length = 0;
 gdjs.Fill_32In_32The_32QuoteCode.GDStartButtonObjects5.length = 0;
-gdjs.Fill_32In_32The_32QuoteCode.GDStartButtonObjects6.length = 0;
-gdjs.Fill_32In_32The_32QuoteCode.GDStartButtonObjects7.length = 0;
 gdjs.Fill_32In_32The_32QuoteCode.GDExitMinigameButtonObjects1.length = 0;
 gdjs.Fill_32In_32The_32QuoteCode.GDExitMinigameButtonObjects2.length = 0;
 gdjs.Fill_32In_32The_32QuoteCode.GDExitMinigameButtonObjects3.length = 0;
 gdjs.Fill_32In_32The_32QuoteCode.GDExitMinigameButtonObjects4.length = 0;
 gdjs.Fill_32In_32The_32QuoteCode.GDExitMinigameButtonObjects5.length = 0;
-gdjs.Fill_32In_32The_32QuoteCode.GDExitMinigameButtonObjects6.length = 0;
-gdjs.Fill_32In_32The_32QuoteCode.GDExitMinigameButtonObjects7.length = 0;
 
 
 return;

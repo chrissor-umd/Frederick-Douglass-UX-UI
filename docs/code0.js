@@ -126,6 +126,8 @@ for (var i = 0, k = 0, l = gdjs.Main_32MenuCode.GDStartButtonObjects1.length;i<l
 }
 gdjs.Main_32MenuCode.GDStartButtonObjects1.length = k;
 if (isConditionTrue_0) {
+{gdjs.evtTools.sound.playSound(runtimeScene, "assets\\sfx\\ui_pop3.wav", false, 50, 1);
+}
 {gdjs.evtTools.runtimeScene.replaceScene(runtimeScene, "Exploration", false);
 }
 }
@@ -157,6 +159,8 @@ for (var i = 0, k = 0, l = gdjs.Main_32MenuCode.GDCreditsButtonObjects1.length;i
 }
 gdjs.Main_32MenuCode.GDCreditsButtonObjects1.length = k;
 if (isConditionTrue_0) {
+{gdjs.evtTools.sound.playSound(runtimeScene, "assets\\sfx\\ui_pop3.wav", false, 50, 1);
+}
 
 { //Subevents
 gdjs.Main_32MenuCode.eventsList0(runtimeScene);} //End of subevents
