@@ -691,6 +691,8 @@ if (isConditionTrue_0) {
 }
 {gdjs.evtTools.camera.hideLayer(runtimeScene, "Tutorial2");
 }
+{gdjs.evtTools.input.touchSimulateMouse(runtimeScene, false);
+}
 
 { //Subevents
 gdjs.TutorialCode.eventsList1(runtimeScene);} //End of subevents
