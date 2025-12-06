@@ -3657,7 +3657,7 @@
           "effectType": "Brightness",
           "name": "Darken",
           "doubleParameters": {
-            "brightness": 1
+            "brightness": 0.5
           },
           "stringParameters": {},
           "booleanParameters": {}
