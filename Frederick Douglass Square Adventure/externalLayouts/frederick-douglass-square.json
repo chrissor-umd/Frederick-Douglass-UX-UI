@@ -1209,6 +1209,29 @@
       "numberProperties": [],
       "stringProperties": [],
       "initialVariables": []
+    },
+    {
+      "angle": 91,
+      "customSize": false,
+      "flippedX": true,
+      "height": 0,
+      "keepRatio": true,
+      "layer": "SceneObjects",
+      "name": "TransitionObject",
+      "persistentUuid": "92316186-3bd7-47e3-9d0a-7ccaaf49c380",
+      "width": 0,
+      "x": 111,
+      "y": 433,
+      "zOrder": 3,
+      "numberProperties": [],
+      "stringProperties": [],
+      "initialVariables": [
+        {
+          "name": "targetLayout",
+          "type": "string",
+          "value": "Nyumburu Entrance"
+        }
+      ]
     }
   ],
   "editionSettings": {

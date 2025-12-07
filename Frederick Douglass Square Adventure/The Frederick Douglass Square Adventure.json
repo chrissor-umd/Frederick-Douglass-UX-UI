@@ -1211,6 +1211,46 @@
         "name": "assets\\ui\\sound_off.png",
         "smoothed": true,
         "userAdded": false
+      },
+      {
+        "file": "assets/images/Nyumburu Stairs.JPG",
+        "kind": "image",
+        "metadata": "",
+        "name": "assets/images/Nyumburu Stairs.JPG",
+        "smoothed": true,
+        "userAdded": false
+      },
+      {
+        "file": "assets/images/Nyumburu Entrance.JPG",
+        "kind": "image",
+        "metadata": "",
+        "name": "assets/images/Nyumburu Entrance.JPG",
+        "smoothed": true,
+        "userAdded": false
+      },
+      {
+        "file": "assets/images/Nyumburu Tree.JPG",
+        "kind": "image",
+        "metadata": "",
+        "name": "assets/images/Nyumburu Tree.JPG",
+        "smoothed": true,
+        "userAdded": false
+      },
+      {
+        "file": "assets/images/Nyumburu Upstairs.JPG",
+        "kind": "image",
+        "metadata": "",
+        "name": "assets/images/Nyumburu Upstairs.JPG",
+        "smoothed": true,
+        "userAdded": false
+      },
+      {
+        "file": "assets/images/Nyumburu Mural.jpg",
+        "kind": "image",
+        "metadata": "",
+        "name": "assets/images/Nyumburu Mural.jpg",
+        "smoothed": true,
+        "userAdded": false
       }
     ]
   },
@@ -1426,11 +1466,23 @@
     },
     {
       "__REFERENCE_TO_SPLIT_OBJECT": true,
-      "referenceTo": "/externalLayouts/hornbake-entrance"
+      "referenceTo": "/externalLayouts/nyumburu-entrance"
     },
     {
       "__REFERENCE_TO_SPLIT_OBJECT": true,
-      "referenceTo": "/externalLayouts/hornbake-stairwell-main-floor"
+      "referenceTo": "/externalLayouts/nyumburu-doors"
+    },
+    {
+      "__REFERENCE_TO_SPLIT_OBJECT": true,
+      "referenceTo": "/externalLayouts/nyumburu-stairs"
+    },
+    {
+      "__REFERENCE_TO_SPLIT_OBJECT": true,
+      "referenceTo": "/externalLayouts/nyumburu-tree"
+    },
+    {
+      "__REFERENCE_TO_SPLIT_OBJECT": true,
+      "referenceTo": "/externalLayouts/nyumburu-mural"
     }
   ]
 }
