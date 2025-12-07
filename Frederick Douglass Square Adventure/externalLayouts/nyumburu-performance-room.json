@@ -1,6 +1,6 @@
 {
   "associatedLayout": "Exploration",
-  "name": "Nyumburu Stairs",
+  "name": "Nyumburu Performance Room",
   "instances": [
     {
       "angle": 0,
@@ -17,14 +17,14 @@
       "numberProperties": [
         {
           "name": "animation",
-          "value": 3
+          "value": 5
         }
       ],
       "stringProperties": [],
       "initialVariables": []
     },
     {
-      "angle": 89,
+      "angle": 270,
       "customSize": false,
       "flippedX": true,
       "height": 0,
@@ -33,39 +33,49 @@
       "name": "TransitionObject",
       "persistentUuid": "9cb78b79-6a6d-469f-a613-fc52579c77c6",
       "width": 0,
-      "x": 704,
-      "y": 361,
+      "x": 723,
+      "y": 603,
       "zOrder": 3,
-      "numberProperties": [],
-      "stringProperties": [],
-      "initialVariables": [
+      "numberProperties": [
         {
-          "name": "targetLayout",
-          "type": "string",
-          "value": "Nyumburu Painting"
+          "name": "animation",
+          "value": 0
         }
-      ]
-    },
-    {
-      "angle": 293,
-      "customSize": false,
-      "flippedX": true,
-      "height": 0,
-      "keepRatio": true,
-      "layer": "SceneObjects",
-      "name": "TransitionObject",
-      "persistentUuid": "665ee41f-f5b8-4251-b738-edf8cf833c5e",
-      "width": 0,
-      "x": 169,
-      "y": 611,
-      "zOrder": 3,
-      "numberProperties": [],
+      ],
       "stringProperties": [],
       "initialVariables": [
         {
           "name": "targetLayout",
           "type": "string",
           "value": "Nyumburu Hallway"
+        }
+      ]
+    },
+    {
+      "angle": 132,
+      "customSize": false,
+      "flippedX": true,
+      "height": 0,
+      "keepRatio": true,
+      "layer": "SceneObjects",
+      "name": "TransitionObject",
+      "persistentUuid": "51e0587e-fe96-49f2-acfd-b1237141e4fb",
+      "width": 0,
+      "x": 754,
+      "y": 340,
+      "zOrder": 3,
+      "numberProperties": [
+        {
+          "name": "animation",
+          "value": 0
+        }
+      ],
+      "stringProperties": [],
+      "initialVariables": [
+        {
+          "name": "targetLayout",
+          "type": "string",
+          "value": "Nyumburu Tree"
         }
       ]
     }

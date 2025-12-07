@@ -42,12 +42,12 @@
         {
           "name": "targetLayout",
           "type": "string",
-          "value": "Nyumburu Stairs"
+          "value": "Nyumburu Hallway"
         }
       ]
     },
     {
-      "angle": 255,
+      "angle": 270,
       "customSize": false,
       "flippedX": true,
       "height": 0,
@@ -56,8 +56,8 @@
       "name": "TransitionObject",
       "persistentUuid": "f675a0da-b4ef-40c2-b2b5-b3cce563a39d",
       "width": 0,
-      "x": 587,
-      "y": 603,
+      "x": 576,
+      "y": 608,
       "zOrder": 3,
       "numberProperties": [],
       "stringProperties": [],

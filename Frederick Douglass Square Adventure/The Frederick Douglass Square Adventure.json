@@ -1251,6 +1251,30 @@
         "name": "assets/images/Nyumburu Mural.jpg",
         "smoothed": true,
         "userAdded": false
+      },
+      {
+        "file": "assets/images/Nyumburu Performance Room.JPG",
+        "kind": "image",
+        "metadata": "",
+        "name": "assets/images/Nyumburu Performance Room.JPG",
+        "smoothed": true,
+        "userAdded": false
+      },
+      {
+        "file": "assets/images/Nyumburu Painting.JPG",
+        "kind": "image",
+        "metadata": "",
+        "name": "assets/images/Nyumburu Painting.JPG",
+        "smoothed": true,
+        "userAdded": false
+      },
+      {
+        "file": "assets/images/Nyumburu Hallway.JPG",
+        "kind": "image",
+        "metadata": "",
+        "name": "assets/images/Nyumburu Hallway.JPG",
+        "smoothed": true,
+        "userAdded": false
       }
     ]
   },
@@ -1474,6 +1498,10 @@
     },
     {
       "__REFERENCE_TO_SPLIT_OBJECT": true,
+      "referenceTo": "/externalLayouts/nyumburu-hallway"
+    },
+    {
+      "__REFERENCE_TO_SPLIT_OBJECT": true,
       "referenceTo": "/externalLayouts/nyumburu-stairs"
     },
     {
@@ -1482,7 +1510,11 @@
     },
     {
       "__REFERENCE_TO_SPLIT_OBJECT": true,
-      "referenceTo": "/externalLayouts/nyumburu-mural"
+      "referenceTo": "/externalLayouts/nyumburu-performance-room"
+    },
+    {
+      "__REFERENCE_TO_SPLIT_OBJECT": true,
+      "referenceTo": "/externalLayouts/nyumburu-painting"
     }
   ]
 }

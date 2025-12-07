@@ -1,6 +1,6 @@
 {
   "associatedLayout": "Exploration",
-  "name": "Nyumburu Mural",
+  "name": "Nyumburu Painting",
   "instances": [
     {
       "angle": 0,
@@ -17,14 +17,14 @@
       "numberProperties": [
         {
           "name": "animation",
-          "value": 5
+          "value": 6
         }
       ],
       "stringProperties": [],
       "initialVariables": []
     },
     {
-      "angle": 250,
+      "angle": 270,
       "customSize": false,
       "flippedX": true,
       "height": 0,
@@ -33,8 +33,8 @@
       "name": "TransitionObject",
       "persistentUuid": "9cb78b79-6a6d-469f-a613-fc52579c77c6",
       "width": 0,
-      "x": 417,
-      "y": 588,
+      "x": 809,
+      "y": 613,
       "zOrder": 3,
       "numberProperties": [],
       "stringProperties": [],
@@ -42,7 +42,7 @@
         {
           "name": "targetLayout",
           "type": "string",
-          "value": "Nyumburu Tree"
+          "value": "Nyumburu Stairs"
         }
       ]
     }

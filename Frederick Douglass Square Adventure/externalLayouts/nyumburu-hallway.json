@@ -1,6 +1,6 @@
 {
   "associatedLayout": "Exploration",
-  "name": "Nyumburu Stairs",
+  "name": "Nyumburu Hallway",
   "instances": [
     {
       "angle": 0,
@@ -17,14 +17,14 @@
       "numberProperties": [
         {
           "name": "animation",
-          "value": 3
+          "value": 7
         }
       ],
       "stringProperties": [],
       "initialVariables": []
     },
     {
-      "angle": 89,
+      "angle": 46,
       "customSize": false,
       "flippedX": true,
       "height": 0,
@@ -33,8 +33,8 @@
       "name": "TransitionObject",
       "persistentUuid": "9cb78b79-6a6d-469f-a613-fc52579c77c6",
       "width": 0,
-      "x": 704,
-      "y": 361,
+      "x": 608,
+      "y": 352,
       "zOrder": 3,
       "numberProperties": [],
       "stringProperties": [],
@@ -42,22 +42,22 @@
         {
           "name": "targetLayout",
           "type": "string",
-          "value": "Nyumburu Painting"
+          "value": "Nyumburu Stairs"
         }
       ]
     },
     {
-      "angle": 293,
+      "angle": 270,
       "customSize": false,
       "flippedX": true,
       "height": 0,
       "keepRatio": true,
       "layer": "SceneObjects",
       "name": "TransitionObject",
-      "persistentUuid": "665ee41f-f5b8-4251-b738-edf8cf833c5e",
+      "persistentUuid": "f675a0da-b4ef-40c2-b2b5-b3cce563a39d",
       "width": 0,
-      "x": 169,
-      "y": 611,
+      "x": 576,
+      "y": 608,
       "zOrder": 3,
       "numberProperties": [],
       "stringProperties": [],
@@ -65,13 +65,36 @@
         {
           "name": "targetLayout",
           "type": "string",
-          "value": "Nyumburu Hallway"
+          "value": "Nyumburu Doors"
+        }
+      ]
+    },
+    {
+      "angle": 90,
+      "customSize": false,
+      "flippedX": true,
+      "height": 0,
+      "keepRatio": true,
+      "layer": "SceneObjects",
+      "name": "TransitionObject",
+      "persistentUuid": "19166fa4-4c55-4963-833a-b8e47e42f6ff",
+      "width": 0,
+      "x": 1105,
+      "y": 431,
+      "zOrder": 3,
+      "numberProperties": [],
+      "stringProperties": [],
+      "initialVariables": [
+        {
+          "name": "targetLayout",
+          "type": "string",
+          "value": "Nyumburu Performance Room"
         }
       ]
     }
   ],
   "editionSettings": {
-    "grid": false,
+    "grid": true,
     "gridType": "rectangular",
     "gridWidth": 16,
     "gridHeight": 16,
@@ -81,8 +104,8 @@
     "gridOffsetZ": 0,
     "gridColor": 10401023,
     "gridAlpha": 0.8,
-    "snap": false,
-    "zoomFactor": 0.39251611754882443,
+    "snap": true,
+    "zoomFactor": 0.6244537826600024,
     "windowMask": false,
     "selectedLayer": "SceneObjects"
   }

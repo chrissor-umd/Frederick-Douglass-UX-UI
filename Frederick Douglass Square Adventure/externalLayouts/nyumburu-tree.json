@@ -24,30 +24,7 @@
       "initialVariables": []
     },
     {
-      "angle": 173,
-      "customSize": false,
-      "flippedX": true,
-      "height": 0,
-      "keepRatio": true,
-      "layer": "SceneObjects",
-      "name": "TransitionObject",
-      "persistentUuid": "9cb78b79-6a6d-469f-a613-fc52579c77c6",
-      "width": 0,
-      "x": 965,
-      "y": 538,
-      "zOrder": 3,
-      "numberProperties": [],
-      "stringProperties": [],
-      "initialVariables": [
-        {
-          "name": "targetLayout",
-          "type": "string",
-          "value": "Nyumburu Mural"
-        }
-      ]
-    },
-    {
-      "angle": 290,
+      "angle": 310,
       "customSize": false,
       "flippedX": true,
       "height": 0,
@@ -56,8 +33,8 @@
       "name": "TransitionObject",
       "persistentUuid": "b29a8893-8450-4809-a584-dd44f47b2f9a",
       "width": 0,
-      "x": 430,
-      "y": 587,
+      "x": 310,
+      "y": 612,
       "zOrder": 3,
       "numberProperties": [],
       "stringProperties": [],
@@ -65,7 +42,7 @@
         {
           "name": "targetLayout",
           "type": "string",
-          "value": "Nyumburu Stairs"
+          "value": "Nyumburu Performance Room"
         }
       ]
     }

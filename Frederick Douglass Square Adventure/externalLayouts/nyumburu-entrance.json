@@ -24,7 +24,7 @@
       "initialVariables": []
     },
     {
-      "angle": 111,
+      "angle": 89,
       "customSize": false,
       "flippedX": true,
       "height": 0,
@@ -33,8 +33,8 @@
       "name": "TransitionObject",
       "persistentUuid": "f9d1d9ef-460b-4f3d-8e2b-9fa43990c471",
       "width": 0,
-      "x": 670,
-      "y": 402,
+      "x": 444,
+      "y": 322,
       "zOrder": 4,
       "numberProperties": [
         {
@@ -121,7 +121,7 @@
       ]
     },
     {
-      "angle": 249,
+      "angle": 309,
       "customSize": false,
       "flippedX": true,
       "height": 0,
@@ -130,8 +130,8 @@
       "name": "TransitionObject",
       "persistentUuid": "ee865a11-43e5-46b2-9b37-76be59cc8b89",
       "width": 0,
-      "x": 434,
-      "y": 578,
+      "x": 500,
+      "y": 628,
       "zOrder": 4,
       "numberProperties": [
         {
@@ -186,7 +186,7 @@
     }
   ],
   "editionSettings": {
-    "grid": true,
+    "grid": false,
     "gridType": "rectangular",
     "gridWidth": 16,
     "gridHeight": 16,
@@ -196,7 +196,7 @@
     "gridOffsetZ": 0,
     "gridColor": 10401023,
     "gridAlpha": 0.8,
-    "snap": true,
+    "snap": false,
     "zoomFactor": 0.7370816317994073,
     "windowMask": false,
     "selectedLayer": "SceneObjects"

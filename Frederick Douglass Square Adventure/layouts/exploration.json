@@ -898,7 +898,7 @@
           ]
         },
         {
-          "name": "Nyumburu Upstairs",
+          "name": "Nyumburu Stairs",
           "useMultipleDirections": false,
           "directions": [
             {
@@ -994,7 +994,7 @@
           ]
         },
         {
-          "name": "Nyumburu Mural",
+          "name": "Nyumburu Performance Room",
           "useMultipleDirections": false,
           "directions": [
             {
@@ -1003,7 +1003,103 @@
               "sprites": [
                 {
                   "hasCustomCollisionMask": true,
-                  "image": "assets/images/Nyumburu Mural.jpg",
+                  "image": "assets/images/Nyumburu Performance Room.JPG",
+                  "points": [],
+                  "originPoint": {
+                    "name": "origine",
+                    "x": 0,
+                    "y": 0
+                  },
+                  "centerPoint": {
+                    "automatic": true,
+                    "name": "centre",
+                    "x": 0,
+                    "y": 0
+                  },
+                  "customCollisionMask": [
+                    [
+                      {
+                        "x": 0,
+                        "y": 0
+                      },
+                      {
+                        "x": 1280,
+                        "y": 0
+                      },
+                      {
+                        "x": 1280,
+                        "y": 720
+                      },
+                      {
+                        "x": 0,
+                        "y": 720
+                      }
+                    ]
+                  ]
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "name": "Nyumburu Painting",
+          "useMultipleDirections": false,
+          "directions": [
+            {
+              "looping": false,
+              "timeBetweenFrames": 0.08,
+              "sprites": [
+                {
+                  "hasCustomCollisionMask": true,
+                  "image": "assets/images/Nyumburu Painting.JPG",
+                  "points": [],
+                  "originPoint": {
+                    "name": "origine",
+                    "x": 0,
+                    "y": 0
+                  },
+                  "centerPoint": {
+                    "automatic": true,
+                    "name": "centre",
+                    "x": 0,
+                    "y": 0
+                  },
+                  "customCollisionMask": [
+                    [
+                      {
+                        "x": 0,
+                        "y": 0
+                      },
+                      {
+                        "x": 1280,
+                        "y": 0
+                      },
+                      {
+                        "x": 1280,
+                        "y": 720
+                      },
+                      {
+                        "x": 0,
+                        "y": 720
+                      }
+                    ]
+                  ]
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "name": "Nyumburu Hallway",
+          "useMultipleDirections": false,
+          "directions": [
+            {
+              "looping": false,
+              "timeBetweenFrames": 0.08,
+              "sprites": [
+                {
+                  "hasCustomCollisionMask": true,
+                  "image": "assets/images/Nyumburu Hallway.JPG",
                   "points": [],
                   "originPoint": {
                     "name": "origine",
