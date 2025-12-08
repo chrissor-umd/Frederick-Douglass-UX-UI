@@ -195,13 +195,17 @@ gdjs.ExplorationCode.GDSoundToggleObjects1= [];
 gdjs.ExplorationCode.GDSoundToggleObjects2= [];
 gdjs.ExplorationCode.GDSoundToggleObjects3= [];
 gdjs.ExplorationCode.GDSoundToggleObjects4= [];
+gdjs.ExplorationCode.GDFullscreenToggleObjects1= [];
+gdjs.ExplorationCode.GDFullscreenToggleObjects2= [];
+gdjs.ExplorationCode.GDFullscreenToggleObjects3= [];
+gdjs.ExplorationCode.GDFullscreenToggleObjects4= [];
 gdjs.ExplorationCode.GDExitMinigameButtonObjects1= [];
 gdjs.ExplorationCode.GDExitMinigameButtonObjects2= [];
 gdjs.ExplorationCode.GDExitMinigameButtonObjects3= [];
 gdjs.ExplorationCode.GDExitMinigameButtonObjects4= [];
 
 
-gdjs.ExplorationCode.userFunc0x124d560 = function GDJSInlineCode(runtimeScene) {
+gdjs.ExplorationCode.userFunc0xe5e710 = function GDJSInlineCode(runtimeScene) {
 "use strict";
 gdjs.FDGameData = {}; // All persistent data is attached to gdjs so that it isn't reset on scene change
 const FDSG = gdjs.FDGameData; // This way data can be accessed through a simpler variable name (FDSG = Frederick-Douglass Square Game)
@@ -212,12 +216,26 @@ FDSG.GameVars = { // This holds variables that are important for tracking/managi
     runtimeScene: runtimeScene,
         // Used for accessing the current RuntimeScene object, since otherwise the definitions here will try and access the old object
     windowActive: true, // Whether window in the browser is currently active
+    isFullscreen: false, // Whether the game is currently in fullscreen
 }
 const GameVars = FDSG.GameVars; // Simpler reference variable
 const Game = GameVars.runtimeScene.getGame();
 GameVars.DEBUG = GameVars.runtimeScene.getVariables().get("DEBUG").getAsBoolean();
 
 GameVars.Constants = {} // Stores constant values to avoid magic numbers
+
+document.addEventListener("fullscreenchange", () => {
+        const isFullscreen = !!document.fullscreenElement;
+        GameVars.isFullScreen = isFullscreen;
+        const fullscreenToggle = GameVars.runtimeScene.getInstancesOf("FullscreenToggle");
+        if (fullscreenToggle.length > 0) {
+            if (isFullscreen) {
+                fullscreenToggle[0].setAnimationName("fullscreen");
+            } else {
+                fullscreenToggle[0].setAnimationName("not_fullscreen");
+            }
+        } 
+});
 
 // OBJECT GROUPS ###################################################################################################################################
 
@@ -262,12 +280,12 @@ gdjs.ExplorationCode.eventsList0 = function(runtimeScene) {
 {
 
 
-gdjs.ExplorationCode.userFunc0x124d560(runtimeScene);
+gdjs.ExplorationCode.userFunc0xe5e710(runtimeScene);
 
 }
 
 
-};gdjs.ExplorationCode.userFunc0xb13688 = function GDJSInlineCode(runtimeScene) {
+};gdjs.ExplorationCode.userFunc0xea26b0 = function GDJSInlineCode(runtimeScene) {
 "use strict";
 const FDSG = gdjs.FDGameData;
 const GameVars = FDSG.GameVars;
@@ -493,26 +511,25 @@ gdjs.ExplorationCode.eventsList1 = function(runtimeScene) {
 {
 
 
-gdjs.ExplorationCode.userFunc0xb13688(runtimeScene);
+gdjs.ExplorationCode.userFunc0xea26b0(runtimeScene);
 
 }
 
 
-};gdjs.ExplorationCode.userFunc0xdc9ab0 = function GDJSInlineCode(runtimeScene) {
+};gdjs.ExplorationCode.userFunc0x903328 = function GDJSInlineCode(runtimeScene) {
 "use strict";
 const FDSG = gdjs.FDGameData;
 const GameVars = FDSG.GameVars;
 const Game = GameVars.runtimeScene.getGame();
 
 Object.assign(GameVars.Constants, {
-    STARTING_LAYOUT: "Frederick Douglass Square", // First layout to load
+    STARTING_LAYOUT: "Driskell Art Gallery", // First layout to load
     FIRST_TRANSITION_FADE_DURATION: 1500, // The duration of the fade from the Main Menu
     LONG_TRANSITION_FADE_DURATION: 750,
     TRANSITION_FADE_DURATION: 250
 });
 
 Object.assign(GameVars, {
-    startLayout: GameVars.Constants.STARTING_LAYOUT, // The starting layout
     _currentLayout: GameVars.Constants.STARTING_LAYOUT, // This is used to load the corrent layout on transitions
     _isFading: false, // Used to halt input while fading in or out
     _longFade: false, // Whether to use a long transition or a short one. This is just used by TransitionObjects
@@ -584,7 +601,7 @@ FDSG.initScene = function() {
     // INSPECTIONS HANDLING
     FDSG.debugPrint("log", "initializing inspections");
     FDSG._LayoutInspections = FDSG.getLayoutInspections(); // Registers all inspections and their objects for the current layout
-    GameVars._loadedInspection = null; // No inspections are loaded on scene init
+    GameVars._loadedInspections = []; // No inspections are loaded on scene init
     GameVars._isInspecting = false; // Reset flag
 
     FDSG.debugPrint("log", "initializing text objects")
@@ -612,6 +629,12 @@ FDSG.initScene = function() {
         }
     }
 
+    // Set effects for InteractionButtons
+    for (const interactionButton of GameVars.runtimeScene.getInstancesOf("InteractionButton")) {
+        let isEnabled = interactionButton.getVariables().get("enabled").getAsBoolean();
+        interactionButton.enableEffect("Disabled", !isEnabled);
+    }
+
     // INVENTORY AND ITEM POPUPS
     if (FDSG.PlayerInventory._isInventoryShowing) {
         const inventoryUIBackground = GameVars.runtimeScene.getInstancesOf("InventoryUIBackground")[0];
@@ -633,6 +656,7 @@ FDSG.initScene = function() {
     FDSG.PlayerInventory._selectedItemIndex = null;
     FDSG.PlayerInventory._itemObjects = [];
     FDSG.redrawInventory();
+    FDSG._isItemPopupShowing = false;
 
     FDSG.loadLayoutInstanceData();
 
@@ -652,6 +676,14 @@ FDSG.initScene = function() {
     mapButton.enableEffect("mapToggled", false); // Disable toggle effect
     GameVars._visitedLayouts[GameVars.currentLayout] = true; // Mark this layout as visited
 
+    //FULLSCREEN TOGGLE
+    const fullscreenToggle = GameVars.runtimeScene.getInstancesOf("FullscreenToggle")[0];
+    if (gdjs.evtTools.window.isFullScreen(GameVars.runtimeScene)) {
+        fullscreenToggle.setAnimationName("fullscreen");
+    } else {
+        fullscreenToggle.setAnimationName("not_fullscreen");
+    }
+
     FDSG.debugPrint("log", "initializing layout data");
     // Run layout specific functions
     if (!(GameVars.currentLayout in FDSG._LayoutData)) {
@@ -661,7 +693,6 @@ FDSG.initScene = function() {
     if ("onLayoutLoad" in layoutData) { // Check if layout functions have been registered
         layoutData.onLayoutLoad(); // Run layout load function
     }
-    
 }
 
 /**
@@ -866,8 +897,12 @@ FDSG.registerOnLayoutLoadFunction = function(layoutName, onLayoutLoadFunction) {
  */
 FDSG.loadMinigame = function(minigameName) {
     FDSG.debugPrint("log",`Loading minigame ${minigameName}`);
-    GameVars.isInspecting = false;
+    FDSG.clearAllInspectionsFromView();
     GameVars.loadMinigame = minigameName;
+    const locationSound = GameVars.Constants.LOCATION_SOUND_CHANNEL;
+    if (gdjs.evtTools.sound.isMusicOnChannelPlaying(GameVars.runtimeScene, locationSound)) {
+        gdjs.evtTools.sound.pauseMusicOnChannel(GameVars.runtimeScene, locationSound);
+    }
     FDSG.initFade(GameVars.Constants.FIRST_TRANSITION_FADE_DURATION, false, false); /* Set so the game will fade back in on return */
 }
 
@@ -895,12 +930,12 @@ gdjs.ExplorationCode.eventsList2 = function(runtimeScene) {
 {
 
 
-gdjs.ExplorationCode.userFunc0xdc9ab0(runtimeScene);
+gdjs.ExplorationCode.userFunc0x903328(runtimeScene);
 
 }
 
 
-};gdjs.ExplorationCode.userFunc0xdc9c90 = function GDJSInlineCode(runtimeScene) {
+};gdjs.ExplorationCode.userFunc0xd82170 = function GDJSInlineCode(runtimeScene) {
 "use strict";
 const FDSG = gdjs.FDGameData;
 const GameVars = FDSG.GameVars;
@@ -927,7 +962,7 @@ FDSG.Input.ClickableObjects = {}; // Stores registered actions to run when objec
 FDSG.Input.ClickableLayers = { // Similar but for disabling layers instead of individual objects
     "SceneObjects": true,
     "UI": true,
-    "ActiveDuringInspectionUI": true, // This is for UI elements that stay enabled during inspection
+    "PersistentUI": true, // This is for UI elements that are always enabled
     "InspectionObjects": false,
     "InspectionUI": false,
     "InventoryUI": true,
@@ -1107,19 +1142,19 @@ FDSG.handlePlayerInput = function() {
     GameVars.runtimeScene.getGame().getRenderer().getCanvas().style.cursor = cursor; // Change the cursor
 
     // InventoryItem Cursor handling
-    const canTouch = FDSG.Input._deviceSupportsTouch; // Used to check for touchscreen compatibility
-    if (selectedItemIndex != null && !canTouch ) {
-            // Only run if the current device does not have a touchscreen to avoid bugs
-        var itemCursor = FDSG.getAllSceneInstances("MouseCursor");
-        if (itemCursor.length > 0) {
-            var itemCursor = itemCursor[0];
-            //if (FDSG.Input._currentInputMethod == "Mouse") {
-            let xOffset = GameVars.Constants.ITEM_CURSOR_X_OFFSET;
-            let yOffset = GameVars.Constants.ITEM_CURSOR_Y_OFFSET;
-            itemCursor.setX(gdjs.evtTools.input.getCursorX(GameVars.runtimeScene) + xOffset); // Make the itemCursor follow the mouse;
-            itemCursor.setY(gdjs.evtTools.input.getCursorY(GameVars.runtimeScene) + yOffset); // Make the itemCursor follow the mouse;
-        }
-    }
+    // const canTouch = FDSG.Input._deviceSupportsTouch; // Used to check for touchscreen compatibility
+    // if (selectedItemIndex != null && !canTouch ) {
+    //         // Only run if the current device does not have a touchscreen to avoid bugs
+    //     var itemCursor = FDSG.getAllSceneInstances("MouseCursor");
+    //     if (itemCursor.length > 0) {
+    //         var itemCursor = itemCursor[0];
+    //         //if (FDSG.Input._currentInputMethod == "Mouse") {
+    //         let xOffset = GameVars.Constants.ITEM_CURSOR_X_OFFSET;
+    //         let yOffset = GameVars.Constants.ITEM_CURSOR_Y_OFFSET;
+    //         itemCursor.setX(gdjs.evtTools.input.getCursorX(GameVars.runtimeScene) + xOffset); // Make the itemCursor follow the mouse;
+    //         itemCursor.setY(gdjs.evtTools.input.getCursorY(GameVars.runtimeScene) + yOffset); // Make the itemCursor follow the mouse;
+    //     }
+    // }
 
     // Manage HoverTooltips
     if (!GameVars.visibilityToggled) { // We already do this for all instances if the visibility effect is toggled
@@ -1153,9 +1188,16 @@ FDSG.handlePlayerInput = function() {
                 // We only check interaction objects that accept items while an item is selected
                 for (const clickDuration in clickObject.clickFunctions) {
                     if ((clickDuration == "pressed" && isPressed) || (clickDuration == "released" && isReleased)) {
+                        /*
+                            This is a long conditional, but we basically check that the instance is not an interactionObject (since they'll run the interaction in their
+                            clickFunction anyway), and if the item is an ItemObject that has "showPickupPrompt" enabled, we don't run the interaction until
+                            the player actually picks up the item.
+                        */
                         if (hoveredInstance.getName() != "InteractionObject"
                         && hoveredInstance.getName() != "InteractionButton"
-                        && instanceVars.has("targetInteraction")) {
+                        && instanceVars.has("targetInteraction")
+                        && (hoveredInstance.getName() != "ItemObject"
+                            || !hoveredInstance.getVariables().get("showPickupPrompt").getAsBoolean())) {
                             // Run interactions tied to the object. We skip interaction objects to avoid running them twice
                             const interactionName = instanceVars.get("targetInteraction").getAsString();
                             const interactionData = FDSG.Interactions[interactionName];
@@ -1175,14 +1217,6 @@ FDSG.handlePlayerInput = function() {
         FDSG.PlayerInventory.selectedItem = null; // Clear selected item on click
     }
 
-    // if (GameVars.DEBUG && GameVars.Constants.SHOW_MOUSE_COORDS) {
-    //     const debugCursorText = GameVars.runtimeScene.getInstancesOf("DebugText")[0];
-    //     const cursorX = gdjs.evtTools.input.getCursorX(GameVars.runtimeScene);
-    //     const cursorY = gdjs.evtTools.input.getCursorY(GameVars.runtimeScene);
-    //     debugCursorText.setText(`${cursorX}, ${cursorY}`);
-    //     debugCursorText.setX(cursorX);
-    //     debugCursorText.setY(cursorY);
-    // }
     // KEYBOARD INPUT
     for (const key in FDSG.Input.KeyPressFunctions) {
         const keyData = FDSG.Input.KeyPressFunctions[key];
@@ -1343,12 +1377,12 @@ gdjs.ExplorationCode.eventsList3 = function(runtimeScene) {
 {
 
 
-gdjs.ExplorationCode.userFunc0xdc9c90(runtimeScene);
+gdjs.ExplorationCode.userFunc0xd82170(runtimeScene);
 
 }
 
 
-};gdjs.ExplorationCode.userFunc0x1259c30 = function GDJSInlineCode(runtimeScene) {
+};gdjs.ExplorationCode.userFunc0x8ed778 = function GDJSInlineCode(runtimeScene) {
 "use strict";
 const FDSG = gdjs.FDGameData;
 const GameVars = FDSG.GameVars;
@@ -1361,42 +1395,60 @@ popups, dialogue popups, really any time the player is focusing on something in 
 */
 
 Object.assign(GameVars, {
-    _loadedInspection: null, // Used to track which Inspection is currently loaded
+    _loadedInspections: [], // Used to track which Inspections are currently loaded
     _isInspecting: false,
-    _previousInspections: [] // Used for sub-inspections and info popups
+    _playInspectionSFX: true, //Whether to play the inspection sound effect 
 });
 
 Object.defineProperty(GameVars, 'isInspecting', {
-    get() {
-        return this._isInspecting;
-    },
+    get() { return this._isInspecting },
     set(value) {
         if (value && FDSG.PlayerInventory.isInventoryShowing) {
             FDSG.PlayerInventory.isInventoryShowing = false;
         }
-        FDSG.darkEffect(value, false); // Activate/Deactivate the dark screen effect
+        FDSG.darkEffect(value); // Activate/Deactivate the dark screen effect
         const inspectionLayer = GameVars.runtimeScene.getLayer("InspectionObjects"); // Get the InspectionObjects layer
         const inspectionUILayer = GameVars.runtimeScene.getLayer("InspectionUI");
         inspectionLayer.show(value); // Show/Hide the layers
         inspectionUILayer.show(value);
         FDSG.enableLayerClick(["InspectionObjects", "InspectionUI"], value); // Enable/Disable the relevant layers clicks
         FDSG.enableLayerClick(["UI", "SceneObjects"], !value);
+        const visibilityToggle = GameVars.runtimeScene.getInstancesOf("VisibilityToggle")[0];
         if (value) {
-            FDSG.playSFX("Inspection");
+            visibilityToggle.setLayer("InspectionUI"); // Keep the visibilityToggle active during inspections
+            if (GameVars._playInspectionSFX) {
+                FDSG.playSFX("Inspection");
+            }
         } else {
-            FDSG.playSFX("CloseInspection");
-            GameVars._previousInspections = [];
-            FDSG.clearInspectionFromView(false);
-        } 
+            visibilityToggle.setLayer("UI");
+            if (GameVars._playInspectionSFX) {
+                FDSG.playSFX("CloseInspection");
+            }
+        }
+        this._isInspecting = value;
+        GameVars._playInspectionSFX = true; // This resets to true, so if you want to mute the inspection sound, set it to false before calling this
     }
 });
 
+
+Object.defineProperty(GameVars, "loadedInspection", {
+    get() {
+        if (this._loadedInspections.length > 0) {
+            return this._loadedInspections[this._loadedInspections.length - 1];
+        } else { return null }
+    },
+    set(newInspection) {
+        FDSG.bringInspectionIntoView(newInspection);
+    }
+})
+
+
 FDSG.Interactions = {}; // Where we store and register Interactions
 /*
-Interactions are just an easy way to easily and dynamically allow an InteractionObject (or other objects) to run different code
-based on the value of its "targetInteraction" property and its flags/variables. All this really does is allow me to
-avoid having to make a bunch of unique objects for every interaction.
-!!! If you just want to load an inspection into view without any conditions or extra code, just use an Inspection instead !!!
+    Interactions are just an easy way to easily and dynamically allow an InteractionObject (or other objects) to run different code
+    based on the value of its "targetInteraction" property and its flags/variables. All this really does is allow me to
+    avoid having to make a bunch of unique objects for every interaction.
+    !!! If you just want to load an inspection into view without any conditions or extra code, just use an Inspection instead !!!
 */
 
 
@@ -1425,7 +1477,8 @@ FDSG.getLayoutInspections = function() {
         backgroundBounds[inspection] = inspectionBackground;
     }
     for (const instance of allInstances) {
-        if (!instance.getVariables().has("inspectionName")) { // Check if the instance is associated with an inspection
+        if (!instance.getVariables().has("inspectionName")
+        || instance.getVariables().get("inspectionName").getAsString() == "0") { // Check if the instance is associated with an inspection
             for (const inspection in backgroundBounds) {
                 let bounds = backgroundBounds[inspection];
                 if (bounds.insideObject(instance.getX(), instance.getY())) {
@@ -1460,88 +1513,132 @@ FDSG.getLayoutInspections = function() {
 /**
  * Sets the currentInspection and brings all associated objects into the camera view
  *      @param {string} inspectionName The specific inspection to load objects from
- *      @param {boolean} activateInspection? Whether to activate the inspection immediately. Defaults to true
+ *      @param {boolean} addInspectionToStack? Whether to add the Inspection to the stack or just load its objects.
+ *              Set to false if you want to swap inspections rather than layering them. You generally shouldn't need to set this yourself. Defaults to true
  */
-FDSG.bringInspectionIntoView = function(inspectionName, activateInspection = true) {
-    if (!(inspectionName in FDSG._LayoutInspections)) { // Check if the inspection is registered
+FDSG.bringInspectionIntoView = function(inspectionName, addInspectionToStack = true) {
+    if (!(inspectionName in FDSG._LayoutInspections) && inspectionName != "itemPopup") { // Check if the inspection is registered
         FDSG.debugPrint(`Inspection ${inspectionName} not registered`);
         return;
     }
-    if (GameVars._loadedInspection != null) {
-        GameVars._previousInspections.push(GameVars._loadedInspection); // Store the previous Inspection
-        FDSG.clearInspectionFromView(false); // Clear any currently loaded inspection
-
-    }
-    if (GameVars.isItemPopupShowing) {
-        GameVars._isItemPopupShowing = false;
-        GameVars._previousInspections.push("ItemPopup");
-    }
-    FDSG.debugPrint(`Loading inspection ${inspectionName}`);
-    const cameraWidth = gdjs.evtTools.camera.getCameraWidth(GameVars.runtimeScene, "", 0); // Get camera properties to properly center Inspections
-    const cameraHeight = gdjs.evtTools.camera.getCameraHeight(GameVars.runtimeScene, "", 0);
-    const uiBackground = GameVars.runtimeScene.getInstancesOf("UIBackground")[0];
-    const cameraHeightOffset = uiBackground.getHeight() + uiBackground.getY(); // This is to vertically offset the inspection to make room for the UI
-    const layoutInspectionData = FDSG._LayoutInspections[inspectionName];
-    const inspectionGroup = layoutInspectionData.instanceGroup; // The InstanceGroup containing the instances of this inspection
-    const activeX = (cameraWidth - inspectionGroup.width)/2; /* Calculate center screen position */
-    const activeY = (cameraHeight + cameraHeightOffset - inspectionGroup.height)/2;
-    inspectionGroup.moveTo(activeX, activeY); // Move the InstanceGroup to the center of the screen
-    for (const instance of inspectionGroup.instances) { // Add rounded black edges to all images
-        if (instance.getName() == "InspectionImage" && instance.getVariables().get("showBorder").getAsBoolean()) {
-            const imageBorder = GameVars.runtimeScene.createObject("InspectionImageBorder"); // Create rounded corners for the image
-            imageBorder.setLayer(instance.getLayer());
-            imageBorder.setPosition(instance.getX(), instance.getY());
-            imageBorder.setSize(instance.getWidth(), instance.getHeight());
-            imageBorder.setZOrder(instance.getZOrder()+1);
+    if (GameVars._loadedInspections.length > 0) {
+        if (inspectionName == "itemPopup") {
+            GameVars._playInspectionSFX = false; // Don't play the close inspection sound if we're gonna open the item
         }
+        FDSG.clearInspectionFromView(false); // Remove the objects from the previously loaded inspection
     }
-    GameVars._loadedInspection = inspectionName;
-    if (activateInspection) {
+    FDSG.debugPrint("log", `Loading inspection ${inspectionName}`);
+    if (inspectionName == "itemPopup") {
+        if (GameVars.isInspecting) {
+            GameVars.isInspecting = false;
+        }
+        GameVars.isItemPopupShowing = true;
+    } else {
+        const cameraWidth = gdjs.evtTools.camera.getCameraWidth(GameVars.runtimeScene, "", 0); // Get camera properties to properly center Inspections
+        const cameraHeight = gdjs.evtTools.camera.getCameraHeight(GameVars.runtimeScene, "", 0);
+        const uiBackground = GameVars.runtimeScene.getInstancesOf("UIBackground")[0];
+        const cameraHeightOffset = uiBackground.getHeight() + uiBackground.getY(); // This is to vertically offset the inspection to make room for the UI
+        const layoutInspectionData = FDSG._LayoutInspections[inspectionName];
+        const inspectionGroup = layoutInspectionData.instanceGroup; // The InstanceGroup containing the instances of this inspection
+        const activeX = (cameraWidth - inspectionGroup.width)/2; /* Calculate center screen position */
+        const activeY = (cameraHeight + cameraHeightOffset - inspectionGroup.height)/2;
+        inspectionGroup.moveTo(activeX, activeY); // Move the InstanceGroup to the center of the screen
+        for (const instance of inspectionGroup.instances) { // Add rounded black edges to all images
+            if (instance.getName() == "InspectionImage" && instance.getVariables().get("showBorder").getAsBoolean()) {
+                const imageBorder = GameVars.runtimeScene.createObject("InspectionImageBorder"); // Create rounded corners for the image
+                imageBorder.setLayer(instance.getLayer());
+                imageBorder.setPosition(instance.getX(), instance.getY());
+                imageBorder.setSize(instance.getWidth(), instance.getHeight());
+                imageBorder.setZOrder(instance.getZOrder()+1);
+            }
+        }
         GameVars.isInspecting = true;
+    }
+    const exitInspect = GameVars.runtimeScene.getInstancesOf("ExitInspection")[0];
+    if (inspectionName == "infoPopup") { // InfoPopups have a PreviousInspection Arrow, so we can hide the ExitInspection object
+        exitInspect.getVariables().get("enabled").setBoolean(false);
+            exitInspect.hide(true);
+        } else {
+            exitInspect.getVariables().get("enabled").setBoolean(true);
+            exitInspect.hide(false);
+        }
+    if (addInspectionToStack) {
+        GameVars._loadedInspections.push(inspectionName);
     }
 }
 
 
 /**
  * Clears the loaded inspection and resets its objects to their initial positions
- *      @param {boolean} disableInspecting? Whether to turn off isInspecting. Defaults to true
+ *      @param {boolean} unloadInspection Whether to clear the inspection from the stack or just remove the objects. Defaults to true
  */
-FDSG.clearInspectionFromView = function(disableInspecting = true) {
-    if (GameVars._loadedInspection == null) { // Don't unload if no inspections are loaded
+FDSG.clearInspectionFromView = function(unloadInspection = true) {
+    if (GameVars._loadedInspections.length == 0) { // Don't unload if no inspections are loaded
         FDSG.debugPrint(`No inspection loaded`);
         return;
     }
-    FDSG.debugPrint(`Unloading inspection: ${GameVars._loadedInspection}`);
-    const inspectionData = FDSG._LayoutInspections[GameVars._loadedInspection];
-    const instanceGroup = inspectionData.instanceGroup;
-    const initialX = inspectionData.initialX; // Get initial instance positions
-    const initialY = inspectionData.initialY;
-    instanceGroup.moveTo(initialX, initialY);
-    for (const imageBorder of GameVars.runtimeScene.getInstancesOf("InspectionImageBorder").slice()) {
-        if (imageBorder.getLayer() == "InspectionObjects") {
-            imageBorder.deleteFromScene(); // Clear all corners so they aren't duplicated
+    let loadedInspection = GameVars.loadedInspection;
+    FDSG.debugPrint(`Unloading inspection: ${loadedInspection}`);
+    if (loadedInspection == "itemPopup") {
+        GameVars.isItemPopupShowing = false;
+    } else {
+        const inspectionData = FDSG._LayoutInspections[loadedInspection];
+        const instanceGroup = inspectionData.instanceGroup;
+        const initialX = inspectionData.initialX; // Get initial instance positions
+        const initialY = inspectionData.initialY;
+        instanceGroup.moveTo(initialX, initialY);
+        for (const imageBorder of GameVars.runtimeScene.getInstancesOf("InspectionImageBorder").slice()) {
+            if (imageBorder.getLayer() == "InspectionObjects") {
+                imageBorder.deleteFromScene(); // Clear all corners so they aren't duplicated
+            }
         }
     }
-    GameVars._loadedInspection = null;
-    if (disableInspecting) {
-        GameVars.isInspecting = false;
+    if (unloadInspection) {
+        const loadedInspection = GameVars._loadedInspections.pop();
+        if (loadedInspection == "itemPopup") {
+                GameVars._playInspectionSFX = false;
+            }
+        if (GameVars._loadedInspections.length > 0) {
+            FDSG.bringInspectionIntoView(GameVars.loadedInspection, false);
+        } else {
+            GameVars.isInspecting = false;
+        }
     }
 }
+
+
+/**
+ * Unloads the current inspection and loads a given one. This is mostly just to make interactions a smidge easier to define
+ *      @param {string} inspectionName The name of the inspection to load
+*/
+FDSG.swapInspection = function(inspectionName) {
+    if (GameVars.loadedInspection != null) {
+        GameVars._playInspectionSFX = false;
+        FDSG.clearInspectionFromView();
+    }
+    FDSG.bringInspectionIntoView(inspectionName);
+}
+
+
+/**
+ * Clears all Inspections in the stack and disables isInspecting 
+ */
+FDSG.clearAllInspectionsFromView = function() {
+    while (GameVars._loadedInspections.length > 0) {
+        FDSG.clearInspectionFromView();
+    }
+}
+
 
 /**
  * Darkens the appropriate layers for pausing and inspection
  *      @param {boolean} enable Whether to enable or disable the effect
- *      @param {boolean} darkenUI Whether to darken the ActiveDuringInspectionUI layer 
  */
-FDSG.darkEffect = function(enable, darkenUI = false) {
+FDSG.darkEffect = function(enable) {
     const backgroundLayer = GameVars.runtimeScene.getLayer("Background");
     const objectsLayer = GameVars.runtimeScene.getLayer("SceneObjects");
     const uiLayer = GameVars.runtimeScene.getLayer("UI");
-    const activeDuringInspectionUILayer = GameVars.runtimeScene.getLayer("ActiveDuringInspectionUI");
     const layers = [backgroundLayer, objectsLayer, uiLayer];
-    if (darkenUI) {
-        layers.push(activeDuringInspectionUILayer);
-    }
     for (const layer of layers) {
         layer.enableEffect("Darken", enable);
     }
@@ -1573,12 +1670,12 @@ gdjs.ExplorationCode.eventsList4 = function(runtimeScene) {
 {
 
 
-gdjs.ExplorationCode.userFunc0x1259c30(runtimeScene);
+gdjs.ExplorationCode.userFunc0x8ed778(runtimeScene);
 
 }
 
 
-};gdjs.ExplorationCode.userFunc0x1259ef8 = function GDJSInlineCode(runtimeScene) {
+};gdjs.ExplorationCode.userFunc0xe5dd80 = function GDJSInlineCode(runtimeScene) {
 "use strict";
 const FDSG = gdjs.FDGameData;
 const GameVars = FDSG.GameVars;
@@ -1685,12 +1782,12 @@ gdjs.ExplorationCode.eventsList5 = function(runtimeScene) {
 {
 
 
-gdjs.ExplorationCode.userFunc0x1259ef8(runtimeScene);
+gdjs.ExplorationCode.userFunc0xe5dd80(runtimeScene);
 
 }
 
 
-};gdjs.ExplorationCode.userFunc0x125ed08 = function GDJSInlineCode(runtimeScene) {
+};gdjs.ExplorationCode.userFunc0xd3cbb8 = function GDJSInlineCode(runtimeScene) {
 "use strict";
 const FDSG = gdjs.FDGameData;
 const GameVars = FDSG.GameVars;
@@ -1708,20 +1805,21 @@ Object.assign(GameVars, {
     }
 });
 
+
 Object.defineProperty(GameVars, "isItemPopupShowing", {
     get() { return this._isItemPopupShowing },
     set(isShowing) {
-        // A lot of this code is pretty identical to how Inspections work, but I wanted to keep those systems separate
         const itemPopupLayer = GameVars.runtimeScene.getLayer("ItemPopup"); // Get the ItemPopup layer
         const uiBackground = GameVars.runtimeScene.getInstancesOf("UIBackground")[0];
         const cameraHeightOffset = uiBackground.getHeight() + uiBackground.getY(); // This is to vertically offset the inspection to make room for the UI
         FDSG.darkEffect(isShowing, true); // Activate/Deactivate the dark screen effect
         FDSG.enableLayerClick("ItemPopup", isShowing); // Enable/Disable the relevant layers clicks
-        FDSG.enableLayerClick(["UI", "SceneObjects", "ActiveDuringInspectionUI"], !isShowing);
+        FDSG.enableLayerClick(["UI", "SceneObjects", "InspectionObjects", "InspectionUI"], !isShowing);
         FDSG.enableObjectClick("InventoryItem", !isShowing); // Disable the object sprite from being clickable
         itemPopupLayer.show(isShowing); // Show/Hide the layer
+        this._isItemPopupShowing = isShowing
     }
-})
+});
 
 
 Object.assign(GameVars.Constants, {
@@ -1730,9 +1828,9 @@ Object.assign(GameVars.Constants, {
     ITEM_OFFSET: 8, // These change how the inventory is displayed
     ITEM_GAP: 8,
     ITEM_POPUP_SIZE: 224, // How large the item in the item popup should be
-    INVENTORY_CLOSED_X_OFFSET: -8, // The X and Y positions of the inventory when open and closed, relative to the Backpack
+    INVENTORY_CLOSED_X_OFFSET: -48, // The X and Y positions of the inventory when open and closed, relative to the Backpack
     INVENTORY_CLOSED_Y_OFFSET: -32,
-    INVENTORY_OPEN_X_OFFSET: -8, 
+    INVENTORY_OPEN_X_OFFSET: -48, 
     INVENTORY_OPEN_Y_OFFSET: 80,
     
     INVENTORY_TWEEN_DURATION: 500 // How long it should take for the inventory to open
@@ -1806,9 +1904,8 @@ FDSG.redrawInventory = function() {
         var itemPosY = inventoryObject.getY() + itemStartPosition;
         var itemYModifier = itemSize + GameVars.Constants.ITEM_GAP;
     }
-    if (inventory.itemData.length < maxVisibleItems) {
-        inventory._scrollIndex = Math.min(inventory._scrollIndex, maxVisibleItems-inventory.itemData.length);
-    }
+    const maxIndex = Math.max(0, maxVisibleItems - inventory.itemData.length);
+    inventory._scrollIndex = Math.min(inventory._scrollIndex, maxIndex);
     FDSG.debugPrint("log", `drawing inventory`);
     let inventoryShowing = FDSG.PlayerInventory.isInventoryShowing;
     for (let i = inventory._scrollIndex; i < Math.min(inventory.itemData.length+inventory._scrollIndex, maxVisibleItems+inventory._scrollIndex); i++) {
@@ -1919,7 +2016,7 @@ FDSG.showItemPopup = function(itemName, itemDescription, canPickup = true) {
         itemInfoObject.getVariables().get("enabled").setBoolean(false);
     }
     FDSG.playSFX("ItemPopup");
-    GameVars.isItemPopupShowing = true;
+    FDSG.bringInspectionIntoView("itemPopup");
 }
 
 
@@ -1928,11 +2025,12 @@ FDSG.showItemPopup = function(itemName, itemDescription, canPickup = true) {
  *      @param {string} itemName The name of the item to add
  *      @param {string} itemDescription The description of the item being added
  */
-FDSG.addItemToInventory = function(itemName, itemDescription) {
+FDSG.addItemToInventory = function(itemName, itemDescription, infoText = null) {
     FDSG.debugPrint("log",`Adding ${itemName} to inventory`);
     const itemData = { // Holds all the item information
         itemName: itemName, // The item name
         itemDescription: itemDescription, // The item description
+        infoText: infoText
     }
     FDSG.PlayerInventory.itemData.push(itemData);
     FDSG.redrawInventory();
@@ -1964,9 +2062,6 @@ FDSG.removeItemFromInventory = function(item) {
     }
     FDSG.debugPrint("log",`Removing ${inventory.itemData[inventoryIndex].itemName} from inventory`);
     inventory.itemData.splice(inventoryIndex, 1);
-    if (inventory._scrollIndex >= inventory.itemData.length) {
-        inventory._scrollIndex -= 1;
-    }
     FDSG.redrawInventory();
 }
 
@@ -2030,20 +2125,20 @@ FDSG.selectInventoryItem = function(inventoryIndex) {
     inspectInventoryItem.enableEffect("Disable", false); // Show the itemInspectButton
     inspectInventoryItem.getVariables().get("enabled").setBoolean(true);
 
-    const canTouch = 'ontouchstart' in window || navigator.maxTouchPoints > 0; // Check if device has touchscreen compatibility
-    if (!canTouch) { // This doesn't work well with touchscreens, so we disable it if the player is using one
-        FDSG.Input._deviceSupportsTouch = false;
-        const itemCursor = GameVars.runtimeScene.createObject("InventoryItem");
-        itemCursor.setLayer("MouseCursor");
-        itemCursor.getVariables().get("isCursor").setBoolean(true);
-        itemCursor.setAnimationIndex(inventoryItemObject.getAnimationIndex());
-        itemCursor.setWidth(inventoryItemObject.getWidth()/1.5);
-        itemCursor.setHeight(inventoryItemObject.getHeight()/1.5);
-        itemCursor.setX(gdjs.evtTools.input.getCursorX(GameVars.runtimeScene) + 16); // Make the itemCursor follow the mouse;
-        itemCursor.setY(gdjs.evtTools.input.getCursorY(GameVars.runtimeScene) + 16); // Make the itemCursor follow the mouse;
-    } else {
-        FDSG.Input._deviceSupportsTouch = true;
-    }
+    // const canTouch = 'ontouchstart' in window || navigator.maxTouchPoints > 0; // Check if device has touchscreen compatibility
+    // if (!canTouch) { // This doesn't work well with touchscreens, so we disable it if the player is using one
+    //     FDSG.Input._deviceSupportsTouch = false;
+    //     const itemCursor = GameVars.runtimeScene.createObject("InventoryItem");
+    //     itemCursor.setLayer("MouseCursor");
+    //     itemCursor.getVariables().get("isCursor").setBoolean(true);
+    //     itemCursor.setAnimationIndex(inventoryItemObject.getAnimationIndex());
+    //     itemCursor.setWidth(inventoryItemObject.getWidth()/1.5);
+    //     itemCursor.setHeight(inventoryItemObject.getHeight()/1.5);
+    //     itemCursor.setX(gdjs.evtTools.input.getCursorX(GameVars.runtimeScene) + 16); // Make the itemCursor follow the mouse;
+    //     itemCursor.setY(gdjs.evtTools.input.getCursorY(GameVars.runtimeScene) + 16); // Make the itemCursor follow the mouse;
+    // } else {
+    //     FDSG.Input._deviceSupportsTouch = true;
+    // }
     FDSG.playSFX("Select");
     FDSG.PlayerInventory._selectedItemData = FDSG.PlayerInventory.itemData[inventoryIndex];
 }
@@ -2165,12 +2260,12 @@ gdjs.ExplorationCode.eventsList6 = function(runtimeScene) {
 {
 
 
-gdjs.ExplorationCode.userFunc0x125ed08(runtimeScene);
+gdjs.ExplorationCode.userFunc0xd3cbb8(runtimeScene);
 
 }
 
 
-};gdjs.ExplorationCode.userFunc0x124df80 = function GDJSInlineCode(runtimeScene) {
+};gdjs.ExplorationCode.userFunc0xdc5250 = function GDJSInlineCode(runtimeScene) {
 "use strict";
 const FDSG = gdjs.FDGameData;
 const GameVars = FDSG.GameVars;
@@ -2318,12 +2413,12 @@ gdjs.ExplorationCode.eventsList7 = function(runtimeScene) {
 {
 
 
-gdjs.ExplorationCode.userFunc0x124df80(runtimeScene);
+gdjs.ExplorationCode.userFunc0xdc5250(runtimeScene);
 
 }
 
 
-};gdjs.ExplorationCode.userFunc0x12598c0 = function GDJSInlineCode(runtimeScene) {
+};gdjs.ExplorationCode.userFunc0xe5e4e8 = function GDJSInlineCode(runtimeScene) {
 "use strict";
 const FDSG = gdjs.FDGameData;
 const GameVars = FDSG.GameVars;
@@ -2362,12 +2457,12 @@ gdjs.ExplorationCode.eventsList8 = function(runtimeScene) {
 {
 
 
-gdjs.ExplorationCode.userFunc0x12598c0(runtimeScene);
+gdjs.ExplorationCode.userFunc0xe5e4e8(runtimeScene);
 
 }
 
 
-};gdjs.ExplorationCode.userFunc0xeac370 = function GDJSInlineCode(runtimeScene) {
+};gdjs.ExplorationCode.userFunc0xd57c40 = function GDJSInlineCode(runtimeScene) {
 "use strict";
 const FDSG = gdjs.FDGameData;
 const GameVars = FDSG.GameVars;
@@ -2378,16 +2473,41 @@ Object.assign(GameVars.Constants, {
 
 Object.assign(GameVars, {
     currentLocationSoundData: null,
-    currentGameVolume: 100 // The current volume of the game
-})
+    _currentGameVolume: 100, // The current volume of the game
+});
+
+Object.defineProperty(GameVars, "currentGameVolume", {
+    get() { return this._currentGameVolume },
+    set(newValue) {
+        const locationSoundChannel = GameVars.Constants.LOCATION_SOUND_CHANNEL;
+        if (newValue == 0) {
+            if (gdjs.evtTools.sound.isSoundOnChannelPlaying(GameVars.runtimeScene, locationSoundChannel)) {
+                gdjs.evtTools.sound.pauseSoundOnChannel(GameVars.runtimeScene, locationSoundChannel);
+            }
+        } else {
+            if (gdjs.evtTools.sound.isSoundOnChannelPaused(GameVars.runtimeScene, locationSoundChannel)) {
+                gdjs.evtTools.sound.continueSoundOnChannel(GameVars.runtimeScene, locationSoundChannel);
+            }
+        }
+        gdjs.evtTools.sound.setGlobalVolume(GameVars.runtimeScene, newValue);
+        this._currentGameVolume = newValue;
+    }
+});
 
 document.addEventListener("visibilitychange", () => { // This automatically handles muting and restoring the volume whenever the game is minimized or closed
     GameVars.windowActive = !document.hidden;
+    const locationSoundChannel = GameVars.Constants.LOCATION_SOUND_CHANNEL;
     if (document.hidden) {
         gdjs.evtTools.sound.setGlobalVolume(GameVars.runtimeScene, 0);
+        if (gdjs.evtTools.sound.isSoundOnChannelPlaying(GameVars.runtimeScene, locationSoundChannel)) {
+            gdjs.evtTools.sound.pauseSoundOnChannel(GameVars.runtimeScene, locationSoundChannel);
+        }
     } else {
         if (gdjs.evtTools.sound.getGlobalVolume(GameVars.runtimeScene) != GameVars.currentGameVolume) {
             gdjs.evtTools.sound.setGlobalVolume(GameVars.runtimeScene, GameVars.currentGameVolume); // See if the volume was muted from losing focus
+            if (gdjs.evtTools.sound.isSoundOnChannelPaused(GameVars.runtimeScene, locationSoundChannel)) {
+                gdjs.evtTools.sound.continueSoundOnChannel(GameVars.runtimeScene, locationSoundChannel);
+            }
         }
     }
 });
@@ -2457,6 +2577,7 @@ FDSG.playSFX = function(soundName, loop = false) {
     if ("pitch" in SFXData) {
         pitch = SFXData.pitch;
     }
+    FDSG.debugPrint("log", `playing sound: ${soundName}`);
     gdjs.evtTools.sound.playSound(GameVars.runtimeScene, soundFile, loop, volume*(GameVars.currentGameVolume/100), pitch);
 }
 
@@ -2486,7 +2607,8 @@ FDSG.handleLocationSounds = function() {
     let locationSoundData = FDSG.Sounds.SFX[locationSoundName];
     if ( currentSoundData == null || locationSoundData.soundFile != currentSoundData.soundFile
     || locationSoundData.volume != currentSoundData.volume
-    || locationSoundData.pitch != currentSoundData.pitch || !gdjs.evtTools.sound.isMusicOnChannelPaused(GameVars.runtimeScene, locationSoundChannel)) {
+    || locationSoundData.pitch != currentSoundData.pitch
+    || !gdjs.evtTools.sound.isMusicOnChannelPaused(GameVars.runtimeScene, locationSoundChannel)) {
         let soundOffset = gdjs.evtTools.sound.getMusicOnChannelPlayingOffset(GameVars.runtimeScene, locationSoundChannel);
         gdjs.evtTools.sound.stopMusicOnChannel(GameVars.runtimeScene, locationSoundChannel); // Stop the current sound
         gdjs.evtTools.sound.playMusicOnChannel(GameVars.runtimeScene, locationSoundData.soundFile,
@@ -2495,6 +2617,15 @@ FDSG.handleLocationSounds = function() {
             gdjs.evtTools.sound.setMusicOnChannelPlayingOffset(GameVars.runtimeScene, locationSoundChannel, soundOffset);
         }
         GameVars.currentLocationSoundData = locationSoundData;
+        if (gdjs.evtTools.sound.getGlobalVolume(GameVars.runtimeScene) == 0) {
+            if (gdjs.evtTools.sound.isMusicOnChannelPlaying(GameVars.runtimeScene, locationSoundChannel)) {
+                gdjs.evtTools.sound.pauseMusicOnChannel(GameVars.runtimeScene, locationSoundChannel);
+            }
+        } else {
+            if (gdjs.evtTools.sound.isMusicOnChannelPaused(GameVars.runtimeScene, locationSoundChannel)) {
+                gdjs.evtTools.sound.continueMusicOnChannel(GameVars.runtimeScene, locationSoundChannel);
+            }
+        }
     }
 }
 };
@@ -2510,7 +2641,7 @@ gdjs.ExplorationCode.eventsList9 = function(runtimeScene) {
 {
 
 
-gdjs.ExplorationCode.userFunc0xeac370(runtimeScene);
+gdjs.ExplorationCode.userFunc0xd57c40(runtimeScene);
 
 }
 
@@ -2529,7 +2660,7 @@ gdjs.ExplorationCode.userFunc0xeac370(runtimeScene);
 }
 
 
-};gdjs.ExplorationCode.userFunc0xd4b990 = function GDJSInlineCode(runtimeScene) {
+};gdjs.ExplorationCode.userFunc0xdb5f98 = function GDJSInlineCode(runtimeScene) {
 "use strict";
 const FDSG = gdjs.FDGameData;
 const GameVars = FDSG.GameVars;
@@ -2587,12 +2718,12 @@ gdjs.ExplorationCode.eventsList10 = function(runtimeScene) {
 {
 
 
-gdjs.ExplorationCode.userFunc0xd4b990(runtimeScene);
+gdjs.ExplorationCode.userFunc0xdb5f98(runtimeScene);
 
 }
 
 
-};gdjs.ExplorationCode.userFunc0xb24128 = function GDJSInlineCode(runtimeScene) {
+};gdjs.ExplorationCode.userFunc0x9093a8 = function GDJSInlineCode(runtimeScene) {
 "use strict";
 const FDSG = gdjs.FDGameData;
 const GameVars = FDSG.GameVars;
@@ -2628,13 +2759,29 @@ FDSG.registerKeyPressFunction({
         FDSG.debugPrint("log", FDSG.Input);
     }
 });
+
+FDSG.registerKeyPressFunction({
+    key: "s",
+    duration: "justPressed",
+    keyPressFunction: () => {
+        FDSG.debugPrint("log", GameVars._loadedInspections);
+    }
+});
+
+FDSG.registerKeyPressFunction({
+    key: "x",
+    duration: "justPressed",
+    keyPressFunction: () => {
+        FDSG.clearInspectionFromView();
+    }
+});
 };
 gdjs.ExplorationCode.eventsList11 = function(runtimeScene) {
 
 {
 
 
-gdjs.ExplorationCode.userFunc0xb24128(runtimeScene);
+gdjs.ExplorationCode.userFunc0x9093a8(runtimeScene);
 
 }
 
@@ -2750,7 +2897,7 @@ gdjs.ExplorationCode.eventsList12(runtimeScene);
 }
 
 
-};gdjs.ExplorationCode.userFunc0xb273f8 = function GDJSInlineCode(runtimeScene) {
+};gdjs.ExplorationCode.userFunc0x8ebe58 = function GDJSInlineCode(runtimeScene) {
 "use strict";
 const FDSG = gdjs.FDGameData;
 const GameVars = FDSG.GameVars;
@@ -2791,7 +2938,7 @@ const outlineHoverEffect = { // This is a commonly used effect so its easier to 
         doubleParameters: { padding: 0, thickness: 4 },
         stringParameters: { color: "255;255;255" }
     }
-
+    
 // NAVIGATION
 
 FDSG.registerClickableObject({
@@ -2844,18 +2991,7 @@ FDSG.registerClickableObject({ // Similar to InteractionObject, but only for ins
     duration: "released",
     clickFunction: (obj) => {
         const targetInspection = obj.getVariables().get("targetInspection").getAsString();
-        const exitInspect = GameVars.runtimeScene.getInstancesOf("ExitInspection")[0];
-        if (obj.getVariables().has("instanceID") && obj.getVariables().get("instanceID").getAsString() == "itemPopupInfo") {
-            GameVars._previousInspections.push("itemPopup");
-            GameVars.isItemPopupShowing = false;
-            exitInspect.getVariables().get("enabled").setBoolean(false);
-            exitInspect.hide(true);
-        } else {
-            exitInspect.getVariables().get("enabled").setBoolean(true);
-            exitInspect.hide(false);
-        }
         FDSG.bringInspectionIntoView(targetInspection);
-        GameVars.isInspecting = true;
     },
     cursor: "help",
     hoverEffect: structuredClone(outlineHoverEffect)
@@ -2865,19 +3001,9 @@ FDSG.registerClickableObject({
     object: "PreviousInspection",
     duration: "released",
     clickFunction: (obj) => {
-        if (GameVars._previousInspections.length == 0) {
-            GameVars.isInspecting = false;
-            return;
-        }
-        const previousInspection = GameVars._previousInspections.pop();
-        if (previousInspection == "itemPopup") {
-            GameVars.isInspecting = false;
-            GameVars.isItemPopupShowing = true;
-            FDSG.playSFX("CloseInspection");
-        } else {
-            FDSG.bringInspectionIntoView(previousInspection);
-            GameVars._previousInspections.pop(); // Make sure the current inspection is removed 
-        }
+        GameVars._playInspectionSFX = false; // Mute the inspection SFX this time
+        FDSG.clearInspectionFromView();
+        FDSG.playSFX("CloseInspection");
     },
     cursor: "pointer",
     hoverEffect: structuredClone(outlineHoverEffect)
@@ -2887,8 +3013,7 @@ FDSG.registerClickableObject({
     object: "ExitInspection",
     duration: "released",
     clickFunction: (obj) => {
-        FDSG.playSFX("CloseInspection");
-        GameVars.isInspecting = false;
+       FDSG.clearAllInspectionsFromView();
     },
     hoverEffect: structuredClone(outlineHoverEffect)
 });
@@ -2900,7 +3025,7 @@ FDSG.registerClickableObject({
     duration: "released",
     clickFunction: (obj) => {
         const objVariables = obj.getVariables();
-        if (objVariables.get("showPopup").getAsBoolean()) {
+        if (objVariables.get("showPickupPrompt").getAsBoolean()) {
             const itemName = objVariables.get("itemName").getAsString();
             const itemDescription = objVariables.get("itemDescription").getAsString();
             if (FDSG.FDFacts.length > 0 && (obj.getVariables().get("infoText").getAsString() == "0" // Load a random Frederick Douglass fact into the infoText
@@ -2933,11 +3058,12 @@ FDSG.registerClickableObject({
         const itemDescription = objVariables.get("itemDescription").getAsString();
         const showPopup = objVariables.get("showPickupPrompt").getAsBoolean();
         const removeOnPickup = objVariables.get("removeOnPickup").getAsBoolean();
+        const infoText = obj.getVariables().get("infoText").getAsString();
         if (showPopup) {
             GameVars._itemPopupData.itemObject = obj;
             FDSG.showItemPopup(itemName, itemDescription);
         } else {
-            FDSG.addItemToInventory(itemName, itemDescription);
+            FDSG.addItemToInventory(itemName, itemDescription, infoText);
             if (removeOnPickup) {
                 FDSG.collectObject(obj);
             }
@@ -3011,9 +3137,17 @@ FDSG.registerClickableObject({
     duration: "released",
     clickFunction: (obj) => {
         const itemPopupData = GameVars._itemPopupData;
+        const itemObject = itemPopupData.itemObject; // The itemObject that called this popup
         const itemName = itemPopupData.itemObject.getVariables().get("itemName").getAsString();
         const itemDescription = itemPopupData.itemDescriptionText.getString();
-        if (itemPopupData.itemObject.getName() == "StatueCollectible") { // If the item is a figurine (statue)
+        if (itemObject.getVariables().has("targetInteraction")
+        && itemObject.getVariables().get("targetInteraction").getAsString() != "0") { // If the itemObject has a targetInteraction, we run it on Pickup instead of on click
+            const interactionName = itemObject.getVariables().get("targetInteraction").getAsString();
+            const interactionData = FDSG.Interactions[interactionName];
+            FDSG.debugPrint("log", `running interactionFunction ${interactionName} from ${itemObject.getName()}`);
+            interactionData.interactionFunction(itemObject);
+        }
+        if (itemObject.getName() == "StatueCollectible") { // If the item is a figurine (statue)
             FDSG.collectObject(itemPopupData.itemObject);
             FDSG.GameVars.statuesCollected += 1; // Increase statues collected counter
             FDSG.updateStatueCounter();
@@ -3022,11 +3156,11 @@ FDSG.registerClickableObject({
             FDSG.playSFX("StatueCollected");
         } else {
             FDSG.addItemToInventory(itemName, itemDescription); // Add the item to inventory
-            if (itemPopupData.itemObject.getVariables().get("removeOnPickup").getAsBoolean()) {
-                FDSG.collectObject(itemPopupData.itemObject);
+            if (itemObject.getVariables().get("removeOnPickup").getAsBoolean()) {
+                FDSG.collectObject(itemObject);
             }
         }
-        GameVars.isItemPopupShowing = false; // Hide the item popup
+        FDSG.clearInspectionFromView(); // Removes the itemPopup from the Inspection stack
     },
     hoverEffect: structuredClone(outlineHoverEffect)
 });
@@ -3036,7 +3170,8 @@ FDSG.registerClickableObject({
     duration: "released",
     clickFunction: (obj) => {
         FDSG.playSFX("ClosePopup");
-        GameVars.isItemPopupShowing = false; // Hide the itemPopup
+        GameVars._playInspectionSFX = false;
+        FDSG.clearInspectionFromView(); // Removes the itemPopup from the Inspection stack
     },
     hoverEffect: structuredClone(outlineHoverEffect)
 });
@@ -3118,15 +3253,30 @@ FDSG.registerClickableObject({
     object: "SoundToggle",
     duration: "released",
     clickFunction: (obj) => {
+        const soundChannel = GameVars.Constants.LOCATION_SOUND_CHANNEL;
         if (GameVars.currentGameVolume == 100) {
             GameVars.currentGameVolume = 0;
-            gdjs.evtTools.sound.setGlobalVolume(GameVars.runtimeScene, 0);
             obj.setAnimationName("off");
         } else {
             GameVars.currentGameVolume = 100;
-            gdjs.evtTools.sound.setGlobalVolume(GameVars.runtimeScene, 100);
             obj.setAnimationName("on");
             FDSG.handleLocationSounds();
+        }
+    },
+    hoverEffect: structuredClone(outlineHoverEffect)
+});
+
+FDSG.registerClickableObject({
+    object: "FullscreenToggle",
+    duration: "released",
+    clickFunction: (obj) => {
+        let fullscreen = gdjs.evtTools.window.isFullScreen(GameVars.runtimeScene)
+        // let fullscreen = GameVars.isFullScreen;
+        gdjs.evtTools.window.setFullScreen(GameVars.runtimeScene, !fullscreen, true);
+        if (fullscreen) {
+            obj.setAnimationName("not_fullscreen");
+        } else {
+            obj.setAnimationName("fullscreen");
         }
     },
     hoverEffect: structuredClone(outlineHoverEffect)
@@ -3145,12 +3295,12 @@ gdjs.ExplorationCode.eventsList14 = function(runtimeScene) {
 {
 
 
-gdjs.ExplorationCode.userFunc0xb273f8(runtimeScene);
+gdjs.ExplorationCode.userFunc0x8ebe58(runtimeScene);
 
 }
 
 
-};gdjs.ExplorationCode.userFunc0xe6afa8 = function GDJSInlineCode(runtimeScene) {
+};gdjs.ExplorationCode.userFunc0xea2980 = function GDJSInlineCode(runtimeScene) {
 "use strict";
 const FDSG = gdjs.FDGameData;
 const GameVars = FDSG.GameVars;
@@ -3168,17 +3318,17 @@ const Game = GameVars.runtimeScene.getGame();
 FDSG.setLayoutFlag("Frederick Douglass Square", "isCulturalCenterAvailable", false); // The transition to the cultural center is not available until the Hornbake Exit has been visited
 
 FDSG.registerOnLayoutLoadFunction("Frederick Douglass Square", () => {
-    const stampTransition = FDSG.getInstanceFromID("STAMP Transition");
+    const fdsTransition = FDSG.getInstanceFromID("STAMP Transition");
     if (!FDSG.getLayoutFlag("Hornbake Exit", "hasBeenVisited")) {
-        stampTransition.setOpacity(0);
-        stampTransition.getVariables().get("enabled").setBoolean(false);
+        fdsTransition.setOpacity(0);
+        fdsTransition.getVariables().get("enabled").setBoolean(false);
     } else {
-        stampTransition.setOpacity(255);
-        stampTransition.getVariables().get("enabled").setBoolean(true);
+        fdsTransition.setOpacity(255);
+        fdsTransition.getVariables().get("enabled").setBoolean(true);
     }
-})
+});
 
-FDSG.registerInteraction("MarblesMinigame", (obj) => {
+FDSG.registerInteraction("MarblesMinigame", (obj) => { // I like putting all the code under one big interaction, but using multiple smaller ones is fine as long as you remember the names
     const instanceID = obj.getVariables().get("instanceID").getAsString();
     const marblesNPC = FDSG.getInstanceFromID("marblesNPC");
     switch(instanceID) {
@@ -3192,10 +3342,10 @@ FDSG.registerInteraction("MarblesMinigame", (obj) => {
                 const acceptButton = FDSG.getInstanceFromID("marblesReturnAcceptButton");
                 if (FDSG.isItemInInventory("Marbles")) { // If the player found marbles
                     acceptButton.getVariables().get("enabled").setBoolean(true);
-                    acceptButton.removeEffect("disabled");
+                    acceptButton.enableEffect("Disabled", false);
                 } else if (acceptButton.getVariables().get("enabled").getAsBoolean()) {
                         acceptButton.getVariables().get("enabled").setBoolean(false);
-                        acceptButton.addEffect({"effectType":"Brightness","name":"disabled","doubleParameters":{"brightness":0.2}});
+                        acceptButton.enableEffect("Disabled", true);
                 }
                 FDSG.bringInspectionIntoView("MarblesNPCReturn");
             } else {
@@ -3203,17 +3353,17 @@ FDSG.registerInteraction("MarblesMinigame", (obj) => {
             }
             break;
         case("approachButton"): // Approaching the young man
-                FDSG.bringInspectionIntoView("MarblesNPC");
+                FDSG.swapInspection("MarblesNPC");
             break;
         case("marblesLeaveButton"): // Leaving
-            GameVars.isInspecting = false;
+            FDSG.clearAllInspectionsFromView();
             break;
         case("marblesAcceptButton"): // Accepting the game
             FDSG.getFlag(marblesNPC, "hasBeenSpokenTo").setBoolean(true);
             if (FDSG.isItemInInventory("Marbles")) { // Player has marbles
                 FDSG.loadMinigame("Marbles");
             } else {
-                FDSG.bringInspectionIntoView("NoMarbles"); // Player does not have marbles
+                FDSG.swapInspection("NoMarbles"); // Player does not have marbles
             }
             break;
         case("marblesReturnAcceptButton"):
@@ -3231,12 +3381,12 @@ gdjs.ExplorationCode.eventsList15 = function(runtimeScene) {
 {
 
 
-gdjs.ExplorationCode.userFunc0xe6afa8(runtimeScene);
+gdjs.ExplorationCode.userFunc0xea2980(runtimeScene);
 
 }
 
 
-};gdjs.ExplorationCode.userFunc0x8f8848 = function GDJSInlineCode(runtimeScene) {
+};gdjs.ExplorationCode.userFunc0xd71520 = function GDJSInlineCode(runtimeScene) {
 "use strict";
 const FDSG = gdjs.FDGameData;
 const GameVars = FDSG.GameVars;
@@ -3254,12 +3404,12 @@ gdjs.ExplorationCode.eventsList16 = function(runtimeScene) {
 {
 
 
-gdjs.ExplorationCode.userFunc0x8f8848(runtimeScene);
+gdjs.ExplorationCode.userFunc0xd71520(runtimeScene);
 
 }
 
 
-};gdjs.ExplorationCode.userFunc0xb1b478 = function GDJSInlineCode(runtimeScene) {
+};gdjs.ExplorationCode.userFunc0xe8bdb0 = function GDJSInlineCode(runtimeScene) {
 "use strict";
 const FDSG = gdjs.FDGameData;
 const GameVars = FDSG.GameVars;
@@ -3291,12 +3441,12 @@ gdjs.ExplorationCode.eventsList17 = function(runtimeScene) {
 {
 
 
-gdjs.ExplorationCode.userFunc0xb1b478(runtimeScene);
+gdjs.ExplorationCode.userFunc0xe8bdb0(runtimeScene);
 
 }
 
 
-};gdjs.ExplorationCode.userFunc0x1021390 = function GDJSInlineCode(runtimeScene) {
+};gdjs.ExplorationCode.userFunc0xe8bf08 = function GDJSInlineCode(runtimeScene) {
 "use strict";
 const FDSG = gdjs.FDGameData;
 const GameVars = FDSG.GameVars;
@@ -3309,24 +3459,81 @@ gdjs.ExplorationCode.eventsList18 = function(runtimeScene) {
 {
 
 
-gdjs.ExplorationCode.userFunc0x1021390(runtimeScene);
+gdjs.ExplorationCode.userFunc0xe8bf08(runtimeScene);
 
 }
 
 
-};gdjs.ExplorationCode.userFunc0x12647e8 = function GDJSInlineCode(runtimeScene) {
+};gdjs.ExplorationCode.userFunc0xe8f290 = function GDJSInlineCode(runtimeScene) {
 "use strict";
 const FDSG = gdjs.FDGameData;
 const GameVars = FDSG.GameVars;
 const Game = GameVars.runtimeScene.getGame();
 
+
+FDSG.registerInteraction("PhotoMinigame", (obj) => {
+    const instanceID = obj.getVariables().get("instanceID").getAsString();
+    const artistNPC = FDSG.getInstanceFromID("artistNPC");
+    const hasPhotoScrapsButton = FDSG.getInstanceFromID("hasPhotoScrapsButton");
+    const objVars = obj.getVariables();
+    switch(instanceID) {
+        case("artistNPC"):
+            if (Game.getVariables().get("MinigameFlags").getChildNamed("Photo Puzzle").getAsBoolean()) { // Player already won the photo puzzle
+                FDSG.bringInspectionIntoView("wonPhotoMinigame");
+            } else if (FDSG.getFlag(obj, "playerQuitMinigame", "boolean")) { // Player quit the minigame previously
+                FDSG.bringInspectionIntoView("retryPhotoMinigame");
+            } else if (FDSG.getFlag(obj, "gavePhotoScraps", "boolean")) { // Player has already given the photo scraps
+                FDSG.bringInspectionIntoView("startPhotoMinigame");
+            } else if (FDSG.getFlag(obj, "hasBeenSpokenTo", "boolean")) { // Player has already spoken to this NPC 
+                if (FDSG.isItemInInventory("Scrap of Photo") < 3) { // Player hasn't found all the photos
+                    hasPhotoScrapsButton.getVariables().get("enabled").setBoolean(false);
+                    hasPhotoScrapsButton.enableEffect("Disabled", true);
+                } else {
+                    hasPhotoScrapsButton.getVariables().get("enabled").setBoolean(true);
+                    hasPhotoScrapsButton.enableEffect("Disabled", false);
+                }
+                FDSG.bringInspectionIntoView("returnArtistNPC");
+            } else { // Player is speaking to this NPC for the first time
+                FDSG.bringInspectionIntoView("approachArtistNPC");
+            }
+            break;
+        case("approachButton"): // Player approaches NPC
+            FDSG.swapInspection("talkArtistNPC");
+            break;
+        case("talkArtistNPCButton"): // Player talks to NPC
+            FDSG.swapInspection("talkArtistNPC2");
+            break;
+        case("talkArtistNPC2Button"): // Player accepts goal
+            FDSG.getFlag(artistNPC, "hasBeenSpokenTo").setBoolean(true);
+            FDSG.clearAllInspectionsFromView();
+            break;
+        case("hasPhotoScrapsButton"):
+            while (FDSG.isItemInInventory("Scrap of Photo") > 0) { // Clear the photo scraps from the players inventory
+                FDSG.removeItemFromInventory("Scrap of Photo");
+            }
+            FDSG.getFlag(artistNPC, "gavePhotoScraps").setBoolean(true);
+            FDSG.swapInspection("startPhotoMinigame");
+            break;
+        case("leaveButton"):
+            FDSG.clearAllInspectionsFromView();
+            break;
+        case("startPhotoMinigameButton"):
+            FDSG.loadMinigame("Photo Puzzle");
+            break;
+        case("rewardMarbles"):
+            artistNPC.getVariables().get("enabled").setBoolean(false);
+            FDSG.getFlag(artistNPC, "receivedMarbles").setBoolean(true);
+            FDSG.clearAllInspectionsFromView();
+            break;
+    }
+}, true);
 };
 gdjs.ExplorationCode.eventsList19 = function(runtimeScene) {
 
 {
 
 
-gdjs.ExplorationCode.userFunc0x12647e8(runtimeScene);
+gdjs.ExplorationCode.userFunc0xe8f290(runtimeScene);
 
 }
 
@@ -3375,7 +3582,7 @@ gdjs.ExplorationCode.eventsList19(runtimeScene);
 }
 
 
-};gdjs.ExplorationCode.userFunc0x1264170 = function GDJSInlineCode(runtimeScene) {
+};gdjs.ExplorationCode.userFunc0xdc49f8 = function GDJSInlineCode(runtimeScene) {
 "use strict";
 const FDSG = gdjs.FDGameData;
 const GameVars = FDSG.GameVars;
@@ -3406,6 +3613,17 @@ FDSG.registerOnReturnFromMinigame("Marbles", () => {
         FDSG.bringInspectionIntoView("MarblesMinigameLose");
     }
 });
+
+FDSG.registerOnReturnFromMinigame("Photo Puzzle", () => {
+    const wasCompleted = Game.getVariables().get("MinigameFlags").getChild("Photo Puzzle").getAsBoolean();
+    if (wasCompleted) {
+        FDSG.bringInspectionIntoView("wonPhotoMinigame");
+    } else {
+        const artistNPC = FDSG.getInstanceFromID("artistNPC");
+        FDSG.getFlag(artistNPC, "playerQuitMinigame").setBoolean(true);
+        FDSG.bringInspectionIntoView("quitPhotoMinigame");
+    }
+});
 };
 gdjs.ExplorationCode.eventsList21 = function(runtimeScene) {
 
@@ -3419,7 +3637,7 @@ gdjs.ExplorationCode.eventsList21 = function(runtimeScene) {
 {
 
 
-gdjs.ExplorationCode.userFunc0x1264170(runtimeScene);
+gdjs.ExplorationCode.userFunc0xdc49f8(runtimeScene);
 
 }
 
@@ -3509,7 +3727,7 @@ gdjs.ExplorationCode.eventsList22(runtimeScene);} //End of subevents
 }
 
 
-};gdjs.ExplorationCode.userFunc0xb5b148 = function GDJSInlineCode(runtimeScene) {
+};gdjs.ExplorationCode.userFunc0xd81888 = function GDJSInlineCode(runtimeScene) {
 "use strict";
 const FDSG = gdjs.FDGameData; // Simpler variables to use as reference
 const GameVars = FDSG.GameVars;
@@ -3752,7 +3970,7 @@ gdjs.ExplorationCode.eventsList26(runtimeScene);} //End of subevents
 {
 
 
-gdjs.ExplorationCode.userFunc0xb5b148(runtimeScene);
+gdjs.ExplorationCode.userFunc0xd81888(runtimeScene);
 
 }
 
@@ -4120,6 +4338,10 @@ gdjs.ExplorationCode.GDSoundToggleObjects1.length = 0;
 gdjs.ExplorationCode.GDSoundToggleObjects2.length = 0;
 gdjs.ExplorationCode.GDSoundToggleObjects3.length = 0;
 gdjs.ExplorationCode.GDSoundToggleObjects4.length = 0;
+gdjs.ExplorationCode.GDFullscreenToggleObjects1.length = 0;
+gdjs.ExplorationCode.GDFullscreenToggleObjects2.length = 0;
+gdjs.ExplorationCode.GDFullscreenToggleObjects3.length = 0;
+gdjs.ExplorationCode.GDFullscreenToggleObjects4.length = 0;
 gdjs.ExplorationCode.GDExitMinigameButtonObjects1.length = 0;
 gdjs.ExplorationCode.GDExitMinigameButtonObjects2.length = 0;
 gdjs.ExplorationCode.GDExitMinigameButtonObjects3.length = 0;
@@ -4306,6 +4528,10 @@ gdjs.ExplorationCode.GDSoundToggleObjects1.length = 0;
 gdjs.ExplorationCode.GDSoundToggleObjects2.length = 0;
 gdjs.ExplorationCode.GDSoundToggleObjects3.length = 0;
 gdjs.ExplorationCode.GDSoundToggleObjects4.length = 0;
+gdjs.ExplorationCode.GDFullscreenToggleObjects1.length = 0;
+gdjs.ExplorationCode.GDFullscreenToggleObjects2.length = 0;
+gdjs.ExplorationCode.GDFullscreenToggleObjects3.length = 0;
+gdjs.ExplorationCode.GDFullscreenToggleObjects4.length = 0;
 gdjs.ExplorationCode.GDExitMinigameButtonObjects1.length = 0;
 gdjs.ExplorationCode.GDExitMinigameButtonObjects2.length = 0;
 gdjs.ExplorationCode.GDExitMinigameButtonObjects3.length = 0;

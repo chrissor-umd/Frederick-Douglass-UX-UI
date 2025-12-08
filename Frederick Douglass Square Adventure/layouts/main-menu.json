@@ -20,7 +20,7 @@
     "gridColor": 10401023,
     "gridAlpha": 0.8,
     "snap": true,
-    "zoomFactor": 0.7130377630690412,
+    "zoomFactor": 0.5468750000000014,
     "windowMask": false,
     "selectedLayer": "GameOver"
   },
@@ -64,14 +64,14 @@
     {
       "angle": 0,
       "customSize": true,
-      "depth": 3,
-      "height": 1753,
+      "depth": 1,
+      "height": 752,
       "layer": "Background",
       "name": "Main_Menu_Background",
       "persistentUuid": "ba6b1fc4-fb94-40d4-a68c-e8e29e9d1239",
-      "width": 1290,
-      "x": -5,
-      "y": -5,
+      "width": 1312,
+      "x": -16,
+      "y": -16,
       "zOrder": 5,
       "numberProperties": [],
       "stringProperties": [],
@@ -261,21 +261,7 @@
       "type": "Sprite",
       "updateIfNotVisible": false,
       "variables": [],
-      "effects": [
-        {
-          "effectType": "KawaseBlur",
-          "name": "Effect",
-          "doubleParameters": {
-            "blur": 3,
-            "padding": 10,
-            "pixelizeX": 1,
-            "pixelizeY": 1,
-            "quality": 20
-          },
-          "stringParameters": {},
-          "booleanParameters": {}
-        }
-      ],
+      "effects": [],
       "behaviors": [],
       "animations": [
         {
@@ -288,7 +274,7 @@
               "sprites": [
                 {
                   "hasCustomCollisionMask": true,
-                  "image": "assets\\images\\FDS Statue Zoom.JPG",
+                  "image": "assets\\images\\main_menu_blur.jpg",
                   "points": [],
                   "originPoint": {
                     "name": "origine",
@@ -313,11 +299,11 @@
                       },
                       {
                         "x": 397,
-                        "y": 540
+                        "y": 223
                       },
                       {
                         "x": 0,
-                        "y": 540
+                        "y": 223
                       }
                     ]
                   ]
@@ -357,7 +343,7 @@
       "variables": [],
       "effects": [],
       "behaviors": [],
-      "string": "Project Management:\n\nProgramming:\n\nSound:\n\nWebpage Design:\n\nArt Assets:\n\nClient Communications:\n\nHistorical Research and Image Assets:\n",
+      "string": "Project Management:\n\nProgramming:\n\nSound:\n\nArt Assets:\n\nClient Communications:\n\nHistorical Research and Image Assets:",
       "font": "assets\\fonts\\BilkoOpti-Regular.otf",
       "textAlignment": "left",
       "characterSize": 34,
@@ -380,12 +366,12 @@
         "shadowOpacity": 127,
         "smoothed": true,
         "underlined": false,
-        "text": "Project Management:\n\nProgramming:\n\nSound:\n\nWebpage Design:\n\nArt Assets:\n\nClient Communications:\n\nHistorical Research and Image Assets:\n",
+        "text": "Project Management:\n\nProgramming:\n\nSound:\n\nArt Assets:\n\nClient Communications:\n\nHistorical Research and Image Assets:",
         "font": "assets\\fonts\\BilkoOpti-Regular.otf",
         "textAlignment": "left",
         "verticalTextAlignment": "top",
         "characterSize": 34,
-        "lineHeight": 31,
+        "lineHeight": 35,
         "color": "255;255;255"
       }
     },
@@ -400,7 +386,7 @@
       "variables": [],
       "effects": [],
       "behaviors": [],
-      "string": "Christian Sorensen\n\nChristian Sorensen\n\nChristian Sorensen\n\nKyle Tu\n\nMichelle Starcher\n\nMichelle Starcher\n\nSamnorp Deung,\nMarcello Soriano\n",
+      "string": "Christian Sorensen\n\nChristian Sorensen\n\nChristian Sorensen\n\nMichelle Starcher\n\nMichelle Starcher\n\nSamnorp Deung,\nMarcello Soriano",
       "font": "assets\\fonts\\BilkoOpti-Regular.otf",
       "textAlignment": "right",
       "characterSize": 34,
@@ -423,12 +409,12 @@
         "shadowOpacity": 127,
         "smoothed": true,
         "underlined": false,
-        "text": "Christian Sorensen\n\nChristian Sorensen\n\nChristian Sorensen\n\nKyle Tu\n\nMichelle Starcher\n\nMichelle Starcher\n\nSamnorp Deung,\nMarcello Soriano\n",
+        "text": "Christian Sorensen\n\nChristian Sorensen\n\nChristian Sorensen\n\nMichelle Starcher\n\nMichelle Starcher\n\nSamnorp Deung,\nMarcello Soriano",
         "font": "assets\\fonts\\BilkoOpti-Regular.otf",
         "textAlignment": "right",
         "verticalTextAlignment": "top",
         "characterSize": 34,
-        "lineHeight": 31,
+        "lineHeight": 35,
         "color": "255;255;255"
       }
     },
@@ -1071,7 +1057,7 @@
       "isLocked": false,
       "name": "Main Menu",
       "renderingType": "2d",
-      "visibility": true,
+      "visibility": false,
       "cameras": [],
       "effects": []
     },
@@ -1089,7 +1075,7 @@
       "isLocked": false,
       "name": "Credits",
       "renderingType": "2d",
-      "visibility": false,
+      "visibility": true,
       "cameras": [],
       "effects": []
     },

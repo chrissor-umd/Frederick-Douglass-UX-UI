@@ -20,7 +20,7 @@
     "gridColor": 10401023,
     "gridAlpha": 0.8,
     "snap": true,
-    "zoomFactor": 1.3389693172845478,
+    "zoomFactor": 0.9934433498259653,
     "windowMask": false,
     "selectedLayer": "Tutorial"
   },
@@ -66,6 +66,11 @@
     },
     {
       "name": "GameStarted",
+      "type": "boolean",
+      "value": false
+    },
+    {
+      "name": "GamePaused",
       "type": "boolean",
       "value": false
     }
@@ -685,7 +690,7 @@
       "name": "StayButton",
       "persistentUuid": "588b0e55-eda3-4fe7-bd92-5092e7f210d0",
       "width": 0,
-      "x": 288,
+      "x": 736,
       "y": 512,
       "zOrder": 9,
       "numberProperties": [],
@@ -701,7 +706,7 @@
       "name": "LeaveButton",
       "persistentUuid": "e258c27d-c69a-48ab-8d7f-0f4fce172b60",
       "width": 0,
-      "x": 736,
+      "x": 288,
       "y": 512,
       "zOrder": 10,
       "numberProperties": [],
@@ -1866,7 +1871,7 @@
       "variables": [],
       "effects": [],
       "behaviors": [],
-      "string": "\"Thanks  so much! That looks a lot better!\"",
+      "string": "\"Thanks so much! That looks a lot better!\"",
       "font": "assets\\fonts\\BilkoOpti-Regular.otf",
       "textAlignment": "center",
       "characterSize": 43,
@@ -1889,7 +1894,7 @@
         "shadowOpacity": 127,
         "smoothed": true,
         "underlined": false,
-        "text": "\"Thanks  so much! That looks a lot better!\"",
+        "text": "\"Thanks so much! That looks a lot better!\"",
         "font": "assets\\fonts\\BilkoOpti-Regular.otf",
         "textAlignment": "center",
         "verticalTextAlignment": "center",
@@ -2515,7 +2520,6 @@
       "colorG": 176,
       "colorR": 74,
       "creationTime": 0,
-      "folded": true,
       "name": "Exit Minigame",
       "source": "",
       "type": "BuiltinCommonInstructions::Group",
@@ -2582,28 +2586,11 @@
               "conditions": [
                 {
                   "type": {
-                    "value": "BuiltinCommonInstructions::Or"
+                    "value": "MouseButtonFromTextReleased"
                   },
-                  "parameters": [],
-                  "subInstructions": [
-                    {
-                      "type": {
-                        "value": "MouseButtonFromTextReleased"
-                      },
-                      "parameters": [
-                        "",
-                        "\"Left\""
-                      ]
-                    },
-                    {
-                      "type": {
-                        "value": "HasTouchEnded"
-                      },
-                      "parameters": [
-                        "",
-                        "2"
-                      ]
-                    }
+                  "parameters": [
+                    "",
+                    "\"Left\""
                   ]
                 }
               ],
@@ -2789,12 +2776,12 @@
       "colorG": 176,
       "colorR": 74,
       "creationTime": 0,
-      "folded": true,
       "name": "Main Loop",
       "source": "",
       "type": "BuiltinCommonInstructions::Group",
       "events": [
         {
+          "folded": true,
           "type": "BuiltinCommonInstructions::Standard",
           "conditions": [],
           "actions": [
@@ -2830,188 +2817,180 @@
                 "0"
               ]
             }
-          ]
-        },
-        {
-          "type": "BuiltinCommonInstructions::Standard",
-          "conditions": [
-            {
-              "type": {
-                "value": "BooleanVariable"
-              },
-              "parameters": [
-                "GameOver",
-                "False",
-                ""
-              ]
-            }
           ],
-          "actions": [],
           "events": [
             {
               "type": "BuiltinCommonInstructions::Standard",
               "conditions": [
                 {
                   "type": {
+                    "value": "BooleanVariable"
+                  },
+                  "parameters": [
+                    "GameOver",
+                    "False",
+                    ""
+                  ]
+                },
+                {
+                  "type": {
                     "inverted": true,
-                    "value": "Tween::IsPlaying"
+                    "value": "LayerVisible"
                   },
                   "parameters": [
-                    "BlankSpace",
-                    "Tween",
-                    "\"slide\""
+                    "",
+                    "\"ExitPrompt\""
                   ]
                 },
                 {
                   "type": {
-                    "value": "BuiltinCommonInstructions::Or"
+                    "inverted": true,
+                    "value": "LayerVisible"
                   },
-                  "parameters": [],
-                  "subInstructions": [
-                    {
-                      "type": {
-                        "value": "BuiltinCommonInstructions::And"
-                      },
-                      "parameters": [],
-                      "subInstructions": [
-                        {
-                          "type": {
-                            "value": "PosY"
-                          },
-                          "parameters": [
-                            "PhotoScrap",
-                            "=",
-                            "BlankSpace.Y()"
-                          ]
-                        },
-                        {
-                          "type": {
-                            "value": "BuiltinCommonInstructions::Or"
-                          },
-                          "parameters": [],
-                          "subInstructions": [
-                            {
-                              "type": {
-                                "value": "PosX"
-                              },
-                              "parameters": [
-                                "PhotoScrap",
-                                "=",
-                                "BlankSpace.X() - PhotoScrap.Width()"
-                              ]
-                            },
-                            {
-                              "type": {
-                                "value": "PosX"
-                              },
-                              "parameters": [
-                                "PhotoScrap",
-                                "=",
-                                "BlankSpace.X() + BlankSpace.Width()"
-                              ]
-                            }
-                          ]
-                        }
-                      ]
-                    },
-                    {
-                      "type": {
-                        "value": "BuiltinCommonInstructions::And"
-                      },
-                      "parameters": [],
-                      "subInstructions": [
-                        {
-                          "type": {
-                            "value": "PosX"
-                          },
-                          "parameters": [
-                            "PhotoScrap",
-                            "=",
-                            "BlankSpace.X()"
-                          ]
-                        },
-                        {
-                          "type": {
-                            "value": "BuiltinCommonInstructions::Or"
-                          },
-                          "parameters": [],
-                          "subInstructions": [
-                            {
-                              "type": {
-                                "value": "PosY"
-                              },
-                              "parameters": [
-                                "PhotoScrap",
-                                "=",
-                                "BlankSpace.Y() - PhotoScrap.Height()"
-                              ]
-                            },
-                            {
-                              "type": {
-                                "value": "PosY"
-                              },
-                              "parameters": [
-                                "PhotoScrap",
-                                "=",
-                                "BlankSpace.Y() + BlankSpace.Height()"
-                              ]
-                            }
-                          ]
-                        }
-                      ]
-                    }
+                  "parameters": [
+                    "",
+                    "\"Tutorial\""
                   ]
                 }
               ],
-              "actions": [
-                {
-                  "type": {
-                    "value": "EffectCapability::EffectBehavior::SetEffectStringParameter"
-                  },
-                  "parameters": [
-                    "PhotoScrap",
-                    "Effect",
-                    "\"outline\"",
-                    "\"color\"",
-                    "\"0;255;0\""
-                  ]
-                },
-                {
-                  "type": {
-                    "value": "ChangePlan"
-                  },
-                  "parameters": [
-                    "PhotoScrap",
-                    "=",
-                    "1"
-                  ]
-                }
-              ],
+              "actions": [],
               "events": [
                 {
                   "type": "BuiltinCommonInstructions::Standard",
                   "conditions": [
                     {
                       "type": {
-                        "value": "SourisSurObjet"
+                        "inverted": true,
+                        "value": "Tween::IsPlaying"
                       },
                       "parameters": [
-                        "PhotoScrap",
-                        "",
-                        "",
-                        ""
+                        "BlankSpace",
+                        "Tween",
+                        "\"slide\""
+                      ]
+                    },
+                    {
+                      "type": {
+                        "value": "BuiltinCommonInstructions::Or"
+                      },
+                      "parameters": [],
+                      "subInstructions": [
+                        {
+                          "type": {
+                            "value": "BuiltinCommonInstructions::And"
+                          },
+                          "parameters": [],
+                          "subInstructions": [
+                            {
+                              "type": {
+                                "value": "PosY"
+                              },
+                              "parameters": [
+                                "PhotoScrap",
+                                "=",
+                                "BlankSpace.Y()"
+                              ]
+                            },
+                            {
+                              "type": {
+                                "value": "BuiltinCommonInstructions::Or"
+                              },
+                              "parameters": [],
+                              "subInstructions": [
+                                {
+                                  "type": {
+                                    "value": "PosX"
+                                  },
+                                  "parameters": [
+                                    "PhotoScrap",
+                                    "=",
+                                    "BlankSpace.X() - PhotoScrap.Width()"
+                                  ]
+                                },
+                                {
+                                  "type": {
+                                    "value": "PosX"
+                                  },
+                                  "parameters": [
+                                    "PhotoScrap",
+                                    "=",
+                                    "BlankSpace.X() + BlankSpace.Width()"
+                                  ]
+                                }
+                              ]
+                            }
+                          ]
+                        },
+                        {
+                          "type": {
+                            "value": "BuiltinCommonInstructions::And"
+                          },
+                          "parameters": [],
+                          "subInstructions": [
+                            {
+                              "type": {
+                                "value": "PosX"
+                              },
+                              "parameters": [
+                                "PhotoScrap",
+                                "=",
+                                "BlankSpace.X()"
+                              ]
+                            },
+                            {
+                              "type": {
+                                "value": "BuiltinCommonInstructions::Or"
+                              },
+                              "parameters": [],
+                              "subInstructions": [
+                                {
+                                  "type": {
+                                    "value": "PosY"
+                                  },
+                                  "parameters": [
+                                    "PhotoScrap",
+                                    "=",
+                                    "BlankSpace.Y() - PhotoScrap.Height()"
+                                  ]
+                                },
+                                {
+                                  "type": {
+                                    "value": "PosY"
+                                  },
+                                  "parameters": [
+                                    "PhotoScrap",
+                                    "=",
+                                    "BlankSpace.Y() + BlankSpace.Height()"
+                                  ]
+                                }
+                              ]
+                            }
+                          ]
+                        }
                       ]
                     }
                   ],
                   "actions": [
                     {
                       "type": {
-                        "value": "CursorType::ChangeCursorType"
+                        "value": "EffectCapability::EffectBehavior::SetEffectStringParameter"
                       },
                       "parameters": [
-                        "",
-                        "\"pointer\"",
-                        ""
+                        "PhotoScrap",
+                        "Effect",
+                        "\"outline\"",
+                        "\"color\"",
+                        "\"0;255;0\""
+                      ]
+                    },
+                    {
+                      "type": {
+                        "value": "ChangePlan"
+                      },
+                      "parameters": [
+                        "PhotoScrap",
+                        "=",
+                        "1"
                       ]
                     }
                   ],
@@ -3021,21 +3000,12 @@
                       "conditions": [
                         {
                           "type": {
-                            "value": "MouseButtonFromTextReleased"
+                            "value": "SourisSurObjet"
                           },
                           "parameters": [
+                            "PhotoScrap",
                             "",
-                            "\"Left\""
-                          ]
-                        },
-                        {
-                          "type": {
-                            "value": "PickNearest"
-                          },
-                          "parameters": [
-                            "BlankSpace",
-                            "PhotoScrap.X()",
-                            "PhotoScrap.Y()",
+                            "",
                             ""
                           ]
                         }
@@ -3043,179 +3013,277 @@
                       "actions": [
                         {
                           "type": {
-                            "value": "Tween::TweenBehavior::AddObjectPositionTween2"
-                          },
-                          "parameters": [
-                            "PhotoScrap",
-                            "Tween",
-                            "\"slide\"",
-                            "BlankSpace.X()",
-                            "BlankSpace.Y()",
-                            "\"easeFromTo\"",
-                            ".25",
-                            "no"
-                          ]
-                        },
-                        {
-                          "type": {
-                            "value": "Tween::TweenBehavior::AddObjectPositionTween2"
-                          },
-                          "parameters": [
-                            "BlankSpace",
-                            "Tween",
-                            "\"slide\"",
-                            "PhotoScrap.X()",
-                            "PhotoScrap.Y()",
-                            "\"easeFromTo\"",
-                            ".25",
-                            "no"
-                          ]
-                        },
-                        {
-                          "type": {
-                            "value": "PlaySound"
+                            "value": "CursorType::ChangeCursorType"
                           },
                           "parameters": [
                             "",
-                            "assets\\sfx\\swipe.wav",
-                            "",
-                            "25",
-                            ".5"
+                            "\"pointer\"",
+                            ""
                           ]
                         }
-                      ]
-                    }
-                  ]
-                }
-              ]
-            },
-            {
-              "type": "BuiltinCommonInstructions::Standard",
-              "conditions": [],
-              "actions": [],
-              "events": [
-                {
-                  "type": "BuiltinCommonInstructions::ForEach",
-                  "object": "Slideable",
-                  "conditions": [
-                    {
-                      "type": {
-                        "value": "BuiltinCommonInstructions::Or"
-                      },
-                      "parameters": [],
-                      "subInstructions": [
+                      ],
+                      "events": [
                         {
-                          "type": {
-                            "value": "PosX"
-                          },
-                          "parameters": [
-                            "Slideable",
-                            "!=",
-                            "topLeftPosition.x + (Slideable.targetX * Slideable.Width())"
-                          ]
-                        },
-                        {
-                          "type": {
-                            "value": "PosY"
-                          },
-                          "parameters": [
-                            "Slideable",
-                            "!=",
-                            "topLeftPosition.y + (Slideable.targetY * Slideable.Height())"
+                          "type": "BuiltinCommonInstructions::Standard",
+                          "conditions": [
+                            {
+                              "type": {
+                                "value": "MouseButtonFromTextReleased"
+                              },
+                              "parameters": [
+                                "",
+                                "\"Left\""
+                              ]
+                            },
+                            {
+                              "type": {
+                                "value": "PickNearest"
+                              },
+                              "parameters": [
+                                "BlankSpace",
+                                "PhotoScrap.X()",
+                                "PhotoScrap.Y()",
+                                ""
+                              ]
+                            }
+                          ],
+                          "actions": [
+                            {
+                              "type": {
+                                "value": "Tween::TweenBehavior::AddObjectPositionTween2"
+                              },
+                              "parameters": [
+                                "PhotoScrap",
+                                "Tween",
+                                "\"slide\"",
+                                "BlankSpace.X()",
+                                "BlankSpace.Y()",
+                                "\"easeFromTo\"",
+                                ".25",
+                                "no"
+                              ]
+                            },
+                            {
+                              "type": {
+                                "value": "Tween::TweenBehavior::AddObjectPositionTween2"
+                              },
+                              "parameters": [
+                                "BlankSpace",
+                                "Tween",
+                                "\"slide\"",
+                                "PhotoScrap.X()",
+                                "PhotoScrap.Y()",
+                                "\"easeFromTo\"",
+                                ".25",
+                                "no"
+                              ]
+                            },
+                            {
+                              "type": {
+                                "value": "PlaySound"
+                              },
+                              "parameters": [
+                                "",
+                                "assets\\sfx\\swipe.wav",
+                                "",
+                                "25",
+                                ".5"
+                              ]
+                            }
                           ]
                         }
-                      ]
-                    }
-                  ],
-                  "actions": [
-                    {
-                      "type": {
-                        "value": "SetBooleanVariable"
-                      },
-                      "parameters": [
-                        "isGameOver",
-                        "False",
-                        ""
                       ]
                     }
                   ]
                 },
                 {
                   "type": "BuiltinCommonInstructions::Standard",
-                  "conditions": [
-                    {
-                      "type": {
-                        "value": "BooleanVariable"
-                      },
-                      "parameters": [
-                        "isGameOver",
-                        "True",
-                        ""
-                      ]
-                    }
-                  ],
-                  "actions": [
-                    {
-                      "type": {
-                        "value": "SetBooleanVariable"
-                      },
-                      "parameters": [
-                        "GameOver",
-                        "True",
-                        ""
-                      ]
-                    },
-                    {
-                      "type": {
-                        "value": "Tween::TweenBehavior::AddObjectOpacityTween2"
-                      },
-                      "parameters": [
-                        "BlankSpace",
-                        "Tween",
-                        "\"opacity\"",
-                        "255",
-                        "\"easeTo\"",
-                        "3",
-                        ""
-                      ]
-                    },
-                    {
-                      "type": {
-                        "value": "ResetTimer"
-                      },
-                      "parameters": [
-                        "",
-                        "\"gameOver\""
-                      ]
-                    }
-                  ],
+                  "conditions": [],
+                  "actions": [],
                   "events": [
                     {
                       "type": "BuiltinCommonInstructions::ForEach",
-                      "object": "PhotoScrap",
-                      "conditions": [],
+                      "object": "Slideable",
+                      "conditions": [
+                        {
+                          "type": {
+                            "value": "BuiltinCommonInstructions::Or"
+                          },
+                          "parameters": [],
+                          "subInstructions": [
+                            {
+                              "type": {
+                                "value": "PosX"
+                              },
+                              "parameters": [
+                                "Slideable",
+                                "!=",
+                                "topLeftPosition.x + (Slideable.targetX * Slideable.Width())"
+                              ]
+                            },
+                            {
+                              "type": {
+                                "value": "PosY"
+                              },
+                              "parameters": [
+                                "Slideable",
+                                "!=",
+                                "topLeftPosition.y + (Slideable.targetY * Slideable.Height())"
+                              ]
+                            }
+                          ]
+                        }
+                      ],
                       "actions": [
                         {
                           "type": {
-                            "value": "EffectCapability::EffectBehavior::EnableEffect"
+                            "value": "SetBooleanVariable"
                           },
                           "parameters": [
-                            "PhotoScrap",
-                            "Effect",
-                            "\"outline\"",
-                            "no"
+                            "isGameOver",
+                            "False",
+                            ""
+                          ]
+                        }
+                      ]
+                    },
+                    {
+                      "type": "BuiltinCommonInstructions::Standard",
+                      "conditions": [
+                        {
+                          "type": {
+                            "value": "BooleanVariable"
+                          },
+                          "parameters": [
+                            "isGameOver",
+                            "True",
+                            ""
+                          ]
+                        }
+                      ],
+                      "actions": [
+                        {
+                          "type": {
+                            "value": "SetBooleanVariable"
+                          },
+                          "parameters": [
+                            "GameOver",
+                            "True",
+                            ""
+                          ]
+                        },
+                        {
+                          "type": {
+                            "value": "Tween::TweenBehavior::AddObjectOpacityTween2"
+                          },
+                          "parameters": [
+                            "BlankSpace",
+                            "Tween",
+                            "\"opacity\"",
+                            "255",
+                            "\"easeTo\"",
+                            "3",
+                            ""
+                          ]
+                        },
+                        {
+                          "type": {
+                            "value": "ResetTimer"
+                          },
+                          "parameters": [
+                            "",
+                            "\"gameOver\""
+                          ]
+                        }
+                      ],
+                      "events": [
+                        {
+                          "type": "BuiltinCommonInstructions::ForEach",
+                          "object": "PhotoScrap",
+                          "conditions": [],
+                          "actions": [
+                            {
+                              "type": {
+                                "value": "EffectCapability::EffectBehavior::EnableEffect"
+                              },
+                              "parameters": [
+                                "PhotoScrap",
+                                "Effect",
+                                "\"outline\"",
+                                "no"
+                              ]
+                            }
                           ]
                         }
                       ]
                     }
+                  ],
+                  "variables": [
+                    {
+                      "name": "isGameOver",
+                      "type": "boolean",
+                      "value": true
+                    }
                   ]
                 }
-              ],
-              "variables": [
+              ]
+            }
+          ]
+        }
+      ],
+      "parameters": []
+    },
+    {
+      "colorB": 228,
+      "colorG": 176,
+      "colorR": 74,
+      "creationTime": 0,
+      "disabled": true,
+      "name": "DEBUG",
+      "source": "",
+      "type": "BuiltinCommonInstructions::Group",
+      "events": [
+        {
+          "type": "BuiltinCommonInstructions::Standard",
+          "conditions": [
+            {
+              "type": {
+                "value": "BooleanVariable"
+              },
+              "parameters": [
+                "DEBUG",
+                "True",
+                ""
+              ]
+            },
+            {
+              "type": {
+                "value": "KeyFromTextReleased"
+              },
+              "parameters": [
+                "",
+                "\"a\""
+              ]
+            }
+          ],
+          "actions": [],
+          "events": [
+            {
+              "type": "BuiltinCommonInstructions::ForEach",
+              "object": "Slideable",
+              "conditions": [],
+              "actions": [
                 {
-                  "name": "isGameOver",
-                  "type": "boolean",
-                  "value": true
+                  "type": {
+                    "value": "MettreXY"
+                  },
+                  "parameters": [
+                    "Slideable",
+                    "=",
+                    "topLeftPosition.x + (Slideable.targetX * Slideable.Width())",
+                    "=",
+                    "topLeftPosition.y + (Slideable.targetY * Slideable.Height())"
+                  ]
                 }
               ]
             }
@@ -3481,7 +3549,7 @@
       "isLocked": false,
       "name": "WinPopup",
       "renderingType": "",
-      "visibility": false,
+      "visibility": true,
       "cameras": [],
       "effects": []
     },

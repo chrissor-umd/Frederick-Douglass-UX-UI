@@ -93,7 +93,7 @@
       "depth": 1,
       "height": 64,
       "keepRatio": true,
-      "layer": "UI",
+      "layer": "SceneObjects",
       "name": "ItemObject",
       "persistentUuid": "b6edd109-acbc-4919-8483-3c3f497758df",
       "width": 64,
@@ -138,8 +138,8 @@
     "gridColor": 10401023,
     "gridAlpha": 0.8,
     "snap": true,
-    "zoomFactor": 0.7130377630690431,
+    "zoomFactor": 0.6244537826600018,
     "windowMask": false,
-    "selectedLayer": "UI"
+    "selectedLayer": "SceneObjects"
   }
 }

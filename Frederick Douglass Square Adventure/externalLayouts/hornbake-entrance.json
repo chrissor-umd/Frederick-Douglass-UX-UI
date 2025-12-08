@@ -147,39 +147,6 @@
       ]
     },
     {
-      "angle": 0,
-      "customSize": true,
-      "depth": 0,
-      "height": 32,
-      "keepRatio": true,
-      "layer": "SceneObjects",
-      "name": "ItemObject",
-      "persistentUuid": "c159502b-b986-47db-8a81-7c0f97fa7dd4",
-      "width": 32,
-      "x": 1001,
-      "y": 375,
-      "zOrder": 5,
-      "numberProperties": [],
-      "stringProperties": [],
-      "initialVariables": [
-        {
-          "name": "infoText",
-          "type": "string",
-          "value": " As a child, Frederick Douglass frequently played marble games with various white children he befriended. During these games, he would often bring books with him, and would persuade the children into teaching him how to read."
-        },
-        {
-          "name": "itemDescription",
-          "type": "string",
-          "value": "A bag of colorful marbles."
-        },
-        {
-          "name": "itemName",
-          "type": "string",
-          "value": "Marbles"
-        }
-      ]
-    },
-    {
       "angle": 130,
       "customSize": false,
       "flippedX": true,

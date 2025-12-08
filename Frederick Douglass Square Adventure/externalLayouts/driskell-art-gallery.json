@@ -53,38 +53,802 @@
     {
       "angle": 0,
       "customSize": true,
-      "depth": 2,
-      "height": 64,
+      "depth": 1,
+      "height": 287,
       "keepRatio": true,
       "layer": "SceneObjects",
-      "name": "ItemObject",
-      "persistentUuid": "28f3f9f9-6f9c-425c-b2dc-e4caf3c70919",
-      "width": 64,
-      "x": 672,
-      "y": 480,
+      "name": "InteractionObject",
+      "persistentUuid": "5c0d7afb-e9af-4360-a362-73a6aa1cb5d5",
+      "width": 170,
+      "x": 624,
+      "y": 304,
       "zOrder": 5,
-      "numberProperties": [
-        {
-          "name": "animation",
-          "value": 1
-        }
-      ],
+      "numberProperties": [],
       "stringProperties": [],
       "initialVariables": [
         {
-          "name": "infoText",
+          "name": "instanceID",
           "type": "string",
-          "value": "Frederick Douglass was actually the most photographed American of the 19th century. Believing it to be an important tool for civil rights due to its unbiased capture of reality, Douglass never smiled for photos in order to counter racist depictions of African-Americans at the time."
+          "value": "artistNPC"
         },
+        {
+          "name": "targetInteraction",
+          "type": "string",
+          "value": "PhotoMinigame"
+        },
+        {
+          "name": "flags",
+          "type": "structure",
+          "children": [
+            {
+              "name": "gavePhotoScraps",
+              "type": "boolean",
+              "value": false
+            },
+            {
+              "name": "hasBeenSpokenTo",
+              "type": "boolean",
+              "value": false
+            },
+            {
+              "name": "playerQuitMinigame",
+              "type": "boolean",
+              "value": false
+            },
+            {
+              "name": "receivedMarbles",
+              "type": "boolean",
+              "value": false
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "angle": 0,
+      "customSize": false,
+      "height": 0,
+      "keepRatio": true,
+      "layer": "InspectionObjects",
+      "name": "InspectionBackground",
+      "persistentUuid": "fb516ee8-52be-4b81-996a-78810acf6283",
+      "width": 0,
+      "x": 1408,
+      "y": 0,
+      "zOrder": 6,
+      "numberProperties": [],
+      "stringProperties": [],
+      "initialVariables": [
+        {
+          "name": "inspectionName",
+          "type": "string",
+          "value": "approachArtistNPC"
+        }
+      ]
+    },
+    {
+      "angle": 0,
+      "customSize": true,
+      "depth": 1,
+      "height": 400,
+      "keepRatio": true,
+      "layer": "InspectionObjects",
+      "name": "InspectionText",
+      "persistentUuid": "2a2dc2f4-d697-4374-ac38-5cb4ded742c8",
+      "width": 896,
+      "x": 1440,
+      "y": 232,
+      "zOrder": 7,
+      "numberProperties": [],
+      "stringProperties": [],
+      "initialVariables": [
+        {
+          "name": "innerText",
+          "type": "string",
+          "value": "You see an art curator holding several torn scraps of paper. They seem to be in distress."
+        },
+        {
+          "name": "inspectionName",
+          "type": "string",
+          "value": "approachArtistNPC"
+        }
+      ]
+    },
+    {
+      "angle": 0,
+      "customSize": false,
+      "height": 0,
+      "keepRatio": true,
+      "layer": "InspectionObjects",
+      "name": "InteractionButton",
+      "persistentUuid": "ed9f4cd7-e228-4fd3-bb7e-6757a53f880b",
+      "width": 0,
+      "x": 1760,
+      "y": 432,
+      "zOrder": 8,
+      "numberProperties": [],
+      "stringProperties": [],
+      "initialVariables": [
+        {
+          "name": "instanceID",
+          "type": "string",
+          "value": "approachButton"
+        },
+        {
+          "name": "targetInteraction",
+          "type": "string",
+          "value": "PhotoMinigame"
+        },
+        {
+          "name": "labelText",
+          "type": "string",
+          "value": "Approach"
+        }
+      ]
+    },
+    {
+      "angle": 0,
+      "customSize": false,
+      "height": 0,
+      "keepRatio": true,
+      "layer": "InspectionObjects",
+      "name": "InspectionBackground",
+      "persistentUuid": "b3c6e7cd-692d-4c94-a1ca-037cf48105ba",
+      "width": 0,
+      "x": 2416,
+      "y": 0,
+      "zOrder": 9,
+      "numberProperties": [],
+      "stringProperties": [],
+      "initialVariables": [
+        {
+          "name": "inspectionName",
+          "type": "string",
+          "value": "talkArtistNPC"
+        }
+      ]
+    },
+    {
+      "angle": 0,
+      "customSize": true,
+      "depth": 1,
+      "height": 399,
+      "keepRatio": true,
+      "layer": "InspectionObjects",
+      "name": "InspectionText",
+      "persistentUuid": "02d1f7ff-7dd0-4710-9b32-b0f2cd817636",
+      "width": 895,
+      "x": 2449,
+      "y": 233,
+      "zOrder": 10,
+      "numberProperties": [],
+      "stringProperties": [],
+      "initialVariables": [
+        {
+          "name": "innerText",
+          "type": "string",
+          "value": "\"Thank goodness you're here! We just received a vintage photograph of Frederick Douglass, but somehow it got all torn up and the pieces have been scattered all across campus! Can you help me put the photo back together?"
+        },
+        {
+          "name": "inspectionName",
+          "type": "string",
+          "value": "talkArtistNPC"
+        }
+      ]
+    },
+    {
+      "angle": 0,
+      "customSize": false,
+      "height": 0,
+      "keepRatio": true,
+      "layer": "InspectionObjects",
+      "name": "InteractionButton",
+      "persistentUuid": "64dc95cb-edaa-4b60-967a-48e4e6e8f797",
+      "width": 0,
+      "x": 2768,
+      "y": 432,
+      "zOrder": 11,
+      "numberProperties": [],
+      "stringProperties": [],
+      "initialVariables": [
+        {
+          "name": "labelText",
+          "type": "string",
+          "value": "\"Sure thing!\""
+        },
+        {
+          "name": "targetInteraction",
+          "type": "string",
+          "value": "PhotoMinigame"
+        },
+        {
+          "name": "instanceID",
+          "type": "string",
+          "value": "talkArtistNPCButton"
+        }
+      ]
+    },
+    {
+      "angle": 0,
+      "customSize": false,
+      "height": 0,
+      "keepRatio": true,
+      "layer": "InspectionObjects",
+      "name": "InspectionBackground",
+      "persistentUuid": "f8c55e33-46b7-4a1a-a964-4116a23fdd7d",
+      "width": 0,
+      "x": 3424,
+      "y": 0,
+      "zOrder": 12,
+      "numberProperties": [],
+      "stringProperties": [],
+      "initialVariables": [
+        {
+          "name": "inspectionName",
+          "type": "string",
+          "value": "talkArtistNPC2"
+        }
+      ]
+    },
+    {
+      "angle": 0,
+      "customSize": true,
+      "depth": 1,
+      "height": 399,
+      "keepRatio": true,
+      "layer": "InspectionObjects",
+      "name": "InspectionText",
+      "persistentUuid": "5bbee0cb-69aa-4fa0-8713-c8446ee8595b",
+      "width": 896,
+      "x": 3456,
+      "y": 233,
+      "zOrder": 13,
+      "numberProperties": [],
+      "stringProperties": [],
+      "initialVariables": [
+        {
+          "name": "innerText",
+          "type": "string",
+          "value": "\"Thanks so much! Right now we're missing 3 pieces of the photograph. Please find them, and then come back here.\""
+        },
+        {
+          "name": "inspectionName",
+          "type": "string",
+          "value": "talkArtistNPC2"
+        }
+      ]
+    },
+    {
+      "angle": 0,
+      "customSize": false,
+      "height": 0,
+      "keepRatio": true,
+      "layer": "InspectionObjects",
+      "name": "InteractionButton",
+      "persistentUuid": "687ae11c-b55f-4cc8-95e2-b7e0d2bb8ad5",
+      "width": 0,
+      "x": 3776,
+      "y": 432,
+      "zOrder": 14,
+      "numberProperties": [],
+      "stringProperties": [],
+      "initialVariables": [
+        {
+          "name": "instanceID",
+          "type": "string",
+          "value": "talkArtistNPC2Button"
+        },
+        {
+          "name": "targetInteraction",
+          "type": "string",
+          "value": "PhotoMinigame"
+        },
+        {
+          "name": "labelText",
+          "type": "string",
+          "value": "\"Got it!\""
+        }
+      ]
+    },
+    {
+      "angle": 0,
+      "customSize": false,
+      "height": 0,
+      "keepRatio": true,
+      "layer": "InspectionObjects",
+      "name": "InspectionBackground",
+      "persistentUuid": "aed673cd-4f43-43e8-b7cc-7a880af35286",
+      "width": 0,
+      "x": 1408,
+      "y": 576,
+      "zOrder": 15,
+      "numberProperties": [],
+      "stringProperties": [],
+      "initialVariables": [
+        {
+          "name": "inspectionName",
+          "type": "string",
+          "value": "returnArtistNPC"
+        }
+      ]
+    },
+    {
+      "angle": 0,
+      "customSize": true,
+      "depth": 1,
+      "height": 368,
+      "keepRatio": true,
+      "layer": "InspectionObjects",
+      "name": "InspectionText",
+      "persistentUuid": "9810c53e-6aaa-485a-8a7c-d6c1e78b5f10",
+      "width": 896,
+      "x": 1440,
+      "y": 792,
+      "zOrder": 16,
+      "numberProperties": [],
+      "stringProperties": [],
+      "initialVariables": [
+        {
+          "name": "inspectionName",
+          "type": "string",
+          "value": "returnArtistNPC"
+        },
+        {
+          "name": "innerText",
+          "type": "string",
+          "value": "\"Hello again! Did you find the missing pieces of the photograph?\""
+        }
+      ]
+    },
+    {
+      "angle": 0,
+      "customSize": false,
+      "height": 0,
+      "keepRatio": true,
+      "layer": "InspectionObjects",
+      "name": "InteractionButton",
+      "persistentUuid": "40d2df6e-10c8-448e-a29a-e7519d89a297",
+      "width": 0,
+      "x": 1504,
+      "y": 1008,
+      "zOrder": 17,
+      "numberProperties": [],
+      "stringProperties": [],
+      "initialVariables": [
+        {
+          "name": "labelText",
+          "type": "string",
+          "value": "\"Yep!\""
+        },
+        {
+          "name": "instanceID",
+          "type": "string",
+          "value": "hasPhotoScrapsButton"
+        },
+        {
+          "name": "targetInteraction",
+          "type": "string",
+          "value": "PhotoMinigame"
+        }
+      ]
+    },
+    {
+      "angle": 0,
+      "customSize": false,
+      "height": 0,
+      "keepRatio": true,
+      "layer": "InspectionObjects",
+      "name": "InteractionButton",
+      "persistentUuid": "01d71026-c431-4fb1-b760-64f99eb30233",
+      "width": 0,
+      "x": 2016,
+      "y": 1008,
+      "zOrder": 18,
+      "numberProperties": [],
+      "stringProperties": [],
+      "initialVariables": [
+        {
+          "name": "labelText",
+          "type": "string",
+          "value": "\"Not yet.\""
+        },
+        {
+          "name": "targetInteraction",
+          "type": "string",
+          "value": "PhotoMinigame"
+        },
+        {
+          "name": "instanceID",
+          "type": "string",
+          "value": "leaveButton"
+        }
+      ]
+    },
+    {
+      "angle": 0,
+      "customSize": false,
+      "height": 0,
+      "keepRatio": true,
+      "layer": "InspectionObjects",
+      "name": "InspectionBackground",
+      "persistentUuid": "3d5daad3-4531-4661-bc30-4239715d5f43",
+      "width": 0,
+      "x": 2416,
+      "y": 576,
+      "zOrder": 19,
+      "numberProperties": [],
+      "stringProperties": [],
+      "initialVariables": [
+        {
+          "name": "inspectionName",
+          "type": "string",
+          "value": "startPhotoMinigame"
+        }
+      ]
+    },
+    {
+      "angle": 0,
+      "customSize": true,
+      "depth": 1,
+      "height": 383,
+      "keepRatio": true,
+      "layer": "InspectionObjects",
+      "name": "InspectionText",
+      "persistentUuid": "733d20e7-36d3-4188-9ed6-6f13daad13f5",
+      "width": 896,
+      "x": 2448,
+      "y": 801,
+      "zOrder": 20,
+      "numberProperties": [],
+      "stringProperties": [],
+      "initialVariables": [
+        {
+          "name": "innerText",
+          "type": "string",
+          "value": "\"Great job getting all the pieces! Now all thats left to do is to put the photograph back together...\""
+        },
+        {
+          "name": "inspectionName",
+          "type": "string",
+          "value": "startPhotoMinigame"
+        }
+      ]
+    },
+    {
+      "angle": 0,
+      "customSize": false,
+      "height": 0,
+      "keepRatio": true,
+      "layer": "InspectionObjects",
+      "name": "InteractionButton",
+      "persistentUuid": "ea1992e7-f0d9-4ac4-b7e9-4f8b453d99bf",
+      "width": 0,
+      "x": 2512,
+      "y": 1008,
+      "zOrder": 21,
+      "numberProperties": [],
+      "stringProperties": [],
+      "initialVariables": [
+        {
+          "name": "labelText",
+          "type": "string",
+          "value": "\"Let's do it!\""
+        },
+        {
+          "name": "instanceID",
+          "type": "string",
+          "value": "startPhotoMinigameButton"
+        },
+        {
+          "name": "targetInteraction",
+          "type": "string",
+          "value": "PhotoMinigame"
+        }
+      ]
+    },
+    {
+      "angle": 0,
+      "customSize": false,
+      "height": 0,
+      "keepRatio": true,
+      "layer": "InspectionObjects",
+      "name": "InteractionButton",
+      "persistentUuid": "7c827f92-2002-4542-a33a-c388cdc986fd",
+      "width": 0,
+      "x": 3024,
+      "y": 1008,
+      "zOrder": 22,
+      "numberProperties": [],
+      "stringProperties": [],
+      "initialVariables": [
+        {
+          "name": "labelText",
+          "type": "string",
+          "value": "\"Not right now.\""
+        },
+        {
+          "name": "targetInteraction",
+          "type": "string",
+          "value": "PhotoMinigame"
+        },
+        {
+          "name": "instanceID",
+          "type": "string",
+          "value": "leaveButton"
+        }
+      ]
+    },
+    {
+      "angle": 0,
+      "customSize": false,
+      "height": 0,
+      "keepRatio": true,
+      "layer": "InspectionObjects",
+      "name": "InspectionBackground",
+      "persistentUuid": "20e26350-e580-4304-bddc-041ef81a3fe4",
+      "width": 0,
+      "x": 3424,
+      "y": 576,
+      "zOrder": 23,
+      "numberProperties": [],
+      "stringProperties": [],
+      "initialVariables": [
+        {
+          "name": "inspectionName",
+          "type": "string",
+          "value": "quitPhotoMinigame"
+        }
+      ]
+    },
+    {
+      "angle": 0,
+      "customSize": true,
+      "depth": 1,
+      "height": 384,
+      "keepRatio": true,
+      "layer": "InspectionObjects",
+      "name": "InspectionText",
+      "persistentUuid": "13838770-52e3-408e-8a94-38dc07fbd6f3",
+      "width": 896,
+      "x": 3456,
+      "y": 800,
+      "zOrder": 24,
+      "numberProperties": [],
+      "stringProperties": [],
+      "initialVariables": [
+        {
+          "name": "innerText",
+          "type": "string",
+          "value": "\"I'll be here whenever you want to try again!\""
+        }
+      ]
+    },
+    {
+      "angle": 0,
+      "customSize": false,
+      "height": 0,
+      "keepRatio": true,
+      "layer": "InspectionObjects",
+      "name": "InteractionButton",
+      "persistentUuid": "d0364531-5a26-46f2-95f6-6e64450d4d0c",
+      "width": 0,
+      "x": 3776,
+      "y": 1008,
+      "zOrder": 25,
+      "numberProperties": [],
+      "stringProperties": [],
+      "initialVariables": [
+        {
+          "name": "targetInteraction",
+          "type": "string",
+          "value": "PhotoMinigame"
+        },
+        {
+          "name": "instanceID",
+          "type": "string",
+          "value": "leaveButton"
+        },
+        {
+          "name": "labelText",
+          "type": "string",
+          "value": "Leave"
+        }
+      ]
+    },
+    {
+      "angle": 0,
+      "customSize": false,
+      "height": 0,
+      "keepRatio": true,
+      "layer": "InspectionObjects",
+      "name": "InspectionBackground",
+      "persistentUuid": "ea08adab-8f2f-4141-8d0b-2f24927ebfff",
+      "width": 0,
+      "x": 4432,
+      "y": 576,
+      "zOrder": 26,
+      "numberProperties": [],
+      "stringProperties": [],
+      "initialVariables": [
+        {
+          "name": "inspectionName",
+          "type": "string",
+          "value": "retryPhotoMinigame"
+        }
+      ]
+    },
+    {
+      "angle": 0,
+      "customSize": true,
+      "depth": 1,
+      "height": 383,
+      "keepRatio": true,
+      "layer": "InspectionObjects",
+      "name": "InspectionText",
+      "persistentUuid": "273c0d76-0bff-4295-a139-7cc8f9860d05",
+      "width": 896,
+      "x": 4464,
+      "y": 801,
+      "zOrder": 27,
+      "numberProperties": [],
+      "stringProperties": [],
+      "initialVariables": [
+        {
+          "name": "innerText",
+          "type": "string",
+          "value": "\"Ready to give it another go?\""
+        }
+      ]
+    },
+    {
+      "angle": 0,
+      "customSize": false,
+      "height": 0,
+      "keepRatio": true,
+      "layer": "InspectionObjects",
+      "name": "InteractionButton",
+      "persistentUuid": "cf5fdf46-4bb8-4a59-ac21-53ca1ee89f31",
+      "width": 0,
+      "x": 4528,
+      "y": 1008,
+      "zOrder": 28,
+      "numberProperties": [],
+      "stringProperties": [],
+      "initialVariables": [
+        {
+          "name": "targetInteraction",
+          "type": "string",
+          "value": "PhotoMinigame"
+        },
+        {
+          "name": "labelText",
+          "type": "string",
+          "value": "\"Let's do it!\""
+        },
+        {
+          "name": "instanceID",
+          "type": "string",
+          "value": "startPhotoMinigameButton"
+        }
+      ]
+    },
+    {
+      "angle": 0,
+      "customSize": false,
+      "height": 0,
+      "keepRatio": true,
+      "layer": "InspectionObjects",
+      "name": "InteractionButton",
+      "persistentUuid": "855e8540-6f23-4029-95f6-0b4ec03dd53f",
+      "width": 0,
+      "x": 5040,
+      "y": 1008,
+      "zOrder": 29,
+      "numberProperties": [],
+      "stringProperties": [],
+      "initialVariables": [
+        {
+          "name": "targetInteraction",
+          "type": "string",
+          "value": "PhotoMinigame"
+        },
+        {
+          "name": "instanceID",
+          "type": "string",
+          "value": "leaveButton"
+        },
+        {
+          "name": "labelText",
+          "type": "string",
+          "value": "\"Not yet.\""
+        }
+      ]
+    },
+    {
+      "angle": 0,
+      "customSize": false,
+      "height": 0,
+      "keepRatio": true,
+      "layer": "InspectionObjects",
+      "name": "InspectionBackground",
+      "persistentUuid": "a30a40cd-84ed-414c-ba7b-3e2728d97fde",
+      "width": 0,
+      "x": 1408,
+      "y": 1152,
+      "zOrder": 30,
+      "numberProperties": [],
+      "stringProperties": [],
+      "initialVariables": [
+        {
+          "name": "inspectionName",
+          "type": "string",
+          "value": "wonPhotoMinigame"
+        }
+      ]
+    },
+    {
+      "angle": 0,
+      "customSize": true,
+      "depth": 1,
+      "height": 480,
+      "keepRatio": true,
+      "layer": "InspectionObjects",
+      "name": "InspectionText",
+      "persistentUuid": "95d109a7-c9f7-4bea-83ac-b70b379ca31b",
+      "width": 480,
+      "x": 1440,
+      "y": 1424,
+      "zOrder": 31,
+      "numberProperties": [],
+      "stringProperties": [],
+      "initialVariables": [
+        {
+          "name": "innerText",
+          "type": "string",
+          "value": "\"Thanks so much! I don't have much to give you as a reward, but I found these a while ago. Why don't you take them?\""
+        }
+      ]
+    },
+    {
+      "angle": 0,
+      "customSize": true,
+      "depth": 2,
+      "height": 192,
+      "keepRatio": true,
+      "layer": "InspectionObjects",
+      "name": "ItemObject",
+      "persistentUuid": "166f5ba8-fe78-46bb-82c9-2c28929fa805",
+      "width": 192,
+      "x": 2016,
+      "y": 1344,
+      "zOrder": 32,
+      "numberProperties": [],
+      "stringProperties": [],
+      "initialVariables": [
         {
           "name": "itemDescription",
           "type": "string",
-          "value": "A torn piece of a photo of Frederick Douglass."
+          "value": "A bag of colorful marbles."
+        },
+        {
+          "name": "infoText",
+          "type": "string",
+          "value": " As a child, Frederick Douglass frequently played marble games with various white children he befriended. During these games, he would often bring books with him, and would persuade the children into teaching him how to read."
         },
         {
           "name": "itemName",
           "type": "string",
-          "value": "Scrap of Photo"
+          "value": "Marbles"
+        },
+        {
+          "name": "targetInteraction",
+          "type": "string",
+          "value": "PhotoMinigame"
+        },
+        {
+          "name": "instanceID",
+          "type": "string",
+          "value": "rewardMarbles"
         }
       ]
     }
@@ -101,8 +865,8 @@
     "gridColor": 10401023,
     "gridAlpha": 0.8,
     "snap": true,
-    "zoomFactor": 0.7876290101673793,
+    "zoomFactor": 0.39251611754882576,
     "windowMask": false,
-    "selectedLayer": "SceneObjects"
+    "selectedLayer": "InspectionObjects"
   }
 }
