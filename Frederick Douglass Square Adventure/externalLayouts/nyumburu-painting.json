@@ -1,63 +1,53 @@
 {
   "associatedLayout": "Exploration",
-  "name": "Hornbake Exit",
+  "name": "Nyumburu Painting",
   "instances": [
     {
       "angle": 0,
-      "customSize": false,
-      "height": 0,
-      "keepRatio": true,
+      "customSize": true,
+      "depth": 0,
+      "height": 720,
       "layer": "Background",
       "name": "Background",
       "persistentUuid": "f5d0205d-4ccd-4dde-9851-5867884be3e7",
-      "width": 0,
+      "width": 1280,
       "x": 0,
       "y": 0,
       "zOrder": 2,
       "numberProperties": [
         {
           "name": "animation",
-          "value": 3
+          "value": 23
         }
       ],
       "stringProperties": [],
       "initialVariables": []
     },
     {
-      "angle": 90,
+      "angle": 270,
       "customSize": false,
       "flippedX": true,
       "height": 0,
       "keepRatio": true,
       "layer": "SceneObjects",
       "name": "TransitionObject",
-      "persistentUuid": "ca5d691a-8143-4390-8f46-b3484a770ffa",
+      "persistentUuid": "9cb78b79-6a6d-469f-a613-fc52579c77c6",
       "width": 0,
-      "x": 656,
-      "y": 400,
+      "x": 816,
+      "y": 592,
       "zOrder": 3,
       "numberProperties": [],
       "stringProperties": [],
       "initialVariables": [
         {
-          "name": "longTransitionFade",
-          "type": "boolean",
-          "value": true
-        },
-        {
           "name": "targetLayout",
           "type": "string",
-          "value": "Nyumburu Entrance"
+          "value": "Nyumburu Hallway"
         },
         {
           "name": "hoverTooltip",
           "type": "structure",
           "children": [
-            {
-              "name": "font",
-              "type": "string",
-              "value": "0"
-            },
             {
               "name": "fontSize",
               "type": "number",
@@ -66,7 +56,7 @@
             {
               "name": "text",
               "type": "string",
-              "value": "Head to Nyumburu Cultural Center"
+              "value": "To Nyumburu Hallway"
             },
             {
               "name": "textAlign",
@@ -88,60 +78,57 @@
       ]
     },
     {
-      "angle": 90,
-      "customSize": false,
-      "height": 0,
+      "angle": 0,
+      "customSize": true,
+      "depth": 2,
+      "height": 144,
       "keepRatio": true,
       "layer": "SceneObjects",
-      "name": "TransitionObject",
-      "persistentUuid": "dea41c74-7de7-47b4-b387-4f39aafb23a9",
-      "width": 0,
-      "x": 464,
-      "y": 576,
+      "name": "StatueCollectible",
+      "persistentUuid": "8951cfc7-26ad-425d-acb6-dcaba67adab5",
+      "width": 144,
+      "x": 224,
+      "y": 240,
       "zOrder": 4,
       "numberProperties": [],
       "stringProperties": [],
+      "initialVariables": []
+    },
+    {
+      "angle": 0,
+      "customSize": true,
+      "depth": 0,
+      "height": 64,
+      "keepRatio": true,
+      "layer": "SceneObjects",
+      "name": "ItemObject",
+      "persistentUuid": "a43f2b43-1909-4654-a1ad-c82817fe29e5",
+      "width": 64,
+      "x": 880,
+      "y": 464,
+      "zOrder": 5,
+      "numberProperties": [
+        {
+          "name": "animation",
+          "value": 1
+        }
+      ],
+      "stringProperties": [],
       "initialVariables": [
         {
-          "name": "targetLayout",
+          "name": "itemDescription",
           "type": "string",
-          "value": "Hornbake Stairwell"
+          "value": "A torn piece of a photo of Frederick Douglass."
         },
         {
-          "name": "hoverTooltip",
-          "type": "structure",
-          "children": [
-            {
-              "name": "font",
-              "type": "string",
-              "value": "To Stairwell"
-            },
-            {
-              "name": "fontSize",
-              "type": "number",
-              "value": 25
-            },
-            {
-              "name": "text",
-              "type": "string",
-              "value": "null"
-            },
-            {
-              "name": "textAlign",
-              "type": "string",
-              "value": "center"
-            },
-            {
-              "name": "x",
-              "type": "number",
-              "value": 0
-            },
-            {
-              "name": "y",
-              "type": "number",
-              "value": -86
-            }
-          ]
+          "name": "itemName",
+          "type": "string",
+          "value": "Scrap of Photo"
+        },
+        {
+          "name": "infoText",
+          "type": "string",
+          "value": "Frederick Douglass was actually the most photographed American of the 19th century. Believing it to be an important tool for civil rights due to its unbiased capture of reality, Douglass never smiled for photos in order to counter racist depictions of African-Americans at the time."
         }
       ]
     }
@@ -158,7 +145,7 @@
     "gridColor": 10401023,
     "gridAlpha": 0.8,
     "snap": true,
-    "zoomFactor": 0.7876290101673792,
+    "zoomFactor": 0.6455105703311513,
     "windowMask": false,
     "selectedLayer": "SceneObjects"
   }

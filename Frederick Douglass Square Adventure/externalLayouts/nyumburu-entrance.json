@@ -1,6 +1,6 @@
 {
   "associatedLayout": "Exploration",
-  "name": "STAMP Entrance",
+  "name": "Nyumburu Entrance",
   "instances": [
     {
       "angle": 0,
@@ -9,138 +9,40 @@
       "height": 720,
       "layer": "Background",
       "name": "Background",
-      "persistentUuid": "05288b55-4e3f-442e-bf88-4ff3ab646eb3",
+      "persistentUuid": "f5d0205d-4ccd-4dde-9851-5867884be3e7",
       "width": 1280,
       "x": 0,
       "y": 0,
-      "zOrder": 1,
+      "zOrder": 2,
       "numberProperties": [
         {
           "name": "animation",
-          "value": 9
+          "value": 21
         }
       ],
       "stringProperties": [],
       "initialVariables": []
     },
     {
-      "angle": -90,
+      "angle": 90,
       "customSize": false,
+      "flippedX": true,
       "height": 0,
       "keepRatio": true,
       "layer": "SceneObjects",
       "name": "TransitionObject",
-      "persistentUuid": "3da0f64b-54c5-4caf-aaf9-32e517e6be1d",
+      "persistentUuid": "9cb78b79-6a6d-469f-a613-fc52579c77c6",
       "width": 0,
-      "x": 620,
-      "y": 480,
-      "zOrder": 4,
-      "numberProperties": [
-        {
-          "name": "animation",
-          "value": 3
-        }
-      ],
+      "x": 576,
+      "y": 384,
+      "zOrder": 3,
+      "numberProperties": [],
       "stringProperties": [],
       "initialVariables": [
         {
           "name": "targetLayout",
           "type": "string",
-          "value": "STAMP Main Hallway"
-        },
-        {
-          "name": "hoverTooltip",
-          "type": "structure",
-          "children": [
-            {
-              "name": "fontSize",
-              "type": "number",
-              "value": 25
-            },
-            {
-              "name": "text",
-              "type": "string",
-              "value": "Enter STAMP"
-            },
-            {
-              "name": "textAlign",
-              "type": "string",
-              "value": "center"
-            },
-            {
-              "name": "x",
-              "type": "number",
-              "value": 0
-            },
-            {
-              "name": "y",
-              "type": "number",
-              "value": -86
-            }
-          ]
-        }
-      ]
-    },
-    {
-      "angle": 0,
-      "customSize": false,
-      "height": 0,
-      "keepRatio": true,
-      "layer": "SceneObjects",
-      "name": "TransitionObject",
-      "persistentUuid": "fe234d63-5b2a-437e-aaf3-c41949632943",
-      "width": 0,
-      "x": 1120,
-      "y": 352,
-      "zOrder": 5,
-      "numberProperties": [
-        {
-          "name": "animation",
-          "value": 0
-        }
-      ],
-      "stringProperties": [],
-      "initialVariables": [
-        {
-          "name": "longTransitionFade",
-          "type": "boolean",
-          "value": true
-        },
-        {
-          "name": "targetLayout",
-          "type": "string",
-          "value": "Nyumburu Entrance"
-        },
-        {
-          "name": "hoverTooltip",
-          "type": "structure",
-          "children": [
-            {
-              "name": "fontSize",
-              "type": "number",
-              "value": 25
-            },
-            {
-              "name": "text",
-              "type": "string",
-              "value": "Head to Frederick Douglass Square"
-            },
-            {
-              "name": "textAlign",
-              "type": "string",
-              "value": "right"
-            },
-            {
-              "name": "x",
-              "type": "number",
-              "value": 0
-            },
-            {
-              "name": "y",
-              "type": "number",
-              "value": -86
-            }
-          ]
+          "value": "Nyumburu Hallway"
         }
       ]
     },
@@ -152,17 +54,12 @@
       "keepRatio": true,
       "layer": "SceneObjects",
       "name": "TransitionObject",
-      "persistentUuid": "57258fb0-b66b-4a8a-a571-4686284bda8b",
+      "persistentUuid": "f675a0da-b4ef-40c2-b2b5-b3cce563a39d",
       "width": 0,
-      "x": 64,
+      "x": 96,
       "y": 352,
-      "zOrder": 5,
-      "numberProperties": [
-        {
-          "name": "animation",
-          "value": 0
-        }
-      ],
+      "zOrder": 3,
+      "numberProperties": [],
       "stringProperties": [],
       "initialVariables": [
         {
@@ -171,14 +68,9 @@
           "value": true
         },
         {
-          "name": "enabled",
-          "type": "boolean",
-          "value": true
-        },
-        {
           "name": "targetLayout",
           "type": "string",
-          "value": "Driskell Entrance"
+          "value": "STAMP Entrance"
         },
         {
           "name": "hoverTooltip",
@@ -192,7 +84,7 @@
             {
               "name": "text",
               "type": "string",
-              "value": "Head to David C. Driskell Center"
+              "value": "To STAMP Union Hall"
             },
             {
               "name": "textAlign",
@@ -212,13 +104,71 @@
           ]
         }
       ]
+    },
+    {
+      "angle": 0,
+      "customSize": false,
+      "height": 0,
+      "keepRatio": true,
+      "layer": "SceneObjects",
+      "name": "TransitionObject",
+      "persistentUuid": "705ce381-593d-481f-8825-d114c957cac2",
+      "width": 0,
+      "x": 1088,
+      "y": 352,
+      "zOrder": 3,
+      "numberProperties": [],
+      "stringProperties": [],
+      "initialVariables": [
+        {
+          "name": "longTransitionFade",
+          "type": "boolean",
+          "value": true
+        },
+        {
+          "name": "targetLayout",
+          "type": "string",
+          "value": "Frederick Douglass Square"
+        },
+        {
+          "name": "hoverTooltip",
+          "type": "structure",
+          "children": [
+            {
+              "name": "fontSize",
+              "type": "number",
+              "value": 25
+            },
+            {
+              "name": "text",
+              "type": "string",
+              "value": "To Frederick Douglass Square"
+            },
+            {
+              "name": "textAlign",
+              "type": "string",
+              "value": "right"
+            },
+            {
+              "name": "x",
+              "type": "number",
+              "value": 0
+            },
+            {
+              "name": "y",
+              "type": "number",
+              "value": -86
+            }
+          ]
+        }
+      ]
     }
   ],
   "editionSettings": {
     "grid": true,
     "gridType": "rectangular",
-    "gridWidth": 32,
-    "gridHeight": 32,
+    "gridWidth": 16,
+    "gridHeight": 16,
     "gridDepth": 32,
     "gridOffsetX": 0,
     "gridOffsetY": 0,
@@ -226,7 +176,7 @@
     "gridColor": 10401023,
     "gridAlpha": 0.8,
     "snap": true,
-    "zoomFactor": 0.6672773998329982,
+    "zoomFactor": 0.9934433498259627,
     "windowMask": false,
     "selectedLayer": "SceneObjects"
   }

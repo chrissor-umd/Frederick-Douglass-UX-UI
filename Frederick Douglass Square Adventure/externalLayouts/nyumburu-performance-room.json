@@ -1,0 +1,606 @@
+{
+  "associatedLayout": "Exploration",
+  "name": "Nyumburu Performance Room",
+  "instances": [
+    {
+      "angle": 0,
+      "customSize": true,
+      "depth": 0,
+      "height": 720,
+      "layer": "Background",
+      "name": "Background",
+      "persistentUuid": "f5d0205d-4ccd-4dde-9851-5867884be3e7",
+      "width": 1280,
+      "x": 0,
+      "y": 0,
+      "zOrder": 2,
+      "numberProperties": [
+        {
+          "name": "animation",
+          "value": 24
+        }
+      ],
+      "stringProperties": [],
+      "initialVariables": []
+    },
+    {
+      "angle": 270,
+      "customSize": false,
+      "flippedX": true,
+      "height": 0,
+      "keepRatio": true,
+      "layer": "SceneObjects",
+      "name": "TransitionObject",
+      "persistentUuid": "9cb78b79-6a6d-469f-a613-fc52579c77c6",
+      "width": 0,
+      "x": 864,
+      "y": 592,
+      "zOrder": 3,
+      "numberProperties": [
+        {
+          "name": "animation",
+          "value": 0
+        }
+      ],
+      "stringProperties": [],
+      "initialVariables": [
+        {
+          "name": "targetLayout",
+          "type": "string",
+          "value": "Nyumburu Hallway"
+        },
+        {
+          "name": "hoverTooltip",
+          "type": "structure",
+          "children": [
+            {
+              "name": "fontSize",
+              "type": "number",
+              "value": 25
+            },
+            {
+              "name": "text",
+              "type": "string",
+              "value": "To Nyumburu Hallway"
+            },
+            {
+              "name": "textAlign",
+              "type": "string",
+              "value": "center"
+            },
+            {
+              "name": "x",
+              "type": "number",
+              "value": 0
+            },
+            {
+              "name": "y",
+              "type": "number",
+              "value": -86
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "angle": 0,
+      "customSize": true,
+      "depth": 1,
+      "height": 351,
+      "keepRatio": true,
+      "layer": "SceneObjects",
+      "name": "InteractionObject",
+      "persistentUuid": "674edebf-000b-45dd-94aa-578f395de6ce",
+      "width": 208,
+      "x": 624,
+      "y": 209,
+      "zOrder": 4,
+      "numberProperties": [],
+      "stringProperties": [],
+      "initialVariables": [
+        {
+          "name": "targetInteraction",
+          "type": "string",
+          "value": "QuoteMinigame"
+        },
+        {
+          "name": "instanceID",
+          "type": "string",
+          "value": "librarianNPC"
+        },
+        {
+          "name": "flags",
+          "type": "structure",
+          "children": [
+            {
+              "name": "hasBeenSpokenTo",
+              "type": "boolean",
+              "value": false
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "angle": 0,
+      "customSize": false,
+      "height": 0,
+      "keepRatio": true,
+      "layer": "InspectionObjects",
+      "name": "InspectionBackground",
+      "persistentUuid": "997fd849-3e77-448a-8a93-2c3cdd68acaa",
+      "width": 0,
+      "x": 1360,
+      "y": 16,
+      "zOrder": 5,
+      "numberProperties": [],
+      "stringProperties": [],
+      "initialVariables": [
+        {
+          "name": "inspectionName",
+          "type": "string",
+          "value": "approachLibrarianNPC"
+        }
+      ]
+    },
+    {
+      "angle": 0,
+      "customSize": true,
+      "depth": 1,
+      "height": 385,
+      "keepRatio": true,
+      "layer": "InspectionObjects",
+      "name": "InspectionText",
+      "persistentUuid": "091da6f0-95ef-4be1-a2a8-1453da92864a",
+      "width": 896,
+      "x": 1392,
+      "y": 241,
+      "zOrder": 6,
+      "numberProperties": [],
+      "stringProperties": [],
+      "initialVariables": [
+        {
+          "name": "innerText",
+          "type": "string",
+          "value": "You see someone shuffling several documents around. They seem to be bothered by something."
+        },
+        {
+          "name": "inspectionName",
+          "type": "string",
+          "value": "approachLibrarianNPC"
+        }
+      ]
+    },
+    {
+      "angle": 0,
+      "customSize": false,
+      "height": 0,
+      "keepRatio": true,
+      "layer": "InspectionObjects",
+      "name": "InteractionButton",
+      "persistentUuid": "f3586f77-f96b-4ea6-a7ef-793b5986579f",
+      "width": 0,
+      "x": 1712,
+      "y": 448,
+      "zOrder": 7,
+      "numberProperties": [],
+      "stringProperties": [],
+      "initialVariables": [
+        {
+          "name": "labelText",
+          "type": "string",
+          "value": "Approach"
+        },
+        {
+          "name": "targetInteraction",
+          "type": "string",
+          "value": "QuoteMinigame"
+        },
+        {
+          "name": "instanceID",
+          "type": "string",
+          "value": "approachButton"
+        }
+      ]
+    },
+    {
+      "angle": 0,
+      "customSize": false,
+      "height": 0,
+      "keepRatio": true,
+      "layer": "InspectionObjects",
+      "name": "InspectionBackground",
+      "persistentUuid": "528ef066-7c2b-432d-9f7b-8eb9824f7637",
+      "width": 0,
+      "x": 2368,
+      "y": 16,
+      "zOrder": 8,
+      "numberProperties": [],
+      "stringProperties": [],
+      "initialVariables": [
+        {
+          "name": "inspectionName",
+          "type": "string",
+          "value": "talkLibrarianNPC"
+        }
+      ]
+    },
+    {
+      "angle": 0,
+      "customSize": true,
+      "depth": 1,
+      "height": 383,
+      "keepRatio": true,
+      "layer": "InspectionObjects",
+      "name": "InspectionText",
+      "persistentUuid": "7b9c9b58-ebf0-4490-b609-7207c7a8797c",
+      "width": 896,
+      "x": 2400,
+      "y": 241,
+      "zOrder": 9,
+      "numberProperties": [],
+      "stringProperties": [],
+      "initialVariables": [
+        {
+          "name": "inspectionName",
+          "type": "string",
+          "value": "talkLibrarianNPC"
+        },
+        {
+          "name": "innerText",
+          "type": "string",
+          "value": "\"Oh hello! Sorry about the mess, I'm in a little bit of a pickle. We received some valuable documents containing memorable quotes by Frederick Douglass, but they got scrambled somehow and I don't remember what they're supposed to look like. Do you think you could lend a hand?\""
+        }
+      ]
+    },
+    {
+      "angle": 0,
+      "customSize": false,
+      "height": 0,
+      "keepRatio": true,
+      "layer": "InspectionObjects",
+      "name": "InteractionButton",
+      "persistentUuid": "e354f86f-b274-4ccf-a92e-e407d97d96f5",
+      "width": 0,
+      "x": 2464,
+      "y": 448,
+      "zOrder": 10,
+      "numberProperties": [],
+      "stringProperties": [],
+      "initialVariables": [
+        {
+          "name": "targetInteraction",
+          "type": "string",
+          "value": "QuoteMinigame"
+        },
+        {
+          "name": "labelText",
+          "type": "string",
+          "value": "\"Sure thing!\""
+        },
+        {
+          "name": "instanceID",
+          "type": "string",
+          "value": "startMinigameButton"
+        }
+      ]
+    },
+    {
+      "angle": 0,
+      "customSize": false,
+      "height": 0,
+      "keepRatio": true,
+      "layer": "InspectionObjects",
+      "name": "InteractionButton",
+      "persistentUuid": "ae444ad6-3cd4-4a98-9565-1ae21bacc9b5",
+      "width": 0,
+      "x": 2976,
+      "y": 448,
+      "zOrder": 11,
+      "numberProperties": [],
+      "stringProperties": [],
+      "initialVariables": [
+        {
+          "name": "targetInteraction",
+          "type": "string",
+          "value": "QuoteMinigame"
+        },
+        {
+          "name": "instanceID",
+          "type": "string",
+          "value": "leaveButton"
+        },
+        {
+          "name": "labelText",
+          "type": "string",
+          "value": "\"Not right now.\""
+        }
+      ]
+    },
+    {
+      "angle": 0,
+      "customSize": false,
+      "height": 0,
+      "keepRatio": true,
+      "layer": "InspectionObjects",
+      "name": "InspectionBackground",
+      "persistentUuid": "62aefa1b-1b40-4d6f-96a5-9b9c62770a6d",
+      "width": 0,
+      "x": 1360,
+      "y": 592,
+      "zOrder": 12,
+      "numberProperties": [],
+      "stringProperties": [],
+      "initialVariables": [
+        {
+          "name": "inspectionName",
+          "type": "string",
+          "value": "returnLibrarianNPC"
+        }
+      ]
+    },
+    {
+      "angle": 0,
+      "customSize": true,
+      "depth": 1,
+      "height": 384,
+      "keepRatio": true,
+      "layer": "InspectionObjects",
+      "name": "InspectionText",
+      "persistentUuid": "2b59df9c-4061-4a31-9d1c-96b8e9d353e8",
+      "width": 896,
+      "x": 1392,
+      "y": 816,
+      "zOrder": 13,
+      "numberProperties": [],
+      "stringProperties": [],
+      "initialVariables": [
+        {
+          "name": "innerText",
+          "type": "string",
+          "value": "\"Oh, you're back! Are you ready to help out?\""
+        },
+        {
+          "name": "inspectionName",
+          "type": "string",
+          "value": "returnLibrarianNPC"
+        }
+      ]
+    },
+    {
+      "angle": 0,
+      "customSize": false,
+      "height": 0,
+      "keepRatio": true,
+      "layer": "InspectionObjects",
+      "name": "InteractionButton",
+      "persistentUuid": "da4d09fa-163e-4fd9-8914-a1a9407fafd1",
+      "width": 0,
+      "x": 1456,
+      "y": 1024,
+      "zOrder": 14,
+      "numberProperties": [],
+      "stringProperties": [],
+      "initialVariables": [
+        {
+          "name": "targetInteraction",
+          "type": "string",
+          "value": "QuoteMinigame"
+        },
+        {
+          "name": "instanceID",
+          "type": "string",
+          "value": "startMinigameButton"
+        },
+        {
+          "name": "labelText",
+          "type": "string",
+          "value": "\"Let's do it!\""
+        }
+      ]
+    },
+    {
+      "angle": 0,
+      "customSize": false,
+      "height": 0,
+      "keepRatio": true,
+      "layer": "InspectionObjects",
+      "name": "InteractionButton",
+      "persistentUuid": "b5b01ea2-b86f-4a05-a4a2-0e4dbda1c023",
+      "width": 0,
+      "x": 1968,
+      "y": 1024,
+      "zOrder": 15,
+      "numberProperties": [],
+      "stringProperties": [],
+      "initialVariables": [
+        {
+          "name": "labelText",
+          "type": "string",
+          "value": "\"Not yet.\""
+        },
+        {
+          "name": "targetInteraction",
+          "type": "string",
+          "value": "QuoteMinigame"
+        },
+        {
+          "name": "instanceID",
+          "type": "string",
+          "value": "leaveButton"
+        }
+      ]
+    },
+    {
+      "angle": 0,
+      "customSize": false,
+      "height": 0,
+      "keepRatio": true,
+      "layer": "InspectionObjects",
+      "name": "InspectionBackground",
+      "persistentUuid": "1e073485-39fb-4f88-8a85-b503cbf72c98",
+      "width": 0,
+      "x": 2368,
+      "y": 592,
+      "zOrder": 16,
+      "numberProperties": [],
+      "stringProperties": [],
+      "initialVariables": [
+        {
+          "name": "inspectionName",
+          "type": "string",
+          "value": "winQuoteMinigame"
+        }
+      ]
+    },
+    {
+      "angle": 0,
+      "customSize": true,
+      "depth": 1,
+      "height": 480,
+      "keepRatio": true,
+      "layer": "InspectionObjects",
+      "name": "InspectionText",
+      "persistentUuid": "57bd1aad-0478-437d-a42b-39b97852124d",
+      "width": 352,
+      "x": 2400,
+      "y": 864,
+      "zOrder": 17,
+      "numberProperties": [],
+      "stringProperties": [],
+      "initialVariables": [
+        {
+          "name": "innerText",
+          "type": "string",
+          "value": "\"Thank you so much, you're an absolute lifesaver! Here, I know it's not much, but consider this your reward for helping out.\""
+        },
+        {
+          "name": "inspectionName",
+          "type": "string",
+          "value": "winQuoteMinigame"
+        }
+      ]
+    },
+    {
+      "angle": 0,
+      "customSize": true,
+      "depth": 3,
+      "height": 240,
+      "keepRatio": true,
+      "layer": "InspectionObjects",
+      "name": "StatueCollectible",
+      "persistentUuid": "43b45d66-8b90-46fb-83ef-9930d127e62d",
+      "width": 240,
+      "x": 2896,
+      "y": 736,
+      "zOrder": 18,
+      "numberProperties": [],
+      "stringProperties": [],
+      "initialVariables": [
+        {
+          "name": "targetInteraction",
+          "type": "string",
+          "value": "QuoteMinigame"
+        },
+        {
+          "name": "instanceID",
+          "type": "string",
+          "value": "quoteFigurine"
+        }
+      ]
+    },
+    {
+      "angle": 0,
+      "customSize": false,
+      "height": 0,
+      "keepRatio": true,
+      "layer": "InspectionObjects",
+      "name": "InspectionBackground",
+      "persistentUuid": "c36af74e-1a23-4fe6-8440-78dac291caa8",
+      "width": 0,
+      "x": 3376,
+      "y": 592,
+      "zOrder": 19,
+      "numberProperties": [],
+      "stringProperties": [],
+      "initialVariables": [
+        {
+          "name": "inspectionName",
+          "type": "string",
+          "value": "loseQuoteMinigame"
+        }
+      ]
+    },
+    {
+      "angle": 0,
+      "customSize": true,
+      "depth": 1,
+      "height": 336,
+      "keepRatio": true,
+      "layer": "InspectionObjects",
+      "name": "InspectionText",
+      "persistentUuid": "de1927d7-1fd7-47e2-9e73-881255f5f6e3",
+      "width": 896,
+      "x": 3408,
+      "y": 792,
+      "zOrder": 20,
+      "numberProperties": [],
+      "stringProperties": [],
+      "initialVariables": [
+        {
+          "name": "innerText",
+          "type": "string",
+          "value": "\"Heading out? Here's a tip, try looking around the statue in Frederick Douglass Square. I always go there when I need inspiration!\""
+        }
+      ]
+    },
+    {
+      "angle": 0,
+      "customSize": false,
+      "height": 0,
+      "keepRatio": true,
+      "layer": "InspectionObjects",
+      "name": "InteractionButton",
+      "persistentUuid": "939b5fce-12b9-44d1-ac36-43c609f05087",
+      "width": 0,
+      "x": 3728,
+      "y": 1024,
+      "zOrder": 21,
+      "numberProperties": [],
+      "stringProperties": [],
+      "initialVariables": [
+        {
+          "name": "labelText",
+          "type": "string",
+          "value": "Leave"
+        },
+        {
+          "name": "targetInteraction",
+          "type": "string",
+          "value": "QuoteMinigame"
+        },
+        {
+          "name": "instanceID",
+          "type": "string",
+          "value": "leaveButton"
+        }
+      ]
+    }
+  ],
+  "editionSettings": {
+    "grid": true,
+    "gridType": "rectangular",
+    "gridWidth": 16,
+    "gridHeight": 16,
+    "gridDepth": 32,
+    "gridOffsetX": 0,
+    "gridOffsetY": 0,
+    "gridOffsetZ": 0,
+    "gridColor": 10401023,
+    "gridAlpha": 0.8,
+    "snap": true,
+    "zoomFactor": 0.4633111824514024,
+    "windowMask": false,
+    "selectedLayer": "InspectionObjects"
+  }
+}

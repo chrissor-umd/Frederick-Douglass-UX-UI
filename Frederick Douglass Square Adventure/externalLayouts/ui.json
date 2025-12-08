@@ -626,12 +626,12 @@
     {
       "angle": 0,
       "customSize": true,
-      "depth": 1.857142857142857,
+      "depth": 0,
       "height": 104,
       "keepRatio": true,
       "layer": "PersistentUI",
       "name": "FullscreenToggle",
-      "persistentUuid": "f574f373-5302-4fcc-a3f7-6095fcdf5136",
+      "persistentUuid": "5096261c-0ede-4572-a720-05bb80beab54",
       "width": 104,
       "x": 1152,
       "y": -8,
@@ -653,8 +653,8 @@
     "gridColor": 10401023,
     "gridAlpha": 0.8,
     "snap": true,
-    "zoomFactor": 0.6672773998330221,
+    "zoomFactor": 0.9610368693715087,
     "windowMask": false,
-    "selectedLayer": "UI"
+    "selectedLayer": "PersistentUI"
   }
 }
