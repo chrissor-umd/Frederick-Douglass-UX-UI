@@ -10,7 +10,7 @@ gdjs.evtsExt__ArrayTools__ObjectInsertAt.idToCallbackMap = new Map();
 gdjs.evtsExt__ArrayTools__ObjectInsertAt.GDObjectObjects1= [];
 
 
-gdjs.evtsExt__ArrayTools__ObjectInsertAt.userFunc0xef4538 = function GDJSInlineCode(runtimeScene, eventsFunctionContext) {
+gdjs.evtsExt__ArrayTools__ObjectInsertAt.userFunc0xfc10f8 = function GDJSInlineCode(runtimeScene, eventsFunctionContext) {
 "use strict";
 /** @type {gdjs.Variable} */
 const array = eventsFunctionContext.getArgument("Array");
@@ -30,7 +30,7 @@ gdjs.evtsExt__ArrayTools__ObjectInsertAt.eventsList0 = function(runtimeScene, ev
 {
 
 
-gdjs.evtsExt__ArrayTools__ObjectInsertAt.userFunc0xef4538(runtimeScene, eventsFunctionContext);
+gdjs.evtsExt__ArrayTools__ObjectInsertAt.userFunc0xfc10f8(runtimeScene, eventsFunctionContext);
 
 }
 

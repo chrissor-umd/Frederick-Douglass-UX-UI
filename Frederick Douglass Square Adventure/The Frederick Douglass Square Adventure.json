@@ -1803,6 +1803,11 @@
       "name": "GameOver",
       "type": "boolean",
       "value": false
+    },
+    {
+      "name": "deviceSupportsTouchscreen",
+      "type": "boolean",
+      "value": false
     }
   ],
   "layouts": [

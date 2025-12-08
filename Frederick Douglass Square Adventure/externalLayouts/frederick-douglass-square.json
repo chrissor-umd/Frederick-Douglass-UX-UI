@@ -1235,7 +1235,7 @@
         {
           "name": "targetLayout",
           "type": "string",
-          "value": "STAMP Entrance"
+          "value": "Nyumburu Entrance"
         },
         {
           "name": "hoverTooltip",
@@ -1274,6 +1274,28 @@
           "value": "Nyumburu Transition"
         }
       ]
+    },
+    {
+      "angle": 0,
+      "customSize": false,
+      "height": 0,
+      "keepRatio": true,
+      "layer": "InspectionObjects",
+      "name": "InfoPopupObject",
+      "persistentUuid": "1b189d6d-f112-4c47-b478-fb6e15edbd20",
+      "width": 0,
+      "x": 2240,
+      "y": 16,
+      "zOrder": 45,
+      "numberProperties": [],
+      "stringProperties": [],
+      "initialVariables": [
+        {
+          "name": "infoText",
+          "type": "string",
+          "value": "The Frederick Douglass Statue was first unveiled in 2015. It was sculpted by Andrew Edwards, who supposedly drew inspiration from depictions of Barack Obama and Moses."
+        }
+      ]
     }
   ],
   "editionSettings": {
@@ -1288,8 +1310,8 @@
     "gridColor": 10401023,
     "gridAlpha": 0.8,
     "snap": true,
-    "zoomFactor": 0.44819780454104324,
+    "zoomFactor": 0.8416428125373246,
     "windowMask": false,
-    "selectedLayer": "SceneObjects"
+    "selectedLayer": "InspectionObjects"
   }
 }

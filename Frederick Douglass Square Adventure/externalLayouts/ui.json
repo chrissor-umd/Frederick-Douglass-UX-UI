@@ -465,39 +465,6 @@
     },
     {
       "angle": 0,
-      "customSize": true,
-      "depth": 1,
-      "height": 80,
-      "keepRatio": true,
-      "layer": "ItemPopup",
-      "name": "InspectionObject",
-      "persistentUuid": "c3cabee8-8152-462b-8ca4-486a97f50ff5",
-      "width": 80,
-      "x": 1024,
-      "y": 152,
-      "zOrder": 29,
-      "numberProperties": [
-        {
-          "name": "animation",
-          "value": 1
-        }
-      ],
-      "stringProperties": [],
-      "initialVariables": [
-        {
-          "name": "targetInspection",
-          "type": "string",
-          "value": "infoPopup"
-        },
-        {
-          "name": "instanceID",
-          "type": "string",
-          "value": "itemPopupInfo"
-        }
-      ]
-    },
-    {
-      "angle": 0,
       "customSize": false,
       "height": 0,
       "keepRatio": true,
@@ -639,6 +606,29 @@
       "numberProperties": [],
       "stringProperties": [],
       "initialVariables": []
+    },
+    {
+      "angle": 0,
+      "customSize": true,
+      "depth": 0,
+      "height": 80,
+      "keepRatio": true,
+      "layer": "ItemPopup",
+      "name": "InfoPopupObject",
+      "persistentUuid": "ba130c0d-703f-490e-b1d3-bfd54dbe8ddb",
+      "width": 80,
+      "x": 1024,
+      "y": 152,
+      "zOrder": 36,
+      "numberProperties": [],
+      "stringProperties": [],
+      "initialVariables": [
+        {
+          "name": "instanceID",
+          "type": "string",
+          "value": "itemPopupInfo"
+        }
+      ]
     }
   ],
   "editionSettings": {
@@ -653,8 +643,8 @@
     "gridColor": 10401023,
     "gridAlpha": 0.8,
     "snap": true,
-    "zoomFactor": 0.9610368693715087,
+    "zoomFactor": 1.1343715797161387,
     "windowMask": false,
-    "selectedLayer": "PersistentUI"
+    "selectedLayer": "ItemPopup"
   }
 }

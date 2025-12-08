@@ -79,16 +79,30 @@ isConditionTrue_0 = false;
 {isConditionTrue_0 = runtimeScene.getGame().getVariables().getFromIndex(4).getAsBoolean();
 }
 if (isConditionTrue_0) {
-gdjs.copyArray(runtimeScene.getObjects("StartButton"), gdjs.Main_32MenuCode.GDStartButtonObjects1);
+gdjs.copyArray(runtimeScene.getObjects("StartButton"), gdjs.Main_32MenuCode.GDStartButtonObjects2);
 {gdjs.evtTools.camera.showLayer(runtimeScene, "GameOver");
 }
 {gdjs.evtTools.camera.hideLayer(runtimeScene, "Main Menu");
 }
-{for(var i = 0, len = gdjs.Main_32MenuCode.GDStartButtonObjects1.length ;i < len;++i) {
-    gdjs.Main_32MenuCode.GDStartButtonObjects1[i].Activate(false, null);
+{for(var i = 0, len = gdjs.Main_32MenuCode.GDStartButtonObjects2.length ;i < len;++i) {
+    gdjs.Main_32MenuCode.GDStartButtonObjects2[i].Activate(false, null);
 }
 }
 {gdjs.evtTools.sound.playSound(runtimeScene, "assets\\sfx\\game_won.wav", false, 50, 1);
+}
+}
+
+}
+
+
+{
+
+
+let isConditionTrue_0 = false;
+isConditionTrue_0 = false;
+isConditionTrue_0 = gdjs.evtTools.systemInfo.hasTouchScreen(runtimeScene);
+if (isConditionTrue_0) {
+{runtimeScene.getGame().getVariables().getFromIndex(5).setBoolean(true);
 }
 }
 
