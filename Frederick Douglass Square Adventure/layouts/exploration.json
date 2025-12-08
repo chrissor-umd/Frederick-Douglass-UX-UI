@@ -4503,10 +4503,20 @@
           "name": "infoText",
           "type": "string",
           "value": ""
+        },
+        {
+          "name": "instanceID",
+          "type": "string",
+          "value": "locationPopupInfo"
         }
       ],
       "effects": [],
-      "behaviors": [],
+      "behaviors": [
+        {
+          "name": "Tween",
+          "type": "Tween::TweenBehavior"
+        }
+      ],
       "animations": [
         {
           "name": "InfoPopup",
