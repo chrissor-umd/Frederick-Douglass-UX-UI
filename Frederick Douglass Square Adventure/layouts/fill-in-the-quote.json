@@ -11,8 +11,8 @@
   "uiSettings": {
     "grid": true,
     "gridType": "rectangular",
-    "gridWidth": 8,
-    "gridHeight": 8,
+    "gridWidth": 32,
+    "gridHeight": 32,
     "gridDepth": 32,
     "gridOffsetX": 0,
     "gridOffsetY": 0,
@@ -20,9 +20,9 @@
     "gridColor": 10401023,
     "gridAlpha": 0.8,
     "snap": true,
-    "zoomFactor": 0.5408086571969217,
+    "zoomFactor": 0.8893843822955514,
     "windowMask": false,
-    "selectedLayer": ""
+    "selectedLayer": "ExitPrompt"
   },
   "objectsGroups": [
     {
@@ -138,11 +138,6 @@
       "stringProperties": [],
       "initialVariables": [
         {
-          "name": "Answer",
-          "type": "string",
-          "value": "emancipated"
-        },
-        {
           "name": "relativeX",
           "type": "number",
           "value": 328
@@ -151,6 +146,20 @@
           "name": "relativeY",
           "type": "number",
           "value": 344
+        },
+        {
+          "name": "validAnswers",
+          "type": "array",
+          "children": [
+            {
+              "type": "string",
+              "value": "emancipated"
+            },
+            {
+              "type": "string",
+              "value": "Emancipated"
+            }
+          ]
         }
       ]
     },
@@ -187,11 +196,6 @@
       "stringProperties": [],
       "initialVariables": [
         {
-          "name": "Answer",
-          "type": "string",
-          "value": "lamb"
-        },
-        {
           "name": "relativeX",
           "type": "number",
           "value": 752
@@ -200,6 +204,20 @@
           "name": "relativeY",
           "type": "number",
           "value": 200
+        },
+        {
+          "name": "validAnswers",
+          "type": "array",
+          "children": [
+            {
+              "type": "string",
+              "value": "lamb"
+            },
+            {
+              "type": "string",
+              "value": "Lamb"
+            }
+          ]
         }
       ]
     },
@@ -219,9 +237,18 @@
       "stringProperties": [],
       "initialVariables": [
         {
-          "name": "Answer",
-          "type": "string",
-          "value": "masters"
+          "name": "validAnswers",
+          "type": "array",
+          "children": [
+            {
+              "type": "string",
+              "value": "masters"
+            },
+            {
+              "type": "string",
+              "value": "Masters"
+            }
+          ]
         }
       ]
     },
@@ -377,9 +404,18 @@
       "stringProperties": [],
       "initialVariables": [
         {
-          "name": "Answer",
-          "type": "string",
-          "value": "Tuckahoe"
+          "name": "validAnswers",
+          "type": "array",
+          "children": [
+            {
+              "type": "string",
+              "value": "Tuckahoe"
+            },
+            {
+              "type": "string",
+              "value": "tuckahoe"
+            }
+          ]
         }
       ]
     },
@@ -402,6 +438,24 @@
           "name": "Answer",
           "type": "string",
           "value": "twelve"
+        },
+        {
+          "name": "validAnswers",
+          "type": "array",
+          "children": [
+            {
+              "type": "string",
+              "value": "twelve"
+            },
+            {
+              "type": "string",
+              "value": "Twelve"
+            },
+            {
+              "type": "string",
+              "value": "12"
+            }
+          ]
         }
       ]
     },
@@ -444,9 +498,18 @@
       "stringProperties": [],
       "initialVariables": [
         {
-          "name": "Answer",
-          "type": "string",
-          "value": "read"
+          "name": "validAnswers",
+          "type": "array",
+          "children": [
+            {
+              "type": "string",
+              "value": "read"
+            },
+            {
+              "type": "string",
+              "value": "Read"
+            }
+          ]
         }
       ]
     },
@@ -495,6 +558,105 @@
       "x": 512,
       "y": 541,
       "zOrder": 20,
+      "numberProperties": [],
+      "stringProperties": [],
+      "initialVariables": []
+    },
+    {
+      "angle": 0,
+      "customSize": true,
+      "depth": 0,
+      "height": 104,
+      "keepRatio": true,
+      "layer": "Persistent UI",
+      "name": "FullScreenToggleMinigame",
+      "persistentUuid": "c5c1b2cd-2c6a-4c41-a900-ada837ec84e6",
+      "width": 104,
+      "x": 1176,
+      "y": 0,
+      "zOrder": 21,
+      "numberProperties": [],
+      "stringProperties": [],
+      "initialVariables": []
+    },
+    {
+      "angle": 0,
+      "customSize": true,
+      "depth": 0,
+      "height": 104,
+      "keepRatio": true,
+      "layer": "Persistent UI",
+      "name": "SoundToggleMinigame",
+      "persistentUuid": "472d8b2b-f2ba-4e80-8703-d330c767e423",
+      "width": 104,
+      "x": 1072,
+      "y": 0,
+      "zOrder": 22,
+      "numberProperties": [],
+      "stringProperties": [],
+      "initialVariables": []
+    },
+    {
+      "angle": 0,
+      "customSize": true,
+      "depth": 1.3333333333333333,
+      "height": 540,
+      "layer": "ExitPrompt",
+      "name": "PopupBackground",
+      "persistentUuid": "da4d4228-d413-49fc-9afa-e105665bc42e",
+      "width": 960,
+      "x": 160,
+      "y": 100,
+      "zOrder": 0,
+      "numberProperties": [],
+      "stringProperties": [],
+      "initialVariables": []
+    },
+    {
+      "angle": 0,
+      "customSize": false,
+      "height": 0,
+      "keepRatio": true,
+      "layer": "ExitPrompt",
+      "name": "LeaveButton",
+      "persistentUuid": "eaee2f8b-a376-453f-920f-947103ca796c",
+      "width": 0,
+      "x": 288,
+      "y": 512,
+      "zOrder": 10,
+      "numberProperties": [],
+      "stringProperties": [],
+      "initialVariables": []
+    },
+    {
+      "angle": 0,
+      "customSize": false,
+      "height": 0,
+      "keepRatio": true,
+      "layer": "ExitPrompt",
+      "name": "StayButton",
+      "persistentUuid": "562a2160-5046-4bd9-bb9e-b73fbe017c1f",
+      "width": 0,
+      "x": 736,
+      "y": 512,
+      "zOrder": 23,
+      "numberProperties": [],
+      "stringProperties": [],
+      "initialVariables": []
+    },
+    {
+      "angle": 0,
+      "customSize": true,
+      "depth": 1,
+      "height": 352,
+      "keepRatio": true,
+      "layer": "ExitPrompt",
+      "name": "ExitPopupText",
+      "persistentUuid": "a5d8f5b4-d2db-4d42-8455-b30d1fe69827",
+      "width": 896,
+      "x": 192,
+      "y": 336,
+      "zOrder": 24,
       "numberProperties": [],
       "stringProperties": [],
       "initialVariables": []
@@ -557,9 +719,9 @@
       "type": "TextInput::TextInputObject",
       "variables": [
         {
-          "name": "Answer",
-          "type": "string",
-          "value": ""
+          "name": "validAnswers",
+          "type": "array",
+          "children": []
         },
         {
           "name": "relativeX",
@@ -726,14 +888,14 @@
     },
     {
       "assetStoreId": "",
-      "bottomMargin": 16,
+      "bottomMargin": 32,
       "height": 32,
-      "leftMargin": 16,
+      "leftMargin": 32,
       "name": "PopupBackground",
-      "rightMargin": 16,
-      "texture": "assets/ui/ui_background_border.png",
+      "rightMargin": 32,
+      "texture": "assets\\ui\\ui_background_border_gold.png",
       "tiled": false,
-      "topMargin": 16,
+      "topMargin": 32,
       "type": "PanelSpriteObject::PanelSprite",
       "width": 32,
       "variables": [],
@@ -941,6 +1103,73 @@
         "HoveredFadeOutDuration": 0.25,
         "LabelText": "Start"
       }
+    },
+    {
+      "assetStoreId": "",
+      "name": "StayButton",
+      "type": "PanelSpriteButton::PanelSpriteButton",
+      "variant": "UMDButton",
+      "variables": [],
+      "effects": [],
+      "behaviors": [],
+      "content": {
+        "LabelText": "Stay"
+      }
+    },
+    {
+      "assetStoreId": "",
+      "name": "LeaveButton",
+      "type": "PanelSpriteButton::PanelSpriteButton",
+      "variant": "UMDButton",
+      "variables": [],
+      "effects": [],
+      "behaviors": [],
+      "content": {
+        "LabelText": "Leave"
+      }
+    },
+    {
+      "assetStoreId": "",
+      "bold": false,
+      "italic": false,
+      "name": "ExitPopupText",
+      "smoothed": true,
+      "type": "TextObject::Text",
+      "underlined": false,
+      "variables": [],
+      "effects": [],
+      "behaviors": [],
+      "string": "Are you sure you want to quit the game?\nYou will be able to restart at any time.",
+      "font": "assets\\fonts\\BilkoOpti-Regular.otf",
+      "textAlignment": "center",
+      "characterSize": 43,
+      "color": {
+        "b": 255,
+        "g": 255,
+        "r": 255
+      },
+      "content": {
+        "bold": false,
+        "isOutlineEnabled": false,
+        "isShadowEnabled": false,
+        "italic": false,
+        "outlineColor": "255;255;255",
+        "outlineThickness": 2,
+        "shadowAngle": 90,
+        "shadowBlurRadius": 2,
+        "shadowColor": "0;0;0",
+        "shadowDistance": 4,
+        "shadowOpacity": 127,
+        "smoothed": true,
+        "underlined": false,
+        "text": "Are you sure you want to quit the game?\nYou will be able to restart at any time.",
+        "font": "assets\\fonts\\BilkoOpti-Regular.otf",
+        "textAlignment": "center",
+        "verticalTextAlignment": "center",
+        "characterSize": 43,
+        "lineHeight": 54,
+        "color": "255;255;255"
+      }
     }
   ],
   "objectsFolderStructure": {
@@ -953,6 +1182,9 @@
             "objectName": "PopupBackground"
           },
           {
+            "objectName": "ExitPopupText"
+          },
+          {
             "objectName": "IncorrectPopupText"
           },
           {
@@ -960,6 +1192,12 @@
           },
           {
             "objectName": "TutorialText"
+          },
+          {
+            "objectName": "StayButton"
+          },
+          {
+            "objectName": "LeaveButton"
           }
         ]
       },
@@ -1015,17 +1253,6 @@
           "conditions": [
             {
               "type": {
-                "inverted": true,
-                "value": "LayerEffectEnabled"
-              },
-              "parameters": [
-                "",
-                "\"UI\"",
-                "\"Darken\""
-              ]
-            },
-            {
-              "type": {
                 "value": "SourisSurObjet"
               },
               "parameters": [
@@ -1033,6 +1260,34 @@
                 "",
                 "no",
                 ""
+              ]
+            },
+            {
+              "type": {
+                "value": "Visible"
+              },
+              "parameters": [
+                "ExitMinigameButton"
+              ]
+            },
+            {
+              "type": {
+                "inverted": true,
+                "value": "LayerVisible"
+              },
+              "parameters": [
+                "",
+                "\"CorrectPopup\""
+              ]
+            },
+            {
+              "type": {
+                "inverted": true,
+                "value": "LayerVisible"
+              },
+              "parameters": [
+                "",
+                "\"IncorrectPopup\""
               ]
             }
           ],
@@ -1055,37 +1310,41 @@
               "conditions": [
                 {
                   "type": {
-                    "value": "BuiltinCommonInstructions::Or"
+                    "value": "MouseButtonFromTextReleased"
                   },
-                  "parameters": [],
-                  "subInstructions": [
-                    {
-                      "type": {
-                        "value": "MouseButtonFromTextReleased"
-                      },
-                      "parameters": [
-                        "",
-                        "\"Left\""
-                      ]
-                    },
-                    {
-                      "type": {
-                        "value": "HasTouchEnded"
-                      },
-                      "parameters": [
-                        "",
-                        "2"
-                      ]
-                    }
+                  "parameters": [
+                    "",
+                    "\"Left\""
                   ]
                 }
               ],
               "actions": [
                 {
                   "type": {
-                    "value": "PopScene"
+                    "value": "ShowLayer"
                   },
                   "parameters": [
+                    "",
+                    "\"ExitPrompt\""
+                  ]
+                },
+                {
+                  "type": {
+                    "value": "PanelSpriteButton::PanelSpriteButton::Activate"
+                  },
+                  "parameters": [
+                    "StayButton",
+                    "yes",
+                    ""
+                  ]
+                },
+                {
+                  "type": {
+                    "value": "PanelSpriteButton::PanelSpriteButton::Activate"
+                  },
+                  "parameters": [
+                    "LeaveButton",
+                    "yes",
                     ""
                   ]
                 }
@@ -1119,6 +1378,116 @@
                 "Effect",
                 "\"Highlight\"",
                 "no"
+              ]
+            }
+          ]
+        },
+        {
+          "type": "BuiltinCommonInstructions::Standard",
+          "conditions": [
+            {
+              "type": {
+                "value": "LayerVisible"
+              },
+              "parameters": [
+                "",
+                "\"ExitPrompt\""
+              ]
+            }
+          ],
+          "actions": [],
+          "events": [
+            {
+              "type": "BuiltinCommonInstructions::Standard",
+              "conditions": [
+                {
+                  "type": {
+                    "value": "PanelSpriteButton::PanelSpriteButton::IsClicked"
+                  },
+                  "parameters": [
+                    "StayButton",
+                    ""
+                  ]
+                }
+              ],
+              "actions": [
+                {
+                  "type": {
+                    "value": "PlaySound"
+                  },
+                  "parameters": [
+                    "",
+                    "assets\\sfx\\ui_pop3.wav",
+                    "",
+                    "50",
+                    ""
+                  ]
+                },
+                {
+                  "type": {
+                    "value": "PanelSpriteButton::PanelSpriteButton::Activate"
+                  },
+                  "parameters": [
+                    "LeaveButton",
+                    "no",
+                    ""
+                  ]
+                },
+                {
+                  "type": {
+                    "value": "PanelSpriteButton::PanelSpriteButton::Activate"
+                  },
+                  "parameters": [
+                    "StayButton",
+                    "no",
+                    ""
+                  ]
+                },
+                {
+                  "type": {
+                    "value": "HideLayer"
+                  },
+                  "parameters": [
+                    "",
+                    "\"ExitPrompt\""
+                  ]
+                }
+              ]
+            },
+            {
+              "type": "BuiltinCommonInstructions::Standard",
+              "conditions": [
+                {
+                  "type": {
+                    "value": "PanelSpriteButton::PanelSpriteButton::IsClicked"
+                  },
+                  "parameters": [
+                    "LeaveButton",
+                    ""
+                  ]
+                }
+              ],
+              "actions": [
+                {
+                  "type": {
+                    "value": "PlaySound"
+                  },
+                  "parameters": [
+                    "",
+                    "assets\\sfx\\ui_pop3.wav",
+                    "",
+                    "50",
+                    ""
+                  ]
+                },
+                {
+                  "type": {
+                    "value": "PopScene"
+                  },
+                  "parameters": [
+                    ""
+                  ]
+                }
               ]
             }
           ]
@@ -1243,6 +1612,15 @@
               },
               "parameters": [
                 "ExitMinigameButton"
+              ]
+            },
+            {
+              "type": {
+                "value": "HideLayer"
+              },
+              "parameters": [
+                "",
+                "\"ExitPrompt\""
               ]
             }
           ],
@@ -1398,6 +1776,7 @@
       "colorG": 176,
       "colorR": 74,
       "creationTime": 0,
+      "folded": true,
       "name": "Tutorial Popup",
       "source": "",
       "type": "BuiltinCommonInstructions::Group",
@@ -1416,18 +1795,6 @@
             }
           ],
           "actions": [
-            {
-              "type": {
-                "value": "PlaySound"
-              },
-              "parameters": [
-                "",
-                "assets\\sfx\\ui_pop3.wav",
-                "",
-                "50",
-                ""
-              ]
-            },
             {
               "type": {
                 "value": "HideLayer"
@@ -1506,527 +1873,7 @@
                 "ExitMinigameButton",
                 ""
               ]
-            }
-          ]
-        }
-      ],
-      "parameters": []
-    },
-    {
-      "colorB": 228,
-      "colorG": 176,
-      "colorR": 74,
-      "creationTime": 0,
-      "folded": true,
-      "name": "Load QuoteText and QuoteInputs",
-      "source": "",
-      "type": "BuiltinCommonInstructions::Group",
-      "events": [
-        {
-          "type": "BuiltinCommonInstructions::Standard",
-          "conditions": [
-            {
-              "type": {
-                "value": "BooleanVariable"
-              },
-              "parameters": [
-                "loadCurrentQuote",
-                "True",
-                ""
-              ]
-            }
-          ],
-          "actions": [],
-          "events": [
-            {
-              "type": "BuiltinCommonInstructions::Comment",
-              "color": {
-                "b": 109,
-                "g": 230,
-                "r": 255,
-                "textB": 0,
-                "textG": 0,
-                "textR": 0
-              },
-              "comment": "Bring current QuoteText object and all linked QuoteInput objects to the screen"
             },
-            {
-              "type": "BuiltinCommonInstructions::ForEach",
-              "object": "QuoteText",
-              "conditions": [
-                {
-                  "type": {
-                    "value": "NumberObjectVariable"
-                  },
-                  "parameters": [
-                    "QuoteText",
-                    "ID",
-                    "=",
-                    "currentQuoteID"
-                  ]
-                }
-              ],
-              "actions": [
-                {
-                  "type": {
-                    "value": "MettreX"
-                  },
-                  "parameters": [
-                    "QuoteText",
-                    "=",
-                    "0"
-                  ]
-                },
-                {
-                  "type": {
-                    "value": "MettreY"
-                  },
-                  "parameters": [
-                    "QuoteText",
-                    "=",
-                    "360"
-                  ]
-                },
-                {
-                  "type": {
-                    "value": "LinkedObjects::PickObjectsLinkedTo"
-                  },
-                  "parameters": [
-                    "",
-                    "QuoteInput",
-                    "QuoteText",
-                    ""
-                  ]
-                }
-              ],
-              "events": [
-                {
-                  "type": "BuiltinCommonInstructions::ForEach",
-                  "object": "QuoteInput",
-                  "conditions": [],
-                  "actions": [
-                    {
-                      "type": {
-                        "value": "MettreX"
-                      },
-                      "parameters": [
-                        "QuoteInput",
-                        "=",
-                        "QuoteText.X() + QuoteInput.relativeX"
-                      ]
-                    },
-                    {
-                      "type": {
-                        "value": "MettreY"
-                      },
-                      "parameters": [
-                        "QuoteInput",
-                        "=",
-                        "QuoteText.Y() + QuoteInput.relativeY"
-                      ]
-                    }
-                  ]
-                }
-              ]
-            },
-            {
-              "type": "BuiltinCommonInstructions::Standard",
-              "conditions": [],
-              "actions": [
-                {
-                  "type": {
-                    "value": "SetBooleanVariable"
-                  },
-                  "parameters": [
-                    "loadCurrentQuote",
-                    "False",
-                    ""
-                  ]
-                }
-              ]
-            }
-          ]
-        }
-      ],
-      "parameters": []
-    },
-    {
-      "colorB": 228,
-      "colorG": 176,
-      "colorR": 74,
-      "creationTime": 0,
-      "name": "Check QuoteInputs",
-      "source": "",
-      "type": "BuiltinCommonInstructions::Group",
-      "events": [
-        {
-          "type": "BuiltinCommonInstructions::Standard",
-          "conditions": [
-            {
-              "type": {
-                "value": "PanelSpriteButton::PanelSpriteButton::IsClicked"
-              },
-              "parameters": [
-                "SubmitButton",
-                ""
-              ]
-            }
-          ],
-          "actions": [],
-          "events": [
-            {
-              "type": "BuiltinCommonInstructions::Standard",
-              "conditions": [
-                {
-                  "type": {
-                    "value": "NumberObjectVariable"
-                  },
-                  "parameters": [
-                    "QuoteText",
-                    "ID",
-                    "=",
-                    "currentQuoteID"
-                  ]
-                },
-                {
-                  "type": {
-                    "value": "LinkedObjects::PickObjectsLinkedTo"
-                  },
-                  "parameters": [
-                    "",
-                    "QuoteInput",
-                    "QuoteText",
-                    ""
-                  ]
-                }
-              ],
-              "actions": [],
-              "events": [
-                {
-                  "type": "BuiltinCommonInstructions::ForEach",
-                  "object": "QuoteInput",
-                  "conditions": [
-                    {
-                      "type": {
-                        "value": "TextContainerCapability::TextContainerBehavior::Value"
-                      },
-                      "parameters": [
-                        "QuoteInput",
-                        "Text",
-                        "!=",
-                        "QuoteInput.Answer"
-                      ]
-                    }
-                  ],
-                  "actions": [
-                    {
-                      "type": {
-                        "value": "SetBooleanVariable"
-                      },
-                      "parameters": [
-                        "areAllInputsCorrect",
-                        "False",
-                        ""
-                      ]
-                    }
-                  ]
-                },
-                {
-                  "type": "BuiltinCommonInstructions::Standard",
-                  "conditions": [
-                    {
-                      "type": {
-                        "value": "BooleanVariable"
-                      },
-                      "parameters": [
-                        "areAllInputsCorrect",
-                        "True",
-                        ""
-                      ]
-                    },
-                    {
-                      "type": {
-                        "value": "LinkedObjects::PickObjectsLinkedTo"
-                      },
-                      "parameters": [
-                        "",
-                        "QuoteInput",
-                        "QuoteText",
-                        ""
-                      ]
-                    }
-                  ],
-                  "actions": [
-                    {
-                      "type": {
-                        "value": "ShowLayer"
-                      },
-                      "parameters": [
-                        "",
-                        "\"CorrectPopup\""
-                      ]
-                    },
-                    {
-                      "type": {
-                        "value": "HideLayer"
-                      },
-                      "parameters": [
-                        "",
-                        "\"QuoteText\""
-                      ]
-                    },
-                    {
-                      "type": {
-                        "value": "PanelSpriteButton::PanelSpriteButton::Activate"
-                      },
-                      "parameters": [
-                        "NextButton",
-                        "yes",
-                        ""
-                      ]
-                    },
-                    {
-                      "type": {
-                        "value": "PanelSpriteButton::PanelSpriteButton::Activate"
-                      },
-                      "parameters": [
-                        "SubmitButton",
-                        "no",
-                        ""
-                      ]
-                    },
-                    {
-                      "type": {
-                        "value": "EnableLayerEffect"
-                      },
-                      "parameters": [
-                        "",
-                        "\"QuoteText\"",
-                        "\"Darken\"",
-                        "yes"
-                      ]
-                    },
-                    {
-                      "type": {
-                        "value": "EnableLayerEffect"
-                      },
-                      "parameters": [
-                        "",
-                        "\"UI\"",
-                        "\"Darken\"",
-                        "yes"
-                      ]
-                    },
-                    {
-                      "type": {
-                        "value": "TextInput::TextInputObject::SetDisabled"
-                      },
-                      "parameters": [
-                        "QuoteInput",
-                        "yes"
-                      ]
-                    },
-                    {
-                      "type": {
-                        "value": "PlaySound"
-                      },
-                      "parameters": [
-                        "",
-                        "assets\\sfx\\win.wav",
-                        "",
-                        "",
-                        ""
-                      ]
-                    }
-                  ],
-                  "events": [
-                    {
-                      "type": "BuiltinCommonInstructions::Standard",
-                      "conditions": [
-                        {
-                          "type": {
-                            "value": "NumberVariable"
-                          },
-                          "parameters": [
-                            "currentQuoteID",
-                            "=",
-                            "3"
-                          ]
-                        }
-                      ],
-                      "actions": [
-                        {
-                          "type": {
-                            "value": "TextContainerCapability::TextContainerBehavior::SetValue"
-                          },
-                          "parameters": [
-                            "CorrectPopupText",
-                            "Text",
-                            "=",
-                            "\"\\\"Looks like that's all of them. Thanks so much!\\\"\""
-                          ]
-                        },
-                        {
-                          "type": {
-                            "value": "PanelSpriteButton::PanelSpriteButton::SetLabelTextOp"
-                          },
-                          "parameters": [
-                            "NextButton",
-                            "=",
-                            "\"Return\"",
-                            ""
-                          ]
-                        }
-                      ]
-                    }
-                  ]
-                },
-                {
-                  "type": "BuiltinCommonInstructions::Standard",
-                  "conditions": [
-                    {
-                      "type": {
-                        "value": "BooleanVariable"
-                      },
-                      "parameters": [
-                        "areAllInputsCorrect",
-                        "False",
-                        ""
-                      ]
-                    },
-                    {
-                      "type": {
-                        "value": "LinkedObjects::PickObjectsLinkedTo"
-                      },
-                      "parameters": [
-                        "",
-                        "QuoteInput",
-                        "QuoteText",
-                        ""
-                      ]
-                    }
-                  ],
-                  "actions": [
-                    {
-                      "type": {
-                        "value": "ShowLayer"
-                      },
-                      "parameters": [
-                        "",
-                        "\"IncorrectPopup\""
-                      ]
-                    },
-                    {
-                      "type": {
-                        "value": "HideLayer"
-                      },
-                      "parameters": [
-                        "",
-                        "\"QuoteText\""
-                      ]
-                    },
-                    {
-                      "type": {
-                        "value": "PanelSpriteButton::PanelSpriteButton::Activate"
-                      },
-                      "parameters": [
-                        "RetryButton",
-                        "yes",
-                        ""
-                      ]
-                    },
-                    {
-                      "type": {
-                        "value": "PanelSpriteButton::PanelSpriteButton::Activate"
-                      },
-                      "parameters": [
-                        "SubmitButton",
-                        "no",
-                        ""
-                      ]
-                    },
-                    {
-                      "type": {
-                        "value": "EnableLayerEffect"
-                      },
-                      "parameters": [
-                        "",
-                        "\"UI\"",
-                        "\"Darken\"",
-                        "yes"
-                      ]
-                    },
-                    {
-                      "type": {
-                        "value": "EnableLayerEffect"
-                      },
-                      "parameters": [
-                        "",
-                        "\"QuoteText\"",
-                        "\"Darken\"",
-                        "yes"
-                      ]
-                    },
-                    {
-                      "type": {
-                        "value": "TextInput::TextInputObject::SetDisabled"
-                      },
-                      "parameters": [
-                        "QuoteInput",
-                        "yes"
-                      ]
-                    },
-                    {
-                      "type": {
-                        "value": "PlaySound"
-                      },
-                      "parameters": [
-                        "",
-                        "assets\\sfx\\lose.wav",
-                        "",
-                        "",
-                        ""
-                      ]
-                    }
-                  ]
-                }
-              ],
-              "variables": [
-                {
-                  "name": "areAllInputsCorrect",
-                  "type": "boolean",
-                  "value": true
-                }
-              ]
-            }
-          ]
-        }
-      ],
-      "parameters": []
-    },
-    {
-      "colorB": 228,
-      "colorG": 176,
-      "colorR": 74,
-      "creationTime": 0,
-      "name": "Next Button",
-      "source": "",
-      "type": "BuiltinCommonInstructions::Group",
-      "events": [
-        {
-          "type": "BuiltinCommonInstructions::Standard",
-          "conditions": [
-            {
-              "type": {
-                "value": "PanelSpriteButton::PanelSpriteButton::IsClicked"
-              },
-              "parameters": [
-                "NextButton",
-                ""
-              ]
-            }
-          ],
-          "actions": [
             {
               "type": {
                 "value": "PlaySound"
@@ -2038,136 +1885,203 @@
                 "50",
                 ""
               ]
-            },
-            {
-              "type": {
-                "value": "HideLayer"
-              },
-              "parameters": [
-                "",
-                "\"CorrectPopup\""
-              ]
-            },
-            {
-              "type": {
-                "value": "ShowLayer"
-              },
-              "parameters": [
-                "",
-                "\"QuoteText\""
-              ]
-            },
-            {
-              "type": {
-                "value": "PanelSpriteButton::PanelSpriteButton::Activate"
-              },
-              "parameters": [
-                "SubmitButton",
-                "yes",
-                ""
-              ]
-            },
-            {
-              "type": {
-                "value": "PanelSpriteButton::PanelSpriteButton::Activate"
-              },
-              "parameters": [
-                "NextButton",
-                "no",
-                ""
-              ]
-            },
-            {
-              "type": {
-                "value": "EnableLayerEffect"
-              },
-              "parameters": [
-                "",
-                "\"UI\"",
-                "\"Darken\"",
-                "no"
-              ]
-            },
-            {
-              "type": {
-                "value": "EnableLayerEffect"
-              },
-              "parameters": [
-                "",
-                "\"QuoteText\"",
-                "\"Darken\"",
-                "no"
-              ]
-            },
-            {
-              "type": {
-                "value": "TextInput::TextInputObject::SetDisabled"
-              },
-              "parameters": [
-                "QuoteInput",
-                "no"
-              ]
             }
-          ],
+          ]
+        }
+      ],
+      "parameters": []
+    },
+    {
+      "folded": true,
+      "type": "BuiltinCommonInstructions::Standard",
+      "conditions": [
+        {
+          "type": {
+            "inverted": true,
+            "value": "LayerVisible"
+          },
+          "parameters": [
+            "",
+            "\"ExitPrompt\""
+          ]
+        }
+      ],
+      "actions": [],
+      "events": [
+        {
+          "colorB": 228,
+          "colorG": 176,
+          "colorR": 74,
+          "creationTime": 0,
+          "folded": true,
+          "name": "Load QuoteText and QuoteInputs",
+          "source": "",
+          "type": "BuiltinCommonInstructions::Group",
           "events": [
             {
               "type": "BuiltinCommonInstructions::Standard",
               "conditions": [
                 {
                   "type": {
-                    "value": "NumberVariable"
+                    "value": "BooleanVariable"
                   },
                   "parameters": [
-                    "currentQuoteID",
-                    "=",
-                    "3"
-                  ]
-                }
-              ],
-              "actions": [
-                {
-                  "type": {
-                    "value": "SetBooleanVariable"
-                  },
-                  "parameters": [
-                    "MinigameFlags[\"Fill In The Quote\"]",
+                    "loadCurrentQuote",
                     "True",
                     ""
                   ]
                 }
               ],
+              "actions": [],
               "events": [
+                {
+                  "type": "BuiltinCommonInstructions::Comment",
+                  "color": {
+                    "b": 109,
+                    "g": 230,
+                    "r": 255,
+                    "textB": 0,
+                    "textG": 0,
+                    "textR": 0
+                  },
+                  "comment": "Bring current QuoteText object and all linked QuoteInput objects to the screen"
+                },
+                {
+                  "type": "BuiltinCommonInstructions::ForEach",
+                  "object": "QuoteText",
+                  "conditions": [
+                    {
+                      "type": {
+                        "value": "NumberObjectVariable"
+                      },
+                      "parameters": [
+                        "QuoteText",
+                        "ID",
+                        "=",
+                        "currentQuoteID"
+                      ]
+                    }
+                  ],
+                  "actions": [
+                    {
+                      "type": {
+                        "value": "MettreX"
+                      },
+                      "parameters": [
+                        "QuoteText",
+                        "=",
+                        "0"
+                      ]
+                    },
+                    {
+                      "type": {
+                        "value": "MettreY"
+                      },
+                      "parameters": [
+                        "QuoteText",
+                        "=",
+                        "360"
+                      ]
+                    },
+                    {
+                      "type": {
+                        "value": "LinkedObjects::PickObjectsLinkedTo"
+                      },
+                      "parameters": [
+                        "",
+                        "QuoteInput",
+                        "QuoteText",
+                        ""
+                      ]
+                    }
+                  ],
+                  "events": [
+                    {
+                      "type": "BuiltinCommonInstructions::ForEach",
+                      "object": "QuoteInput",
+                      "conditions": [],
+                      "actions": [
+                        {
+                          "type": {
+                            "value": "MettreX"
+                          },
+                          "parameters": [
+                            "QuoteInput",
+                            "=",
+                            "QuoteText.X() + QuoteInput.relativeX"
+                          ]
+                        },
+                        {
+                          "type": {
+                            "value": "MettreY"
+                          },
+                          "parameters": [
+                            "QuoteInput",
+                            "=",
+                            "QuoteText.Y() + QuoteInput.relativeY"
+                          ]
+                        }
+                      ]
+                    }
+                  ]
+                },
                 {
                   "type": "BuiltinCommonInstructions::Standard",
                   "conditions": [],
                   "actions": [
                     {
                       "type": {
-                        "value": "PopScene"
+                        "value": "SetBooleanVariable"
                       },
                       "parameters": [
+                        "loadCurrentQuote",
+                        "False",
                         ""
                       ]
                     }
                   ]
                 }
               ]
-            },
+            }
+          ],
+          "parameters": []
+        },
+        {
+          "colorB": 228,
+          "colorG": 176,
+          "colorR": 74,
+          "creationTime": 0,
+          "name": "Check QuoteInputs",
+          "source": "",
+          "type": "BuiltinCommonInstructions::Group",
+          "events": [
             {
               "type": "BuiltinCommonInstructions::Standard",
               "conditions": [
                 {
                   "type": {
-                    "value": "NumberVariable"
+                    "value": "PanelSpriteButton::PanelSpriteButton::IsClicked"
                   },
                   "parameters": [
-                    "currentQuoteID",
-                    "<",
-                    "3"
+                    "SubmitButton",
+                    ""
                   ]
                 }
               ],
-              "actions": [],
+              "actions": [
+                {
+                  "type": {
+                    "value": "PlaySound"
+                  },
+                  "parameters": [
+                    "",
+                    "assets\\sfx\\ui_pop3.wav",
+                    "",
+                    "50",
+                    ""
+                  ]
+                }
+              ],
               "events": [
                 {
                   "type": "BuiltinCommonInstructions::Standard",
@@ -2195,60 +2109,776 @@
                       ]
                     }
                   ],
-                  "actions": [
+                  "actions": [],
+                  "events": [
                     {
-                      "type": {
-                        "value": "Delete"
-                      },
-                      "parameters": [
-                        "QuoteText",
-                        ""
+                      "type": "BuiltinCommonInstructions::ForEach",
+                      "object": "QuoteInput",
+                      "conditions": [],
+                      "actions": [
+                        {
+                          "type": {
+                            "value": "SetBooleanVariable"
+                          },
+                          "parameters": [
+                            "hasValidAnswer",
+                            "False",
+                            ""
+                          ]
+                        },
+                        {
+                          "type": {
+                            "value": "SetNumberVariable"
+                          },
+                          "parameters": [
+                            "currentAnswerIndex",
+                            "=",
+                            "0"
+                          ]
+                        }
+                      ],
+                      "events": [
+                        {
+                          "type": "BuiltinCommonInstructions::Repeat",
+                          "repeatExpression": "QuoteInput.VariableChildCount(validAnswers)",
+                          "conditions": [],
+                          "actions": [
+                            {
+                              "type": {
+                                "value": "SetStringVariable"
+                              },
+                              "parameters": [
+                                "currentAnswer",
+                                "=",
+                                "QuoteInput.validAnswers[currentAnswerIndex]"
+                              ]
+                            },
+                            {
+                              "type": {
+                                "value": "SetNumberVariable"
+                              },
+                              "parameters": [
+                                "currentAnswerIndex",
+                                "+",
+                                "1"
+                              ]
+                            }
+                          ],
+                          "events": [
+                            {
+                              "type": "BuiltinCommonInstructions::Standard",
+                              "conditions": [
+                                {
+                                  "type": {
+                                    "value": "TextContainerCapability::TextContainerBehavior::Value"
+                                  },
+                                  "parameters": [
+                                    "QuoteInput",
+                                    "Text",
+                                    "=",
+                                    "currentAnswer"
+                                  ]
+                                }
+                              ],
+                              "actions": [
+                                {
+                                  "type": {
+                                    "value": "SetBooleanVariable"
+                                  },
+                                  "parameters": [
+                                    "hasValidAnswer",
+                                    "True",
+                                    ""
+                                  ]
+                                }
+                              ]
+                            }
+                          ]
+                        },
+                        {
+                          "type": "BuiltinCommonInstructions::Standard",
+                          "conditions": [
+                            {
+                              "type": {
+                                "value": "BooleanVariable"
+                              },
+                              "parameters": [
+                                "hasValidAnswer",
+                                "False",
+                                ""
+                              ]
+                            }
+                          ],
+                          "actions": [
+                            {
+                              "type": {
+                                "value": "SetBooleanVariable"
+                              },
+                              "parameters": [
+                                "areAllInputsCorrect",
+                                "False",
+                                ""
+                              ]
+                            }
+                          ]
+                        }
                       ]
                     },
                     {
-                      "type": {
-                        "value": "Delete"
-                      },
-                      "parameters": [
-                        "QuoteInput",
-                        ""
+                      "type": "BuiltinCommonInstructions::Standard",
+                      "conditions": [
+                        {
+                          "type": {
+                            "value": "BooleanVariable"
+                          },
+                          "parameters": [
+                            "areAllInputsCorrect",
+                            "True",
+                            ""
+                          ]
+                        },
+                        {
+                          "type": {
+                            "value": "LinkedObjects::PickObjectsLinkedTo"
+                          },
+                          "parameters": [
+                            "",
+                            "QuoteInput",
+                            "QuoteText",
+                            ""
+                          ]
+                        }
+                      ],
+                      "actions": [
+                        {
+                          "type": {
+                            "value": "ShowLayer"
+                          },
+                          "parameters": [
+                            "",
+                            "\"CorrectPopup\""
+                          ]
+                        },
+                        {
+                          "type": {
+                            "value": "HideLayer"
+                          },
+                          "parameters": [
+                            "",
+                            "\"QuoteText\""
+                          ]
+                        },
+                        {
+                          "type": {
+                            "value": "PanelSpriteButton::PanelSpriteButton::Activate"
+                          },
+                          "parameters": [
+                            "NextButton",
+                            "yes",
+                            ""
+                          ]
+                        },
+                        {
+                          "type": {
+                            "value": "PanelSpriteButton::PanelSpriteButton::Activate"
+                          },
+                          "parameters": [
+                            "SubmitButton",
+                            "no",
+                            ""
+                          ]
+                        },
+                        {
+                          "type": {
+                            "value": "EnableLayerEffect"
+                          },
+                          "parameters": [
+                            "",
+                            "\"QuoteText\"",
+                            "\"Darken\"",
+                            "yes"
+                          ]
+                        },
+                        {
+                          "type": {
+                            "value": "EnableLayerEffect"
+                          },
+                          "parameters": [
+                            "",
+                            "\"UI\"",
+                            "\"Darken\"",
+                            "yes"
+                          ]
+                        },
+                        {
+                          "type": {
+                            "value": "TextInput::TextInputObject::SetDisabled"
+                          },
+                          "parameters": [
+                            "QuoteInput",
+                            "yes"
+                          ]
+                        },
+                        {
+                          "type": {
+                            "value": "PlaySound"
+                          },
+                          "parameters": [
+                            "",
+                            "assets\\sfx\\win.wav",
+                            "",
+                            "",
+                            ""
+                          ]
+                        }
+                      ],
+                      "events": [
+                        {
+                          "type": "BuiltinCommonInstructions::Standard",
+                          "conditions": [
+                            {
+                              "type": {
+                                "value": "NumberVariable"
+                              },
+                              "parameters": [
+                                "currentQuoteID",
+                                "=",
+                                "3"
+                              ]
+                            }
+                          ],
+                          "actions": [
+                            {
+                              "type": {
+                                "value": "TextContainerCapability::TextContainerBehavior::SetValue"
+                              },
+                              "parameters": [
+                                "CorrectPopupText",
+                                "Text",
+                                "=",
+                                "\"\\\"Looks like that's all of them. Thanks so much!\\\"\""
+                              ]
+                            },
+                            {
+                              "type": {
+                                "value": "PanelSpriteButton::PanelSpriteButton::SetLabelTextOp"
+                              },
+                              "parameters": [
+                                "NextButton",
+                                "=",
+                                "\"Return\"",
+                                ""
+                              ]
+                            }
+                          ]
+                        }
                       ]
                     },
                     {
+                      "type": "BuiltinCommonInstructions::Standard",
+                      "conditions": [
+                        {
+                          "type": {
+                            "value": "BooleanVariable"
+                          },
+                          "parameters": [
+                            "areAllInputsCorrect",
+                            "False",
+                            ""
+                          ]
+                        },
+                        {
+                          "type": {
+                            "value": "LinkedObjects::PickObjectsLinkedTo"
+                          },
+                          "parameters": [
+                            "",
+                            "QuoteInput",
+                            "QuoteText",
+                            ""
+                          ]
+                        }
+                      ],
+                      "actions": [
+                        {
+                          "type": {
+                            "value": "ShowLayer"
+                          },
+                          "parameters": [
+                            "",
+                            "\"IncorrectPopup\""
+                          ]
+                        },
+                        {
+                          "type": {
+                            "value": "HideLayer"
+                          },
+                          "parameters": [
+                            "",
+                            "\"QuoteText\""
+                          ]
+                        },
+                        {
+                          "type": {
+                            "value": "PanelSpriteButton::PanelSpriteButton::Activate"
+                          },
+                          "parameters": [
+                            "RetryButton",
+                            "yes",
+                            ""
+                          ]
+                        },
+                        {
+                          "type": {
+                            "value": "PanelSpriteButton::PanelSpriteButton::Activate"
+                          },
+                          "parameters": [
+                            "SubmitButton",
+                            "no",
+                            ""
+                          ]
+                        },
+                        {
+                          "type": {
+                            "value": "EnableLayerEffect"
+                          },
+                          "parameters": [
+                            "",
+                            "\"UI\"",
+                            "\"Darken\"",
+                            "yes"
+                          ]
+                        },
+                        {
+                          "type": {
+                            "value": "EnableLayerEffect"
+                          },
+                          "parameters": [
+                            "",
+                            "\"QuoteText\"",
+                            "\"Darken\"",
+                            "yes"
+                          ]
+                        },
+                        {
+                          "type": {
+                            "value": "TextInput::TextInputObject::SetDisabled"
+                          },
+                          "parameters": [
+                            "QuoteInput",
+                            "yes"
+                          ]
+                        },
+                        {
+                          "type": {
+                            "value": "PlaySound"
+                          },
+                          "parameters": [
+                            "",
+                            "assets\\sfx\\lose.wav",
+                            "",
+                            "",
+                            ""
+                          ]
+                        }
+                      ]
+                    }
+                  ],
+                  "variables": [
+                    {
+                      "name": "areAllInputsCorrect",
+                      "type": "boolean",
+                      "value": true
+                    },
+                    {
+                      "name": "currentAnswer",
+                      "type": "string",
+                      "value": ""
+                    },
+                    {
+                      "name": "hasValidAnswer",
+                      "type": "boolean",
+                      "value": false
+                    },
+                    {
+                      "name": "currentAnswerIndex",
+                      "type": "number",
+                      "value": 0
+                    }
+                  ]
+                }
+              ]
+            }
+          ],
+          "parameters": []
+        },
+        {
+          "colorB": 228,
+          "colorG": 176,
+          "colorR": 74,
+          "creationTime": 0,
+          "name": "Retry Button",
+          "source": "",
+          "type": "BuiltinCommonInstructions::Group",
+          "events": [
+            {
+              "type": "BuiltinCommonInstructions::Standard",
+              "conditions": [
+                {
+                  "type": {
+                    "value": "PanelSpriteButton::PanelSpriteButton::IsClicked"
+                  },
+                  "parameters": [
+                    "RetryButton",
+                    ""
+                  ]
+                }
+              ],
+              "actions": [
+                {
+                  "type": {
+                    "value": "HideLayer"
+                  },
+                  "parameters": [
+                    "",
+                    "\"IncorrectPopup\""
+                  ]
+                },
+                {
+                  "type": {
+                    "value": "ShowLayer"
+                  },
+                  "parameters": [
+                    "",
+                    "\"QuoteText\""
+                  ]
+                },
+                {
+                  "type": {
+                    "value": "PanelSpriteButton::PanelSpriteButton::Activate"
+                  },
+                  "parameters": [
+                    "SubmitButton",
+                    "yes",
+                    ""
+                  ]
+                },
+                {
+                  "type": {
+                    "value": "PanelSpriteButton::PanelSpriteButton::Activate"
+                  },
+                  "parameters": [
+                    "RetryButton",
+                    "no",
+                    ""
+                  ]
+                },
+                {
+                  "type": {
+                    "value": "EnableLayerEffect"
+                  },
+                  "parameters": [
+                    "",
+                    "\"UI\"",
+                    "\"Darken\"",
+                    "no"
+                  ]
+                },
+                {
+                  "type": {
+                    "value": "EnableLayerEffect"
+                  },
+                  "parameters": [
+                    "",
+                    "\"QuoteText\"",
+                    "\"Darken\"",
+                    "no"
+                  ]
+                },
+                {
+                  "type": {
+                    "value": "TextInput::TextInputObject::SetDisabled"
+                  },
+                  "parameters": [
+                    "QuoteInput",
+                    "no"
+                  ]
+                },
+                {
+                  "type": {
+                    "value": "TextContainerCapability::TextContainerBehavior::SetValue"
+                  },
+                  "parameters": [
+                    "QuoteInput",
+                    "Text",
+                    "=",
+                    "\"\""
+                  ]
+                },
+                {
+                  "type": {
+                    "value": "PlaySound"
+                  },
+                  "parameters": [
+                    "",
+                    "assets\\sfx\\ui_pop3.wav",
+                    "",
+                    "50",
+                    ""
+                  ]
+                }
+              ]
+            }
+          ],
+          "parameters": []
+        },
+        {
+          "colorB": 228,
+          "colorG": 176,
+          "colorR": 74,
+          "creationTime": 0,
+          "name": "Next Button",
+          "source": "",
+          "type": "BuiltinCommonInstructions::Group",
+          "events": [
+            {
+              "type": "BuiltinCommonInstructions::Standard",
+              "conditions": [
+                {
+                  "type": {
+                    "value": "PanelSpriteButton::PanelSpriteButton::IsClicked"
+                  },
+                  "parameters": [
+                    "NextButton",
+                    ""
+                  ]
+                }
+              ],
+              "actions": [
+                {
+                  "type": {
+                    "value": "HideLayer"
+                  },
+                  "parameters": [
+                    "",
+                    "\"CorrectPopup\""
+                  ]
+                },
+                {
+                  "type": {
+                    "value": "ShowLayer"
+                  },
+                  "parameters": [
+                    "",
+                    "\"QuoteText\""
+                  ]
+                },
+                {
+                  "type": {
+                    "value": "PanelSpriteButton::PanelSpriteButton::Activate"
+                  },
+                  "parameters": [
+                    "SubmitButton",
+                    "yes",
+                    ""
+                  ]
+                },
+                {
+                  "type": {
+                    "value": "PanelSpriteButton::PanelSpriteButton::Activate"
+                  },
+                  "parameters": [
+                    "NextButton",
+                    "no",
+                    ""
+                  ]
+                },
+                {
+                  "type": {
+                    "value": "EnableLayerEffect"
+                  },
+                  "parameters": [
+                    "",
+                    "\"UI\"",
+                    "\"Darken\"",
+                    "no"
+                  ]
+                },
+                {
+                  "type": {
+                    "value": "EnableLayerEffect"
+                  },
+                  "parameters": [
+                    "",
+                    "\"QuoteText\"",
+                    "\"Darken\"",
+                    "no"
+                  ]
+                },
+                {
+                  "type": {
+                    "value": "TextInput::TextInputObject::SetDisabled"
+                  },
+                  "parameters": [
+                    "QuoteInput",
+                    "no"
+                  ]
+                },
+                {
+                  "type": {
+                    "value": "PlaySound"
+                  },
+                  "parameters": [
+                    "",
+                    "assets\\sfx\\ui_pop3.wav",
+                    "",
+                    "50",
+                    ""
+                  ]
+                }
+              ],
+              "events": [
+                {
+                  "type": "BuiltinCommonInstructions::Standard",
+                  "conditions": [
+                    {
                       "type": {
-                        "value": "SetNumberVariable"
+                        "value": "NumberVariable"
                       },
                       "parameters": [
                         "currentQuoteID",
-                        "+",
-                        "1"
+                        "=",
+                        "3"
                       ]
-                    },
+                    }
+                  ],
+                  "actions": [
                     {
                       "type": {
                         "value": "SetBooleanVariable"
                       },
                       "parameters": [
-                        "loadCurrentQuote",
+                        "MinigameFlags[\"Fill In The Quote\"]",
                         "True",
                         ""
+                      ]
+                    }
+                  ],
+                  "events": [
+                    {
+                      "type": "BuiltinCommonInstructions::Standard",
+                      "conditions": [],
+                      "actions": [
+                        {
+                          "type": {
+                            "value": "PopScene"
+                          },
+                          "parameters": [
+                            ""
+                          ]
+                        }
+                      ]
+                    }
+                  ]
+                },
+                {
+                  "type": "BuiltinCommonInstructions::Standard",
+                  "conditions": [
+                    {
+                      "type": {
+                        "value": "NumberVariable"
+                      },
+                      "parameters": [
+                        "currentQuoteID",
+                        "<",
+                        "3"
+                      ]
+                    }
+                  ],
+                  "actions": [],
+                  "events": [
+                    {
+                      "type": "BuiltinCommonInstructions::Standard",
+                      "conditions": [
+                        {
+                          "type": {
+                            "value": "NumberObjectVariable"
+                          },
+                          "parameters": [
+                            "QuoteText",
+                            "ID",
+                            "=",
+                            "currentQuoteID"
+                          ]
+                        },
+                        {
+                          "type": {
+                            "value": "LinkedObjects::PickObjectsLinkedTo"
+                          },
+                          "parameters": [
+                            "",
+                            "QuoteInput",
+                            "QuoteText",
+                            ""
+                          ]
+                        }
+                      ],
+                      "actions": [
+                        {
+                          "type": {
+                            "value": "Delete"
+                          },
+                          "parameters": [
+                            "QuoteText",
+                            ""
+                          ]
+                        },
+                        {
+                          "type": {
+                            "value": "Delete"
+                          },
+                          "parameters": [
+                            "QuoteInput",
+                            ""
+                          ]
+                        },
+                        {
+                          "type": {
+                            "value": "SetNumberVariable"
+                          },
+                          "parameters": [
+                            "currentQuoteID",
+                            "+",
+                            "1"
+                          ]
+                        },
+                        {
+                          "type": {
+                            "value": "SetBooleanVariable"
+                          },
+                          "parameters": [
+                            "loadCurrentQuote",
+                            "True",
+                            ""
+                          ]
+                        }
                       ]
                     }
                   ]
                 }
               ]
             }
-          ]
+          ],
+          "parameters": []
         }
-      ],
-      "parameters": []
+      ]
     },
     {
       "colorB": 228,
       "colorG": 176,
       "colorR": 74,
       "creationTime": 0,
-      "name": "Retry Button",
+      "name": "Persistent UI",
       "source": "",
       "type": "BuiltinCommonInstructions::Group",
       "events": [
@@ -2257,10 +2887,13 @@
           "conditions": [
             {
               "type": {
-                "value": "PanelSpriteButton::PanelSpriteButton::IsClicked"
+                "inverted": true,
+                "value": "SourisSurObjet"
               },
               "parameters": [
-                "RetryButton",
+                "FullScreenToggleMinigame",
+                "",
+                "",
                 ""
               ]
             }
@@ -2268,94 +2901,344 @@
           "actions": [
             {
               "type": {
-                "value": "PlaySound"
+                "value": "EffectCapability::EffectBehavior::EnableEffect"
               },
               "parameters": [
-                "",
-                "assets\\sfx\\ui_pop3.wav",
-                "",
-                "50",
+                "FullScreenToggleMinigame",
+                "Effect",
+                "\"Effect\"",
                 ""
               ]
-            },
+            }
+          ]
+        },
+        {
+          "folded": true,
+          "type": "BuiltinCommonInstructions::Standard",
+          "conditions": [
             {
               "type": {
-                "value": "HideLayer"
+                "value": "SourisSurObjet"
               },
               "parameters": [
+                "FullScreenToggleMinigame",
                 "",
-                "\"IncorrectPopup\""
-              ]
-            },
-            {
-              "type": {
-                "value": "ShowLayer"
-              },
-              "parameters": [
                 "",
-                "\"QuoteText\""
-              ]
-            },
-            {
-              "type": {
-                "value": "PanelSpriteButton::PanelSpriteButton::Activate"
-              },
-              "parameters": [
-                "SubmitButton",
-                "yes",
                 ""
               ]
-            },
+            }
+          ],
+          "actions": [
             {
               "type": {
-                "value": "PanelSpriteButton::PanelSpriteButton::Activate"
+                "value": "EffectCapability::EffectBehavior::EnableEffect"
               },
               "parameters": [
-                "RetryButton",
-                "no",
+                "FullScreenToggleMinigame",
+                "Effect",
+                "\"Effect\"",
+                "yes"
+              ]
+            }
+          ],
+          "events": [
+            {
+              "type": "BuiltinCommonInstructions::Standard",
+              "conditions": [
+                {
+                  "type": {
+                    "value": "MouseButtonFromTextReleased"
+                  },
+                  "parameters": [
+                    "",
+                    "\"Left\""
+                  ]
+                }
+              ],
+              "actions": [],
+              "events": [
+                {
+                  "type": "BuiltinCommonInstructions::Standard",
+                  "conditions": [
+                    {
+                      "type": {
+                        "inverted": true,
+                        "value": "IsFullScreen"
+                      },
+                      "parameters": [
+                        ""
+                      ]
+                    }
+                  ],
+                  "actions": [
+                    {
+                      "type": {
+                        "value": "SetFullScreen"
+                      },
+                      "parameters": [
+                        "",
+                        "yes",
+                        ""
+                      ]
+                    },
+                    {
+                      "type": {
+                        "value": "AnimatableCapability::AnimatableBehavior::SetName"
+                      },
+                      "parameters": [
+                        "FullScreenToggleMinigame",
+                        "Animation",
+                        "=",
+                        "\"fullscreen\""
+                      ]
+                    },
+                    {
+                      "type": {
+                        "value": "SetBooleanVariable"
+                      },
+                      "parameters": [
+                        "else",
+                        "False",
+                        ""
+                      ]
+                    }
+                  ]
+                },
+                {
+                  "type": "BuiltinCommonInstructions::Standard",
+                  "conditions": [
+                    {
+                      "type": {
+                        "value": "IsFullScreen"
+                      },
+                      "parameters": [
+                        ""
+                      ]
+                    },
+                    {
+                      "type": {
+                        "value": "BooleanVariable"
+                      },
+                      "parameters": [
+                        "else",
+                        "True",
+                        ""
+                      ]
+                    }
+                  ],
+                  "actions": [
+                    {
+                      "type": {
+                        "value": "AnimatableCapability::AnimatableBehavior::SetName"
+                      },
+                      "parameters": [
+                        "FullScreenToggleMinigame",
+                        "Animation",
+                        "=",
+                        "\"not_fullscreen\""
+                      ]
+                    },
+                    {
+                      "type": {
+                        "value": "SetFullScreen"
+                      },
+                      "parameters": [
+                        "",
+                        "no",
+                        ""
+                      ]
+                    }
+                  ]
+                }
+              ],
+              "variables": [
+                {
+                  "name": "else",
+                  "type": "boolean",
+                  "value": true
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "type": "BuiltinCommonInstructions::Standard",
+          "conditions": [
+            {
+              "type": {
+                "inverted": true,
+                "value": "SourisSurObjet"
+              },
+              "parameters": [
+                "SoundToggleMinigame",
+                "",
+                "",
                 ""
               ]
-            },
+            }
+          ],
+          "actions": [
             {
               "type": {
-                "value": "EnableLayerEffect"
+                "value": "EffectCapability::EffectBehavior::EnableEffect"
               },
               "parameters": [
+                "SoundToggleMinigame",
+                "Effect",
+                "\"Effect\"",
+                ""
+              ]
+            }
+          ]
+        },
+        {
+          "folded": true,
+          "type": "BuiltinCommonInstructions::Standard",
+          "conditions": [
+            {
+              "type": {
+                "value": "SourisSurObjet"
+              },
+              "parameters": [
+                "SoundToggleMinigame",
                 "",
-                "\"UI\"",
-                "\"Darken\"",
-                "no"
-              ]
-            },
-            {
-              "type": {
-                "value": "EnableLayerEffect"
-              },
-              "parameters": [
                 "",
-                "\"QuoteText\"",
-                "\"Darken\"",
-                "no"
+                ""
               ]
-            },
+            }
+          ],
+          "actions": [
             {
               "type": {
-                "value": "TextInput::TextInputObject::SetDisabled"
+                "value": "EffectCapability::EffectBehavior::EnableEffect"
               },
               "parameters": [
-                "QuoteInput",
-                "no"
+                "SoundToggleMinigame",
+                "Effect",
+                "\"Effect\"",
+                "yes"
               ]
-            },
+            }
+          ],
+          "events": [
             {
-              "type": {
-                "value": "TextContainerCapability::TextContainerBehavior::SetValue"
-              },
-              "parameters": [
-                "QuoteInput",
-                "Text",
-                "=",
-                "\"\""
+              "type": "BuiltinCommonInstructions::Standard",
+              "conditions": [
+                {
+                  "type": {
+                    "value": "MouseButtonFromTextReleased"
+                  },
+                  "parameters": [
+                    "",
+                    "\"Left\""
+                  ]
+                }
+              ],
+              "actions": [],
+              "events": [
+                {
+                  "type": "BuiltinCommonInstructions::Standard",
+                  "conditions": [
+                    {
+                      "type": {
+                        "value": "GlobalVolume"
+                      },
+                      "parameters": [
+                        "",
+                        "=",
+                        "0"
+                      ]
+                    }
+                  ],
+                  "actions": [
+                    {
+                      "type": {
+                        "value": "ModGlobalVolume"
+                      },
+                      "parameters": [
+                        "",
+                        "=",
+                        "100"
+                      ]
+                    },
+                    {
+                      "type": {
+                        "value": "AnimatableCapability::AnimatableBehavior::SetName"
+                      },
+                      "parameters": [
+                        "SoundToggleMinigame",
+                        "Animation",
+                        "=",
+                        "\"on\""
+                      ]
+                    },
+                    {
+                      "type": {
+                        "value": "SetBooleanVariable"
+                      },
+                      "parameters": [
+                        "else",
+                        "False",
+                        ""
+                      ]
+                    }
+                  ]
+                },
+                {
+                  "type": "BuiltinCommonInstructions::Standard",
+                  "conditions": [
+                    {
+                      "type": {
+                        "value": "GlobalVolume"
+                      },
+                      "parameters": [
+                        "",
+                        "=",
+                        "100"
+                      ]
+                    },
+                    {
+                      "type": {
+                        "value": "BooleanVariable"
+                      },
+                      "parameters": [
+                        "else",
+                        "True",
+                        ""
+                      ]
+                    }
+                  ],
+                  "actions": [
+                    {
+                      "type": {
+                        "value": "ModGlobalVolume"
+                      },
+                      "parameters": [
+                        "",
+                        "=",
+                        "0"
+                      ]
+                    },
+                    {
+                      "type": {
+                        "value": "AnimatableCapability::AnimatableBehavior::SetName"
+                      },
+                      "parameters": [
+                        "SoundToggleMinigame",
+                        "Animation",
+                        "=",
+                        "\"off\""
+                      ]
+                    }
+                  ]
+                }
+              ],
+              "variables": [
+                {
+                  "name": "else",
+                  "type": "boolean",
+                  "value": true
+                }
               ]
             }
           ]
@@ -2499,6 +3382,42 @@
       "isLightingLayer": false,
       "isLocked": false,
       "name": "TutorialPopup",
+      "renderingType": "2d",
+      "visibility": false,
+      "cameras": [],
+      "effects": []
+    },
+    {
+      "ambientLightColorB": 200,
+      "ambientLightColorG": 200,
+      "ambientLightColorR": 200,
+      "camera2DPlaneMaxDrawingDistance": 5000,
+      "camera3DFarPlaneDistance": 10000,
+      "camera3DFieldOfView": 45,
+      "camera3DNearPlaneDistance": 3,
+      "cameraType": "",
+      "followBaseLayerCamera": false,
+      "isLightingLayer": false,
+      "isLocked": false,
+      "name": "ExitPrompt",
+      "renderingType": "2d",
+      "visibility": true,
+      "cameras": [],
+      "effects": []
+    },
+    {
+      "ambientLightColorB": 200,
+      "ambientLightColorG": 200,
+      "ambientLightColorR": 200,
+      "camera2DPlaneMaxDrawingDistance": 5000,
+      "camera3DFarPlaneDistance": 10000,
+      "camera3DFieldOfView": 45,
+      "camera3DNearPlaneDistance": 3,
+      "cameraType": "",
+      "followBaseLayerCamera": false,
+      "isLightingLayer": false,
+      "isLocked": false,
+      "name": "Persistent UI",
       "renderingType": "2d",
       "visibility": true,
       "cameras": [],

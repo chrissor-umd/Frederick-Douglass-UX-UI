@@ -79,6 +79,14 @@ gdjs.Photo_32PuzzleCode.GDExitMinigameButtonObjects1= [];
 gdjs.Photo_32PuzzleCode.GDExitMinigameButtonObjects2= [];
 gdjs.Photo_32PuzzleCode.GDExitMinigameButtonObjects3= [];
 gdjs.Photo_32PuzzleCode.GDExitMinigameButtonObjects4= [];
+gdjs.Photo_32PuzzleCode.GDFullScreenToggleMinigameObjects1= [];
+gdjs.Photo_32PuzzleCode.GDFullScreenToggleMinigameObjects2= [];
+gdjs.Photo_32PuzzleCode.GDFullScreenToggleMinigameObjects3= [];
+gdjs.Photo_32PuzzleCode.GDFullScreenToggleMinigameObjects4= [];
+gdjs.Photo_32PuzzleCode.GDSoundToggleMinigameObjects1= [];
+gdjs.Photo_32PuzzleCode.GDSoundToggleMinigameObjects2= [];
+gdjs.Photo_32PuzzleCode.GDSoundToggleMinigameObjects3= [];
+gdjs.Photo_32PuzzleCode.GDSoundToggleMinigameObjects4= [];
 
 
 gdjs.Photo_32PuzzleCode.eventsList0 = function(runtimeScene) {
@@ -1266,7 +1274,7 @@ isConditionTrue_0 = false;
 isConditionTrue_0 = gdjs.evtTools.runtimeScene.getTimerElapsedTimeInSecondsOrNaN(runtimeScene, "gameOver") >= 3.5;
 if (isConditionTrue_0) {
 isConditionTrue_0 = false;
-{isConditionTrue_0 = runtimeScene.getOnceTriggers().triggerOnce(16629052);
+{isConditionTrue_0 = runtimeScene.getOnceTriggers().triggerOnce(18076572);
 }
 }
 }
@@ -1312,7 +1320,241 @@ gdjs.Photo_32PuzzleCode.eventsList20(runtimeScene);} //End of subevents
 }
 
 
-};gdjs.Photo_32PuzzleCode.eventsList22 = function(runtimeScene) {
+};gdjs.Photo_32PuzzleCode.mapOfGDgdjs_9546Photo_959532PuzzleCode_9546GDFullScreenToggleMinigameObjects2Objects = Hashtable.newFrom({"FullScreenToggleMinigame": gdjs.Photo_32PuzzleCode.GDFullScreenToggleMinigameObjects2});
+gdjs.Photo_32PuzzleCode.mapOfGDgdjs_9546Photo_959532PuzzleCode_9546GDFullScreenToggleMinigameObjects2Objects = Hashtable.newFrom({"FullScreenToggleMinigame": gdjs.Photo_32PuzzleCode.GDFullScreenToggleMinigameObjects2});
+gdjs.Photo_32PuzzleCode.eventsList22 = function(runtimeScene) {
+
+{
+
+
+let isConditionTrue_0 = false;
+isConditionTrue_0 = false;
+isConditionTrue_0 = !(gdjs.evtTools.window.isFullScreen(runtimeScene));
+if (isConditionTrue_0) {
+gdjs.copyArray(gdjs.Photo_32PuzzleCode.GDFullScreenToggleMinigameObjects2, gdjs.Photo_32PuzzleCode.GDFullScreenToggleMinigameObjects3);
+
+{gdjs.evtTools.window.setFullScreen(runtimeScene, true, true);
+}
+{for(var i = 0, len = gdjs.Photo_32PuzzleCode.GDFullScreenToggleMinigameObjects3.length ;i < len;++i) {
+    gdjs.Photo_32PuzzleCode.GDFullScreenToggleMinigameObjects3[i].getBehavior("Animation").setAnimationName("fullscreen");
+}
+}
+{gdjs.Photo_32PuzzleCode.localVariables[0].getFromIndex(0).setBoolean(false);
+}
+}
+
+}
+
+
+{
+
+
+let isConditionTrue_0 = false;
+isConditionTrue_0 = false;
+isConditionTrue_0 = gdjs.evtTools.window.isFullScreen(runtimeScene);
+if (isConditionTrue_0) {
+isConditionTrue_0 = false;
+{isConditionTrue_0 = gdjs.Photo_32PuzzleCode.localVariables[0].getFromIndex(0).getAsBoolean();
+}
+}
+if (isConditionTrue_0) {
+/* Reuse gdjs.Photo_32PuzzleCode.GDFullScreenToggleMinigameObjects2 */
+{for(var i = 0, len = gdjs.Photo_32PuzzleCode.GDFullScreenToggleMinigameObjects2.length ;i < len;++i) {
+    gdjs.Photo_32PuzzleCode.GDFullScreenToggleMinigameObjects2[i].getBehavior("Animation").setAnimationName("not_fullscreen");
+}
+}
+{gdjs.evtTools.window.setFullScreen(runtimeScene, false, true);
+}
+}
+
+}
+
+
+};gdjs.Photo_32PuzzleCode.eventsList23 = function(runtimeScene) {
+
+{
+
+
+{
+const variables = new gdjs.VariablesContainer();
+{
+const variable = new gdjs.Variable();
+variable.setBoolean(true);
+variables._declare("else", variable);
+}
+gdjs.Photo_32PuzzleCode.localVariables.push(variables);
+}
+let isConditionTrue_0 = false;
+isConditionTrue_0 = false;
+isConditionTrue_0 = gdjs.evtTools.input.isMouseButtonReleased(runtimeScene, "Left");
+if (isConditionTrue_0) {
+
+{ //Subevents
+gdjs.Photo_32PuzzleCode.eventsList22(runtimeScene);} //End of subevents
+}
+gdjs.Photo_32PuzzleCode.localVariables.pop();
+
+}
+
+
+};gdjs.Photo_32PuzzleCode.mapOfGDgdjs_9546Photo_959532PuzzleCode_9546GDSoundToggleMinigameObjects2Objects = Hashtable.newFrom({"SoundToggleMinigame": gdjs.Photo_32PuzzleCode.GDSoundToggleMinigameObjects2});
+gdjs.Photo_32PuzzleCode.mapOfGDgdjs_9546Photo_959532PuzzleCode_9546GDSoundToggleMinigameObjects1Objects = Hashtable.newFrom({"SoundToggleMinigame": gdjs.Photo_32PuzzleCode.GDSoundToggleMinigameObjects1});
+gdjs.Photo_32PuzzleCode.eventsList24 = function(runtimeScene) {
+
+{
+
+
+let isConditionTrue_0 = false;
+isConditionTrue_0 = false;
+isConditionTrue_0 = gdjs.evtTools.sound.getGlobalVolume(runtimeScene) == 0;
+if (isConditionTrue_0) {
+gdjs.copyArray(gdjs.Photo_32PuzzleCode.GDSoundToggleMinigameObjects1, gdjs.Photo_32PuzzleCode.GDSoundToggleMinigameObjects2);
+
+{gdjs.evtTools.sound.setGlobalVolume(runtimeScene, 100);
+}
+{for(var i = 0, len = gdjs.Photo_32PuzzleCode.GDSoundToggleMinigameObjects2.length ;i < len;++i) {
+    gdjs.Photo_32PuzzleCode.GDSoundToggleMinigameObjects2[i].getBehavior("Animation").setAnimationName("on");
+}
+}
+{gdjs.Photo_32PuzzleCode.localVariables[0].getFromIndex(0).setBoolean(false);
+}
+}
+
+}
+
+
+{
+
+
+let isConditionTrue_0 = false;
+isConditionTrue_0 = false;
+isConditionTrue_0 = gdjs.evtTools.sound.getGlobalVolume(runtimeScene) == 100;
+if (isConditionTrue_0) {
+isConditionTrue_0 = false;
+{isConditionTrue_0 = gdjs.Photo_32PuzzleCode.localVariables[0].getFromIndex(0).getAsBoolean();
+}
+}
+if (isConditionTrue_0) {
+/* Reuse gdjs.Photo_32PuzzleCode.GDSoundToggleMinigameObjects1 */
+{gdjs.evtTools.sound.setGlobalVolume(runtimeScene, 0);
+}
+{for(var i = 0, len = gdjs.Photo_32PuzzleCode.GDSoundToggleMinigameObjects1.length ;i < len;++i) {
+    gdjs.Photo_32PuzzleCode.GDSoundToggleMinigameObjects1[i].getBehavior("Animation").setAnimationName("off");
+}
+}
+}
+
+}
+
+
+};gdjs.Photo_32PuzzleCode.eventsList25 = function(runtimeScene) {
+
+{
+
+
+{
+const variables = new gdjs.VariablesContainer();
+{
+const variable = new gdjs.Variable();
+variable.setBoolean(true);
+variables._declare("else", variable);
+}
+gdjs.Photo_32PuzzleCode.localVariables.push(variables);
+}
+let isConditionTrue_0 = false;
+isConditionTrue_0 = false;
+isConditionTrue_0 = gdjs.evtTools.input.isMouseButtonReleased(runtimeScene, "Left");
+if (isConditionTrue_0) {
+
+{ //Subevents
+gdjs.Photo_32PuzzleCode.eventsList24(runtimeScene);} //End of subevents
+}
+gdjs.Photo_32PuzzleCode.localVariables.pop();
+
+}
+
+
+};gdjs.Photo_32PuzzleCode.eventsList26 = function(runtimeScene) {
+
+{
+
+gdjs.copyArray(runtimeScene.getObjects("FullScreenToggleMinigame"), gdjs.Photo_32PuzzleCode.GDFullScreenToggleMinigameObjects2);
+
+let isConditionTrue_0 = false;
+isConditionTrue_0 = false;
+isConditionTrue_0 = gdjs.evtTools.input.cursorOnObject(gdjs.Photo_32PuzzleCode.mapOfGDgdjs_9546Photo_959532PuzzleCode_9546GDFullScreenToggleMinigameObjects2Objects, runtimeScene, true, true);
+if (isConditionTrue_0) {
+/* Reuse gdjs.Photo_32PuzzleCode.GDFullScreenToggleMinigameObjects2 */
+{for(var i = 0, len = gdjs.Photo_32PuzzleCode.GDFullScreenToggleMinigameObjects2.length ;i < len;++i) {
+    gdjs.Photo_32PuzzleCode.GDFullScreenToggleMinigameObjects2[i].getBehavior("Effect").enableEffect("Effect", false);
+}
+}
+}
+
+}
+
+
+{
+
+gdjs.copyArray(runtimeScene.getObjects("FullScreenToggleMinigame"), gdjs.Photo_32PuzzleCode.GDFullScreenToggleMinigameObjects2);
+
+let isConditionTrue_0 = false;
+isConditionTrue_0 = false;
+isConditionTrue_0 = gdjs.evtTools.input.cursorOnObject(gdjs.Photo_32PuzzleCode.mapOfGDgdjs_9546Photo_959532PuzzleCode_9546GDFullScreenToggleMinigameObjects2Objects, runtimeScene, true, false);
+if (isConditionTrue_0) {
+/* Reuse gdjs.Photo_32PuzzleCode.GDFullScreenToggleMinigameObjects2 */
+{for(var i = 0, len = gdjs.Photo_32PuzzleCode.GDFullScreenToggleMinigameObjects2.length ;i < len;++i) {
+    gdjs.Photo_32PuzzleCode.GDFullScreenToggleMinigameObjects2[i].getBehavior("Effect").enableEffect("Effect", true);
+}
+}
+
+{ //Subevents
+gdjs.Photo_32PuzzleCode.eventsList23(runtimeScene);} //End of subevents
+}
+
+}
+
+
+{
+
+gdjs.copyArray(runtimeScene.getObjects("SoundToggleMinigame"), gdjs.Photo_32PuzzleCode.GDSoundToggleMinigameObjects2);
+
+let isConditionTrue_0 = false;
+isConditionTrue_0 = false;
+isConditionTrue_0 = gdjs.evtTools.input.cursorOnObject(gdjs.Photo_32PuzzleCode.mapOfGDgdjs_9546Photo_959532PuzzleCode_9546GDSoundToggleMinigameObjects2Objects, runtimeScene, true, true);
+if (isConditionTrue_0) {
+/* Reuse gdjs.Photo_32PuzzleCode.GDSoundToggleMinigameObjects2 */
+{for(var i = 0, len = gdjs.Photo_32PuzzleCode.GDSoundToggleMinigameObjects2.length ;i < len;++i) {
+    gdjs.Photo_32PuzzleCode.GDSoundToggleMinigameObjects2[i].getBehavior("Effect").enableEffect("Effect", false);
+}
+}
+}
+
+}
+
+
+{
+
+gdjs.copyArray(runtimeScene.getObjects("SoundToggleMinigame"), gdjs.Photo_32PuzzleCode.GDSoundToggleMinigameObjects1);
+
+let isConditionTrue_0 = false;
+isConditionTrue_0 = false;
+isConditionTrue_0 = gdjs.evtTools.input.cursorOnObject(gdjs.Photo_32PuzzleCode.mapOfGDgdjs_9546Photo_959532PuzzleCode_9546GDSoundToggleMinigameObjects1Objects, runtimeScene, true, false);
+if (isConditionTrue_0) {
+/* Reuse gdjs.Photo_32PuzzleCode.GDSoundToggleMinigameObjects1 */
+{for(var i = 0, len = gdjs.Photo_32PuzzleCode.GDSoundToggleMinigameObjects1.length ;i < len;++i) {
+    gdjs.Photo_32PuzzleCode.GDSoundToggleMinigameObjects1[i].getBehavior("Effect").enableEffect("Effect", true);
+}
+}
+
+{ //Subevents
+gdjs.Photo_32PuzzleCode.eventsList25(runtimeScene);} //End of subevents
+}
+
+}
+
+
+};gdjs.Photo_32PuzzleCode.eventsList27 = function(runtimeScene) {
 
 {
 
@@ -1353,6 +1595,13 @@ gdjs.Photo_32PuzzleCode.eventsList19(runtimeScene);
 
 
 gdjs.Photo_32PuzzleCode.eventsList21(runtimeScene);
+}
+
+
+{
+
+
+gdjs.Photo_32PuzzleCode.eventsList26(runtimeScene);
 }
 
 
@@ -1409,8 +1658,16 @@ gdjs.Photo_32PuzzleCode.GDExitMinigameButtonObjects1.length = 0;
 gdjs.Photo_32PuzzleCode.GDExitMinigameButtonObjects2.length = 0;
 gdjs.Photo_32PuzzleCode.GDExitMinigameButtonObjects3.length = 0;
 gdjs.Photo_32PuzzleCode.GDExitMinigameButtonObjects4.length = 0;
+gdjs.Photo_32PuzzleCode.GDFullScreenToggleMinigameObjects1.length = 0;
+gdjs.Photo_32PuzzleCode.GDFullScreenToggleMinigameObjects2.length = 0;
+gdjs.Photo_32PuzzleCode.GDFullScreenToggleMinigameObjects3.length = 0;
+gdjs.Photo_32PuzzleCode.GDFullScreenToggleMinigameObjects4.length = 0;
+gdjs.Photo_32PuzzleCode.GDSoundToggleMinigameObjects1.length = 0;
+gdjs.Photo_32PuzzleCode.GDSoundToggleMinigameObjects2.length = 0;
+gdjs.Photo_32PuzzleCode.GDSoundToggleMinigameObjects3.length = 0;
+gdjs.Photo_32PuzzleCode.GDSoundToggleMinigameObjects4.length = 0;
 
-gdjs.Photo_32PuzzleCode.eventsList22(runtimeScene);
+gdjs.Photo_32PuzzleCode.eventsList27(runtimeScene);
 gdjs.Photo_32PuzzleCode.GDPhotoScrapObjects1.length = 0;
 gdjs.Photo_32PuzzleCode.GDPhotoScrapObjects2.length = 0;
 gdjs.Photo_32PuzzleCode.GDPhotoScrapObjects3.length = 0;
@@ -1459,6 +1716,14 @@ gdjs.Photo_32PuzzleCode.GDExitMinigameButtonObjects1.length = 0;
 gdjs.Photo_32PuzzleCode.GDExitMinigameButtonObjects2.length = 0;
 gdjs.Photo_32PuzzleCode.GDExitMinigameButtonObjects3.length = 0;
 gdjs.Photo_32PuzzleCode.GDExitMinigameButtonObjects4.length = 0;
+gdjs.Photo_32PuzzleCode.GDFullScreenToggleMinigameObjects1.length = 0;
+gdjs.Photo_32PuzzleCode.GDFullScreenToggleMinigameObjects2.length = 0;
+gdjs.Photo_32PuzzleCode.GDFullScreenToggleMinigameObjects3.length = 0;
+gdjs.Photo_32PuzzleCode.GDFullScreenToggleMinigameObjects4.length = 0;
+gdjs.Photo_32PuzzleCode.GDSoundToggleMinigameObjects1.length = 0;
+gdjs.Photo_32PuzzleCode.GDSoundToggleMinigameObjects2.length = 0;
+gdjs.Photo_32PuzzleCode.GDSoundToggleMinigameObjects3.length = 0;
+gdjs.Photo_32PuzzleCode.GDSoundToggleMinigameObjects4.length = 0;
 
 
 return;

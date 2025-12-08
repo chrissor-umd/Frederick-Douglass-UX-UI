@@ -203,9 +203,17 @@ gdjs.ExplorationCode.GDExitMinigameButtonObjects1= [];
 gdjs.ExplorationCode.GDExitMinigameButtonObjects2= [];
 gdjs.ExplorationCode.GDExitMinigameButtonObjects3= [];
 gdjs.ExplorationCode.GDExitMinigameButtonObjects4= [];
+gdjs.ExplorationCode.GDFullScreenToggleMinigameObjects1= [];
+gdjs.ExplorationCode.GDFullScreenToggleMinigameObjects2= [];
+gdjs.ExplorationCode.GDFullScreenToggleMinigameObjects3= [];
+gdjs.ExplorationCode.GDFullScreenToggleMinigameObjects4= [];
+gdjs.ExplorationCode.GDSoundToggleMinigameObjects1= [];
+gdjs.ExplorationCode.GDSoundToggleMinigameObjects2= [];
+gdjs.ExplorationCode.GDSoundToggleMinigameObjects3= [];
+gdjs.ExplorationCode.GDSoundToggleMinigameObjects4= [];
 
 
-gdjs.ExplorationCode.userFunc0xe5e710 = function GDJSInlineCode(runtimeScene) {
+gdjs.ExplorationCode.userFunc0xf8ce60 = function GDJSInlineCode(runtimeScene) {
 "use strict";
 gdjs.FDGameData = {}; // All persistent data is attached to gdjs so that it isn't reset on scene change
 const FDSG = gdjs.FDGameData; // This way data can be accessed through a simpler variable name (FDSG = Frederick-Douglass Square Game)
@@ -280,12 +288,12 @@ gdjs.ExplorationCode.eventsList0 = function(runtimeScene) {
 {
 
 
-gdjs.ExplorationCode.userFunc0xe5e710(runtimeScene);
+gdjs.ExplorationCode.userFunc0xf8ce60(runtimeScene);
 
 }
 
 
-};gdjs.ExplorationCode.userFunc0xea26b0 = function GDJSInlineCode(runtimeScene) {
+};gdjs.ExplorationCode.userFunc0xdf4d68 = function GDJSInlineCode(runtimeScene) {
 "use strict";
 const FDSG = gdjs.FDGameData;
 const GameVars = FDSG.GameVars;
@@ -511,19 +519,19 @@ gdjs.ExplorationCode.eventsList1 = function(runtimeScene) {
 {
 
 
-gdjs.ExplorationCode.userFunc0xea26b0(runtimeScene);
+gdjs.ExplorationCode.userFunc0xdf4d68(runtimeScene);
 
 }
 
 
-};gdjs.ExplorationCode.userFunc0x903328 = function GDJSInlineCode(runtimeScene) {
+};gdjs.ExplorationCode.userFunc0xdf5050 = function GDJSInlineCode(runtimeScene) {
 "use strict";
 const FDSG = gdjs.FDGameData;
 const GameVars = FDSG.GameVars;
 const Game = GameVars.runtimeScene.getGame();
 
 Object.assign(GameVars.Constants, {
-    STARTING_LAYOUT: "Driskell Art Gallery", // First layout to load
+    STARTING_LAYOUT: "Frederick Douglass Square", // First layout to load
     FIRST_TRANSITION_FADE_DURATION: 1500, // The duration of the fade from the Main Menu
     LONG_TRANSITION_FADE_DURATION: 750,
     TRANSITION_FADE_DURATION: 250
@@ -930,12 +938,12 @@ gdjs.ExplorationCode.eventsList2 = function(runtimeScene) {
 {
 
 
-gdjs.ExplorationCode.userFunc0x903328(runtimeScene);
+gdjs.ExplorationCode.userFunc0xdf5050(runtimeScene);
 
 }
 
 
-};gdjs.ExplorationCode.userFunc0xd82170 = function GDJSInlineCode(runtimeScene) {
+};gdjs.ExplorationCode.userFunc0xdf5670 = function GDJSInlineCode(runtimeScene) {
 "use strict";
 const FDSG = gdjs.FDGameData;
 const GameVars = FDSG.GameVars;
@@ -1091,7 +1099,12 @@ FDSG.handlePlayerInput = function() {
             for (const instance of instances) { // Check each instance of the object
                 instance.removeEffect("hoverEffect");
                 if (!clickObject.enabled) { continue } // Check if the object is disabled
-                if (instance.getVariables().has("enabled") && instance.getVariables().get("enabled").getAsBoolean() == false) { continue }
+                if (instance.getVariables().has("enabled") && instance.getVariables().get("enabled").getAsBoolean() == false) {
+                    if (instance.hasEffect("visibilityEffect")) {
+                        instance.removeEffect("visibilityEffect");
+                    }
+                    continue;
+                }
                     // Skip if instance is disabled
                 if (selectedItemIndex != null
                 && instance.getName() != "InspectInventoryItem"
@@ -1196,7 +1209,7 @@ FDSG.handlePlayerInput = function() {
                         if (hoveredInstance.getName() != "InteractionObject"
                         && hoveredInstance.getName() != "InteractionButton"
                         && instanceVars.has("targetInteraction")
-                        && (hoveredInstance.getName() != "ItemObject"
+                        && ((hoveredInstance.getName() != "ItemObject" && hoveredInstance.getName() != "StatueCollectible")
                             || !hoveredInstance.getVariables().get("showPickupPrompt").getAsBoolean())) {
                             // Run interactions tied to the object. We skip interaction objects to avoid running them twice
                             const interactionName = instanceVars.get("targetInteraction").getAsString();
@@ -1377,12 +1390,12 @@ gdjs.ExplorationCode.eventsList3 = function(runtimeScene) {
 {
 
 
-gdjs.ExplorationCode.userFunc0xd82170(runtimeScene);
+gdjs.ExplorationCode.userFunc0xdf5670(runtimeScene);
 
 }
 
 
-};gdjs.ExplorationCode.userFunc0x8ed778 = function GDJSInlineCode(runtimeScene) {
+};gdjs.ExplorationCode.userFunc0xdf4b58 = function GDJSInlineCode(runtimeScene) {
 "use strict";
 const FDSG = gdjs.FDGameData;
 const GameVars = FDSG.GameVars;
@@ -1624,8 +1637,17 @@ FDSG.swapInspection = function(inspectionName) {
  * Clears all Inspections in the stack and disables isInspecting 
  */
 FDSG.clearAllInspectionsFromView = function() {
+    let isItemCloseSFXPlaying = false;
     while (GameVars._loadedInspections.length > 0) {
+        if (GameVars.loadedInspection != "itemPopup") {
+            GameVars._playInspectionSFX = false;
+        } else {
+            isItemCloseSFXPlaying = true;
+        }
         FDSG.clearInspectionFromView();
+    }
+    if (!isItemCloseSFXPlaying) {
+        FDSG.playSFX("CloseInspection");
     }
 }
 
@@ -1670,12 +1692,12 @@ gdjs.ExplorationCode.eventsList4 = function(runtimeScene) {
 {
 
 
-gdjs.ExplorationCode.userFunc0x8ed778(runtimeScene);
+gdjs.ExplorationCode.userFunc0xdf4b58(runtimeScene);
 
 }
 
 
-};gdjs.ExplorationCode.userFunc0xe5dd80 = function GDJSInlineCode(runtimeScene) {
+};gdjs.ExplorationCode.userFunc0x10774c0 = function GDJSInlineCode(runtimeScene) {
 "use strict";
 const FDSG = gdjs.FDGameData;
 const GameVars = FDSG.GameVars;
@@ -1706,6 +1728,7 @@ FDSG.FDFacts = [ // This is a list of Frederick Douglass facts used to populate 
     "After Frederick Douglass gave a speech at the unveiling of the Emancipation Memorial, he was gifted the late Abraham Lincoln's favorite walking stick by his widow, Mary Lincoln. That walking stick still rests in Douglass' final residence in Cedar Hill, Washington DC."
 ]
 
+FDSG.FDFactsBackup = structuredClone(FDSG.FDFacts); // This stores all the facts so the list can be replenished if it runs out
 
 /**
  * Removes a collectible object from the scene and marks it as collected.
@@ -1758,8 +1781,7 @@ FDSG.updateStatueCounter = function() {
     statueCounter.setText(`: ${GameVars.statuesCollected}/${GameVars.Constants.TOTAL_STATUES}`);
     if (GameVars.statuesCollected >= GameVars.Constants.TOTAL_STATUES) { // If the game is over
         Game.getVariables().get("GameOver").setBoolean(true);
-        GameVars.isInspecting = false;
-        GameVars.isItemPopupShowing = false;
+        FDSG.clearAllInspectionsFromView();
         FDSG.initFade(GameVars.Constants.FIRST_TRANSITION_FADE_DURATION, false, false);
     }
     const icon = GameVars.runtimeScene.getInstancesOf("StatueIcon")[0]; // Highlight the statue icon if there are any figurines still in the scene
@@ -1782,12 +1804,12 @@ gdjs.ExplorationCode.eventsList5 = function(runtimeScene) {
 {
 
 
-gdjs.ExplorationCode.userFunc0xe5dd80(runtimeScene);
+gdjs.ExplorationCode.userFunc0x10774c0(runtimeScene);
 
 }
 
 
-};gdjs.ExplorationCode.userFunc0xd3cbb8 = function GDJSInlineCode(runtimeScene) {
+};gdjs.ExplorationCode.userFunc0xe57b38 = function GDJSInlineCode(runtimeScene) {
 "use strict";
 const FDSG = gdjs.FDGameData;
 const GameVars = FDSG.GameVars;
@@ -2260,12 +2282,12 @@ gdjs.ExplorationCode.eventsList6 = function(runtimeScene) {
 {
 
 
-gdjs.ExplorationCode.userFunc0xd3cbb8(runtimeScene);
+gdjs.ExplorationCode.userFunc0xe57b38(runtimeScene);
 
 }
 
 
-};gdjs.ExplorationCode.userFunc0xdc5250 = function GDJSInlineCode(runtimeScene) {
+};gdjs.ExplorationCode.userFunc0xdf5250 = function GDJSInlineCode(runtimeScene) {
 "use strict";
 const FDSG = gdjs.FDGameData;
 const GameVars = FDSG.GameVars;
@@ -2316,6 +2338,12 @@ FDSG.MapLocations = {
             "Hornbake Stairwell Main Floor",
             "Hornbake Entrance"
     ],
+    "Nyumburu Cultural Center": [
+        "Nyumburu Entrance",
+        "Nyumburu Hallway",
+        "Nyumburu Painting",
+        "Nyumburu Performance Room"
+    ],
     "STAMP Union Hall": [
         "STAMP Entrance",
         "STAMP Main Hallway",
@@ -2332,7 +2360,6 @@ FDSG.MapLocations = {
         "Driskell Mural",
         "Driskell Art Gallery",
         "Driskell Art Gallery 2",
-        
     ]
 }
 
@@ -2413,12 +2440,12 @@ gdjs.ExplorationCode.eventsList7 = function(runtimeScene) {
 {
 
 
-gdjs.ExplorationCode.userFunc0xdc5250(runtimeScene);
+gdjs.ExplorationCode.userFunc0xdf5250(runtimeScene);
 
 }
 
 
-};gdjs.ExplorationCode.userFunc0xe5e4e8 = function GDJSInlineCode(runtimeScene) {
+};gdjs.ExplorationCode.userFunc0xc4a4c8 = function GDJSInlineCode(runtimeScene) {
 "use strict";
 const FDSG = gdjs.FDGameData;
 const GameVars = FDSG.GameVars;
@@ -2457,12 +2484,12 @@ gdjs.ExplorationCode.eventsList8 = function(runtimeScene) {
 {
 
 
-gdjs.ExplorationCode.userFunc0xe5e4e8(runtimeScene);
+gdjs.ExplorationCode.userFunc0xc4a4c8(runtimeScene);
 
 }
 
 
-};gdjs.ExplorationCode.userFunc0xd57c40 = function GDJSInlineCode(runtimeScene) {
+};gdjs.ExplorationCode.userFunc0xe89718 = function GDJSInlineCode(runtimeScene) {
 "use strict";
 const FDSG = gdjs.FDGameData;
 const GameVars = FDSG.GameVars;
@@ -2519,12 +2546,14 @@ FDSG.Sounds.LocationSounds = { // Here we put the sound effect to play for each 
     "OutdoorAmbience": [
         "Frederick Douglass Square",
         "STAMP Entrance",
-        "Driskell Entrance"
+        "Driskell Entrance",
+        "Nyumburu Entrance"
     ],
     "IndoorAmbience": [
         "Hornbake Entrance",
         "Driskell Starting Point",
-        "STAMP Main Hallway"
+        "STAMP Main Hallway",
+        "Nyumburu Hallway"
     ],
     "None": [] // Put the location here if you want no ambient sound to play
 }
@@ -2641,7 +2670,7 @@ gdjs.ExplorationCode.eventsList9 = function(runtimeScene) {
 {
 
 
-gdjs.ExplorationCode.userFunc0xd57c40(runtimeScene);
+gdjs.ExplorationCode.userFunc0xe89718(runtimeScene);
 
 }
 
@@ -2660,7 +2689,7 @@ gdjs.ExplorationCode.userFunc0xd57c40(runtimeScene);
 }
 
 
-};gdjs.ExplorationCode.userFunc0xdb5f98 = function GDJSInlineCode(runtimeScene) {
+};gdjs.ExplorationCode.userFunc0xe8b808 = function GDJSInlineCode(runtimeScene) {
 "use strict";
 const FDSG = gdjs.FDGameData;
 const GameVars = FDSG.GameVars;
@@ -2685,7 +2714,11 @@ const layoutNames = [
     "STAMP Art Gallery 2",
     "Hallway to MICA",
     "MICA Entrance",
-    "Inside MICA"
+    "Inside MICA",
+    "Nyumburu Entrance",
+    "Nyumburu Hallway",
+    "Nyumburu Painting",
+    "Nyumburu Performance Room"
 ]
 
 
@@ -2718,100 +2751,12 @@ gdjs.ExplorationCode.eventsList10 = function(runtimeScene) {
 {
 
 
-gdjs.ExplorationCode.userFunc0xdb5f98(runtimeScene);
+gdjs.ExplorationCode.userFunc0xe8b808(runtimeScene);
 
 }
 
 
-};gdjs.ExplorationCode.userFunc0x9093a8 = function GDJSInlineCode(runtimeScene) {
-"use strict";
-const FDSG = gdjs.FDGameData;
-const GameVars = FDSG.GameVars;
-console.log("registering keys");
-FDSG.registerKeyPressFunction({
-    key: "f",
-    duration: "justPressed",
-    keyPressFunction: () => {
-        FDSG.debugPrint("log", FDSG);
-    }
-});
-
-FDSG.registerKeyPressFunction({
-    key: "v",
-    duration: "justPressed",
-    keyPressFunction: () => {
-        FDSG.debugPrint("log", GameVars);
-    }
-});
-
-FDSG.registerKeyPressFunction({
-    key: "r",
-    duration: "justPressed",
-    keyPressFunction: () => {
-        FDSG.debugPrint("log", GameVars.runtimeScene);
-    }
-});
-
-FDSG.registerKeyPressFunction({
-    key: "i",
-    duration: "justPressed",
-    keyPressFunction: () => {
-        FDSG.debugPrint("log", FDSG.Input);
-    }
-});
-
-FDSG.registerKeyPressFunction({
-    key: "s",
-    duration: "justPressed",
-    keyPressFunction: () => {
-        FDSG.debugPrint("log", GameVars._loadedInspections);
-    }
-});
-
-FDSG.registerKeyPressFunction({
-    key: "x",
-    duration: "justPressed",
-    keyPressFunction: () => {
-        FDSG.clearInspectionFromView();
-    }
-});
-};
-gdjs.ExplorationCode.eventsList11 = function(runtimeScene) {
-
-{
-
-
-gdjs.ExplorationCode.userFunc0x9093a8(runtimeScene);
-
-}
-
-
-};gdjs.ExplorationCode.eventsList12 = function(runtimeScene) {
-
-{
-
-
-
-}
-
-
-{
-
-
-let isConditionTrue_0 = false;
-isConditionTrue_0 = false;
-{isConditionTrue_0 = runtimeScene.getGame().getVariables().getFromIndex(2).getAsBoolean();
-}
-if (isConditionTrue_0) {
-
-{ //Subevents
-gdjs.ExplorationCode.eventsList11(runtimeScene);} //End of subevents
-}
-
-}
-
-
-};gdjs.ExplorationCode.eventsList13 = function(runtimeScene) {
+};gdjs.ExplorationCode.eventsList11 = function(runtimeScene) {
 
 {
 
@@ -2893,11 +2838,11 @@ gdjs.ExplorationCode.eventsList10(runtimeScene);
 {
 
 
-gdjs.ExplorationCode.eventsList12(runtimeScene);
+
 }
 
 
-};gdjs.ExplorationCode.userFunc0x8ebe58 = function GDJSInlineCode(runtimeScene) {
+};gdjs.ExplorationCode.userFunc0xb42810 = function GDJSInlineCode(runtimeScene) {
 "use strict";
 const FDSG = gdjs.FDGameData;
 const GameVars = FDSG.GameVars;
@@ -3028,6 +2973,9 @@ FDSG.registerClickableObject({
         if (objVariables.get("showPickupPrompt").getAsBoolean()) {
             const itemName = objVariables.get("itemName").getAsString();
             const itemDescription = objVariables.get("itemDescription").getAsString();
+            if (FDSG.FDFacts.length == 0) {
+                FDSG.FDFacts = structuredClone(FDSG.FDFactsBackup);
+            }
             if (FDSG.FDFacts.length > 0 && (obj.getVariables().get("infoText").getAsString() == "0" // Load a random Frederick Douglass fact into the infoText
             || obj.getVariables().get("infoText").getAsString() == "null")) {
                 let randomIndex = Math.floor(Math.random()*FDSG.FDFacts.length);
@@ -3283,7 +3231,7 @@ FDSG.registerClickableObject({
 });
 
 };
-gdjs.ExplorationCode.eventsList14 = function(runtimeScene) {
+gdjs.ExplorationCode.eventsList12 = function(runtimeScene) {
 
 {
 
@@ -3295,12 +3243,12 @@ gdjs.ExplorationCode.eventsList14 = function(runtimeScene) {
 {
 
 
-gdjs.ExplorationCode.userFunc0x8ebe58(runtimeScene);
+gdjs.ExplorationCode.userFunc0xb42810(runtimeScene);
 
 }
 
 
-};gdjs.ExplorationCode.userFunc0xea2980 = function GDJSInlineCode(runtimeScene) {
+};gdjs.ExplorationCode.userFunc0xb42bd0 = function GDJSInlineCode(runtimeScene) {
 "use strict";
 const FDSG = gdjs.FDGameData;
 const GameVars = FDSG.GameVars;
@@ -3318,7 +3266,7 @@ const Game = GameVars.runtimeScene.getGame();
 FDSG.setLayoutFlag("Frederick Douglass Square", "isCulturalCenterAvailable", false); // The transition to the cultural center is not available until the Hornbake Exit has been visited
 
 FDSG.registerOnLayoutLoadFunction("Frederick Douglass Square", () => {
-    const fdsTransition = FDSG.getInstanceFromID("STAMP Transition");
+    const fdsTransition = FDSG.getInstanceFromID("Nyumburu Transition");
     if (!FDSG.getLayoutFlag("Hornbake Exit", "hasBeenVisited")) {
         fdsTransition.setOpacity(0);
         fdsTransition.getVariables().get("enabled").setBoolean(false);
@@ -3376,17 +3324,17 @@ FDSG.registerInteraction("MarblesMinigame", (obj) => { // I like putting all the
     }
 }, true);
 };
-gdjs.ExplorationCode.eventsList15 = function(runtimeScene) {
+gdjs.ExplorationCode.eventsList13 = function(runtimeScene) {
 
 {
 
 
-gdjs.ExplorationCode.userFunc0xea2980(runtimeScene);
+gdjs.ExplorationCode.userFunc0xb42bd0(runtimeScene);
 
 }
 
 
-};gdjs.ExplorationCode.userFunc0xd71520 = function GDJSInlineCode(runtimeScene) {
+};gdjs.ExplorationCode.userFunc0xefc678 = function GDJSInlineCode(runtimeScene) {
 "use strict";
 const FDSG = gdjs.FDGameData;
 const GameVars = FDSG.GameVars;
@@ -3399,72 +3347,81 @@ FDSG.registerOnLayoutLoadFunction("Hornbake Exit", () => {
     FDSG.setLayoutFlag("Hornbake Exit", "hasBeenVisited", true);
 });
 };
+gdjs.ExplorationCode.eventsList14 = function(runtimeScene) {
+
+{
+
+
+gdjs.ExplorationCode.userFunc0xefc678(runtimeScene);
+
+}
+
+
+};gdjs.ExplorationCode.userFunc0xc4a750 = function GDJSInlineCode(runtimeScene) {
+"use strict";
+const FDSG = gdjs.FDGameData;
+const GameVars = FDSG.GameVars;
+const Game = GameVars.runtimeScene.getGame();
+
+
+FDSG.registerInteraction("QuoteMinigame", (obj) => {
+    const instanceID = obj.getVariables().get("instanceID").getAsString();
+    const librarianNPC = FDSG.getInstanceFromID("librarianNPC");
+    const quoteMinigameFlag = Game.getVariables().get("MinigameFlags").getChild("Fill In The Quote").getAsBoolean();
+    switch(instanceID) {
+        case("librarianNPC"):
+            if (FDSG.getFlag(librarianNPC, "hasBeenSpokenTo", "boolean")) { // Player is returning
+                FDSG.bringInspectionIntoView("returnLibrarianNPC");
+            } else { // Player is speaking to NPC for the first time
+                FDSG.bringInspectionIntoView("approachLibrarianNPC");
+            }
+            break;
+        case("approachButton"):
+            FDSG.getFlag(librarianNPC, "hasBeenSpokenTo").setBoolean(true);
+            FDSG.swapInspection("talkLibrarianNPC");
+            break;
+        case("leaveButton"):
+            FDSG.clearAllInspectionsFromView();
+            break;
+        case("startMinigameButton"):
+            FDSG.loadMinigame("Fill In The Quote");
+            break;
+        case("quoteFigurine"):
+            librarianNPC.getVariables().get("enabled").setBoolean(false);
+            FDSG.clearAllInspectionsFromView();
+            break;
+    }
+}, true);
+};
+gdjs.ExplorationCode.eventsList15 = function(runtimeScene) {
+
+{
+
+
+gdjs.ExplorationCode.userFunc0xc4a750(runtimeScene);
+
+}
+
+
+};gdjs.ExplorationCode.userFunc0xac7c48 = function GDJSInlineCode(runtimeScene) {
+"use strict";
+const FDSG = gdjs.FDGameData;
+const GameVars = FDSG.GameVars;
+const Game = GameVars.runtimeScene.getGame();
+
+
+};
 gdjs.ExplorationCode.eventsList16 = function(runtimeScene) {
 
 {
 
 
-gdjs.ExplorationCode.userFunc0xd71520(runtimeScene);
+gdjs.ExplorationCode.userFunc0xac7c48(runtimeScene);
 
 }
 
 
-};gdjs.ExplorationCode.userFunc0xe8bdb0 = function GDJSInlineCode(runtimeScene) {
-"use strict";
-const FDSG = gdjs.FDGameData;
-const GameVars = FDSG.GameVars;
-const Game = GameVars.runtimeScene.getGame();
-
-/*
-    FUN IDEA: MAKE THE MARBLES A REWARD FOR COMPLETING THE PICTURE GAME OR QUOTES GAME. HAVING ONE MINIGAME LEAD INTO THE NEXT WILL GIVE PEOPLE A FUN "AHA" MOMENT WHEN THEY GET THE MARBLES
-*/
-
-FDSG.registerInteraction("QuoteMinigame", (obj) => {
-    const instanceID = obj.getVariables().get("instanceID").getAsString();
-    if (instanceID == "librarian") {
-        const quoteMinigameFlag = Game.getVariables().get("MinigameFlags").getChild("Fill In The Quote").getAsBoolean();
-        if (quoteMinigameFlag) {
-            FDSG.bringInspectionIntoView("WinQuoteMinigame");
-        } else {
-            FDSG.bringInspectionIntoView("librarian");
-        }
-    } else if (instanceID == "QuoteButton") {
-        FDSG.loadMinigame("Fill In The Quote");
-    } else if (instanceID == "QuoteStatue") {
-        let librarian = FDSG.getInstanceFromID("librarian");
-        librarian.getVariables().get("enabled").setBoolean(false);
-    }   
-}, true);
-};
-gdjs.ExplorationCode.eventsList17 = function(runtimeScene) {
-
-{
-
-
-gdjs.ExplorationCode.userFunc0xe8bdb0(runtimeScene);
-
-}
-
-
-};gdjs.ExplorationCode.userFunc0xe8bf08 = function GDJSInlineCode(runtimeScene) {
-"use strict";
-const FDSG = gdjs.FDGameData;
-const GameVars = FDSG.GameVars;
-const Game = GameVars.runtimeScene.getGame();
-
-
-};
-gdjs.ExplorationCode.eventsList18 = function(runtimeScene) {
-
-{
-
-
-gdjs.ExplorationCode.userFunc0xe8bf08(runtimeScene);
-
-}
-
-
-};gdjs.ExplorationCode.userFunc0xe8f290 = function GDJSInlineCode(runtimeScene) {
+};gdjs.ExplorationCode.userFunc0x1706920 = function GDJSInlineCode(runtimeScene) {
 "use strict";
 const FDSG = gdjs.FDGameData;
 const GameVars = FDSG.GameVars;
@@ -3485,7 +3442,7 @@ FDSG.registerInteraction("PhotoMinigame", (obj) => {
             } else if (FDSG.getFlag(obj, "gavePhotoScraps", "boolean")) { // Player has already given the photo scraps
                 FDSG.bringInspectionIntoView("startPhotoMinigame");
             } else if (FDSG.getFlag(obj, "hasBeenSpokenTo", "boolean")) { // Player has already spoken to this NPC 
-                if (FDSG.isItemInInventory("Scrap of Photo") < 3) { // Player hasn't found all the photos
+                if (FDSG.isItemInInventory("Scrap of Photo") < 4) { // Player hasn't found all the photos
                     hasPhotoScrapsButton.getVariables().get("enabled").setBoolean(false);
                     hasPhotoScrapsButton.enableEffect("Disabled", true);
                 } else {
@@ -3528,22 +3485,36 @@ FDSG.registerInteraction("PhotoMinigame", (obj) => {
     }
 }, true);
 };
-gdjs.ExplorationCode.eventsList19 = function(runtimeScene) {
+gdjs.ExplorationCode.eventsList17 = function(runtimeScene) {
 
 {
 
 
-gdjs.ExplorationCode.userFunc0xe8f290(runtimeScene);
+gdjs.ExplorationCode.userFunc0x1706920(runtimeScene);
 
 }
 
 
-};gdjs.ExplorationCode.eventsList20 = function(runtimeScene) {
+};gdjs.ExplorationCode.eventsList18 = function(runtimeScene) {
 
 {
 
 
 
+}
+
+
+{
+
+
+gdjs.ExplorationCode.eventsList13(runtimeScene);
+}
+
+
+{
+
+
+gdjs.ExplorationCode.eventsList14(runtimeScene);
 }
 
 
@@ -3568,21 +3539,7 @@ gdjs.ExplorationCode.eventsList17(runtimeScene);
 }
 
 
-{
-
-
-gdjs.ExplorationCode.eventsList18(runtimeScene);
-}
-
-
-{
-
-
-gdjs.ExplorationCode.eventsList19(runtimeScene);
-}
-
-
-};gdjs.ExplorationCode.userFunc0xdc49f8 = function GDJSInlineCode(runtimeScene) {
+};gdjs.ExplorationCode.userFunc0x1706cf8 = function GDJSInlineCode(runtimeScene) {
 "use strict";
 const FDSG = gdjs.FDGameData;
 const GameVars = FDSG.GameVars;
@@ -3625,7 +3582,7 @@ FDSG.registerOnReturnFromMinigame("Photo Puzzle", () => {
     }
 });
 };
-gdjs.ExplorationCode.eventsList21 = function(runtimeScene) {
+gdjs.ExplorationCode.eventsList19 = function(runtimeScene) {
 
 {
 
@@ -3637,12 +3594,12 @@ gdjs.ExplorationCode.eventsList21 = function(runtimeScene) {
 {
 
 
-gdjs.ExplorationCode.userFunc0xdc49f8(runtimeScene);
+gdjs.ExplorationCode.userFunc0x1706cf8(runtimeScene);
 
 }
 
 
-};gdjs.ExplorationCode.eventsList22 = function(runtimeScene) {
+};gdjs.ExplorationCode.eventsList20 = function(runtimeScene) {
 
 {
 
@@ -3654,7 +3611,7 @@ gdjs.ExplorationCode.eventsList0(runtimeScene);
 {
 
 
-gdjs.ExplorationCode.eventsList13(runtimeScene);
+gdjs.ExplorationCode.eventsList11(runtimeScene);
 }
 
 
@@ -3668,21 +3625,21 @@ gdjs.ExplorationCode.eventsList13(runtimeScene);
 {
 
 
-gdjs.ExplorationCode.eventsList14(runtimeScene);
+gdjs.ExplorationCode.eventsList12(runtimeScene);
 }
 
 
 {
 
 
-gdjs.ExplorationCode.eventsList20(runtimeScene);
+gdjs.ExplorationCode.eventsList18(runtimeScene);
 }
 
 
 {
 
 
-gdjs.ExplorationCode.eventsList21(runtimeScene);
+gdjs.ExplorationCode.eventsList19(runtimeScene);
 }
 
 
@@ -3700,7 +3657,7 @@ let isConditionTrue_0 = false;
 }
 
 
-};gdjs.ExplorationCode.eventsList23 = function(runtimeScene) {
+};gdjs.ExplorationCode.eventsList21 = function(runtimeScene) {
 
 {
 
@@ -3721,13 +3678,13 @@ if (isConditionTrue_0) {
 }
 
 { //Subevents
-gdjs.ExplorationCode.eventsList22(runtimeScene);} //End of subevents
+gdjs.ExplorationCode.eventsList20(runtimeScene);} //End of subevents
 }
 
 }
 
 
-};gdjs.ExplorationCode.userFunc0xd81888 = function GDJSInlineCode(runtimeScene) {
+};gdjs.ExplorationCode.userFunc0x1023e08 = function GDJSInlineCode(runtimeScene) {
 "use strict";
 const FDSG = gdjs.FDGameData; // Simpler variables to use as reference
 const GameVars = FDSG.GameVars;
@@ -3795,9 +3752,9 @@ if (GameVars._isFading) {
     }
 }
 };
-gdjs.ExplorationCode.eventsList24 = function(runtimeScene) {
+gdjs.ExplorationCode.eventsList22 = function(runtimeScene) {
 
-};gdjs.ExplorationCode.eventsList25 = function(runtimeScene) {
+};gdjs.ExplorationCode.eventsList23 = function(runtimeScene) {
 
 {
 
@@ -3830,7 +3787,7 @@ if (isConditionTrue_0) {
 };gdjs.ExplorationCode.mapOfEmptyGDDebugCameraObjects = Hashtable.newFrom({"DebugCamera": []});
 gdjs.ExplorationCode.mapOfGDgdjs_9546ExplorationCode_9546GDDebugCameraObjects2Objects = Hashtable.newFrom({"DebugCamera": gdjs.ExplorationCode.GDDebugCameraObjects2});
 gdjs.ExplorationCode.mapOfEmptyGDDebugCameraObjects = Hashtable.newFrom({"DebugCamera": []});
-gdjs.ExplorationCode.eventsList26 = function(runtimeScene) {
+gdjs.ExplorationCode.eventsList24 = function(runtimeScene) {
 
 {
 
@@ -3903,7 +3860,7 @@ if (isConditionTrue_0) {
 }
 
 
-};gdjs.ExplorationCode.eventsList27 = function(runtimeScene) {
+};gdjs.ExplorationCode.eventsList25 = function(runtimeScene) {
 
 {
 
@@ -3914,7 +3871,7 @@ isConditionTrue_0 = gdjs.evtTools.input.wasKeyReleased(runtimeScene, "Num1");
 if (isConditionTrue_0) {
 
 { //Subevents
-gdjs.ExplorationCode.eventsList25(runtimeScene);} //End of subevents
+gdjs.ExplorationCode.eventsList23(runtimeScene);} //End of subevents
 }
 
 }
@@ -3952,13 +3909,13 @@ gdjs.copyArray(runtimeScene.getObjects("DebugCamera"), gdjs.ExplorationCode.GDDe
 }
 
 { //Subevents
-gdjs.ExplorationCode.eventsList26(runtimeScene);} //End of subevents
+gdjs.ExplorationCode.eventsList24(runtimeScene);} //End of subevents
 }
 
 }
 
 
-};gdjs.ExplorationCode.eventsList28 = function(runtimeScene) {
+};gdjs.ExplorationCode.eventsList26 = function(runtimeScene) {
 
 {
 
@@ -3970,7 +3927,7 @@ gdjs.ExplorationCode.eventsList26(runtimeScene);} //End of subevents
 {
 
 
-gdjs.ExplorationCode.userFunc0xd81888(runtimeScene);
+gdjs.ExplorationCode.userFunc0x1023e08(runtimeScene);
 
 }
 
@@ -4124,13 +4081,13 @@ isConditionTrue_0 = false;
 if (isConditionTrue_0) {
 
 { //Subevents
-gdjs.ExplorationCode.eventsList27(runtimeScene);} //End of subevents
+gdjs.ExplorationCode.eventsList25(runtimeScene);} //End of subevents
 }
 
 }
 
 
-};gdjs.ExplorationCode.eventsList29 = function(runtimeScene) {
+};gdjs.ExplorationCode.eventsList27 = function(runtimeScene) {
 
 {
 
@@ -4142,14 +4099,14 @@ gdjs.ExplorationCode.eventsList27(runtimeScene);} //End of subevents
 {
 
 
-gdjs.ExplorationCode.eventsList23(runtimeScene);
+gdjs.ExplorationCode.eventsList21(runtimeScene);
 }
 
 
 {
 
 
-gdjs.ExplorationCode.eventsList28(runtimeScene);
+gdjs.ExplorationCode.eventsList26(runtimeScene);
 }
 
 
@@ -4346,8 +4303,16 @@ gdjs.ExplorationCode.GDExitMinigameButtonObjects1.length = 0;
 gdjs.ExplorationCode.GDExitMinigameButtonObjects2.length = 0;
 gdjs.ExplorationCode.GDExitMinigameButtonObjects3.length = 0;
 gdjs.ExplorationCode.GDExitMinigameButtonObjects4.length = 0;
+gdjs.ExplorationCode.GDFullScreenToggleMinigameObjects1.length = 0;
+gdjs.ExplorationCode.GDFullScreenToggleMinigameObjects2.length = 0;
+gdjs.ExplorationCode.GDFullScreenToggleMinigameObjects3.length = 0;
+gdjs.ExplorationCode.GDFullScreenToggleMinigameObjects4.length = 0;
+gdjs.ExplorationCode.GDSoundToggleMinigameObjects1.length = 0;
+gdjs.ExplorationCode.GDSoundToggleMinigameObjects2.length = 0;
+gdjs.ExplorationCode.GDSoundToggleMinigameObjects3.length = 0;
+gdjs.ExplorationCode.GDSoundToggleMinigameObjects4.length = 0;
 
-gdjs.ExplorationCode.eventsList29(runtimeScene);
+gdjs.ExplorationCode.eventsList27(runtimeScene);
 gdjs.ExplorationCode.GDStatuesCollectedCounterObjects1.length = 0;
 gdjs.ExplorationCode.GDStatuesCollectedCounterObjects2.length = 0;
 gdjs.ExplorationCode.GDStatuesCollectedCounterObjects3.length = 0;
@@ -4536,6 +4501,14 @@ gdjs.ExplorationCode.GDExitMinigameButtonObjects1.length = 0;
 gdjs.ExplorationCode.GDExitMinigameButtonObjects2.length = 0;
 gdjs.ExplorationCode.GDExitMinigameButtonObjects3.length = 0;
 gdjs.ExplorationCode.GDExitMinigameButtonObjects4.length = 0;
+gdjs.ExplorationCode.GDFullScreenToggleMinigameObjects1.length = 0;
+gdjs.ExplorationCode.GDFullScreenToggleMinigameObjects2.length = 0;
+gdjs.ExplorationCode.GDFullScreenToggleMinigameObjects3.length = 0;
+gdjs.ExplorationCode.GDFullScreenToggleMinigameObjects4.length = 0;
+gdjs.ExplorationCode.GDSoundToggleMinigameObjects1.length = 0;
+gdjs.ExplorationCode.GDSoundToggleMinigameObjects2.length = 0;
+gdjs.ExplorationCode.GDSoundToggleMinigameObjects3.length = 0;
+gdjs.ExplorationCode.GDSoundToggleMinigameObjects4.length = 0;
 
 
 return;

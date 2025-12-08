@@ -1249,7 +1249,7 @@
             {
               "name": "text",
               "type": "string",
-              "value": "Head to STAMP Union Hall"
+              "value": "Head to Nyumburu Cultural Center"
             },
             {
               "name": "textAlign",
@@ -1271,7 +1271,7 @@
         {
           "name": "instanceID",
           "type": "string",
-          "value": "STAMP Transition"
+          "value": "Nyumburu Transition"
         }
       ]
     }
@@ -1288,7 +1288,7 @@
     "gridColor": 10401023,
     "gridAlpha": 0.8,
     "snap": true,
-    "zoomFactor": 0.43357743047024466,
+    "zoomFactor": 0.44819780454104324,
     "windowMask": false,
     "selectedLayer": "SceneObjects"
   }

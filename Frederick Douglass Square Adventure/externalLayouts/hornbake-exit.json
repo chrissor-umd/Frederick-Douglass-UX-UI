@@ -47,7 +47,7 @@
         {
           "name": "targetLayout",
           "type": "string",
-          "value": "STAMP Entrance"
+          "value": "Nyumburu Entrance"
         },
         {
           "name": "hoverTooltip",
@@ -66,7 +66,7 @@
             {
               "name": "text",
               "type": "string",
-              "value": "Head to STAMP Union Hall"
+              "value": "Head to Nyumburu Cultural Center"
             },
             {
               "name": "textAlign",

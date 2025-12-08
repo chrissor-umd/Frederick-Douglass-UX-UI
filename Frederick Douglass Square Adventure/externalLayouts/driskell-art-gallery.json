@@ -145,7 +145,7 @@
         {
           "name": "innerText",
           "type": "string",
-          "value": "You see an art curator holding several torn scraps of paper. They seem to be in distress."
+          "value": "You see an art curator holding several torn scraps of paper. They appear to be in distress."
         },
         {
           "name": "inspectionName",
@@ -227,7 +227,7 @@
         {
           "name": "innerText",
           "type": "string",
-          "value": "\"Thank goodness you're here! We just received a vintage photograph of Frederick Douglass, but somehow it got all torn up and the pieces have been scattered all across campus! Can you help me put the photo back together?"
+          "value": "\"Thank goodness you're here! We just received a vintage photograph of Frederick Douglass, but somehow it got all torn up and the pieces have been scattered all across campus! Can you help me put the photo back together?\""
         },
         {
           "name": "inspectionName",
@@ -309,7 +309,7 @@
         {
           "name": "innerText",
           "type": "string",
-          "value": "\"Thanks so much! Right now we're missing 3 pieces of the photograph. Please find them, and then come back here.\""
+          "value": "\"Thanks so much! Right now we're missing 4 pieces of the photograph. Please find them, and then come back here.\""
         },
         {
           "name": "inspectionName",
@@ -505,7 +505,7 @@
         {
           "name": "innerText",
           "type": "string",
-          "value": "\"Great job getting all the pieces! Now all thats left to do is to put the photograph back together...\""
+          "value": "\"Great job getting all the pieces! Now all that's left to do is to put the photograph back together...\""
         },
         {
           "name": "inspectionName",
@@ -865,7 +865,7 @@
     "gridColor": 10401023,
     "gridAlpha": 0.8,
     "snap": true,
-    "zoomFactor": 0.39251611754882576,
+    "zoomFactor": 0.3325387091250802,
     "windowMask": false,
     "selectedLayer": "InspectionObjects"
   }

@@ -149,6 +149,18 @@ gdjs.MarblesCode.GDExitMinigameButtonObjects3= [];
 gdjs.MarblesCode.GDExitMinigameButtonObjects4= [];
 gdjs.MarblesCode.GDExitMinigameButtonObjects5= [];
 gdjs.MarblesCode.GDExitMinigameButtonObjects6= [];
+gdjs.MarblesCode.GDFullScreenToggleMinigameObjects1= [];
+gdjs.MarblesCode.GDFullScreenToggleMinigameObjects2= [];
+gdjs.MarblesCode.GDFullScreenToggleMinigameObjects3= [];
+gdjs.MarblesCode.GDFullScreenToggleMinigameObjects4= [];
+gdjs.MarblesCode.GDFullScreenToggleMinigameObjects5= [];
+gdjs.MarblesCode.GDFullScreenToggleMinigameObjects6= [];
+gdjs.MarblesCode.GDSoundToggleMinigameObjects1= [];
+gdjs.MarblesCode.GDSoundToggleMinigameObjects2= [];
+gdjs.MarblesCode.GDSoundToggleMinigameObjects3= [];
+gdjs.MarblesCode.GDSoundToggleMinigameObjects4= [];
+gdjs.MarblesCode.GDSoundToggleMinigameObjects5= [];
+gdjs.MarblesCode.GDSoundToggleMinigameObjects6= [];
 
 
 gdjs.MarblesCode.eventsList0 = function(runtimeScene) {
@@ -474,7 +486,7 @@ if (isConditionTrue_0) {
 gdjs.MarblesCode.eventsList10 = function(runtimeScene) {
 
 };gdjs.MarblesCode.mapOfGDgdjs_9546MarblesCode_9546GDMarbleObjects2ObjectsGDgdjs_9546MarblesCode_9546GDPlayerMarbleObjects2ObjectsGDgdjs_9546MarblesCode_9546GDComputerMarbleObjects2Objects = Hashtable.newFrom({"Marble": gdjs.MarblesCode.GDMarbleObjects2, "PlayerMarble": gdjs.MarblesCode.GDPlayerMarbleObjects2, "ComputerMarble": gdjs.MarblesCode.GDComputerMarbleObjects2});
-gdjs.MarblesCode.userFunc0xea29b0 = function GDJSInlineCode(runtimeScene) {
+gdjs.MarblesCode.userFunc0xb42798 = function GDJSInlineCode(runtimeScene) {
 "use strict";
 window.addEventListener("pointerdown", e => { // js method for determining input type
     runtimeScene.getVariables().get("isUsingTouchscreen").setBoolean(e.pointerType == "touch"); // This distinguishes between touch and mouse input
@@ -485,7 +497,7 @@ gdjs.MarblesCode.eventsList11 = function(runtimeScene) {
 {
 
 
-gdjs.MarblesCode.userFunc0xea29b0(runtimeScene);
+gdjs.MarblesCode.userFunc0xb42798(runtimeScene);
 
 }
 
@@ -2648,7 +2660,241 @@ if (isConditionTrue_0) {
 }
 
 
-};gdjs.MarblesCode.eventsList62 = function(runtimeScene) {
+};gdjs.MarblesCode.mapOfGDgdjs_9546MarblesCode_9546GDFullScreenToggleMinigameObjects2Objects = Hashtable.newFrom({"FullScreenToggleMinigame": gdjs.MarblesCode.GDFullScreenToggleMinigameObjects2});
+gdjs.MarblesCode.mapOfGDgdjs_9546MarblesCode_9546GDFullScreenToggleMinigameObjects2Objects = Hashtable.newFrom({"FullScreenToggleMinigame": gdjs.MarblesCode.GDFullScreenToggleMinigameObjects2});
+gdjs.MarblesCode.eventsList62 = function(runtimeScene) {
+
+{
+
+
+let isConditionTrue_0 = false;
+isConditionTrue_0 = false;
+isConditionTrue_0 = !(gdjs.evtTools.window.isFullScreen(runtimeScene));
+if (isConditionTrue_0) {
+gdjs.copyArray(gdjs.MarblesCode.GDFullScreenToggleMinigameObjects2, gdjs.MarblesCode.GDFullScreenToggleMinigameObjects3);
+
+{gdjs.evtTools.window.setFullScreen(runtimeScene, true, true);
+}
+{for(var i = 0, len = gdjs.MarblesCode.GDFullScreenToggleMinigameObjects3.length ;i < len;++i) {
+    gdjs.MarblesCode.GDFullScreenToggleMinigameObjects3[i].getBehavior("Animation").setAnimationName("fullscreen");
+}
+}
+{gdjs.MarblesCode.localVariables[0].getFromIndex(0).setBoolean(false);
+}
+}
+
+}
+
+
+{
+
+
+let isConditionTrue_0 = false;
+isConditionTrue_0 = false;
+isConditionTrue_0 = gdjs.evtTools.window.isFullScreen(runtimeScene);
+if (isConditionTrue_0) {
+isConditionTrue_0 = false;
+{isConditionTrue_0 = gdjs.MarblesCode.localVariables[0].getFromIndex(0).getAsBoolean();
+}
+}
+if (isConditionTrue_0) {
+/* Reuse gdjs.MarblesCode.GDFullScreenToggleMinigameObjects2 */
+{for(var i = 0, len = gdjs.MarblesCode.GDFullScreenToggleMinigameObjects2.length ;i < len;++i) {
+    gdjs.MarblesCode.GDFullScreenToggleMinigameObjects2[i].getBehavior("Animation").setAnimationName("not_fullscreen");
+}
+}
+{gdjs.evtTools.window.setFullScreen(runtimeScene, false, true);
+}
+}
+
+}
+
+
+};gdjs.MarblesCode.eventsList63 = function(runtimeScene) {
+
+{
+
+
+{
+const variables = new gdjs.VariablesContainer();
+{
+const variable = new gdjs.Variable();
+variable.setBoolean(true);
+variables._declare("else", variable);
+}
+gdjs.MarblesCode.localVariables.push(variables);
+}
+let isConditionTrue_0 = false;
+isConditionTrue_0 = false;
+isConditionTrue_0 = gdjs.evtTools.input.isMouseButtonReleased(runtimeScene, "Left");
+if (isConditionTrue_0) {
+
+{ //Subevents
+gdjs.MarblesCode.eventsList62(runtimeScene);} //End of subevents
+}
+gdjs.MarblesCode.localVariables.pop();
+
+}
+
+
+};gdjs.MarblesCode.mapOfGDgdjs_9546MarblesCode_9546GDSoundToggleMinigameObjects2Objects = Hashtable.newFrom({"SoundToggleMinigame": gdjs.MarblesCode.GDSoundToggleMinigameObjects2});
+gdjs.MarblesCode.mapOfGDgdjs_9546MarblesCode_9546GDSoundToggleMinigameObjects1Objects = Hashtable.newFrom({"SoundToggleMinigame": gdjs.MarblesCode.GDSoundToggleMinigameObjects1});
+gdjs.MarblesCode.eventsList64 = function(runtimeScene) {
+
+{
+
+
+let isConditionTrue_0 = false;
+isConditionTrue_0 = false;
+isConditionTrue_0 = gdjs.evtTools.sound.getGlobalVolume(runtimeScene) == 0;
+if (isConditionTrue_0) {
+gdjs.copyArray(gdjs.MarblesCode.GDSoundToggleMinigameObjects1, gdjs.MarblesCode.GDSoundToggleMinigameObjects2);
+
+{gdjs.evtTools.sound.setGlobalVolume(runtimeScene, 100);
+}
+{for(var i = 0, len = gdjs.MarblesCode.GDSoundToggleMinigameObjects2.length ;i < len;++i) {
+    gdjs.MarblesCode.GDSoundToggleMinigameObjects2[i].getBehavior("Animation").setAnimationName("on");
+}
+}
+{gdjs.MarblesCode.localVariables[0].getFromIndex(0).setBoolean(false);
+}
+}
+
+}
+
+
+{
+
+
+let isConditionTrue_0 = false;
+isConditionTrue_0 = false;
+isConditionTrue_0 = gdjs.evtTools.sound.getGlobalVolume(runtimeScene) == 100;
+if (isConditionTrue_0) {
+isConditionTrue_0 = false;
+{isConditionTrue_0 = gdjs.MarblesCode.localVariables[0].getFromIndex(0).getAsBoolean();
+}
+}
+if (isConditionTrue_0) {
+/* Reuse gdjs.MarblesCode.GDSoundToggleMinigameObjects1 */
+{gdjs.evtTools.sound.setGlobalVolume(runtimeScene, 0);
+}
+{for(var i = 0, len = gdjs.MarblesCode.GDSoundToggleMinigameObjects1.length ;i < len;++i) {
+    gdjs.MarblesCode.GDSoundToggleMinigameObjects1[i].getBehavior("Animation").setAnimationName("off");
+}
+}
+}
+
+}
+
+
+};gdjs.MarblesCode.eventsList65 = function(runtimeScene) {
+
+{
+
+
+{
+const variables = new gdjs.VariablesContainer();
+{
+const variable = new gdjs.Variable();
+variable.setBoolean(true);
+variables._declare("else", variable);
+}
+gdjs.MarblesCode.localVariables.push(variables);
+}
+let isConditionTrue_0 = false;
+isConditionTrue_0 = false;
+isConditionTrue_0 = gdjs.evtTools.input.isMouseButtonReleased(runtimeScene, "Left");
+if (isConditionTrue_0) {
+
+{ //Subevents
+gdjs.MarblesCode.eventsList64(runtimeScene);} //End of subevents
+}
+gdjs.MarblesCode.localVariables.pop();
+
+}
+
+
+};gdjs.MarblesCode.eventsList66 = function(runtimeScene) {
+
+{
+
+gdjs.copyArray(runtimeScene.getObjects("FullScreenToggleMinigame"), gdjs.MarblesCode.GDFullScreenToggleMinigameObjects2);
+
+let isConditionTrue_0 = false;
+isConditionTrue_0 = false;
+isConditionTrue_0 = gdjs.evtTools.input.cursorOnObject(gdjs.MarblesCode.mapOfGDgdjs_9546MarblesCode_9546GDFullScreenToggleMinigameObjects2Objects, runtimeScene, true, true);
+if (isConditionTrue_0) {
+/* Reuse gdjs.MarblesCode.GDFullScreenToggleMinigameObjects2 */
+{for(var i = 0, len = gdjs.MarblesCode.GDFullScreenToggleMinigameObjects2.length ;i < len;++i) {
+    gdjs.MarblesCode.GDFullScreenToggleMinigameObjects2[i].getBehavior("Effect").enableEffect("Effect", false);
+}
+}
+}
+
+}
+
+
+{
+
+gdjs.copyArray(runtimeScene.getObjects("FullScreenToggleMinigame"), gdjs.MarblesCode.GDFullScreenToggleMinigameObjects2);
+
+let isConditionTrue_0 = false;
+isConditionTrue_0 = false;
+isConditionTrue_0 = gdjs.evtTools.input.cursorOnObject(gdjs.MarblesCode.mapOfGDgdjs_9546MarblesCode_9546GDFullScreenToggleMinigameObjects2Objects, runtimeScene, true, false);
+if (isConditionTrue_0) {
+/* Reuse gdjs.MarblesCode.GDFullScreenToggleMinigameObjects2 */
+{for(var i = 0, len = gdjs.MarblesCode.GDFullScreenToggleMinigameObjects2.length ;i < len;++i) {
+    gdjs.MarblesCode.GDFullScreenToggleMinigameObjects2[i].getBehavior("Effect").enableEffect("Effect", true);
+}
+}
+
+{ //Subevents
+gdjs.MarblesCode.eventsList63(runtimeScene);} //End of subevents
+}
+
+}
+
+
+{
+
+gdjs.copyArray(runtimeScene.getObjects("SoundToggleMinigame"), gdjs.MarblesCode.GDSoundToggleMinigameObjects2);
+
+let isConditionTrue_0 = false;
+isConditionTrue_0 = false;
+isConditionTrue_0 = gdjs.evtTools.input.cursorOnObject(gdjs.MarblesCode.mapOfGDgdjs_9546MarblesCode_9546GDSoundToggleMinigameObjects2Objects, runtimeScene, true, true);
+if (isConditionTrue_0) {
+/* Reuse gdjs.MarblesCode.GDSoundToggleMinigameObjects2 */
+{for(var i = 0, len = gdjs.MarblesCode.GDSoundToggleMinigameObjects2.length ;i < len;++i) {
+    gdjs.MarblesCode.GDSoundToggleMinigameObjects2[i].getBehavior("Effect").enableEffect("Effect", false);
+}
+}
+}
+
+}
+
+
+{
+
+gdjs.copyArray(runtimeScene.getObjects("SoundToggleMinigame"), gdjs.MarblesCode.GDSoundToggleMinigameObjects1);
+
+let isConditionTrue_0 = false;
+isConditionTrue_0 = false;
+isConditionTrue_0 = gdjs.evtTools.input.cursorOnObject(gdjs.MarblesCode.mapOfGDgdjs_9546MarblesCode_9546GDSoundToggleMinigameObjects1Objects, runtimeScene, true, false);
+if (isConditionTrue_0) {
+/* Reuse gdjs.MarblesCode.GDSoundToggleMinigameObjects1 */
+{for(var i = 0, len = gdjs.MarblesCode.GDSoundToggleMinigameObjects1.length ;i < len;++i) {
+    gdjs.MarblesCode.GDSoundToggleMinigameObjects1[i].getBehavior("Effect").enableEffect("Effect", true);
+}
+}
+
+{ //Subevents
+gdjs.MarblesCode.eventsList65(runtimeScene);} //End of subevents
+}
+
+}
+
+
+};gdjs.MarblesCode.eventsList67 = function(runtimeScene) {
 
 {
 
@@ -2689,6 +2935,13 @@ gdjs.MarblesCode.eventsList60(runtimeScene);
 
 
 gdjs.MarblesCode.eventsList61(runtimeScene);
+}
+
+
+{
+
+
+gdjs.MarblesCode.eventsList66(runtimeScene);
 }
 
 
@@ -2829,8 +3082,20 @@ gdjs.MarblesCode.GDExitMinigameButtonObjects3.length = 0;
 gdjs.MarblesCode.GDExitMinigameButtonObjects4.length = 0;
 gdjs.MarblesCode.GDExitMinigameButtonObjects5.length = 0;
 gdjs.MarblesCode.GDExitMinigameButtonObjects6.length = 0;
+gdjs.MarblesCode.GDFullScreenToggleMinigameObjects1.length = 0;
+gdjs.MarblesCode.GDFullScreenToggleMinigameObjects2.length = 0;
+gdjs.MarblesCode.GDFullScreenToggleMinigameObjects3.length = 0;
+gdjs.MarblesCode.GDFullScreenToggleMinigameObjects4.length = 0;
+gdjs.MarblesCode.GDFullScreenToggleMinigameObjects5.length = 0;
+gdjs.MarblesCode.GDFullScreenToggleMinigameObjects6.length = 0;
+gdjs.MarblesCode.GDSoundToggleMinigameObjects1.length = 0;
+gdjs.MarblesCode.GDSoundToggleMinigameObjects2.length = 0;
+gdjs.MarblesCode.GDSoundToggleMinigameObjects3.length = 0;
+gdjs.MarblesCode.GDSoundToggleMinigameObjects4.length = 0;
+gdjs.MarblesCode.GDSoundToggleMinigameObjects5.length = 0;
+gdjs.MarblesCode.GDSoundToggleMinigameObjects6.length = 0;
 
-gdjs.MarblesCode.eventsList62(runtimeScene);
+gdjs.MarblesCode.eventsList67(runtimeScene);
 gdjs.MarblesCode.GDBackgroundObjects1.length = 0;
 gdjs.MarblesCode.GDBackgroundObjects2.length = 0;
 gdjs.MarblesCode.GDBackgroundObjects3.length = 0;
@@ -2963,6 +3228,18 @@ gdjs.MarblesCode.GDExitMinigameButtonObjects3.length = 0;
 gdjs.MarblesCode.GDExitMinigameButtonObjects4.length = 0;
 gdjs.MarblesCode.GDExitMinigameButtonObjects5.length = 0;
 gdjs.MarblesCode.GDExitMinigameButtonObjects6.length = 0;
+gdjs.MarblesCode.GDFullScreenToggleMinigameObjects1.length = 0;
+gdjs.MarblesCode.GDFullScreenToggleMinigameObjects2.length = 0;
+gdjs.MarblesCode.GDFullScreenToggleMinigameObjects3.length = 0;
+gdjs.MarblesCode.GDFullScreenToggleMinigameObjects4.length = 0;
+gdjs.MarblesCode.GDFullScreenToggleMinigameObjects5.length = 0;
+gdjs.MarblesCode.GDFullScreenToggleMinigameObjects6.length = 0;
+gdjs.MarblesCode.GDSoundToggleMinigameObjects1.length = 0;
+gdjs.MarblesCode.GDSoundToggleMinigameObjects2.length = 0;
+gdjs.MarblesCode.GDSoundToggleMinigameObjects3.length = 0;
+gdjs.MarblesCode.GDSoundToggleMinigameObjects4.length = 0;
+gdjs.MarblesCode.GDSoundToggleMinigameObjects5.length = 0;
+gdjs.MarblesCode.GDSoundToggleMinigameObjects6.length = 0;
 
 
 return;
