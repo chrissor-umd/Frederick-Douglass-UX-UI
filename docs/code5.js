@@ -543,23 +543,7 @@ gdjs.Photo_32PuzzleCode.eventsList8 = function(runtimeScene) {
 
 let isConditionTrue_0 = false;
 isConditionTrue_0 = false;
-{let isConditionTrue_1 = false;
-isConditionTrue_0 = false;
-{
-isConditionTrue_1 = gdjs.evtTools.input.isMouseButtonReleased(runtimeScene, "Left");
-if(isConditionTrue_1) {
-    isConditionTrue_0 = true;
-}
-}
-{
-isConditionTrue_1 = gdjs.evtTools.input.hasTouchEnded(runtimeScene, 2);
-if(isConditionTrue_1) {
-    isConditionTrue_0 = true;
-}
-}
-{
-}
-}
+isConditionTrue_0 = gdjs.evtTools.input.isMouseButtonReleased(runtimeScene, "Left");
 if (isConditionTrue_0) {
 gdjs.copyArray(runtimeScene.getObjects("LeaveButton"), gdjs.Photo_32PuzzleCode.GDLeaveButtonObjects2);
 gdjs.copyArray(runtimeScene.getObjects("StayButton"), gdjs.Photo_32PuzzleCode.GDStayButtonObjects2);
@@ -778,7 +762,7 @@ gdjs.Photo_32PuzzleCode.eventsList11(runtimeScene);} //End of subevents
 
 {
 
-gdjs.copyArray(runtimeScene.getObjects("PhotoScrap"), gdjs.Photo_32PuzzleCode.GDPhotoScrapObjects1);
+/* Reuse gdjs.Photo_32PuzzleCode.GDPhotoScrapObjects1 */
 
 for (gdjs.Photo_32PuzzleCode.forEachIndex2 = 0;gdjs.Photo_32PuzzleCode.forEachIndex2 < gdjs.Photo_32PuzzleCode.GDPhotoScrapObjects1.length;++gdjs.Photo_32PuzzleCode.forEachIndex2) {
 gdjs.Photo_32PuzzleCode.GDPhotoScrapObjects2.length = 0;
@@ -803,7 +787,8 @@ if (true) {
 {
 
 gdjs.copyArray(runtimeScene.getObjects("BlankSpace"), gdjs.Photo_32PuzzleCode.GDBlankSpaceObjects2);
-gdjs.copyArray(runtimeScene.getObjects("PhotoScrap"), gdjs.Photo_32PuzzleCode.GDPhotoScrapObjects2);
+gdjs.copyArray(gdjs.Photo_32PuzzleCode.GDPhotoScrapObjects1, gdjs.Photo_32PuzzleCode.GDPhotoScrapObjects2);
+
 
 gdjs.Photo_32PuzzleCode.forEachTotalCount3 = 0;
 gdjs.Photo_32PuzzleCode.forEachObjects3.length = 0;
@@ -941,7 +926,7 @@ gdjs.Photo_32PuzzleCode.eventsList15(runtimeScene);} //End of subevents
 {
 
 gdjs.copyArray(runtimeScene.getObjects("BlankSpace"), gdjs.Photo_32PuzzleCode.GDBlankSpaceObjects2);
-gdjs.Photo_32PuzzleCode.GDPhotoScrapObjects2.length = 0;
+gdjs.copyArray(gdjs.Photo_32PuzzleCode.GDPhotoScrapObjects1, gdjs.Photo_32PuzzleCode.GDPhotoScrapObjects2);
 
 
 let isConditionTrue_0 = false;
@@ -963,7 +948,8 @@ isConditionTrue_0 = false;
 {
 gdjs.copyArray(gdjs.Photo_32PuzzleCode.GDBlankSpaceObjects2, gdjs.Photo_32PuzzleCode.GDBlankSpaceObjects3);
 
-gdjs.copyArray(runtimeScene.getObjects("PhotoScrap"), gdjs.Photo_32PuzzleCode.GDPhotoScrapObjects3);
+gdjs.copyArray(gdjs.Photo_32PuzzleCode.GDPhotoScrapObjects1, gdjs.Photo_32PuzzleCode.GDPhotoScrapObjects3);
+
 {let isConditionTrue_2 = false;
 isConditionTrue_2 = false;
 for (var i = 0, k = 0, l = gdjs.Photo_32PuzzleCode.GDPhotoScrapObjects3.length;i<l;++i) {
@@ -1053,7 +1039,8 @@ if(isConditionTrue_1) {
 {
 gdjs.copyArray(gdjs.Photo_32PuzzleCode.GDBlankSpaceObjects2, gdjs.Photo_32PuzzleCode.GDBlankSpaceObjects3);
 
-gdjs.copyArray(runtimeScene.getObjects("PhotoScrap"), gdjs.Photo_32PuzzleCode.GDPhotoScrapObjects3);
+gdjs.copyArray(gdjs.Photo_32PuzzleCode.GDPhotoScrapObjects1, gdjs.Photo_32PuzzleCode.GDPhotoScrapObjects3);
+
 {let isConditionTrue_2 = false;
 isConditionTrue_2 = false;
 for (var i = 0, k = 0, l = gdjs.Photo_32PuzzleCode.GDPhotoScrapObjects3.length;i<l;++i) {
@@ -1193,29 +1180,16 @@ gdjs.Photo_32PuzzleCode.localVariables.pop();
 
 
 let isConditionTrue_0 = false;
-{
-gdjs.copyArray(runtimeScene.getObjects("PhotoScrap"), gdjs.Photo_32PuzzleCode.GDPhotoScrapObjects2);
-{gdjs.evtsExt__CursorType__ChangeCursorType.func(runtimeScene, "default", null);
-}
-{for(var i = 0, len = gdjs.Photo_32PuzzleCode.GDPhotoScrapObjects2.length ;i < len;++i) {
-    gdjs.Photo_32PuzzleCode.GDPhotoScrapObjects2[i].getBehavior("Effect").setEffectStringParameter("outline", "color", "255;255;255");
-}
-}
-{for(var i = 0, len = gdjs.Photo_32PuzzleCode.GDPhotoScrapObjects2.length ;i < len;++i) {
-    gdjs.Photo_32PuzzleCode.GDPhotoScrapObjects2[i].setZOrder(0);
-}
-}
-}
-
-}
-
-
-{
-
-
-let isConditionTrue_0 = false;
 isConditionTrue_0 = false;
 {isConditionTrue_0 = !runtimeScene.getScene().getVariables().getFromIndex(2).getAsBoolean();
+}
+if (isConditionTrue_0) {
+isConditionTrue_0 = false;
+isConditionTrue_0 = !(gdjs.evtTools.camera.layerIsVisible(runtimeScene, "ExitPrompt"));
+if (isConditionTrue_0) {
+isConditionTrue_0 = false;
+isConditionTrue_0 = !(gdjs.evtTools.camera.layerIsVisible(runtimeScene, "Tutorial"));
+}
 }
 if (isConditionTrue_0) {
 
@@ -1227,6 +1201,32 @@ gdjs.Photo_32PuzzleCode.eventsList17(runtimeScene);} //End of subevents
 
 
 };gdjs.Photo_32PuzzleCode.eventsList19 = function(runtimeScene) {
+
+{
+
+
+let isConditionTrue_0 = false;
+{
+gdjs.copyArray(runtimeScene.getObjects("PhotoScrap"), gdjs.Photo_32PuzzleCode.GDPhotoScrapObjects1);
+{gdjs.evtsExt__CursorType__ChangeCursorType.func(runtimeScene, "default", null);
+}
+{for(var i = 0, len = gdjs.Photo_32PuzzleCode.GDPhotoScrapObjects1.length ;i < len;++i) {
+    gdjs.Photo_32PuzzleCode.GDPhotoScrapObjects1[i].getBehavior("Effect").setEffectStringParameter("outline", "color", "255;255;255");
+}
+}
+{for(var i = 0, len = gdjs.Photo_32PuzzleCode.GDPhotoScrapObjects1.length ;i < len;++i) {
+    gdjs.Photo_32PuzzleCode.GDPhotoScrapObjects1[i].setZOrder(0);
+}
+}
+
+{ //Subevents
+gdjs.Photo_32PuzzleCode.eventsList18(runtimeScene);} //End of subevents
+}
+
+}
+
+
+};gdjs.Photo_32PuzzleCode.eventsList20 = function(runtimeScene) {
 
 {
 
@@ -1252,7 +1252,7 @@ if (isConditionTrue_0) {
 }
 
 
-};gdjs.Photo_32PuzzleCode.eventsList20 = function(runtimeScene) {
+};gdjs.Photo_32PuzzleCode.eventsList21 = function(runtimeScene) {
 
 {
 
@@ -1266,7 +1266,7 @@ isConditionTrue_0 = false;
 isConditionTrue_0 = gdjs.evtTools.runtimeScene.getTimerElapsedTimeInSecondsOrNaN(runtimeScene, "gameOver") >= 3.5;
 if (isConditionTrue_0) {
 isConditionTrue_0 = false;
-{isConditionTrue_0 = runtimeScene.getOnceTriggers().triggerOnce(16570524);
+{isConditionTrue_0 = runtimeScene.getOnceTriggers().triggerOnce(16629052);
 }
 }
 }
@@ -1306,13 +1306,13 @@ isConditionTrue_0 = gdjs.evtTools.camera.layerIsVisible(runtimeScene, "WinPopup"
 if (isConditionTrue_0) {
 
 { //Subevents
-gdjs.Photo_32PuzzleCode.eventsList19(runtimeScene);} //End of subevents
+gdjs.Photo_32PuzzleCode.eventsList20(runtimeScene);} //End of subevents
 }
 
 }
 
 
-};gdjs.Photo_32PuzzleCode.eventsList21 = function(runtimeScene) {
+};gdjs.Photo_32PuzzleCode.eventsList22 = function(runtimeScene) {
 
 {
 
@@ -1338,14 +1338,21 @@ gdjs.Photo_32PuzzleCode.eventsList10(runtimeScene);
 {
 
 
-gdjs.Photo_32PuzzleCode.eventsList18(runtimeScene);
+gdjs.Photo_32PuzzleCode.eventsList19(runtimeScene);
 }
 
 
 {
 
 
-gdjs.Photo_32PuzzleCode.eventsList20(runtimeScene);
+
+}
+
+
+{
+
+
+gdjs.Photo_32PuzzleCode.eventsList21(runtimeScene);
 }
 
 
@@ -1403,7 +1410,7 @@ gdjs.Photo_32PuzzleCode.GDExitMinigameButtonObjects2.length = 0;
 gdjs.Photo_32PuzzleCode.GDExitMinigameButtonObjects3.length = 0;
 gdjs.Photo_32PuzzleCode.GDExitMinigameButtonObjects4.length = 0;
 
-gdjs.Photo_32PuzzleCode.eventsList21(runtimeScene);
+gdjs.Photo_32PuzzleCode.eventsList22(runtimeScene);
 gdjs.Photo_32PuzzleCode.GDPhotoScrapObjects1.length = 0;
 gdjs.Photo_32PuzzleCode.GDPhotoScrapObjects2.length = 0;
 gdjs.Photo_32PuzzleCode.GDPhotoScrapObjects3.length = 0;

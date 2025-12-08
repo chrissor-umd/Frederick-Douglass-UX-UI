@@ -1022,11 +1022,6 @@
       "stringProperties": [],
       "initialVariables": [
         {
-          "name": "showPopup",
-          "type": "boolean",
-          "value": false
-        },
-        {
           "name": "targetInteraction",
           "type": "string",
           "value": "MarblesMinigame"
@@ -1293,7 +1288,7 @@
     "gridColor": 10401023,
     "gridAlpha": 0.8,
     "snap": true,
-    "zoomFactor": 0.7619362677197727,
+    "zoomFactor": 0.43357743047024466,
     "windowMask": false,
     "selectedLayer": "SceneObjects"
   }

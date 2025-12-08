@@ -60,6 +60,44 @@
       "numberProperties": [],
       "stringProperties": [],
       "initialVariables": []
+    },
+    {
+      "angle": 0,
+      "customSize": true,
+      "depth": 1,
+      "height": 64,
+      "keepRatio": true,
+      "layer": "SceneObjects",
+      "name": "ItemObject",
+      "persistentUuid": "931797c5-a24b-4f2c-9b82-68e27c5a7142",
+      "width": 64,
+      "x": 256,
+      "y": 544,
+      "zOrder": 6,
+      "numberProperties": [
+        {
+          "name": "animation",
+          "value": 1
+        }
+      ],
+      "stringProperties": [],
+      "initialVariables": [
+        {
+          "name": "infoText",
+          "type": "string",
+          "value": "Frederick Douglass was actually the most photographed American of the 19th century. Believing it to be an important tool for civil rights due to its unbiased capture of reality, Douglass never smiled for photos in order to counter racist depictions of African-Americans at the time."
+        },
+        {
+          "name": "itemName",
+          "type": "string",
+          "value": "Scrap of Photo"
+        },
+        {
+          "name": "itemDescription",
+          "type": "string",
+          "value": "A torn piece of a photo of Frederick Douglass."
+        }
+      ]
     }
   ],
   "editionSettings": {
@@ -74,7 +112,7 @@
     "gridColor": 10401023,
     "gridAlpha": 0.8,
     "snap": true,
-    "zoomFactor": 0.47893418845352703,
+    "zoomFactor": 0.8141881203709952,
     "windowMask": false,
     "selectedLayer": "SceneObjects"
   }

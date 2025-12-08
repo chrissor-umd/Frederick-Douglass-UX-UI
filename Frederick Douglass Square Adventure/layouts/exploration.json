@@ -20,7 +20,7 @@
     "gridColor": 10401023,
     "gridAlpha": 0.4,
     "snap": true,
-    "zoomFactor": 0.23089183385224935,
+    "zoomFactor": 0.18305734955560082,
     "windowMask": false,
     "selectedLayer": ""
   },
@@ -219,7 +219,7 @@
         }
       ],
       "behaviors": [],
-      "string": ": 0",
+      "string": ": 0/0",
       "font": "assets/fonts/BilkoOpti-Regular.otf",
       "textAlignment": "left",
       "characterSize": 30,
@@ -242,7 +242,7 @@
         "shadowOpacity": 127,
         "smoothed": true,
         "underlined": false,
-        "text": ": 0",
+        "text": ": 0/0",
         "font": "assets/fonts/BilkoOpti-Regular.otf",
         "textAlignment": "left",
         "verticalTextAlignment": "center",
@@ -710,7 +710,6 @@
       "variables": [
         {
           "name": "enabled",
-          "persistentUuid": "d5bc98c3-68ce-41af-8e3a-269feea0c04f",
           "type": "boolean",
           "value": true
         }
@@ -1986,7 +1985,6 @@
       "variables": [
         {
           "name": "enabled",
-          "persistentUuid": "d5bc98c3-68ce-41af-8e3a-269feea0c04f",
           "type": "boolean",
           "value": true
         }
@@ -2374,7 +2372,7 @@
           "value": true
         },
         {
-          "name": "showPopup",
+          "name": "showPickupPrompt",
           "type": "boolean",
           "value": true
         },
@@ -3096,7 +3094,6 @@
         },
         {
           "name": "enabled",
-          "persistentUuid": "d5bc98c3-68ce-41af-8e3a-269feea0c04f",
           "type": "boolean",
           "value": true
         },
@@ -3106,7 +3103,18 @@
           "value": ""
         }
       ],
-      "effects": [],
+      "effects": [
+        {
+          "disabled": true,
+          "effectType": "Brightness",
+          "name": "Disabled",
+          "doubleParameters": {
+            "brightness": 0.2
+          },
+          "stringParameters": {},
+          "booleanParameters": {}
+        }
+      ],
       "behaviors": [],
       "content": {
         "LeftPadding": 16,
@@ -3474,7 +3482,7 @@
           "name": "statueRemaining",
           "doubleParameters": {
             "padding": 0,
-            "thickness": 2
+            "thickness": 3
           },
           "stringParameters": {
             "color": "226;24;51"
@@ -3815,7 +3823,7 @@
       ]
     },
     {
-      "adaptCollisionMaskAutomatically": true,
+      "adaptCollisionMaskAutomatically": false,
       "assetStoreId": "",
       "name": "CycleMapNext",
       "type": "Sprite",
@@ -3823,7 +3831,6 @@
       "variables": [
         {
           "name": "enabled",
-          "persistentUuid": "d5bc98c3-68ce-41af-8e3a-269feea0c04f",
           "type": "boolean",
           "value": true
         }
@@ -3858,7 +3865,7 @@
               "timeBetweenFrames": 0.08,
               "sprites": [
                 {
-                  "hasCustomCollisionMask": true,
+                  "hasCustomCollisionMask": false,
                   "image": "assets\\ui\\arrow_right.png",
                   "points": [],
                   "originPoint": {
@@ -3872,26 +3879,7 @@
                     "x": 0,
                     "y": 0
                   },
-                  "customCollisionMask": [
-                    [
-                      {
-                        "x": 5,
-                        "y": 5
-                      },
-                      {
-                        "x": 91,
-                        "y": 5
-                      },
-                      {
-                        "x": 91,
-                        "y": 91
-                      },
-                      {
-                        "x": 5,
-                        "y": 91
-                      }
-                    ]
-                  ]
+                  "customCollisionMask": []
                 }
               ]
             }
@@ -3900,7 +3888,7 @@
       ]
     },
     {
-      "adaptCollisionMaskAutomatically": true,
+      "adaptCollisionMaskAutomatically": false,
       "assetStoreId": "",
       "name": "CycleMapPrevious",
       "type": "Sprite",
@@ -3908,7 +3896,6 @@
       "variables": [
         {
           "name": "enabled",
-          "persistentUuid": "d5bc98c3-68ce-41af-8e3a-269feea0c04f",
           "type": "boolean",
           "value": true
         }
@@ -3942,7 +3929,7 @@
               "timeBetweenFrames": 0.08,
               "sprites": [
                 {
-                  "hasCustomCollisionMask": true,
+                  "hasCustomCollisionMask": false,
                   "image": "assets\\ui\\arrow_left.png",
                   "points": [],
                   "originPoint": {
@@ -3956,26 +3943,7 @@
                     "x": 0,
                     "y": 0
                   },
-                  "customCollisionMask": [
-                    [
-                      {
-                        "x": 5,
-                        "y": 5
-                      },
-                      {
-                        "x": 91,
-                        "y": 5
-                      },
-                      {
-                        "x": 91,
-                        "y": 91
-                      },
-                      {
-                        "x": 5,
-                        "y": 91
-                      }
-                    ]
-                  ]
+                  "customCollisionMask": []
                 }
               ]
             }
@@ -4009,7 +3977,7 @@
               "timeBetweenFrames": 0.08,
               "sprites": [
                 {
-                  "hasCustomCollisionMask": true,
+                  "hasCustomCollisionMask": false,
                   "image": "assets\\ui\\x.png",
                   "points": [],
                   "originPoint": {
@@ -4183,7 +4151,7 @@
       ]
     },
     {
-      "adaptCollisionMaskAutomatically": true,
+      "adaptCollisionMaskAutomatically": false,
       "assetStoreId": "",
       "name": "SoundToggle",
       "type": "Sprite",
@@ -4201,7 +4169,7 @@
               "timeBetweenFrames": 0.08,
               "sprites": [
                 {
-                  "hasCustomCollisionMask": true,
+                  "hasCustomCollisionMask": false,
                   "image": "assets\\ui\\sound_on.png",
                   "points": [],
                   "originPoint": {
@@ -4215,26 +4183,7 @@
                     "x": 0,
                     "y": 0
                   },
-                  "customCollisionMask": [
-                    [
-                      {
-                        "x": 6,
-                        "y": 10
-                      },
-                      {
-                        "x": 50,
-                        "y": 10
-                      },
-                      {
-                        "x": 50,
-                        "y": 54
-                      },
-                      {
-                        "x": 6,
-                        "y": 54
-                      }
-                    ]
-                  ]
+                  "customCollisionMask": []
                 }
               ]
             }
@@ -4249,7 +4198,7 @@
               "timeBetweenFrames": 0.08,
               "sprites": [
                 {
-                  "hasCustomCollisionMask": true,
+                  "hasCustomCollisionMask": false,
                   "image": "assets\\ui\\sound_off.png",
                   "points": [],
                   "originPoint": {
@@ -4263,26 +4212,77 @@
                     "x": 0,
                     "y": 0
                   },
-                  "customCollisionMask": [
-                    [
-                      {
-                        "x": 6,
-                        "y": 10
-                      },
-                      {
-                        "x": 50,
-                        "y": 10
-                      },
-                      {
-                        "x": 50,
-                        "y": 54
-                      },
-                      {
-                        "x": 6,
-                        "y": 54
-                      }
-                    ]
-                  ]
+                  "customCollisionMask": []
+                }
+              ]
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "adaptCollisionMaskAutomatically": false,
+      "assetStoreId": "",
+      "name": "FullscreenToggle",
+      "type": "Sprite",
+      "updateIfNotVisible": false,
+      "variables": [],
+      "effects": [],
+      "behaviors": [],
+      "animations": [
+        {
+          "name": "not_fullscreen",
+          "useMultipleDirections": false,
+          "directions": [
+            {
+              "looping": false,
+              "timeBetweenFrames": 0.08,
+              "sprites": [
+                {
+                  "hasCustomCollisionMask": false,
+                  "image": "assets\\ui\\not_fullscreen.png",
+                  "points": [],
+                  "originPoint": {
+                    "name": "origine",
+                    "x": 0,
+                    "y": 0
+                  },
+                  "centerPoint": {
+                    "automatic": true,
+                    "name": "centre",
+                    "x": 0,
+                    "y": 0
+                  },
+                  "customCollisionMask": []
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "name": "fullscreen",
+          "useMultipleDirections": false,
+          "directions": [
+            {
+              "looping": false,
+              "timeBetweenFrames": 0.08,
+              "sprites": [
+                {
+                  "hasCustomCollisionMask": false,
+                  "image": "assets\\ui\\fullscreen.png",
+                  "points": [],
+                  "originPoint": {
+                    "name": "origine",
+                    "x": 0,
+                    "y": 0
+                  },
+                  "centerPoint": {
+                    "automatic": true,
+                    "name": "centre",
+                    "x": 0,
+                    "y": 0
+                  },
+                  "customCollisionMask": []
                 }
               ]
             }
@@ -4294,29 +4294,6 @@
   "objectsFolderStructure": {
     "folderName": "__ROOT",
     "children": [
-      {
-        "folderName": "InspectionObjects",
-        "children": [
-          {
-            "objectName": "PreviousInspection"
-          },
-          {
-            "objectName": "InspectionText"
-          },
-          {
-            "objectName": "InspectionImage"
-          },
-          {
-            "objectName": "InspectionImageBorder"
-          },
-          {
-            "objectName": "ExitInspection"
-          },
-          {
-            "objectName": "InspectionBackground"
-          }
-        ]
-      },
       {
         "folderName": "UI",
         "children": [
@@ -4414,16 +4391,39 @@
             "objectName": "SoundToggle"
           },
           {
-            "objectName": "VisibilityToggle"
+            "objectName": "FullscreenToggle"
           },
           {
-            "objectName": "DebugText"
+            "objectName": "VisibilityToggle"
           },
           {
             "objectName": "UIBackground"
           },
           {
             "objectName": "FadeScreen"
+          }
+        ]
+      },
+      {
+        "folderName": "InspectionObjects",
+        "children": [
+          {
+            "objectName": "PreviousInspection"
+          },
+          {
+            "objectName": "ExitInspection"
+          },
+          {
+            "objectName": "InspectionText"
+          },
+          {
+            "objectName": "InspectionImage"
+          },
+          {
+            "objectName": "InspectionImageBorder"
+          },
+          {
+            "objectName": "InspectionBackground"
           }
         ]
       },
@@ -4462,7 +4462,15 @@
         ]
       },
       {
-        "objectName": "DebugCamera"
+        "folderName": "Debug",
+        "children": [
+          {
+            "objectName": "DebugText"
+          },
+          {
+            "objectName": "DebugCamera"
+          }
+        ]
       }
     ]
   },
@@ -4619,34 +4627,6 @@
       "followBaseLayerCamera": false,
       "isLightingLayer": false,
       "isLocked": false,
-      "name": "ActiveDuringInspectionUI",
-      "renderingType": "2d",
-      "visibility": true,
-      "cameras": [],
-      "effects": [
-        {
-          "effectType": "Brightness",
-          "name": "Darken",
-          "doubleParameters": {
-            "brightness": 0.5
-          },
-          "stringParameters": {},
-          "booleanParameters": {}
-        }
-      ]
-    },
-    {
-      "ambientLightColorB": 200,
-      "ambientLightColorG": 200,
-      "ambientLightColorR": 200,
-      "camera2DPlaneMaxDrawingDistance": 5000,
-      "camera3DFarPlaneDistance": 10000,
-      "camera3DFieldOfView": 45,
-      "camera3DNearPlaneDistance": 3,
-      "cameraType": "",
-      "followBaseLayerCamera": false,
-      "isLightingLayer": false,
-      "isLocked": false,
       "name": "InspectionObjects",
       "renderingType": "2d",
       "visibility": true,
@@ -4676,6 +4656,24 @@
       "isLightingLayer": false,
       "isLocked": false,
       "name": "InspectionUI",
+      "renderingType": "2d",
+      "visibility": true,
+      "cameras": [],
+      "effects": []
+    },
+    {
+      "ambientLightColorB": 200,
+      "ambientLightColorG": 200,
+      "ambientLightColorR": 200,
+      "camera2DPlaneMaxDrawingDistance": 5000,
+      "camera3DFarPlaneDistance": 10000,
+      "camera3DFieldOfView": 45,
+      "camera3DNearPlaneDistance": 3,
+      "cameraType": "",
+      "followBaseLayerCamera": false,
+      "isLightingLayer": false,
+      "isLocked": false,
+      "name": "PersistentUI",
       "renderingType": "2d",
       "visibility": true,
       "cameras": [],

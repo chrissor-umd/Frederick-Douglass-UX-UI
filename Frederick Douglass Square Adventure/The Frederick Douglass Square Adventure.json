@@ -60,8 +60,8 @@
     "loadingScreen": {
       "backgroundColor": 0,
       "backgroundFadeInDuration": 0.2,
-      "backgroundImageResourceName": "",
-      "gdevelopLogoStyle": "light",
+      "backgroundImageResourceName": "assets\\images\\main_menu_blur.jpg",
+      "gdevelopLogoStyle": "light-colored",
       "logoAndProgressFadeInDuration": 0.2,
       "logoAndProgressLogoFadeInDelay": 0,
       "minDuration": 2,
@@ -70,7 +70,7 @@
       "progressBarMaxWidth": 200,
       "progressBarMinWidth": 40,
       "progressBarWidthPercent": 30,
-      "showGDevelopSplash": false,
+      "showGDevelopSplash": true,
       "showProgressBar": true
     },
     "watermark": {
@@ -1283,12 +1283,44 @@
         "name": "assets\\ui\\x.png",
         "smoothed": true,
         "userAdded": false
+      },
+      {
+        "file": "assets/ui/fullscreen.png",
+        "kind": "image",
+        "metadata": "",
+        "name": "assets\\ui\\fullscreen.png",
+        "smoothed": true,
+        "userAdded": false
+      },
+      {
+        "file": "assets/ui/not_fullscreen.png",
+        "kind": "image",
+        "metadata": "",
+        "name": "assets\\ui\\not_fullscreen.png",
+        "smoothed": true,
+        "userAdded": false
+      },
+      {
+        "file": "assets/images/main_menu.JPG",
+        "kind": "image",
+        "metadata": "",
+        "name": "assets\\images\\main_menu.JPG",
+        "smoothed": true,
+        "userAdded": false
+      },
+      {
+        "file": "assets/images/main_menu_blur.jpg",
+        "kind": "image",
+        "metadata": "",
+        "name": "assets\\images\\main_menu_blur.jpg",
+        "smoothed": true,
+        "userAdded": false
       }
     ]
   },
   "objects": [
     {
-      "adaptCollisionMaskAutomatically": true,
+      "adaptCollisionMaskAutomatically": false,
       "assetStoreId": "",
       "name": "ExitMinigameButton",
       "type": "Sprite",
@@ -1296,7 +1328,6 @@
       "variables": [
         {
           "name": "enabled",
-          "persistentUuid": "d5bc98c3-68ce-41af-8e3a-269feea0c04f",
           "type": "boolean",
           "value": true
         }
@@ -1332,7 +1363,7 @@
               "timeBetweenFrames": 0.08,
               "sprites": [
                 {
-                  "hasCustomCollisionMask": true,
+                  "hasCustomCollisionMask": false,
                   "image": "assets/ui/x.png",
                   "points": [],
                   "originPoint": {
@@ -1346,26 +1377,7 @@
                     "x": 0,
                     "y": 0
                   },
-                  "customCollisionMask": [
-                    [
-                      {
-                        "x": 1,
-                        "y": 2
-                      },
-                      {
-                        "x": 63,
-                        "y": 2
-                      },
-                      {
-                        "x": 63,
-                        "y": 62
-                      },
-                      {
-                        "x": 1,
-                        "y": 62
-                      }
-                    ]
-                  ]
+                  "customCollisionMask": []
                 }
               ]
             }
@@ -1397,7 +1409,7 @@
     {
       "name": "DEBUG",
       "type": "boolean",
-      "value": false
+      "value": true
     },
     {
       "folded": true,

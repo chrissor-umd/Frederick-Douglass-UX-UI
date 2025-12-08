@@ -20,7 +20,7 @@
     "gridColor": 10401023,
     "gridAlpha": 0.8,
     "snap": true,
-    "zoomFactor": 0.6455105703311492,
+    "zoomFactor": 0.5843784410740942,
     "windowMask": false,
     "selectedLayer": "Tutorial4"
   },
@@ -66,13 +66,13 @@
       "angle": 0,
       "customSize": true,
       "depth": 3,
-      "height": 1753,
+      "height": 762,
       "layer": "Background",
       "name": "Main_Menu_Background",
       "persistentUuid": "ba6b1fc4-fb94-40d4-a68c-e8e29e9d1239",
-      "width": 1290,
-      "x": -5,
-      "y": -5,
+      "width": 1312,
+      "x": -16,
+      "y": -16,
       "zOrder": 5,
       "numberProperties": [],
       "stringProperties": [],
@@ -642,7 +642,7 @@
               "sprites": [
                 {
                   "hasCustomCollisionMask": true,
-                  "image": "assets\\images\\FDS Statue Zoom.JPG",
+                  "image": "assets\\images\\main_menu_blur.jpg",
                   "points": [],
                   "originPoint": {
                     "name": "origine",
@@ -667,11 +667,11 @@
                       },
                       {
                         "x": 397,
-                        "y": 540
+                        "y": 223
                       },
                       {
                         "x": 0,
-                        "y": 540
+                        "y": 223
                       }
                     ]
                   ]
