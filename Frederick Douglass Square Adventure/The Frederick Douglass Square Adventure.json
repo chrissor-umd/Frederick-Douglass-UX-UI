@@ -29,33 +29,33 @@
     "minFPS": 20,
     "verticalSync": false,
     "platformSpecificAssets": {
-      "android-icon-144": "",
-      "android-icon-192": "",
-      "android-icon-36": "",
-      "android-icon-48": "",
-      "android-icon-72": "",
-      "android-icon-96": "",
-      "android-windowSplashScreenAnimatedIcon": "",
-      "desktop-icon-512": "assets\\objects\\gold_frederick_douglass_statue.png",
-      "ios-icon-100": "",
-      "ios-icon-1024": "",
-      "ios-icon-114": "",
-      "ios-icon-120": "",
-      "ios-icon-144": "",
-      "ios-icon-152": "",
-      "ios-icon-167": "",
-      "ios-icon-180": "",
-      "ios-icon-20": "",
-      "ios-icon-29": "",
-      "ios-icon-40": "",
-      "ios-icon-50": "",
-      "ios-icon-57": "",
-      "ios-icon-58": "",
-      "ios-icon-60": "",
-      "ios-icon-72": "",
-      "ios-icon-76": "",
-      "ios-icon-80": "",
-      "ios-icon-87": ""
+      "android-icon-144": "assets/icons/android-icon-144.png",
+      "android-icon-192": "assets/icons/android-icon-192.png",
+      "android-icon-36": "assets/icons/android-icon-36.png",
+      "android-icon-48": "assets/icons/android-icon-48.png",
+      "android-icon-72": "assets/icons/android-icon-72.png",
+      "android-icon-96": "assets/icons/android-icon-96.png",
+      "android-windowSplashScreenAnimatedIcon": "assets/icons/android-windowSplashScreenAnimatedIcon.png",
+      "desktop-icon-512": "assets/icons/desktop-icon-512.png",
+      "ios-icon-100": "assets/icons/ios-icon-100.png",
+      "ios-icon-1024": "assets/icons/ios-icon-1024.png",
+      "ios-icon-114": "assets/icons/ios-icon-114.png",
+      "ios-icon-120": "assets/icons/ios-icon-120.png",
+      "ios-icon-144": "assets/icons/ios-icon-144.png",
+      "ios-icon-152": "assets/icons/ios-icon-152.png",
+      "ios-icon-167": "assets/icons/ios-icon-167.png",
+      "ios-icon-180": "assets/icons/ios-icon-180.png",
+      "ios-icon-20": "assets/icons/ios-icon-20.png",
+      "ios-icon-29": "assets/icons/ios-icon-29.png",
+      "ios-icon-40": "assets/icons/ios-icon-40.png",
+      "ios-icon-50": "assets/icons/ios-icon-50.png",
+      "ios-icon-57": "assets/icons/ios-icon-57.png",
+      "ios-icon-58": "assets/icons/ios-icon-58.png",
+      "ios-icon-60": "assets/icons/ios-icon-60.png",
+      "ios-icon-72": "assets/icons/ios-icon-72.png",
+      "ios-icon-76": "assets/icons/ios-icon-76.png",
+      "ios-icon-80": "assets/icons/ios-icon-80.png",
+      "ios-icon-87": "assets/icons/ios-icon-87.png"
     },
     "loadingScreen": {
       "backgroundColor": 0,
@@ -377,14 +377,6 @@
         "userAdded": false
       },
       {
-        "file": "assets/objects/chest_closed.png",
-        "kind": "image",
-        "metadata": "",
-        "name": "assets/objects/chest_closed.png",
-        "smoothed": true,
-        "userAdded": false
-      },
-      {
         "file": "assets/ui/black_background_round.png",
         "kind": "image",
         "metadata": "",
@@ -601,14 +593,6 @@
         "userAdded": false
       },
       {
-        "file": "assets/ui/ui_background_border.png",
-        "kind": "image",
-        "metadata": "",
-        "name": "assets\\ui\\ui_background_border.png",
-        "smoothed": true,
-        "userAdded": false
-      },
-      {
         "file": "assets/sfx/swipe.wav",
         "kind": "audio",
         "metadata": "",
@@ -785,16 +769,6 @@
         "userAdded": false
       },
       {
-        "file": "assets/sfx/button.wav",
-        "kind": "audio",
-        "metadata": "",
-        "name": "assets\\sfx\\button.wav",
-        "preloadAsMusic": false,
-        "preloadAsSound": false,
-        "preloadInCache": false,
-        "userAdded": false
-      },
-      {
         "file": "assets/sfx/close_menu.wav",
         "kind": "audio",
         "metadata": "",
@@ -825,16 +799,6 @@
         "userAdded": false
       },
       {
-        "file": "assets/sfx/ui_pop5.wav",
-        "kind": "audio",
-        "metadata": "",
-        "name": "assets\\sfx\\ui_pop5.wav",
-        "preloadAsMusic": false,
-        "preloadAsSound": false,
-        "preloadInCache": false,
-        "userAdded": false
-      },
-      {
         "file": "assets/sfx/ui_pop4.wav",
         "kind": "audio",
         "metadata": "",
@@ -849,16 +813,6 @@
         "kind": "audio",
         "metadata": "",
         "name": "assets\\sfx\\ui_pop3.wav",
-        "preloadAsMusic": false,
-        "preloadAsSound": false,
-        "preloadInCache": false,
-        "userAdded": false
-      },
-      {
-        "file": "assets/sfx/ui_pop2.wav",
-        "kind": "audio",
-        "metadata": "",
-        "name": "assets\\sfx\\ui_pop2.wav",
         "preloadAsMusic": false,
         "preloadAsSound": false,
         "preloadInCache": false,
@@ -967,16 +921,6 @@
         "kind": "audio",
         "metadata": "",
         "name": "assets/sfx/ui_pop_1_open.wav",
-        "preloadAsMusic": false,
-        "preloadAsSound": false,
-        "preloadInCache": false,
-        "userAdded": false
-      },
-      {
-        "file": "assets/sfx/ui_pop_2_close.wav",
-        "kind": "audio",
-        "metadata": "",
-        "name": "assets/sfx/ui_pop_2_close.wav",
         "preloadAsMusic": false,
         "preloadAsSound": false,
         "preloadInCache": false,
@@ -1301,14 +1245,6 @@
         "userAdded": false
       },
       {
-        "file": "assets/images/main_menu.JPG",
-        "kind": "image",
-        "metadata": "",
-        "name": "assets\\images\\main_menu.JPG",
-        "smoothed": true,
-        "userAdded": false
-      },
-      {
         "file": "assets/images/main_menu_blur.jpg",
         "kind": "image",
         "metadata": "",
@@ -1329,22 +1265,6 @@
         "kind": "image",
         "metadata": "",
         "name": "assets\\images\\Nyumburu Hallway.JPG",
-        "smoothed": true,
-        "userAdded": false
-      },
-      {
-        "file": "assets/images/Nyumburu Upstairs.JPG",
-        "kind": "image",
-        "metadata": "",
-        "name": "assets\\images\\Nyumburu Upstairs.JPG",
-        "smoothed": true,
-        "userAdded": false
-      },
-      {
-        "file": "assets/images/Nyumburu Tree.JPG",
-        "kind": "image",
-        "metadata": "",
-        "name": "assets\\images\\Nyumburu Tree.JPG",
         "smoothed": true,
         "userAdded": false
       },
@@ -1372,6 +1292,222 @@
         "preloadAsMusic": false,
         "preloadAsSound": false,
         "preloadInCache": false,
+        "userAdded": false
+      },
+      {
+        "file": "assets/icons/desktop-icon-512.png",
+        "kind": "image",
+        "metadata": "",
+        "name": "assets/icons/desktop-icon-512.png",
+        "smoothed": true,
+        "userAdded": false
+      },
+      {
+        "file": "assets/icons/android-windowSplashScreenAnimatedIcon.png",
+        "kind": "image",
+        "metadata": "",
+        "name": "assets/icons/android-windowSplashScreenAnimatedIcon.png",
+        "smoothed": true,
+        "userAdded": false
+      },
+      {
+        "file": "assets/icons/android-icon-192.png",
+        "kind": "image",
+        "metadata": "",
+        "name": "assets/icons/android-icon-192.png",
+        "smoothed": true,
+        "userAdded": false
+      },
+      {
+        "file": "assets/icons/android-icon-144.png",
+        "kind": "image",
+        "metadata": "",
+        "name": "assets/icons/android-icon-144.png",
+        "smoothed": true,
+        "userAdded": false
+      },
+      {
+        "file": "assets/icons/android-icon-96.png",
+        "kind": "image",
+        "metadata": "",
+        "name": "assets/icons/android-icon-96.png",
+        "smoothed": true,
+        "userAdded": false
+      },
+      {
+        "file": "assets/icons/android-icon-72.png",
+        "kind": "image",
+        "metadata": "",
+        "name": "assets/icons/android-icon-72.png",
+        "smoothed": true,
+        "userAdded": false
+      },
+      {
+        "file": "assets/icons/android-icon-48.png",
+        "kind": "image",
+        "metadata": "",
+        "name": "assets/icons/android-icon-48.png",
+        "smoothed": true,
+        "userAdded": false
+      },
+      {
+        "file": "assets/icons/android-icon-36.png",
+        "kind": "image",
+        "metadata": "",
+        "name": "assets/icons/android-icon-36.png",
+        "smoothed": true,
+        "userAdded": false
+      },
+      {
+        "file": "assets/icons/ios-icon-1024.png",
+        "kind": "image",
+        "metadata": "",
+        "name": "assets/icons/ios-icon-1024.png",
+        "smoothed": true,
+        "userAdded": false
+      },
+      {
+        "file": "assets/icons/ios-icon-180.png",
+        "kind": "image",
+        "metadata": "",
+        "name": "assets/icons/ios-icon-180.png",
+        "smoothed": true,
+        "userAdded": false
+      },
+      {
+        "file": "assets/icons/ios-icon-167.png",
+        "kind": "image",
+        "metadata": "",
+        "name": "assets/icons/ios-icon-167.png",
+        "smoothed": true,
+        "userAdded": false
+      },
+      {
+        "file": "assets/icons/ios-icon-152.png",
+        "kind": "image",
+        "metadata": "",
+        "name": "assets/icons/ios-icon-152.png",
+        "smoothed": true,
+        "userAdded": false
+      },
+      {
+        "file": "assets/icons/ios-icon-144.png",
+        "kind": "image",
+        "metadata": "",
+        "name": "assets/icons/ios-icon-144.png",
+        "smoothed": true,
+        "userAdded": false
+      },
+      {
+        "file": "assets/icons/ios-icon-120.png",
+        "kind": "image",
+        "metadata": "",
+        "name": "assets/icons/ios-icon-120.png",
+        "smoothed": true,
+        "userAdded": false
+      },
+      {
+        "file": "assets/icons/ios-icon-114.png",
+        "kind": "image",
+        "metadata": "",
+        "name": "assets/icons/ios-icon-114.png",
+        "smoothed": true,
+        "userAdded": false
+      },
+      {
+        "file": "assets/icons/ios-icon-100.png",
+        "kind": "image",
+        "metadata": "",
+        "name": "assets/icons/ios-icon-100.png",
+        "smoothed": true,
+        "userAdded": false
+      },
+      {
+        "file": "assets/icons/ios-icon-87.png",
+        "kind": "image",
+        "metadata": "",
+        "name": "assets/icons/ios-icon-87.png",
+        "smoothed": true,
+        "userAdded": false
+      },
+      {
+        "file": "assets/icons/ios-icon-80.png",
+        "kind": "image",
+        "metadata": "",
+        "name": "assets/icons/ios-icon-80.png",
+        "smoothed": true,
+        "userAdded": false
+      },
+      {
+        "file": "assets/icons/ios-icon-76.png",
+        "kind": "image",
+        "metadata": "",
+        "name": "assets/icons/ios-icon-76.png",
+        "smoothed": true,
+        "userAdded": false
+      },
+      {
+        "file": "assets/icons/ios-icon-72.png",
+        "kind": "image",
+        "metadata": "",
+        "name": "assets/icons/ios-icon-72.png",
+        "smoothed": true,
+        "userAdded": false
+      },
+      {
+        "file": "assets/icons/ios-icon-60.png",
+        "kind": "image",
+        "metadata": "",
+        "name": "assets/icons/ios-icon-60.png",
+        "smoothed": true,
+        "userAdded": false
+      },
+      {
+        "file": "assets/icons/ios-icon-58.png",
+        "kind": "image",
+        "metadata": "",
+        "name": "assets/icons/ios-icon-58.png",
+        "smoothed": true,
+        "userAdded": false
+      },
+      {
+        "file": "assets/icons/ios-icon-57.png",
+        "kind": "image",
+        "metadata": "",
+        "name": "assets/icons/ios-icon-57.png",
+        "smoothed": true,
+        "userAdded": false
+      },
+      {
+        "file": "assets/icons/ios-icon-50.png",
+        "kind": "image",
+        "metadata": "",
+        "name": "assets/icons/ios-icon-50.png",
+        "smoothed": true,
+        "userAdded": false
+      },
+      {
+        "file": "assets/icons/ios-icon-40.png",
+        "kind": "image",
+        "metadata": "",
+        "name": "assets/icons/ios-icon-40.png",
+        "smoothed": true,
+        "userAdded": false
+      },
+      {
+        "file": "assets/icons/ios-icon-29.png",
+        "kind": "image",
+        "metadata": "",
+        "name": "assets/icons/ios-icon-29.png",
+        "smoothed": true,
+        "userAdded": false
+      },
+      {
+        "file": "assets/icons/ios-icon-20.png",
+        "kind": "image",
+        "metadata": "",
+        "name": "assets/icons/ios-icon-20.png",
+        "smoothed": true,
         "userAdded": false
       }
     ]

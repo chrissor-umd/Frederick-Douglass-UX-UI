@@ -3328,7 +3328,7 @@
                     "textG": 0,
                     "textR": 0
                   },
-                  "comment": "Interactions are just an easy way to easily and dynamically allow an InteractionObject (or other objects) to run different code\nbased on the value of its \"targetInteraction\" property and its flags/variables. All this really does is allow me to\navoid having to make a bunch of unique objects for every interaction. !!! If you just want to load an inspection into view without any conditions or extra code, just use an Inspection instead !!!\n\nOnLayoutLoad functions are simply functions that will run automatically whenever the specific layout is loaded. It's useful for checking when players have visited a given area, or if you want something to happen whenever they enter."
+                  "comment": "Interactions are just an easy way to easily and dynamically allow an InteractionObject (or other objects) to run different code\nbased on the value of its \"targetInteraction\" property and its flags/variables. All this really does is allow me to\navoid having to make a bunch of unique objects for every interaction. !!! If you just want to load an inspection into view without any conditions or extra code, just use an InspectionObject instead !!!\n\nOnLayoutLoad functions are simply functions that will run automatically whenever the specific layout is loaded. It's useful for checking when players have visited a given area, or if you want something to happen whenever they enter."
                 },
                 {
                   "colorB": 228,
@@ -3875,6 +3875,7 @@
           "comment": "DEBUG FUNCTIONS FOR TESTING"
         },
         {
+          "disabled": true,
           "type": "BuiltinCommonInstructions::Standard",
           "conditions": [
             {
