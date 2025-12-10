@@ -20,7 +20,7 @@
     "gridColor": 10401023,
     "gridAlpha": 0.8,
     "snap": true,
-    "zoomFactor": 1.2952916551236062,
+    "zoomFactor": 0.689778214010458,
     "windowMask": false,
     "selectedLayer": "Persistent UI"
   },
@@ -105,7 +105,7 @@
     {
       "name": "compInitialChargePercent",
       "type": "number",
-      "value": 25
+      "value": 30
     },
     {
       "name": "compPlaceMarbleAngle",
@@ -169,6 +169,11 @@
     },
     {
       "name": "pointsEarnedThisShot",
+      "type": "number",
+      "value": 0
+    },
+    {
+      "name": "startingMarbleCount",
       "type": "number",
       "value": 0
     }
@@ -336,7 +341,7 @@
       "layer": "UI",
       "name": "PlayerScoreText",
       "persistentUuid": "9044e4b1-7350-4113-a4eb-091502aacee8",
-      "width": 264,
+      "width": 288,
       "x": 76,
       "y": 628,
       "zOrder": 23,
@@ -353,8 +358,8 @@
       "layer": "UI",
       "name": "ComputerScoreText",
       "persistentUuid": "dab50757-5904-41a3-b2ff-f5ca8942dc7c",
-      "width": 336,
-      "x": 868,
+      "width": 360,
+      "x": 844,
       "y": 73,
       "zOrder": 24,
       "numberProperties": [],
@@ -540,7 +545,7 @@
       "layer": "UI",
       "name": "TextBackground",
       "persistentUuid": "f3527f1d-9499-498b-bba1-5cdaa408266c",
-      "width": 312,
+      "width": 336,
       "x": 52,
       "y": 580,
       "zOrder": 20,
@@ -557,8 +562,8 @@
       "layer": "UI",
       "name": "TextBackground",
       "persistentUuid": "e78efad0-fe7b-4436-90ca-42a60da1f60a",
-      "width": 384,
-      "x": 844,
+      "width": 408,
+      "x": 820,
       "y": 28,
       "zOrder": 20,
       "numberProperties": [],
@@ -2689,7 +2694,7 @@
       "leftMargin": 32,
       "name": "PopupBackground",
       "rightMargin": 32,
-      "texture": "assets/ui/ui_background_border.png",
+      "texture": "assets/ui/ui_background_border_gold.png",
       "tiled": false,
       "topMargin": 32,
       "type": "PanelSpriteObject::PanelSprite",
@@ -3682,6 +3687,16 @@
               "parameters": [
                 "",
                 "\"Tutorial\""
+              ]
+            },
+            {
+              "type": {
+                "value": "SetNumberVariable"
+              },
+              "parameters": [
+                "startingMarbleCount",
+                "=",
+                "SceneInstancesCount(Marble)"
               ]
             }
           ],
@@ -5153,6 +5168,7 @@
                       "colorG": 176,
                       "colorR": 74,
                       "creationTime": 0,
+                      "folded": true,
                       "name": "Player Turn",
                       "source": "",
                       "type": "BuiltinCommonInstructions::Group",
@@ -5910,7 +5926,6 @@
                       "colorG": 176,
                       "colorR": 74,
                       "creationTime": 0,
-                      "folded": true,
                       "name": "Computer Turn",
                       "source": "",
                       "type": "BuiltinCommonInstructions::Group",
@@ -6078,7 +6093,7 @@
                                                     "",
                                                     "\"compAimTimer\"",
                                                     "<",
-                                                    "1"
+                                                    "1+compScore/max(1, playerScore)"
                                                   ]
                                                 }
                                               ],
@@ -6203,9 +6218,19 @@
                                                 "value": "SetNumberVariable"
                                               },
                                               "parameters": [
+                                                "chanceToShoot",
+                                                "=",
+                                                "max(45, 20*(playerScore/max(1, compScore)))"
+                                              ]
+                                            },
+                                            {
+                                              "type": {
+                                                "value": "SetNumberVariable"
+                                              },
+                                              "parameters": [
                                                 "compShootMarble",
                                                 "=",
-                                                "RandomInRange(1, 100)"
+                                                "RandomInRange(1, chanceToShoot)"
                                               ]
                                             }
                                           ],
@@ -6372,6 +6397,11 @@
                                               "name": "compShootMarble",
                                               "type": "number",
                                               "value": 1
+                                            },
+                                            {
+                                              "name": "chanceToShoot",
+                                              "type": "number",
+                                              "value": 0
                                             }
                                           ]
                                         },
