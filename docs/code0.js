@@ -95,7 +95,7 @@ gdjs.copyArray(runtimeScene.getObjects("StartButton"), gdjs.Main_32MenuCode.GDSt
 }
 
 
-};gdjs.Main_32MenuCode.userFunc0xd168d0 = function GDJSInlineCode(runtimeScene) {
+};gdjs.Main_32MenuCode.userFunc0xeeb238 = function GDJSInlineCode(runtimeScene) {
 "use strict";
 // We basically just check if the player uses a touchscreen at any point in the main menu.
 // This is to know whether or not the VisibilityEffect should default to Enabled on game start
@@ -110,12 +110,35 @@ gdjs.Main_32MenuCode.eventsList1 = function(runtimeScene) {
 {
 
 
-gdjs.Main_32MenuCode.userFunc0xd168d0(runtimeScene);
+gdjs.Main_32MenuCode.userFunc0xeeb238(runtimeScene);
 
 }
 
 
-};gdjs.Main_32MenuCode.eventsList2 = function(runtimeScene) {
+};gdjs.Main_32MenuCode.asyncCallback14939868 = function (runtimeScene, asyncObjectsList) {
+asyncObjectsList.restoreLocalVariablesContainers(gdjs.Main_32MenuCode.localVariables);
+{gdjs.evtTools.runtimeScene.replaceScene(runtimeScene, "Tutorial", false);
+}
+gdjs.Main_32MenuCode.localVariables.length = 0;
+}
+gdjs.Main_32MenuCode.idToCallbackMap.set(14939868, gdjs.Main_32MenuCode.asyncCallback14939868);
+gdjs.Main_32MenuCode.eventsList2 = function(runtimeScene) {
+
+{
+
+
+{
+{
+const asyncObjectsList = new gdjs.LongLivedObjectsList();
+asyncObjectsList.backupLocalVariablesContainers(gdjs.Main_32MenuCode.localVariables);
+runtimeScene.getAsyncTasksManager().addTask(gdjs.evtTools.runtimeScene.wait(0.1), (runtimeScene) => (gdjs.Main_32MenuCode.asyncCallback14939868(runtimeScene, asyncObjectsList)), 14939868, asyncObjectsList);
+}
+}
+
+}
+
+
+};gdjs.Main_32MenuCode.eventsList3 = function(runtimeScene) {
 
 {
 
@@ -161,7 +184,7 @@ gdjs.copyArray(runtimeScene.getObjects("StartButton"), gdjs.Main_32MenuCode.GDSt
 }
 
 
-};gdjs.Main_32MenuCode.eventsList3 = function(runtimeScene) {
+};gdjs.Main_32MenuCode.eventsList4 = function(runtimeScene) {
 
 {
 
@@ -215,7 +238,7 @@ if (isConditionTrue_0) {
 }
 
 { //Subevents
-gdjs.Main_32MenuCode.eventsList2(runtimeScene);} //End of subevents
+gdjs.Main_32MenuCode.eventsList3(runtimeScene);} //End of subevents
 }
 
 }
@@ -223,7 +246,7 @@ gdjs.Main_32MenuCode.eventsList2(runtimeScene);} //End of subevents
 
 };gdjs.Main_32MenuCode.mapOfGDgdjs_9546Main_959532MenuCode_9546GDFullScreenToggleMinigameObjects2Objects = Hashtable.newFrom({"FullScreenToggleMinigame": gdjs.Main_32MenuCode.GDFullScreenToggleMinigameObjects2});
 gdjs.Main_32MenuCode.mapOfGDgdjs_9546Main_959532MenuCode_9546GDFullScreenToggleMinigameObjects2Objects = Hashtable.newFrom({"FullScreenToggleMinigame": gdjs.Main_32MenuCode.GDFullScreenToggleMinigameObjects2});
-gdjs.Main_32MenuCode.eventsList4 = function(runtimeScene) {
+gdjs.Main_32MenuCode.eventsList5 = function(runtimeScene) {
 
 {
 
@@ -271,7 +294,7 @@ if (isConditionTrue_0) {
 }
 
 
-};gdjs.Main_32MenuCode.eventsList5 = function(runtimeScene) {
+};gdjs.Main_32MenuCode.eventsList6 = function(runtimeScene) {
 
 {
 
@@ -291,7 +314,7 @@ isConditionTrue_0 = gdjs.evtTools.input.isMouseButtonReleased(runtimeScene, "Lef
 if (isConditionTrue_0) {
 
 { //Subevents
-gdjs.Main_32MenuCode.eventsList4(runtimeScene);} //End of subevents
+gdjs.Main_32MenuCode.eventsList5(runtimeScene);} //End of subevents
 }
 gdjs.Main_32MenuCode.localVariables.pop();
 
@@ -300,7 +323,7 @@ gdjs.Main_32MenuCode.localVariables.pop();
 
 };gdjs.Main_32MenuCode.mapOfGDgdjs_9546Main_959532MenuCode_9546GDSoundToggleMinigameObjects2Objects = Hashtable.newFrom({"SoundToggleMinigame": gdjs.Main_32MenuCode.GDSoundToggleMinigameObjects2});
 gdjs.Main_32MenuCode.mapOfGDgdjs_9546Main_959532MenuCode_9546GDSoundToggleMinigameObjects2Objects = Hashtable.newFrom({"SoundToggleMinigame": gdjs.Main_32MenuCode.GDSoundToggleMinigameObjects2});
-gdjs.Main_32MenuCode.eventsList6 = function(runtimeScene) {
+gdjs.Main_32MenuCode.eventsList7 = function(runtimeScene) {
 
 {
 
@@ -348,7 +371,7 @@ if (isConditionTrue_0) {
 }
 
 
-};gdjs.Main_32MenuCode.eventsList7 = function(runtimeScene) {
+};gdjs.Main_32MenuCode.eventsList8 = function(runtimeScene) {
 
 {
 
@@ -368,14 +391,14 @@ isConditionTrue_0 = gdjs.evtTools.input.isMouseButtonReleased(runtimeScene, "Lef
 if (isConditionTrue_0) {
 
 { //Subevents
-gdjs.Main_32MenuCode.eventsList6(runtimeScene);} //End of subevents
+gdjs.Main_32MenuCode.eventsList7(runtimeScene);} //End of subevents
 }
 gdjs.Main_32MenuCode.localVariables.pop();
 
 }
 
 
-};gdjs.Main_32MenuCode.eventsList8 = function(runtimeScene) {
+};gdjs.Main_32MenuCode.eventsList9 = function(runtimeScene) {
 
 {
 
@@ -410,7 +433,7 @@ if (isConditionTrue_0) {
 }
 
 { //Subevents
-gdjs.Main_32MenuCode.eventsList5(runtimeScene);} //End of subevents
+gdjs.Main_32MenuCode.eventsList6(runtimeScene);} //End of subevents
 }
 
 }
@@ -449,7 +472,7 @@ if (isConditionTrue_0) {
 }
 
 { //Subevents
-gdjs.Main_32MenuCode.eventsList7(runtimeScene);} //End of subevents
+gdjs.Main_32MenuCode.eventsList8(runtimeScene);} //End of subevents
 }
 
 }
@@ -523,7 +546,7 @@ gdjs.copyArray(runtimeScene.getObjects("FullScreenToggleMinigame"), gdjs.Main_32
 }
 
 
-};gdjs.Main_32MenuCode.eventsList9 = function(runtimeScene) {
+};gdjs.Main_32MenuCode.eventsList10 = function(runtimeScene) {
 
 {
 
@@ -573,8 +596,9 @@ gdjs.Main_32MenuCode.GDStartButtonObjects1.length = k;
 if (isConditionTrue_0) {
 {gdjs.evtTools.sound.playSound(runtimeScene, "assets\\sfx\\ui_pop3.wav", false, 50, 1);
 }
-{gdjs.evtTools.runtimeScene.replaceScene(runtimeScene, "Tutorial", false);
-}
+
+{ //Subevents
+gdjs.Main_32MenuCode.eventsList2(runtimeScene);} //End of subevents
 }
 
 }
@@ -608,7 +632,7 @@ if (isConditionTrue_0) {
 }
 
 { //Subevents
-gdjs.Main_32MenuCode.eventsList3(runtimeScene);} //End of subevents
+gdjs.Main_32MenuCode.eventsList4(runtimeScene);} //End of subevents
 }
 gdjs.Main_32MenuCode.localVariables.pop();
 
@@ -632,7 +656,7 @@ gdjs.Main_32MenuCode.localVariables.pop();
 {
 
 
-gdjs.Main_32MenuCode.eventsList8(runtimeScene);
+gdjs.Main_32MenuCode.eventsList9(runtimeScene);
 }
 
 
@@ -686,7 +710,7 @@ gdjs.Main_32MenuCode.GDSoundToggleMinigameObjects2.length = 0;
 gdjs.Main_32MenuCode.GDSoundToggleMinigameObjects3.length = 0;
 gdjs.Main_32MenuCode.GDSoundToggleMinigameObjects4.length = 0;
 
-gdjs.Main_32MenuCode.eventsList9(runtimeScene);
+gdjs.Main_32MenuCode.eventsList10(runtimeScene);
 gdjs.Main_32MenuCode.GDTitleObjects1.length = 0;
 gdjs.Main_32MenuCode.GDTitleObjects2.length = 0;
 gdjs.Main_32MenuCode.GDTitleObjects3.length = 0;
