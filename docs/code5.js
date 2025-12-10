@@ -101,7 +101,7 @@ let isConditionTrue_0 = false;
 gdjs.copyArray(runtimeScene.getObjects("PhotoScrap"), gdjs.Photo_32PuzzleCode.GDPhotoScrapObjects3);
 {runtimeScene.getScene().getVariables().getFromIndex(1).getChild("x").setNumber((gdjs.evtTools.camera.getCameraWidth(runtimeScene, "", 0) - ((( gdjs.Photo_32PuzzleCode.GDPhotoScrapObjects3.length === 0 ) ? 0 :gdjs.Photo_32PuzzleCode.GDPhotoScrapObjects3[0].getWidth()) * 4)) / 2);
 }
-{runtimeScene.getScene().getVariables().getFromIndex(1).getChild("y").setNumber((gdjs.evtTools.camera.getCameraHeight(runtimeScene, "", 0) - ((( gdjs.Photo_32PuzzleCode.GDPhotoScrapObjects3.length === 0 ) ? 0 :gdjs.Photo_32PuzzleCode.GDPhotoScrapObjects3[0].getHeight()) * 4)) / 2);
+{runtimeScene.getScene().getVariables().getFromIndex(1).getChild("y").setNumber((gdjs.evtTools.camera.getCameraHeight(runtimeScene, "", 0) - ((( gdjs.Photo_32PuzzleCode.GDPhotoScrapObjects3.length === 0 ) ? 0 :gdjs.Photo_32PuzzleCode.GDPhotoScrapObjects3[0].getHeight()) * 3)) / 2);
 }
 }
 

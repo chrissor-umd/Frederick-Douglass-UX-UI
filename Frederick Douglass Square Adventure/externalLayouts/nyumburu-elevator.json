@@ -1,6 +1,6 @@
 {
   "associatedLayout": "Exploration",
-  "name": "Nyumburu Painting",
+  "name": "Nyumburu Elevator",
   "instances": [
     {
       "angle": 0,
@@ -17,24 +17,23 @@
       "numberProperties": [
         {
           "name": "animation",
-          "value": 23
+          "value": 26
         }
       ],
       "stringProperties": [],
       "initialVariables": []
     },
     {
-      "angle": 270,
+      "angle": 90,
       "customSize": false,
-      "flippedX": true,
       "height": 0,
       "keepRatio": true,
       "layer": "SceneObjects",
       "name": "TransitionObject",
-      "persistentUuid": "9cb78b79-6a6d-469f-a613-fc52579c77c6",
+      "persistentUuid": "f675a0da-b4ef-40c2-b2b5-b3cce563a39d",
       "width": 0,
-      "x": 816,
-      "y": 592,
+      "x": 400,
+      "y": 560,
       "zOrder": 3,
       "numberProperties": [],
       "stringProperties": [],
@@ -42,7 +41,7 @@
         {
           "name": "targetLayout",
           "type": "string",
-          "value": "Nyumburu Hallway"
+          "value": "Nyumburu Main"
         },
         {
           "name": "hoverTooltip",
@@ -56,7 +55,7 @@
             {
               "name": "text",
               "type": "string",
-              "value": "To Hallway"
+              "value": "To Entrance"
             },
             {
               "name": "textAlign",
@@ -79,58 +78,83 @@
     },
     {
       "angle": 0,
-      "customSize": true,
-      "depth": 2,
-      "height": 144,
+      "customSize": false,
+      "flippedX": true,
+      "height": 0,
       "keepRatio": true,
       "layer": "SceneObjects",
-      "name": "StatueCollectible",
-      "persistentUuid": "8951cfc7-26ad-425d-acb6-dcaba67adab5",
-      "width": 144,
-      "x": 224,
-      "y": 240,
-      "zOrder": 4,
+      "name": "TransitionObject",
+      "persistentUuid": "19166fa4-4c55-4963-833a-b8e47e42f6ff",
+      "width": 0,
+      "x": 352,
+      "y": 272,
+      "zOrder": 3,
       "numberProperties": [],
-      "stringProperties": [],
-      "initialVariables": []
-    },
-    {
-      "angle": 0,
-      "customSize": true,
-      "depth": 0,
-      "height": 64,
-      "keepRatio": true,
-      "layer": "SceneObjects",
-      "name": "ItemObject",
-      "persistentUuid": "a43f2b43-1909-4654-a1ad-c82817fe29e5",
-      "width": 64,
-      "x": 880,
-      "y": 464,
-      "zOrder": 5,
-      "numberProperties": [
-        {
-          "name": "animation",
-          "value": 1
-        }
-      ],
       "stringProperties": [],
       "initialVariables": [
         {
-          "name": "itemDescription",
+          "name": "targetLayout",
           "type": "string",
-          "value": "A torn piece of a photo of Frederick Douglass."
+          "value": "Nyumburu Hallway"
         },
         {
-          "name": "itemName",
-          "type": "string",
-          "value": "Scrap of Photo"
+          "name": "hoverTooltip",
+          "type": "structure",
+          "children": [
+            {
+              "name": "fontSize",
+              "type": "number",
+              "value": 25
+            },
+            {
+              "name": "text",
+              "type": "string",
+              "value": "To Floor 1"
+            },
+            {
+              "name": "textAlign",
+              "type": "string",
+              "value": "center"
+            },
+            {
+              "name": "x",
+              "type": "number",
+              "value": 0
+            },
+            {
+              "name": "y",
+              "type": "number",
+              "value": -86
+            }
+          ]
         },
         {
-          "name": "infoText",
+          "name": "targetInteraction",
           "type": "string",
-          "value": "Frederick Douglass was actually the most photographed American of the 19th century. Believing it to be an important tool for civil rights due to its unbiased capture of reality, Douglass never smiled for photos in order to counter racist depictions of African-Americans at the time."
+          "value": "ElevatorDing"
         }
       ]
+    },
+    {
+      "angle": 0,
+      "customSize": false,
+      "height": 0,
+      "keepRatio": true,
+      "layer": "SceneObjects",
+      "name": "ImageProp",
+      "persistentUuid": "b9110a15-270d-4dc8-8fe2-36d055341c9d",
+      "width": 0,
+      "x": 825,
+      "y": 345,
+      "zOrder": 10,
+      "numberProperties": [
+        {
+          "name": "animation",
+          "value": 3
+        }
+      ],
+      "stringProperties": [],
+      "initialVariables": []
     }
   ],
   "editionSettings": {
@@ -145,7 +169,7 @@
     "gridColor": 10401023,
     "gridAlpha": 0.8,
     "snap": true,
-    "zoomFactor": 0.6455105703311513,
+    "zoomFactor": 0.5290357402156869,
     "windowMask": false,
     "selectedLayer": "SceneObjects"
   }

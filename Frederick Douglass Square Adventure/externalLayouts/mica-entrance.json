@@ -75,6 +75,37 @@
           "name": "targetLayout",
           "type": "string",
           "value": "Inside MICA"
+        },
+        {
+          "name": "hoverTooltip",
+          "type": "structure",
+          "children": [
+            {
+              "name": "fontSize",
+              "type": "number",
+              "value": 25
+            },
+            {
+              "name": "text",
+              "type": "string",
+              "value": "Enter MICA"
+            },
+            {
+              "name": "textAlign",
+              "type": "string",
+              "value": "center"
+            },
+            {
+              "name": "x",
+              "type": "number",
+              "value": 0
+            },
+            {
+              "name": "y",
+              "type": "number",
+              "value": -86
+            }
+          ]
         }
       ]
     }

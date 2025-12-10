@@ -1,49 +1,44 @@
 {
   "associatedLayout": "Exploration",
-  "name": "Hornbake Exit",
+  "name": "Nyumburu Main",
   "instances": [
     {
       "angle": 0,
-      "customSize": false,
-      "height": 0,
-      "keepRatio": true,
+      "customSize": true,
+      "depth": 0,
+      "height": 720,
       "layer": "Background",
       "name": "Background",
       "persistentUuid": "f5d0205d-4ccd-4dde-9851-5867884be3e7",
-      "width": 0,
+      "width": 1280,
       "x": 0,
       "y": 0,
       "zOrder": 2,
       "numberProperties": [
         {
           "name": "animation",
-          "value": 3
+          "value": 25
         }
       ],
       "stringProperties": [],
       "initialVariables": []
     },
     {
-      "angle": 90,
+      "angle": 2,
       "customSize": false,
       "flippedX": true,
       "height": 0,
       "keepRatio": true,
       "layer": "SceneObjects",
       "name": "TransitionObject",
-      "persistentUuid": "ca5d691a-8143-4390-8f46-b3484a770ffa",
+      "persistentUuid": "f675a0da-b4ef-40c2-b2b5-b3cce563a39d",
       "width": 0,
-      "x": 656,
-      "y": 400,
+      "x": 126,
+      "y": 482,
       "zOrder": 3,
       "numberProperties": [],
       "stringProperties": [],
       "initialVariables": [
-        {
-          "name": "longTransitionFade",
-          "type": "boolean",
-          "value": true
-        },
         {
           "name": "targetLayout",
           "type": "string",
@@ -54,10 +49,59 @@
           "type": "structure",
           "children": [
             {
-              "name": "font",
-              "type": "string",
-              "value": "0"
+              "name": "fontSize",
+              "type": "number",
+              "value": 25
             },
+            {
+              "name": "text",
+              "type": "string",
+              "value": "Exit Nyumburu Cultural Center"
+            },
+            {
+              "name": "textAlign",
+              "type": "string",
+              "value": "center"
+            },
+            {
+              "name": "x",
+              "type": "number",
+              "value": 16
+            },
+            {
+              "name": "y",
+              "type": "number",
+              "value": -86
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "angle": 75,
+      "customSize": false,
+      "flippedX": true,
+      "height": 0,
+      "keepRatio": true,
+      "layer": "SceneObjects",
+      "name": "TransitionObject",
+      "persistentUuid": "19166fa4-4c55-4963-833a-b8e47e42f6ff",
+      "width": 0,
+      "x": 319,
+      "y": 335,
+      "zOrder": 3,
+      "numberProperties": [],
+      "stringProperties": [],
+      "initialVariables": [
+        {
+          "name": "targetLayout",
+          "type": "string",
+          "value": "Nyumburu Elevator"
+        },
+        {
+          "name": "hoverTooltip",
+          "type": "structure",
+          "children": [
             {
               "name": "fontSize",
               "type": "number",
@@ -66,7 +110,7 @@
             {
               "name": "text",
               "type": "string",
-              "value": "Head to Nyumburu Cultural Center"
+              "value": "To Elevator"
             },
             {
               "name": "textAlign",
@@ -88,62 +132,42 @@
       ]
     },
     {
-      "angle": 90,
+      "angle": 0,
       "customSize": false,
       "height": 0,
       "keepRatio": true,
       "layer": "SceneObjects",
-      "name": "TransitionObject",
-      "persistentUuid": "dea41c74-7de7-47b4-b387-4f39aafb23a9",
+      "name": "ImageProp",
+      "persistentUuid": "b9110a15-270d-4dc8-8fe2-36d055341c9d",
       "width": 0,
-      "x": 464,
-      "y": 576,
-      "zOrder": 4,
+      "x": 825,
+      "y": 345,
+      "zOrder": 10,
+      "numberProperties": [
+        {
+          "name": "animation",
+          "value": 3
+        }
+      ],
+      "stringProperties": [],
+      "initialVariables": []
+    },
+    {
+      "angle": 0,
+      "customSize": true,
+      "depth": 1,
+      "height": 61,
+      "keepRatio": true,
+      "layer": "SceneObjects",
+      "name": "StatueCollectible",
+      "persistentUuid": "60d401f9-8469-4be2-a491-a3637d7672c8",
+      "width": 61,
+      "x": 834,
+      "y": 309,
+      "zOrder": 5,
       "numberProperties": [],
       "stringProperties": [],
-      "initialVariables": [
-        {
-          "name": "targetLayout",
-          "type": "string",
-          "value": "Hornbake Stairwell"
-        },
-        {
-          "name": "hoverTooltip",
-          "type": "structure",
-          "children": [
-            {
-              "name": "font",
-              "type": "string",
-              "value": "To Stairwell"
-            },
-            {
-              "name": "fontSize",
-              "type": "number",
-              "value": 25
-            },
-            {
-              "name": "text",
-              "type": "string",
-              "value": "null"
-            },
-            {
-              "name": "textAlign",
-              "type": "string",
-              "value": "center"
-            },
-            {
-              "name": "x",
-              "type": "number",
-              "value": 0
-            },
-            {
-              "name": "y",
-              "type": "number",
-              "value": -86
-            }
-          ]
-        }
-      ]
+      "initialVariables": []
     }
   ],
   "editionSettings": {
@@ -158,7 +182,7 @@
     "gridColor": 10401023,
     "gridAlpha": 0.8,
     "snap": true,
-    "zoomFactor": 0.7876290101673792,
+    "zoomFactor": 0.8416428125373181,
     "windowMask": false,
     "selectedLayer": "SceneObjects"
   }

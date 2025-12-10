@@ -56,7 +56,7 @@
             {
               "name": "text",
               "type": "string",
-              "value": "To 2nd Floor"
+              "value": "Ascend Stairs"
             },
             {
               "name": "textAlign",
@@ -78,7 +78,7 @@
       ]
     },
     {
-      "angle": 270,
+      "angle": 0,
       "customSize": false,
       "flippedX": true,
       "height": 0,
@@ -87,8 +87,8 @@
       "name": "TransitionObject",
       "persistentUuid": "f675a0da-b4ef-40c2-b2b5-b3cce563a39d",
       "width": 0,
-      "x": 576,
-      "y": 608,
+      "x": 192,
+      "y": 352,
       "zOrder": 3,
       "numberProperties": [],
       "stringProperties": [],
@@ -96,7 +96,7 @@
         {
           "name": "targetLayout",
           "type": "string",
-          "value": "Nyumburu Entrance"
+          "value": "Nyumburu Elevator"
         },
         {
           "name": "hoverTooltip",
@@ -110,7 +110,7 @@
             {
               "name": "text",
               "type": "string",
-              "value": "To Nyumburu Entrance"
+              "value": "To Floor 2"
             },
             {
               "name": "textAlign",
@@ -128,6 +128,11 @@
               "value": -86
             }
           ]
+        },
+        {
+          "name": "targetInteraction",
+          "type": "string",
+          "value": "ElevatorDing"
         }
       ]
     },
