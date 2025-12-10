@@ -452,7 +452,7 @@ if (isConditionTrue_0) {
 }
 
 
-};gdjs.TutorialCode.userFunc0x1296e30 = function GDJSInlineCode(runtimeScene) {
+};gdjs.TutorialCode.userFunc0xbcc070 = function GDJSInlineCode(runtimeScene) {
 "use strict";
 // We basically just check if the player uses a touchscreen at any point in the tutorial.
 // This is to know whether or not the VisibilityEffect should default to Enabled on game start
@@ -467,7 +467,7 @@ gdjs.TutorialCode.eventsList7 = function(runtimeScene) {
 {
 
 
-gdjs.TutorialCode.userFunc0x1296e30(runtimeScene);
+gdjs.TutorialCode.userFunc0xbcc070(runtimeScene);
 
 }
 
