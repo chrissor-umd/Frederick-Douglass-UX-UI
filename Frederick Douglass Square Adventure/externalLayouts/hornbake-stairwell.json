@@ -48,29 +48,6 @@
     },
     {
       "angle": 0,
-      "customSize": false,
-      "flippedX": true,
-      "height": 0,
-      "keepRatio": true,
-      "layer": "SceneObjects",
-      "name": "TransitionObject",
-      "persistentUuid": "c31c9e6f-7e61-4661-9429-fab7d5a6020b",
-      "width": 0,
-      "x": 976,
-      "y": 288,
-      "zOrder": 5,
-      "numberProperties": [],
-      "stringProperties": [],
-      "initialVariables": [
-        {
-          "name": "targetLayout",
-          "type": "string",
-          "value": "Hornbake Exit"
-        }
-      ]
-    },
-    {
-      "angle": 0,
       "customSize": true,
       "depth": 1,
       "height": 55,

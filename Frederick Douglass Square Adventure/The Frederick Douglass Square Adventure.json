@@ -234,7 +234,7 @@
         "metadata": "",
         "name": "assets\\sfx\\marble_collide.wav",
         "preloadAsMusic": false,
-        "preloadAsSound": false,
+        "preloadAsSound": true,
         "preloadInCache": false,
         "userAdded": false
       },
@@ -244,7 +244,7 @@
         "metadata": "",
         "name": "assets\\sfx\\point_earned.wav",
         "preloadAsMusic": false,
-        "preloadAsSound": false,
+        "preloadAsSound": true,
         "preloadInCache": false,
         "userAdded": false
       },
@@ -254,7 +254,7 @@
         "metadata": "",
         "name": "assets\\sfx\\shoot_marble.wav",
         "preloadAsMusic": false,
-        "preloadAsSound": false,
+        "preloadAsSound": true,
         "preloadInCache": false,
         "userAdded": false
       },
@@ -264,7 +264,7 @@
         "metadata": "",
         "name": "assets\\sfx\\win.wav",
         "preloadAsMusic": false,
-        "preloadAsSound": false,
+        "preloadAsSound": true,
         "preloadInCache": false,
         "userAdded": false
       },
@@ -274,7 +274,7 @@
         "metadata": "",
         "name": "assets\\sfx\\lose.wav",
         "preloadAsMusic": false,
-        "preloadAsSound": false,
+        "preloadAsSound": true,
         "preloadInCache": false,
         "userAdded": false
       },
@@ -284,7 +284,7 @@
         "metadata": "",
         "name": "assets\\sfx\\place_marble.wav",
         "preloadAsMusic": false,
-        "preloadAsSound": false,
+        "preloadAsSound": true,
         "preloadInCache": false,
         "userAdded": false
       },
@@ -465,126 +465,6 @@
         "userAdded": false
       },
       {
-        "file": "assets/objects/photo_scraps/row-1-column-2.png",
-        "kind": "image",
-        "metadata": "",
-        "name": "assets\\objects\\photo_scraps\\row-1-column-2.png",
-        "smoothed": true,
-        "userAdded": false
-      },
-      {
-        "file": "assets/objects/photo_scraps/row-1-column-3.png",
-        "kind": "image",
-        "metadata": "",
-        "name": "assets\\objects\\photo_scraps\\row-1-column-3.png",
-        "smoothed": true,
-        "userAdded": false
-      },
-      {
-        "file": "assets/objects/photo_scraps/row-1-column-4.png",
-        "kind": "image",
-        "metadata": "",
-        "name": "assets\\objects\\photo_scraps\\row-1-column-4.png",
-        "smoothed": true,
-        "userAdded": false
-      },
-      {
-        "file": "assets/objects/photo_scraps/row-2-column-1.png",
-        "kind": "image",
-        "metadata": "",
-        "name": "assets\\objects\\photo_scraps\\row-2-column-1.png",
-        "smoothed": true,
-        "userAdded": false
-      },
-      {
-        "file": "assets/objects/photo_scraps/row-2-column-2.png",
-        "kind": "image",
-        "metadata": "",
-        "name": "assets\\objects\\photo_scraps\\row-2-column-2.png",
-        "smoothed": true,
-        "userAdded": false
-      },
-      {
-        "file": "assets/objects/photo_scraps/row-2-column-3.png",
-        "kind": "image",
-        "metadata": "",
-        "name": "assets\\objects\\photo_scraps\\row-2-column-3.png",
-        "smoothed": true,
-        "userAdded": false
-      },
-      {
-        "file": "assets/objects/photo_scraps/row-2-column-4.png",
-        "kind": "image",
-        "metadata": "",
-        "name": "assets\\objects\\photo_scraps\\row-2-column-4.png",
-        "smoothed": true,
-        "userAdded": false
-      },
-      {
-        "file": "assets/objects/photo_scraps/row-3-column-1.png",
-        "kind": "image",
-        "metadata": "",
-        "name": "assets\\objects\\photo_scraps\\row-3-column-1.png",
-        "smoothed": true,
-        "userAdded": false
-      },
-      {
-        "file": "assets/objects/photo_scraps/row-3-column-2.png",
-        "kind": "image",
-        "metadata": "",
-        "name": "assets\\objects\\photo_scraps\\row-3-column-2.png",
-        "smoothed": true,
-        "userAdded": false
-      },
-      {
-        "file": "assets/objects/photo_scraps/row-3-column-3.png",
-        "kind": "image",
-        "metadata": "",
-        "name": "assets\\objects\\photo_scraps\\row-3-column-3.png",
-        "smoothed": true,
-        "userAdded": false
-      },
-      {
-        "file": "assets/objects/photo_scraps/row-3-column-4.png",
-        "kind": "image",
-        "metadata": "",
-        "name": "assets\\objects\\photo_scraps\\row-3-column-4.png",
-        "smoothed": true,
-        "userAdded": false
-      },
-      {
-        "file": "assets/objects/photo_scraps/row-4-column-1.png",
-        "kind": "image",
-        "metadata": "",
-        "name": "assets\\objects\\photo_scraps\\row-4-column-1.png",
-        "smoothed": true,
-        "userAdded": false
-      },
-      {
-        "file": "assets/objects/photo_scraps/row-4-column-2.png",
-        "kind": "image",
-        "metadata": "",
-        "name": "assets\\objects\\photo_scraps\\row-4-column-2.png",
-        "smoothed": true,
-        "userAdded": false
-      },
-      {
-        "file": "assets/objects/photo_scraps/row-4-column-3.png",
-        "kind": "image",
-        "metadata": "",
-        "name": "assets\\objects\\photo_scraps\\row-4-column-3.png",
-        "smoothed": true,
-        "userAdded": false
-      },
-      {
-        "file": "assets/objects/photo_scraps/row-4-column-4.png",
-        "kind": "image",
-        "metadata": "",
-        "name": "assets\\objects\\photo_scraps\\row-4-column-4.png",
-        "smoothed": true,
-        "userAdded": false
-      },
-      {
         "file": "assets/objects/photo_scraps/table_background.jpg",
         "kind": "image",
         "metadata": "",
@@ -598,7 +478,7 @@
         "metadata": "",
         "name": "assets\\sfx\\swipe.wav",
         "preloadAsMusic": false,
-        "preloadAsSound": false,
+        "preloadAsSound": true,
         "preloadInCache": false,
         "userAdded": false
       },
@@ -608,7 +488,7 @@
         "metadata": "",
         "name": "assets\\sfx\\whoosh2.wav",
         "preloadAsMusic": false,
-        "preloadAsSound": false,
+        "preloadAsSound": true,
         "preloadInCache": false,
         "userAdded": false
       },
@@ -628,7 +508,7 @@
         "metadata": "",
         "name": "assets\\sfx\\zip_closed.wav",
         "preloadAsMusic": false,
-        "preloadAsSound": false,
+        "preloadAsSound": true,
         "preloadInCache": false,
         "userAdded": false
       },
@@ -648,7 +528,7 @@
         "metadata": "",
         "name": "assets\\sfx\\whoosh1.wav",
         "preloadAsMusic": false,
-        "preloadAsSound": false,
+        "preloadAsSound": true,
         "preloadInCache": false,
         "userAdded": false
       },
@@ -657,7 +537,7 @@
         "kind": "audio",
         "metadata": "",
         "name": "assets\\sfx\\muffled_voices_indoors.wav",
-        "preloadAsMusic": false,
+        "preloadAsMusic": true,
         "preloadAsSound": false,
         "preloadInCache": false,
         "userAdded": false
@@ -668,7 +548,7 @@
         "metadata": "",
         "name": "assets\\sfx\\zip_open.wav",
         "preloadAsMusic": false,
-        "preloadAsSound": false,
+        "preloadAsSound": true,
         "preloadInCache": false,
         "userAdded": false
       },
@@ -678,7 +558,7 @@
         "metadata": "",
         "name": "assets\\sfx\\whoosh4.wav",
         "preloadAsMusic": false,
-        "preloadAsSound": false,
+        "preloadAsSound": true,
         "preloadInCache": false,
         "userAdded": false
       },
@@ -744,7 +624,7 @@
         "metadata": "",
         "name": "assets\\sfx\\fast_whoosh.wav",
         "preloadAsMusic": false,
-        "preloadAsSound": false,
+        "preloadAsSound": true,
         "preloadInCache": false,
         "userAdded": false
       },
@@ -754,7 +634,7 @@
         "metadata": "",
         "name": "assets\\sfx\\pickup.wav",
         "preloadAsMusic": false,
-        "preloadAsSound": false,
+        "preloadAsSound": true,
         "preloadInCache": false,
         "userAdded": false
       },
@@ -764,7 +644,7 @@
         "metadata": "",
         "name": "assets\\sfx\\ux_soft.wav",
         "preloadAsMusic": false,
-        "preloadAsSound": false,
+        "preloadAsSound": true,
         "preloadInCache": false,
         "userAdded": false
       },
@@ -774,7 +654,7 @@
         "metadata": "",
         "name": "assets\\sfx\\close_menu.wav",
         "preloadAsMusic": false,
-        "preloadAsSound": false,
+        "preloadAsSound": true,
         "preloadInCache": false,
         "userAdded": false
       },
@@ -814,7 +694,7 @@
         "metadata": "",
         "name": "assets\\sfx\\ui_pop3.wav",
         "preloadAsMusic": false,
-        "preloadAsSound": false,
+        "preloadAsSound": true,
         "preloadInCache": false,
         "userAdded": false
       },
@@ -864,7 +744,7 @@
         "metadata": "",
         "name": "assets\\sfx\\close_map.wav",
         "preloadAsMusic": false,
-        "preloadAsSound": false,
+        "preloadAsSound": true,
         "preloadInCache": false,
         "userAdded": false
       },
@@ -874,7 +754,7 @@
         "metadata": "",
         "name": "assets\\sfx\\open_map.wav",
         "preloadAsMusic": false,
-        "preloadAsSound": false,
+        "preloadAsSound": true,
         "preloadInCache": false,
         "userAdded": false
       },
@@ -891,7 +771,7 @@
         "kind": "audio",
         "metadata": "",
         "name": "assets\\sfx\\outdoor_ambience.wav",
-        "preloadAsMusic": false,
+        "preloadAsMusic": true,
         "preloadAsSound": false,
         "preloadInCache": false,
         "userAdded": false
@@ -912,7 +792,7 @@
         "metadata": "",
         "name": "assets/sfx/ui_pop_1_close.wav",
         "preloadAsMusic": false,
-        "preloadAsSound": false,
+        "preloadAsSound": true,
         "preloadInCache": false,
         "userAdded": false
       },
@@ -922,7 +802,7 @@
         "metadata": "",
         "name": "assets/sfx/ui_pop_1_open.wav",
         "preloadAsMusic": false,
-        "preloadAsSound": false,
+        "preloadAsSound": true,
         "preloadInCache": false,
         "userAdded": false
       },
@@ -932,7 +812,7 @@
         "metadata": "",
         "name": "assets/sfx/ui_pop_2_open.wav",
         "preloadAsMusic": false,
-        "preloadAsSound": false,
+        "preloadAsSound": true,
         "preloadInCache": false,
         "userAdded": false
       },
@@ -942,7 +822,7 @@
         "metadata": "",
         "name": "assets/sfx/ui_pop_3_close.wav",
         "preloadAsMusic": false,
-        "preloadAsSound": false,
+        "preloadAsSound": true,
         "preloadInCache": false,
         "userAdded": false
       },
@@ -952,7 +832,7 @@
         "metadata": "",
         "name": "assets/sfx/ui_pop_3_open.wav",
         "preloadAsMusic": false,
-        "preloadAsSound": false,
+        "preloadAsSound": true,
         "preloadInCache": false,
         "userAdded": false
       },
@@ -1213,14 +1093,6 @@
         "userAdded": false
       },
       {
-        "file": "assets/objects/photo_scraps/row-1-column-1.png",
-        "kind": "image",
-        "metadata": "",
-        "name": "assets\\objects\\photo_scraps\\row-1-column-1.png",
-        "smoothed": true,
-        "userAdded": false
-      },
-      {
         "file": "assets/ui/x.png",
         "kind": "image",
         "metadata": "",
@@ -1249,14 +1121,6 @@
         "kind": "image",
         "metadata": "",
         "name": "assets\\images\\main_menu_blur.jpg",
-        "smoothed": true,
-        "userAdded": false
-      },
-      {
-        "file": "assets/images/Nyumburu Entrance.JPG",
-        "kind": "image",
-        "metadata": "",
-        "name": "assets\\images\\Nyumburu Entrance.JPG",
         "smoothed": true,
         "userAdded": false
       },
@@ -1290,7 +1154,7 @@
         "metadata": "",
         "name": "assets\\sfx\\game_won.wav",
         "preloadAsMusic": false,
-        "preloadAsSound": false,
+        "preloadAsSound": true,
         "preloadInCache": false,
         "userAdded": false
       },
@@ -1508,6 +1372,162 @@
         "metadata": "",
         "name": "assets/icons/ios-icon-20.png",
         "smoothed": true,
+        "userAdded": false
+      },
+      {
+        "file": "assets/sfx/ui_notification.wav",
+        "kind": "audio",
+        "metadata": "",
+        "name": "assets/sfx/ui_notification.wav",
+        "preloadAsMusic": false,
+        "preloadAsSound": true,
+        "preloadInCache": false,
+        "userAdded": false
+      },
+      {
+        "file": "assets/images/props/mica_chair.png",
+        "kind": "image",
+        "metadata": "",
+        "name": "assets/images/props/mica_chair.png",
+        "smoothed": true,
+        "userAdded": false
+      },
+      {
+        "file": "assets/objects/photo_scraps/row-1-column-1.jpg",
+        "kind": "image",
+        "metadata": "",
+        "name": "assets/objects/photo_scraps/row-1-column-1.jpg",
+        "smoothed": true,
+        "userAdded": false
+      },
+      {
+        "file": "assets/objects/photo_scraps/row-1-column-2.jpg",
+        "kind": "image",
+        "metadata": "",
+        "name": "assets/objects/photo_scraps/row-1-column-2.jpg",
+        "smoothed": true,
+        "userAdded": false
+      },
+      {
+        "file": "assets/objects/photo_scraps/row-1-column-3.jpg",
+        "kind": "image",
+        "metadata": "",
+        "name": "assets/objects/photo_scraps/row-1-column-3.jpg",
+        "smoothed": true,
+        "userAdded": false
+      },
+      {
+        "file": "assets/objects/photo_scraps/row-2-column-1.jpg",
+        "kind": "image",
+        "metadata": "",
+        "name": "assets/objects/photo_scraps/row-2-column-1.jpg",
+        "smoothed": true,
+        "userAdded": false
+      },
+      {
+        "file": "assets/objects/photo_scraps/row-2-column-2.jpg",
+        "kind": "image",
+        "metadata": "",
+        "name": "assets/objects/photo_scraps/row-2-column-2.jpg",
+        "smoothed": true,
+        "userAdded": false
+      },
+      {
+        "file": "assets/objects/photo_scraps/row-2-column-3.jpg",
+        "kind": "image",
+        "metadata": "",
+        "name": "assets/objects/photo_scraps/row-2-column-3.jpg",
+        "smoothed": true,
+        "userAdded": false
+      },
+      {
+        "file": "assets/objects/photo_scraps/row-3-column-1.jpg",
+        "kind": "image",
+        "metadata": "",
+        "name": "assets/objects/photo_scraps/row-3-column-1.jpg",
+        "smoothed": true,
+        "userAdded": false
+      },
+      {
+        "file": "assets/objects/photo_scraps/row-3-column-2.jpg",
+        "kind": "image",
+        "metadata": "",
+        "name": "assets/objects/photo_scraps/row-3-column-2.jpg",
+        "smoothed": true,
+        "userAdded": false
+      },
+      {
+        "file": "assets/objects/photo_scraps/row-3-column-3.jpg",
+        "kind": "image",
+        "metadata": "",
+        "name": "assets/objects/photo_scraps/row-3-column-3.jpg",
+        "smoothed": true,
+        "userAdded": false
+      },
+      {
+        "file": "assets/objects/photo_scraps/row-1-column-4.jpg",
+        "kind": "image",
+        "metadata": "",
+        "name": "assets/objects/photo_scraps/row-1-column-4.jpg",
+        "smoothed": true,
+        "userAdded": false
+      },
+      {
+        "file": "assets/objects/photo_scraps/row-2-column-4.jpg",
+        "kind": "image",
+        "metadata": "",
+        "name": "assets/objects/photo_scraps/row-2-column-4.jpg",
+        "smoothed": true,
+        "userAdded": false
+      },
+      {
+        "file": "assets/objects/photo_scraps/row-3-column-4.jpg",
+        "kind": "image",
+        "metadata": "",
+        "name": "assets/objects/photo_scraps/row-3-column-4.jpg",
+        "smoothed": true,
+        "userAdded": false
+      },
+      {
+        "file": "assets/images/nyumburu_entrance.JPG",
+        "kind": "image",
+        "metadata": "",
+        "name": "assets/images/nyumburu_entrance.JPG",
+        "smoothed": true,
+        "userAdded": false
+      },
+      {
+        "file": "assets/images/nyumburu_main.jpg",
+        "kind": "image",
+        "metadata": "",
+        "name": "assets/images/nyumburu_main.jpg",
+        "smoothed": true,
+        "userAdded": false
+      },
+      {
+        "file": "assets/images/nyumburu_elevator.jpg",
+        "kind": "image",
+        "metadata": "",
+        "name": "assets/images/nyumburu_elevator.jpg",
+        "smoothed": true,
+        "userAdded": false
+      },
+      {
+        "file": "assets/images/props/nyumburu_main_stool.png",
+        "kind": "image",
+        "metadata": "",
+        "name": "assets/images/props/nyumburu_main_stool.png",
+        "smoothed": true,
+        "userAdded": false
+      },
+      {
+        "file": "assets/sfx/elevator_ding.wav",
+        "kind": "audio",
+        "metadata": "",
+        "name": "assets/sfx/elevator_ding.wav",
+        "preloadAsMusic": false,
+        "preloadAsSound": true,
+        "preloadInCache": false,
         "userAdded": false
       }
     ]
@@ -1919,10 +1939,6 @@
     },
     {
       "__REFERENCE_TO_SPLIT_OBJECT": true,
-      "referenceTo": "/externalLayouts/hornbake-exit"
-    },
-    {
-      "__REFERENCE_TO_SPLIT_OBJECT": true,
       "referenceTo": "/externalLayouts/driskell-entrance"
     },
     {
@@ -1972,6 +1988,14 @@
     {
       "__REFERENCE_TO_SPLIT_OBJECT": true,
       "referenceTo": "/externalLayouts/nyumburu-entrance"
+    },
+    {
+      "__REFERENCE_TO_SPLIT_OBJECT": true,
+      "referenceTo": "/externalLayouts/nyumburu-main"
+    },
+    {
+      "__REFERENCE_TO_SPLIT_OBJECT": true,
+      "referenceTo": "/externalLayouts/nyumburu-elevator"
     },
     {
       "__REFERENCE_TO_SPLIT_OBJECT": true,

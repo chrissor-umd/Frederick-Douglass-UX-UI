@@ -33,8 +33,8 @@
       "name": "TransitionObject",
       "persistentUuid": "9cb78b79-6a6d-469f-a613-fc52579c77c6",
       "width": 0,
-      "x": 576,
-      "y": 384,
+      "x": 592,
+      "y": 432,
       "zOrder": 3,
       "numberProperties": [],
       "stringProperties": [],
@@ -42,7 +42,38 @@
         {
           "name": "targetLayout",
           "type": "string",
-          "value": "Nyumburu Hallway"
+          "value": "Nyumburu Main"
+        },
+        {
+          "name": "hoverTooltip",
+          "type": "structure",
+          "children": [
+            {
+              "name": "fontSize",
+              "type": "number",
+              "value": 25
+            },
+            {
+              "name": "text",
+              "type": "string",
+              "value": "Enter Nyumburu Cultural Center"
+            },
+            {
+              "name": "textAlign",
+              "type": "string",
+              "value": "center"
+            },
+            {
+              "name": "x",
+              "type": "number",
+              "value": 0
+            },
+            {
+              "name": "y",
+              "type": "number",
+              "value": -86
+            }
+          ]
         }
       ]
     },
@@ -84,7 +115,7 @@
             {
               "name": "text",
               "type": "string",
-              "value": "To STAMP Union Hall"
+              "value": "Head to STAMP Union Hall"
             },
             {
               "name": "textAlign",
@@ -142,7 +173,7 @@
             {
               "name": "text",
               "type": "string",
-              "value": "To Frederick Douglass Square"
+              "value": "Head to Frederick Douglass Square"
             },
             {
               "name": "textAlign",
@@ -176,7 +207,7 @@
     "gridColor": 10401023,
     "gridAlpha": 0.8,
     "snap": true,
-    "zoomFactor": 0.9934433498259627,
+    "zoomFactor": 0.6040838749988903,
     "windowMask": false,
     "selectedLayer": "SceneObjects"
   }

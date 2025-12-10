@@ -217,7 +217,7 @@ gdjs.ExplorationCode.GDSoundToggleMinigameObjects3= [];
 gdjs.ExplorationCode.GDSoundToggleMinigameObjects4= [];
 
 
-gdjs.ExplorationCode.userFunc0xcce890 = function GDJSInlineCode(runtimeScene) {
+gdjs.ExplorationCode.userFunc0xf607e8 = function GDJSInlineCode(runtimeScene) {
 "use strict";
 gdjs.FDGameData = {}; // All persistent data is attached to gdjs so that it isn't reset on scene change
 const FDSG = gdjs.FDGameData; // This way data can be accessed through a simpler variable name (FDSG = Frederick-Douglass Square Game)
@@ -292,12 +292,12 @@ gdjs.ExplorationCode.eventsList0 = function(runtimeScene) {
 {
 
 
-gdjs.ExplorationCode.userFunc0xcce890(runtimeScene);
+gdjs.ExplorationCode.userFunc0xf607e8(runtimeScene);
 
 }
 
 
-};gdjs.ExplorationCode.userFunc0xcce928 = function GDJSInlineCode(runtimeScene) {
+};gdjs.ExplorationCode.userFunc0xf61e88 = function GDJSInlineCode(runtimeScene) {
 "use strict";
 const FDSG = gdjs.FDGameData;
 const GameVars = FDSG.GameVars;
@@ -546,12 +546,12 @@ gdjs.ExplorationCode.eventsList1 = function(runtimeScene) {
 {
 
 
-gdjs.ExplorationCode.userFunc0xcce928(runtimeScene);
+gdjs.ExplorationCode.userFunc0xf61e88(runtimeScene);
 
 }
 
 
-};gdjs.ExplorationCode.userFunc0xcd9388 = function GDJSInlineCode(runtimeScene) {
+};gdjs.ExplorationCode.userFunc0xf45d40 = function GDJSInlineCode(runtimeScene) {
 "use strict";
 const FDSG = gdjs.FDGameData;
 const GameVars = FDSG.GameVars;
@@ -998,12 +998,12 @@ gdjs.ExplorationCode.eventsList2 = function(runtimeScene) {
 {
 
 
-gdjs.ExplorationCode.userFunc0xcd9388(runtimeScene);
+gdjs.ExplorationCode.userFunc0xf45d40(runtimeScene);
 
 }
 
 
-};gdjs.ExplorationCode.userFunc0xccf160 = function GDJSInlineCode(runtimeScene) {
+};gdjs.ExplorationCode.userFunc0xe84088 = function GDJSInlineCode(runtimeScene) {
 "use strict";
 const FDSG = gdjs.FDGameData;
 const GameVars = FDSG.GameVars;
@@ -1440,12 +1440,12 @@ gdjs.ExplorationCode.eventsList3 = function(runtimeScene) {
 {
 
 
-gdjs.ExplorationCode.userFunc0xccf160(runtimeScene);
+gdjs.ExplorationCode.userFunc0xe84088(runtimeScene);
 
 }
 
 
-};gdjs.ExplorationCode.userFunc0xcde300 = function GDJSInlineCode(runtimeScene) {
+};gdjs.ExplorationCode.userFunc0xdf8e00 = function GDJSInlineCode(runtimeScene) {
 "use strict";
 const FDSG = gdjs.FDGameData;
 const GameVars = FDSG.GameVars;
@@ -1740,12 +1740,12 @@ gdjs.ExplorationCode.eventsList4 = function(runtimeScene) {
 {
 
 
-gdjs.ExplorationCode.userFunc0xcde300(runtimeScene);
+gdjs.ExplorationCode.userFunc0xdf8e00(runtimeScene);
 
 }
 
 
-};gdjs.ExplorationCode.userFunc0xcd6eb8 = function GDJSInlineCode(runtimeScene) {
+};gdjs.ExplorationCode.userFunc0xf399e0 = function GDJSInlineCode(runtimeScene) {
 "use strict";
 const FDSG = gdjs.FDGameData;
 const GameVars = FDSG.GameVars;
@@ -1860,12 +1860,12 @@ gdjs.ExplorationCode.eventsList5 = function(runtimeScene) {
 {
 
 
-gdjs.ExplorationCode.userFunc0xcd6eb8(runtimeScene);
+gdjs.ExplorationCode.userFunc0xf399e0(runtimeScene);
 
 }
 
 
-};gdjs.ExplorationCode.userFunc0xd1ddd8 = function GDJSInlineCode(runtimeScene) {
+};gdjs.ExplorationCode.userFunc0x8925c8 = function GDJSInlineCode(runtimeScene) {
 "use strict";
 const FDSG = gdjs.FDGameData;
 const GameVars = FDSG.GameVars;
@@ -2262,12 +2262,12 @@ gdjs.ExplorationCode.eventsList6 = function(runtimeScene) {
 {
 
 
-gdjs.ExplorationCode.userFunc0xd1ddd8(runtimeScene);
+gdjs.ExplorationCode.userFunc0x8925c8(runtimeScene);
 
 }
 
 
-};gdjs.ExplorationCode.userFunc0xcdc3a0 = function GDJSInlineCode(runtimeScene) {
+};gdjs.ExplorationCode.userFunc0xf2c188 = function GDJSInlineCode(runtimeScene) {
 "use strict";
 const FDSG = gdjs.FDGameData;
 const GameVars = FDSG.GameVars;
@@ -2315,11 +2315,12 @@ FDSG.MapLocations = {
     ],
     "Hornbake": [
             "Hornbake Entrance",
-            "Hornbake Stairwell Main Floor",
-            "Hornbake Entrance"
+            "Hornbake Stairwell Main Floor"
     ],
     "Nyumburu Cultural Center": [
         "Nyumburu Entrance",
+        "Nyumburu Main",
+        "Nyumburu Elevator",
         "Nyumburu Hallway",
         "Nyumburu Painting",
         "Nyumburu Performance Room"
@@ -2420,12 +2421,12 @@ gdjs.ExplorationCode.eventsList7 = function(runtimeScene) {
 {
 
 
-gdjs.ExplorationCode.userFunc0xcdc3a0(runtimeScene);
+gdjs.ExplorationCode.userFunc0xf2c188(runtimeScene);
 
 }
 
 
-};gdjs.ExplorationCode.userFunc0xcdc570 = function GDJSInlineCode(runtimeScene) {
+};gdjs.ExplorationCode.userFunc0xef69b8 = function GDJSInlineCode(runtimeScene) {
 "use strict";
 const FDSG = gdjs.FDGameData;
 const GameVars = FDSG.GameVars;
@@ -2471,12 +2472,12 @@ gdjs.ExplorationCode.eventsList8 = function(runtimeScene) {
 {
 
 
-gdjs.ExplorationCode.userFunc0xcdc570(runtimeScene);
+gdjs.ExplorationCode.userFunc0xef69b8(runtimeScene);
 
 }
 
 
-};gdjs.ExplorationCode.userFunc0xcd5678 = function GDJSInlineCode(runtimeScene) {
+};gdjs.ExplorationCode.userFunc0xf26658 = function GDJSInlineCode(runtimeScene) {
 "use strict";
 const FDSG = gdjs.FDGameData;
 const GameVars = FDSG.GameVars;
@@ -2542,7 +2543,7 @@ FDSG.Sounds.LocationSounds = {
         "Hornbake Entrance",
         "Driskell Starting Point",
         "STAMP Main Hallway",
-        "Nyumburu Hallway"
+        "Nyumburu Main"
     ],
     "None": [] // Put the location here if you want no ambient sound to play
 }
@@ -2564,7 +2565,9 @@ FDSG.Sounds.SFX = {
     CloseMap: { soundFile: "close_map.wav", volume: 50, pitch: 1 },
     ChangeMap: { soundFile: "swipe.wav", volume: 50, pitch: 1.3},
     OutdoorAmbience: { soundFile: "outdoor_ambience.wav", volume: 50, pitch: 1},
-    IndoorAmbience: { soundFile: "muffled_voices_indoors.wav", volume: 75, pitch: 1 }
+    IndoorAmbience: { soundFile: "muffled_voices_indoors.wav", volume: 75, pitch: 1 },
+    Notification: { soundFile: "ui_notification.wav", volume: 25, pitch: 1},
+    ElevatorDing: { soundFile: "elevator_ding.wav", volume: 50, pitch: 1 }
 }
 
 
@@ -2586,9 +2589,9 @@ FDSG.playSFX = function(soundName, loop = false) {
         return;
     }
     const SFXData = FDSG.Sounds.SFX[soundName];
-    let soundFile = SFXData.soundFile;
-    let volume = .75;
-    let pitch = 1;
+    var soundFile = SFXData.soundFile;
+    var volume = .75;
+    var pitch = 1;
     if ("volume" in SFXData) {
         volume = SFXData.volume;
     }
@@ -2659,12 +2662,26 @@ gdjs.ExplorationCode.eventsList9 = function(runtimeScene) {
 {
 
 
-gdjs.ExplorationCode.userFunc0xcd5678(runtimeScene);
+gdjs.ExplorationCode.userFunc0xf26658(runtimeScene);
 
 }
 
 
-};gdjs.ExplorationCode.userFunc0xcdb5e8 = function GDJSInlineCode(runtimeScene) {
+{
+
+
+
+}
+
+
+{
+
+
+
+}
+
+
+};gdjs.ExplorationCode.userFunc0xf68c90 = function GDJSInlineCode(runtimeScene) {
 "use strict";
 const FDSG = gdjs.FDGameData;
 const GameVars = FDSG.GameVars;
@@ -2676,7 +2693,6 @@ const layoutNames = [
     "Hornbake Special Collections",
     "Hornbake Gallery Room",
     "Hornbake Maryland Room",
-    "Hornbake Exit",
     "Driskell Entrance",
     "Driskell Starting Point",
     "Driskell Mural",
@@ -2691,6 +2707,8 @@ const layoutNames = [
     "MICA Entrance",
     "Inside MICA",
     "Nyumburu Entrance",
+    "Nyumburu Main",
+    "Nyumburu Elevator",
     "Nyumburu Hallway",
     "Nyumburu Painting",
     "Nyumburu Performance Room"
@@ -2726,7 +2744,7 @@ gdjs.ExplorationCode.eventsList10 = function(runtimeScene) {
 {
 
 
-gdjs.ExplorationCode.userFunc0xcdb5e8(runtimeScene);
+gdjs.ExplorationCode.userFunc0xf68c90(runtimeScene);
 
 }
 
@@ -2817,7 +2835,7 @@ gdjs.ExplorationCode.eventsList10(runtimeScene);
 }
 
 
-};gdjs.ExplorationCode.userFunc0xcdd958 = function GDJSInlineCode(runtimeScene) {
+};gdjs.ExplorationCode.userFunc0xf4bf28 = function GDJSInlineCode(runtimeScene) {
 "use strict";
 const FDSG = gdjs.FDGameData;
 const GameVars = FDSG.GameVars;
@@ -3227,12 +3245,12 @@ gdjs.ExplorationCode.eventsList12 = function(runtimeScene) {
 {
 
 
-gdjs.ExplorationCode.userFunc0xcdd958(runtimeScene);
+gdjs.ExplorationCode.userFunc0xf4bf28(runtimeScene);
 
 }
 
 
-};gdjs.ExplorationCode.userFunc0xcddbd8 = function GDJSInlineCode(runtimeScene) {
+};gdjs.ExplorationCode.userFunc0xf5bf08 = function GDJSInlineCode(runtimeScene) {
 "use strict";
 const FDSG = gdjs.FDGameData;
 const GameVars = FDSG.GameVars;
@@ -3247,18 +3265,18 @@ const Game = GameVars.runtimeScene.getGame();
 */
 
 
-FDSG.setLayoutFlag("Frederick Douglass Square", "isCulturalCenterAvailable", false); // The transition to the cultural center is not available until the Hornbake Exit has been visited
+// FDSG.setLayoutFlag("Frederick Douglass Square", "isCulturalCenterAvailable", false); // The transition to the cultural center is not available until the Hornbake Exit has been visited
 
-FDSG.registerOnLayoutLoadFunction("Frederick Douglass Square", () => {
-    const fdsTransition = FDSG.getInstanceFromID("Nyumburu Transition");
-    if (!FDSG.getLayoutFlag("Hornbake Exit", "hasBeenVisited")) {
-        fdsTransition.setOpacity(0);
-        fdsTransition.getVariables().get("enabled").setBoolean(false);
-    } else {
-        fdsTransition.setOpacity(255);
-        fdsTransition.getVariables().get("enabled").setBoolean(true);
-    }
-});
+// FDSG.registerOnLayoutLoadFunction("Frederick Douglass Square", () => {
+//     const fdsTransition = FDSG.getInstanceFromID("Nyumburu Transition");
+//     if (!FDSG.getLayoutFlag("Hornbake Exit", "hasBeenVisited")) {
+//         fdsTransition.setOpacity(0);
+//         fdsTransition.getVariables().get("enabled").setBoolean(false);
+//     } else {
+//         fdsTransition.setOpacity(255);
+//         fdsTransition.getVariables().get("enabled").setBoolean(true);
+//     }
+// });
 
 FDSG.registerLayoutInfo("Frederick Douglass Square", 
 "The Frederick Douglass Square was commemorated in honor of Frederick Douglass on November 18th, 2015. At the commemoration ceremony, two of Douglass' descendents, Nettie Washington Douglass and Kenneth B. Morris, were present for the unveiling of the statue and spoke about their family legacy.");
@@ -3316,35 +3334,29 @@ gdjs.ExplorationCode.eventsList13 = function(runtimeScene) {
 {
 
 
-gdjs.ExplorationCode.userFunc0xcddbd8(runtimeScene);
+gdjs.ExplorationCode.userFunc0xf5bf08(runtimeScene);
 
 }
 
 
-};gdjs.ExplorationCode.userFunc0xcd0850 = function GDJSInlineCode(runtimeScene) {
+};gdjs.ExplorationCode.userFunc0xd38e20 = function GDJSInlineCode(runtimeScene) {
 "use strict";
 const FDSG = gdjs.FDGameData;
 const GameVars = FDSG.GameVars;
 const Game = GameVars.runtimeScene.getGame();
 
-
-FDSG.setLayoutFlag("Hornbake Exit", "hasBeenVisited", false);
-
-FDSG.registerOnLayoutLoadFunction("Hornbake Exit", () => {
-    FDSG.setLayoutFlag("Hornbake Exit", "hasBeenVisited", true);
-});
 };
 gdjs.ExplorationCode.eventsList14 = function(runtimeScene) {
 
 {
 
 
-gdjs.ExplorationCode.userFunc0xcd0850(runtimeScene);
+gdjs.ExplorationCode.userFunc0xd38e20(runtimeScene);
 
 }
 
 
-};gdjs.ExplorationCode.userFunc0xcd0910 = function GDJSInlineCode(runtimeScene) {
+};gdjs.ExplorationCode.userFunc0xe255f0 = function GDJSInlineCode(runtimeScene) {
 "use strict";
 const FDSG = gdjs.FDGameData;
 const GameVars = FDSG.GameVars;
@@ -3381,18 +3393,23 @@ FDSG.registerInteraction("QuoteMinigame", (obj) => {
             break;
     }
 }, true);
+
+
+FDSG.registerInteraction("ElevatorDing", () => { // This just plays the elevator ding when the player uses the elevator
+    FDSG.playSFX("ElevatorDing");
+});
 };
 gdjs.ExplorationCode.eventsList15 = function(runtimeScene) {
 
 {
 
 
-gdjs.ExplorationCode.userFunc0xcd0910(runtimeScene);
+gdjs.ExplorationCode.userFunc0xe255f0(runtimeScene);
 
 }
 
 
-};gdjs.ExplorationCode.userFunc0xcd4de0 = function GDJSInlineCode(runtimeScene) {
+};gdjs.ExplorationCode.userFunc0xf61b90 = function GDJSInlineCode(runtimeScene) {
 "use strict";
 const FDSG = gdjs.FDGameData;
 const GameVars = FDSG.GameVars;
@@ -3405,12 +3422,12 @@ gdjs.ExplorationCode.eventsList16 = function(runtimeScene) {
 {
 
 
-gdjs.ExplorationCode.userFunc0xcd4de0(runtimeScene);
+gdjs.ExplorationCode.userFunc0xf61b90(runtimeScene);
 
 }
 
 
-};gdjs.ExplorationCode.userFunc0xcd3860 = function GDJSInlineCode(runtimeScene) {
+};gdjs.ExplorationCode.userFunc0xe9adf8 = function GDJSInlineCode(runtimeScene) {
 "use strict";
 const FDSG = gdjs.FDGameData;
 const GameVars = FDSG.GameVars;
@@ -3482,7 +3499,7 @@ gdjs.ExplorationCode.eventsList17 = function(runtimeScene) {
 {
 
 
-gdjs.ExplorationCode.userFunc0xcd3860(runtimeScene);
+gdjs.ExplorationCode.userFunc0xe9adf8(runtimeScene);
 
 }
 
@@ -3531,7 +3548,7 @@ gdjs.ExplorationCode.eventsList17(runtimeScene);
 }
 
 
-};gdjs.ExplorationCode.userFunc0xcd3ed8 = function GDJSInlineCode(runtimeScene) {
+};gdjs.ExplorationCode.userFunc0xbbbdc0 = function GDJSInlineCode(runtimeScene) {
 "use strict";
 const FDSG = gdjs.FDGameData;
 const GameVars = FDSG.GameVars;
@@ -3586,7 +3603,7 @@ gdjs.ExplorationCode.eventsList19 = function(runtimeScene) {
 {
 
 
-gdjs.ExplorationCode.userFunc0xcd3ed8(runtimeScene);
+gdjs.ExplorationCode.userFunc0xbbbdc0(runtimeScene);
 
 }
 
@@ -3676,7 +3693,7 @@ gdjs.ExplorationCode.eventsList20(runtimeScene);} //End of subevents
 }
 
 
-};gdjs.ExplorationCode.userFunc0xcd4a70 = function GDJSInlineCode(runtimeScene) {
+};gdjs.ExplorationCode.userFunc0xf62db8 = function GDJSInlineCode(runtimeScene) {
 "use strict";
 const FDSG = gdjs.FDGameData; // Simpler variables to use as reference
 const GameVars = FDSG.GameVars;
@@ -3741,6 +3758,9 @@ if (GameVars._isFading) {
     } else if (fadeTween.exists("fadeIn") && fadeTween.hasFinished("fadeIn")) {
         fadeEffect.deleteFromScene();
         GameVars._isFading = false;
+        // if (GameVars._showFigurineIconHintAfterFade || GameVars._showLayoutInfoHintAfterFade) {
+        //     FDSG.playSFX("Notification");
+        // }
         if (GameVars._showFigurineIconHintAfterFade) {
             const icon = GameVars.runtimeScene.getInstancesOf("StatueIcon")[0]; // Shake the statue icon if there are statues to collect in this layout
             icon.enableEffect("statueRemaining", true);
@@ -3780,7 +3800,7 @@ gdjs.ExplorationCode.eventsList22 = function(runtimeScene) {
 {
 
 
-gdjs.ExplorationCode.userFunc0xcd4a70(runtimeScene);
+gdjs.ExplorationCode.userFunc0xf62db8(runtimeScene);
 
 }
 

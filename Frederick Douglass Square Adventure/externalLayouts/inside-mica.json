@@ -82,7 +82,7 @@
       ]
     },
     {
-      "angle": 28,
+      "angle": 286,
       "customSize": true,
       "depth": 1,
       "height": 96,
@@ -91,8 +91,8 @@
       "name": "StatueCollectible",
       "persistentUuid": "e44f11b8-53bf-40e7-ac4b-6c22bd24a9b8",
       "width": 96,
-      "x": 555,
-      "y": 343,
+      "x": 939,
+      "y": 395,
       "zOrder": 3,
       "numberProperties": [],
       "stringProperties": [],
@@ -105,15 +105,15 @@
       "keepRatio": true,
       "layer": "SceneObjects",
       "name": "ImageProp",
-      "persistentUuid": "0e614f48-4f25-4708-9d47-111ba1356fe3",
+      "persistentUuid": "3a39f998-b501-466f-ac94-548d065f8dfd",
       "width": 0,
-      "x": 549,
-      "y": 388,
+      "x": 992,
+      "y": 339,
       "zOrder": 4,
       "numberProperties": [
         {
           "name": "animation",
-          "value": 1
+          "value": 2
         }
       ],
       "stringProperties": [],
@@ -132,7 +132,7 @@
     "gridColor": 10401023,
     "gridAlpha": 0.8,
     "snap": true,
-    "zoomFactor": 1.0269425874981082,
+    "zoomFactor": 1.0973679695629526,
     "windowMask": false,
     "selectedLayer": "SceneObjects"
   }
