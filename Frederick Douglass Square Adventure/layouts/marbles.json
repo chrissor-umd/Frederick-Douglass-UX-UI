@@ -6388,16 +6388,6 @@
                                                     "75*(chargeValue/maxCharge)/4",
                                                     "3 - 3*(chargeValue/maxCharge)"
                                                   ]
-                                                },
-                                                {
-                                                  "type": {
-                                                    "value": "DebuggerTools::ConsoleLog"
-                                                  },
-                                                  "parameters": [
-                                                    "chanceToShoot",
-                                                    "\"info\"",
-                                                    ""
-                                                  ]
                                                 }
                                               ]
                                             }

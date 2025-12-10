@@ -471,7 +471,7 @@ gdjs.MarblesCode.mapOfGDgdjs_9546MarblesCode_9546GDMarbleObjects1Objects = Hasht
 gdjs.MarblesCode.eventsList10 = function(runtimeScene) {
 
 };gdjs.MarblesCode.mapOfGDgdjs_9546MarblesCode_9546GDMarbleObjects2ObjectsGDgdjs_9546MarblesCode_9546GDPlayerMarbleObjects2ObjectsGDgdjs_9546MarblesCode_9546GDComputerMarbleObjects2Objects = Hashtable.newFrom({"Marble": gdjs.MarblesCode.GDMarbleObjects2, "PlayerMarble": gdjs.MarblesCode.GDPlayerMarbleObjects2, "ComputerMarble": gdjs.MarblesCode.GDComputerMarbleObjects2});
-gdjs.MarblesCode.userFunc0xdf1be0 = function GDJSInlineCode(runtimeScene) {
+gdjs.MarblesCode.userFunc0xf7fe58 = function GDJSInlineCode(runtimeScene) {
 "use strict";
 window.addEventListener("pointerdown", e => { // js method for determining input type
     runtimeScene.getVariables().get("isUsingTouchscreen").setBoolean(e.pointerType == "touch"); // This distinguishes between touch and mouse input
@@ -482,7 +482,7 @@ gdjs.MarblesCode.eventsList11 = function(runtimeScene) {
 {
 
 
-gdjs.MarblesCode.userFunc0xdf1be0(runtimeScene);
+gdjs.MarblesCode.userFunc0xf7fe58(runtimeScene);
 
 }
 
@@ -2080,8 +2080,6 @@ if (isConditionTrue_0) {
 {gdjs.evtTools.runtimeScene.resetTimer(runtimeScene, "compPlaceTimer");
 }
 {gdjs.evtTools.sound.playSound(runtimeScene, "assets\\sfx\\shoot_marble.wav", false, 75 * (gdjs.MarblesCode.localVariables[0].getFromIndex(0).getAsNumber() / runtimeScene.getScene().getVariables().getFromIndex(1).getAsNumber()) / 4, 3 - 3 * (gdjs.MarblesCode.localVariables[0].getFromIndex(0).getAsNumber() / runtimeScene.getScene().getVariables().getFromIndex(1).getAsNumber()));
-}
-{gdjs.evtTools.debuggerTools.log(gdjs.MarblesCode.localVariables[1].getFromIndex(1).getAsString(), "info", "");
 }
 }
 
