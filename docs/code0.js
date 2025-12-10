@@ -95,7 +95,7 @@ gdjs.copyArray(runtimeScene.getObjects("StartButton"), gdjs.Main_32MenuCode.GDSt
 }
 
 
-};gdjs.Main_32MenuCode.userFunc0xeeb238 = function GDJSInlineCode(runtimeScene) {
+};gdjs.Main_32MenuCode.userFunc0xd7e7d8 = function GDJSInlineCode(runtimeScene) {
 "use strict";
 // We basically just check if the player uses a touchscreen at any point in the main menu.
 // This is to know whether or not the VisibilityEffect should default to Enabled on game start
@@ -110,7 +110,7 @@ gdjs.Main_32MenuCode.eventsList1 = function(runtimeScene) {
 {
 
 
-gdjs.Main_32MenuCode.userFunc0xeeb238(runtimeScene);
+gdjs.Main_32MenuCode.userFunc0xd7e7d8(runtimeScene);
 
 }
 
@@ -131,7 +131,7 @@ gdjs.Main_32MenuCode.eventsList2 = function(runtimeScene) {
 {
 const asyncObjectsList = new gdjs.LongLivedObjectsList();
 asyncObjectsList.backupLocalVariablesContainers(gdjs.Main_32MenuCode.localVariables);
-runtimeScene.getAsyncTasksManager().addTask(gdjs.evtTools.runtimeScene.wait(0.1), (runtimeScene) => (gdjs.Main_32MenuCode.asyncCallback14939868(runtimeScene, asyncObjectsList)), 14939868, asyncObjectsList);
+runtimeScene.getAsyncTasksManager().addTask(gdjs.evtTools.runtimeScene.wait(0.25), (runtimeScene) => (gdjs.Main_32MenuCode.asyncCallback14939868(runtimeScene, asyncObjectsList)), 14939868, asyncObjectsList);
 }
 }
 

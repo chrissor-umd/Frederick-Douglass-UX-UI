@@ -776,7 +776,7 @@
             "value": "Wait"
           },
           "parameters": [
-            ".1"
+            ".25"
           ]
         },
         {
