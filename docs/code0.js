@@ -95,13 +95,13 @@ gdjs.copyArray(runtimeScene.getObjects("StartButton"), gdjs.Main_32MenuCode.GDSt
 }
 
 
-};gdjs.Main_32MenuCode.asyncCallback14939868 = function (runtimeScene, asyncObjectsList) {
+};gdjs.Main_32MenuCode.asyncCallback10968468 = function (runtimeScene, asyncObjectsList) {
 asyncObjectsList.restoreLocalVariablesContainers(gdjs.Main_32MenuCode.localVariables);
 {gdjs.evtTools.runtimeScene.replaceScene(runtimeScene, "Tutorial", false);
 }
 gdjs.Main_32MenuCode.localVariables.length = 0;
 }
-gdjs.Main_32MenuCode.idToCallbackMap.set(14939868, gdjs.Main_32MenuCode.asyncCallback14939868);
+gdjs.Main_32MenuCode.idToCallbackMap.set(10968468, gdjs.Main_32MenuCode.asyncCallback10968468);
 gdjs.Main_32MenuCode.eventsList1 = function(runtimeScene) {
 
 {
@@ -111,7 +111,7 @@ gdjs.Main_32MenuCode.eventsList1 = function(runtimeScene) {
 {
 const asyncObjectsList = new gdjs.LongLivedObjectsList();
 asyncObjectsList.backupLocalVariablesContainers(gdjs.Main_32MenuCode.localVariables);
-runtimeScene.getAsyncTasksManager().addTask(gdjs.evtTools.runtimeScene.wait(0.25), (runtimeScene) => (gdjs.Main_32MenuCode.asyncCallback14939868(runtimeScene, asyncObjectsList)), 14939868, asyncObjectsList);
+runtimeScene.getAsyncTasksManager().addTask(gdjs.evtTools.runtimeScene.wait(0.25), (runtimeScene) => (gdjs.Main_32MenuCode.asyncCallback10968468(runtimeScene, asyncObjectsList)), 10968468, asyncObjectsList);
 }
 }
 

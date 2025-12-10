@@ -22,7 +22,7 @@
     "snap": true,
     "zoomFactor": 0.5653158055126387,
     "windowMask": false,
-    "selectedLayer": "Persistent UI"
+    "selectedLayer": "Tutorial"
   },
   "objectsGroups": [
     {
@@ -264,7 +264,7 @@
       "layer": "Tutorial",
       "name": "TutorialHeader",
       "persistentUuid": "5ce8f187-69c1-4765-a13e-4f972a483b44",
-      "width": 224,
+      "width": 896,
       "x": 192,
       "y": 150,
       "zOrder": 14,
@@ -1674,7 +1674,7 @@
       "behaviors": [],
       "string": "How To Play",
       "font": "assets\\fonts\\BilkoOpti-Regular.otf",
-      "textAlignment": "center",
+      "textAlignment": "left",
       "characterSize": 40,
       "color": {
         "b": 255,
@@ -1697,7 +1697,7 @@
         "underlined": false,
         "text": "How To Play",
         "font": "assets\\fonts\\BilkoOpti-Regular.otf",
-        "textAlignment": "center",
+        "textAlignment": "left",
         "verticalTextAlignment": "center",
         "characterSize": 40,
         "lineHeight": 0,
@@ -3310,7 +3310,7 @@
       "isLocked": false,
       "name": "Tutorial",
       "renderingType": "2d",
-      "visibility": false,
+      "visibility": true,
       "cameras": [],
       "effects": []
     },

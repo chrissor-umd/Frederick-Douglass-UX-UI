@@ -467,10 +467,11 @@ if (isConditionTrue_0) {
 
 
 };gdjs.MarblesCode.mapOfGDgdjs_9546MarblesCode_9546GDMarbleObjects1Objects = Hashtable.newFrom({"Marble": gdjs.MarblesCode.GDMarbleObjects1});
+gdjs.MarblesCode.mapOfGDgdjs_9546MarblesCode_9546GDMarbleObjects1Objects = Hashtable.newFrom({"Marble": gdjs.MarblesCode.GDMarbleObjects1});
 gdjs.MarblesCode.eventsList10 = function(runtimeScene) {
 
 };gdjs.MarblesCode.mapOfGDgdjs_9546MarblesCode_9546GDMarbleObjects2ObjectsGDgdjs_9546MarblesCode_9546GDPlayerMarbleObjects2ObjectsGDgdjs_9546MarblesCode_9546GDComputerMarbleObjects2Objects = Hashtable.newFrom({"Marble": gdjs.MarblesCode.GDMarbleObjects2, "PlayerMarble": gdjs.MarblesCode.GDPlayerMarbleObjects2, "ComputerMarble": gdjs.MarblesCode.GDComputerMarbleObjects2});
-gdjs.MarblesCode.userFunc0xd6b6d0 = function GDJSInlineCode(runtimeScene) {
+gdjs.MarblesCode.userFunc0xdf1be0 = function GDJSInlineCode(runtimeScene) {
 "use strict";
 window.addEventListener("pointerdown", e => { // js method for determining input type
     runtimeScene.getVariables().get("isUsingTouchscreen").setBoolean(e.pointerType == "touch"); // This distinguishes between touch and mouse input
@@ -481,7 +482,7 @@ gdjs.MarblesCode.eventsList11 = function(runtimeScene) {
 {
 
 
-gdjs.MarblesCode.userFunc0xd6b6d0(runtimeScene);
+gdjs.MarblesCode.userFunc0xdf1be0(runtimeScene);
 
 }
 
@@ -654,6 +655,8 @@ for(var i = 0, len = gdjs.MarblesCode.GDDirectionalArrowBaseObjects1.length ;i <
 {gdjs.evtTools.camera.hideLayer(runtimeScene, "ExitPrompt");
 }
 {gdjs.evtTools.camera.showLayer(runtimeScene, "Tutorial");
+}
+{runtimeScene.getScene().getVariables().getFromIndex(20).setNumber(gdjs.evtTools.object.getSceneInstancesCount(runtimeScene, gdjs.MarblesCode.mapOfGDgdjs_9546MarblesCode_9546GDMarbleObjects1Objects));
 }
 
 { //Subevents
@@ -1962,7 +1965,7 @@ gdjs.MarblesCode.localVariables.pop();
 
 let isConditionTrue_0 = false;
 isConditionTrue_0 = false;
-isConditionTrue_0 = gdjs.evtTools.runtimeScene.getTimerElapsedTimeInSecondsOrNaN(runtimeScene, "compAimTimer") < 1;
+isConditionTrue_0 = gdjs.evtTools.runtimeScene.getTimerElapsedTimeInSecondsOrNaN(runtimeScene, "compAimTimer") < 1 + runtimeScene.getScene().getVariables().getFromIndex(3).getAsNumber() / Math.max(1, runtimeScene.getScene().getVariables().getFromIndex(2).getAsNumber());
 if (isConditionTrue_0) {
 {runtimeScene.getScene().getVariables().getFromIndex(9).add(runtimeScene.getScene().getVariables().getFromIndex(8).getAsNumber() / 8);
 }
@@ -2078,6 +2081,8 @@ if (isConditionTrue_0) {
 }
 {gdjs.evtTools.sound.playSound(runtimeScene, "assets\\sfx\\shoot_marble.wav", false, 75 * (gdjs.MarblesCode.localVariables[0].getFromIndex(0).getAsNumber() / runtimeScene.getScene().getVariables().getFromIndex(1).getAsNumber()) / 4, 3 - 3 * (gdjs.MarblesCode.localVariables[0].getFromIndex(0).getAsNumber() / runtimeScene.getScene().getVariables().getFromIndex(1).getAsNumber()));
 }
+{gdjs.evtTools.debuggerTools.log(gdjs.MarblesCode.localVariables[1].getFromIndex(1).getAsString(), "info", "");
+}
 }
 
 }
@@ -2180,6 +2185,11 @@ const variable = new gdjs.Variable();
 variable.setNumber(1);
 variables._declare("compShootMarble", variable);
 }
+{
+const variable = new gdjs.Variable();
+variable.setNumber(0);
+variables._declare("chanceToShoot", variable);
+}
 gdjs.MarblesCode.localVariables.push(variables);
 }
 let isConditionTrue_0 = false;
@@ -2187,7 +2197,9 @@ isConditionTrue_0 = false;
 {isConditionTrue_0 = runtimeScene.getScene().getVariables().getFromIndex(11).getAsBoolean();
 }
 if (isConditionTrue_0) {
-{gdjs.MarblesCode.localVariables[1].getFromIndex(0).setNumber(gdjs.randomInRange(1, 100));
+{gdjs.MarblesCode.localVariables[1].getFromIndex(1).setNumber(Math.max(45, 20 * (runtimeScene.getScene().getVariables().getFromIndex(2).getAsNumber() / Math.max(1, runtimeScene.getScene().getVariables().getFromIndex(3).getAsNumber()))));
+}
+{gdjs.MarblesCode.localVariables[1].getFromIndex(0).setNumber(gdjs.randomInRange(1, gdjs.MarblesCode.localVariables[1].getFromIndex(1).getAsNumber()));
 }
 
 { //Subevents
