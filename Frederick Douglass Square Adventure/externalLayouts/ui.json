@@ -214,7 +214,13 @@
       "zOrder": 15,
       "numberProperties": [],
       "stringProperties": [],
-      "initialVariables": []
+      "initialVariables": [
+        {
+          "name": "labelText",
+          "type": "string",
+          "value": "Leave"
+        }
+      ]
     },
     {
       "angle": 0,
@@ -659,7 +665,7 @@
     "gridColor": 10401023,
     "gridAlpha": 0.8,
     "snap": true,
-    "zoomFactor": 1.3841198046307392,
+    "zoomFactor": 0.8700232859857638,
     "windowMask": false,
     "selectedLayer": "UI"
   }

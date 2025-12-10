@@ -9,7 +9,7 @@ gdjs.evtsExt__ArrayTools__FillNumber = {};
 gdjs.evtsExt__ArrayTools__FillNumber.idToCallbackMap = new Map();
 
 
-gdjs.evtsExt__ArrayTools__FillNumber.userFunc0x987878 = function GDJSInlineCode(runtimeScene, eventsFunctionContext) {
+gdjs.evtsExt__ArrayTools__FillNumber.userFunc0xb2a970 = function GDJSInlineCode(runtimeScene, eventsFunctionContext) {
 "use strict";
 /** @type {gdjs.Variable} */
 const array = eventsFunctionContext.getArgument("Array");
@@ -33,7 +33,7 @@ gdjs.evtsExt__ArrayTools__FillNumber.eventsList0 = function(runtimeScene, events
 {
 
 
-gdjs.evtsExt__ArrayTools__FillNumber.userFunc0x987878(runtimeScene, eventsFunctionContext);
+gdjs.evtsExt__ArrayTools__FillNumber.userFunc0xb2a970(runtimeScene, eventsFunctionContext);
 
 }
 
