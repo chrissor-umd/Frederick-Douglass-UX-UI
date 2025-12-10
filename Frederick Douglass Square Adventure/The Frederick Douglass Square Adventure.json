@@ -782,7 +782,7 @@
         "metadata": "",
         "name": "assets/sfx/ui_pop3.wav",
         "preloadAsMusic": false,
-        "preloadAsSound": false,
+        "preloadAsSound": true,
         "preloadInCache": false,
         "userAdded": false
       },
