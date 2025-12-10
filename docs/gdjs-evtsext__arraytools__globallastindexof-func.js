@@ -9,7 +9,7 @@ gdjs.evtsExt__ArrayTools__GlobalLastIndexOf = {};
 gdjs.evtsExt__ArrayTools__GlobalLastIndexOf.idToCallbackMap = new Map();
 
 
-gdjs.evtsExt__ArrayTools__GlobalLastIndexOf.userFunc0xb57670 = function GDJSInlineCode(runtimeScene, eventsFunctionContext) {
+gdjs.evtsExt__ArrayTools__GlobalLastIndexOf.userFunc0xb57a90 = function GDJSInlineCode(runtimeScene, eventsFunctionContext) {
 "use strict";
 /** @type {gdjs.Variable} */
 const array = eventsFunctionContext.getArgument("Array");
@@ -24,7 +24,7 @@ gdjs.evtsExt__ArrayTools__GlobalLastIndexOf.eventsList0 = function(runtimeScene,
 {
 
 
-gdjs.evtsExt__ArrayTools__GlobalLastIndexOf.userFunc0xb57670(runtimeScene, eventsFunctionContext);
+gdjs.evtsExt__ArrayTools__GlobalLastIndexOf.userFunc0xb57a90(runtimeScene, eventsFunctionContext);
 
 }
 
