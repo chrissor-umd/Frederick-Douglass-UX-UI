@@ -15,34 +15,7 @@ This repository contains all necessary resources and documentation for the Frede
 - **Project Milestones**  
     
   - Files for project milestones across the semester.
-
-
-- **Additional Deliverables**  
-    
-  - Past meeting summaries  
-  - Documentation for game development, UI icon designs, background images, and more
-
-## Project Milestones
-
-- [**Requirements Interview Questions**](http://Client_Requirements_Gathering_Questions.pdf)  
-    
-- [**Requirements Interview Document**](http://Client_Requirements_Interview_Document.pdf)  
-    
-- [**Project Plan**](http://Project_Plan_Continued_Development.pdf)  
-    
-- [**Mid-Semester Status Presentation**](http://Mid_Semester_Presentation.pptx) and [**Mid-Semester\_Presentation.pdf**](http://Mid-Semester_Presentation.pdf)  
-    
-- [**Final Report**](http://Project_Final_Report.pdf)  
-    
-- [**Final Presentation**](http://Frederick_Douglass_UX_UI_Final_Presentation.pptx) and [**Frederick\_Douglass\_UX\_UI\_Final\_Presentation.pdf**](http://Frederick_Douglass_UX_UI_Final_Presentation.pdf)
-
-## Documentation
-
-- [**The Frederick Douglass Square Game System**](http://Frederick_Douglass_Square_Game_System_Documentation.pdf)  
-    
-- [**Background Image Resources**](http://Background_Image_Documentation.pdf)  
-    
-- [**UI Icons and Elements**](http://UI_Icon_Guide.pdf)
+  - 
 
 ## Project File Structure
 
